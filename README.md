@@ -27,6 +27,7 @@ Este repositorio se actualiza constantemente a medida que se añaden o modifican
 | [Sistema de plantaciones de marihuana](sistema-de-plantaciones-de-marihuana.md) | Cultivo de marihuana: semillas, abono, riego, fertilizante, crecimiento, cosecha y growshops. | plantación, marihuana, cannabis, cogollos, semillas, abono, fertilizante, agua, riego, cultivo, crecimiento, madurez, floración, cosecha, growshop |
 | [Sistema de camionero](sistema-de-camionero.md) | Tráileres, misiones de transporte, camiones habilitados, pagos, habilidad de camionero y robo de tráiler. | camionero, trailero, tráiler, camión, Linerunner, Tanker, Roadtrain, cisterna, carga, recogida, entrega, empresa de repartos, habilidad, licencia de cargas pesadas, robar tráiler |
 | [Sistema de skimming](sistema-de-skimming.md) | Skimmers en cajeros automáticos: fabricación, instalación, detección, ganancias y retirada. | skimmer, skimming, cajero, ATM, ciberdelincuente, electrónica, laptop, técnico de seguridad, facción ilegal, transacción, marcarcajero, revisarcajero, instalarskimmer, retirarskimmer |
+| [Sistema de cadáveres](sistema-de-cadaveres.md) ⚠️ | Cadáveres tras Character Kill: examinar, forense, bolsas, saqueo, quema de cuerpos y extracción de órganos. *Contenido sensible — roleplay ficticio.* | cadáver, cuerpo, Character Kill, CK, morgue, forense, bolsa de cadáver, paramédico, detective, ADN, huellas, inventario, saqueo, quemar cadáver, calcinado, desmembrar, órganos |
 
 ---
 
