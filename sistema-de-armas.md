@@ -36,6 +36,57 @@ Cuando recibes daño por arma de fuego, arma blanca o golpes, la herida queda **
 - /asesino — consulta quién te dejó herido por última vez.
 - /aceptarmuerte — aceptas la muerte definitiva cuando estás herido.
 
+## Estado del arma
+
+Cada arma tiene una **calidad** (0 a 100) que se va deteriorando con el uso y con el paso de los días. A menor calidad, mayor probabilidad de que falle al recargar o que se atasque.
+
+Estados según la calidad:
+
+- **En buen estado** — calidad sobre 50. Funciona sin problemas.
+- **Desgastada** — calidad entre 25 y 50. Probabilidad baja de fallar al cargar el cargador.
+- **Dañada** — calidad entre 1 y 25. Probabilidad alta de fallar al cargar el cargador.
+- **Rota** — calidad 1 o menor. El cargador queda atascado y no se puede recargar hasta repararla.
+
+### Reparar el arma
+
+Para reparar un arma necesitas un **kit de limpieza**. Sostén el arma en la **mano derecha** y el kit de limpieza en la **mano izquierda**, y usa `/limpiararma`.
+
+- El proceso tarda entre **15 segundos** (arma casi nueva) y **60 segundos** (arma rota).
+- Cada reparación restaura entre **10% y 33%** de calidad, según el estado actual.
+- Cada reparación consume **5 unidades** del kit de limpieza.
+- No puedes repararla dentro de un vehículo ni guardarla durante el proceso, o se cancela.
+
+### Comandos
+
+- /limpiararma — repara el arma de tu mano derecha usando el kit de limpieza de tu mano izquierda. Alias: `/reparararma`.
+
+## Municiones y cargas
+
+Cada arma usa un **calibre específico** (9x19, .45, 12GA, 7.62x39, etc.) y solo puede cargar munición compatible con ese calibre. Para disparar necesitas tener **balas en el cargador** del arma.
+
+El sistema funciona en tres partes:
+
+- **Arma**: tiene una capacidad máxima de balas en su recámara.
+- **Cargador**: se llena con balas de una **caja de munición** del mismo calibre.
+- **Caja de munición**: funciona como reserva grande; se usa para rellenar cargadores, no directamente el arma.
+
+### Recargar el arma
+
+Con el arma en la **mano derecha** y el cargador compatible en la **mano izquierda** (o en tu inventario, equipo o cerca si es de gran capacidad), usa `/cargar` para pasar balas del cargador al arma.
+
+- Puedes especificar cuántas balas quieres cargar, o dejarlo vacío para llenar al máximo.
+- Si el arma está **rota** el cargador se atasca y no podrás recargar.
+- Si el arma está **dañada o desgastada** existe la probabilidad de que falle al cargar y tengas que reintentar.
+
+### Rellenar el cargador
+
+Para rellenar un cargador vacío o parcial, sostén el cargador en la **mano derecha** y acércate a una **caja de munición** del mismo calibre. Usa `/municion` para pasar balas de la caja al cargador.
+
+### Comandos
+
+- /cargar [cantidad] — carga balas desde tu cargador hacia el arma en la mano derecha. Alias: `/recargar`.
+- /municion — rellena el cargador que llevas en la mano derecha desde una caja de munición cercana.
+
 ## Lista de armas y parámetros
 
 Cada arma tiene: **calibre**, **capacidad del cargador**, **peso (kg)**, **daño por impacto** y **precio**. Las armas **de bolsillo** se pueden ocultar bajo la ropa; las **pesadas** deben portarse visibles en la espalda o en las manos.
