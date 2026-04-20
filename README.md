@@ -11,7 +11,7 @@
 
 Bienvenido a la documentación oficial de **San Andreas Roleplay** ([sarp.es](https://sarp.es/)). Aquí encontrarás guías para jugadores sobre los sistemas, mecánicas y comandos del servidor.
 
-> 💡 **¿Buscas algo concreto?** Usa `Ctrl + F` en esta página para buscar por palabra clave (por ejemplo: *pistola*, *casa*, *cárcel*).
+> 💡 **¿Buscas algo concreto?** Usa `Ctrl + F` en esta página para buscar por palabra clave (por ejemplo: _pistola_, _casa_, _cárcel_).
 
 ---
 
@@ -19,10 +19,10 @@ Bienvenido a la documentación oficial de **San Andreas Roleplay** ([sarp.es](ht
 
 ¿Es tu primera vez? Estos son los sistemas más comunes para cualquier jugador:
 
-- 🏠 [**Propiedades**](sistema-de-propiedades.md) — Comprar casa, alquilar, muebles, negocios.
-- 🔫 [**Armas y heridas**](sistema-de-armas.md) — Pistolas, munición, recarga, curarte.
-- 🏥 [**Médico y hospital**](sistema-medico-y-hospital.md) — Urgencias, enfermedades, medicamentos.
-- 💪 [**Gimnasio**](sistema-de-gimnasio.md) — Musculatura, energía, hambre, sed, estilos de pelea.
+- 🏠 [**Propiedades**](docs/sistema-de-propiedades.md) — Comprar casa, alquilar, muebles, negocios.
+- 🔫 [**Armas y heridas**](docs/sistema-de-armas.md) — Pistolas, munición, recarga, curarte.
+- 🏥 [**Médico y hospital**](docs/sistema-medico-y-hospital.md) — Urgencias, enfermedades, medicamentos.
+- 💪 [**Gimnasio**](docs/sistema-de-gimnasio.md) — Musculatura, energía, hambre, sed, estilos de pelea.
 
 ---
 
@@ -30,63 +30,64 @@ Bienvenido a la documentación oficial de **San Andreas Roleplay** ([sarp.es](ht
 
 ### 🏘️ Vida diaria
 
-| Sistema | De qué trata |
-|---|---|
-| [🏠 Propiedades](sistema-de-propiedades.md) | Casas, negocios, almacenes, muebles, llaves, empleados, stock. |
-| [💪 Gimnasio](sistema-de-gimnasio.md) | Entrenar musculatura, estado físico, estilos de pelea. |
-| [🏥 Médico y hospital](sistema-medico-y-hospital.md) | All Saints General Hospital, enfermedades, medicamentos, cirugías. |
-| [🗑️ Basura](sistema-de-basura.md) | Recolección, contenedores, vertederos, limpieza. |
+| Sistema                                              | De qué trata                                                       |
+| ---------------------------------------------------- | ------------------------------------------------------------------ |
+| [🏠 Propiedades](docs/sistema-de-propiedades.md)          | Casas, negocios, almacenes, muebles, llaves, empleados, stock.     |
+| [💪 Gimnasio](docs/sistema-de-gimnasio.md)                | Entrenar musculatura, estado físico, estilos de pelea.             |
+| [🏥 Médico y hospital](docs/sistema-medico-y-hospital.md) | All Saints General Hospital, enfermedades, medicamentos, cirugías. |
+| [🗑️ Basura](docs/sistema-de-basura.md)                    | Recolección, contenedores, vertederos, limpieza.                   |
 
 ### 🔫 Combate y armas
 
-| Sistema | De qué trata |
-|---|---|
-| [🔫 Armas y heridas](sistema-de-armas.md) | Calibres, munición, recarga, seriales, chaleco, sangrado. |
-| [💣 Bombas](sistema-de-bombas.md) | Bombas telefónicas, detonación, desactivación con cables. |
+| Sistema                                   | De qué trata                                              |
+| ----------------------------------------- | --------------------------------------------------------- |
+| [🔫 Armas y heridas](docs/sistema-de-armas.md) | Calibres, munición, recarga, seriales, chaleco, sangrado. |
+| [💣 Bombas](docs/sistema-de-bombas.md)         | Bombas telefónicas, detonación, desactivación con cables. |
 
 ### 🚨 Delincuencia y crimen
 
-| Sistema | De qué trata |
-|---|---|
-| [🦹 Delincuente](sistema-de-delincuente.md) | Robos, atracos, asaltos, desarme de vehículos. |
-| [🏴 Zonas de pandilla](sistema-de-zonas-de-pandilla.md) | Territorios, influencias, captura, paycheck. |
-| [🏚️ Bases ilegales](sistema-de-bases-ilegales.md) | Propiedades de facciones criminales, almacén, crackhouse. |
-| [💳 Skimming](sistema-de-skimming.md) | Skimmers en cajeros ATM, fabricación, instalación. |
+| Sistema                                                 | De qué trata                                              |
+| ------------------------------------------------------- | --------------------------------------------------------- |
+| [🦹 Delincuente](docs/sistema-de-delincuente.md)             | Robos, atracos, asaltos, desarme de vehículos.            |
+| [🏴 Zonas de pandilla](docs/sistema-de-zonas-de-pandilla.md) | Territorios, influencias, captura, paycheck.              |
+| [🏚️ Bases ilegales](docs/sistema-de-bases-ilegales.md)       | Propiedades de facciones criminales, almacén, crackhouse. |
+| [💳 Skimming](docs/sistema-de-skimming.md)                   | Skimmers en cajeros ATM, fabricación, instalación.        |
 
 ### 💊 Drogas y sustancias
 
-| Sistema | De qué trata |
-|---|---|
-| [💊 Drogas](sistema-de-drogas.md) | Consumo, fabricación, laboratorios, adicción, efectos. |
-| [🌿 Plantaciones de marihuana](sistema-de-plantaciones-de-marihuana.md) | Semillas, riego, crecimiento, cosecha, growshops. |
+| Sistema                                                                 | De qué trata                                           |
+| ----------------------------------------------------------------------- | ------------------------------------------------------ |
+| [💊 Drogas](docs/sistema-de-drogas.md)                                       | Consumo, fabricación, laboratorios, adicción, efectos. |
+| [🌿 Plantaciones de marihuana](docs/sistema-de-plantaciones-de-marihuana.md) | Semillas, riego, crecimiento, cosecha, growshops.      |
 
 ### ⚖️ Justicia y cárcel
 
-| Sistema | De qué trata |
-|---|---|
-| [⚖️ Justicia](sistema-de-justicia.md) | Jueces, fiscales, abogados, órdenes, condenas, strikes. |
-| [🔒 Cárcel](sistema-de-carcel.md) | Twin Towers, celdas, patio, libertad condicional, perpetua. |
+| Sistema                                    | De qué trata                                                   |
+| ------------------------------------------ | -------------------------------------------------------------- |
+| [⚖️ Justicia](docs/sistema-de-justicia.md) | Jueces, fiscales, abogados, órdenes, condenas, strikes.        |
+| [🔒 Cárcel](docs/sistema-de-carcel.md)     | Twin Towers, celdas, patio, libertad condicional, perpetua.    |
+| [🔬 Forense](docs/sistema-forense.md)      | Casquillos, ADN, huellas, balística y pruebas en investigación. |
 
 ### 💼 Trabajos y oficios
 
-| Sistema | De qué trata |
-|---|---|
-| [🚚 Camionero](sistema-de-camionero.md) | Tráileres, rutas, pagos, licencia de cargas pesadas. |
-| [🕵️ Detectives privados](sistema-de-detectives-privados.md) | Licencia SAALI, micrófonos, GPS, drones, StingRay. |
-| [🎣 Pesca](sistema-de-pesca.md) | Pesca deportiva y comercial, Reefer, caña, Ocean Docks. |
-| [🏹 Caza](sistema-de-caza.md) | Animales, rifles con mira, despellejado, Whetstone. |
+| Sistema                                                     | De qué trata                                            |
+| ----------------------------------------------------------- | ------------------------------------------------------- |
+| [🚚 Camionero](docs/sistema-de-camionero.md)                     | Tráileres, rutas, pagos, licencia de cargas pesadas.    |
+| [🕵️ Detectives privados](docs/sistema-de-detectives-privados.md) | Licencia SAALI, micrófonos, GPS, drones, StingRay.      |
+| [🎣 Pesca](docs/sistema-de-pesca.md)                             | Pesca deportiva y comercial, Reefer, caña, Ocean Docks. |
+| [🏹 Caza](docs/sistema-de-caza.md)                               | Animales, rifles con mira, despellejado, Whetstone.     |
 
 ### 🎰 Ocio
 
-| Sistema | De qué trata |
-|---|---|
-| [🎰 Casino](sistema-de-casino.md) | Emerald Isle, blackjack, ruleta, tragamonedas, póker. |
+| Sistema                           | De qué trata                                          |
+| --------------------------------- | ----------------------------------------------------- |
+| [🎰 Casino](docs/sistema-de-casino.md) | Emerald Isle, blackjack, ruleta, tragamonedas, póker. |
 
 ### ⚠️ Contenido sensible
 
-| Sistema | De qué trata |
-|---|---|
-| [💀 Cadáveres](sistema-de-cadaveres.md) | Character Kill, forense, bolsas, órganos. *Roleplay ficticio.* |
+| Sistema                                 | De qué trata                                                   |
+| --------------------------------------- | -------------------------------------------------------------- |
+| [💀 Cadáveres](docs/sistema-de-cadaveres.md) | Character Kill, forense, bolsas, órganos. _Roleplay ficticio._ |
 
 ---
 
