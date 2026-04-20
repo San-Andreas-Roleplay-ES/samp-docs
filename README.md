@@ -22,6 +22,7 @@ Este repositorio se actualiza constantemente a medida que se añaden o modifican
 | [Sistema de propiedades](sistema-de-propiedades.md) | Compra, venta, alquiler, muebles, llaves, empleados, stock y pedidos en inmuebles. | propiedades, casa, almacén, negocio, empresa, complejo, muebles, llaves, empleado, contrato, cargo, caja, stock, pedido, mostrador, entrada, salida |
 | [Sistema de delincuente](sistema-de-delincuente.md) | Robo a jugadores, hurto, atracos, asalto a propiedades, robo y desarme de vehículos. | delincuente, robo, hurto, atraco, víctima, asalto, propiedades, forzar, ganzúa, palanca, destornillador, ventanilla, cableado, desarme, piezas, vehículos |
 | [Sistema de basura](sistema-de-basura.md) | Generación de basura en negocios, limpieza, contenedores, recolectores y vertederos. | basura, limpieza, contenedor, basurero, recolector, vertedero, reciclaje, plagas, bolsa, recolectar |
+| [Sistema de justicia](sistema-de-justicia.md) | Jueces, fiscales, abogados, Defensoría Pública, firmas legales, órdenes, oficios, reincidencia y puntos criminales. | justicia, juez, fiscal, abogado, defensor público, firma, bufete, orden, condena, traslado, oficio, Most Wanted, Hall of Justice, corte, tribunal, strikes, reincidencia, puntos criminales, criminalidad, cárcel, biblioteca |
 
 ---
 
