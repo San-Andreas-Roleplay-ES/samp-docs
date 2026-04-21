@@ -1,23 +1,85 @@
-/**
- * CSS files with the .module.css suffix will be treated as CSS modules
- * and scoped locally.
- */
-
-.heroBanner {
-  padding: 4rem 0;
-  text-align: center;
-  position: relative;
-  overflow: hidden;
+:root {
+  --sarp-yellow: #fcaf17;
+  --sarp-red: #b41919;
 }
 
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
-}
-
-.buttons {
+.welcome {
+  min-height: calc(100vh - 140px);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
+  padding: 4rem 1rem;
+}
+
+.logo {
+  width: 140px;
+  height: auto;
+  margin-bottom: 1.5rem;
+  border-radius: 16px;
+  transition: all 0.3s;
+  filter: drop-shadow(0 0 40px rgba(252,175,23,0.5)) drop-shadow(0 0 10px rgba(180,25,25,0.4));
+}
+
+.logo:hover {
+  transform: scale(1.08) rotate(-2deg);
+  filter: drop-shadow(0 0 60px rgba(252,175,23,0.7)) drop-shadow(0 0 20px rgba(180,25,25,0.5));
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: #ccc;
+  margin-bottom: 2rem;
+  max-width: 500px;
+}
+
+.button {
+  display: inline-block;
+  background: var(--sarp-yellow);
+  color: #111;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 14px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+
+.button:hover {
+  background: #fff;
+  transform: scale(1.05);
+}
+
+.footer {
+  padding: 3rem 1rem;
+  border-top: 1px solid #333;
+}
+
+.footerContent {
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footerText {
+  font-size: 0.875rem;
+  color: #888;
+  margin-bottom: 0.5rem;
+}
+
+.footerLink {
+  color: var(--sarp-yellow);
+  text-decoration: none;
+}
+
+.footerLink:hover {
+  text-decoration: underline;
 }
