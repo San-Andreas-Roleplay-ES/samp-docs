@@ -1,0 +1,26 @@
+.footer {
+  padding: 3rem 1rem;
+  border-top: 1px solid #333;
+  background: transparent;
+}
+
+.content {
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.text {
+  font-size: 0.875rem;
+  color: #888;
+  margin-bottom: 0.5rem;
+}
+
+.link {
+  color: var(--sarp-yellow, #fcaf17);
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
