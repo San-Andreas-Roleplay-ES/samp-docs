@@ -1,0 +1,41 @@
+---
+sidebar_position: 4
+title: Compra y Venta
+description: Compra y venta de inmuebles
+---
+
+# Compra y Venta de Inmuebles
+
+Las propiedades se compran entrando en el punto de venta y usando `/comprar`. Puedes venderlas al **Estado** saliendo por la puerta (recibes un porcentaje) o **a otro jugador** dentro de la propiedad con `/venderprop`.
+
+## Cálculo real del valor de la propiedad
+
+El precio total de una propiedad no es solo el valor base: el sistema suma varios componentes:
+
+**Precio = (Valor base × multiplicador) + (Valor de flota × 0.6) + (Valor de muebles × 0.5) + Valor del stock**
+
+- **Valor base**: precio original del inmueble.
+- **Valor de flota**: suma del valor de todos los vehículos del negocio (60% del total).
+- **Valor de muebles**: suma del valor de los muebles colocados (50% del total).
+- **Valor del stock**: suma del inventario actual del negocio.
+
+Al **vender a otro jugador**, puedes pactar el precio entre el **50% (x0.5)** y el **500% (x5.0)** del precio total calculado. Fuera de ese rango, la transacción debe hacerse por transferencia aparte.
+
+Al **vender al Estado**, la oferta es un **30% del valor base**, con bonificación según tu nivel premium:
+
+| Premium | Porcentaje |
+|---------|-----------|
+| Sin premium | 30% |
+| Premium 1 | 35% |
+| Premium 2 | 40% |
+| Premium 3 | 45% |
+| Premium 4 | 50% |
+
+No puedes vender una propiedad con **caja negativa**, **pedidos en ruta**, **paquetes u objetos ilegales adentro**, ni con un **laboratorio de drogas** activo.
+
+## Comandos
+
+- `/comprar` — compra la propiedad en la que estás (si está en venta).
+- `/venderprop [id] [$precio]` — vende tu propiedad a otro jugador cercano.
+- `/aceptar` — acepta una oferta de compra/venta.
+- `/rechazar` — rechaza una oferta de compra/venta.

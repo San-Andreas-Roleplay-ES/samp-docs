@@ -1,0 +1,24 @@
+---
+sidebar_position: 9
+title: Stock y Pedidos
+description: Stock y pedidos de negocios
+---
+
+# Stock y Pedidos
+
+Los negocios con productos (tiendas, clubes, etc.) manejan **stock**: cada artículo tiene un precio de venta, un coste y una cantidad disponible. Los clientes compran en el mostrador; cuando el stock se vacía, el negocio debe **hacer pedidos** a los proveedores.
+
+Cada pedido tiene un **cooldown de 3 horas** por producto y cuesta el **90% del valor del producto**. El pago sale directamente de la caja del negocio, por lo que debe tener saldo suficiente. Los pedidos pasan por estados: _disponible → solicitado → en ruta → entregado_.
+
+Opcionalmente puedes activar la **reposición automática** para que el sistema haga pedidos solos cuando el stock baje.
+
+También puedes **añadir stock manualmente** al negocio: sostén el producto en la mano y usa `/meterstock` dentro del negocio para incorporarlo al inventario disponible a la venta.
+
+## Comandos
+
+- `/stock` — muestra el inventario del negocio y permite ajustar precios.
+- `/pedido [producto] [cantidad]` — solicita reposición de un producto.
+- `/pedido` — sin parámetros, muestra los pedidos disponibles y su estado.
+- `/autopedidos` — activa o desactiva la reposición automática.
+- `/meterstock` — añade al inventario del negocio el producto que tengas en la mano.
+- `/caja` — controla el dinero disponible para pagar pedidos.

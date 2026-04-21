@@ -1,0 +1,69 @@
+---
+sidebar_position: 8
+title: Negocios
+description: Negocios - Empresas, empleados, stock y pedidos
+---
+
+# Empresas y Negocios
+
+Los negocios son propiedades comerciales que se pueden operar con **empleados**, **stock** y **caja**. Existen varias subcategorías, cada una con mecánicas propias:
+
+- **Tienda** — vende productos físicos, requiere stock y reposición.
+- **Club / Bar / Discoteca** — cobra entrada, vende bebidas, mecánicas de ocio.
+- **Concesionario** — venta de vehículos.
+- **Casa de apuestas** — apuestas en carreras.
+- **Casino** — juegos de azar.
+- **Depósito de autos** — compraventa de vehículos incautados.
+- **Empresa de transporte, taxi, pesca, limpieza, mecánica, seguridad** — basadas en el trabajo de sus empleados.
+- **Despacho legal, banco, hospital, periódico** — negocios institucionales con funciones específicas.
+
+**Diferencias clave**: los negocios con producto (tienda, club, concesionario, etc.) gestionan **stock y pedidos**; los negocios de servicios (taxi, mecánica, banco, legal...) se basan en el trabajo activo del empleado. Algunos tipos (**banco, depósito, periodismo, seguridad, casino**) no permiten unirse automáticamente con `/negunirse` y requieren contratación manual.
+
+## Empleados
+
+Los empleados trabajan bajo **cargos** creados por el dueño (con nombre, salario por hora y permisos). Cada cargo define qué puede hacer el empleado: acceder a caja, gestionar stock, hacer pedidos, contratar, despedir, usar los vehículos, etc.
+
+Al entrar en servicio, los empleados reciben un sueldo cada minuto mientras se mantengan dentro del negocio o usando un vehículo de la empresa. Si se alejan demasiado tiempo, el sistema descuenta dinero y los saca de servicio automáticamente.
+
+## Trabajar en un negocio
+
+- Debes **aceptar un contrato** (ya sea por `/negunirse` o por contratación del dueño).
+- Entras y sales de servicio con `/negservicio` (alias `/trabajar`).
+- Cada minuto en servicio genera un salario (base + salario del cargo).
+- Puedes tener **varios contratos** al mismo tiempo y cambiar entre ellos sin renunciar.
+- Renunciar requiere confirmación (`/renunciar confirmar`).
+
+<img width="476" height="24" alt="image" src="https://github.com/user-attachments/assets/3b74c4f9-acf5-458c-98a4-fce93212d7ba" />
+
+## Unirse automáticamente con /negunirse
+
+El comando `/negunirse` permite unirte como empleado sin que el dueño tenga que contratarte manualmente, siempre que:
+
+- Estés dentro del negocio.
+- El dueño tenga habilitada esta opción (`/tognegunirse`, requiere premium).
+- El negocio tenga cargos configurados.
+- El tipo de negocio lo permita (no funciona en banco, depósito, periodismo, seguridad ni casino).
+
+Al usarlo recibes el cargo más básico. Después, el dueño o un gerente puede ascenderte con `/darcargo`.
+
+<img width="587" height="61" alt="image" src="https://github.com/user-attachments/assets/78dc4cb0-d9d1-412e-86a7-1173c8d90077" />
+
+## Comandos
+
+- `/negunirse` — te unes automáticamente como empleado del negocio.
+- `/negservicio` — activa o desactiva el modo trabajo. Alias: `/trabajar`.
+- `/miscontratos` — muestra tus contratos activos y te permite cambiar entre ellos. Alias: `/contratos`, `/misempleos`, `/cambiarempleo`.
+- `/mostrarcontrato [id]` — enseña tu contrato actual a otro jugador.
+- `/renunciar confirmar` — renuncia al contrato actual.
+- `/contratar [id]` — ofrece contrato a un jugador cercano (dueño o gerente).
+- `/despedir [nombre_apellido]` — despide a un empleado.
+- `/empleados` — lista a los empleados del negocio.
+- `/cargos` — crea o edita los cargos, salarios y permisos.
+- `/darcargo [id] [cargo]` — asigna un cargo a un empleado.
+- `/negnombre [nombre]` — cambia el nombre del negocio (dueño, tiene coste).
+- `/negmotd [texto]` — mensaje del día para los empleados.
+- `/tognegunirse` — habilita o deshabilita `/negunirse` en tu negocio.
+- `/mostrador` — fija la posición del mostrador de ventas.
+- `/entrada [$precio]` — establece el precio de entrada (clubes).
+- `/derechodeadmision [id]` — expulsa a un cliente del local.
+- `/caja` — consulta, deposita o retira dinero de la caja del negocio.
