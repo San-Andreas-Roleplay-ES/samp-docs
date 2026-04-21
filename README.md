@@ -6,21 +6,39 @@
 
 ![Discord Shield](https://discord.com/api/guilds/1118327104908570654/widget.png?style=shield)
 [![License: MIT](https://img.shields.io/badge/License-MIT%20License-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Docusaurus](https://img.shields.io/badge/Powered%20by-Docusaurus-blue)](https://docusaurus.io)
 
 # Documentación de San Andreas Roleplay - SARP.es
 
-Bienvenido a la documentación oficial de **San Andreas Roleplay** ([sarp.es](https://sarp.es/)). Aquí encontrarás guías orientadas al jugador sobre los sistemas, mecánicas y comandos del servidor. Cada sistema tiene su propio archivo explicando su funcionamiento, estructura y los comandos asociados.
+Bienvenido a la documentación oficial de **San Andreas Roleplay** ([sarp.es](https://sarp.es/)). Aquí encontrarás guías orientadas al jugador sobre los sistemas, mecánicas y comandos del servidor. Cada sistema tiene su propia sección explicando su funcionamiento, estructura y los comandos asociados.
 
 Este repositorio se actualiza constantemente a medida que se añaden o modifican sistemas dentro del servidor.
 
 ## Índice de sistemas
 
-| Sistema | Descripción | Palabras clave |
-|---|---|---|
-| [Sistema de drogas](sistema-de-drogas.md) | Consumo, fabricación, cultivo, laboratorios, adicción y efectos de las sustancias. | sustancias, consumo, laboratorio, adicción, abstinencia, fuerza, plantación, ingredientes, narcotraficante, efectos, estados |
-| [Sistema de armas y heridas](sistema-de-armas.md) | Armas de fuego, calibres, munición, recarga, estado, reparación, seriales y heridas. | armas, pistolas, escopetas, fusiles, subfusiles, rifles, francotirador, munición, cargador, calibre, serial, heridas, kit de limpieza, reparar, chaleco, sangrado |
-| [Sistema de propiedades](sistema-de-propiedades.md) | Compra, venta, alquiler, muebles, llaves, empleados, stock y pedidos en inmuebles. | propiedades, casa, almacén, negocio, empresa, complejo, muebles, llaves, empleado, contrato, cargo, caja, stock, pedido, mostrador, entrada, salida |
-| [Sistema de delincuente](sistema-de-delincuente.md) | Robo a jugadores, hurto, atracos, asalto a propiedades, robo y desarme de vehículos. | delincuente, robo, hurto, atraco, víctima, asalto, propiedades, forzar, ganzúa, palanca, destornillador, ventanilla, cableado, desarme, piezas, vehículos |
+| Sistema | Descripción |
+|--------|-------------|
+| [Sistema de drogas](docs/sistemas/sistema-de-drogas.mdx) | Consumo, fabricación, cultivo, laboratorios, adicción y efectos de las sustancias. |
+| [Sistema de armas y heridas](docs/sistemas/sistema-de-armas.mdx) | Armas de fuego, calibres, munición, recarga, estado, reparación, seriales y heridas. |
+| [Sistema de propiedades](docs/sistemas/propiedades/) | Compra, venta, alquiler, muebles, llaves, empleados, stock y pedidos en inmuebles. |
+| [Sistema de delincuente](docs/sistemas/sistema-de-delincuente.mdx) | Robo a jugadores, hurto, atracos, asalto a propiedades, robo y desarme de vehículos. |
+
+## Desarrollo
+
+Esta documentación está construida con **[Docusaurus](https://docusaurus.io)**. Para más información sobre la configuración y personalización del sitio, consulta [DOCUSAURUS.md](DOCUSAURUS.md).
+
+### Comandos útiles
+
+```bash
+# Desarrollo local
+npm run start
+
+# Build de producción
+npm run build
+
+# Servir build local
+npm run serve
+```
 
 ---
 
