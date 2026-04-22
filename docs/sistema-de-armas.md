@@ -1,18 +1,12 @@
 # Sistema de armas y heridas
 
-## Introducción
-
 El sistema de armas y heridas maneja las armas de fuego disponibles, su identificación mediante seriales y las consecuencias físicas de recibir disparos, apuñaladas o golpes. Cada arma tiene un calibre, peso, capacidad de cargador y daño distinto; cada herida queda registrada en el cuerpo y puede provocar sangrado, desmayo o muerte.
 
 <img width="396" height="465" alt="image" src="https://github.com/user-attachments/assets/03246ace-0513-420d-b4aa-97686519bd6f" />
 
-### Comandos
-
 - `/heridas [id]` — muestra el listado de daños que ha sufrido un personaje cercano.
 - `/asesino` — muestra el nombre de la última persona que te dejó herido.
 - `/aceptarmuerte` — cuando estás herido, acepta tu muerte definitiva en vez de esperar.
-
-## Seriales del arma
 
 Cada arma fabricada o comprada lleva un **número de serial único** que la identifica. Sirve para rastrear armas robadas o usadas en crímenes. Los seriales emitidos por el armamento federal usan el formato **CÓDIGO-NÚMERO** (por facción); las armas comunes tienen un serial numérico de 8 cifras.
 
@@ -24,12 +18,8 @@ Un delincuente experimentado puede **borrar el serial** de su arma con un destor
 
 <img width="212" height="18" alt="image" src=../assets/sistema-de-armas/serial-borrado2.png>
 
-### Comandos
-
 - `/serial` — muestra el serial del arma que tienes en la mano derecha.
 - `/borrarserial [confirmar]` — borra el serial del arma en la mano derecha (requiere destornillador en la mano izquierda y al menos 80 de habilidad de delincuente.).
-
-## Sistema de heridas
 
 Cuando recibes daño por arma de fuego, arma blanca o golpes, la herida queda **registrada en tu cuerpo** indicando el arma utilizada, la parte del cuerpo afectada, el daño causado y hace cuánto ocurrió. Esta información puede consultarla cualquier personaje cercano con `/heridas`.
 
@@ -42,13 +32,9 @@ Cuando recibes daño por arma de fuego, arma blanca o golpes, la herida queda **
 
 <img width="397" height="267" alt="image" src="https://github.com/user-attachments/assets/bbd275a9-8843-4b78-888f-b4ae5bc658a6" />
 
-### Comandos
-
 - `/heridas [id]` — revisa las heridas de un personaje cercano.
 - `/asesino` o `/qfa` — consulta quién te dejó herido por última vez.
 - `/aceptarmuerte` — aceptas la muerte definitiva cuando estás herido.
-
-## Estado del arma
 
 Cada arma tiene una **calidad** (0 a 100) que se va deteriorando con el uso y con el paso de los días. A menor calidad, mayor probabilidad de que falle al recargar o que se atasque.
 
@@ -62,7 +48,6 @@ Estados según la calidad:
 <img width="400" height="45" alt="image" src=../assets/sistema-de-armas/limpiararma.png>>
 
 ### Reparar el arma
-
 Para reparar un arma necesitas un **kit de limpieza**. Sostén el arma en la **mano derecha** y el kit de limpieza en la **mano izquierda**, y usa `/limpiararma`.
 
 - El proceso tarda entre **15 segundos** (arma casi nueva) y **60 segundos** (arma rota).
@@ -71,10 +56,7 @@ Para reparar un arma necesitas un **kit de limpieza**. Sostén el arma en la **m
 - No puedes repararla dentro de un vehículo ni guardarla durante el proceso, o se cancela.
 
 ### Comandos
-
 - `/limpiararma` — repara el arma de tu mano derecha usando el kit de limpieza de tu mano izquierda. Alias: `/reparararma`.
-
-## Municiones y cargas
 
 Cada arma usa un **calibre específico** (9x19, .45, 12GA, 7.62x39, etc.) y solo puede cargar munición compatible con ese calibre. Para disparar necesitas tener **balas en el cargador** del arma.
 
@@ -85,7 +67,6 @@ El sistema funciona en tres partes:
 - **Caja de munición**: funciona como reserva grande; se usa para rellenar cargadores, no directamente el arma.
 
 ### Recargar el arma
-
 Con el arma en la **mano derecha** y el cargador compatible en la **mano izquierda** (o en tu inventario, equipo o cerca si es de gran capacidad), usa `/cargar` o `/recargar` para pasar balas del cargador al arma.
 
 - Puedes especificar cuántas balas quieres cargar, o dejarlo vacío para llenar al máximo.
@@ -95,22 +76,17 @@ Con el arma en la **mano derecha** y el cargador compatible en la **mano izquier
 <img width="216" height="79" alt="image" src="https://github.com/user-attachments/assets/57e3c92d-71bb-4f49-b586-ecddf3309c20" />
 
 ### Rellenar el cargador
-
 Para rellenar un cargador vacío o parcial, sostén el cargador en la **mano derecha** y acércate a una **caja de munición** del mismo calibre. Usa `/municion` para pasar balas de la caja al cargador.
 
 <img src="../assets/sistema-de-armas/municion1.png">
 
 ### Comandos
-
 - `/cargar [cantidad]` — carga balas desde tu cargador hacia el arma en la mano derecha. Alias: `/recargar`.
 - `/municion` — rellena el cargador que llevas en la mano derecha desde una caja de munición cercana.
-
-## Lista de armas y parámetros
 
 Cada arma tiene: **calibre**, **capacidad del cargador**, **peso (kg)**, **daño por impacto** y **precio**. Las armas **de bolsillo** se pueden ocultar bajo la ropa; las **pesadas** deben portarse visibles en la espalda o en las manos.
 
 ### Pistolas (de bolsillo)
-
 | Arma | Calibre | Cargador | Peso | Daño | Precio |
 |---|---|---|---|---|---|
 | Taurus 605 | .357 | 14 | 0.6 kg | 25 | $1.214 |
@@ -138,7 +114,6 @@ Cada arma tiene: **calibre**, **capacidad del cargador**, **peso (kg)**, **daño
 | AA Custom FMG9 | 9x19 | 40 | 1.0 kg | 17 | $19.406 |
 
 ### Pistolas con silenciador (de bolsillo)
-
 | Arma | Calibre | Cargador | Peso | Daño | Precio |
 |---|---|---|---|---|---|
 | Suppressed Ruger MkIv | .22 LR | 10 | 1.0 kg | 20 | $810 |
@@ -146,14 +121,12 @@ Cada arma tiene: **calibre**, **capacidad del cargador**, **peso (kg)**, **daño
 | AF-1 Strike One | 9x19 | 34 | 0.75 kg | 27 | $3.295 |
 
 ### Escopetas compactas (de bolsillo)
-
 | Arma | Calibre | Cargador | Peso | Daño | Precio |
 |---|---|---|---|---|---|
 | Serbu Super Shorty | 12GA | 3 | 1.8 kg | 34 | $1.618 |
 | Mossberg 500 Compact Cruiser | 12GA | 4 | 2.2 kg | 26 | $1.941 |
 
 ### Escopetas (pesadas)
-
 | Arma | Calibre | Cargador | Peso | Daño | Precio |
 |---|---|---|---|---|---|
 | Citadel CDP12 | 12GA | 5 | 3.0 kg | 25 | $810 |
@@ -163,7 +136,6 @@ Cada arma tiene: **calibre**, **capacidad del cargador**, **peso (kg)**, **daño
 | Benelli M4 | 12GA | 6 | 4.0 kg | 33 | $1.779 |
 
 ### Subfusiles (pesadas)
-
 | Arma | Calibre | Cargador | Peso | Daño | Precio |
 |---|---|---|---|---|---|
 | UZI | 9x19 | 30 | 3.5 kg | 15 | $2.588 |
@@ -172,7 +144,6 @@ Cada arma tiene: **calibre**, **capacidad del cargador**, **peso (kg)**, **daño
 | HK MP5 | 9x19 | 30 | 2.5 kg | 18 | $3.397 |
 
 ### Fusiles de asalto (pesadas)
-
 | Arma | Calibre | Cargador | Peso | Daño | Precio |
 |---|---|---|---|---|---|
 | AKMSU | 7.62x39 | 60 | 2.8 kg | 18 | $2.013 |
@@ -186,7 +157,6 @@ Cada arma tiene: **calibre**, **capacidad del cargador**, **peso (kg)**, **daño
 | M240 | 7.62x51 | 250 | 3.5 kg | 33 | $6.389 |
 
 ### Rifles y francotiradores (pesadas)
-
 | Arma | Calibre | Cargador | Peso | Daño | Precio |
 |---|---|---|---|---|---|
 | Savage Axis XP | .308 Winchester | 4 | 3.3 kg | 40 | $972 |
@@ -201,7 +171,96 @@ Cada arma tiene: **calibre**, **capacidad del cargador**, **peso (kg)**, **daño
 | Sako 85 | .300 Winchester Magnum | 3 | 3.7 kg | 70 | $14.375 |
 
 ### Explosivos (de bolsillo)
-
 | Arma | Capacidad | Peso | Tipo |
 |---|---|---|---|
 | Cóctel molotov | 1 | 1.0 kg | Arrojadizo incendiario |
+
+---
+
+## Propuesta: modificaciones de armas (weapon modding)
+
+> ⚠️ **Nota:** Esta sección es una **propuesta de sistema** que no está implementada actualmente en el servidor. Se presenta como idea de expansión del sistema de armas existente, aprovechando las mecánicas de calidad, calibres y seriales ya presentes.
+
+El sistema de modificaciones permitiría personalizar armas instalando **accesorios y mejoras** en un taller clandestino o en un armero autorizado. Cada modificación alteraría las estadísticas base del arma (daño, capacidad, peso, deterioro) y añadiría un nuevo nivel de profundidad al roleplay criminal y policial.
+
+### Concepto general
+
+- Cada arma podría tener hasta **2 slots de modificación** (uno mecánico y uno accesorio).
+- Las modificaciones se instalarían en un **taller clandestino** (para mods ilegales) o en un **armero/Ammu-Nation** (para mods legales).
+- Instalar una modificación requiere **habilidad mecánica o de electrónica** según el tipo.
+- Las modificaciones ilegales (silenciador artesanal, cañón recortado) sumarían **cargos penales adicionales** si la policía inspecciona el arma.
+- Las modificaciones se vincularían al **serial del arma**, por lo que serían rastreables por el sistema forense.
+
+### Modificaciones propuestas
+
+#### Modificaciones legales (Ammu-Nation / armero autorizado)
+
+| Modificación | Compatible con | Efecto | Peso extra | Requisito | Precio estimado |
+|---|---|---|---|---|---|
+| **Cargador extendido** | Pistolas, subfusiles, fusiles | +50% capacidad del cargador | +0.2 kg | Habilidad mecánica 10 | $2.000 |
+| **Grip ergonómico** | Pistolas, subfusiles | Reduce penalización de daño en movimiento un 15% | +0.1 kg | Habilidad mecánica 15 | $1.500 |
+| **Mira holográfica** | Subfusiles, fusiles | Reduce penalización de daño a media distancia un 10% | +0.15 kg | Habilidad electrónica 10 | $3.000 |
+| **Kit de mantenimiento integrado** | Todas las armas de fuego | Reduce el deterioro de calidad por uso un 50% | +0.1 kg | Habilidad mecánica 20 | $5.000 |
+| **Culata táctica** | Escopetas, subfusiles | Reduce penalización de daño a larga distancia un 10% | +0.3 kg | Habilidad mecánica 15 | $2.500 |
+
+#### Modificaciones ilegales (taller clandestino)
+
+| Modificación | Compatible con | Efecto | Peso extra | Requisito | Precio estimado |
+|---|---|---|---|---|---|
+| **Silenciador artesanal** | Pistolas (calibre 9x19, .45, .22 LR) | Reduce el radio de sonido del disparo un 60%; −2 daño por impacto | +0.3 kg | Habilidad mecánica 40 | $8.000 |
+| **Cañón recortado** | Escopetas | +25% daño a menos de 10 m; −40% daño a más de 25 m | −0.5 kg | Habilidad mecánica 30 | $4.000 |
+| **Percutor reforzado** | Pistolas, subfusiles | +3 daño por impacto; el arma se deteriora un 25% más rápido | +0.05 kg | Habilidad mecánica 50 | $6.000 |
+| **Conversión automática** | Pistolas semiautomáticas compatibles | Convierte el arma en automática (ráfaga); +50% deterioro de calidad por uso | — | Habilidad mecánica 60 | $15.000 |
+| **Borrado de estrías** | Todas las armas de fuego | Los casquillos disparados no pueden vincularse al arma por balística forense | — | Habilidad mecánica 70 | $10.000 |
+
+> Las modificaciones ilegales portadas sumarían cargos como **posesión de arma modificada ilegalmente** y, en el caso de la conversión automática, **posesión de arma automática no autorizada**.
+
+### Taller clandestino
+
+Similar al laboratorio de drogas, el taller clandestino sería una instalación que los delincuentes pueden montar dentro de una **casa o almacén propio** para instalar modificaciones ilegales.
+
+| Aspecto | Detalle |
+|---|---|
+| **Creación** | `/creartaller [confirmar]` — requiere habilidad mecánica ≥ 30 y $25.000 |
+| **Cooldown de creación** | 2 semanas (336 horas) entre creaciones |
+| **Límite** | 1 taller por personaje |
+| **Destrucción** | `/destruirtaller [confirmar]` — el dueño o una autoridad |
+| **Instalación de mods** | `/modificararma` — abre el menú de mods disponibles según tu habilidad |
+| **Tiempo de instalación** | Entre 60 y 180 segundos según la complejidad del mod |
+| **Probabilidad de fallo** | Si tu habilidad mecánica está cerca del mínimo requerido, hay un 15-30% de probabilidad de fallo que daña el arma (−10 calidad) |
+
+### Inspección policial
+
+Para dar contrajuego a las modificaciones ilegales, la policía contaría con herramientas de inspección:
+
+| Comando | Función |
+|---|---|
+| `/inspeccionararma` | Examina el arma de un sospechoso y muestra las modificaciones instaladas (requiere tener al sospechoso reducido o esposado) |
+| `/vermods` | Muestra las modificaciones de tu propia arma en la mano derecha |
+
+La inspección revelaría el tipo de modificación, si es legal o ilegal, y el estado del serial del arma.
+
+### Compatibilidad con sistemas existentes
+
+| Sistema | Integración con modding |
+|---|---|
+| **Calidad del arma** | Las mods ilegales aceleran el deterioro; el kit de mantenimiento lo reduce |
+| **Seriales** | Las mods quedan vinculadas al serial; borrar el serial no elimina los mods |
+| **Forense** | El borrado de estrías impide vincular casquillos al arma por balística |
+| **Delincuente** | Instalar mods ilegales otorga +2 habilidad de delincuente por mod |
+| **Decomiso** | Al confiscar un arma modificada, las mods se registran en el inventario de evidencias |
+
+### Resumen de comandos propuestos
+
+| Comando | Quién lo usa | Función |
+|---|---|---|
+| `/modificararma` | Delincuente (en taller clandestino) o civil (en Ammu-Nation) | Instala una modificación en el arma de la mano derecha |
+| `/quitarmod [slot]` | Delincuente (en taller) o armero | Remueve una modificación del arma |
+| `/vermods` | Cualquier jugador | Muestra las modificaciones del arma en la mano derecha |
+| `/inspeccionararma` | Policía en servicio | Inspecciona las modificaciones del arma de un sospechoso |
+| `/creartaller [confirmar]` | Delincuente con habilidad mecánica ≥ 30 | Crea un taller clandestino en la propiedad |
+| `/destruirtaller [confirmar]` | Dueño del taller o autoridad | Destruye el taller clandestino |
+
+---
+
+> 📬 **Contacto del autor de la propuesta:** Si tenés dudas, sugerencias o querés discutir la viabilidad técnica de esta propuesta, podés contactarme por Discord: **tommmmm_**
