@@ -28,6 +28,22 @@ Bienvenido a la documentación oficial de **San Andreas Roleplay** ([sarp.es](ht
 
 ## 📚 Sistemas por categoría
 
+### 🌐 Servidor y comunidad
+
+| Sistema                                                          | De qué trata                                                              |
+| ---------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| [🌎 Qué es SARP](docs/que-es-sarp.md)                            | Introducción a la comunidad, IP de conexión, enlaces oficiales.            |
+| [🚀 Cómo empezar](docs/como-empezar.md)                          | Ruta paso a paso desde instalación hasta primer rol en el servidor.        |
+| [🖥️ Panel de control (UCP)](docs/panel-de-control.md)            | Cuenta, personajes, mapa, empresas, facción, información del servidor.     |
+| [📜 Foro](docs/foro.md)                                          | Estructura del foro: información, anuncios, IC, soporte técnico.           |
+| [🎓 Certificación](docs/sistema-de-certificacion.md)             | Test de rol obligatorio, intentos, categorías a aprobar.                   |
+| [🛒 Tienda y Premium](docs/tienda-premium.md)                    | Niveles premium, monedas, PayPal, descuentos.                              |
+| [🎫 Tickets](docs/sistema-de-tickets.md)                         | Canal oficial con la administración: chat en tiempo real y respaldo.       |
+| [🐦 Bleeter](docs/bleeter.md)                                    | Red social in-character: posts, likes, tendencias.                         |
+| [🛡️ Equipo administrativo](docs/equipo-administrativo.md)        | Rangos de staff (Manager, Lead, Senior, Game Admin, Game Mod, Helper).     |
+| [🏛️ Facciones legales](docs/facciones-legales.md)               | LSPD, LSSD, LSFD y el rol legal del servidor.                              |
+| [🕵️ Facciones ilegales](docs/facciones-ilegales.md)              | Diferencia entre facciones oficiales y grupos, monopolio de armas/drogas.   |
+
 ### 🏘️ Vida diaria
 
 | Sistema                                              | De qué trata                                                       |
