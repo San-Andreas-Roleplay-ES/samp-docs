@@ -53,6 +53,7 @@ Bienvenido a la documentación oficial de **San Andreas Roleplay** ([sarp.es](ht
 | [🏥 Médico y hospital](docs/sistema-medico-y-hospital.md) | All Saints General Hospital, enfermedades, medicamentos, cirugías. |
 | [🗑️ Basura](docs/sistema-de-basura.md)                    | Recolección, contenedores, vertederos, limpieza.                   |
 | [🚀 Habilidades](docs/sistema-de-habilidades.md)                    | Habilidades, progreso, personaje.                 |
+
 ### 🔫 Combate y armas
 
 | Sistema                                   | De qué trata                                              |
