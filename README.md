@@ -9,6 +9,8 @@
 
 # Documentación de San Andreas Roleplay
 
+> 🌐 **Versión web:** lee esta documentación con buscador, índice y navegación entre guías en [gta-rol.com/docs](https://gta-rol.com/docs).
+
 Bienvenido a la documentación oficial de **San Andreas Roleplay** ([sarp.es](https://sarp.es/)). Aquí encontrarás guías para jugadores sobre los sistemas, mecánicas y comandos del servidor, con sus requisitos, costos, pagos y parámetros actualizados a la versión **4.21.0** del gamemode.
 
 > 💡 **¿Buscas algo concreto?** Usa `Ctrl + F` en esta página para buscar por palabra clave (por ejemplo: _pistola_, _casa_, _cárcel_, _impuesto_).

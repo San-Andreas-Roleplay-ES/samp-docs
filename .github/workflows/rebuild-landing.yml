@@ -1,0 +1,57 @@
+# Avisa a la landing (San-Andreas-Roleplay-ES/landing) de que la documentación
+# cambió, para que la reconstruya y la publique en https://gta-rol.com/docs.
+#
+# Envía un `repository_dispatch` de tipo `docs-updated`; el workflow
+# deploy.yml de landing lo escucha. Solo corre cuando cambia contenido que la
+# web muestra (docs, README, assets), no por cambios en este propio workflow
+# u otros archivos.
+#
+# Secreto necesario en ESTE repo (Settings > Secrets and variables > Actions):
+#   LANDING_DISPATCH_TOKEN   token de acceso personal (fine-grained) con acceso
+#                            al repo `landing` y permiso "Contents: Read and
+#                            write". Es lo mínimo que GitHub exige para
+#                            disparar un repository_dispatch.
+name: Rebuild landing
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "docs/**"
+      - "README.md"
+      - "assets/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  dispatch:
+    name: Notify landing
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Send repository_dispatch to landing
+        env:
+          TOKEN: ${{ secrets.LANDING_DISPATCH_TOKEN }}
+          SHA: ${{ github.sha }}
+          MESSAGE: ${{ github.event.head_commit.message || 'manual run' }}
+        run: |
+          if [ -z "$TOKEN" ]; then
+            echo "::error::Falta el secreto LANDING_DISPATCH_TOKEN en este repositorio."
+            exit 1
+          fi
+          # Solo la primera línea del mensaje de commit, sin comillas, para el payload.
+          SUMMARY=$(printf '%s' "$MESSAGE" | head -n1 | tr -d '"\\' | cut -c1-120)
+          STATUS=$(curl -sS -o /tmp/resp.txt -w "%{http_code}" \
+            -X POST "https://api.github.com/repos/San-Andreas-Roleplay-ES/landing/dispatches" \
+            -H "Accept: application/vnd.github+json" \
+            -H "Authorization: Bearer $TOKEN" \
+            -H "X-GitHub-Api-Version: 2022-11-28" \
+            -d "{\"event_type\":\"docs-updated\",\"client_payload\":{\"sha\":\"$SHA\",\"message\":\"$SUMMARY\"}}")
+          if [ "$STATUS" != "204" ]; then
+            echo "::error::GitHub respondió $STATUS al enviar el dispatch:"
+            cat /tmp/resp.txt
+            exit 1
+          fi
+          echo "Landing avisada (commit $SHA). El despliegue aparecerá en https://github.com/San-Andreas-Roleplay-ES/landing/actions" >> "$GITHUB_STEP_SUMMARY"
