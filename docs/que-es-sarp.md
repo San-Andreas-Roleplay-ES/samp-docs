@@ -15,7 +15,7 @@ Si lo que buscas es un servidor donde el rol se toma en serio, donde tus decisio
 | Web oficial | [sarp.es](https://sarp.es) |
 | Panel de Control de Usuario (UCP) | [ucp.sarp.es](https://ucp.sarp.es) |
 | Foro | [forum.sarp.es](https://forum.sarp.es/) |
-| Discord oficial | [Discord San Andreas Roleplay](https://forum.sarp.es/index.php?/forum/218-discord-san-andreas-roleplay/) |
+| Discord oficial | [discord.gg/sa-rp](https://discord.gg/sa-rp) |
 | TikTok | [@sarp.es_oficial](https://www.tiktok.com/@sarp.es_oficial) |
 | YouTube | [@GTARoleplayES](https://www.youtube.com/@GTARoleplayES/) |
 

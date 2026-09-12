@@ -9,20 +9,24 @@
 
 # Documentación de San Andreas Roleplay
 
-Bienvenido a la documentación oficial de **San Andreas Roleplay** ([sarp.es](https://sarp.es/)). Aquí encontrarás guías para jugadores sobre los sistemas, mecánicas y comandos del servidor.
+Bienvenido a la documentación oficial de **San Andreas Roleplay** ([sarp.es](https://sarp.es/)). Aquí encontrarás guías para jugadores sobre los sistemas, mecánicas y comandos del servidor, con sus requisitos, costos, pagos y parámetros actualizados a la versión **4.21.0** del gamemode.
 
-> 💡 **¿Buscas algo concreto?** Usa `Ctrl + F` en esta página para buscar por palabra clave (por ejemplo: _pistola_, _casa_, _cárcel_).
+> 💡 **¿Buscas algo concreto?** Usa `Ctrl + F` en esta página para buscar por palabra clave (por ejemplo: _pistola_, _casa_, _cárcel_, _impuesto_).
 
 ---
 
 ## 🔎 Empezar aquí
 
-¿Es tu primera vez? Estos son los sistemas más comunes para cualquier jugador:
+¿Es tu primera vez? Estos son los sistemas que todo jugador usa desde el primer día:
 
-- 🏠 [**Propiedades**](docs/sistema-de-propiedades.md) — Comprar casa, alquilar, muebles, negocios.
-- 🔫 [**Armas y heridas**](docs/sistema-de-armas.md) — Pistolas, munición, recarga, curarte.
-- 🏥 [**Médico y hospital**](docs/sistema-medico-y-hospital.md) — Urgencias, enfermedades, medicamentos.
-- 💪 [**Gimnasio**](docs/sistema-de-gimnasio.md) — Musculatura, energía, hambre, sed, estilos de pelea.
+- 🚀 [**Cómo empezar**](docs/como-empezar.md) — Del registro a tus primeras horas: dinero inicial, sueldo, comandos básicos.
+- 🏠 [**Propiedades y negocios**](docs/sistema-de-propiedades.md) — Comprar o alquilar casa, muebles, montar un negocio.
+- 🧾 [**Impuestos**](docs/sistema-de-impuestos.md) — Qué pagas cada día por tus bienes y por qué.
+- ⛽ [**Combustible**](docs/sistema-de-combustible.md) — Cómo repostar sin volar por los aires.
+- 🍔 [**Burger Points**](docs/sistema-de-burger-points.md) — Cómo se gana el punto por actividad del servidor.
+- 🔫 [**Armas**](docs/sistema-de-armas.md) — Licencia, munición, chaleco, seriales.
+- 🩸 [**Heridas**](docs/sistema-de-heridas.md) — Caer herido, sangrado, vendajes, vida máxima.
+- 🏥 [**Médico y hospital**](docs/sistema-medico-y-hospital.md) — Urgencias, dolencias, medicamentos.
 
 ---
 
@@ -30,87 +34,97 @@ Bienvenido a la documentación oficial de **San Andreas Roleplay** ([sarp.es](ht
 
 ### 🌐 Servidor y comunidad
 
-| Sistema                                                          | De qué trata                                                              |
-| ---------------------------------------------------------------- | ------------------------------------------------------------------------- |
-| [🌎 Qué es SARP](docs/que-es-sarp.md)                            | Introducción a la comunidad, IP de conexión, enlaces oficiales.            |
-| [🚀 Cómo empezar](docs/como-empezar.md)                          | Ruta paso a paso desde instalación hasta primer rol en el servidor.        |
-| [🖥️ Panel de control (UCP)](docs/panel-de-control.md)            | Cuenta, personajes, mapa, empresas, facción, información del servidor.     |
-| [📜 Foro](docs/foro.md)                                          | Estructura del foro: información, anuncios, IC, soporte técnico.           |
-| [🎓 Certificación](docs/sistema-de-certificacion.md)             | Test de rol obligatorio, intentos, categorías a aprobar.                   |
-| [🛒 Tienda y Premium](docs/tienda-premium.md)                    | Niveles premium, monedas, PayPal, descuentos.                              |
-| [🎫 Tickets](docs/sistema-de-tickets.md)                         | Canal oficial con la administración: chat en tiempo real y respaldo.       |
-| [🐦 Bleeter](docs/bleeter.md)                                    | Red social in-character: posts, likes, tendencias.                         |
-| [🛡️ Equipo administrativo](docs/equipo-administrativo.md)        | Rangos de staff (Manager, Lead, Senior, Game Admin, Game Mod, Helper).     |
-| [🏛️ Facciones legales](docs/facciones-legales.md)               | LSPD, LSSD, LSFD y el rol legal del servidor.                              |
-| [🕵️ Facciones ilegales](docs/facciones-ilegales.md)              | Diferencia entre facciones oficiales y grupos, monopolio de armas/drogas.   |
+| Sistema                                                          | De qué trata                                                                  |
+| ---------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| [🌎 Qué es SARP](docs/que-es-sarp.md)                            | Introducción a la comunidad, enlaces oficiales y cómo conectarse.              |
+| [🚀 Cómo empezar](docs/como-empezar.md)                          | Ruta paso a paso desde el registro hasta tus primeras horas de juego.          |
+| [🖥️ Panel de control (UCP)](docs/panel-de-control.md)            | La web oficial: cuenta, personajes, empresas, facción y normativas.            |
+| [📜 Foro](docs/foro.md)                                          | Secciones del foro oficial: anuncios, IC, facciones, sugerencias y soporte.    |
+| [🎓 Certificación](docs/sistema-de-certificacion.md)             | Test de rol obligatorio en el panel: 12 preguntas, apruebas con 7.             |
+| [💎 Tienda y Premium](docs/tienda-premium.md)                    | Monedas de cuenta, niveles premium y todos los beneficios por nivel.           |
+| [🎫 Tickets](docs/sistema-de-tickets.md)                         | Soporte con la administración: `/duda`, `/reportar` y tickets del panel.       |
+| [🐦 Bleeter](docs/bleeter.md)                                    | Red social in-character: publicaciones, historias, seguidores y tendencias.    |
+| [🛡️ Equipo administrativo](docs/equipo-administrativo.md)        | Rangos del staff, a quién acudir en cada caso y cómo contactarlos.             |
+| [🏛️ Facciones legales](docs/facciones-legales.md)               | Cuerpos de policía, emergencias, gobierno y guardabosques de Los Santos.       |
+| [🕶️ Facciones ilegales](docs/facciones-ilegales.md)              | Grupos, facciones destacadas y oficiales: requisitos, beneficios y monopolios. |
 
-### 🏘️ Vida diaria
+### 🏘️ Vida diaria y economía
 
-| Sistema                                              | De qué trata                                                       |
-| ---------------------------------------------------- | ------------------------------------------------------------------ |
-| [🏠 Propiedades](docs/sistema-de-propiedades.md)          | Casas, negocios, almacenes, muebles, llaves, empleados, stock.     |
-| [💪 Gimnasio](docs/sistema-de-gimnasio.md)                | Entrenar musculatura, estado físico, estilos de pelea.             |
-| [🏥 Médico y hospital](docs/sistema-medico-y-hospital.md) | All Saints General Hospital, enfermedades, medicamentos, cirugías. |
-| [🗑️ Basura](docs/sistema-de-basura.md)                    | Recolección, contenedores, vertederos, limpieza.                   |
-| [🚀 Habilidades](docs/sistema-de-habilidades.md)                    | Habilidades, progreso, personaje.                 |
+| Sistema                                                           | De qué trata                                                                     |
+| ----------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| [🏠 Propiedades y negocios](docs/sistema-de-propiedades.md)        | Casas, negocios, empleados, stock, pedidos, incendios, exteriores y buzones.     |
+| [🧾 Impuestos](docs/sistema-de-impuestos.md)                       | Impuestos diarios a casas y vehículos, exenciones, facturas y subsidios.         |
+| [⛽ Combustible](docs/sistema-de-combustible.md)                   | Repostaje en gasolineras, precios por marca, consumo, latas y explosiones.       |
+| [📈 Habilidades](docs/sistema-de-habilidades.md)                   | Todas las habilidades del personaje: cómo suben, cómo se pierden, qué desbloquean. |
+| [🍔 Burger Points](docs/sistema-de-burger-points.md)               | Cómo ganar Burger Points con cada actividad del servidor.                        |
+| [🪙 Cluckin' Coins](docs/sistema-de-cluckin-coins.md)              | Criptomoneda del servidor: billetera, compra, venta y transferencias.            |
+| [🏋️ Gimnasio](docs/sistema-de-gimnasio.md)                        | Musculatura, estado físico, necesidades y estilos de pelea.                      |
+| [🏥 Médico y hospital](docs/sistema-medico-y-hospital.md)          | Urgencias, reaparición, dolencias, cirugías, personal médico y medicamentos.     |
+| [🗑️ Basura](docs/sistema-de-basura.md)                            | Trabajo de recolector: limpieza de negocios, contenedores y pagos por kilo.      |
+| [🗑️ Basureros](docs/sistema-de-basureros.md)                      | Rebusca en los contenedores de la ciudad: loot, escondites y olor a basura.      |
 
 ### 🔫 Combate y armas
 
-| Sistema                                   | De qué trata                                              |
-| ----------------------------------------- | --------------------------------------------------------- |
-| [🔫 Armas y heridas](docs/sistema-de-armas.md) | Calibres, munición, recarga, seriales, chaleco, sangrado. |
-| [💣 Bombas](docs/sistema-de-bombas.md)         | Bombas telefónicas, detonación, desactivación con cables. |
+| Sistema                                                              | De qué trata                                                                     |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| [🔫 Armas](docs/sistema-de-armas.md)                                  | Armas, munición, daño por calibre, chaleco, seriales y licencia de portación.    |
+| [🩸 Heridas](docs/sistema-de-heridas.md)                              | Caer herido, umbrales de muerte, hemorragias, vendajes, socorro y vida máxima.   |
+| [🔧 Ensamblaje de armas](docs/sistema-de-ensamblaje-de-armas.md)      | Diferencias entre armas legales, del mercado negro y ensambladas.                |
+| [💣 Bombas](docs/sistema-de-bombas.md)                                | Explosivos telefónicos, desactivación por cables y molotovs.                     |
 
 ### 🚨 Delincuencia y crimen
 
-| Sistema                                                 | De qué trata                                              |
-| ------------------------------------------------------- | --------------------------------------------------------- |
-| [🦹 Delincuente](docs/sistema-de-delincuente.md)             | Robos, atracos, asaltos, desarme de vehículos.            |
-| [🏴 Zonas de pandilla](docs/sistema-de-zonas-de-pandilla.md) | Territorios, influencias, captura, paycheck.              |
-| [🏚️ Bases ilegales](docs/sistema-de-bases-ilegales.md)       | Propiedades de facciones criminales, almacén, crackhouse. |
-| [💳 Skimming](docs/sistema-de-skimming.md)                   | Skimmers en cajeros ATM, fabricación, instalación.        |
+| Sistema                                                          | De qué trata                                                                     |
+| ---------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| [🦹 Delincuente](docs/sistema-de-delincuente.md)                  | Hurtos, atracos, robos a personas, casas y vehículos, y desarme de piezas.       |
+| [🕶️ Mercado negro](docs/sistema-de-mercado-negro.md)              | Armas y munición ilegal, venta de botín, clínica clandestina y junkies.          |
+| [🏴 Zonas de pandilla](docs/sistema-de-zonas-de-pandilla.md)      | Territorios, influencia, captura y graffitis de las facciones criminales.        |
+| [🏚️ Bases ilegales](docs/sistema-de-bases-ilegales.md)            | Cuarteles de facción criminal: asignación, almacén compartido y protección.      |
+| [💳 Skimming](docs/sistema-de-skimming.md)                        | Roba dinero de los cajeros instalando skimmers y cobra lo acumulado.             |
 
 ### 💊 Drogas y sustancias
 
-| Sistema                                                                 | De qué trata                                           |
-| ----------------------------------------------------------------------- | ------------------------------------------------------ |
-| [💊 Drogas](docs/sistema-de-drogas.md)                                       | Consumo, fabricación, laboratorios, adicción, efectos. |
-| [🌿 Plantaciones de marihuana](docs/sistema-de-plantaciones-de-marihuana.md) | Semillas, riego, crecimiento, cosecha, growshops.      |
+| Sistema                                                                       | De qué trata                                                                  |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| [💊 Drogas](docs/sistema-de-drogas.md)                                         | Consumo, efectos, adicción, fabricación en laboratorio y venta de sustancias. |
+| [🌿 Plantaciones de marihuana](docs/sistema-de-plantaciones-de-marihuana.md)   | Cultivo en maceta: insumos, riego, etapas de crecimiento y cosecha.           |
 
 ### ⚖️ Justicia y cárcel
 
-| Sistema                                    | De qué trata                                                   |
-| ------------------------------------------ | -------------------------------------------------------------- |
-| [⚖️ Justicia](docs/sistema-de-justicia.md) | Jueces, fiscales, abogados, órdenes, condenas, strikes.        |
-| [🔒 Cárcel](docs/sistema-de-carcel.md)     | Twin Towers, celdas, patio, libertad condicional, perpetua.    |
-| [🔬 Forense](docs/sistema-forense.md)      | Casquillos, ADN, huellas, balística y pruebas en investigación. |
+| Sistema                                     | De qué trata                                                                  |
+| ------------------------------------------- | ----------------------------------------------------------------------------- |
+| [⚖️ Justicia](docs/sistema-de-justicia.md)  | Jueces, fiscales, abogados, órdenes judiciales, condenas y multas.            |
+| [⛓️ Cárcel](docs/sistema-de-carcel.md)      | Arrestos, condenas en minutos, código penal, Twin Towers y libertad condicional. |
+| [🔬 Forense](docs/sistema-forense.md)       | Casquillos, sangre, ADN, huellas, pólvora y laboratorio forense.              |
 
 ### 💼 Trabajos y oficios
 
-| Sistema                                                     | De qué trata                                            |
-| ----------------------------------------------------------- | ------------------------------------------------------- |
-| [🚚 Camionero](docs/sistema-de-camionero.md)                     | Tráileres, rutas, pagos, licencia de cargas pesadas.    |
-| [🕵️ Detectives privados](docs/sistema-de-detectives-privados.md) | Licencia SAALI, micrófonos, GPS, drones, StingRay.      |
-| [🎣 Pesca](docs/sistema-de-pesca.md)                             | Pesca deportiva y comercial, Reefer, caña, Ocean Docks. |
-| [🏹 Caza](docs/sistema-de-caza.md)                               | Animales, rifles con mira, despellejado, Whetstone.     |
+| Sistema                                                          | De qué trata                                                                  |
+| ---------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| [🚛 Camionero](docs/sistema-de-camionero.md)                      | Reparto de mercancía y transporte pesado de tráileres.                        |
+| [🕵️ Detectives privados](docs/sistema-de-detectives-privados.md) | Equipo de vigilancia, ordenador de consultas y contramedidas de señal.        |
+| [🎣 Pesca](docs/sistema-de-pesca.md)                              | Pesca deportiva con caña y pesca comercial en barco: peces, precios y pagos.  |
+| [🦌 Caza](docs/sistema-de-caza.md)                                | Caza en Whetstone y Flint County: animales, despellejado, rifles y trofeos.   |
 
 ### 🎰 Ocio
 
-| Sistema                           | De qué trata                                          |
-| --------------------------------- | ----------------------------------------------------- |
-| [🎰 Casino](docs/sistema-de-casino.md) | Emerald Isle, blackjack, ruleta, tragamonedas, póker. |
+| Sistema                                | De qué trata                                                    |
+| -------------------------------------- | --------------------------------------------------------------- |
+| [🎰 Casino](docs/sistema-de-casino.md)  | Tragamonedas, ruleta, blackjack, trile, póker, hípicas y lotería. |
 
 ### ⚠️ Contenido sensible
 
-| Sistema                                 | De qué trata                                                   |
-| --------------------------------------- | -------------------------------------------------------------- |
-| [💀 Cadáveres](docs/sistema-de-cadaveres.md) | Character Kill, forense, bolsas, órganos. _Roleplay ficticio._ |
+| Sistema                                                                                              | De qué trata                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- |
+| [🪦 Cadáveres](docs/sistema-de-cadaveres.md)                                                          | Cadáveres persistentes: huellas, bolsas, traslado a la morgue y órganos. _Roleplay ficticio._ |
+| [☠️ Asesinatos](docs/sistema-de-asesinatos.md)                                                       | Contador de asesinatos, riesgo de CK, salud mental y bonus de felicidad.              |
 
 ---
 
 ## ❓ Preguntas frecuentes
 
 - **¿Cómo busco un comando concreto?** Pulsa `Ctrl + F` y escribe el nombre del comando o la palabra clave.
+- **¿Las cifras están al día?** Cada guía se revisa contra el código del servidor y la base de datos en cada actualización; la versión de referencia figura arriba.
 - **¿Algo está desactualizado?** Repórtalo en nuestro [Discord](https://sarp.es/).
 - **¿No encuentras tu sistema?** Revisa las categorías de arriba — algunos sistemas están agrupados por temática.
 

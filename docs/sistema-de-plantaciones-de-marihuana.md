@@ -2,128 +2,154 @@
 
 ## Introducción
 
-El sistema de plantación de marihuana ha sido una de las características más demandadas dentro del sistema de creación de drogas. Cualquier personaje puede cultivar marihuana en casas, negocios, almacenes, bosques o al aire libre, sin necesidad de una habilidad mínima en drogas.
+El cultivo de marihuana es la forma más accesible de producir droga en San Andreas Roleplay: no exige facción, ni licencia, ni habilidad mínima. Cualquier personaje que consiga semillas, abono, fertilizante y agua puede montar su propio cultivo y, con paciencia, cosechar cogollos listos para consumir o vender.
 
-Ten cuidado: cualquier personaje que tenga acceso al lugar donde está la planta podrá **robar los cogollos** o **destruirla**.
+Puedes plantar prácticamente en cualquier sitio: dentro de una casa, en un negocio, en un almacén, en un bosque o al aire libre. La maceta queda fija en el lugar y la orientación donde la colocaste, y permanece ahí aunque cierres sesión o el servidor se reinicie.
 
-El servidor permite un máximo de **1500 plantas activas** simultáneamente.
+Ten cuidado con dónde plantas: **la planta no tiene dueño protegido**. Cualquier personaje que pueda llegar hasta ella podrá robarte los cogollos o destruirla. Un interior cerrado con llave es mucho más seguro que un descampado.
+
+El servidor permite un máximo de **512 plantas activas** en todo el mapa al mismo tiempo. Si el cupo está lleno, no podrás crear nuevas hasta que se liberen espacios.
 
 ### Comandos
 
-- /plantacion crear — planta una nueva maceta de marihuana. Alias: `/plantación`.
-- /plantacion mejorar — aplica fertilizante a la planta más cercana.
+- /plantacion crear — coloca una maceta nueva con semillas. Alias: `/plantación`.
 - /plantacion cuidar — riega la planta más cercana.
-- /plantacion examinar — muestra las estadísticas de la planta más cercana.
+- /plantacion mejorar — aplica fertilizante a la planta más cercana.
+- /plantacion examinar — muestra el estado de la planta más cercana.
 - /plantacion cosechar — recoge los cogollos cuando la planta está madura.
-- /plantacion eliminar — descarta la planta más cercana (la convierte en bolsa de basura).
+- /plantacion eliminar — destruye la planta más cercana.
 
-## Plantación
+Todos los comandos, salvo `crear`, actúan sobre la planta más cercana dentro de **2 metros** y en el mismo interior donde estás.
 
-Para crear una nueva planta debes cumplir **tres requisitos simultáneos**:
+## Qué necesitas y cuánto cuesta
 
-- Llevar un paquete de **Semillas de Marihuana** en la mano derecha (al menos 1 unidad).
-- Tener un **Saco de Abono** en el piso, a **≤ 5 metros** de distancia.
-- No estar a menos de **1,5 metros** de otra planta ya existente.
+El cultivo se apoya en cuatro consumibles. Los tres primeros se venden en los negocios de tipo **growshop**; el agua se consigue en cualquier tienda 24/7, máquina expendedora o negocio que la tenga en catálogo.
 
-Al ejecutar `/plantacion crear`, el personaje coloca una maceta en su posición y orientación actuales. La planta nace con **5/10 de salud**, **0/5 de agua**, **0/5 de fertilizante** y madurez **Semilla**.
+| Objeto | Dónde se consigue | Unidades por envase | Costo base |
+|--------|-------------------|---------------------|------------|
+| Semillas de Marihuana | Growshop | hasta 1000 | **$51** |
+| Saco de Abono | Growshop | hasta 20 | **$144** |
+| Fertilizante para Cannabis | Growshop | hasta 5 | **$216** |
+| Botella de Agua | Tiendas, expendedoras, bares | hasta 10 | **$6** |
 
-El consumo por plantación es aleatorio:
+El costo base es lo que el negocio paga por reponer stock. Cada growshop fija su propio precio de venta al público, que nunca puede ser **inferior al costo base** ni superior a **10 veces** ese costo. Si compras en un puesto con atención en ventanilla (drive-thru), el precio sube un **20%** adicional.
+
+El saco de abono es pesado (**20 kg**) y ocupa **2 ranuras** del inventario: hay que cargarlo con las dos manos, así que planifica el traslado hasta el lugar donde vayas a cultivar.
+
+## Plantar
+
+Para crear una planta debes cumplir **tres condiciones a la vez**:
+
+- Llevar un paquete de **Semillas de Marihuana** en la mano derecha, con al menos 1 unidad.
+- Tener un **Saco de Abono** apoyado en el piso, a **5 metros o menos** de ti.
+- No haber otra planta a menos de **1,5 metros**.
+
+Al ejecutar `/plantacion crear` colocas la maceta en tu posición y mirando hacia donde estás orientado. La planta nace con **5/10 de salud**, **0/5 de agua**, **0/5 de fertilizante** y madurez **Semilla**.
+
+Cada plantación consume una cantidad aleatoria de insumos:
 
 - **1 a 5 semillas** del paquete.
 - **1 a 5 unidades** del saco de abono.
 
-Si cualquiera de los dos items se queda en 0 tras el descuento, se elimina del inventario.
+Si a cualquiera de los dos se le acaban las unidades, el envase desaparece de tu inventario.
 
-## Mejora (fertilización)
+## Regar y fertilizar
 
-El comando `/plantacion mejorar` aplica fertilizante a la planta más cercana. Requisitos:
+Una planta solo crece si está bien cuidada. Hay dos acciones de mantenimiento y ambas se aplican a la planta más cercana.
 
-- Tener un **bote de Fertilizante para Cannabis** en la mano derecha (al menos 1 unidad).
-- Que la planta tenga menos de **5/5** de fertilizante acumulado.
+| Acción | Comando | Qué necesitas en la mano derecha | Tope | Efecto |
+|--------|---------|----------------------------------|------|--------|
+| Riego | `/plantacion cuidar` | Botella de Agua | 5/5 de agua | **+1 salud** y **+1 agua** |
+| Fertilización | `/plantacion mejorar` | Fertilizante para Cannabis | 5/5 de fertilizante | **+1 salud** y **+1 fertilizante** |
 
-Cada uso aumenta **+1 salud** y **+1 fertilizante** (hasta sus topes de 10 y 5). El bote consume entre **1 y 3 unidades** por aplicación y puede otorgar **+0 a +1 de habilidad de drogas**.
+Cada aplicación gasta entre **1 y 3 unidades** del envase, aunque solo sume +1 al medidor de la planta: conviene llevar repuestos. La salud nunca pasa de **10/10** y el agua y el fertilizante nunca pasan de **5/5**; si el medidor ya está al máximo, el comando te avisa y no gasta nada.
 
-## Cuidado (riego)
+Estas tareas también entrenan tu **habilidad de drogas**:
 
-Con `/plantacion cuidar` riegas la planta más cercana. Requisitos:
-
-- Tener una **Botella de Agua** en la mano derecha (al menos 1 unidad).
-- Que la planta tenga menos de **5/5** de agua.
-
-Cada uso aumenta **+1 salud** y **+1 agua** (topes 10 y 5). La botella consume entre **1 y 3 unidades** por aplicación y puede otorgar **+0 a +1 de habilidad de drogas**.
-
-Es recomendable regar y fertilizar de forma regular: sin agua o sin fertilizante la planta no crecerá y, en cada ciclo, irá perdiendo estadísticas hasta morir.
+- Fertilizar: **50% de probabilidad** de sumar +1 punto.
+- Regar: **25% de probabilidad** de sumar +1 punto.
 
 ## Crecimiento
 
-Cada planta tiene **seis etapas de madurez**:
+Cada planta atraviesa **seis etapas de madurez**. El aspecto de la maceta cambia visiblemente en cada una:
 
-| Etapa | Nombre |
-|-------|--------|
-| 0 | Semilla |
-| 1 | Brote |
-| 2 | Plántula |
-| 3 | Crecida |
-| 4 | Floración |
-| 5 | Cosecha |
+| Etapa | Nombre | ¿Se puede cosechar? |
+|-------|--------|---------------------|
+| 0 | Semilla | No |
+| 1 | Brote | No |
+| 2 | Plántula | No |
+| 3 | Crecida | No |
+| 4 | Floración | Sí |
+| 5 | Cosecha | Sí (rendimiento máximo) |
 
-El estímulo de crecimiento se procesa en **cada reinicio del servidor**: al cargar las plantas de la base de datos, cada planta intenta subir una etapa si cumple los **tres requisitos**:
+El ciclo de crecimiento se evalúa **una vez por cada reinicio del servidor**, cuando las plantas vuelven a cargarse. En ese momento, cada planta sube una etapa **solo si cumple los tres umbrales**:
 
-- Salud ≥ **5/10**
-- Agua ≥ **3/5**
-- Fertilizante ≥ **1/5**
+- Salud de **5/10** o más.
+- Agua de **3/5** o más.
+- Fertilizante de **1/5** o más.
 
-Tras el intento de crecimiento (cumpla o no los requisitos) **siempre se consumen estadísticas**:
+Cumpla o no los requisitos, **siempre se descuentan recursos** en cada ciclo:
 
-- Salud: **−1 a −2**
-- Agua: **−1 a −3**
-- Fertilizante: **−1 a −3**
+| Medidor | Consumo por ciclo |
+|---------|-------------------|
+| Salud | **1 a 2 puntos** |
+| Agua | **1 a 3 puntos** |
+| Fertilizante | **1 a 3 puntos** |
 
-Las plantas con **salud 0** son eliminadas automáticamente de la base de datos al arrancar el servidor.
+Como el consumo es constante, una planta abandonada pierde salud hasta llegar a cero y **se elimina automáticamente** en el siguiente arranque del servidor. En el peor de los casos una planta puede vaciar el agua y el fertilizante en solo dos ciclos, así que lo razonable es pasar a revisarla y recargarla todos los días.
 
-## Cosecha
-
-Cuando la planta alcanza la etapa **Floración** o **Cosecha**, puede recogerse con `/plantacion cosechar`. Requisitos:
-
-- Tener la **mano derecha vacía**.
-- Planta en madurez **≥ 4** (Floración o Cosecha).
-
-Rendimiento por etapa:
-
-- **Floración (4)**: entre **20 y 49 gramos** de cogollos.
-- **Cosecha (5)**: entre **30 y 49 gramos** de cogollos.
-
-Los cogollos cosechados llegan a la mano derecha con una **calidad (fuerza) calculada** a partir del estado final de la planta:
-
-- Agua aporta hasta **20 puntos**.
-- Fertilizante aporta hasta **50 puntos**.
-- Salud aporta hasta **30 puntos**.
-- Total posible: **0 a 100**.
-
-Cada cosecha otorga **+0 a +2 de habilidad de drogas**. Tras la cosecha, la planta se reinicia a madurez **Semilla** y vuelve a arrancar desde cero (manteniendo agua, fertilizante y salud residuales).
+En la práctica, llevar una planta desde semilla hasta la etapa Cosecha requiere **cinco ciclos exitosos** consecutivos, lo que equivale a varios días de cuidado sostenido.
 
 ## Examinar
 
-Con `/plantacion examinar` consultas los datos de la planta más cercana. La visibilidad depende de la **habilidad de drogas** del personaje:
+`/plantacion examinar` te muestra el estado de la planta más cercana, pero **cuánto ves depende de tu habilidad de drogas**:
 
-- **Siempre visible**: ID de la planta y etapa de madurez.
-- **Habilidad ≥ 5**: agua (`X/5`) y fertilizante (`X/5`).
-- **Habilidad ≥ 10**: salud (`X/10`).
+| Habilidad de drogas | Información visible |
+|---------------------|---------------------|
+| Cualquiera | Identificador de la planta y etapa de madurez |
+| **5 o más** | Nivel de agua y de fertilizante |
+| **10 o más** | Nivel de salud |
+
+Un cultivador novato ve poco más que el aspecto de la planta: subir habilidad es lo que te permite afinar el riego y la fertilización antes de cosechar.
+
+## Cosechar
+
+Cuando la planta llega a **Floración** o **Cosecha**, ya puedes recogerla con `/plantacion cosechar`. Necesitas tener la **mano derecha vacía**, porque los cogollos aparecen directamente ahí.
+
+| Etapa al cosechar | Gramos obtenidos |
+|-------------------|------------------|
+| Floración | **20 a 49 gramos** |
+| Cosecha | **30 a 49 gramos** |
+
+La **fuerza** (pureza) de la marihuana obtenida, de 0 a 100, depende del estado en que quedó la planta al momento de cortarla:
+
+| Condición al cosechar | Aporte a la fuerza |
+|-----------------------|--------------------|
+| Agua en **3/5** o más | **+20** |
+| Fertilizante en **3/5** o más | **+50** |
+| Salud en **5/10** o más | **+30** |
+
+Es decir: una planta que llegue a la cosecha bien regada, bien fertilizada y sana entrega los **100 puntos de fuerza**, mientras que una descuidada puede dar gramos prácticamente inservibles. El fertilizante es, con diferencia, el factor que más pesa en la calidad final. Conviene regar y fertilizar **justo antes** de cortar, porque el ciclo de crecimiento previo ya habrá restado puntos a los medidores.
+
+Cada cosecha tiene un **50% de probabilidad** de sumar +1 a tu habilidad de drogas.
+
+Tras cortarla, la planta **no desaparece**: vuelve a la etapa **Semilla** conservando el agua, el fertilizante y la salud que le quedaban, y empieza de nuevo el ciclo. Una maceta bien mantenida produce indefinidamente.
 
 ## Eliminar
 
-`/plantacion eliminar` destruye la planta más cercana y deja una **bolsa de basura** en su posición. La acción es irreversible y no requiere items.
+`/plantacion eliminar` destruye la planta más cercana y deja una **bolsa de basura** en su lugar. No requiere ningún objeto, cualquiera que llegue hasta la planta puede hacerlo y **la acción es irreversible**: pierdes la planta y todo lo invertido en ella.
 
-## Comandos administrativos
+## Qué hacer con la cosecha
 
-- /plantacion forzar — fuerza un ciclo de crecimiento en la planta más cercana (sin esperar a un reinicio). Restringido a **Manager (8)**.
+Los cogollos que obtienes son marihuana normal del gamemode: puedes fumarla, venderla a otros personajes, distribuirla en las zonas de venta callejera o guardarla. Todo eso se explica en el [sistema de drogas](sistema-de-drogas.md).
 
-## Growshops
+Un detalle importante para el cultivador: la marihuana **pierde fuerza con el paso de los días** esté donde esté, salvo que la guardes en el **refrigerador de una propiedad** (o dentro de un paquete que esté en ese refrigerador), donde tiene un **70% de probabilidad diaria** de conservar la pureza intacta. Si cosechas grandes cantidades para vender de a poco, el refrigerador es la diferencia entre vender producto premium y vender restos.
 
-Los negocios con catálogo de tipo **growshop** tienen acceso a la venta de los tres consumibles del sistema:
+## Consejos
 
-- **Semillas de Marihuana** (ID de objeto 62).
-- **Saco de Abono** (ID de objeto 712).
-- **Fertilizante para Cannabis** (ID de objeto 713).
-
-La **Botella de Agua** (ID 152) se obtiene por los canales habituales (tiendas 24/7, máquinas expendedoras, etc.).
+- **Planta en interiores con llave.** Es la única protección real contra robos y destrucciones.
+- **Separa las macetas.** El mínimo es 1,5 metros entre plantas; dejar algo más de espacio facilita apuntar al comando correcto cuando riegas varias seguidas.
+- **Lleva envases de sobra.** Cada riego o fertilización puede gastar hasta 3 unidades, y el bote de fertilizante trae solo 5.
+- **Espera a la etapa Cosecha.** Cortar en Floración te da menos gramos en promedio; la diferencia se nota al vender lotes grandes.
+- **Riega y fertiliza antes de cortar.** La fuerza se calcula con los valores del momento exacto de la cosecha.
+- **Sube tu habilidad de drogas cuidando plantas.** Con 5 puntos ya ves el agua y el fertilizante, y con 10 ves también la salud, lo que te permite dejar de adivinar.

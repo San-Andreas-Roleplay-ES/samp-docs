@@ -2,273 +2,284 @@
 
 ## Introducción
 
-Los **detectives privados** son investigadores civiles con licencia del **San Andreas Association of Licensed Investigators (SAALI)**, capaces de operar con herramientas de vigilancia y espionaje muy similares a las de la policía: micrófonos espía, GPS espía, drones, escuchas telefónicas (StingRay), autoradares y kits de desactivación de bombas.
+Los **detectives privados** son investigadores civiles acreditados por la **San Andreas Association of Licensed Investigators (SAALI)**. Su licencia les abre la puerta a un arsenal de vigilancia que, fuera de su gremio, solo manejan la policía y las agencias federales: micrófonos espía, rastreadores GPS, drones de reconocimiento, interceptores telefónicos StingRay, autoradares vehiculares y kits de desactivación de bombas.
 
-A diferencia de los agentes del orden, **no están atados al servicio de facción**: un detective privado puede usar su equipamiento en cualquier momento siempre que lo lleve encima, lo que los convierte en una pieza clave del roleplay de investigación, contraespionaje y trabajo encubierto.
+La gran diferencia con un agente del orden es que el detective **no depende del servicio de facción**. Mientras un policía necesita estar de turno y tener rango de supervisor para muchas de estas herramientas, el detective puede usarlas en cualquier momento, siempre que lleve el equipo encima. A cambio, todo lo que para la policía es gratuito, para el detective se paga: el equipo cuesta el doble del precio de catálogo y cada consulta a las bases de datos se cobra de su cuenta bancaria.
 
-Este documento cubre:
+La licencia SAALI la otorga el equipo administrativo del servidor a personajes con un rol de investigación consolidado; no se compra en ninguna tienda ni se tramita con un comando. Una vez concedida, aparece reflejada en tu ficha como profesión "Detective privado" y habilita todos los comandos de este documento.
 
-- La **licencia de detective** y su equipamiento.
-- El **Private Detective Computer (PDC)**.
-- Los sistemas de **espionaje**: micrófonos, GPS y drones.
-- Las **escuchas telefónicas** con StingRay y los **autoradares**.
-- La **detección de señales** y cómo defenderse frente a estos dispositivos.
+Este trabajo encaja con abogados, periodistas, familias que buscan pruebas de infidelidad, empresas que sospechan de sus empleados y con cualquier trama que necesite pruebas antes de llegar a un tribunal. Para saber qué valor tienen esas pruebas en un juicio, consulta el **[sistema de justicia](sistema-de-justicia.md)**; para el trabajo de campo con casquillos y sangre, el **[sistema forense](sistema-forense.md)**.
 
-> Los detectives también disponen de **kits de desactivación de bombas** como parte de su equipamiento. El funcionamiento de las bombas telefónicas y su desactivación está documentado por separado en el **[Sistema de bombas](sistema-de-bombas.md)**.
-
-## Licencia de detective privado
-
-La licencia es asignada por staff especializado del servidor y cuesta **$50.000** (descontados directamente del banco del jugador y depositados al Estado de San Andreas bajo el concepto `LICENCIAS_PRIVADAS`).
-
-Los detectives privados se identifican con una placa oficial:
-
-```
-N.º: [ID del personaje]
-Placa: San Andreas Association of Licensed Investigators
-Detective privado
-```
-
-### Comandos básicos del detective
-
-- `/placadet` — muestra tu placa a ti mismo o la enseña a otro jugador cercano (hasta 5 metros).
-- `/equipodet` — abre el catálogo de compra de equipamiento en el **Ammu-Nation de Market**.
-- `/pdc` — abre el **Private Detective Computer** (requiere tener una laptop en la mano derecha).
-- `/informacionbanco` — accede a información bancaria (uso interno del rol de detective).
-- `/recogercasquillo`, `/recogersangre` — recogida de evidencias sobre el terreno.
-- `/autoradar`, `/interceptarnumero`, `/rastreargps`, `/drone`, `/destruirdrone` — ver secciones específicas más abajo.
-
-## Equipo de detective (Ammu-Nation de Market)
-
-Con `/equipodet` se abre un catálogo exclusivo dentro del Ammu-Nation de Market. Todos los precios son **el doble del coste base** del objeto, y el cobro es directamente del **banco**. Es necesaria licencia de armas para los artículos clasificados como arma.
-
-Equipamiento disponible:
-
-- **Armamento no letal y protección**: cuchillo de hoja fija, porra, spray de pimienta, táser, esposas, chaleco kevlar, escudo, guantes LawPro kevlar, mascarilla, máscara táctica de gas, gafas de visión nocturna.
-- **Armas de fuego**: Glock 17, AF-1 Strike One, cargadores 9x19.
-- **Herramientas de trabajo**: cámara, linterna, radio UHF, halligan, ganzúas, Super Scanner, kit de reparación de armas, estuche porta rifles.
-- **Acreditación**: ID policial propia del detective.
-- **Electrónica de vigilancia**:
-  - Micrófono espía y receptor/detector de micrófonos.
-  - GPS espía y receptor de GPS.
-  - StingRay y detector de StingRay.
-  - Inhibidor de señales de radio.
-  - Kit de desactivación de bombas (objeto 943).
-- **Médico / logístico**: medicamentos de detoxicación, Narcan, caja de cartón, bolsa de evidencias, bolsa de cadáveres.
-
-> Durante los **eventos de La Purga** no se puede usar `/equipodet`.
-
-## Private Detective Computer (PDC)
-
-Con una **laptop** en la mano derecha, el comando `/pdc` abre una interfaz equivalente al ordenador policial, pero de pago. Cada consulta cobra directamente del banco del detective:
-
-| Consulta | Precio |
-|---|---|
-| Buscar información por **nombre** | **$50.000** |
-| Buscar información por **matrícula** | **$25.000** |
-| Buscar información por **propiedad** | **$10.000** |
-| Buscar información por **teléfono** | **$10.000** |
-| Buscar información por **serial de arma** | **$50.000** |
-| Buscar **armas por propietario** | **$100.000** |
-
-Esto convierte la investigación en una actividad costosa y premia la información verificada, al tiempo que impide el abuso del sistema.
-
----
-
-## Micrófonos espía 🎤
-
-Los **micrófonos espía** permiten escuchar conversaciones cercanas. Funcionan con tres objetos que se complementan entre sí:
-
-- **Micrófono espía** — se planta en el mundo y capta el audio a su alrededor.
-- **Receptor de micrófonos** — permite escuchar los micrófonos activos en un radio amplio.
-- **Detector de micrófonos** — permite localizar micrófonos cerca de ti.
-
-### Rangos
-
-- **Radio de captación del micrófono**: **20 metros** al aire libre. Dentro de una propiedad se reduce a **8 metros**, y en conversaciones susurradas/bajas el radio de captación baja a **5 metros**.
-- **Radio de escucha del receptor**: **300 metros**.
-- **Radio de trabajo del detector**: **10 metros**.
-- **Batería del micrófono**: dura aproximadamente **60 minutos** desde que se enciende (pasado ese tiempo el micrófono se apaga automáticamente).
-
-### Cómo se capturan los mensajes
-
-- Cualquier **mensaje IC hablado** por un jugador (habla normal, susurros, `/me`, `/do`, gritos…) dentro del radio del micrófono se reenvía automáticamente a **todos los receptores** encendidos que estén dentro de los 300 metros del micrófono.
-- Si el micrófono está **dentro de una propiedad**, los receptores que estén **en el exterior**, cerca de la entrada de esa propiedad (dentro de los 300 metros de la puerta), también reciben el audio — es decir, **no hace falta entrar en la propiedad para escuchar lo que pasa dentro**, lo que permite vigilancia encubierta desde fuera.
-- Cada mensaje interceptado aparece con el formato:
-  `[Micrófono a X.Xm] #NÚMERO dice: "mensaje"` — donde el número es un identificador anónimo del hablante.
-
-### Comandos de micrófono espía
-
-- `/encendermicrofono` — enciende el micrófono que lleves en la mano derecha y lo deja activo donde lo coloques. **Requiere**: ser detective **o** tener al menos **5 de habilidad de electrónica**.
-- `/apagarmicrofono` — apaga un micrófono. **Requiere**: ser detective **o** tener al menos **20 de habilidad de electrónica**.
-- `/escucharmicrofono` — activa/desactiva la escucha a través del receptor. **Requiere**: ser detective **o** tener al menos **5 de habilidad de electrónica**. El detector deja de funcionar si el jugador muere o si se saca el receptor de la mano.
-- `/detectarmicrofono` — barre el área en busca de micrófonos. **Requiere**: ser detective **o** tener al menos **15 de habilidad de electrónica**. Si se encuentra uno, muestra la **distancia exacta** al dispositivo. **Consume 1 unidad de batería** del detector por uso.
-
----
-
-## GPS espía 📡
-
-Los **GPS espía** se colocan discretamente en un objetivo (vehículo, bolsa, persona) y permiten seguir su ubicación en el mapa a distancia.
-
-### Rangos
-
-- **Radio de seguimiento del receptor**: **300 metros**.
-- **Límite de GPS rastreados simultáneamente**: hasta **5 objetivos** en el mapa a la vez.
-
-### Cómo funciona el rastreo
-
-- Mientras el detective tenga el receptor en la mano derecha, esté **vivo** y haya activado el rastreo, el sistema refresca las ubicaciones cada **0.5 segundos** y coloca un **icono rojo** en el minimapa/mapa por cada GPS dentro de rango.
-- Si el receptor se guarda o el personaje muere, el rastreo se interrumpe automáticamente.
-
-### Comando de GPS espía
-
-- `/rastreargps` — activa o desactiva el rastreo. **Requiere** receptor de GPS en la mano derecha y, si no eres detective, al menos **5 de habilidad de electrónica**.
-
----
-
-## Drones RC 🚁
-
-El sistema de drones permite desplegar un **vehículo RC aéreo** que se pilota desde el asiento trasero de una **Topfun Van (Berkley's RC Van — modelo 459)**. La policía puede además usar el modelo **Enforcer (482)**.
-
-### Requisitos para usar un drone
-
-- Estar **vivo** y no tener ya otro drone activo.
-- Estar en el **asiento trasero** de una Topfun Van (o, para cops, también Enforcer).
-- No estar en interior ni virtual world especial.
-- Cumplir **al menos una** de estas condiciones:
-  - Ser **detective privado**, o
-  - Ser **policía**, o
-  - Tener **70 o más de habilidad de electrónica**, o
-  - Tener **premium oro** (o superior).
-
-### Modelos disponibles
-
-- `/drone raider` — Raider (modelo 465).
-- `/drone goblin` — Goblin (modelo 501).
-- Variantes adicionales (`bandit`, `baron`, `tiger`, `cam`) están reservadas para staff de rango **Lead Admin** o superior.
-
-### Rangos y señal
-
-- **Alcance máximo desde la van**: **150 metros** para civiles/detectives y **300 metros** para policías.
-- Se dibuja un **gangzone** alrededor de la van que indica el área operativa del drone, con código de color:
-  - 🟢 **Verde** — señal fuerte (primer tercio del rango).
-  - 🟡 **Amarillo** — señal media (segundo tercio del rango).
-  - 🔴 **Rojo** — señal débil (último tercio del rango).
-- Al superar el rango, el drone **pierde señal** y se apaga; si se recupera la distancia, vuelve a encenderse automáticamente.
-
-### Condiciones que destruyen el drone
-
-- Que la **Topfun Van sea destruida**.
-- Que el piloto **muera**, **salga del drone** o **cambie a otro interior/virtual world**.
-- Que el drone **reciba suficiente daño** (por debajo de 700 de salud, se destruye).
-- Usar `/destruirdrone` manualmente devuelve al jugador al asiento trasero de la van.
-
-### Comandos de drone
-
-- `/drone [raider | goblin]` — despliega el drone.
-- `/destruirdrone` — destruye el drone activo y devuelve al piloto a la van.
-
----
-
-## Escuchas telefónicas (StingRay) 📶
-
-La **StingRay** es un dispositivo que, en la mano derecha de su operador, se configura con un **número de teléfono objetivo** y a partir de ese momento intercepta todas las **comunicaciones IC** asociadas a ese número.
-
-### Quién puede usarla
-
-- **Detectives privados**.
-- **Policías supervisores** en servicio.
-- **Agentes de la JSA** en servicio con rango de supervisor.
-
-El detective privado **no necesita estar en servicio** para usarla; los cops/JSA sí.
-
-### Rangos
-
-- **Radio de captación (la bola de cobertura de la StingRay sobre el mapa)**: **300 metros** alrededor del dispositivo.
-- **Radio de emisión del mensaje interceptado**: **10 metros** alrededor de quien lleva la StingRay (cualquiera a ese alcance ve el mensaje).
-- Si el operador está dentro de una propiedad, los mensajes solo se transmiten a quien esté **fuera, cerca de la entrada** (dentro de los mismos 300 metros respecto a la puerta).
-
-### Cómo se capturan los mensajes
-
-- Al interceptar, los **SMS y mensajes de voz/texto IC** enviados hacia o desde ese número, y cuyo emisor esté dentro de los 300 metros de la StingRay, aparecen en el chat del operador (y de quien esté a ≤10 m de él) con el formato:
-  `[StingRay] Tlf. NÚMERO_EMISOR: "mensaje"`.
-- El número introducido debe estar entre `0` y `999999999`.
-
-### Comando
-
-- `/interceptarnumero [número]` — configura la StingRay para interceptar ese teléfono. Debe llevarse la StingRay en la mano derecha.
-
----
-
-## Autoradares de vehículo 🚐
-
-Los **autoradares** convierten ciertos vehículos en unidades de **vigilancia de comunicaciones** por radio/celular cercanas. Funcionan como un "escáner" móvil que pasa los mensajes interceptados al interior del vehículo.
-
-### Quién puede instalar un autoradar
-
-- **Detectives privados**.
-- **Supervisores de policía** en servicio.
-- **Supervisores de JSA** en servicio.
-
-### Vehículos compatibles
-
-- **Boxville** (modelos 498 y 609) — cualquier autorizado.
-- **Newsvan** (modelo 582) — cualquier autorizado.
-- **Enforcer** (modelo 482) — **solo policías**.
-
-Se requiere una **laptop en la mano derecha** y ser **conductor** del vehículo para instalar o desinstalar el autoradar. El mismo comando instala y desinstala según el estado actual.
-
-### Rango y funcionamiento
-
-- **Radio de intercepción**: **300 metros** alrededor del vehículo.
-- Los mensajes cazados se muestran únicamente a los **ocupantes del vehículo** con el formato:
-  `[Distancia X.Xm] #NÚMERO dice: "mensaje"`.
+> Los kits de desactivación de bombas forman parte del equipo de detective, pero el funcionamiento de los explosivos se documenta aparte en el **[sistema de bombas](sistema-de-bombas.md)**.
 
 ### Comandos
 
-- `/autoradar` — instala/desinstala el autoradar en el vehículo que conduces.
+- `/placadet` — muestras o enseñas tu placa SAALI.
+- `/equipodet` — abres el catálogo de compra de equipo.
+- `/pdc` — abres el Private Detective Computer.
+- `/informacionbanco [jugador]` — consultas un saldo bancario por **$10,000**.
+- `/recogercasquillo`, `/recogersangre` — recoges evidencias del suelo.
+- `/encendermicrofono`, `/apagarmicrofono` — activas o desactivas un micrófono espía.
+- `/escucharmicrofono` — enciendes o apagas el receptor de micrófonos.
+- `/detectarmicrofono` — barres la zona buscando micrófonos ocultos.
+- `/rastreargps` — activas o desactivas el rastreo de GPS en el mapa.
+- `/drone [raider | goblin]`, `/destruirdrone` — despliegas o recoges un drone.
+- `/interceptarnumero [número]` — sintonizas la StingRay con un teléfono.
+- `/autoradar` — instalas o desinstalas el autoradar del vehículo que conduces.
+- `/detectarsenal` (o `/detectarseñal`) — buscas StingRays y autoradares cercanos.
+- `/desactivarbomba` — intentas cortar el cable correcto de una bomba cercana.
 
----
+## La placa SAALI
 
-## Contramedidas: detección de señales
+`/placadet` sin nada detrás hace que mires tu propia placa; con el nombre de alguien a menos de **5 metros**, se la enseñas. Muestra tu número de colegiado, la asociación y tu condición de detective privado. Es un gesto de rol: no obliga a nadie a colaborar, pero da credibilidad al pedir información.
 
-Los civiles y criminales también pueden defenderse. Con un **detector de receptores de señal** en la mano derecha se puede barrer el entorno.
+## Equipo de detective
+
+Con `/equipodet` se abre un catálogo exclusivo **dentro del Ammu-Nation de Market**. Fuera de esa propiedad el comando no funciona, y necesitas la mano derecha libre para poder recibir lo que compres.
+
+Todo el equipo se cobra **directamente del banco** y cuesta **el doble del precio base** del artículo. Para los artículos clasificados como arma hace falta además **licencia de armas**. Durante los eventos de **La Purga** y los **Hunger Games** el catálogo queda desactivado.
+
+### Electrónica de vigilancia
+
+Estos son los aparatos que definen el oficio, con el precio ya duplicado que paga el detective:
+
+| Artículo | Precio para detective | Para qué sirve |
+|---|---|---|
+| Micrófono espía | **$70,000** | Se planta en el lugar y capta lo que se habla alrededor. |
+| Receptor de micrófonos ocultos | **$130,000** | Escucha todos los micrófonos activos en 300 metros. |
+| Detector de micrófonos ocultos | **$10,000** | Localiza micrófonos en 10 metros (**10 usos**). |
+| Rastreador GPS | **$50,000** | Se coloca en el objetivo para seguirlo en el mapa. |
+| Receptor de rastreadores GPS | **$130,000** | Muestra los rastreadores dentro de 300 metros. |
+| Dispositivo StingRay | **$180,000** | Intercepta las comunicaciones de un número de teléfono. |
+| Detector de receptores de señal | **$17,000** | Detecta StingRays y autoradares (**5 usos**). |
+| Inhibidor de señales de radio | **$16,000** | Bloquea comunicaciones por radio en la zona. |
+| Kit de desactivación de bombas | **$200,000** | Permite intentar desarmar un explosivo. |
+
+### Resto del catálogo
+
+| Categoría | Artículos |
+|---|---|
+| Defensa y reducción | Porra **$288**, spray de pimienta **$88**, táser **$5,750**, esposas **$2,158**, escudo **gratis**, chaleco kevlar **$862**, guantes LawPro kevlar **gratis** |
+| Armas de fuego | Glock 17 **$2,100**, AF-1 Strike One **$3,500**, cargador 9x19 **$324**, cuchillo de hoja fija **$1,726** |
+| Protección personal | Mascarilla **$432**, máscara táctica de gas **$2,000**, gafas de visión nocturna **$5,000** |
+| Herramientas | Cámara **$432**, linterna **$30**, radio UHF **$1,150**, halligan **$2,300**, ganzúas **$144**, detector de metales **$3,594**, kit de limpieza de armas **$1,036**, estuche porta rifles **$862** |
+| Acreditación | ID policial **$288** |
+| Médico y logística | Medicamentos de detoxicación **$11,500**, Narcan **$2,300**, caja de cartón **$88**, bolsa de evidencias **$862**, bolsa para cadáveres **$288** |
+
+## Private Detective Computer (PDC)
+
+Con una **laptop en la mano derecha**, `/pdc` abre una terminal equivalente al ordenador policial, pero de pago. Cada consulta descuenta su importe del banco en cuanto se muestra el resultado, y si no tienes saldo suficiente la búsqueda se rechaza antes de empezar.
+
+| Consulta | Precio | Qué devuelve |
+|---|---|---|
+| Información por **nombre** | **$50,000** | Ficha del personaje: edad, licencias vigentes y multas registradas. |
+| Información por **matrícula** | **$25,000** | Datos del vehículo e indica si está denunciado como robado. |
+| Información por **propiedad** | **$10,000** | Tipo de propiedad, dirección y dueño o arrendatario. |
+| Información por **teléfono** | **$10,000** | A quién pertenece ese número. |
+| Información por **serial de arma** | **$50,000** | Historial y titular registrado del arma. |
+| **Armas por propietario** | **$100,000** | Listado de armas a nombre de una persona. |
+
+A esto se suma `/informacionbanco`, que fuera del PDC te da el saldo bancario de cualquier persona conectada por **$10,000** por consulta (el mismo precio que pagan los abogados; policías, investigadores fiscales y agentes federales la tienen gratis).
+
+## Micrófonos espía
+
+Los micrófonos funcionan en tres piezas que se compran por separado y se complementan: el **micrófono** capta, el **receptor** escucha y el **detector** busca micrófonos ajenos.
+
+### Alcances y batería
+
+| Parámetro | Valor |
+|---|---|
+| Captación al aire libre | **20 metros** |
+| Captación dentro de una propiedad | **8 metros** |
+| Captación de conversaciones en voz baja o susurros | **5 metros** |
+| Alcance del receptor | **300 metros** |
+| Alcance del detector | **10 metros** |
+| Batería del micrófono encendido | **60 minutos** |
+
+### Cómo funciona
+
+Enciendes el micrófono con `/encendermicrofono` teniéndolo en la mano derecha y luego lo dejas donde quieras vigilar. A partir de ahí, cualquier frase hablada en su radio —conversación normal, susurro, acción de `/me`, descripción de `/do` o grito— se reenvía a **todos los receptores encendidos** que estén dentro de 300 metros del micrófono.
+
+Cada frase interceptada llega al receptor indicando la distancia a la que se dijo y un número anónimo que identifica al hablante, pero **no su nombre**. Reconocer quién es quién forma parte del trabajo: tendrás que cruzarlo con lo que veas en el terreno.
+
+El detalle más aprovechable es que un micrófono **dentro de una propiedad** también alcanza a los receptores que estén **en la calle, cerca de la entrada** de esa propiedad. No hace falta entrar para oír lo que pasa dentro: basta con dejar el micrófono y quedarse aparcado enfrente.
+
+La batería se agota sola a los 60 minutos y el micrófono se apaga. Puedes apagarlo antes con `/apagarmicrofono`, que exige más pericia que encenderlo: desmontarlo sin romperlo es lo difícil.
 
 ### Requisitos
 
-- Detector de receptores de señal en la mano derecha (tiene batería limitada; se consume 1 unidad por uso y al llegar a 0 se apaga).
+| Comando | Requisito |
+|---|---|
+| `/encendermicrofono` | Detective **o** habilidad de electrónica **5+** |
+| `/apagarmicrofono` | Detective **o** habilidad de electrónica **20+** |
+| `/escucharmicrofono` | Detective **o** habilidad de electrónica **5+** |
+| `/detectarmicrofono` | Detective **o** habilidad de electrónica **15+** |
+
+`/escucharmicrofono` se corta solo si guardas el receptor o si mueres. `/detectarmicrofono` gasta **un uso** del detector por barrido y, cuando encuentra algo, te dice la distancia exacta al aparato para que puedas peinarla.
+
+## Rastreadores GPS
+
+El rastreador GPS se coloca discretamente en un vehículo, una bolsa o encima de una persona y permite seguir su posición sobre el mapa mientras estés relativamente cerca.
+
+| Parámetro | Valor |
+|---|---|
+| Alcance del receptor | **300 metros** |
+| Rastreadores visibles a la vez | **5** |
+| Requisito de `/rastreargps` | Detective **o** habilidad de electrónica **5+** |
+
+Con el receptor en la mano derecha, `/rastreargps` activa o desactiva el seguimiento. Mientras esté activo aparece un **icono rojo en el mapa** por cada rastreador dentro de rango, y las posiciones se refrescan de forma continua, así que un objetivo en movimiento se ve avanzar. Si guardas el receptor o mueres, el rastreo se interrumpe y los iconos desaparecen.
+
+## Drones de reconocimiento
+
+El drone es un aparato de radiocontrol que pilotas desde el **asiento trasero** de una furgoneta Topfun Van. Mientras lo vuelas ves por sus ojos: sirve para reconocer una azotea, seguir una persecución desde el aire o documentar una reunión sin acercarte.
+
+### Requisitos
+
+- Estar **vivo** y sin otro drone activo.
+- Estar en el **asiento trasero** de una Topfun Van, al aire libre (nada de interiores).
+- Cumplir **al menos una** de estas condiciones: ser **detective privado**, ser **policía**, ser **bombero**, tener **70 o más de habilidad de electrónica**, o tener **premium oro** o superior.
+
+La policía puede además pilotar desde un Enforcer, y los bomberos desde su unidad de incendios, donde disponen de un modelo propio equipado con chorro de agua.
+
+### Modelos y alcance
+
+- `/drone raider` y `/drone goblin` son los dos modelos disponibles para detectives y civiles.
+- **Alcance máximo desde la van**: **150 metros** para detectives y civiles, **300 metros** para policías.
+
+Mientras vuelas se dibuja sobre el mapa un área de color que marca tu margen de maniobra:
+
+| Color | Significado |
+|---|---|
+| 🟢 Verde | Señal fuerte (primer tercio del alcance) |
+| 🟡 Amarillo | Señal media (segundo tercio) |
+| 🔴 Rojo | Señal débil (último tercio: estás al borde de perderlo) |
+
+Si superas el alcance, el drone **pierde señal y se apaga en el sitio**; en cuanto la van se acerca de nuevo, vuelve a arrancar solo. Esto obliga a trabajar en pareja: uno conduce la furgoneta acercando el punto de emisión y otro pilota.
+
+### Qué destruye el drone
+
+- Que la Topfun Van sea destruida.
+- Que mueras, dejes de pilotarlo o entres en un interior.
+- Que el drone reciba demasiado daño (es frágil: unos pocos disparos bastan).
+- Usar `/destruirdrone`, que lo recoge limpiamente y te devuelve al asiento trasero de la van.
+
+## Escuchas telefónicas (StingRay)
+
+La StingRay es un maletín que, llevado en la mano derecha, se sintoniza con un **número de teléfono concreto** y a partir de ahí intercepta las comunicaciones asociadas a ese número.
+
+### Quién puede usarla
+
+- **Detectives privados**, sin necesidad de estar en servicio.
+- **Policías con rango de supervisor**, en servicio.
+- **Agentes de la JSA con rango de supervisor**, en servicio.
+
+### Alcances
+
+| Parámetro | Valor |
+|---|---|
+| Radio de captación alrededor del dispositivo | **300 metros** |
+| Radio en el que se oye el mensaje interceptado | **10 metros** alrededor del operador |
+| Rango de números válidos | de **0** a **999999999** |
+
+`/interceptarnumero [número]` sintoniza el aparato. A partir de ese momento, los mensajes enviados desde o hacia ese teléfono, cuando el emisor esté dentro de los 300 metros de la StingRay, aparecen en tu chat identificando el número del emisor y el contenido del mensaje.
+
+Ojo con el radio de emisión: el mensaje interceptado lo lee **cualquiera que esté a menos de 10 metros de ti**. Escuchar en una plaza llena significa compartir la escucha con todos los presentes; hazlo dentro de un vehículo o en un sitio apartado.
+
+Igual que los micrófonos, la StingRay atraviesa la barrera interior/exterior: si el operador está dentro de una propiedad, la captación se calcula desde la puerta de esa propiedad hacia fuera.
+
+## Autoradares de vehículo
+
+El autoradar convierte una furgoneta en una unidad móvil de escucha de comunicaciones. En lugar de seguir un número concreto como la StingRay, barre **todo lo que se habla** en su radio y lo vuelca dentro del vehículo.
+
+### Requisitos
+
+- Ser **detective privado** (sin necesidad de servicio), **supervisor de policía** en servicio o **supervisor de la JSA** en servicio.
+- Ser el **conductor** del vehículo.
+- Llevar una **laptop en la mano derecha**.
+
+### Vehículos compatibles
+
+| Vehículo | Quién puede usarlo |
+|---|---|
+| Boxville | Cualquier autorizado |
+| Newsvan | Cualquier autorizado |
+| Enforcer | Solo policías |
+
+### Funcionamiento
+
+`/autoradar` instala el equipo si el vehículo no lo tiene y lo desinstala si ya estaba puesto. Una vez instalado, todo lo que se hable dentro de **300 metros** del vehículo llega al chat de **quienes van dentro** —solo ellos—, indicando la distancia a la que se dijo y un número anónimo por hablante.
+
+Es la herramienta más potente del arsenal y también la más fácil de detectar: deja la huella de señal más fuerte de todas.
+
+## Contramedidas: detección de señales
+
+Nadie está indefenso frente a este equipo. El **detector de receptores de señal** permite barrer el entorno y averiguar si te están escuchando.
+
+### Requisitos
+
+- Detector de receptores de señal en la mano derecha, con batería (**5 usos**; cada barrido gasta uno).
 - Ser **detective** **o** tener al menos **15 de habilidad de electrónica**.
 
-### Resultado del barrido (`/detectarsenal` o `/detectarseñal`)
+### Qué significa cada lectura
 
-La detección informa en mensajes diferenciados por color:
+`/detectarsenal` (o `/detectarseñal`) devuelve uno de cuatro mensajes:
 
-1. Si hay un **autoradar activo** dentro de los 300 metros (prioritario):
-   - ✅ *"Has detectado una alteración **fuerte** en las señales de teléfono."*
-2. Si hay una **StingRay operativa** dentro de los 300 metros:
-   - ✅ *"Has detectado una alteración **mediana** en las señales de teléfono."*
-3. Si **no hay ninguna señal activa**, el resultado es ambiguo — se reparte al azar a medias:
-   - **50 % de probabilidad** de recibir un falso positivo: *"Has detectado una alteración **débil** en las señales de teléfono."*
-   - **50 % de probabilidad** de recibir la lectura limpia: *"No has detectado ningún receptor de señal."*
+| Lectura | Qué la provoca |
+|---|---|
+| Alteración **fuerte** | Hay un **autoradar activo** a menos de 300 metros. |
+| Alteración **mediana** | Hay una **StingRay operativa** a menos de 300 metros. |
+| Alteración **débil** | Falso positivo: no hay nada, pero el aparato duda. |
+| "No has detectado ningún receptor" | Lectura limpia. |
 
-Este ruido intencionado evita que el detector sea 100 % fiable para confirmar que la zona está limpia.
+Cuando no hay ninguna señal activa, el resultado se reparte **al azar a partes iguales** entre el falso positivo y la lectura limpia: la mitad de las veces el detector te asustará sin motivo. Ese ruido es intencionado y significa que **un detector nunca confirma que la zona esté limpia**; solo confirma que sí hay algo cuando marca fuerte o mediano. Si sospechas, repite el barrido: dos lecturas limpias seguidas son mucho más fiables que una.
 
----
+Ten en cuenta también que el autoradar tapa a la StingRay: si hay un autoradar en la zona, el detector marcará "fuerte" y no te dirá si además hay una StingRay funcionando. Para localizar micrófonos plantados hace falta el **detector de micrófonos**, que es un aparato distinto y trabaja con `/detectarmicrofono`.
 
-## Resumen de comandos del sistema
+## Trabajo de campo y evidencias
 
-| Comando | Rol que lo usa | Qué hace |
+La licencia de detective también da acceso a tareas de recogida de pruebas que normalmente están reservadas a la policía científica:
+
+- `/recogercasquillo` — recoges un casquillo del suelo. Necesitas la mano derecha libre y el casquillo tiene que estar **frío**: si acaba de ser disparado, quema, salvo que lleves guantes puestos. Los casquillos muy deteriorados se rompen al levantarlos.
+- `/recogersangre` — tomas una muestra de sangre del suelo, también con la mano derecha libre. A diferencia de la policía, tú **no necesitas estar en servicio** para hacerlo.
+- Los detectives pueden manipular **bolsas de cadáveres**, algo que en general requiere estómago (habilidad de delincuente alta) o ser paramédico.
+
+Qué hacer después con esas muestras —análisis, comparación de huellas y valor probatorio— se explica en el **[sistema forense](sistema-forense.md)**.
+
+## Desactivación de bombas
+
+Con un **kit de desactivación de bombas** en la mano derecha y una bomba a menos de **5 metros**, `/desactivarbomba` abre un panel con **tres cables** de colores. Debes elegir uno.
+
+Uno de los tres es el equivocado y **hace estallar el artefacto en el acto**: tienes un **tercio de probabilidad de morir** en cada intento. No hay pista alguna sobre cuál es el correcto, así que la decisión sensata suele ser evacuar la zona antes que jugarse la vida. Si no eres detective, necesitas **5 de habilidad de electrónica**.
+
+El resto del funcionamiento de los explosivos está en el **[sistema de bombas](sistema-de-bombas.md)**.
+
+## Resumen de requisitos
+
+| Comando | Quién puede usarlo | Objeto necesario |
 |---|---|---|
-| `/placadet` | Detective | Mostrar la placa SAALI. |
-| `/equipodet` | Detective | Comprar equipamiento en el Ammu-Nation de Market. |
-| `/pdc` | Detective | Abrir el Private Detective Computer con laptop. |
-| `/encendermicrofono` / `/apagarmicrofono` | Detective o electrónica ≥5 / ≥20 | Activar o apagar un micrófono espía. |
-| `/escucharmicrofono` | Detective o electrónica ≥5 | Escuchar todos los micrófonos cercanos por receptor. |
-| `/detectarmicrofono` | Detective o electrónica ≥15 | Localizar micrófonos en un radio de 10 m. |
-| `/rastreargps` | Detective o electrónica ≥5 | Rastrear hasta 5 GPS espía en un radio de 300 m. |
-| `/drone raider` / `/drone goblin` | Detective, cop, electrónica ≥70 o premium oro | Desplegar un drone RC desde una Topfun Van. |
-| `/destruirdrone` | Dueño del drone | Recoger el drone y volver a la van. |
-| `/interceptarnumero [número]` | Detective, cop supervisor en servicio o JSA supervisor en servicio | Configurar la StingRay para interceptar un teléfono. |
-| `/autoradar` | Detective, cop supervisor en servicio o JSA supervisor en servicio | Instalar/desinstalar el autoradar del vehículo. |
-| `/detectarsenal` | Detective o electrónica ≥15 | Detectar StingRays y autoradares cercanos. |
+| `/placadet` | Detective | — |
+| `/equipodet` | Detective, en el Ammu-Nation de Market | Mano derecha libre |
+| `/pdc` | Detective | Laptop |
+| `/informacionbanco` | Detective, abogado, policía, investigador fiscal o agente federal | — |
+| `/encendermicrofono` | Detective o electrónica 5+ | Micrófono espía |
+| `/apagarmicrofono` | Detective o electrónica 20+ | Micrófono espía |
+| `/escucharmicrofono` | Detective o electrónica 5+ | Receptor de micrófonos |
+| `/detectarmicrofono` | Detective o electrónica 15+ | Detector de micrófonos |
+| `/rastreargps` | Detective o electrónica 5+ | Receptor de rastreadores GPS |
+| `/drone` | Detective, policía, bombero, electrónica 70+ o premium oro | Topfun Van |
+| `/interceptarnumero` | Detective, o supervisor de policía/JSA en servicio | StingRay |
+| `/autoradar` | Detective, o supervisor de policía/JSA en servicio | Laptop + Boxville, Newsvan o Enforcer |
+| `/detectarsenal` | Detective o electrónica 15+ | Detector de receptores de señal |
+| `/desactivarbomba` | Detective o electrónica 5+ | Kit de desactivación de bombas |
+| `/recogercasquillo` | Detective, policía científica o delincuente 70+ | Mano derecha libre |
+| `/recogersangre` | Detective o policía científica en servicio | Mano derecha libre |
 
-> **Aviso de roleplay:** el equipamiento de detective es potente y puede desequilibrar situaciones si se abusa. Úsalo como parte de investigaciones creíbles, respeta el /b y el metagame, y recuerda que **las contramedidas (detectores) existen precisamente para dar contrajuego al bando vigilado**.
+## Consejos
+
+- **Llega al PDC con deberes hechos.** Una consulta por nombre cuesta $50,000; una matrícula, la mitad. Si puedes anotar la placa de un coche antes de identificar al conductor, ahorras dinero.
+- **Trabaja en equipo.** El drone necesita alguien al volante de la van, y el autoradar necesita un conductor que lo mueva. Un detective solo rinde la mitad.
+- **Cuida la discreción.** La StingRay reparte lo que intercepta a 10 metros a la redonda y el autoradar es lo más escandaloso que existe para un detector. Escuchar desde dentro de un vehículo cerrado es casi siempre la opción correcta.
+- **El micrófono es tu mejor inversión por hora.** Sesenta minutos de batería y la posibilidad de oír el interior de una propiedad desde la calle rinden más que cualquier consulta de base de datos.
+- **Anota los números anónimos.** Ni el micrófono ni el autoradar te dan nombres. Cruzar el número con lo que ves en el terreno es lo que convierte una escucha en una prueba.
+
+> **Aviso de rol:** el equipo de detective desequilibra situaciones si se usa como simple ventaja mecánica. Justifica cada escucha con una investigación creíble, respeta el metagame y recuerda que las contramedidas existen precisamente para que el bando vigilado tenga contrajuego. Si tu trabajo acaba en un tribunal, el valor de las pruebas depende de cómo las obtuviste: consulta el **[sistema de justicia](sistema-de-justicia.md)** y, para el papel de la policía y la JSA en estas mismas herramientas, las **[facciones legales](facciones-legales.md)**.

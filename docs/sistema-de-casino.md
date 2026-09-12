@@ -1,60 +1,86 @@
 # Sistema de casino
 
 ## Introducción
-El **Emerald Isle Casino** es el epicentro del entretenimiento y el lujo en San Andreas, ubicado en Las Venturas. Combina un **bar**, un **restaurante**, una **terraza** y amplias **áreas de juego** en un mismo espacio, pensado para el roleplay social y las grandes apuestas.
 
-Dentro del casino se pueden jugar **tragamonedas**, **ruleta** y **blackjack**. El **póker Texas Hold'em**, en cambio, ya no está atado al casino: cualquier jugador puede comprar una mesa como mueble y colocarla en **cualquier tipo de propiedad** (clubes, bares, casas, negocios, etc.), ampliando enormemente las opciones de roleplay alrededor del juego.
+El **Emerald Isle Casino** es el epicentro del entretenimiento y el lujo en San Andreas, en **Las Venturas**. Combina un bar, un restaurante, una terraza y amplias áreas de juego en un mismo espacio, pensado tanto para el roleplay social como para las grandes apuestas. Tiene aparcamiento propio y su propio ícono en el mapa.
 
-El casino además ofrece dinámicas propias como la **compra de acciones** y el cobro de **ingresos mensuales** derivados de los beneficios del local, convirtiéndolo en un atractivo negocio a largo plazo.
+Dentro del casino puedes jugar a las **tragamonedas**, la **ruleta** y el **blackjack**, todos ellos contra la casa. El **póker Texas Hold'em**, en cambio, ya no está atado al casino: cualquiera puede comprar una mesa como mueble y colocarla en cualquier propiedad. También encontrarás **apuestas hípicas (Inside Track)**, tanto en el casino como en las casas de apuestas repartidas por el estado.
 
-## Requisitos para jugar
-- Para entrar al casino y usar los minijuegos de casa (tragamonedas, ruleta y blackjack) es necesario tener activada la **autenticación en dos pasos (2FA)** en la cuenta.
-- Sin 2FA, el servidor bloquea el acceso a los minijuegos del casino con el mensaje:
-  *"Para jugar en el casino debes activar la doble autenticación (2FA) en tu cuenta."*
-- No se puede jugar mientras se esté usando el teléfono ni participando en otro minijuego de azar al mismo tiempo.
+Fuera del casino existen otras formas de jugar dinero: el **trile** callejero de Idlewood, la **lotería** estatal que se compra en cualquier supermercado y las partidas de billar apostado. Todas ellas comparten el mismo historial de ganancias y pérdidas.
 
-## Comando principal
+> El casino está pensado como **entretenimiento de roleplay**. Apuesta con cabeza y define un presupuesto antes de empezar.
+
+### Comandos
+
 - `/casino` — muestra la ayuda del casino.
-- `/casino slot` — abre una máquina tragamonedas disponible.
-- `/casino ruleta` — te sienta en una mesa de ruleta.
-- `/casino blackjack` — te sienta en una mesa de blackjack.
-- `/casino stats` — muestra tu **balance histórico** (ganancias menos pérdidas) en tragamonedas, ruleta, blackjack y póker, con el color en verde si vas en positivo o en rojo si vas en negativo.
-- `/poker` o `/pkr` — atajo para la ayuda del sistema de póker (ver sección de póker).
+- `/casino slot` — te sienta en la máquina tragamonedas que tengas al lado.
+- `/casino ruleta` — te sienta en la mesa de ruleta más cercana.
+- `/casino blackjack` — te sienta en la mesa de blackjack más cercana.
+- `/casino stats` — muestra tu balance histórico en cada juego de azar.
+- `/poker` o `/pkr` — abre la ayuda del póker (funciona en cualquier propiedad con mesa).
+- `/insidetrack` — abre la ayuda de las apuestas de caballos.
+- `/loteria` — consulta el pozo acumulado, las horas de sorteo y tu número.
+
+## Requisitos para jugar en el casino
+
+- Necesitas tener activada la **verificación en dos pasos (2FA)** en tu cuenta. Sin ella, el casino no te dejará abrir ningún juego de la casa. Se activa desde el [panel de control](panel-de-control.md).
+- No puedes jugar mientras estás usando el **teléfono**.
+- No puedes jugar a dos juegos de azar a la vez: si ya estás en una máquina, una mesa o una partida, tienes que terminar antes de empezar otra.
+- Debes estar **de pie y consciente** junto a la máquina o mesa correspondiente.
+
+Este requisito de 2FA se aplica únicamente a los juegos que se abren con `/casino`. El póker, el trile, las apuestas hípicas y la lotería no lo piden.
 
 ---
 
 ## 1. Blackjack
-El **blackjack** es un juego de cartas cuyo objetivo es sumar **21 puntos** o acercarse lo más posible sin pasarse, enfrentándote al crupier.
+
+El **blackjack** es un juego de cartas cuyo objetivo es sumar **21 puntos** o acercarte lo más posible sin pasarte, enfrentándote al crupier.
 
 ![blackjack](../assets/sistema-de-casino/blackjack.png)
 
 ### Valor de las cartas
+
 - Las cartas del **2 al 10** mantienen su valor numérico.
 - **Jota (J), Reina (Q) y Rey (K)** valen 10 puntos cada una.
-- El **As** vale 1 o 11 puntos, según lo que más beneficie a la mano.
+- El **As** vale 1 u 11 puntos, el que más te convenga en cada momento.
 
 ### Desarrollo de la mano
-Al inicio se reparten **dos cartas** a cada jugador y dos al crupier (una boca abajo). En tu turno puedes:
+
+Al sentarte eliges tu apuesta y ocupas un asiento. Cuando la mesa arranca se reparten **dos cartas** a cada jugador y dos al crupier, una de ellas boca abajo. En tu turno puedes:
 
 - **Pedir** otra carta para acercarte a 21.
-- **Plantarte** y conservar tu mano actual.
-- Si te **pasas de 21**, pierdes automáticamente la apuesta ("pasarse" o *bust*).
+- **Plantarte** y conservar la mano que tienes.
 
-Cuando terminan todos los jugadores, el crupier revela su carta oculta y **pide cartas hasta alcanzar al menos 17 puntos**, momento en el que se planta obligatoriamente.
+Si te pasas de 21 pierdes la apuesta de inmediato. Cuando todos han terminado, el crupier revela su carta oculta y **pide cartas hasta alcanzar al menos 17 puntos**, momento en el que se planta obligatoriamente.
 
 ### Resultados y pagos
-- **Ganas** si tu mano supera la del crupier sin pasarte, o si el crupier se pasa de 21.
-  - **Pago**: x1.5 sobre la apuesta.
-- **Blackjack natural** (As + carta de valor 10 en las dos primeras cartas): se paga con un **multiplicador especial más alto** que una victoria normal.
-  - **Pago**: x2 sobre la apuesta.
-- **Six Card Charlie**: si llegas a 21 o menos usando **seis cartas** sin pasarte, recibes un **pago aumentado** aunque el crupier no se pase.
-- **Empate (push)**: se te devuelve la apuesta sin ganancia ni pérdida.
-- **Derrota**: pierdes la apuesta inicial.
 
-### Apuestas
-- Apuesta mínima: **$1.000**.
-- Apuesta máxima: **$1.000.000**.
-- El Emerald Isle dispone de **3 mesas de blackjack**.
+El pago se calcula sobre tu apuesta e **incluye la devolución de lo apostado**. Es decir, un pago de x1.5 sobre una apuesta de $10.000 te devuelve $15.000, con una ganancia neta de $5.000.
+
+| Resultado | Cómo se consigue | Pago |
+|---|---|---|
+| **Blackjack natural** | As + carta de valor 10 en tus dos primeras cartas | **x2** |
+| **Victoria normal** | Superas al crupier sin pasarte, o el crupier se pasa | **x1.5** |
+| **21 puntos** | Llegas justo a 21 con cualquier número de cartas | **x1.5** |
+| **Six Card Charlie** | Llegas a 21 o menos usando **seis cartas** sin pasarte | **x1.5** |
+| **Empate (push)** | Empatas con el crupier | Recuperas tu apuesta |
+| **Derrota** | El crupier te supera o te pasas de 21 | Pierdes la apuesta |
+
+El **Six Card Charlie** gana aunque el crupier no se pase: si consigues sostener seis cartas sin superar 21, la mano es tuya.
+
+### Límites y tiempos
+
+| Parámetro | Valor |
+|---|---|
+| Apuesta mínima | **$1.000** |
+| Apuesta máxima | **$1.000.000** |
+| Jugadores por mesa | **7** |
+| Cartas máximas por mano | **6** |
+| Tiempo por turno | **90 segundos** |
+| Espera entre rondas | **10 segundos** |
+| Mesas en el Emerald Isle | **3** |
+
+No puedes abandonar la mesa mientras estés jugando una mano: primero termínala.
 
 ---
 
@@ -62,98 +88,58 @@ Cuando terminan todos los jugadores, el crupier revela su carta oculta y **pide 
 
 ![ruleta](../assets/sistema-de-casino/ruleta.png)
 
-La **ruleta europea** es un juego de azar en el que apuestas al número o color en el que caerá la bola sobre una rueda giratoria. La rueda tiene **37 casillas** (del 0 al 36), que alternan entre **rojo y negro**, salvo el **0** que es **verde**.
+La **ruleta europea** es un juego de azar en el que apuestas al número, color o grupo en el que caerá la bola. La rueda tiene **37 casillas** (del 0 al 36), que alternan entre rojo y negro salvo el **0**, que es verde.
 
-### Distribución de colores en la rueda
-
-Los números de la ruleta europea se distribuyen de la siguiente forma:
+### Distribución de colores
 
 | Color | Números |
 |---|---|
-| 🟢 **Verde** | 0 |
-| 🔴 **Rojo** | 1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36 |
-| ⚫ **Negro** | 2, 4, 6, 8, 10, 11, 13, 15, 17, 20, 22, 24, 26, 28, 29, 31, 33, 35 |
+| **Verde** | 0 |
+| **Rojo** | 1, 3, 5, 7, 9, 12, 14, 16, 18, 19, 21, 23, 25, 27, 30, 32, 34, 36 |
+| **Negro** | 2, 4, 6, 8, 10, 11, 13, 15, 17, 20, 22, 24, 26, 28, 29, 31, 33, 35 |
 
-### Layout del tapete
+### Cómo se apuesta
 
-El tapete de la ruleta europea tiene la siguiente disposición. Conocerlo te ayudará a entender cómo funcionan las apuestas internas (splits, streets, corners):
+Al sentarte se te asigna un **color de fichas** propio, para que distingas tus apuestas de las del resto de la mesa. Mueves un marcador por el tapete y colocas fichas sobre la casilla que quieras.
 
-```
-┌────┬────┬────┐
-│  3 │  6 │  9 │ 12 │ 15 │ 18 │ 21 │ 24 │ 27 │ 30 │ 33 │ 36 │ ← Columna 3
-├────┼────┼────┤
-│  2 │  5 │  8 │ 11 │ 14 │ 17 │ 20 │ 23 │ 26 │ 29 │ 32 │ 35 │ ← Columna 2
-├────┼────┼────┤
-│  1 │  4 │  7 │ 10 │ 13 │ 16 │ 19 │ 22 │ 25 │ 28 │ 31 │ 34 │ ← Columna 1
-└────┴────┴────┘
-  0
-```
+- Cada ficha vale **$1.000**.
+- Puedes colocar todas las fichas que quieras, en tantas casillas como quieras, siempre que el total no supere el límite de la mesa.
+- Puedes **retirar fichas** de una casilla o **cancelar todas tus apuestas** de golpe mientras la ruleta esté parada.
+- Una vez que la rueda empieza a girar tus apuestas quedan bloqueadas: no puedes añadir, quitar ni cancelar nada.
+- Cualquier jugador sentado puede lanzar la tirada cuando la mesa está lista.
 
-Los números están organizados en **12 filas de 3 números** (llamadas "streets") y **3 columnas verticales**.
+### Tipos de apuesta y pagos
 
-### Tipos de apuesta
+Los pagos se expresan en la forma habitual de la ruleta: **35:1** significa que cobras 35 veces tu apuesta más la apuesta devuelta.
 
-La ruleta ofrece dos grandes categorías de apuestas: **internas** (sobre números específicos del tapete) y **externas** (sobre grupos amplios).
-
-#### Apuestas internas
-
-Las apuestas internas se colocan directamente sobre los números del tapete o en las líneas que los separan. Ofrecen **pagos más altos** pero con menor probabilidad de ganar.
-
-| Apuesta | Descripción | Cobertura | Pago |
+| Apuesta | Números cubiertos | Pago | Probabilidad |
 |---|---|---|---|
-| **Pleno** (*Straight*) | Apuesta a un único número | 1 número | **35:1** |
-| **Caballo** (*Split*) | Apuesta en la línea entre dos números adyacentes | 2 números | **17:1** |
-| **Transversal** (*Street*) | Apuesta a una fila completa de 3 números | 3 números | **11:1** |
-| **Cuadro** (*Corner*) | Apuesta en la intersección de 4 números | 4 números | **8:1** |
-| **Línea** (*Line*) | Apuesta que cubre dos filas adyacentes | 6 números | **5:1** |
+| **Pleno** (un número concreto, 0 incluido) | 1 | **35:1** | 2,70% |
+| **Columna** (1ª, 2ª o 3ª) | 12 | **2:1** | 32,43% |
+| **Docena** (1-12, 13-24, 25-36) | 12 | **2:1** | 32,43% |
+| **Rojo** o **Negro** | 18 | **1:1** | 48,65% |
+| **Par** o **Impar** | 18 | **1:1** | 48,65% |
+| **1 a 18** (bajos) o **19 a 36** (altos) | 18 | **1:1** | 48,65% |
 
-##### Ejemplos de apuestas internas
+Las tres columnas del tapete son:
 
-- **Pleno al 17**: colocas la ficha directamente sobre el 17. Si sale, cobras **35 veces** tu apuesta.
-- **Caballo 14-17**: colocas la ficha en la línea que separa el 14 del 17. Si sale cualquiera de los dos, cobras **17 veces** tu apuesta.
-- **Transversal 7-8-9**: colocas la ficha al borde de la fila que contiene 7, 8 y 9. Si sale cualquiera, cobras **11 veces** tu apuesta.
-- **Cuadro 5-6-8-9**: colocas la ficha en la esquina donde se cruzan los cuatro números. Si sale cualquiera, cobras **8 veces** tu apuesta.
-- **Línea 1-2-3-4-5-6**: colocas la ficha en la intersección entre dos filas adyacentes. Si sale cualquiera de los seis, cobras **5 veces** tu apuesta.
+| Columna | Números |
+|---|---|
+| **Columna 1** | 1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34 |
+| **Columna 2** | 2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35 |
+| **Columna 3** | 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36 |
 
-#### Apuestas externas
+> **El 0 es especial.** Si la bola cae en el 0 ganan únicamente quienes lo hayan apostado en pleno. Las apuestas a rojo, negro, impar, docenas, columnas, bajos y altos **pierden**.
 
-Las apuestas externas se colocan en las zonas que rodean el tapete numérico. Ofrecen **pagos menores** pero con mayor probabilidad de ganar.
+### Límites de la mesa
 
-| Apuesta | Números cubiertos | Pago |
-|---|---|---|
-| **Columna 1** | 1, 4, 7, 10, 13, 16, 19, 22, 25, 28, 31, 34 | **2:1** |
-| **Columna 2** | 2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35 | **2:1** |
-| **Columna 3** | 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36 | **2:1** |
-| **Primer docena** | 1 al 12 | **2:1** |
-| **Segunda docena** | 13 al 24 | **2:1** |
-| **Tercera docena** | 25 al 36 | **2:1** |
-| **1 a 18** (Bajos) | 1 al 18 | **1:1** |
-| **19 a 36** (Altos) | 19 al 36 | **1:1** |
-| **Par** | Números pares | **1:1** |
-| **Impar** | Números impares | **1:1** |
-| **Rojo** | Números rojos | **1:1** |
-| **Negro** | Números negros | **1:1** |
+| Parámetro | Valor |
+|---|---|
+| Valor de cada ficha | **$1.000** |
+| Apuesta máxima por mesa | **$1.000.000** |
+| Mesas en el Emerald Isle | **2** |
 
-> **Importante sobre el 0:** Si la bola cae en el **0**, ganan únicamente las apuestas directas al 0 (pleno). Todas las apuestas externas (color, paridad, docenas, columnas, altos/bajos) **pierden**.
-
-### Resumen rápido de pagos
-
-| Tipo | Números cubiertos | Pago | Probabilidad |
-|---|---|---|---|
-| Pleno | 1 | 35:1 | 2,70% |
-| Caballo | 2 | 17:1 | 5,41% |
-| Transversal | 3 | 11:1 | 8,11% |
-| Cuadro | 4 | 8:1 | 10,81% |
-| Línea | 6 | 5:1 | 16,22% |
-| Columna / Docena | 12 | 2:1 | 32,43% |
-| Color / Par / Altos | 18 | 1:1 | 48,65% |
-
-> **Nota:** Todas las probabilidades asumen **37 casillas** (0 al 36). La ventaja de la casa en la ruleta europea es del **2,70%** para todas las apuestas.
-
-### Mesa de ruleta
-
-- El Emerald Isle cuenta con **2 mesas de ruleta** activas.
-- Cada mesa tiene configurada una **apuesta máxima**; si intentas apostar por encima, el sistema te lo impedirá.
+El límite se aplica al **total** de todas tus fichas en la mesa, no a cada casilla por separado. Si intentas superarlo, el juego te avisa y no coloca la ficha.
 
 ---
 
@@ -161,106 +147,252 @@ Las apuestas externas se colocan en las zonas que rodean el tapete numérico. Of
 
 ![slots](../assets/sistema-de-casino/slots.png)
 
-Las **tragamonedas** ("slots") son máquinas de azar en las que eliges una apuesta, giras los tres rodillos y cobras según la combinación final de símbolos.
+Las **tragamonedas** son máquinas de azar en las que eliges una apuesta, giras tres rodillos y cobras si los tres muestran el mismo símbolo.
 
-### Combinaciones y multiplicadores
-| Combinación | Símbolo | Multiplicador |
-|---|---|---|
-| Doble barra de oro | 🟨🟨 | **x25** |
-| Barra de oro simple | 🟨 | **x10** |
-| Campanas | 🔔 | **x5** |
-| Cerezas | 🍒 | **x3** |
-| Uvas | 🍇 | **x1.75** |
-| Número 69 | 6️⃣9️⃣ | **x0.5** |
+### Cómo se juega
 
-El pago se calcula multiplicando la apuesta por el multiplicador de la combinación obtenida.
+1. Colócate junto a una máquina libre y usa `/casino slot`.
+2. Elige tu apuesta en la lista que aparece.
+3. Pulsa la **tecla de sprint** para girar.
+4. Pulsa la **tecla de apuntar** para activar los **giros automáticos**, que repiten la misma apuesta sin que tengas que pulsar nada.
+5. Pulsa la **tecla de entrar/salir de vehículo** para abandonar la máquina.
+
+Cada máquina solo admite un jugador a la vez.
+
+### Combinaciones y pagos
+
+Para cobrar necesitas que los **tres rodillos** muestren el mismo símbolo. El multiplicador se aplica sobre tu apuesta.
+
+| Combinación | Multiplicador |
+|---|---|
+| Doble barra de oro | **x25** |
+| Barra de oro simple | **x10** |
+| Campanas | **x5** |
+| Cerezas | **x3** |
+| Uvas | **x1,75** |
+| Número 69 | **x0,5** |
+
+Ojo con la última fila: el **69 paga la mitad de lo apostado**, así que aunque los tres rodillos coincidan, esa combinación sigue siendo una pérdida neta. Cualquier otra coincidencia es ganancia.
 
 ### Apuestas disponibles
-Las tragamonedas permiten elegir entre distintos tramos fijos de apuesta, desde **$25** hasta **$100.000** por giro, lo que permite jugadas accesibles y también apuestas para grandes roleplays.
+
+Las máquinas ofrecen **17 tramos fijos** de apuesta:
+
+**$25 · $50 · $100 · $250 · $300 · $500 · $800 · $1.000 · $1.200 · $1.800 · $2.000 · $3.000 · $5.000 · $10.000 · $20.000 · $50.000 · $100.000**
 
 ![opcionesSlots](../assets/sistema-de-casino/opciones-de-slots.png)
 
+Los premios de **$5.000 o más** hacen sonar la máquina para todo el salón, y desbloquean un logro la primera vez.
+
 ### Sala de tragamonedas
-- El Emerald Isle dispone de **30 máquinas tragamonedas** distribuidas en su sala principal.
-- Dispone también de una opción de **giro automático** para repetir la apuesta cómodamente.
+
+El Emerald Isle dispone de **30 máquinas** distribuidas en su sala principal, en varias filas enfrentadas.
 
 ---
 
-El **póker Texas Hold'em** es una variante en la que a cada jugador se le reparten **dos cartas privadas** y se colocan hasta **cinco cartas comunitarias** sobre la mesa en tres fases: **flop** (3 cartas), **turn** (1 carta) y **river** (1 carta). En cada ronda de apuestas los jugadores pueden **igualar**, **subir**, **pasar**, **retirarse** o ir **all-in**.
+## 4. Trile (juego de la bolita)
 
-El objetivo es formar la **mejor jugada de cinco cartas** combinando tus dos cartas privadas y las cinco comunitarias.
+El **trile** es un juego callejero, no forma parte del casino. Un buscavidas monta su mesa plegable en **Idlewood, Los Santos** y te reta a seguir la bolita bajo tres vasos.
+
+### Cómo se juega
+
+1. Acércate a la mesa; el juego te avisará por pantalla.
+2. Pulsa la **tecla de entrar/salir de vehículo** para empezar y elige tu apuesta base.
+3. Te enseñan bajo qué vaso está la bolita durante un momento; luego bajan los vasos y empiezan a mezclarlos.
+4. Cuando se detienen, mueves la selección con las teclas de **izquierda y derecha** y confirmas con la **tecla de entrar/salir de vehículo**. Tienes **10 segundos** para elegir.
+5. Si aciertas, cobras y **subes de nivel**. Si fallas, pierdes lo apostado en esa ronda y tu racha termina.
+
+Entre rondas dispones de **15 segundos** para decidir: pulsa **ENTER** para seguir jugando el siguiente nivel, o la **tecla de sprint** para retirarte con lo ganado.
+
+### Apuestas, niveles y pagos
+
+Al entrar eliges una **apuesta base** entre **$25, $50, $100, $250, $500 y $1.000**. A partir de ahí, cada nivel superado multiplica esa base:
+
+- **Nivel 1**: apuestas la base × 1.
+- **Nivel 2**: apuestas la base × 2.
+- **Nivel 3**: apuestas la base × 3… y así sucesivamente, sin tope de niveles.
+
+Cada acierto paga **x2 sobre lo apostado en esa ronda**, es decir, duplicas la apuesta del nivel. Antes de cada ronda se te muestra exactamente cuánto vas a arriesgar y cuánto cobrarías.
+
+| Nivel | Apuesta (base $100) | Pago si aciertas |
+|---|---|---|
+| 1 | $100 | $200 |
+| 2 | $200 | $400 |
+| 3 | $300 | $600 |
+| 5 | $500 | $1.000 |
+| 10 | $1.000 | $2.000 |
+
+Necesitas tener el efectivo suficiente para cubrir la apuesta de cada nivel; si no lo tienes, la racha se detiene ahí.
+
+### Dificultad
+
+La mesa se complica a medida que avanzas:
+
+| Parámetro | Comportamiento |
+|---|---|
+| Mezclas por ronda | **6 en el nivel 1**, una más por cada nivel |
+| Velocidad de las mezclas | Empieza pausada y **acelera un 12% por nivel** |
+| Fintas (amagos que no intercambian nada) | **20%** de los movimientos |
+| Tiempo para elegir | **10 segundos** |
+
+El ritmo inicial es deliberadamente pausado y las fintas son escasas, de modo que los primeros niveles se pueden seguir con la vista sin demasiada dificultad. Solo hay **una mesa** y admite **un jugador a la vez**.
+
+---
+
+## 5. Póker Texas Hold'em
+
+El **póker Texas Hold'em** es una variante en la que recibes **dos cartas privadas** y se colocan hasta **cinco cartas comunitarias** sobre la mesa en tres fases: **flop** (3 cartas), **turn** (1 carta) y **river** (1 carta). En cada ronda de apuestas puedes **igualar**, **subir**, **pasar**, **retirarte** o ir **all-in**. Gana quien forme la mejor jugada de cinco cartas combinando sus cartas privadas con las comunitarias.
 
 ![poker](../assets/sistema-de-casino/poker.png)
 
-### Novedad — Disponible en cualquier propiedad
-A diferencia de los otros juegos del casino, el póker ya **no se limita al Emerald Isle**:
+### Disponible en cualquier propiedad
 
-- Cualquier jugador puede **comprar una mesa de póker** como mueble mediante el menú de muebles de la propiedad o con `/comprarmueble 19474`.
-- La mesa se puede colocar en **cualquier tipo de propiedad** (clubes, bares, casinos privados, casas, negocios, etc.).
-- Se pueden ejecutar **varias partidas simultáneas**, con hasta **seis jugadores por mesa**.
+A diferencia del resto de juegos, el póker **no se limita al Emerald Isle**:
 
-Esto habilita roleplay de salas privadas, torneos caseros, clubes sociales y más.
+- Cualquiera puede comprar una **mesa de póker** como mueble, por **$800**, desde el menú de muebles de la propiedad.
+- Se puede colocar en **cualquier tipo de propiedad**: clubes, bares, casas, negocios, casinos privados…
+- Pueden correr **varias partidas simultáneas** en el servidor, cada una con su propia mesa.
+
+Esto habilita salas privadas, torneos caseros y clubes sociales. Consulta el [sistema de propiedades](sistema-de-propiedades.md) para ver cómo colocar y editar muebles.
 
 ### Baraja y jugadores
-- Se juega con una **baraja inglesa de 52 cartas**.
+
+- Se juega con una **baraja de 52 cartas**.
 - De **2 a 6 jugadores** por mesa.
 - Orden de cartas de mayor a menor: **A, K, Q, J, 10, 9, 8, 7, 6, 5, 4, 3, 2**.
 - Los palos **no tienen jerarquía** entre sí.
 
-### Flujo básico de partida
-1. Los jugadores se unen a la mesa con `/pkr unirse` o `/pkr sentarse`.
-2. Cada jugador cambia su estado a **"listo"** desde la interfaz.
-3. Cuando todos están listos, cualquiera puede iniciar con `/pkr comenzar`.
-4. Durante las manos, se apuesta desde los botones centrales (subir, pasar, igualar, retirarse, all-in…).
-5. Al terminar la partida se reparten las fichas; con `/pkr siguiente` se reinicia la mesa para una nueva ronda.
+### Flujo de una partida
 
-### Comandos básicos
-- 🆘 `/pkr ayuda` — lista todos los comandos disponibles.
-- 🎮 `/pkr unirse` — te sientas en una mesa.
-- 🎮 `/pkr sentarse` / `/pkr levantarse` — tomar o soltar un asiento.
-- 🎮 `/pkr abandonar` — abandonas la mesa.
-- 🎮 `/pkr comenzar` — inicias la partida cuando todos están listos.
-- 🎮 `/pkr siguiente` — reinicias la mesa si la partida terminó.
-- 🎮 `/pkr fichas` — añadir fichas (dinero) a tu pila en la mesa.
-- 🎞️ `/pkr spec` — observar una partida en curso.
-- 🎞️ `/pkr cam` — alternar la vista de cámara.
-- 🖱️ `/pkr mouse` — recupera el cursor si se pierde.
+1. Acércate a la mesa y únete con `/pkr unirse`.
+2. Compra fichas con `/pkr fichas`: el importe sale de tu efectivo y pasa a tu pila en la mesa.
+3. Marca tu estado como **listo** desde la interfaz.
+4. Cuando todos están listos, cualquiera inicia la partida con `/pkr comenzar`.
+5. Durante las manos apuestas desde los botones centrales (subir, pasar, igualar, retirarse, all-in).
+6. Al terminar, `/pkr siguiente` devuelve la mesa al lobby para una nueva ronda.
 
-### Comandos para dueños de negocio
-Los propietarios de la propiedad en la que esté colocada la mesa pueden ajustar parámetros específicos:
+Los ajustes de la mesa (apuesta mínima, comisión, temporizador) **solo se pueden cambiar en el lobby**, nunca con una partida en curso. Al cambiarlos, todos los jugadores vuelven a estado "no listo" para que confirmen las nuevas condiciones.
 
-- 💼 `/pkr apuesta` — cambia la **apuesta mínima (ciega)** antes de comenzar la ronda.
-- 💼 `/pkr comision` — establece la **comisión por juego** que va directamente a la caja de la propiedad en cada pago.
-- 💼 `/pkr temporizador` — establece el **tiempo máximo por turno** de cada jugador (por defecto, 20 segundos).
+### Comandos de jugador
+
+- `/pkr ayuda` — lista todos los comandos.
+- `/pkr unirse` — te unes a la mesa que tengas cerca.
+- `/pkr sentarse` / `/pkr levantarse` — tomas o sueltas un asiento.
+- `/pkr abandonar` — abandonas la partida.
+- `/pkr fichas` — añades fichas a tu pila (solo en el lobby).
+- `/pkr comenzar` — inicias la partida cuando todos están listos.
+- `/pkr siguiente` — reinicias la mesa una vez terminada la partida.
+- `/pkr spec` — observas una partida en curso.
+- `/pkr cam` — alternas la vista de cámara.
+- `/pkr mouse` — recuperas el cursor si lo pierdes.
+
+### Comandos para dueños
+
+| Comando | Qué ajusta | Rango |
+|---|---|---|
+| `/pkr apuesta` | Apuesta mínima (ciega) de la mesa | **$0 a $100.000** |
+| `/pkr temporizador` | Tiempo máximo por turno | **10 a 60 segundos**, o 0 para desactivarlo |
+| `/pkr comision` | Comisión de la casa sobre cada bote | **0% a 25%** |
+
+La apuesta mínima y el temporizador los puede fijar cualquiera de los jugadores desde el lobby; el valor por defecto del temporizador es de **20 segundos**. La **comisión**, en cambio, solo la puede establecer el **dueño de un club** y se cobra dentro de ese club; el dinero va directo a la caja del negocio.
 
 ### Recursos para aprender
+
 - [Tutorial de PokerStars](https://www.pokerstars.es/poker/games/texas-holdem/)
 - [Tutorial de EducaPoker](https://www.educapoker.com/)
 - [Entrada de Wikipedia sobre Texas Hold'em](https://es.wikipedia.org/wiki/Texas_hold_%27em)
 
 ---
 
-## 5. Acciones y negocio del casino
-El Emerald Isle Casino no solo es un lugar para jugar: también funciona como una **propiedad con beneficios compartidos**.
+## 6. Inside Track (apuestas de caballos)
 
-- Los jugadores pueden **adquirir acciones (shares)** del casino.
-- Los beneficios generados por los minijuegos (tragamonedas, ruleta y blackjack) se acumulan en la **caja del casino**.
-- Cada mes, los accionistas reciben **ingresos proporcionales** a su participación sobre los beneficios acumulados.
+El **Inside Track** son carreras de caballos retransmitidas por televisión sobre las que puedes apostar. Las encuentras en el propio Emerald Isle y en las **casas de apuestas** repartidas por el estado. Si usas el comando fuera de una, el juego te marca en el mapa la casa de apuestas más cercana.
 
-Esto convierte al casino en una inversión de largo plazo que premia a los jugadores que apuestan por el proyecto a nivel roleplay y económico.
+### Cómo funciona
+
+- Se corre una carrera nueva **cada 15 minutos**. `/insidetrack` te dice cuántos minutos faltan para la siguiente.
+- Cada carrera enfrenta a **5 caballos** elegidos al azar del establo, con su jinete y su cuota.
+- Abres el panel con `/insidetrack apostar`, eliges caballo e importe, y confirmas.
+- Puedes seguir la carrera en directo con `/insidetrack spec` y cambiar de cámara con `/insidetrack cámara`.
+- Mientras la carrera no haya empezado puedes retirar tu apuesta con `/insidetrack cancelar`.
+
+### Dinero y pagos
+
+- La apuesta sale de tu **cuenta bancaria**, no de tu efectivo, y el premio se ingresa también al banco.
+- El importe debe estar entre **$1 y $1.000.000**.
+- Cada caballo tiene una **cuota** visible en el panel, entre **x2 y x5**. Si tu caballo gana, cobras tu apuesta multiplicada por esa cuota; los caballos con cuota alta son los menos favoritos.
+- Solo puedes tener **una apuesta confirmada** a la vez.
+
+### Comisión de la casa
+
+El dueño del negocio donde apuestas puede fijar una **comisión de entre 0% y 10%** con `/insidetrack rake`. Se descuenta de tu apuesta en el momento de confirmarla, va a la caja del negocio y **no se reembolsa** aunque canceles. El porcentaje vigente se muestra en el panel de apuestas antes de que confirmes.
+
+### Comandos
+
+- `/insidetrack apostar` — abre el panel de apuestas.
+- `/insidetrack cancelar` — cancela tu apuesta antes de la carrera.
+- `/insidetrack spec` — observas la carrera en curso.
+- `/insidetrack cámara` — alternas la vista de cámara.
+- `/insidetrack mouse` — recuperas el cursor.
+- `/insidetrack salir` — sales de la retransmisión.
+- `/insidetrack rake` — para dueños: fija la comisión de la casa.
 
 ---
 
-## 6. Estadísticas personales
-Con `/casino stats` se pueden consultar, en cualquier momento, tus **balances netos de por vida** en cada juego:
+## 7. Lotería de San Andreas
 
-- Tragamonedas.
-- Ruleta.
-- Blackjack.
-- Póker.
+La **lotería estatal** es la apuesta más barata del servidor y no requiere estar en ningún local de juego.
 
-El balance se muestra en **verde** si has ganado más de lo que has apostado en ese juego, y en **rojo** si has perdido más de lo que has ganado. Es una forma rápida de llevar el control sobre tu historial como jugador.
+### Cómo participar
+
+- Compra tu boleto en **cualquier supermercado** del estado.
+- Cada boleto te asigna un **número al azar entre 1 y 300**, así que tienes **1 probabilidad entre 300** de ganar.
+- Solo puedes tener **un boleto activo**: si compras otro, sustituye al anterior.
+- Consulta el pozo, las horas de sorteo y tu número con `/loteria`.
+
+### Sorteos y premios
+
+- Hay **tres sorteos al día**, a las **02:00, 04:00 y 15:00** (hora del servidor, consultable con `/hora ooc`).
+- Se avisa por los medios **15 minutos antes** de cada sorteo.
+- El número ganador se anuncia públicamente. Si es el tuyo, el pozo completo se ingresa en tu **cuenta bancaria**.
+- Todos los boletos se anulan tras cada sorteo, ganes o no: hay que comprar uno nuevo para el siguiente.
+- Si **nadie acierta**, el pozo crece y se acumula para el siguiente sorteo. Si alguien gana, el pozo se reinicia entre **$300.000 y $500.000**.
+- El pozo también sube ligeramente con cada boleto vendido.
 
 ---
 
-> **Recordatorio:** el casino está pensado como **entretenimiento roleplay**. Apuesta con cabeza, define un presupuesto antes de empezar y recuerda que cada juego tiene su propio ritmo, sus propios límites de apuesta y sus propios pagos.
+## 8. Estadísticas personales
+
+Con `/casino stats` consultas en cualquier momento tu **balance neto de por vida** en cada juego: la suma de todo lo ganado menos todo lo apostado.
+
+Se muestran por separado:
+
+- Tragamonedas
+- Ruleta
+- Blackjack
+- Póker
+- Trile
+- Inside Track
+- Billar (8 Ball Pool)
+
+El balance aparece en **verde** si vas en positivo y en **rojo** si vas en negativo, con un **total** al final que suma todos los juegos. Es la forma más rápida de saber si el casino te está tratando bien.
+
+---
+
+## 9. El casino como negocio
+
+El Emerald Isle no es solo un lugar para jugar: es una propiedad con su propia caja. Todo lo que los jugadores pierden en las tragamonedas, la ruleta y el blackjack entra en la caja del casino, y todo lo que ganan sale de ella. Solo una parte de las pérdidas queda realmente en la caja: el resto **desaparece de la economía**, lo que ayuda a controlar la cantidad de efectivo en circulación en el servidor.
+
+La caja del casino financia los premios de sus juegos, igual que la caja de cualquier casa de apuestas o club financia las comisiones del Inside Track y del póker. Puedes ver cómo funcionan las cajas de los negocios en el [sistema de propiedades](sistema-de-propiedades.md).
+
+---
+
+## Consejos
+
+- **Fija un presupuesto antes de sentarte.** Todos los juegos de la casa están diseñados para que, a la larga, la casa gane: son una fuente de roleplay y de emoción, no una fuente de ingresos.
+- **En las tragamonedas**, recuerda que la combinación del 69 paga menos de lo que apuestas. Las máquinas son el juego más rápido y también el que más fácilmente vacía un bolsillo con los giros automáticos activados.
+- **En la ruleta**, las apuestas a color, par/impar y altos/bajos son las que más veces ganan; los plenos son los que mejor pagan. El 0 solo beneficia a quien lo apueste directamente.
+- **En el blackjack**, la clave está en calcular cuándo el crupier se pasará: recuerda que está obligado a pedir hasta 17.
+- **En el trile**, retirarte a tiempo es parte del juego. Cada nivel sube tu apuesta, así que una racha larga arriesga cada vez más dinero por la misma probabilidad de acierto.
+- **En el Inside Track**, revisa la comisión de la casa antes de confirmar: no se devuelve aunque canceles la apuesta.
+- **En el póker**, juegas contra otros jugadores y no contra la casa, así que tu habilidad y tu lectura de la mesa sí influyen en el resultado.
