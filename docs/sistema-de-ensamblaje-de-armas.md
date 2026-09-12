@@ -31,7 +31,7 @@ Esta guía compara los tres caminos y luego explica cada uno en detalle, con én
 | **Espera entre compras** | **2 semanas** (1 semana con Premium Gold o superior) | **1 semana** (3 días y medio en pistolas para Platinum y Ruby) | Se calcula por unidad ensamblada: de **12 a 168 horas** por arma |
 | **Cantidad por operación** | 1 arma | 1 arma | Hasta **20 unidades** según el tipo |
 | **¿Tiene serial?** | **Sí**, registrado a tu nombre y a la armería | **Sí**, registrado a tu nombre | **No**, sale completamente limpia |
-| **¿Viene cargada?** | Sí, con el cargador lleno | Sí, con el cargador lleno | **No**, sale vacía |
+| **¿Viene cargada?** | **No**, sale vacía | **No**, sale vacía | **No**, sale vacía |
 | **Ante la policía** | Legal mientras conserves la licencia | El serial te delata: aparece en las bases policiales a tu nombre | Sin rastro documental: no hay nada que buscar |
 | **Ante el forense** | El casquillo apunta a tu arma registrada | El casquillo apunta a tu arma registrada | El casquillo aparece como **"sin registro"** |
 | **Catálogo** | Pistolas comunes, escopetas y algún rifle de caza | Lista corta: pistolas y unas pocas armas largas | El catálogo más amplio del servidor, incluido armamento pesado |
