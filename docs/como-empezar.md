@@ -6,20 +6,22 @@ Si acabas de descubrir SARP y no sabes por dónde meter cabeza, esta es la ruta 
 
 1. **Instala lo necesario**. Asegúrate de tener **GTA San Andreas** y descarga **SA-MP 0.3DL** desde el foro oficial: [Descargar SA-MP 0.3DL](https://forum.sarp.es/index.php?/forum/238-%F0%9F%94%97-descargar-san-andreas-multiplayer-03dl/). Recuerda: la versión 0.3.7 estándar **no funciona** con SARP, porque el servidor usa 0.3DL para cargar skins, modelos y objetos personalizados.
 2. **Regístrate en el UCP** en [ucp.sarp.es](https://ucp.sarp.es) — confirma tu correo y vincula tu cuenta de Discord cuando te lo pida. Todo lo que pasa fuera del juego se gestiona desde ahí: [Panel de Control](panel-de-control.md).
-3. **Lee las normativas** desde la sección de información del servidor del UCP. Es la lectura más importante de tu paso por SARP, y la base para superar el siguiente paso.
-4. **Aprueba la certificación** desde el UCP: test de **12 preguntas** de alternativas sobre normas generales y rol básico; apruebas con **7 aciertos**. Tienes **5 intentos** seguidos y, si los agotas, **30 minutos** de espera antes de volver a intentarlo. Detalles en [Certificación](sistema-de-certificacion.md).
-5. **Crea tu primer personaje** en el UCP. Sin personaje no puedes conectarte.
-6. **Conéctate al servidor** apuntando a `play.sarp.es:7777` desde SA-MP 0.3DL.
+3. **Lee las normativas** desde la sección de información del servidor del UCP. Es la lectura más importante de tu paso por SARP.
+4. **Crea tu primer personaje** en el UCP. Sin personaje no puedes conectarte.
+5. **Conéctate al servidor** apuntando a `play.sarp.es:7777` desde SA-MP 0.3DL.
+
+**Opcional:** cuando conozcas bien las normas, puedes aprobar la [certificación](sistema-de-certificacion.md) desde el UCP. Es un examen exigente (12 preguntas, apruebas con 10) que te da la insignia de cuenta certificada y el voto en las elecciones. No la necesitas para jugar.
 
 ### Pasos obligatorios resumidos
 
-Al entrar a la portada del UCP verás una guía interactiva con los cinco requisitos:
+Al entrar a la portada del UCP verás una guía interactiva con los cuatro requisitos:
 
 1. **Descargar GTA San Andreas** — descarga del juego base desde el foro.
 2. **Instalar SA-MP 0.3DL** — la versión 0.3.7 estándar **no es compatible**.
-3. **Certificación** — aprobar el test de rol (12 preguntas, apruebas con 7 aciertos).
-4. **Crear un personaje** — al menos uno para poder conectarte.
-5. **Verificar Discord** — la vinculación de la cuenta de Discord es obligatoria.
+3. **Crear un personaje** — al menos uno para poder conectarte.
+4. **Verificar Discord** — la vinculación de la cuenta de Discord es obligatoria.
+
+Debajo de los pasos aparece la **certificación**, marcada como opcional.
 
 ## Tu primera conexión
 
@@ -128,7 +130,7 @@ Cuando ya te muevas con soltura, estos son los sistemas que más te van a servir
 - [Sistema de impuestos](sistema-de-impuestos.md) — qué te cobra el gobierno cada día por tus bienes.
 - [Sistema de Burger Points](sistema-de-burger-points.md) — la moneda que ganas jugando y en qué puedes gastarla.
 - [Sistema de gimnasio](sistema-de-gimnasio.md) — entrenar a tu personaje y mejorar su forma física.
-- [Certificación](sistema-de-certificacion.md) — el test obligatorio explicado en detalle.
+- [Certificación](sistema-de-certificacion.md) — el examen opcional de normas explicado en detalle.
 
 ## Si te atascas
 

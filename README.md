@@ -42,7 +42,7 @@ Bienvenido a la documentación oficial de **San Andreas Roleplay** ([sarp.es](ht
 | [🚀 Cómo empezar](docs/como-empezar.md)                          | Ruta paso a paso desde el registro hasta tus primeras horas de juego.          |
 | [🖥️ Panel de control (UCP)](docs/panel-de-control.md)            | La web oficial: cuenta, personajes, empresas, facción y normativas.            |
 | [📜 Foro](docs/foro.md)                                          | Secciones del foro oficial: anuncios, IC, facciones, sugerencias y soporte.    |
-| [🎓 Certificación](docs/sistema-de-certificacion.md)             | Test de rol obligatorio en el panel: 12 preguntas, apruebas con 7.             |
+| [🎓 Certificación](docs/sistema-de-certificacion.md)             | Examen opcional sobre las normas: 12 preguntas, apruebas con 10.               |
 | [💎 Tienda y Premium](docs/tienda-premium.md)                    | Monedas de cuenta, niveles premium y todos los beneficios por nivel.           |
 | [🎫 Tickets](docs/sistema-de-tickets.md)                         | Soporte con la administración: `/duda`, `/reportar` y tickets del panel.       |
 | [🐦 Bleeter](docs/bleeter.md)                                    | Red social in-character: publicaciones, historias, seguidores y tendencias.    |

@@ -27,4 +27,4 @@ Para entrar al servidor de juego necesitas:
 2. **SA-MP 0.3DL** — la versión 0.3.7 estándar **no es compatible**. SARP usa 0.3DL para cargar skins, modelos y mods personalizados que dan vida visual al servidor. Lo descargas desde el foro oficial: [Descargar SA-MP 0.3DL](https://forum.sarp.es/index.php?/forum/238-%F0%9F%94%97-descargar-san-andreas-multiplayer-03dl/).
 3. Conectarte a la IP oficial: **`play.sarp.es:7777`**.
 
-Antes de poder jugar, sin embargo, tienes que registrarte en el UCP, aprobar la certificación y crear al menos un personaje. Los detalles están en la guía de cómo empezar.
+Antes de poder jugar, sin embargo, tienes que registrarte en el UCP y crear al menos un personaje. Los detalles están en la guía de cómo empezar.
