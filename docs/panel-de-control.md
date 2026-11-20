@@ -2,7 +2,7 @@
 
 ## Introducción
 
-El **Panel de Control de Usuario (UCP)**, también llamado **UCP**, es la web oficial de San Andreas Roleplay: el lugar donde gestionas tu cuenta, tus personajes y todo lo que ocurre fuera de la partida. No es un extra opcional — es el punto de entrada obligatorio al servidor. Antes de poder conectarte tienes que registrarte aquí, aprobar la certificación de rol y crear tu primer personaje.
+El **Panel de Control de Usuario (UCP)**, también llamado **PCU**, es la web oficial de San Andreas Roleplay: el lugar donde gestionas tu cuenta, tus personajes y todo lo que ocurre fuera de la partida. No es un extra opcional — es el punto de entrada obligatorio al servidor. Antes de poder conectarte tienes que registrarte aquí, aprobar la certificación de rol y crear tu primer personaje.
 
 Una vez dentro del juego, el panel sigue siendo tu herramienta de apoyo: desde ahí consultas las normativas, gestionas los empleados de tu negocio, revisas la actividad de tu facción, abres tickets de soporte y compras en la tienda. Muchas de esas gestiones se hicieron demasiado grandes para caber en un menú del juego, así que viven en la web.
 
