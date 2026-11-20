@@ -6,7 +6,7 @@ El gimnasio es el sistema que define la **forma física de tu personaje**: cuán
 
 Hay gimnasios cubiertos repartidos por **Los Santos**, **Las Venturas**, **Ganton** y la **playa**, además de varias zonas de ejercicio **al aire libre** en la costa de Santa Maria, Verona Beach, la playa este de Los Santos, el paseo costero de Las Venturas y Bayside. Cada uno ofrece cuatro máquinas: **trotadora**, **bicicleta**, **pressbanca** y **mancuernas**. No se paga entrada ni membresía: las máquinas son de uso libre, una persona a la vez.
 
-Tu progreso se apoya en cinco indicadores que van de **0 a 25**: musculatura, estado físico, energía, hambre y sed. Los dos primeros son el resultado del entrenamiento; los otros tres son necesidades que debes atender para poder entrenar. Puedes consultar musculatura, estado físico y estilo de pelea en `/stats`, y cualquiera puede ver tu contextura y tu condición física al observarte con `/describir`.
+Tu progreso se apoya en cinco indicadores que van de **0 a 25**: musculatura, estado físico, energía, hambre y sed. Los dos primeros son el resultado del entrenamiento; los otros tres son necesidades que debes atender para poder entrenar. Puedes consultar musculatura, estado físico y estilo de pelea en `/stats`, y cualquiera puede ver tu contextura y tu condición física al observarte con `/mirar`.
 
 Entrenar es además una de las actividades que reparte [Burger Points](sistema-de-burger-points.md), y tu vida máxima depende tanto del músculo que tengas como de tu nivel de felicidad, explicado en [asesinatos, salud mental y felicidad](sistema-de-asesinatos.md).
 
@@ -16,7 +16,7 @@ Entrenar es además una de las actividades que reparte [Burger Points](sistema-d
 - `/ensenarestilo [id] [precio] [boxing | kungfu | kneehead]` — ofrece enseñar un estilo a otro jugador. Solo para personal trainers.
 - `/aceptar` y `/rechazar` — el alumno responde a la oferta de un personal trainer.
 - `/stats` — muestra, entre otras cosas, tu musculatura, tu estado físico y tu estilo de pelea actual.
-- `/describir [id]` — muestra la contextura y la condición física visibles de un personaje.
+- `/mirar [id]` — muestra la contextura y la condición física visibles de un personaje.
 
 ## Cómo se entrena
 
@@ -63,7 +63,7 @@ Representa la fuerza de tu personaje. Sube usando el **pressbanca** y las **manc
 - **Decaimiento**: si no entrenas, **cada 8 horas** pierdes un punto de experiencia muscular. Cuando la experiencia del nivel se agota, bajas un nivel completo de musculatura.
 - Subir tu primer nivel de musculatura desbloquea un logro.
 
-| Musculatura | Vida máxima base | Contextura visible en `/describir` |
+| Musculatura | Vida máxima base | Contextura visible en `/mirar` |
 |-------------|------------------|-------------------------------------|
 | 0 – 5 | 100 | Normal |
 | 6 – 10 | 125 | En forma |
@@ -91,7 +91,7 @@ Representa tu resistencia y tu peso corporal. Sube con la **trotadora** y la **b
 - **Alimentación**: cada vez que comes o bebes hay un **50% de probabilidad** de que el alimento afecte tu estado físico, en función de lo insalubre que sea. El agua y el café no perjudican; las bebidas azucaradas, el alcohol fuerte y las bebidas energéticas sí.
 - **Protección tras entrenar**: al subir un nivel de estado físico queda una ventana de **60 minutos** durante la cual comer mal no puede hacerte retroceder. Fuera de esa ventana, la comida insalubre puede bajártelo cada **30 minutos**.
 
-| Estado físico | Condición visible en `/describir` |
+| Estado físico | Condición visible en `/mirar` |
 |---------------|-----------------------------------|
 | Excelente | Delgado |
 | Bueno | Normal |
