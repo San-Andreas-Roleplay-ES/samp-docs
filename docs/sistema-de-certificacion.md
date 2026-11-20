@@ -1,40 +1,37 @@
 # Certificación
 
-La certificación es el **test de rol obligatorio** que tienes que aprobar antes de poder conectarte al servidor. Es la forma que tiene SARP de asegurarse de que cualquier persona que entra a jugar conoce las normativas y los fundamentos del rol: no es un trámite, es un filtro de calidad que protege la experiencia de toda la comunidad.
+La certificación es un **examen opcional** sobre las normativas y los fundamentos del rol de SARP. **No la necesitas para jugar**: puedes registrarte, crear tu personaje y conectarte al servidor sin haberla aprobado. Sirve para demostrar que conoces bien las reglas, y tu cuenta lo muestra con una insignia.
 
-El test se realiza íntegramente desde el panel de control de usuario, en [ucp.sarp.es](https://ucp.sarp.es). No se hace dentro del juego: si intentas conectarte al servidor sin haber aprobado, el servidor te avisará por chat y te devolverá al panel para que completes el examen primero.
+El examen se hace íntegramente desde el panel de control de usuario, en [ucp.sarp.es](https://ucp.sarp.es), en la sección **Certificación**. No se hace dentro del juego.
 
-Está pensado para jugadores nuevos, pero la nota no se regala. Las preguntas salen directamente de las normativas publicadas y de situaciones de rol reales, así que lo más eficiente es leerlas antes de empezar: quien intenta aprobar a base de intuición suele fallar en las preguntas de situación, que son las que más pesan.
+Es exigente a propósito: las preguntas salen directamente de las normativas publicadas y de situaciones de rol reales, y la nota mínima es alta. Lo más eficiente es leer las normativas antes de empezar: quien intenta aprobar a base de intuición suele fallar en las preguntas de situación.
 
-Una vez aprobado, el resultado queda ligado a tu **cuenta** de forma permanente. No hay que repetirlo al crear personajes nuevos ni al volver después de una temporada sin jugar.
+Una vez aprobada, la certificación queda ligada a tu **cuenta** de forma permanente. No hay que repetirla al crear personajes nuevos ni al volver después de una temporada sin jugar.
 
-## Requisitos para entrar al servidor
+## Qué te da aprobar
 
-Aprobar el test es solo uno de los dos requisitos de acceso. El servidor comprueba ambos en el momento de iniciar sesión:
-
-| Requisito | Qué significa |
+| Ventaja | Detalle |
 |---|---|
-| **Certificación aprobada** | Haber superado el test de rol desde el panel de control |
-| **Cuenta aprobada** | Tu cuenta debe estar validada antes de poder conectar al servidor de juego |
+| **Insignia de cuenta certificada** | Aparece en tu perfil del panel de control |
+| **Voto en las elecciones** | Para votar en las elecciones del servidor hace falta estar certificado (y tener Discord vinculado) |
+| **Contar como referido** | Si alguien te invitó con su código, cuentas para su premio cuando estás certificado, con Discord vinculado y verificación en dos pasos activa |
 
-Si te falta cualquiera de los dos, la conexión se corta con un mensaje explicando cuál es el que falla y el enlace al panel. No es un castigo ni una sanción: basta con completar el paso pendiente y volver a entrar.
+Mientras no la apruebes, tu perfil la muestra como "sin certificar", sin ninguna otra consecuencia.
 
-## Formato del test
+## Formato del examen
 
-El examen consta de **12 preguntas** seleccionadas al azar de un banco de **57 preguntas** distintas, así que dos intentos seguidos casi nunca son iguales.
+Cada intento tiene **12 preguntas** sorteadas al azar de un banco de más de 50, así que dos intentos casi nunca son iguales.
 
 | Parámetro | Valor |
 |---|---|
 | Preguntas por intento | **12** |
-| Banco total de preguntas | **57** |
 | Opciones por pregunta | **3 o 4** |
-| Nota mínima para aprobar | **7 sobre 12** |
-| Intentos permitidos | **5** |
-| Espera tras agotar los intentos | **30 minutos** |
+| Nota mínima para aprobar | **10 de 12** |
+| Intentos | **3 cada 24 horas** |
 
-La gran mayoría son preguntas de **respuesta única**: eliges una sola opción y aciertas o fallas. Un par de ellas son de **respuesta múltiple**, donde hay varias opciones correctas y tienes que marcarlas todas. Estas puntúan de forma proporcional: si marcas dos de las tres correctas, te llevas una fracción del punto en lugar de perderlo entero. Por eso las notas finales pueden salir con decimales (8,5 o 10,67, por ejemplo) en lugar de ser números redondos.
+La gran mayoría son preguntas de **respuesta única**: eliges una sola opción y aciertas o fallas. Algunas son de **respuesta múltiple**: hay varias opciones correctas y, para que la pregunta cuente, tienes que marcarlas **todas y ninguna incorrecta**. No hay puntos parciales: marcar todas las opciones "por si acaso" cuenta como fallo.
 
-Necesitas **7 puntos sobre 12** para aprobar. Eso equivale a acertar algo menos del 60% del examen, un margen que permite equivocarse en cinco preguntas y aun así pasar, pero que no perdona responder al azar.
+Necesitas **10 aciertos de 12** para aprobar, es decir, puedes equivocarte como máximo en dos preguntas.
 
 ## Temario
 
@@ -52,27 +49,17 @@ Las preguntas se reparten en varios bloques que siguen el orden de las normativa
 
 ## Intentos y espera
 
-Tienes **5 intentos**. Si fallas, puedes volver a empezar inmediatamente: el test se regenera con preguntas distintas del banco y no hay penalización por reintentar dentro de ese margen.
+Tienes **3 intentos cada 24 horas**. Cada intento terminado cuenta durante 24 horas desde que lo envías; cuando el más antiguo cumple ese plazo, recuperas un intento.
 
-Si agotas los cinco sin aprobar, la cuenta queda bloqueada temporalmente para el examen durante **30 minutos**. Pasado ese tiempo vuelves a tener intentos disponibles. No es un baneo del servidor ni afecta a tu cuenta de ninguna otra forma: solo impide seguir intentando el test en ese momento.
+Al abrir el examen se te asignan tus 12 preguntas. Si recargas la página o vuelves más tarde, **siguen siendo las mismas** hasta que envíes tus respuestas: no puedes cambiar de preguntas recargando. Si fallas, el siguiente intento trae preguntas nuevas.
 
-El bloqueo existe para evitar que alguien apruebe a fuerza de repetir hasta que le salgan preguntas fáciles. Si llegas a él, aprovecha la media hora para leer las normativas con calma en lugar de esperar mirando el reloj: el sexto intento con el temario leído vale más que veinte intentos a ciegas.
-
-## Qué desbloquea aprobar
-
-Aprobar la certificación desbloquea el acceso al servidor de juego. Con el test superado y la cuenta aprobada puedes:
-
-- Crear tu primer personaje desde el panel de control.
-- Conectarte al servidor y empezar a jugar con normalidad.
-- Acceder al resto de sistemas del gamemode sin ninguna restricción derivada del examen.
-
-No hay funciones ni contenidos que sigan bloqueados después de aprobar: la certificación es una puerta de entrada única, no un sistema de niveles. Una vez pasada, tu cuenta queda marcada como certificada de forma indefinida.
+Si agotas los tres sin aprobar, el panel te indica cuándo podrás volver a intentarlo. No es una sanción ni afecta a tu cuenta ni a tu acceso al servidor: solo impide seguir intentando el examen hasta entonces. Aprovecha la espera para repasar las normativas con calma.
 
 ## Consejos
 
-- **Lee las normativas antes de empezar.** Están publicadas en el panel de control, organizadas por categorías (normativa de cuentas, de rol, de propiedades, de pagos y de contenido). El test sale de ahí casi literalmente.
-- **La normativa de rol es la que más cae.** Es la categoría con más reglas y la que alimenta la mayoría de las preguntas del examen. Si vas justo de tiempo, prioriza esa.
-- **Ojo con las preguntas de respuesta múltiple.** Si una pregunta te permite marcar varias opciones, es porque hay más de una correcta. Marcar solo la más obvia te deja con puntuación parcial.
+- **Lee las normativas antes de empezar.** Están publicadas en el panel de control, organizadas por categorías (normativa de cuentas, de rol, de propiedades, de pagos y de contenido). El examen sale de ahí casi literalmente.
+- **La normativa de rol es la que más cae.** Es la categoría con más reglas y la que alimenta la mayoría de las preguntas. Si vas justo de tiempo, prioriza esa.
+- **Ojo con las preguntas de respuesta múltiple.** Si una pregunta te permite marcar varias opciones, hay más de una correcta y tienes que acertarlas todas sin marcar ninguna incorrecta.
 - **En las preguntas de situación, elige siempre la opción más realista.** Casi todas se resuelven con el mismo criterio: la respuesta correcta es la que un ser humano real haría en esa escena, no la que más conviene al jugador.
-- **No te precipites si fallas el primer intento.** Tienes cinco, pero gastarlos seguidos sin repasar suele terminar en los 30 minutos de espera.
-- **Cuando apruebes**, el siguiente paso es crear tu personaje. Consulta [cómo empezar](como-empezar.md) para el proceso completo y [panel de control](panel-de-control.md) para moverte por el resto de opciones de tu cuenta.
+- **No te precipites si fallas.** Con tres intentos al día, gastarlos seguidos sin repasar suele terminar en una espera de 24 horas.
+- **No necesitas esperar a certificarte para jugar.** Consulta [cómo empezar](como-empezar.md) para el proceso completo y [panel de control](panel-de-control.md) para moverte por el resto de opciones de tu cuenta.

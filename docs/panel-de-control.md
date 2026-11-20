@@ -16,11 +16,12 @@ Al entrar a la portada del panel verás una guía con los pasos obligatorios par
 
 1. **Descargar GTA San Andreas** — la descarga del juego base está enlazada desde el foro.
 2. **Instalar SA-MP 0.3DL** — la versión 0.3.7 estándar **no es compatible**. El servidor usa 0.3DL, que es lo que permite cargar las skins, modelos y objetos personalizados de la comunidad.
-3. **Aprobar la certificación** — el test de rol obligatorio. Consulta el detalle en [certificación](sistema-de-certificacion.md).
-4. **Crear un personaje** — necesitas al menos uno para poder conectarte.
-5. **Verificar Discord** — la vinculación de tu cuenta de Discord es un paso obligatorio.
+3. **Crear un personaje** — necesitas al menos uno para poder conectarte.
+4. **Verificar Discord** — la vinculación de tu cuenta de Discord es un paso obligatorio.
 
-Si intentas conectarte al servidor sin la certificación aprobada, el juego te expulsará con un aviso indicándote que la completes en el panel. Lo mismo ocurre si tu cuenta todavía está pendiente de aprobación por parte del equipo administrativo.
+La [certificación](sistema-de-certificacion.md) aparece aparte, marcada como opcional: es un examen de normas que te da la insignia de cuenta certificada y el voto en las elecciones, pero no la necesitas para jugar.
+
+Si tu cuenta todavía está pendiente de aprobación por parte del equipo administrativo, el juego te expulsará al conectarte con un aviso que te remite al panel.
 
 ## Autenticación y seguridad de la cuenta
 
@@ -120,4 +121,4 @@ Cada notificación enlaza directamente al sitio donde ocurrió, así que no tien
 - Activa la **verificación en dos pasos** el primer día. Recuperar una cuenta robada es mucho más lento que protegerla.
 - Si has hecho un cambio importante desde la web y el juego te desconecta, es la sincronización haciendo su trabajo: vuelve a entrar y listo.
 - Antes de comprar una casa o un negocio, mira primero el **mapa** y el listado de propiedades disponibles: te evitará dar vueltas.
-- Lee las **normativas** completas aunque hayas aprobado la certificación. El test comprueba lo básico; las normas cubren mucho más.
+- Lee las **normativas** completas aunque hayas aprobado la certificación. El examen no puede cubrirlo todo; las normas cubren mucho más.
