@@ -2,16 +2,17 @@
 
 ## Introducción
 
-El gimnasio es el sistema que define la **forma física de tu personaje**: cuánta vida aguanta, cuánto daño reparte a puñetazos, qué estilo de pelea puede usar y hasta cuántos saltos seguidos es capaz de dar. Todo eso se entrena a mano, máquina por máquina, y se pierde solo si dejas de cuidarte.
+El gimnasio es el sistema que define la **forma física de tu personaje**: cuánta vida aguanta, cuánto daño reparte a puñetazos, qué estilo de pelea puede usar, cuánta ventaja tiene al taclear y hasta cuántos saltos seguidos es capaz de dar. Todo eso se entrena a mano, máquina por máquina, y se pierde solo si dejas de cuidarte.
 
 Hay gimnasios cubiertos repartidos por **Los Santos**, **Las Venturas**, **Ganton** y la **playa**, además de varias zonas de ejercicio **al aire libre** en la costa de Santa Maria, Verona Beach, la playa este de Los Santos, el paseo costero de Las Venturas y Bayside. Cada uno ofrece cuatro máquinas: **trotadora**, **bicicleta**, **pressbanca** y **mancuernas**. No se paga entrada ni membresía: las máquinas son de uso libre, una persona a la vez.
 
-Tu progreso se apoya en cinco indicadores que van de **0 a 25**: musculatura, estado físico, energía, hambre y sed. Los dos primeros son el resultado del entrenamiento; los otros tres son necesidades que debes atender para poder entrenar. Puedes consultar musculatura, estado físico y estilo de pelea en `/stats`, y cualquiera puede ver tu contextura y tu condición física al observarte con `/mirar`.
+Tu progreso se apoya en cinco indicadores que van de **0 a 25**: musculatura, estado físico, energía, hambre y sed. Los dos primeros son el resultado del entrenamiento; los otros tres son necesidades que debes atender para poder entrenar. Puedes consultar musculatura, estado físico y estilo de pelea en `/stats`, ver los cinco indicadores de golpe con `/necesidades`, y cualquiera puede ver tu contextura y tu condición física al observarte con `/mirar`.
 
 Entrenar es además una de las actividades que reparte [Burger Points](sistema-de-burger-points.md), y tu vida máxima depende tanto del músculo que tengas como de tu nivel de felicidad, explicado en [asesinatos, salud mental y felicidad](sistema-de-asesinatos.md).
 
 ### Comandos
 
+- `/necesidades` — abre un panel con tus barras de músculo, peso, hambre, sed y energía.
 - `/estilopelea [boxing | kungfu | kneehead | default]` — cambia tu estilo de pelea. Debes estar junto a un saco de boxeo.
 - `/ensenarestilo [id] [precio] [boxing | kungfu | kneehead]` — ofrece enseñar un estilo a otro jugador. Solo para personal trainers.
 - `/aceptar` y `/rechazar` — el alumno responde a la oferta de un personal trainer.
@@ -24,16 +25,45 @@ El ciclo es siempre el mismo, en cualquiera de las cuatro máquinas:
 
 1. Acércate a la máquina hasta que aparezca el aviso en pantalla.
 2. Pulsa la **tecla de entrar a vehículo** para subirte. Tu personaje se coloca solo y la cámara pasa a un plano fijo.
-3. Machaca la **tecla de sprint** para llenar la **barra de potencia** que aparece arriba a la derecha, junto al contador de repeticiones o de distancia.
+3. Entrena según el tipo de máquina: en las de **pesas** pulsas la tecla que te pide la pantalla, y en las de **cardio** machacas la **tecla de sprint** para mantener tu pulso dentro de una franja. Arriba a la derecha verás una barra con su contador.
 4. Pulsa de nuevo la tecla de entrar a vehículo para bajarte.
 
-La barra de potencia sube **5,5 puntos por cada pulsación** y **baja 4 puntos cada cuarto de segundo**, así que hay que mantener el ritmo: si dejas de pulsar, se vacía en pocos segundos. En la trotadora vaciar la barra significa **caerte de la cinta**; en el resto solo interrumpe el esfuerzo.
+Al subirte, las instrucciones de la máquina aparecen en pantalla durante unos 10 segundos. El entrenamiento no empieza hasta que termina la animación de colocación (unos 2 a 5 segundos según la máquina).
 
-El progreso no se cuenta por pulsación sino por tiempo: **cada 7 segundos de esfuerzo válido** el sistema te suma experiencia en la estadística que corresponda a la máquina.
+### Pesas: pressbanca y mancuernas
+
+En las máquinas de pesas ya no basta con machacar una tecla. En pantalla aparece **una tecla al azar** y debes pulsarla **antes de que cambie**. Si aciertas, la barra de potencia sube; si fallas, baja.
+
+- **Fallo**: pulsar otra tecla, pulsar varias teclas a la vez o dejar que se acabe el tiempo. Cada fallo baja la barra, te quita un acierto de la repetición en curso y cambia la tecla. El aviso en pantalla te dice cuántos fallos llevas.
+- **Tres fallos seguidos**: sueltas el peso y la máquina te expulsa. Cualquier acierto vuelve a poner el contador de fallos en cero.
+- **La tecla pedida nunca se repite** dos veces seguidas. Salen teclas de acción y de movimiento, así que conviene tener las manos preparadas.
+- **El tiempo por tecla se acorta** a lo largo de la serie: la primera repetición es la más tranquila y la última, la más exigente. Con poca musculatura el ritmo es más lento (de unos 3 segundos por tecla al principio a unos 1,8 al final) y se va volviendo más rápido a medida que te pones fuerte (de unos 2 segundos a unos 1,1 con la musculatura al máximo).
+- **Una serie es un conjunto de repeticiones**: cada vez que reúnes los aciertos de una repetición el contador sube. Cuantos más puntos de musculatura tienes, más repeticiones tiene tu serie.
+- **Experiencia**: cada repetición te da el 40% de su experiencia y el 60% restante llega al terminar la **serie completa** (aparece el aviso ¡Serie completada!). Si sales a mitad de serie pierdes ese 60% de lo hecho hasta ese momento, así que importa terminarla.
+- **Energía**: gastas 1 punto de energía cada 2 repeticiones.
+
+| Máquina | Aciertos por repetición | Repeticiones por serie |
+|---------|-------------------------|------------------------|
+| **Pressbanca** | 3 (series cortas y pesadas) | 4, más 1 por cada 4 puntos de musculatura |
+| **Mancuernas** | 2 (series largas y livianas) | 8, más 1 por cada 3 puntos de musculatura |
+
+Ambas máquinas rinden lo mismo por repetición, así que puedes elegir la que prefieras.
+
+### Cardio: trotadora y bicicleta
+
+En la trotadora y la bicicleta tu barra es tu **pulso**. Cada pulsación de la tecla de sprint lo sube y, si dejas de pulsar, baja solo, así que hace falta una cadencia constante. Sobre la barra aparece una **franja verde** que se mueve: tu objetivo es mantener el pulso dentro de ella.
+
+- Si vas por debajo de la franja aparece **¡Más rápido!**; si te pasas, **¡Más despacio!**.
+- **Trotadora**: la franja salta entre caminar, trotar y sprint (avisos ¡Camina!, ¡A trotar! y ¡Sprint!), cada 9 a 17 segundos aproximadamente. Si el pulso cae casi a cero **te caes de la cinta**.
+- **Bicicleta**: la franja sube y baja de forma continua, como una ruta. No hay caídas: si dejas de pedalear, simplemente te detienes.
+- **Con mal estado físico** la franja es ancha y se mueve despacio; se vuelve más estrecha y más movida a medida que te pones en forma.
+- **Tramos**: cada tramo dura 30 segundos y su contador baja hasta 0 mientras estás en la franja. Para completarlo necesitas pasar **21 de esos 30 segundos** dentro de la franja; en cuanto los reúnes, el tramo se completa. Si se acaba el tiempo sin llegar, aparece el porcentaje que lograste y el tramo queda incompleto.
+- **Experiencia**: cada 5 segundos dentro de la franja equivalen a una repetición de pesas. Recibes el 40% de su experiencia al momento y el 60% restante al completar el tramo. Todo esto va a tu **estado físico**.
+- **Energía**: gastas 1 punto cada 2 de esas unidades (cada 10 segundos en la franja).
 
 ### Bonificación al aire libre
 
-Entrenar **al aire libre rinde el triple** que hacerlo en un gimnasio cerrado: cada tanda válida suma **3 puntos de experiencia** en vez de **1**. Las zonas de ejercicio de la playa y del paseo costero son, con diferencia, la forma más rápida de progresar.
+Entrenar **al aire libre rinde el triple** que hacerlo en un gimnasio cerrado: cada repetición (o cada 5 segundos en la franja) vale **3 puntos de experiencia** en vez de **1**. Las zonas de ejercicio de la playa y del paseo costero son, con diferencia, la forma más rápida de progresar.
 
 Además, cada vez que subes un nivel de musculatura o de estado físico entrenando al aire libre recibes **+5 Burger Points**. Entrenando bajo techo no se otorgan.
 
@@ -41,15 +71,17 @@ Además, cada vez que subes un nivel de musculatura o de estado físico entrenan
 
 | Máquina | Qué entrena | Cómo se mide | Detalle |
 |---------|-------------|--------------|---------|
-| **Trotadora** | Estado físico | Distancia | Tres ritmos según la barra: caminata (0-20%), trote (21-65%) y sprint (66-100%). Si la barra llega a cero, te caes. |
-| **Bicicleta** | Estado físico | Distancia | Tres ritmos: parado (0-10%), pedaleo lento (11-50%) y rápido (51-100%). Por debajo del 11% no acumulas nada. |
-| **Pressbanca** | Musculatura | Repeticiones | Cada vez que llevas la barra al **90-100%** completas una repetición y sumas experiencia. |
-| **Mancuernas** | Musculatura | Repeticiones | Igual que el pressbanca: la repetición cuenta al llegar al **90-100%** de la barra. |
+| **Trotadora** | Estado físico | Segundos de tramo | Franja de pulso que salta entre caminar, trotar y sprint. Si el pulso se vacía, te caes. |
+| **Bicicleta** | Estado físico | Segundos de tramo | Franja de pulso que sube y baja como una ruta. Sin caídas. |
+| **Pressbanca** | Musculatura | Repeticiones | Series cortas: 3 teclas por repetición. |
+| **Mancuernas** | Musculatura | Repeticiones | Series largas: 2 teclas por repetición. |
 
 ### Interrupciones y esperas
 
 - Al bajarte de cualquier máquina queda una espera de **5 segundos** antes de poder subirte a otra.
 - Si pasas **60 segundos sin pulsar** dentro de una máquina te expulsan de ella y se te aplica una espera adicional de **60 segundos**.
+- Si tu energía llega a 1 o menos te sacan de la máquina por cansancio.
+- Si tu hambre o tu sed suben demasiado en pleno entrenamiento, puedes seguir, pero lo que hagas no suma experiencia ni gasta energía hasta que comas o bebas.
 - Una máquina ocupada por otro jugador no se puede usar hasta que la libere.
 
 ## Musculatura
@@ -57,28 +89,37 @@ Además, cada vez que subes un nivel de musculatura o de estado físico entrenan
 Representa la fuerza de tu personaje. Sube usando el **pressbanca** y las **mancuernas**, y determina tu vida máxima, el daño extra que haces cuerpo a cuerpo y tu capacidad de taclear.
 
 - **Máximo**: 25.
-- **Vida máxima**: se define por tramos (ver tabla). Ese valor se multiplica después por tu bonificación de felicidad, que puede añadir hasta un **15%** extra con la felicidad al máximo.
+- **Vida máxima**: parte de **100** sin musculatura y suma **4 puntos por cada nivel de musculatura**, hasta **200** con la musculatura al máximo. Ese valor se multiplica después por tu bonificación de felicidad, que puede añadir hasta un **15%** extra con la felicidad al máximo.
 - **Daño cuerpo a cuerpo**: cada punto de musculatura añade **0,2 de daño** a tus golpes, con cualquier estilo de pelea, incluido el básico.
-- **Tacleos**: si intentas taclear a alguien con más musculatura que tú, tu probabilidad de fallar sube un **33%**.
+- **Tacleos**: la probabilidad de que un tacleo falle depende de la **diferencia de musculatura** entre tú y tu objetivo (ver abajo).
 - **Decaimiento**: si no entrenas, **cada 8 horas** pierdes un punto de experiencia muscular. Cuando la experiencia del nivel se agota, bajas un nivel completo de musculatura.
 - Subir tu primer nivel de musculatura desbloquea un logro.
 
-| Musculatura | Vida máxima base | Contextura visible en `/mirar` |
-|-------------|------------------|-------------------------------------|
-| 0 – 5 | 100 | Normal |
-| 6 – 10 | 125 | En forma |
-| 11 – 24 | 150 | Musculoso |
-| 25 | **175** | ¡Parece una mole! |
+| Musculatura | Contextura visible en `/mirar` |
+|-------------|-------------------------------------|
+| 0 – 5 | Normal |
+| 6 – 10 | En forma |
+| 11 – 24 | Musculoso |
+| 25 | ¡Parece una mole! |
+
+### Tacleo según la musculatura
+
+Al taclear con `/taclear`, la probabilidad de fallar se calcula comparando tu musculatura con la de tu objetivo:
+
+- Con **la misma musculatura**, hay un **20%** de que el tacleo falle.
+- Cada punto de ventaja que tienes sobre tu objetivo **resta 2 puntos** a esa probabilidad; cada punto de desventaja **suma 2**.
+- Si le superas por **10 puntos o más**, no fallas.
+- Si eres mucho más débil (25 puntos o más de diferencia), puedes llegar a fallar hasta el **70%** de las veces, que es el máximo.
 
 ### Coste de cada nivel
 
 Cada nivel exige más experiencia que el anterior, y el coste crece **de 6 en 6**: el primer nivel pide 6 puntos, el segundo 12, el tercero 18, y así hasta los **156 puntos** del último. La misma curva se aplica al estado físico.
 
-Puesto en horas: al aire libre, con 3 puntos por tanda cada 7 segundos, los primeros niveles caen en cuestión de minutos, mientras que los últimos exigen sesiones largas y sostenidas.
+Puesto en repeticiones: bajo techo cada repetición vale 1 punto, así que el primer nivel se logra con 6 repeticiones y el último con 156; al aire libre, con 3 puntos por repetición, esas cifras se dividen por tres. Los primeros niveles caen en pocas series, mientras que los últimos exigen varias sesiones: una barra de energía completa alcanza para unas 48 repeticiones.
 
 ### Esteroides
 
-Los **esteroides** aceleran el crecimiento muscular mientras siguen en tu organismo: según la cantidad acumulada en sangre, cada tanda de entrenamiento suma **2, 4 u 8 puntos de experiencia extra** por encima de lo habitual. Con la acumulación al máximo, una tanda al aire libre pasa de 3 a 11 puntos.
+Los **esteroides** aceleran el crecimiento muscular mientras siguen en tu organismo: según la cantidad acumulada en sangre, cada repetición de pesas suma **2, 4 u 8 puntos de experiencia extra** por encima de lo habitual. Con la acumulación al máximo, una repetición al aire libre pasa de 3 a 11 puntos. Solo ayudan a la musculatura, no al estado físico.
 
 El precio es visible: quien consume esteroides **desarrolla acné**, algo que cualquiera puede notar al examinarte. Los detalles del consumo están en el [sistema de drogas](sistema-de-drogas.md).
 
@@ -90,6 +131,7 @@ Representa tu resistencia y tu peso corporal. Sube con la **trotadora** y la **b
 - **Saltos seguidos**: la condición física limita cuántos saltos encadenados puede dar tu personaje, desde **2 saltos** en el peor estado hasta **10** estando en forma óptima.
 - **Alimentación**: cada vez que comes o bebes hay un **50% de probabilidad** de que el alimento afecte tu estado físico, en función de lo insalubre que sea. El agua y el café no perjudican; las bebidas azucaradas, el alcohol fuerte y las bebidas energéticas sí.
 - **Protección tras entrenar**: al subir un nivel de estado físico queda una ventana de **60 minutos** durante la cual comer mal no puede hacerte retroceder. Fuera de esa ventana, la comida insalubre puede bajártelo cada **30 minutos**.
+- **Dificultad del cardio**: cuanto mejor es tu estado físico, más estrecha y más movida es la franja de pulso de la trotadora y la bicicleta.
 
 | Estado físico | Condición visible en `/mirar` |
 |---------------|-----------------------------------|
@@ -104,7 +146,7 @@ Es tu combustible para entrenar. Se gasta mientras haces ejercicio y se recupera
 
 - **Máximo**: 25.
 - **Recuperación**: **+1 cada 15 minutos**, estés donde estés.
-- **Gasto**: cada tanda válida de entrenamiento consume **0 o 1 punto**, al azar.
+- **Gasto**: **1 punto cada 2 repeticiones** de pesas o cada 2 unidades de cardio (10 segundos en la franja).
 - Si baja a **1 o menos** no puedes seguir entrenando: toca descansar.
 - Las **bebidas energéticas**, las latas de Sprunk y las latas de ECola tienen un **33% de probabilidad** de darte **+1 de energía** al beberlas.
 
@@ -118,14 +160,24 @@ Son necesidades que suben solas y que debes cubrir comiendo y bebiendo. Se gesti
 |---|--------|-----|
 | **Máximo** | 25 | 25 |
 | **Aumento automático** | +1 a +3 cada 30 minutos | +1 a +3 cada 30 minutos |
-| **Te impide subirte a una máquina** | 22 o más | 18 o más |
-| **Te impide ganar experiencia** | Más de 20 | Más de 15 |
+| **Te impide subirte a una máquina** | Más de 20 | Más de 15 |
+| **Te impide ganar experiencia y gastar energía** | Más de 20 | Más de 15 |
 
-La diferencia entre las dos últimas filas importa: puedes empezar a entrenar con hambre 21 o sed 17, pero el esfuerzo no te contará nada hasta que comas o bebas. Conviene llegar al gimnasio con las dos necesidades bajas.
+Si empiezas a entrenar con las necesidades bajas pero se te acumulan durante la sesión, el esfuerzo dejará de contar hasta que comas o bebas, y aparecerá un aviso en pantalla. Conviene llegar al gimnasio con las dos necesidades bajas.
 
 Cada alimento o bebida reduce la necesidad correspondiente según su valor nutritivo, más **1 a 3 puntos** adicionales al azar. Los productos más potentes bajan bastante de una sola vez: la bebida energética es la que más sed quita, aunque también es la más insalubre. Comer o beber también te devuelve **3 puntos de vida** si no estás herido.
 
 Comer y beber fuera de interiores otorga **+5 Burger Points** cada uno, como máximo una vez cada 30 minutos.
+
+## Panel de necesidades
+
+El comando `/necesidades` ya no escribe en el chat: abre un panel con el aspecto de las estadísticas del juego original, abajo a la izquierda y con el título **Estado**.
+
+- Muestra cinco barras, de 0 a 25: **músculo**, **peso**, **hambre**, **sed** y **energía**, junto con el día de la semana. No incluye números: solo el largo de cada barra.
+- Una barra vacía significa 0. En hambre, sed y peso una barra larga es mala señal (más hambre, más sed, peor estado físico); en músculo y energía, una barra larga es buena.
+- El panel se cierra solo a los **10 segundos**. Si vuelves a escribir `/necesidades` mientras está abierto, se cierra de inmediato.
+- Hay una espera de **2 segundos** entre una apertura y la siguiente.
+- Se oculta también al cerrar sesión con `/logout`.
 
 ## Estilos de pelea
 
@@ -153,7 +205,7 @@ Cuando la protección se agota, en cada paycheck se comprueba si sigues cumplien
 Los personajes certificados como **personal trainer** pueden enseñar un estilo a otro jugador sin que este tenga que cumplir el entrenamiento por su cuenta:
 
 - El entrenador usa `/ensenarestilo` con el alumno **a menos de 5 metros**.
-- El precio lo fija el entrenador y debe estar entre **$1,000 y $10,000**.
+- El precio lo fija el entrenador y debe estar entre **$1.000 y $10.000**.
 - El alumno acepta con `/aceptar` o descarta con `/rechazar`. El dinero pasa directamente del alumno al entrenador.
 - El estilo aprendido así queda protegido **8 paychecks**, la mitad que al aprenderlo por tu cuenta.
 
@@ -161,8 +213,10 @@ Consulta el [sistema de certificación](sistema-de-certificacion.md) para saber 
 
 ## Consejos
 
-- **Come y bebe antes de salir de casa.** Llegar al gimnasio con hambre 21 solo sirve para perder el tiempo sobre la máquina.
+- **Come y bebe antes de salir de casa.** Con hambre por encima de 20 o sed por encima de 15 ni siquiera podrás subirte a la máquina.
 - **Prioriza el aire libre.** Triplicar el progreso y cobrar Burger Points por cada nivel compensa de sobra el viaje hasta la playa.
+- **Termina tus series.** En pesas, el 60% de la experiencia llega al completar la serie, y en cardio al completar el tramo: salir a mitad desperdicia buena parte del esfuerzo.
+- **Ten las manos listas en las pesas.** Si fallas tres veces seguidas sueltas el peso y pierdes la serie.
 - **No abuses de las energéticas.** Suben la energía, pero hunden tu estado físico y arriesgan una taquicardia que puede mandarte al hospital.
 - **Entrena de forma sostenida.** Perder un punto cada 8 horas de inactividad es lento, pero recuperar los niveles altos cuesta cada vez más repeticiones.
 - **Renueva la protección del estilo antes de que expire.** Un paso por el saco de boxeo evita volver al estilo básico en medio de un conflicto.

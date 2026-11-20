@@ -1,6 +1,6 @@
 # Certificación
 
-La certificación es un **examen opcional** sobre las normativas y los fundamentos del rol de SARP. **No la necesitas para jugar**: puedes registrarte, crear tu personaje y conectarte al servidor sin haberla aprobado. Sirve para demostrar que conoces bien las reglas, y tu cuenta lo muestra con una insignia.
+La certificación es un **examen** sobre las normativas y los fundamentos del rol de SARP. **No la necesitas para jugar**: puedes registrarte, crear tu personaje y conectarte al servidor sin haberla aprobado. Sin embargo, varias actividades del servidor, como ser delincuente, usar armas o unirte a una facción, **solo están disponibles para cuentas certificadas** (más abajo tienes la lista completa). Tu cuenta muestra el resultado con una insignia.
 
 El examen se hace íntegramente desde el panel de control de usuario, en [ucp.sarp.es](https://ucp.sarp.es), en la sección **Certificación**. No se hace dentro del juego.
 
@@ -13,10 +13,30 @@ Una vez aprobada, la certificación queda ligada a tu **cuenta** de forma perman
 | Ventaja | Detalle |
 |---|---|
 | **Insignia de cuenta certificada** | Aparece en tu perfil del panel de control |
+| **Acceso a las actividades restringidas** | Delincuente, armas, facciones, graffitis, préstamos de llaves y vehículos, paintball y robos (ver la sección siguiente) |
+| **Autocorrector opcional** | Puedes desactivar el autocorrector de gramática del chat desde `/panel` |
 | **Voto en las elecciones** | Para votar en las elecciones del servidor hace falta estar certificado (y tener Discord vinculado) |
 | **Contar como referido** | Si alguien te invitó con su código, cuentas para su premio cuando estás certificado, con Discord vinculado y verificación en dos pasos activa |
 
-Mientras no la apruebes, tu perfil la muestra como "sin certificar", sin ninguna otra consecuencia.
+Mientras no la apruebes, tu perfil la muestra como "sin certificar" y se aplican las restricciones de la sección siguiente.
+
+## Qué no puedes hacer sin certificación
+
+Una cuenta sin certificar puede jugar con normalidad, pero tiene estas limitaciones en el juego:
+
+| Actividad | Restricción |
+|---|---|
+| **Ser delincuente** | `/delincuente` exige la cuenta certificada (además de tener la doble autenticación activa). Quien cumple condena en prisión y es certificado pasa a ser delincuente automáticamente si no lo era ni pertenece a una facción legal |
+| **Robos** | No puedes robar cajeros automáticos, el banco ni la joyería, ni cortar la tobillera de la libertad condicional |
+| **Armas** | No puedes usar armas, ni comprar armas ni cargadores en los negocios. Tampoco puedes jugar [paintball](sistema-de-paintball.md), porque exige poder usar armas |
+| **Facciones** | No puedes ser invitado a una facción: el líder que lo intente recibe el aviso de que tu cuenta no está certificada |
+| **Graffitis** | No puedes crear graffitis con `/graffiti crear` |
+| **Llaves y vehículos** | No puedes prestar las llaves de tu propiedad con `/prestarllave` ni tu vehículo con `/prestarveh` |
+| **Autocorrector del chat** | El autocorrector de gramática está activado y no puedes apagarlo hasta aprobar |
+
+La certificación se lee al entrar al juego, así que después de aprobar el examen **vuelve a conectarte** para que tu personaje la reconozca.
+
+Algunas de estas actividades tienen además otros requisitos propios, como horas de juego, la doble autenticación o la habilidad de delincuente. Consulta la guía de cada una: [sistema de delincuente](sistema-de-delincuente.md), [facciones legales](facciones-legales.md) y [facciones ilegales](facciones-ilegales.md), [graffitis](sistema-de-graffitis.md), [robo de cajeros](sistema-de-robo-de-cajeros.md), [robo al banco](sistema-de-robo-al-banco.md), [robo a la joyería](sistema-de-robo-a-la-joyeria.md) y [prófugos](sistema-de-profugos.md).
 
 ## Formato del examen
 
@@ -62,4 +82,5 @@ Si agotas los tres sin aprobar, el panel te indica cuándo podrás volver a inte
 - **Ojo con las preguntas de respuesta múltiple.** Si una pregunta te permite marcar varias opciones, hay más de una correcta y tienes que acertarlas todas sin marcar ninguna incorrecta.
 - **En las preguntas de situación, elige siempre la opción más realista.** Casi todas se resuelven con el mismo criterio: la respuesta correcta es la que un ser humano real haría en esa escena, no la que más conviene al jugador.
 - **No te precipites si fallas.** Con tres intentos al día, gastarlos seguidos sin repasar suele terminar en una espera de 24 horas.
-- **No necesitas esperar a certificarte para jugar.** Consulta [cómo empezar](como-empezar.md) para el proceso completo y [panel de control](panel-de-control.md) para moverte por el resto de opciones de tu cuenta.
+- **Certifícate pronto si quieres usar armas, ser delincuente o entrar en una facción.** Sin la certificación esas puertas están cerradas.
+- **No necesitas certificarte para empezar a jugar.** Consulta [cómo empezar](como-empezar.md) para el proceso completo y [panel de control](panel-de-control.md) para moverte por el resto de opciones de tu cuenta.

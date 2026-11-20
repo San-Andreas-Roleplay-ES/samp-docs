@@ -4,7 +4,7 @@
 
 El **Emerald Isle Casino** es el epicentro del entretenimiento y el lujo en San Andreas, en **Las Venturas**. Combina un bar, un restaurante, una terraza y amplias áreas de juego en un mismo espacio, pensado tanto para el roleplay social como para las grandes apuestas. Tiene aparcamiento propio y su propio ícono en el mapa.
 
-Dentro del casino puedes jugar a las **tragamonedas**, la **ruleta** y el **blackjack**, todos ellos contra la casa. El **póker Texas Hold'em**, en cambio, ya no está atado al casino: cualquiera puede comprar una mesa como mueble y colocarla en cualquier propiedad. También encontrarás **apuestas hípicas (Inside Track)**, tanto en el casino como en las casas de apuestas repartidas por el estado.
+Dentro del casino puedes jugar a las **tragamonedas**, la **ruleta** y el **blackjack**, todos ellos contra la casa. Estos tres juegos, igual que el **póker Texas Hold'em**, también funcionan en cualquier **club**: sus dueños pueden comprar las máquinas y las mesas como muebles y colocarlas en su local, sin límite de máquinas ni de mesas. También encontrarás **apuestas hípicas (Inside Track)**, tanto en el casino como en las casas de apuestas repartidas por el estado.
 
 Fuera del casino existen otras formas de jugar dinero: el **trile** callejero de Idlewood, la **lotería** estatal que se compra en cualquier supermercado y las partidas de billar apostado. Todas ellas comparten el mismo historial de ganancias y pérdidas.
 
@@ -17,7 +17,7 @@ Fuera del casino existen otras formas de jugar dinero: el **trile** callejero de
 - `/casino ruleta` — te sienta en la mesa de ruleta más cercana.
 - `/casino blackjack` — te sienta en la mesa de blackjack más cercana.
 - `/casino stats` — muestra tu balance histórico en cada juego de azar.
-- `/poker` o `/pkr` — abre la ayuda del póker (funciona en cualquier propiedad con mesa).
+- `/poker` o `/pkr` — abre la ayuda del póker (funciona en clubes y en el Emerald Isle).
 - `/insidetrack` — abre la ayuda de las apuestas de caballos.
 - `/loteria` — consulta el pozo acumulado, las horas de sorteo y tu número.
 
@@ -29,6 +29,30 @@ Fuera del casino existen otras formas de jugar dinero: el **trile** callejero de
 - Debes estar **de pie y consciente** junto a la máquina o mesa correspondiente.
 
 Este requisito de 2FA se aplica únicamente a los juegos que se abren con `/casino`. El póker, el trile, las apuestas hípicas y la lotería no lo piden.
+
+---
+
+## Dónde se puede jugar
+
+Las tragamonedas, la ruleta, el blackjack y el póker **solo funcionan dentro de un club o en el Emerald Isle Casino**. En cualquier otra propiedad, o en la calle, el juego te avisa de que no puedes jugar ahí.
+
+En los clubes, las máquinas y las mesas son **muebles**: la ruleta, la mesa de blackjack, la tragamonedas y la mesa de póker se compran en el catálogo de muebles del local (las de casino, en el catálogo premium) y se colocan como cualquier otro mueble. Consulta el [sistema de muebles](sistema-de-muebles.md). Cada club decide cuántas máquinas y mesas quiere tener.
+
+- La **ruleta** debe estar **nivelada** (sin inclinar) para poder jugar en ella.
+- En la ruleta y en el blackjack aparece un **crupier** cuando alguien se sienta a la mesa.
+- Mientras haya una partida en curso, la mesa o la máquina **no se puede mover, empaquetar ni robar**.
+
+### La caja del club
+
+Cada club juega con su propia caja:
+
+- La caja se queda con el **10% de cada apuesta**. El 90% restante sale de la economía.
+- La caja **paga los premios** de sus juegos.
+- Para aceptar una apuesta, la caja debe tener disponible al menos el **10% del premio máximo** que esa apuesta podría ganar. Si no lo tiene, el juego te avisa de que el negocio no tiene fondos suficientes y no te deja apostar.
+- Si sale un premio mayor que lo que había en la caja, la caja queda en negativo.
+- El dinero que la caja tiene comprometido en apuestas en curso **no se puede retirar** con `/caja` ni transferir hasta que se resuelvan.
+
+Las máquinas y mesas del Emerald Isle Casino funcionan igual, pero no te piden que la caja tenga fondos de reserva antes de apostar.
 
 ---
 
@@ -245,15 +269,15 @@ El **póker Texas Hold'em** es una variante en la que recibes **dos cartas priva
 
 ![poker](../assets/sistema-de-casino/poker.png)
 
-### Disponible en cualquier propiedad
+### Disponible en clubes y en el Emerald Isle
 
-A diferencia del resto de juegos, el póker **no se limita al Emerald Isle**:
+El póker **no se limita al Emerald Isle**, pero tampoco se juega en cualquier lugar:
 
-- Cualquiera puede comprar una **mesa de póker** como mueble, por **$800**, desde el menú de muebles de la propiedad.
-- Se puede colocar en **cualquier tipo de propiedad**: clubes, bares, casas, negocios, casinos privados…
+- Se compra una **mesa de póker** como mueble, por **$800**, desde el menú de muebles de la propiedad.
+- Solo funciona **dentro de un club o en el Emerald Isle Casino**. Una mesa colocada en una casa u otro tipo de negocio no sirve para jugar.
 - Pueden correr **varias partidas simultáneas** en el servidor, cada una con su propia mesa.
 
-Esto habilita salas privadas, torneos caseros y clubes sociales. Consulta el [sistema de propiedades](sistema-de-propiedades.md) para ver cómo colocar y editar muebles.
+Esto habilita salas de póker y torneos dentro de los clubes. Consulta el [sistema de propiedades](sistema-de-propiedades.md) y el [sistema de muebles](sistema-de-muebles.md) para ver cómo colocar y editar muebles.
 
 ### Baraja y jugadores
 
@@ -310,10 +334,10 @@ El **Inside Track** son carreras de caballos retransmitidas por televisión sobr
 
 ### Cómo funciona
 
-- Se corre una carrera nueva **cada 15 minutos**. `/insidetrack` te dice cuántos minutos faltan para la siguiente.
+- La siguiente carrera empieza **15 minutos después de que termina la anterior**. `/insidetrack` te dice cuántos minutos faltan.
 - Cada carrera enfrenta a **5 caballos** elegidos al azar del establo, con su jinete y su cuota.
 - Abres el panel con `/insidetrack apostar`, eliges caballo e importe, y confirmas.
-- Puedes seguir la carrera en directo con `/insidetrack spec` y cambiar de cámara con `/insidetrack cámara`.
+- Puedes seguir la carrera en directo con `/insidetrack spec` y cambiar de cámara con `/insidetrack cámara`. La carrera se ve a pantalla completa, con el diseño de las apuestas hípicas de GTA San Andreas.
 - Mientras la carrera no haya empezado puedes retirar tu apuesta con `/insidetrack cancelar`.
 
 ### Dinero y pagos
@@ -345,16 +369,18 @@ La **lotería estatal** es la apuesta más barata del servidor y no requiere est
 
 ### Cómo participar
 
-- Compra tu boleto en **cualquier supermercado** del estado.
-- Cada boleto te asigna un **número al azar entre 1 y 300**, así que tienes **1 probabilidad entre 300** de ganar.
+- Compra tu boleto en **cualquier negocio que lo venda**, como los supermercados. En esos negocios, **Lotería** es la primera opción del menú de `/comprar`.
+- Al elegir el boleto se abre un **tablero con los 300 números** (en tres pestañas de 100) y **tú eliges el tuyo**. Tienes **1 probabilidad entre 300** de ganar, sea cual sea el número.
+- Un **mapa de calor** colorea cada número según cuántas veces se compró en la última semana: del celeste (casi nadie lo eligió) al naranja (muy elegido, desde 5 compras). El color no cambia tus probabilidades, pero sí con cuánta gente compartirías el pozo si ganas.
+- No puedes volver a elegir el número que ya tienes. El tablero se cierra si te alejas del mostrador, quedas herido o esposado, subes a un vehículo o abres el teléfono u otro menú.
 - Solo puedes tener **un boleto activo**: si compras otro, sustituye al anterior.
-- Consulta el pozo, las horas de sorteo y tu número con `/loteria`.
+- Consulta el pozo, las horas de sorteo, los **últimos 5 números ganadores** y tu número con `/loteria`.
 
 ### Sorteos y premios
 
 - Hay **tres sorteos al día**, a las **02:00, 04:00 y 15:00** (hora del servidor, consultable con `/hora ooc`).
 - Se avisa por los medios **15 minutos antes** de cada sorteo.
-- El número ganador se anuncia públicamente. Si es el tuyo, el pozo completo se ingresa en tu **cuenta bancaria**.
+- El número ganador se anuncia públicamente. Si es el tuyo y estás conectado, el pozo completo se ingresa en tu **cuenta bancaria**. Si hay varios ganadores, cada uno cobra el pozo completo.
 - Todos los boletos se anulan tras cada sorteo, ganes o no: hay que comprar uno nuevo para el siguiente.
 - Si **nadie acierta**, el pozo crece y se acumula para el siguiente sorteo. Si alguien gana, el pozo se reinicia entre **$300.000 y $500.000**.
 - El pozo también sube ligeramente con cada boleto vendido.
@@ -381,9 +407,9 @@ El balance aparece en **verde** si vas en positivo y en **rojo** si vas en negat
 
 ## 9. El casino como negocio
 
-El Emerald Isle no es solo un lugar para jugar: es una propiedad con su propia caja. Todo lo que los jugadores pierden en las tragamonedas, la ruleta y el blackjack entra en la caja del casino, y todo lo que ganan sale de ella. Solo una parte de las pérdidas queda realmente en la caja: el resto **desaparece de la economía**, lo que ayuda a controlar la cantidad de efectivo en circulación en el servidor.
+El Emerald Isle y cada club con máquinas o mesas de casino son propiedades con su propia caja. Cada apuesta en las tragamonedas, la ruleta y el blackjack entra en la caja, pero solo se queda el **10%**: el resto **desaparece de la economía**, lo que ayuda a controlar la cantidad de efectivo en circulación en el servidor. Todo lo que ganan los jugadores sale de la caja.
 
-La caja del casino financia los premios de sus juegos, igual que la caja de cualquier casa de apuestas o club financia las comisiones del Inside Track y del póker. Puedes ver cómo funcionan las cajas de los negocios en el [sistema de propiedades](sistema-de-propiedades.md).
+Para un club, esto significa que debe mantener fondos en la caja para poder aceptar apuestas: cuanto mayor es el premio posible de una apuesta, más reserva exige (el 10% de ese premio). Una apuesta que se pierde deja al club solo una décima parte de lo apostado, mientras que un premio grande lo paga completo, así que la caja puede perder dinero a largo plazo. Las comisiones del Inside Track y del póker también van a la caja del negocio donde se juega. Puedes ver cómo funcionan las cajas de los negocios en el [sistema de propiedades](sistema-de-propiedades.md).
 
 ---
 

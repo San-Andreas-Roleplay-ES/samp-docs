@@ -2,11 +2,13 @@
 
 ## Introducción
 
-El sistema de **delincuente** es la vía de entrada a la vida criminal de San Andreas. Te permite hurtar en tiendas, atracar la caja de un negocio, robar a otros jugadores, forzar y saquear casas, y forzar, puentear y desarmar vehículos. Es un sistema pensado para el rol: casi toda actividad exige herramientas concretas, un mínimo de policías conectados y largas esperas entre golpes, de modo que un delincuente no pueda encadenar delitos sin descanso.
+El sistema de **delincuente** es la vía de entrada a la vida criminal de San Andreas. Te permite hurtar en tiendas, atracar la caja de un negocio, robar a otros jugadores, forzar y saquear casas, y forzar, puentear, pinchar y desarmar vehículos. Con la habilidad suficiente también puedes dar los golpes más grandes: cajeros automáticos, el Fleeca Bank y la joyería. Es un sistema pensado para el rol: casi toda actividad exige herramientas concretas, un mínimo de policías conectados y largas esperas entre golpes, de modo que un delincuente no pueda encadenar delitos sin descanso.
 
-Para convertirte en delincuente debes acercarte a uno de los **siete puntos escondidos** repartidos por Los Santos y escribir `/delincuente`. Los requisitos son tener la **doble autenticación (2FA) activada** en tu cuenta, al menos **16 horas jugadas** y no pertenecer a una facción legal. No cuesta dinero y no hay que renovar nada.
+Para convertirte en delincuente debes acercarte a uno de los **siete puntos escondidos** repartidos por Los Santos y escribir `/delincuente`. Los requisitos son tener la **doble autenticación (2FA) activada** en tu cuenta, la **cuenta certificada** (ver [certificación](sistema-de-certificacion.md)), al menos **16 horas jugadas** y no pertenecer a una facción legal. No cuesta dinero y no hay que renovar nada. Quien cumple condena en prisión pasa a ser delincuente automáticamente si tiene la cuenta certificada, no lo era y no pertenece a una facción legal.
 
 Todo lo que consigues delinquiendo (dinero, muebles, autopartes, joyas, teléfonos) se convierte en efectivo en el [mercado negro](sistema-de-mercado-negro.md), al que se accede con `/venderrobo` a partir de **50 horas jugadas**. Si te atrapan, la condena y la pérdida de habilidad se explican en el [sistema de cárcel](sistema-de-carcel.md); y si perteneces a una banda, las [zonas de pandilla](sistema-de-zonas-de-pandilla.md) y las [facciones ilegales](facciones-ilegales.md) multiplican lo que sacas de cada golpe.
+
+Las [cámaras de seguridad](sistema-de-camaras-de-seguridad.md) instaladas en negocios y propiedades guardan durante 14 días un registro de lo que ocurre frente a ellas: hurtos, atracos, robos a propiedades y de muebles, cerraduras forzadas, ventanillas rotas, puentes, desarmes de vehículos y patentes cambiadas. Cada entrada incluye quién aparece, lo que lleva en las manos y su descripción física; quien lleva máscara figura como enmascarado.
 
 ### Comandos
 
@@ -17,13 +19,20 @@ Todo lo que consigues delinquiendo (dinero, muebles, autopartes, joyas, teléfon
 - /atracar — atraca la caja del negocio donde estás.
 - /forzarcerradura — fuerza la entrada de una propiedad o una puerta interior (también `/forzarentrada`).
 - /robarpropiedad — inicia el robo de muebles dentro de una casa (también `/robarprop`).
-- /robarmueble — roba el electrodoméstico más cercano.
+- /robarmueble — roba un electrodoméstico cercano; si hay varios, eliges de una lista.
 - /romperventanilla — rompe la ventanilla del conductor y desbloquea el vehículo.
 - /forzarpuerta — abre la puerta de un vehículo con unas ganzúas.
 - /cortarcableado — interviene el cableado de la ignición.
 - /unircableado — une los cables cortados para encender el motor.
+- /pincharrueda — pincha una rueda del vehículo junto al que estás (también `/pincharllanta`).
 - /autopartes — mira qué piezas y sistemas tiene un vehículo cercano.
-- /desarmarveh — desmonta piezas o sistemas del vehículo cercano.
+- /desarmarveh — desmonta piezas o sistemas del vehículo cercano (también `/desarme`).
+- /removerpatente — quita la patente de un vehículo (también `/robarpatente`).
+- /colocarpatente — atornilla en un vehículo una patente que llevas en la mano.
+- /desguazar — entrega un vehículo robado en un desguazadero.
+- /robarcajero — revienta un cajero automático.
+- /robobanco — asalta el Fleeca Bank.
+- /robojoyeria — asalta la joyería.
 - /miraralarma — mira el tipo de alarma instalada.
 - /mirargps — busca un rastreador dentro del vehículo.
 - /mirarpanel — mira el tipo de ignición y si está adulterada.
@@ -36,15 +45,15 @@ El progreso se reparte en tres habilidades, todas de **0 a 100**, visibles en `/
 
 | Habilidad | Para qué sirve |
 | --- | --- |
-| **Delincuente** | Botín y velocidad de atracos y hurtos, tiempo de robo a personas, acceso a los sistemas electrónicos del vehículo y al mercado negro |
-| **Robo a propiedades** | Probabilidad y velocidad al forzar cerraduras, y duración del saqueo de muebles |
-| **Robo a vehículos** | Probabilidad y velocidad al forzar puertas y puentear, y qué piezas puedes desmontar |
+| **Delincuente** | Botín y velocidad de atracos y hurtos, tiempo de robo a personas, acceso a los sistemas electrónicos del vehículo, a los golpes de gran escala y al mercado negro |
+| **Robo a propiedades** | Probabilidad y facilidad al forzar cerraduras, y duración del saqueo de muebles |
+| **Robo a vehículos** | Facilidad al forzar puertas y puentear, y qué piezas puedes desmontar |
 
 Ninguna de las tres se puede subir con puntos de experiencia: solo se ganan delinquiendo. Los miembros de facciones ilegales **oficiales** pueden usar `/mejorardelincuente` una vez para llevar las tres habilidades (y la de drogas) al **50** por **$25.000**.
 
 ### Cooperativo de facción
 
-Cada vez que ganas puntos de cualquiera de las tres habilidades por un hurto, un atraco, un robo de muebles, forzar una cerradura, forzar una puerta de vehículo, unir el cableado o desarmar una pieza, **todos tus compañeros de facción vivos a menos de 25 metros reciben exactamente los mismos puntos**. Tanto tú como ellos recibís un aviso del cooperativo. Organizar los golpes en grupo es la forma más rápida de subir a toda la banda.
+Cada vez que ganas puntos de cualquiera de las tres habilidades por un hurto, un atraco, un robo de muebles, forzar una cerradura con ganzúas, forzar una puerta de vehículo, unir el cableado o completar tu cupo diario de desarme, **todos tus compañeros de facción vivos a menos de 25 metros reciben exactamente los mismos puntos**. Tanto tú como ellos reciben un aviso del cooperativo. Organizar los golpes en grupo es la forma más rápida de subir a toda la banda.
 
 ### Pérdida de habilidad por inactividad
 
@@ -67,6 +76,10 @@ Al ser arrestado pierdes puntos de habilidad de delincuente **y** de drogas, seg
 | 13 a 24 horas | 40 |
 | 25 a 48 horas | 50 |
 | Más de 48 horas | 60 |
+
+## Espera general entre delitos
+
+Además de la espera propia de cada delito existe una **espera general**. Mientras corre no puedes hurtar, atracar, robar a personas, forzar cerraduras o puertas, romper ventanillas, puentear, robar propiedades ni dar un golpe de gran escala. Se activa al robar a una persona (**24 horas**, o **6 horas** dentro de la zona de pandilla de tu facción), al pinchar una rueda (**15 minutos**), al empezar a robar un cajero (**15 minutos**) y al participar en un robo al banco o a la joyería. El desarme de piezas es independiente: no la respeta ni la activa.
 
 ## Robo a personas
 
@@ -105,7 +118,7 @@ El tiempo del que dispones para vaciar el inventario depende de tu habilidad de 
 | 50 – 69 | 120 segundos |
 | 70 o más | 150 segundos |
 
-- **Tu espera tras robar a alguien**: **24 horas**, o solo **6 horas** si el robo ocurre dentro de la zona de pandilla de tu facción.
+- **Tu espera tras robar a alguien**: **24 horas**, o solo **6 horas** si el robo ocurre dentro de la zona de pandilla de tu facción. Es la espera general descrita arriba: hasta que pase no puedes cometer otros delitos.
 - **Protección de la víctima**: **1 semana** (168 horas) sin poder volver a ser robada por nadie.
 
 Robar el dinero de una víctima otorga **+25 [Burger Points](sistema-de-burger-points.md)**.
@@ -114,7 +127,7 @@ Robar el dinero de una víctima otorga **+25 [Burger Points](sistema-de-burger-p
 
 `/hurtar` te permite llevarte un producto pequeño del expositor de una tienda sin pagarlo. No necesitas habilidad mínima, arma ni herramientas, pero sí tener la **mano derecha vacía** y no ser traficante de drogas ni de armas (a ellos el rol de delito menor les está vedado por exposición).
 
-**Qué puedes hurtar:** productos que valgan **menos de $1.000** y ocupen un solo espacio del inventario. No puedes hurtar armas, cargadores, munición ni productos de categoría restringida. Tampoco puedes hurtar en tu propia tienda ni en la de tu cónyuge.
+**Qué puedes hurtar:** productos que valgan **menos de $1.000** y ocupen un solo espacio del inventario. No puedes hurtar armas, cargadores, munición ni productos de categoría restringida. Tampoco puedes hurtar en tu propia tienda ni en la de tu cónyuge. La lista se muestra por páginas de 40 productos y, si el stock de la tienda cambia mientras la tienes abierta, debes volver a elegir.
 
 El hurto se interrumpe si te alejas más de **2 metros** del punto donde empezaste; en ese caso pierdes el producto y quedas con **30 minutos** de espera.
 
@@ -126,7 +139,7 @@ El hurto se interrumpe si te alejas más de **2 metros** del punto donde empezas
 
 - **Ganancia**: **+1 punto** de habilidad de delincuente, pero **solo mientras tu habilidad sea inferior a 15**. A partir de ahí el hurto ya no da experiencia.
 - **Espera personal**: **1 hora**.
-- **Espera del negocio**: **24 horas** sin poder volver a ser hurtado ni atracado.
+- **Espera del negocio**: **1 hora** sin poder volver a ser hurtado ni atracado.
 - **Recompensa**: el producto pasa a tus manos, más **+1 [Burger Point](sistema-de-burger-points.md)**.
 
 ## Atracar negocios
@@ -167,8 +180,9 @@ El botín final no es fijo: es una cantidad **aleatoria entre un mínimo y el to
 
 - Al empezar el atraco la alarma del negocio puede sonar: **15%**, **25%** o **50%** según el nivel de alarma instalada.
 - Al terminarlo la probabilidad sube a **30%**, **50%** o **100%**.
-- El aviso de robo en curso llega a la policía por radio, junto a la descripción de los sospechosos desarmados que estuvieran a menos de 20 metros. Si el negocio **no** tiene empleados en servicio el aviso sale al empezar; si los tiene, sale al terminar, lo que te da margen para huir antes de que llegue la patrulla.
-- Abandonar el atraco a medias (alejarte más de 10 metros o quedarte sin arma) avisa igualmente a la policía y te aplica la espera completa.
+- El aviso de robo en curso llega a la policía por radio, junto a la descripción de los sospechosos. Además de ti, solo se describe a quienes parecen cómplices y están dentro del negocio o en su entrada (a menos de 25 metros de la puerta): personas con máscara, con un arma en la mano derecha, delincuentes, miembros de pandillas o mafias y miembros de tu misma facción. Quien no cumple nada de eso no figura en la descripción. Si el negocio **no** tiene empleados en servicio el aviso sale al empezar; si los tiene, sale al terminar, lo que te da margen para huir antes de que llegue la patrulla.
+- Si te alejas más de **10 metros** del lugar donde empezaste, el atraco se cancela, se avisa a la policía y recibes una espera de **18 horas** (habilidad menor de 30), **16 horas** (30 – 49), **14 horas** (50 – 69) o **12 horas** (70 o más).
+- Si al terminar ya no tienes el cuchillo o el arma en la mano derecha, no cobras nada, se avisa a la policía y recibes la espera completa de la tabla de botín.
 
 ### Recompensa
 
@@ -176,35 +190,62 @@ El botín final no es fijo: es una cantidad **aleatoria entre un mínimo y el to
 - **+1 punto** de habilidad de delincuente, **+5 más** si hay **5 o más policías conectados** y **+5 más** si el negocio tenía **empleados en servicio**: hasta **+11 puntos** en un solo golpe.
 - **+50 [Burger Points](sistema-de-burger-points.md)**.
 - El dueño del negocio recibe una notificación con lo que perdió.
+- El robo de cajeros automáticos comparte esta espera: tras atracar un negocio no puedes reventar un cajero hasta que termine, y al revés.
 
 ## Robo de propiedades
 
 Asaltar una casa tiene dos fases: **entrar** y **saquear**. Solo se pueden robar **casas** (nunca empresas ni propiedades de facción) que no sean tuyas ni de tu cónyuge, y hacen falta al menos **2 policías conectados**.
 
+### Soplos por SMS
+
+Cada **30 minutos**, si eres delincuente, no tienes ninguna espera de robo en curso y hay al menos 2 policías de servicio, puedes recibir el **SMS de un desconocido** que te da el número de una casa con **3 o más electrodomésticos** que no ha sido robada en la última semana. Es solo una pista: la casa se roba igual que cualquier otra.
+
 ### Forzar la cerradura
 
-`/forzarcerradura` abre la entrada de una propiedad. Necesitas una de estas tres herramientas en la mano derecha, y cada una da una probabilidad distinta:
+`/forzarcerradura` abre la entrada de una propiedad. Necesitas una de estas tres herramientas en la mano derecha. La **palanca** y el **destornillador** funcionan por probabilidad; las **ganzúas** se manejan con un minijuego.
 
 | Herramienta | Habilidad < 6 | Habilidad 6 – 15 | Habilidad 16+ |
 | --- | --- | --- | --- |
 | **Palanca** | 80% | 90% | 100% |
-| **Ganzúas** | 50% | 60% | 70% |
 | **Destornillador** | 20% | 30% | 50% |
 
-El tiempo base para forzar es de **40 segundos** con menos de 6 de habilidad de robo a propiedades, **30 segundos** entre 6 y 15, y **20 segundos** con 16 o más. Si la puerta tiene una cerradura reforzada instalada, ese tiempo se multiplica por **1,5**, **2** o **2,5** según el nivel, y la probabilidad de éxito baja **10**, **15** o **20 puntos**.
+Con palanca o destornillador el tiempo base es de **40 segundos** con menos de 6 de habilidad de robo a propiedades, **30 segundos** entre 6 y 15, y **20 segundos** con 16 o más. Si la puerta tiene una cerradura reforzada instalada, ese tiempo se multiplica por **1,5**, **2** o **2,5** según el nivel, y la probabilidad de éxito baja **10**, **15** o **20 puntos**.
 
-Al fallar puede sonar la alarma de la propiedad, con distinta probabilidad según el nivel de alarma y la herramienta usada (la palanca es la más ruidosa, las ganzúas las más discretas). El éxito con palanca produce además un estruendo audible a gran distancia.
+Al fallar puede sonar la alarma de la propiedad, con distinta probabilidad según el nivel de alarma y la herramienta usada (la palanca es la más ruidosa). El éxito con palanca produce además un estruendo audible a gran distancia. La palanca **destroza la cerradura** por completo y el destornillador le quita 25 puntos de vida.
 
-Cada intento **gasta un uso de las ganzúas**. La palanca **destroza la cerradura** por completo; las ganzúas le quitan 10 puntos de vida y el destornillador, 25.
+Si dos delincuentes fuerzan la misma puerta a la vez, gana quien la abre primero y al otro se le cancela el intento.
 
 - **Espera al conseguirlo**: **6 horas**.
 - Moverte del sitio o soltar la herramienta cancela el intento.
 
 `/forzarcerradura` también abre **puertas interiores** de una propiedad, pero solo mientras estés robándola.
 
+### El minijuego de ganzúas
+
+Forzar con ganzúas es un minijuego de pines: debes fijar cada pin en el momento justo, cuando sube hasta la línea marcada.
+
+- **A** y **D** (o las flechas) cambian de pin, **Espacio** intenta fijar el pin elegido y la tecla de entrar o salir de vehículos desiste.
+- Si fijas el pin fuera de la línea, fallas: el pin cae, la ganzúa pierde vida y puede gastarse un uso.
+- Debes quedarte quieto junto a la puerta con las ganzúas en la mano derecha; si te mueves, las sueltas o te metes en un vehículo, el intento se cancela.
+- Con más habilidad los pines se mueven más despacio y la zona de acierto es más amplia. En propiedades cuenta tu habilidad de robo a propiedades (tramos 0 – 5, 6 – 15 y 16 o más); en vehículos, la de robo a vehículos (0 – 9, 10 – 19 y 20 o más).
+- Cuanto mejor es la cerradura, más difícil es:
+
+| Cerradura | Pines | Tiempo máximo | Vida de la ganzúa que cuesta cada fallo | Al fallar un pin |
+| --- | --- | --- | --- | --- |
+| Sin reforzar | 3 | 15 s | 20% | Solo cae ese pin |
+| Nivel 1 | 4 | 20 s | 25% | Solo cae ese pin |
+| Nivel 2 | 5 | 25 s | 30% | Además cae un pin ya fijado, al azar |
+| Nivel 3 | 6 | 30 s | 35% | Además caen todos los pines ya fijados |
+
+- Si la vida de la ganzúa llega a 0, se rompe dentro de la cerradura y el intento fracasa; lo mismo ocurre si se acaba el tiempo o desistes.
+- **Desgaste**: cada pin fallado tiene un 33% de gastar un uso de la ganzúa, y cada intento que termina (con éxito, por tiempo agotado, con la ganzúa rota o al desistir) gasta otro uso. Cuando se acaban los usos, la ganzúa desaparece.
+- **Alarma de la propiedad**: cada pin fallado puede hacerla sonar con un **1%**, **2%** o **4%** según el nivel de alarma. Si el intento termina en fracaso, suena además con un **10%** (alarma de nivel 2) o un **25%** (nivel 3).
+- **Cerradura de la puerta**: cada éxito con ganzúas le quita 10 puntos de vida.
+- **Habilidad**: forzar con éxito con ganzúas da **+1 punto** de habilidad de robo a propiedades.
+
 ### Saquear los muebles
 
-Una vez dentro, `/robarpropiedad` inicia el saqueo. Te lo pide dos veces: la primera te avisa del tiempo del que dispondrás y la segunda (`/robarpropiedad confirmar`) lo pone en marcha. Todos los electrodomésticos robables de la casa quedan **resaltados con su nombre y precio**. Puedes terminar antes con `/robarpropiedad finalizar`.
+Una vez dentro, `/robarpropiedad` inicia el saqueo. Te lo pide dos veces: la primera te avisa del tiempo del que dispondrás y la segunda (`/robarpropiedad confirmar`) lo pone en marcha. Todos los electrodomésticos robables de la casa quedan **resaltados con su nombre y precio**. Puedes terminar antes con `/robarpropiedad finalizar`. La casa debe tener al menos un electrodoméstico y, una vez que robas el primer mueble, **no puede volver a ser robada durante una semana**.
 
 Solo puedes iniciarlo si el **dueño está conectado** o si hay suficientes policías de servicio. A los **30 segundos** de empezar, la alarma de la casa puede sonar (**10%** o **30%** según su nivel).
 
@@ -214,7 +255,7 @@ Solo puedes iniciarlo si el **dueño está conectado** o si hay suficientes poli
 | 6 – 15 | 240 segundos |
 | 16 o más | 300 segundos |
 
-`/robarmueble` roba el electrodoméstico robable más cercano (hasta 2 metros) y te lo pone en las manos; necesitas **ambas manos libres**. Cada mueble robado puede hacer sonar la alarma (**10%**, **25%** o **35%** según el nivel).
+`/robarmueble` roba un electrodoméstico robable a menos de 2 metros y te lo pone en las manos; necesitas **ambas manos libres**. Si hay más de uno al alcance, se abre una lista ordenada por cercanía con el nombre, la distancia y el precio de cada uno. Cada mueble robado puede hacer sonar la alarma (**10%**, **25%** o **35%** según el nivel).
 
 **Ganancias:**
 
@@ -234,7 +275,7 @@ Solo puedes iniciarlo si el **dueño está conectado** o si hay suficientes poli
 
 Cada vehículo puede llevar instalados sistemas de **alarma**, **cerradura**, **ignición**, **GPS**, **tanque** y **blindaje**, en niveles que van de **básico** a **super**. Cuanto mejor el sistema, más difícil es robarlo. `/autopartes` te muestra de un vistazo qué piezas y sistemas tiene un coche cercano y en qué nivel.
 
-Nunca puedes robar vehículos de facciones legales, de empresa, del servidor, ni los tuyos o los de tu cónyuge. Fuera de un interior hacen falta al menos **2 policías conectados**.
+Nunca puedes robar vehículos de facciones legales, de empresa, del servidor, ni los tuyos o los de tu cónyuge. Los vehículos de renta no se pueden puentear, desarmar ni cambiarles la patente, aunque sí forzar. Fuera de un interior hacen falta al menos **2 policías conectados**.
 
 ### Inspección
 
@@ -248,16 +289,11 @@ Nunca puedes robar vehículos de facciones legales, de empresa, del servidor, ni
 
 ### Forzar la puerta
 
-`/forzarpuerta` abre la puerta con **unas ganzúas** en la mano derecha, sin romper nada. Te quedas inmóvil mientras dura el intento y se cancela si te alejas del vehículo o de la ventanilla, o si sueltas la herramienta.
+`/forzarpuerta` abre la puerta con **unas ganzúas** en la mano derecha, sin romper nada. Debes estar junto a la ventanilla del conductor y el intento es el [minijuego de ganzúas](#el-minijuego-de-ganzúas): la dificultad depende del nivel de la cerradura del vehículo, que va de sin reforzar (3 pines) a nivel 3 (6 pines), y tu habilidad de robo a vehículos hace los pines más lentos y la zona de acierto más amplia.
 
-El tiempo base depende del nivel de cerradura del coche (35, 45 o 55 segundos) y baja **10 segundos** con 10-19 de habilidad de robo a vehículos y **20 segundos** con 20 o más, con un suelo de **30 segundos**.
+Mientras dura el intento te quedas inmóvil en la animación; se cancela si te alejas, sueltas las ganzúas o subes a un vehículo.
 
-| Habilidad de robo a vehículos | Cerradura nivel 1 | Nivel 2 | Nivel 3 | Alarma al fallar |
-| --- | --- | --- | --- | --- |
-| Menos de 10 | 50% | 40% | 30% | 60% |
-| 10 – 19 | 60% | 50% | 40% | 40% |
-| 20 o más | 70% | 60% | 50% | 20% |
-
+- **Alarma**: cada pin fallado tiene un **3%** de hacer sonar la alarma del vehículo. Si el intento termina sin abrir la puerta (se acaba el tiempo, se rompe la ganzúa, desistes o te mueves), suena con un **60%** (menos de 10 de habilidad de robo a vehículos), un **40%** (10 – 19) o un **20%** (20 o más).
 - **Éxito**: **+1 punto** de habilidad de robo a vehículos y **12 horas** de espera.
 
 ### Puentear el cableado
@@ -274,9 +310,19 @@ Cada intento fallido acumula un aviso, y al superar cierto número salta la alar
 - **Éxito**: **+2 puntos** de habilidad de robo a vehículos. Si ocurre dentro de tu zona de pandilla, además cuenta para la bonificación de la zona.
 - **Espera**: **36 horas** con menos de 10 de habilidad de robo a vehículos, **24 horas** entre 10 y 19, y **12 horas** con 20 o más.
 
+### Pinchar ruedas
+
+`/pincharrueda` pincha una rueda del vehículo y lo deja inutilizable hasta que lo reparen. Requisitos:
+
+- Ser delincuente con **25 de habilidad de delincuente**.
+- Tener un **cuchillo en la mano derecha** y estar **a pie**, vivo y sin esposas, taser ni placaje.
+- Estar junto a una rueda (a menos de 1,5 metros): se pincha la más cercana de los vehículos que tengas alrededor.
+
+La rueda queda pinchada aunque el vehículo reaparezca o el servidor se reinicie. Al pincharla **suena la alarma del vehículo** y la policía recibe el aviso al instante. No otorga habilidad y deja una espera de **15 minutos** que comparte con el resto de delitos (ver la espera general). No funciona en bicicletas, aeronaves, botes, trenes, tranvías, vehículos a control remoto ni vehículos blindados.
+
 ## Desarme de vehículos
 
-`/desarmarveh` abre el menú de desmontaje del vehículo más cercano. Requiere ser delincuente y tener al menos **20 horas** jugadas. Alejarte del vehículo, o salir del taller cuando la pieza lo exige, cancela el trabajo y te deja **20 minutos** de espera.
+`/desarmarveh` abre el menú de desmontaje del vehículo más cercano. Requiere ser delincuente y tener al menos **20 horas** jugadas. Alejarte del vehículo, o salir del taller cuando la pieza lo exige, cancela el trabajo y te deja **20 minutos** de espera. El desarme es independiente de la espera general: puedes desarmar aunque tengas otro delito en espera.
 
 ### Piezas mecánicas
 
@@ -311,29 +357,52 @@ Los sistemas instalados también se pueden desmontar, pero exigen mucha más hab
 | GPS | 80 | 80 | Inhibidor de señales de radio | 300 s |
 | Blindaje | 90 | 70 | Palanca o destornillador | 600 s |
 
-### Cuántas piezas por sesión
+### Cuántas piezas por día
 
 Puedes desmontar varias piezas seguidas, pero al alcanzar tu cupo llega el descanso obligatorio:
 
-| Habilidad de robo a vehículos | Piezas por sesión |
+| Habilidad de robo a vehículos | Piezas por día |
 | --- | --- |
-| Menos de 15 | 1 |
-| 15 – 34 | 2 |
-| 35 – 64 | 3 |
-| 65 – 94 | 4 |
-| 95 o más | 8 |
+| Menos de 15 | 3 |
+| 15 – 34 | 5 |
+| 35 – 64 | 10 |
+| 65 – 94 | 15 |
+| 95 o más | 20 |
 
 Al alcanzar el cupo recibes **+3 puntos** de habilidad de robo a vehículos y **+1 punto** de habilidad de delincuente, y quedas con **24 horas** de espera para volver a desarmar.
 
-Desatornillar la **patente** del vehículo es un caso aparte: te la llevas en las manos y el coche queda sin matrícula visible, con **12 horas** de espera.
-
 Cada pieza desmontada puede hacer sonar la alarma del vehículo si la batería sigue conectada, con probabilidades que crecen según el nivel de alarma y lo aparatosa que sea la pieza (de un **40%** por la radio con alarma básica hasta un **100%** por la patente con alarma super). **Desmontar primero la batería silencia el coche por completo.**
+
+### Patentes
+
+La patente se roba y se coloca con comandos propios. Para ambos necesitas **50 horas** jugadas, **45** de habilidad de robo a vehículos y un **destornillador** en la mano derecha, además de estar junto al capó o detrás del maletero. No funcionan con vehículos de facciones legales, de empresa, de renta ni con bicicletas.
+
+- `/removerpatente`: desatornilla la patente en unos **3 minutos**. Debes tener la **mano izquierda libre**, porque la patente pasa a ella con la matrícula original del vehículo. El coche queda sin matrícula visible y recibes **12 horas** de espera para desarmar.
+- `/colocarpatente`: con una patente robada en la mano izquierda, la atornilla en el vehículo cercano en unos **3 minutos**. El vehículo se queda donde estaba y la patente se consume.
+
+Un vehículo sin patente visible no recibe multas de las cámaras de velocidad, porque no pueden identificarlo, pero el exceso de velocidad se sigue reportando por radio a la policía como un vehículo con placa oculta.
+
+### Entregar el vehículo en un desguazadero
+
+Un vehículo robado también puede convertirse en efectivo si lo llevas conduciendo a un desguazadero y usas `/desguazar`. Necesitas ser delincuente, tener **20 horas** jugadas y que haya al menos **2 policías** de servicio, y hay una espera personal de **30 minutos** entre entregas. Los precios, la pizarra de modelos buscados y el resto de reglas están en el [sistema de desguazadero](sistema-de-desguazadero.md).
+
+## Golpes de gran escala
+
+Con la cuenta certificada y habilidad alta puedes dar golpes mucho mayores que un atraco. Cada uno tiene su propia guía con herramientas, botín y esperas:
+
+| Golpe | Comando | Requisitos básicos | Guía |
+| --- | --- | --- | --- |
+| Cajeros automáticos | `/robarcajero` | Habilidad de delincuente 70 (más según el método) y 4 policías de servicio | [Robo de cajeros](sistema-de-robo-de-cajeros.md) |
+| Fleeca Bank | `/robobanco` | Habilidad de delincuente 70 (más según el método) y 10 policías de servicio; hasta 16 participantes | [Robo al banco](sistema-de-robo-al-banco.md) |
+| Joyería | `/robojoyeria` | Habilidad de delincuente 70 (más según el método) y 10 policías de servicio; hasta 16 participantes | [Robo a la joyería](sistema-de-robo-a-la-joyeria.md) |
+
+En los tres casos el método depende de la herramienta que lleves en la mano derecha, el dinero sale de las arcas del gobierno y no puedes tener otro delito en curso. Un golpe de gran escala deja también una espera larga: tras reventar un cajero comparte la del atraco, y tras participar en el banco o la joyería quedas en espera general durante varias horas.
 
 ## Vender el botín
 
 Todo lo robado se vende en el [mercado negro](sistema-de-mercado-negro.md) con `/venderrobo`, que además admite `/mercadonegro`, `/vendernegro` y `/traficarnegro`. Necesitas ser delincuente y tener **50 horas** jugadas; antes de eso, la casa de empeños (`/empeñar`) es tu única salida. La ubicación exacta llega por mensaje al usar el comando.
 
-Allí puedes vender **autopartes**, **muebles robados**, **teléfonos y computadores**, **joyas** y **mercancía de camiones**; con 25 de habilidad de paramédico también órganos. Autopartes y muebles se pagan al **80%** de su precio de catálogo, con un pequeño extra durante los eventos de experiencia doble o triple. Con **50 de habilidad de delincuente** el mercado negro te habilita además la compra de **munición y cargadores**.
+Allí puedes vender **autopartes**, **muebles robados**, **teléfonos y computadores**, **joyas** (incluida la bolsa de joyas robadas de la joyería) y **mercancía de camiones**; con 25 de habilidad de paramédico también órganos. Autopartes y muebles se pagan al **80%** de su precio de catálogo, con un pequeño extra durante los eventos de experiencia doble o triple. Con **50 de habilidad de delincuente** el mercado negro te habilita además la compra de **munición y cargadores**.
 
 ## Otras ventajas de ser delincuente
 
@@ -351,4 +420,5 @@ Los usuarios premium tienen todas las esperas criminales reducidas: un **25%** m
 - **Mueve la banda en grupo.** El cooperativo reparte los mismos puntos a todos los compañeros de facción a 25 metros: cinco personas en la misma casa suben cinco veces más rápido.
 - **Primero la batería.** Si vas a desmontar un coche con alarma, quítale la batería antes que nada y el resto del desarme será silencioso.
 - **No dejes de delinquir.** Si no eres de una facción oficial o destacada ni tienes Ruby, cada 24 horas sin cometer un delito te cuestan 5 puntos de habilidad.
-- **Elige bien la herramienta.** La palanca abre casi cualquier cerradura pero hace un estruendo; las ganzúas son más discretas aunque menos fiables y se gastan.
+- **Elige bien la herramienta.** La palanca abre casi cualquier cerradura pero hace un estruendo; las ganzúas son más discretas, exigen pulso y se gastan.
+- **Cuidado con las cámaras.** Si hay una cámara de seguridad frente a la puerta, quedará registrado quién eras, qué llevabas y qué hiciste.

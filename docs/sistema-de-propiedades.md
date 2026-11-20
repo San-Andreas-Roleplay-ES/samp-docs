@@ -6,7 +6,7 @@ El sistema de propiedades agrupa todos los inmuebles del servidor: **casas**, **
 
 <img width="376" height="52" alt="image" src="https://github.com/user-attachments/assets/81baa9c4-2129-48af-a974-8dfe59c7b4c7" />
 
-Una casa te da un techo, un ropero, una caja fuerte, un refrigerador y un buzón. Un almacén te da espacio de sobra para guardar objetos. Un negocio es una máquina de generar dinero, pero solo si lo atiendes: los clientes automáticos exigen ventas reales, empleados contratados y un local limpio, y descuidarlo acaba en incendios y en la pérdida del inmueble por inactividad.
+Una casa te da un techo, un ropero, una caja fuerte, un refrigerador y un buzón. Un almacén te da espacio de sobra para guardar objetos. Un negocio es una máquina de generar dinero, pero solo si lo atiendes: los clientes automáticos exigen ventas reales, empleados contratados y un local limpio, y descuidarlo acaba en incendios y en la pérdida del inmueble por inactividad, que sale a [subasta](sistema-de-subastas.md).
 
 Todas las propiedades pagan **facturas de agua y luz** mientras haya gente dentro, y las casas pagan además impuesto a la propiedad (ver [Sistema de impuestos](sistema-de-impuestos.md)).
 
@@ -26,19 +26,21 @@ Todas las propiedades pagan **facturas de agua y luz** mientras haya gente dentr
 
 ## Compra y venta de inmuebles
 
-Las propiedades en venta muestran un cartel en la entrada. Párate en el marcador y usa `/comprar`.
+Las propiedades en venta muestran un cartel en la entrada. Párate en el marcador y usa `/comprar`: el juego te muestra el precio y la compra se cierra con `/aceptar`. El dinero sale de tu cuenta bancaria.
+
+Una propiedad **premium** solo la puede comprar un jugador premium, y las **habitaciones de hotel** no se compran (se rentan, ver [Complejos y hoteles](#complejos-y-hoteles)). Mientras una propiedad está en subasta no se puede comprar con `/comprar` (ver [Sistema de subastas](sistema-de-subastas.md)).
 
 ### Cómo se calcula el valor
 
 El precio de una propiedad no es solo su valor base. El sistema suma:
 
-**Precio = (Valor base × multiplicador) + (60% del valor de la flota) + (50% del valor de los muebles) + Valor del stock + $250,000 por cada surtidor de combustible**
+**Precio = (Valor base × multiplicador) + (60% del valor de la flota) + (50% del valor de los muebles) + Valor del stock + $250.000 por cada surtidor de combustible**
 
 - **Valor base**: el precio original del inmueble.
 - **Flota**: la suma del valor de los vehículos de la empresa, al 60%.
 - **Muebles**: la suma del precio de los muebles colocados, al 50%.
 - **Stock**: el valor de reposición del inventario del negocio.
-- **Surtidores**: cada surtidor de combustible instalado suma $250,000 (ver [Sistema de combustible](sistema-de-combustible.md)).
+- **Surtidores**: cada surtidor de combustible instalado suma $250.000 (ver [Sistema de combustible](sistema-de-combustible.md)).
 
 ### Descuento premium al comprar
 
@@ -47,26 +49,28 @@ Al comprarle al Estado, tu nivel premium reduce el multiplicador del valor base:
 | Nivel premium | Multiplicador del valor base |
 | --- | --- |
 | Sin premium | 100% |
-| Premium 1 | 90% |
-| Premium 2 | 80% |
-| Premium 3 | 70% |
-| Premium 4 y 5 | 60% |
+| Bronce | 90% |
+| Plata | 80% |
+| Oro | 70% |
+| Platino y Rubí | 60% |
 
 Los componentes de flota, muebles, stock y surtidores se pagan completos en todos los casos.
 
 ### Vender
 
-Puedes vender a **otro jugador** dentro de la propiedad con `/venderprop`, pactando un precio entre el **50% (x0.5)** y el **1000% (x10.0)** del precio calculado. Fuera de ese rango la diferencia tiene que ir por transferencia bancaria aparte.
+Puedes vender a **otro jugador** dentro de la propiedad con `/venderprop`, pactando un precio entre el **50% (x0,5)** y el **1000% (x10)** del precio calculado. Fuera de ese rango la diferencia tiene que ir por transferencia bancaria aparte. El comprador debe estar a menos de 5 metros y acepta con `/aceptar`.
 
 Al vender **al Estado** la oferta es un porcentaje del valor base:
 
 | Nivel premium | Oferta del Estado |
 | --- | --- |
 | Sin premium | 30% |
-| Premium 1 | 35% |
-| Premium 2 | 40% |
-| Premium 3 | 45% |
-| Premium 4 y 5 | 50% |
+| Bronce | 35% |
+| Plata | 40% |
+| Oro | 45% |
+| Platino y Rubí | 50% |
+
+Los socios con la membresía adecuada reciben **5 puntos porcentuales más** al venderle una casa al Estado (ver [Membresías de negocios](#membresías-de-negocios)).
 
 No puedes vender una propiedad con **caja negativa**, con **pedidos en ruta**, con **paquetes u objetos ilegales adentro** ni con un **laboratorio de drogas** activo. Tampoco puedes venderle una propiedad premium a alguien que no tenga premium.
 
@@ -75,11 +79,13 @@ No puedes vender una propiedad con **caja negativa**, con **pedidos en ruta**, c
 | Nivel premium | Propiedades totales | Negocios | Negocios del mismo tipo |
 | --- | --- | --- | --- |
 | Sin premium | 2 | 1 | 1 |
-| Premium 1 | 2 | 2 | 1 |
-| Premium 2 | 2 | 3 | 1 |
-| Premium 3 | 4 | 4 | 2 |
-| Premium 4 | 6 | 5 | 3 |
-| Premium 5 | 8 | 8 | 4 |
+| Bronce | 2 | 1 | 1 |
+| Plata | 2 | 1 | 1 |
+| Oro | 3 | 2 | 2 |
+| Platino | 4 | 3 | 3 |
+| Rubí | 5 | 4 | 4 |
+
+Los espacios extra de propiedades que hayas comprado se suman a estos límites. Las subastas que vas ganando cuentan para tus límites. Si ya tienes más propiedades que tu límite, conservas las que tienes, pero no puedes comprar más ni ofertar por encima del límite.
 
 ### Comandos
 
@@ -94,23 +100,23 @@ Una propiedad puede tener **hasta 6 entradas**, cada una con su posición, su pu
 
 Las puertas pueden estar **abiertas**, **cerradas** o **rotas**. Si está cerrada, solo el dueño o quien tenga llaves pueden pasar. `/puerta` abre y cierra las puertas interiores que hayas creado con muebles.
 
-Los negocios y propiedades destacadas aparecen con su **ícono propio en el mapa**; el dueño puede cambiarlo con `/negmapicon` por **$5,000**.
+Los negocios y propiedades destacadas aparecen con su **ícono propio en el mapa**; el dueño puede cambiarlo con `/negmapicon` por **$5.000**.
 
 ## Casas
 
-Las casas son viviendas personales. Sirven para vivir, guardar dinero y objetos, almacenar ropa, conservar drogas en el refrigerador y decorar el interior con muebles.
+Las casas son viviendas personales. Sirven para vivir, guardar dinero y objetos, almacenar ropa, conservar drogas en el refrigerador, cocinar y decorar el interior con muebles.
 
-Toda casa tiene un **buzón** en su entrada principal (ver más abajo) y admite **2 llaves compartidas**.
+Toda casa tiene un **buzón** en su entrada principal (ver más abajo) y admite **2 llaves compartidas**. Con premium **Rubí** también puedes crear una **terraza** (ver [Exteriores y terrazas](#exteriores-y-terrazas)).
 
 ### Alquilar tu casa a otro jugador
 
-El dueño puede convertir a otro personaje en **inquilino** con `/alquilar [id] [$precio]`. La renta debe estar entre **$150 y $1,000** y el inquilino la paga en cada payday; el dinero va al dueño. El inquilino recibe las llaves y puede entrar y salir libremente. Un personaje solo puede ser inquilino de una propiedad a la vez.
+El dueño puede convertir a otro personaje en **inquilino** con `/alquilar [id] [$precio]`. La renta debe estar entre **$150 y $1.000** y el inquilino la paga en cada payday; el dinero va al dueño. El inquilino recibe las llaves y puede entrar y salir libremente. Un personaje solo puede ser inquilino de una propiedad a la vez.
 
 ### Comandos
 
 - /ropa — abre el ropero para cambiar tu vestuario.
 - /almacen — abre la caja de la casa.
-- /refrigerador — abre el refrigerador (conserva la pureza de las drogas, ver [Sistema de drogas](sistema-de-drogas.md)).
+- /refrigerador — abre el refrigerador (conserva la pureza de las drogas, ver [Sistema de drogas](sistema-de-drogas.md)). Los ingredientes que guardas ahí sirven para `/cocinar` si estás a 10 metros o menos del refrigerador (ver [Sistema de cocina y bar](sistema-de-cocina-y-bar.md)).
 - /buzon — abre el buzón de correo.
 - /alquilar [id] [$precio] — ofrece el alquiler a un jugador.
 - /inquilinos — lista tus inquilinos.
@@ -136,9 +142,16 @@ No tienen empleados, ni stock de venta, ni clientes. El dueño puede mover el pu
 
 ## Complejos y hoteles
 
-Los complejos agrupan muchas **habitaciones** bajo un mismo dueño. El propietario del complejo fija un precio único por día con `/fijaralquiler` (entre **$100 y $50,000 por día**) y consulta el estado de las habitaciones con `/habitaciones`.
+Los complejos agrupan muchas **habitaciones** bajo un mismo dueño. El propietario del complejo fija un precio único por día con `/fijaralquiler` (entre **$100 y $50.000 por día**; el cambio no afecta a los inquilinos actuales) y consulta el estado de las habitaciones con `/habitaciones`.
 
-Cualquier jugador puede reservar una habitación libre parándose junto a su puerta y usando `/rentar`: elige de **1 a 15 días** y paga todo por adelantado, en efectivo o desde el banco. Solo se puede tener **una habitación reservada a la vez**, y el hotel guarda el registro de la reserva, que la policía puede consultar presencialmente.
+Cualquier jugador puede reservar una habitación libre parándose junto a su puerta y usando `/rentar`: elige de **1 a 30 días** y paga todo por adelantado, con el efectivo que lleves o, si no te alcanza, desde el banco. El dinero va a la caja del hotel. Solo se puede tener **una habitación reservada a la vez**, y el hotel guarda el registro de la reserva, que la policía puede consultar presencialmente.
+
+- Si ya rentas esa habitación, `/rentar` **suma los días** a tu reserva actual.
+- `/cancelarrenta` te permite dejar la habitación cuando quieras. **No hay reembolso** de lo pagado.
+- Al terminar los días reservados, la habitación queda libre y pierdes las llaves.
+- Si te desalojan mientras estás desconectado, recibes el aviso al conectarte.
+
+Las normas del hotel prohíben tener mascotas, fumar, hacer fiestas y mover objetos o muebles de la habitación.
 
 ## Llaves y permisos
 
@@ -150,7 +163,7 @@ Puedes **compartir tu propiedad** prestando llaves. Los límites por persona son
 | Almacenes | 2 |
 | Negocios | 1 |
 
-Las llaves se prestan cara a cara, a menos de 5 metros. Solo el propietario, su cónyuge, los miembros de la facción dueña (si aplica) y quienes tengan llave con permiso de muebles pueden mover o editar el mobiliario; el resto solo entra y sale.
+Las llaves se prestan cara a cara, a menos de 5 metros. Solo el propietario, su cónyuge, los miembros de la facción dueña (si aplica) y quienes tengan llave con permiso de muebles pueden mover o editar el mobiliario; el resto solo entra y sale. Además, el dueño puede dar un **permiso temporal de muebles** a otro jugador sin prestarle llaves (ver [Sistema de muebles](sistema-de-muebles.md#permisos-de-muebles)).
 
 No se pueden prestar llaves de industrias, complejos ni propiedades de facción.
 
@@ -162,50 +175,35 @@ No se pueden prestar llaves de industrias, complejos ni propiedades de facción.
 
 ## Muebles
 
-Los muebles son objetos que compras y colocas libremente dentro de tu propiedad, para decorarla o darle funciones (camas, sofás, luces, puertas adicionales, mostradores…). El límite es de **2,048 muebles por propiedad**.
-
-El flujo típico: compras un mueble con `/comprarmueble`, lo seleccionas con `/seleccionar`, entras en modo edición con `/editarmueble`, lo mueves o rotas con los comandos de ejes y lo dejas fijo al deseleccionarlo.
+Los muebles son objetos que compras y colocas libremente dentro de tu propiedad, para decorarla o darle funciones (camas, sofás, luces, puertas adicionales, mostradores…). El límite es de **2.048 muebles por propiedad**, se pagan **desde tu cuenta bancaria** y el catálogo supera los **1.700 modelos**, desde **$10** los más simples. Los muebles **personalizados** requieren **premium Oro o superior**. El valor de los muebles colocados suma un 50% al precio de venta de la propiedad.
 
 <img width="663" height="636" alt="image" src="https://github.com/user-attachments/assets/f6367168-f714-453b-be9f-e7e3af42bbfe" />
 
-El catálogo tiene más de **1,700 modelos** repartidos en categorías, desde **$10** los más simples, y se paga **desde tu cuenta bancaria**. Además del catálogo clásico hay tandas de modelos personalizados: la **colección Vice City** (vinoteca, televisor antiguo, mapamundi, tablas de surf, carpas militares, fuente de agua, carritos de feria, lavandería, zoológico completo…), la **colección SOLS** (tumbas de pandilla, puertas de servicio, bates, machetes, fajos de dinero, bolsos de tienda, chaleco de prensa…) y los **muebles donados por la comunidad**, aportados por los propios jugadores (balde con agua, cuadros, estatuas, Furby, lasaña, máquina de básquet arcade, máquina de garra, plancha…).
+El flujo típico: compras un mueble con `/comprarmueble`, lo seleccionas, lo editas con el ratón o con los comandos de ejes y lo dejas fijo al guardar. Puedes **empaquetarlo** para llevártelo a otra propiedad, aplicarle **texturas**, **clonarlo**, **convertirlo en puerta**, y editar varios a la vez con **grupos** y **prefabs**.
 
-Los muebles **personalizados** —los que defines tú mismo indicando el modelo— requieren **premium oro (nivel 3) o superior**.
+La guía [Sistema de muebles](sistema-de-muebles.md) explica todo con detalle: catálogo y colecciones, menú 3D de texturas, prioridad y distancia de dibujado, permisos temporales, grupos de muebles y prefabs.
 
-Puedes **empaquetar** un mueble para llevártelo a otra propiedad, aplicarle **texturas**, **clonarlo** y **convertirlo en puerta** funcional.
+### Comandos básicos
 
-### Comandos
-
-- /comprarmueble [modelo] — compra un mueble (sin parámetros muestra las categorías). Alias: `/cobject`, `/comprarmuebles`.
+- /comprarmueble [modelo] — compra un mueble (sin parámetros muestra las categorías).
 - /muebles — lista los muebles de la propiedad actual.
-- /buscarmueble [nombre] — busca muebles por nombre.
-- /seleccionar — selecciona el mueble más cercano.
-- /cseleccionar — selecciona un mueble personalizado.
-- /deseleccionar — deselecciona el mueble actual.
+- /seleccionar, /cseleccionar, /deseleccionar — selecciona o suelta un mueble.
 - /editarmueble — activa el modo edición.
-- /clonarmueble — duplica el mueble seleccionado.
-- /moverx, /movery, /moverz [valor] — mueve el mueble en cada eje.
-- /rotarx, /rotary, /rotarz [valor] — rota el mueble en cada eje.
-- /prioridad [valor] — ajusta el orden de dibujado.
-- /resetmueble — devuelve el mueble a su posición original.
 - /quitarmueble — elimina el mueble seleccionado.
-- /infomueble — muestra los detalles del mueble.
-- /textura [índice], /quitartextura, /buscartextura [nombre] — gestiona texturas.
-- /convertirpuerta, /configurarpuerta — convierte el mueble en puerta y la ajusta.
 - /empaquetarmueble, /desempaquetarmueble — traslada un mueble a otra propiedad.
 
 ## Facturas de agua y luz
 
-Toda propiedad acumula consumo mientras haya alguien dentro. El contador sube **por cada minuto y por cada persona** que permanezca en el interior.
+Toda propiedad acumula consumo mientras haya alguien dentro. El contador sube **cada 5 minutos y por cada persona** que permanezca en el interior, y suma a la vez luz y agua.
 
-| Servicio | Costo | Frecuencia con que sube el contador |
-| --- | --- | --- |
-| Electricidad | **$9** por unidad | cada minuto dentro |
-| Agua | **$7** por unidad | cada 5 minutos dentro |
+| Servicio | Costo por unidad |
+| --- | --- |
+| Electricidad | **$9** |
+| Agua | **$7** |
 
 El total acumulado de todas tus propiedades se descuenta en tu **payday** y aparece en el resumen junto al sueldo, la renta y los intereses. Los impuestos diarios van en su propio bloque separado (ver [Sistema de impuestos](sistema-de-impuestos.md)).
 
-Cuantos más ocupantes y más horas pasen dentro, mayor será la factura. Un negocio muy concurrido paga bastante luz, así que conviene tenerlo en cuenta al calcular las ganancias.
+Cuantos más ocupantes y más horas pasen dentro, mayor será la factura. Un negocio muy concurrido paga bastante luz, así que conviene tenerlo en cuenta al calcular las ganancias. Las propiedades de la [isla de Santa Catalina](santa-catalina.md) no pagan luz ni agua.
 
 ## Empresas y negocios
 
@@ -227,12 +225,12 @@ Los negocios son propiedades comerciales que se operan con **empleados**, **stoc
 - /transferircaja [llave destino] [$dinero] — transfiere dinero a otro negocio tuyo.
 - /mirarnegocio — muestra el estado de los requisitos para las ventas automáticas.
 - /mirarbasura — muestra la suciedad acumulada y su efecto.
-- /negnombre [nombre] — cambia el nombre del negocio (dueño, $5,000).
-- /negmapicon [ícono] — cambia el ícono del mapa (dueño, $5,000).
+- /negnombre [nombre] — cambia el nombre del negocio (dueño, $5.000).
+- /negmapicon [ícono] — cambia el ícono del mapa (dueño, $5.000).
 - /negmotd [texto] — mensaje que ven los clientes al entrar.
 - /negvehiculos — gestiona la flota de la empresa.
 - /activaralarma — dispara la alarma manualmente desde el mostrador.
-- /entrada [$precio] — establece el precio de entrada (clubes).
+- /entrada [$precio] — establece el precio de entrada, de $0 a $1.000 (clubes).
 - /mostrador, /mostrador2 — fija la posición de los mostradores de venta.
 - /derechodeadmision [id] — expulsa a un cliente del local (temporal, puede volver).
 - /vetar [id] [razón], /vetos, /desvetar [nombre_apellido] — veto permanente de un cliente.
@@ -244,14 +242,14 @@ La caja es el dinero de la empresa. De ella salen los pedidos, los sueldos, los 
 Para usarla hay que estar dentro del negocio y tener el permiso de caja en tu cargo. `/caja` sin parámetros muestra el saldo y los impuestos vigentes.
 
 - **Depositar** saca el dinero de tu cuenta bancaria y no paga impuestos.
-- **Retirar** deposita el dinero en tu cuenta bancaria y paga un **impuesto corporativo del 28%** (21% federal más 7% estatal). El límite por operación es de **$1,000,000**.
-- **Transferir** entre dos negocios tuyos no paga impuestos, con un límite de **$10,000,000** por operación.
+- **Retirar** deposita el dinero en tu cuenta bancaria y paga un **impuesto corporativo del 28%** (21% federal más 7% estatal). El límite por operación es de **$1.000.000**.
+- **Transferir** entre dos negocios tuyos no paga impuestos, con un límite de **$10.000.000** por operación.
 
-Si el dueño **no está conectado**, el negocio paga además **$81 por hora** de impuesto comercial al gobierno.
+Si el dueño **no está conectado**, el negocio paga además **$81 por hora** de impuesto comercial al gobierno (salvo en la isla de Santa Catalina).
 
 ## Stock: configurar qué vendes y a cuánto
 
-Un negocio con producto puede tener hasta **63 artículos** distintos en su catálogo. `/stock` abre la lista con la categoría, el producto, el precio unitario y las unidades disponibles, y permite añadir, quitar y cambiar precios.
+Un negocio con producto puede tener hasta **127 artículos** distintos en su catálogo. `/stock` abre la lista con la categoría, el producto, el precio unitario y las unidades disponibles, y permite añadir, quitar y cambiar precios. Las listas largas se reparten en páginas: `/stock` muestra 25 artículos por página.
 
 ### Precio de venta
 
@@ -261,24 +259,34 @@ Cada producto tiene un **coste base** fijado por el servidor. A partir de él:
 | --- | --- |
 | Coste de reposición | **80% del coste base** (lo que pagas al pedirlo) |
 | Precio mínimo de venta | **100% del coste base** |
-| Precio máximo de venta | **1,000% del coste base** (x10) |
-| Precio máximo en clubes | **100,000% del coste base** (x1000) |
+| Precio máximo de venta | **1.000% del coste base** (x10) |
+| Precio máximo en clubes | **100.000% del coste base** (x1000) |
 
 El diálogo de precio te muestra el coste, el mínimo, el máximo y tu **beneficio por unidad** (precio de venta menos coste de reposición). Los cambios de precio tardan **60 segundos** en aplicarse. Si un precio queda fuera de rango, el sistema lo devuelve automáticamente al coste base.
 
-### Limitación de categorías
+### Categorías de productos
 
-Sin premium, un negocio solo puede vender productos de **una única categoría**. Con premium puedes mezclar categorías distintas en el mismo catálogo.
+Los productos se agrupan en estas categorías: **Armas, Comidas, Bebidas, Tabaco, Deportes, Farmacia, Ferretería, Muebles, Ropa, Electrónica, Cultivo, Repuestos, Seguridad, Joyas y Regalos**.
+
+Sin premium, un negocio solo puede vender productos de **una única categoría**, con dos excepciones: Bebidas y Tabaco cuentan como Comidas, y Regalos cuenta como Cultivo. Con premium puedes mezclar categorías distintas en el mismo catálogo.
+
+### Regalos, vapers y habanos
+
+Los negocios que venden flores tienen además la categoría **Regalos**: ramos (rosas rojas, blancas y rosadas, tulipanes, girasoles, lirios, hortensias, peonías, flores silvestres y ramo de novia), peluches, cajas de bombones, estuches de anillo (cerrado y abierto) y cajas de regalo de colores. Los negocios que venden vapers tienen vapers de sabores (menta, mango, limón, chicle, blue razz, uva y sandía), y los que venden la Caja de Habanos pueden ofrecer también el habano robusto y las cajas **Vinewood** (coste base de $300) y **Royal Liberty** (coste base de $500), de 10 habanos cada una.
 
 ### Cómo compran los clientes
 
-El cliente se acerca al **mostrador** y usa `/comprar`. Se abre un **catálogo con la vista previa en 3D** de cada producto, su nombre y su precio, con páginas para navegar. Quien prefiera la lista de texto clásica puede cambiarlo desde `/preferencias`.
+El cliente se acerca al **mostrador** y usa `/comprar`. Si el negocio vende más de **15 productos** de **2 o más categorías**, primero eliges la categoría (con la cantidad de productos de cada una) y después el producto; con **Atrás** o **ESC** vuelves a las categorías. En los negocios que venden boletos de lotería, la primera opción del menú es **Lotería**.
+
+Los productos se muestran en un **catálogo con vista previa en 3D**, su nombre y su precio, con páginas para navegar. Quien prefiera la lista de texto clásica puede cambiarlo desde `/preferencias`; en ese modo la lista muestra 40 productos por página.
 
 El dinero sale primero del efectivo del cliente y, si no le alcanza, de su cuenta bancaria. Entra íntegro a la **caja del negocio**.
 
 Un empleado en servicio puede además ofrecer el catálogo en persona con `/venderstock [id] [propina 10-60]`: el cliente paga el precio más la propina pactada, y **la propina va al bolsillo del empleado** (más 3 Burger Points por venta con propina, ver [Sistema de Burger Points](sistema-de-burger-points.md)).
 
-Las armas, cargadores y munición tienen requisitos extra para el comprador: **50 horas de juego**, tener una casa, no tener antecedentes y la licencia correspondiente. Tras comprar un arma queda un tiempo de espera de **2 semanas**, o **1 semana** con premium oro o superior.
+Las armas, cargadores y munición tienen requisitos extra para el comprador: **50 horas de juego**, tener una casa, no tener antecedentes y la licencia correspondiente. Tras comprar un arma queda un tiempo de espera de **2 semanas**, o **1 semana** con premium Oro o superior.
+
+Para encontrar el negocio que vende lo que necesitas, `/gps` permite buscar por categoría o por producto y marca la ruta a los negocios abiertos con stock más cercanos (ver [Sistema de teléfono y GPS](sistema-de-telefono-y-gps.md)).
 
 ### Autoservicio (drive-thru)
 
@@ -294,7 +302,7 @@ Algunos locales tienen un punto de **autoservicio** en el exterior, marcado en e
 
 ## Pedidos a las empresas de reparto
 
-Cuando el stock se agota hay que reponerlo. `/pedidos` abre la lista de productos con su costo unitario, las unidades en almacén y el estado del pedido.
+Cuando el stock se agota hay que reponerlo. `/pedido` (alias `/pedidos`) abre la lista de productos con su costo unitario, las unidades en almacén y el estado del pedido, con 20 productos por página.
 
 ### Costos
 
@@ -311,7 +319,7 @@ Todo se paga de la **caja del negocio** en el momento de pedir; si no hay saldo,
 
 ### Quién entrega
 
-Las entregas las hacen **camioneros** de las empresas de reparto: un jugador toma tu pedido desde la lista de cargas disponibles, recoge la mercancía en la industria correspondiente y la lleva hasta la puerta de tu negocio (ver [Sistema de camionero](sistema-de-camionero.md)). El pedido pasa por los estados *disponible → esperando → en ruta → entregado*.
+Las entregas las hacen **camioneros** de las empresas de reparto: un jugador toma tu pedido desde la lista de cargas disponibles, recoge la mercancía en la industria correspondiente y la lleva hasta la puerta de tu negocio (ver [Sistema de camionero](sistema-de-camionero.md)). El pedido pasa por los estados *disponible → esperando → en ruta → entregado*. En la isla de Santa Catalina la mercancía se entrega y se recoge en el muelle del ferry de Los Santos.
 
 Si nadie recoge el pedido, **la mercancía llega igualmente por retraso** al cabo de una hora: no pierdes el dinero, solo el tiempo.
 
@@ -330,19 +338,18 @@ Para que los clientes NPC compren, el negocio debe cumplir **cada día**:
 | Requisito | Mínimo |
 | --- | --- |
 | Ventas a clientes reales | **5 al día** |
-| Empleados contratados | **1** |
-| Basura acumulada | por debajo de **56 kg** |
+| Empleados contratados | **2**, de cuentas distintas |
 
 - Las **ventas a clientes reales** no cuentan si las hace el dueño, ni si las hace alguien que tenga un contrato vigente con el negocio, sin importar con qué personaje de su cuenta compre.
-- Los **empleados** se cuentan por cuentas distintas, no por personajes.
-- Si la basura alcanza o supera los **56 kg**, las ventas dejan de ingresar dinero a la caja: el producto se entrega igual, pero el negocio no cobra.
+- Los **empleados** se cuentan por cuentas distintas, no por personajes: dos personajes de la misma cuenta cuentan como un solo empleado.
+- La **basura** acumulada reduce cuántos productos se venden por hora (ver más abajo). Con **56 kg o más**, las compras de clientes reales ya no ingresan dinero a la caja: el producto se entrega igual, pero el negocio no cobra.
 
-`/mirarnegocio`, dentro del local, muestra los tres requisitos con su valor actual y su mínimo, en verde si están cumplidos y en rojo si no.
+`/mirarnegocio`, dentro del local, muestra los requisitos con su valor actual y su mínimo (incluida la basura, con el tope de 56 kg), en verde si están cumplidos y en rojo si no.
 
 ### Qué compran y cuánto pagan
 
-- Los clientes NPC solo compran productos con un **coste base de hasta $1,000**. Todo lo que cueste más no entra en las ventas automáticas.
-- Cada unidad vendida paga **el 150% de su coste base** (x1.5), sin importar el precio que tengas puesto en el mostrador. El precio del mostrador afecta solo a las compras de jugadores reales.
+- Los clientes NPC solo compran productos con un **coste base de hasta $1.000**. Todo lo que cueste más no entra en las ventas automáticas.
+- Cada unidad vendida paga **el 150% de su coste base** (x1,5), sin importar el precio que tengas puesto en el mostrador. El precio del mostrador afecta solo a las compras de jugadores reales.
 - El dinero entra directo a la **caja del negocio**.
 - El sistema elige productos al azar de tu catálogo, así que conviene tener **varios productos baratos con stock** en lugar de uno solo.
 
@@ -364,15 +371,15 @@ La basura acumulada determina cuántos productos se venden en cada ciclo horario
 ### Cómo maximizar las ganancias pasivas
 
 - **Mantén el local limpio.** Es el factor que más pesa: pasar de 0 kg a 40 kg te cuesta el 43% de las ventas.
-- **Vende barato y variado.** Los artículos de más de $1,000 de coste no entran en las ventas NPC.
+- **Vende barato y variado.** Los artículos de más de $1.000 de coste no entran en las ventas NPC.
 - **Ten siempre stock.** Sin unidades no hay venta; la reposición automática cubre este punto.
 - **Deja saldo en la caja.** De ella salen los pedidos automáticos, los sueldos y los impuestos.
-- **Contrata y conserva empleados.** Basta con uno, pero sin él no hay ventas automáticas.
+- **Contrata y conserva empleados.** Hacen falta dos de cuentas distintas; sin ellos no hay ventas automáticas.
 - **Consigue 5 ventas reales al día.** Un cliente habitual, un evento o un empleado vendiendo con `/venderstock` bastan para desbloquear el ciclo.
 
 ## Basura y limpieza
 
-Cada venta —de cliente real o de cliente NPC— ensucia el local: genera **0 o 1 kg de basura**, con un tope de **100 kg**. Las **bolsas de basura tiradas en el interior** también cuentan para la suciedad total.
+Cada venta —de cliente real o de cliente NPC— ensucia el local: genera **0 o 1 kg de basura**, con un tope de **100 kg**. Las **bolsas de basura tiradas** dentro del local o en su entrada también cuentan para la suciedad total.
 
 Al entrar a un local sucio aparecen mensajes de ambiente ("el local está desordenado", "zona crítica, cero higiene"…) que desincentivan a los clientes. A partir de **70 kg** el negocio tiene **plagas de ratas** y ya no puede limpiarlo cualquiera: hace falta un recolector de basura profesional.
 
@@ -382,7 +389,7 @@ Al entrar a un local sucio aparecen mensajes de ambiente ("el local está desord
 
 `/limpiarnegocio` limpia una tanda de basura. Hace falta una **escoba** o **jabón** en la mano derecha, estar en servicio si eres empleado, y quedarse quieto entre **30 y 60 segundos** según la habilidad de quien limpia: la escoba recoge un 33% más de basura y el jabón tarda un 33% menos. Al terminar aparece una bolsa de basura en el suelo que hay que retirar.
 
-**Cuánto cuesta:** si limpia un **empleado del negocio o alguien con llaves**, es gratis. Si limpia un **recolector externo**, el negocio paga **$20 por cada kilo retirado**, descontados de la caja en el momento. Si no hay saldo suficiente, se cobra lo que haya (ver [Sistema de basura](sistema-de-basura.md)).
+**Cuánto cuesta:** si limpia un **empleado del negocio o alguien con llaves**, es gratis. Si limpia un **recolector externo**, el negocio paga **$25 por cada kilo retirado**, descontados de la caja en el momento. Si no hay saldo suficiente, se cobra lo que haya (ver [Sistema de basura](sistema-de-basura.md)).
 
 ## Incendios y extintores
 
@@ -442,13 +449,21 @@ Los empleados trabajan bajo **cargos** que crea el dueño, cada uno con su nombr
 
 Todo cargo nuevo empieza **sin ningún permiso**: hay que dárselos uno a uno.
 
+### Cómo se contrata
+
+Para trabajar en una empresa tiene que **contratarte alguien de ella**: el dueño o un empleado con el permiso **Contratar**. Se hace con `/contratar [id]`, dentro del negocio y con el jugador a menos de **5 metros**. Antes, el dueño debe haber creado los cargos con `/cargos`. El jugador acepta con `/aceptar` y entra con el cargo más básico; después el dueño o un gerente puede ascenderlo con `/darcargo`.
+
+`/negunirse` solo lo puede usar el **dueño** de la empresa, para registrarse como empleado de su propio negocio. Quien no es dueño no puede unirse por su cuenta.
+
+<img width="587" height="61" alt="image" src="https://github.com/user-attachments/assets/78dc4cb0-d9d1-412e-86a7-1173c8d90077" />
+
 ### Sueldos y su tope
 
-El sueldo de cada cargo lo fija el dueño, con topes que dependen del mercado: el sistema calcula el **promedio de sueldos del mismo tipo de negocio en todo el servidor** y permite pagar hasta **1.5 veces** ese promedio, con un mínimo garantizado de **$1,000** y un máximo absoluto de **$20,000**. El diálogo de sueldos te muestra el promedio del mercado y calcula los impuestos que pagarás.
+El sueldo de cada cargo lo fija el dueño, con topes que dependen del mercado: el sistema calcula el **promedio de sueldos del mismo tipo de negocio en todo el servidor** y permite pagar hasta **1,5 veces** ese promedio, con un mínimo garantizado de **$1.000** y un máximo absoluto de **$20.000**. El diálogo de sueldos te muestra el promedio del mercado y calcula los impuestos que pagarás.
 
 ### Jornada laboral
 
-Se entra y se sale de servicio con `/negservicio` (alias `/trabajar`). El sueldo se cobra al completar una **jornada**:
+Se entra y se sale de servicio con `/negservicio` (alias `/trabajar`). El sueldo se cobra al completar una **jornada**, que solo avanza mientras no estés en pausa:
 
 | Tipo de negocio | Jornada |
 | --- | --- |
@@ -464,21 +479,21 @@ Al completar una jornada recibes en tu **cuenta bancaria** dos cosas:
 
 | Tipo de empresa | Subsidio |
 | --- | --- |
-| Empleados de tiendas y clubes | **$1,000** por jornada |
+| Empleados de tiendas y clubes | **$1.000** por jornada |
 | Empleados del resto de empresas | **$100** por jornada |
-| Miembros de facción | **$1,000** por payday |
+| Miembros de facción | **$1.000** por payday |
 
-En los negocios de rol el gobierno además inyecta **$100 por jornada** directamente a la caja del negocio, como ayuda al empleador.
+En los negocios de rol (tiendas, clubes, depósitos de vehículos, bufetes y periódicos) el gobierno además inyecta **$100 por jornada** directamente a la caja del negocio, como ayuda al empleador.
 
-Durante los eventos de experiencia el total cobrado se multiplica: **+25%** en doble experiencia y **+33%** en triple. Los usuarios premium 4 y 5 tienen un **+25%** permanente cuando no hay evento activo.
+Durante los eventos de experiencia el total cobrado se multiplica: **+25%** en doble experiencia y **+33%** en triple. Los usuarios premium Platino y Rubí tienen un **+25%** permanente cuando no hay evento activo.
 
-La empresa paga además, desde su caja, los **impuestos laborales** sobre el sueldo de rango: **6.2%** de seguro social, **1.45%** de seguro médico y **2%** de otros costos laborales, un **9.65%** en total. El subsidio estatal no tributa (ver [Sistema de impuestos](sistema-de-impuestos.md)).
+La empresa paga además, desde su caja, los **impuestos laborales** sobre el sueldo de rango: **6,2%** de seguro social, **1,45%** de seguro médico y **2%** de otros costos laborales, un **9,65%** en total. El subsidio estatal no tributa (ver [Sistema de impuestos](sistema-de-impuestos.md)).
 
 ### Mantenerse en el puesto
 
 Mientras estés en servicio debes permanecer en tu zona de trabajo: dentro del negocio, a menos de **150 metros** del local, dentro de un vehículo de la empresa o junto a tu vehículo de servicio.
 
-Si te alejas recibes un aviso y tienes un margen de **5 minutos** para volver (**15 minutos** para los basureros; los periodistas y los técnicos de seguridad no tienen límite, porque trabajan en la calle). Pasado el plazo te cobran una **multa de $2,500** que va a parar a la caja del negocio, y te sacan de servicio perdiendo la jornada acumulada.
+Si te alejas recibes un aviso y tienes un margen de **5 minutos** para volver (**15 minutos** para los basureros; los periodistas y los técnicos de seguridad no tienen límite, porque trabajan en la calle). Pasado el plazo te cobran una **multa de $2.500** que va a parar a la caja del negocio, y te sacan de servicio perdiendo la jornada acumulada.
 
 ### Trabajar en varios sitios
 
@@ -487,26 +502,12 @@ Puedes tener varios contratos a la vez y cambiar entre ellos sin renunciar:
 | Nivel premium | Contratos simultáneos |
 | --- | --- |
 | Sin premium | 2 |
-| Premium 1 | 3 |
-| Premium 2 | 4 |
-| Premium 3 | 5 |
-| Premium 4 y 5 | 6 |
+| Bronce | 3 |
+| Plata | 4 |
+| Oro | 5 |
+| Platino y Rubí | 6 |
 
-`/miscontratos` lista los tuyos y permite activar uno; no se puede cambiar estando en servicio, y hay que esperar **60 segundos** entre cambios. Para renunciar necesitas haber trabajado al menos **8 horas** en esa empresa y confirmarlo con `/renunciar confirmar`.
-
-### Unirse automáticamente con /negunirse
-
-`/negunirse` te contrata sin que el dueño tenga que hacerlo a mano, siempre que:
-
-- Estés dentro del negocio o en su zona exterior.
-- El dueño lo tenga habilitado con `/tognegunirse`, que requiere **premium**.
-- El negocio tenga al menos el primer cargo configurado.
-- No hayas sido despedido de ese negocio en las **últimas 72 horas**.
-- El tipo de negocio lo permita: **no funciona** en banco, depósito de vehículos, periodismo, seguridad ni casino, que exigen contratación manual.
-
-<img width="587" height="61" alt="image" src="https://github.com/user-attachments/assets/78dc4cb0-d9d1-412e-86a7-1173c8d90077" />
-
-Entras con el cargo más básico; después el dueño o un gerente puede ascenderte con `/darcargo`.
+`/miscontratos` lista los tuyos y, al elegir uno, permite **activarlo** o **renunciar** a él, aunque no sea el contrato activo. No se puede cambiar de contrato estando en servicio, y hay que esperar **60 segundos** entre cambios. Para renunciar necesitas haber trabajado al menos **1 hora** en esa empresa; el dueño no puede renunciar a su propia empresa. También puedes renunciar al contrato activo con `/renunciar confirmar`.
 
 ### Anunciar tus servicios
 
@@ -527,33 +528,38 @@ Quien no quiera recibir estos avisos puede desactivarlos en **/preferencias ➡�
 
 ### Comandos
 
-- /negunirse — te unes automáticamente como empleado.
-- /tognegunirse — habilita o deshabilita `/negunirse` en tu negocio (dueño, premium).
+- /contratar [id] — ofrece contrato a un jugador cercano (permiso Contratar).
+- /negunirse — el dueño se registra como empleado de su propio negocio.
 - /negservicio — entra o sale de servicio. Alias: `/trabajar`.
 - /anunciarservicio — anuncia que estás trabajando.
-- /miscontratos — lista y cambia entre tus contratos. Alias: `/contratos`, `/misempleos`, `/cambiarempleo`.
+- /miscontratos — lista, activa y renuncia a tus contratos. Alias: `/contratos`, `/misempleos`, `/cambiarempleo`.
 - /mostrarcontrato [id] — enseña tu contrato a otro jugador.
 - /renunciar confirmar — renuncia al contrato actual.
-- /contratar [id] — ofrece contrato a un jugador cercano.
 - /despedir [nombre_apellido] — despide a un empleado.
 - /cargos — crea y edita cargos, sueldos y permisos (dueño).
 - /darcargo [id] [cargo] — asigna un cargo a un empleado.
 - /empleados — consulta la plantilla desde el panel de control (ver [Panel de control](panel-de-control.md)).
 
-## Exteriores de negocios
+## Exteriores y terrazas
 
-Un negocio puede reclamar un **área en la calle frente a su puerta**: una terraza, un patio, una zona de mesas. El exterior amplía el local hacia afuera y cuenta como parte del negocio.
+Un negocio puede reclamar un **área en la calle frente a su puerta**: una terraza, un patio, una zona de mesas. Las **casas** también pueden tener su **terraza**. El exterior amplía el local hacia afuera y cuenta como parte de la propiedad.
 
 ### Situar el exterior
 
-`/exterior situar`, estando de pie donde quieras el centro del área. Requisitos:
+`/exterior situar`, estando de pie donde quieras el centro del área. Requisitos comunes:
 
-- Tener permiso de **stock** en el negocio, o ser el dueño.
 - Estar a menos de **100 metros** de la entrada principal, y que esa entrada dé a la calle.
-- Que el área no se **solape** con el exterior de otro negocio.
-- Que la caja tenga más de **$100,000**: situar o mover el exterior cuesta **$100,000**.
+- Que el área no se **solape** con el exterior de otra propiedad.
 
-Donde lo sitúes queda un **mostrador exterior**: los clientes pueden usar `/comprar` ahí mismo, sin entrar al local.
+Además:
+
+| | Negocio | Casa (terraza) |
+| --- | --- | --- |
+| Quién puede | Dueño o empleado con permiso de **stock** | Dueño o su cónyuge |
+| Premium | No hace falta | Solo **Rubí** puede crearla |
+| Costo de situar o mover | **$100.000**, de la caja (debe tener ese saldo) | **$50.000**, del dinero en mano |
+
+En un negocio queda un **mostrador exterior**: los clientes pueden usar `/comprar` ahí mismo, sin entrar al local. En una casa, el dueño o el inquilino pueden usar `/refrigerador` desde el punto de la terraza, y la radio de la casa también se escucha en ella.
 
 ### Niveles de expansión
 
@@ -562,36 +568,38 @@ Donde lo sitúes queda un **mostrador exterior**: los clientes pueden usar `/com
 | Nivel | Radio | Muebles máximos | Precio |
 | --- | --- | --- | --- |
 | 1 | 10 metros | 16 | gratis (nivel inicial) |
-| 2 | 10 metros | 32 | **$25,000** |
-| 3 | 20 metros | 64 | **$100,000** |
-| 4 | 20 metros | 128 | **$250,000** |
-| 5 | 30 metros | 256 | **$500,000** |
-| 6 | 30 metros | 512 | **$750,000** |
+| 2 | 10 metros | 32 | **$25.000** |
+| 3 | 20 metros | 64 | **$100.000** |
+| 4 | 20 metros | 128 | **$250.000** |
+| 5 | 30 metros | 256 | **$500.000** |
+| 6 | 30 metros | 512 | **$750.000** |
 
-Las mejoras se pagan de la caja del negocio. **Bajar de nivel es gratis**, pero antes hay que quitar los muebles que sobren. Subir de nivel también comprueba que el área ampliada no se solape con la de otro negocio.
+Las mejoras se pagan de la caja del negocio; en una casa, del dinero en mano. **Bajar de nivel es gratis**, pero antes hay que quitar los muebles que sobren. Subir de nivel también comprueba que el área ampliada no se solape con la de otra propiedad.
 
 ### Muebles de exterior
 
-`/exterior crearmueble` abre el mismo catálogo de muebles del interior y coloca la pieza delante de ti. Se pagan de la **caja del negocio** y **no se reembolsan** al eliminarlos. Para editar o borrar un mueble tienes que estar a menos de **10 metros** de él.
+`/exterior crearmueble` abre el mismo catálogo de muebles del interior y coloca la pieza delante de ti; el precio se cobra al confirmar la posición. Se pagan de la **caja del negocio** (en una casa, del dinero en mano) y **no se reembolsan** al eliminarlos. Para editar o borrar un mueble tienes que estar a menos de **10 metros** de él.
 
-Con ellos se montan terrazas, mesas, sombrillas, barras al aire libre, vallas, jardineras y escenarios. Los muebles personalizados requieren **premium oro**.
+Con ellos se montan terrazas, mesas, sombrillas, barras al aire libre, vallas, jardineras y escenarios. Los muebles personalizados requieren **premium Oro**. Cada mueble de exterior admite texturas en hasta 16 partes. Quien tiene un [permiso temporal de muebles](sistema-de-muebles.md#permisos-de-muebles) puede editar los muebles exteriores, pero los paga de su bolsillo y no puede situar, ampliar ni eliminar el exterior.
 
 ### Qué aporta el exterior
 
-- **Mostrador de venta en la calle**: los clientes compran sin entrar.
+- **Mostrador de venta en la calle** en los negocios: los clientes compran sin entrar.
 - **Cuenta para los eventos**: los jugadores a pie dentro del área exterior suman como participantes del evento del negocio, igual que los que están dentro del local. Una terraza llena es la forma más rápida de subir de nivel.
-- **Ambientación**: da presencia al negocio en la vía pública y facilita el rol de bar, cafetería o puesto callejero.
+- **Ambientación**: da presencia a la propiedad en la vía pública y facilita el rol de bar, cafetería o puesto callejero.
 
 ### Comandos
 
-- /exterior situar — coloca o mueve el área exterior ($100,000).
+- /exterior situar — coloca o mueve el área exterior.
 - /exterior expandir — mejora el nivel del exterior.
-- /exterior eliminar — elimina el exterior y todos sus muebles.
+- /exterior eliminar — elimina el exterior y todos sus muebles, previa confirmación.
 - /exterior muebles — lista los muebles del exterior.
 - /exterior crearmueble — compra y coloca un mueble exterior.
+- /exterior clonarmueble [id] — copia un mueble exterior.
 - /exterior editarmueble [id] — mueve y rota un mueble.
 - /exterior eliminarmueble [id] — elimina un mueble (sin reembolso).
-- /exterior texturamueble [id] [textura] — aplica o quita una textura.
+- /exterior texturamueble [id] [material 0-15] [textura] — aplica una textura a una parte del mueble (con la ID 0 la quita).
+- /exterior borrartexturas [id] — quita todas las texturas del mueble.
 
 ## Eventos de negocio
 
@@ -618,13 +626,13 @@ No hay nivel máximo: el límite es cuánta gente consigas juntar.
 
 ### Premios
 
-Al subir de nivel entra dinero **directo a la caja del negocio**:
+Al subir de nivel entra dinero **directo a la caja del negocio**. El premio crece con cada nivel: es el premio base del tipo de local multiplicado por el número de nivel.
 
-| Tipo de local | Premio por nivel | Nivel 1 | Nivel 2 | Nivel 3 |
-| --- | --- | --- | --- | --- |
-| Propiedad reservada | $3,000 por participante | $30,000 | $60,000 | $90,000 |
-| Club | $2,000 por participante | $20,000 | $40,000 | $60,000 |
-| Resto de negocios | $1,000 por participante | $10,000 | $20,000 | $30,000 |
+| Tipo de local | Premio por nivel | Nivel 1 | Nivel 3 | Nivel 5 | Total hasta el nivel 5 |
+| --- | --- | --- | --- | --- | --- |
+| Club reservado | $75.000 por nivel | $75.000 | $225.000 | $375.000 | $1.125.000 |
+| Club | $50.000 por nivel | $50.000 | $150.000 | $250.000 | $750.000 |
+| Resto de negocios | $25.000 por nivel | $25.000 | $75.000 | $125.000 | $375.000 |
 
 Además, **todos los presentes** en el local o en su exterior reciben **10 Burger Points** al subir de nivel (**20** en doble experiencia, **30** en triple). El dueño y los empleados reciben el aviso del ascenso.
 
@@ -632,7 +640,13 @@ Además, **todos los presentes** en el local o en su exterior reciben **10 Burge
 
 El evento **se reinicia tras 4 horas sin participantes**, volviendo al nivel 0.
 
-## Alarmas
+## Membresías de negocios
+
+Algunos negocios ofrecen una **membresía** a sus clientes: una cuota que se paga desde el banco y da beneficios mientras esté vigente. La primera es la del **Golf Club**: **$100.000 por semana**, que se compra, renueva o cancela con `/membresia` en el punto de membresías del club. La cuota se cobra sola junto a los impuestos diarios, y puedes dejarla pagada hasta 4 semanas por adelantado.
+
+Entre sus beneficios están el acceso a las puertas del club, descuentos en la tienda del negocio con `/comprar`, en concesionarios, peajes y multas, y un **5% más** al vender una casa al Estado. El detalle completo está en la sección de membresía de [Sistema de golf](sistema-de-golf.md#membresía-del-golf-club).
+
+## Alarmas y cámaras de seguridad
 
 Los negocios pueden tener **alarma**, con tres niveles de potencia:
 
@@ -644,18 +658,28 @@ Los negocios pueden tener **alarma**, con tres niveles de potencia:
 
 La alarma salta sola ante un incendio o un robo, y se puede disparar a mano con `/activaralarma` desde el mostrador, teniendo llaves o permiso de llaves. Una alarma mal mantenida puede fallar y no sonar. Sobre robos y atracos a negocios, consulta el [Sistema de delincuente](sistema-de-delincuente.md).
 
+Las casas y los negocios pueden además tener **cámaras de seguridad**. No son muebles: no se compran ni se colocan por cuenta propia, las instala un técnico de una empresa de seguridad. Graban lo que pasa frente a su lente y el dueño puede ver las imágenes en vivo y revisar el registro. Los detalles están en [Sistema de cámaras de seguridad](sistema-de-camaras-de-seguridad.md).
+
 ## Inactividad y liberación automática
 
-Si un propietario deja de entrar a su propiedad, el sistema la **libera** y vuelve a ponerla en venta. Los plazos son:
+Si un propietario deja de entrar a su propiedad, el sistema la **libera**. La liberación se aplica cuando el servidor se reinicia. Los plazos son:
 
 | Tipo de propiedad | Días de inactividad |
 | --- | --- |
-| Casas compradas | **60 días** |
+| Casas compradas | **30 días** |
 | Casas alquiladas | **30 días** |
-| Negocios | **30 días** |
-| Negocios con 85 kg o más de basura | **14 días** |
-| Almacenes | **90 días** |
+| Negocios | **14 días** |
+| Negocios con 85 kg o más de basura | **7 días** |
+| Almacenes | **60 días** |
+
+Las propiedades de la [isla de Santa Catalina](santa-catalina.md) no se liberan por inactividad.
 
 Cuando una propiedad se libera, el dueño recibe una notificación con el motivo. En un negocio se **despide a los empleados**, se **vacía la caja**, se **expulsa a los que estén dentro**, se **resetean las llaves** y se limpian los inventarios.
 
+Las **casas y negocios** liberados cuyo valor supera **$100.000** no vuelven directo a la venta: salen a **subasta pública** y se los lleva quien más ofrezca (ver [Sistema de subastas](sistema-de-subastas.md)). Los de $100.000 o menos quedan libres para `/comprar`, y los almacenes también vuelven a la venta normal.
+
 Basta con entrar un momento a cada propiedad cada cierto tiempo —o hacer cualquier gestión en ella— para reiniciar el contador. En los negocios conviene además no dejar que la basura se acumule: un local sucio y abandonado se pierde en la mitad de tiempo.
+
+### Control de negocios inactivos
+
+Los negocios inactivos pasan además por un **control de actividad**. Mientras un negocio figura sin justificar en ese control, su dueño **solo puede venderlo al Estado**, no a otro jugador. Y si una cuenta no justificó la inactividad de un negocio, ni esa cuenta ni la de su **cónyuge** pueden volver a ser dueñas de esa propiedad durante los siguientes **3 meses**: el bloqueo alcanza a la compra al Estado, a las ofertas en la subasta y a las ventas entre jugadores (ver [Sistema de subastas](sistema-de-subastas.md#inactividad-sin-justificar)).

@@ -69,7 +69,7 @@ Para los jugadores que disfrutan del rol policial —paradas de tráfico, persec
 
 **Herramientas del oficial de policía**
 
-- `/ordenador` (o `/odp`, `/mdc`) — abre el Mobile Data Computer, la base de datos policial. Solo funciona dentro de un vehículo o una propiedad de tu facción
+- `/ordenador` (o `/odp`, `/mdc`) — abre el ordenador policial, la base de datos de la policía y la justicia, con interfaz gráfica. Solo funciona dentro de un vehículo o una propiedad de tu facción. `/mdc2` abre la versión anterior, por menús de diálogo
 - `/esposar` y `/desesposar` — inmovilizas a un sospechoso
 - `/cachear` — registras a alguien y ves lo que lleva encima
 - `/taclear` — derribas a alguien que huye a pie
@@ -80,8 +80,15 @@ Para los jugadores que disfrutan del rol policial —paradas de tráfico, persec
 - `/ram` y `/forzarcerradura` — entras por la fuerza a una propiedad con orden judicial
 - `/ordenarresto` y `/ordenallanamiento` — tramitas órdenes ante la fiscalía
 - `/prueba(adn)(polvora)(drogas)`, `/recogercasquillo`, `/recogersangre`, `/evidencias` — trabajo de escena (ver [Sistema forense](sistema-forense.md))
-- `/alpr`, `/autoradar`, `/interceptarnumero`, `/rastreargps` — vigilancia técnica
+- `/alpr`, `/infoalpr`, `/autoradar`, `/togradar`, `/interceptarnumero`, `/rastreargps` — vigilancia técnica; `/infoalpr` muestra la ficha de la última matrícula capturada y `/togradar` silencia o reactiva los avisos de los radares de velocidad
+- `/alcoholimetro` (o `/alcotest`) — mides la tasa de alcohol de un conductor; necesitas el alcoholímetro en la mano derecha
+- `/callsign` y `/est` — tu identificador de unidad y su estado; el callsign se recuerda entre conexiones y al volver a entrar de servicio se recupera solo
+- `/fugitivos` — lista los prófugos conectados
+- `/dpl` y `/qpl` — sumas o quitas puntos de infracción de tránsito a la licencia de conducir de una persona, con un motivo; `/levantarsuspension` la reactiva (solo jueces de servicio). Con **8 puntos** vigentes la licencia queda suspendida **7 días**, y cada punto caduca a los **30 días** (ver [Sistema policial](sistema-policial.md))
+- `/snakecam` (o `/optiwand`) — metes una cámara por debajo de una puerta para ver el interior; exige un **Optiwand** en la mano derecha (ver [Sistema de cámaras de seguridad](sistema-de-camaras-de-seguridad.md))
 - `/encubierto`, `/m` (megáfono) y `/marcar`, que pide refuerzos a **otras agencias**, no solo a la tuya
+
+Todo este equipo, junto con los chalecos modernos de cada departamento, la radio APX 8000, la pistola radar, el megáfono de mano, las señales de alto y de despacio y el bastón luminoso, se retira con `/equipar` estando de servicio. El detalle de cada herramienta está en [Sistema policial](sistema-policial.md).
 
 ### Radio conjunta LSPD-LSSD
 
@@ -92,9 +99,9 @@ Más allá de la radio interna de cada departamento, existen **dos canales conju
 
 Cada uno tiene su propio color en pantalla para distinguirlos de un vistazo. Ambos requieren estar de servicio, y —como toda la radio del servidor— dejan de funcionar si hay un **inhibidor de señal** cerca.
 
-### El Mobile Data Computer (MDC)
+### El ordenador policial (MDC)
 
-El MDC es la herramienta central del rol policial: desde él se consulta prácticamente toda la información oficial de un ciudadano. Permite buscar por **nombre, matrícula, propiedad, número de teléfono, serial de arma o propietario de arma**, y consultar arrestos y multas de una persona.
+El ordenador policial es la herramienta central del rol policial: desde él, con clics, se consulta prácticamente toda la información oficial de un ciudadano. Permite buscar por **nombre, matrícula, propiedad, número de teléfono, serial de arma o propietario de arma**, y consultar arrestos y multas de una persona. Las fichas de vehículos muestran el modelo real del vehículo. También lo usan los agentes de justicia de servicio.
 
 Además mantiene listados vivos que se actualizan solos:
 
@@ -104,6 +111,8 @@ Además mantiene listados vivos que se actualizan solos:
 - Denuncias de vehículos robados
 - Últimos incidentes y últimos llamados de servicio
 - Callsigns activos en el turno
+- Prófugos conectados
+- Personas conectadas en libertad condicional, con su estado (vigente, vencida o sin fecha)
 
 Sobre cada persona el MDC muestra edad, estado de la cuenta bancaria y todas sus licencias: conducir (con los puntos de infracción acumulados), armas, formulario 4473, pesca, pesca comercial, caza, camionero, transportista, seguridad privada y certificado médico.
 
@@ -121,8 +130,9 @@ A diferencia del LSPD, el LSSD ofrece un rol con más diversidad de escenarios: 
 
 Comparte con el LSPD todas las herramientas policiales, el MDC y los canales de radio conjuntos. Tiene además dos competencias propias:
 
-- La **custodia penitenciaria** y el traslado de presos, con sus propios comandos de guardia (`/presos`, `/internos`, `/guardias`)
 - La **emisión de la licencia de caza**, que comparte con los guardabosques
+
+La custodia de la prisión y el traslado de presos pasaron al [SADCR](#sadcr-custodia-penitenciaria).
 
 ## Los Santos Fire Department (LSFD)
 
@@ -151,6 +161,24 @@ Cuando arde algo en la vía pública, el aviso llega automáticamente por radio 
 Los rangos de **inspector de bomberos** tienen competencias administrativas sobre los negocios: pueden **multar** locales por incumplimientos y **clausurarlos** con `/clausurar`, imponiendo una multa de entre **$100.000 y $1.000.000**. El propietario levanta la clausura pagando esa multa desde dentro del local con `/pagarclausura confirmar`, y el dinero va a la caja del Gobierno.
 
 **Otras herramientas del bombero**: `/manguera` (para desplegar la manguera desde el camión, un bombero por cada lado del vehículo), `/incidentes`, `/forzarcerradura`, `/sir` y `/est` para sirenas y estacionamiento de emergencia.
+
+### Equipo de respiración autónoma (SCBA)
+
+Los bomberos trabajan con **aire limitado**. El equipo de respiración (el cilindro) y su máscara se retiran con `/equipar` y se manejan con `/scba`:
+
+- `/scba equipar` — te pones el equipo; tiene que estar en tu mano derecha y estar a pie
+- `/scba mascara` — te pones o te quitas la máscara
+- `/scba aire` — conectas o desconectas el regulador; el aire solo se consume mientras está conectado
+- `/scba recargar` y `/scba cancelar` — inicias o interrumpes la recarga del cilindro
+- `/scba guardar` — te quitas el equipo
+- `/scba ajustar` — cambias la posición del equipo o de la máscara en tu cuerpo
+- `/scba manometro` — ocultas o vuelves a mostrar el manómetro
+
+Un cilindro lleno dura **20 minutos** de respiración. Un manómetro en pantalla muestra cuánto queda, y el equipo avisa cuando quedan el **25%** y el **10%**. El aire se guarda en el propio cilindro: si lo prestas, lo pierdes o te desconectas, conserva lo que tenía.
+
+Si llevas el equipo, el cilindro está **vacío** y estás a menos de **20 metros** de un incendio activo, empiezas a perder **5 de salud cada 2 segundos**, con jadeos y mareos cada vez peores. Salir de la zona del fuego detiene el daño.
+
+La recarga solo la hace un **bombero de servicio**, a pie y con el regulador desconectado, en cualquier punto de una propiedad de su facción o a menos de **5 metros de un camión de bomberos de su facción** que esté detenido. Tarda entre **2 y 8 segundos**, según lo vacío que esté el cilindro, y se interrumpe si te mueves o dejas de estar junto a la fuente.
 
 ### Paramédicos
 
@@ -197,13 +225,26 @@ Los rangos superiores de guardabosques adquieren además competencias policiales
 
 **Otras herramientas**: `/esposar` y `/desesposar`, `/reanimar`, `/m` (megáfono), radio departamental y conos de señalización.
 
+## SADCR (custodia penitenciaria)
+
+El **SADCR** es la facción que custodia la prisión. Sus guardias de servicio son los responsables de los presos y de las personas en libertad condicional. Tiene **uniformes propios** y comparte con la policía las herramientas generales, incluido el ordenador policial. Los detalles de la vida dentro de la cárcel están en [Sistema de cárcel](sistema-de-carcel.md).
+
+**Herramientas del guardia**
+
+- `/internos` — lista los presos conectados; `/presos` y `/guardias` cuentan cuántos presos y cuántos guardias de servicio hay
+- `/mcarcel`, `/controlceldas` y `/aislamiento` — gestionas la cárcel, las celdas y el aislamiento
+- `/iniciotraslado` y `/fintraslado` — traslados de presos
+- `/destruirstash` — destruyes un escondite de un preso
+- `/curar` — atiendes a un preso herido
+- `/parolees` y `/rastrearparolee` — consultas las personas en libertad condicional conectadas y rastreas su tobillera; son **exclusivos de los guardias del SADCR** en servicio, que además reciben el aviso cuando alguien usa `/solicitaroficialparole`
+- `/recompensa` — los líderes del SADCR (igual que los del Gobierno) pueden ofrecer recompensas por un prófugo (ver [Sistema de prófugos](sistema-de-profugos.md))
+
 ## Otras facciones legales
 
-Además de las cinco anteriores, la ciudad cuenta con varias facciones legales con rol propio:
+Además de las anteriores, la ciudad cuenta con varias facciones legales con rol propio:
 
 - **Judiciary of San Andreas (JSA)** — jueces y fiscales: autorizan órdenes de arresto y allanamiento, juzgan causas y pueden clausurar negocios. Ver [Sistema de justicia](sistema-de-justicia.md)
-- **LSSD Custody Service Division** — la división penitenciaria que custodia y traslada presos; ver [Sistema de cárcel](sistema-de-carcel.md)
-- **All Saints General Hospital** — los médicos residentes que atienden en planta lo que los paramédicos traen de la calle
+- **All Saints Medical Center** — los médicos residentes que atienden en planta lo que los paramédicos traen de la calle
 - **Los Santos Department of Transportation (LSDOT)** — tránsito: control de tráfico, embargos y multas de circulación
 - **San Andreas National Guard** y **Federal Bureau of Investigation (FBI)** — la Guardia Nacional y la agencia federal, con equipamiento y jurisdicción de alcance mayor
 - **University of San Andreas, Los Santos** y las **empresas legales oficiales** — universidad, corporaciones, medios de comunicación y servicios reconocidos por el servidor

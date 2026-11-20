@@ -17,7 +17,7 @@ Este trabajo encaja con abogados, periodistas, familias que buscan pruebas de in
 - `/placadet` — muestras o enseñas tu placa SAALI.
 - `/equipodet` — abres el catálogo de compra de equipo.
 - `/pdc` — abres el Private Detective Computer.
-- `/informacionbanco [jugador]` — consultas un saldo bancario por **$10,000**.
+- `/informacionbanco [jugador]` — consultas un saldo bancario por **$10.000**.
 - `/recogercasquillo`, `/recogersangre` — recoges evidencias del suelo.
 - `/encendermicrofono`, `/apagarmicrofono` — activas o desactivas un micrófono espía.
 - `/escucharmicrofono` — enciendes o apagas el receptor de micrófonos.
@@ -45,41 +45,45 @@ Estos son los aparatos que definen el oficio, con el precio ya duplicado que pag
 
 | Artículo | Precio para detective | Para qué sirve |
 |---|---|---|
-| Micrófono espía | **$70,000** | Se planta en el lugar y capta lo que se habla alrededor. |
-| Receptor de micrófonos ocultos | **$130,000** | Escucha todos los micrófonos activos en 300 metros. |
-| Detector de micrófonos ocultos | **$10,000** | Localiza micrófonos en 10 metros (**10 usos**). |
-| Rastreador GPS | **$50,000** | Se coloca en el objetivo para seguirlo en el mapa. |
-| Receptor de rastreadores GPS | **$130,000** | Muestra los rastreadores dentro de 300 metros. |
-| Dispositivo StingRay | **$180,000** | Intercepta las comunicaciones de un número de teléfono. |
-| Detector de receptores de señal | **$17,000** | Detecta StingRays y autoradares (**5 usos**). |
-| Inhibidor de señales de radio | **$16,000** | Bloquea comunicaciones por radio en la zona. |
-| Kit de desactivación de bombas | **$200,000** | Permite intentar desarmar un explosivo. |
+| Micrófono espía | **$70.000** | Se planta en el lugar y capta lo que se habla alrededor. |
+| Receptor de micrófonos ocultos | **$130.000** | Escucha todos los micrófonos activos en 300 metros. |
+| Detector de micrófonos ocultos | **$10.000** | Localiza micrófonos en 10 metros (**10 usos**). |
+| Rastreador GPS | **$50.000** | Se coloca en el objetivo para seguirlo en el mapa. |
+| Receptor de rastreadores GPS | **$130.000** | Muestra los rastreadores dentro de 300 metros. |
+| Dispositivo StingRay | **$180.000** | Intercepta las comunicaciones de un número de teléfono. |
+| Detector de receptores de señal | **$17.000** | Detecta StingRays y autoradares (**5 usos**). |
+| Inhibidor de señales de radio | **$16.000** | Bloquea comunicaciones por radio en la zona. |
+| Kit de desactivación de bombas | **$200.000** | Permite intentar desarmar un explosivo. |
 
 ### Resto del catálogo
 
 | Categoría | Artículos |
 |---|---|
-| Defensa y reducción | Porra **$288**, spray de pimienta **$88**, táser **$5,750**, esposas **$2,158**, escudo **gratis**, chaleco kevlar **$862**, guantes LawPro kevlar **gratis** |
-| Armas de fuego | Glock 17 **$2,100**, AF-1 Strike One **$3,500**, cargador 9x19 **$324**, cuchillo de hoja fija **$1,726** |
-| Protección personal | Mascarilla **$432**, máscara táctica de gas **$2,000**, gafas de visión nocturna **$5,000** |
-| Herramientas | Cámara **$432**, linterna **$30**, radio UHF **$1,150**, halligan **$2,300**, ganzúas **$144**, detector de metales **$3,594**, kit de limpieza de armas **$1,036**, estuche porta rifles **$862** |
+| Defensa y reducción | Porra **$288**, spray de pimienta **$88**, táser **$5.750**, esposas **$2.158**, escudo **gratis**, chaleco kevlar **$862**, guantes LawPro kevlar **gratis** |
+| Armas de fuego | Glock 17 **$2.100**, AF-1 Strike One **$3.500**, cargador 9x19 **$324**, cuchillo de hoja fija **$1.726** |
+| Protección personal | Mascarilla **$432**, máscara táctica de gas **$2.000**, gafas de visión nocturna **$5.000** |
+| Herramientas | Cámara **$432**, linterna **$30**, radio UHF **$1.150**, halligan **$2.300**, ganzúas **$144**, detector de metales **$3.594**, kit de limpieza de armas **$1.036**, estuche porta rifles **$862** |
 | Acreditación | ID policial **$288** |
-| Médico y logística | Medicamentos de detoxicación **$11,500**, Narcan **$2,300**, caja de cartón **$88**, bolsa de evidencias **$862**, bolsa para cadáveres **$288** |
+| Médico y logística | Medicamentos de detoxicación **$11.500**, Narcan **$2.300**, caja de cartón **$88**, bolsa de evidencias **$862**, bolsa para cadáveres **$288** |
 
 ## Private Detective Computer (PDC)
 
-Con una **laptop en la mano derecha**, `/pdc` abre una terminal equivalente al ordenador policial, pero de pago. Cada consulta descuenta su importe del banco en cuanto se muestra el resultado, y si no tienes saldo suficiente la búsqueda se rechaza antes de empezar.
+Con una **laptop en la mano derecha**, `/pdc` abre una terminal equivalente al ordenador policial, pero de pago. Cada consulta descuenta su importe del banco en cuanto se muestra el resultado, y si no tienes saldo suficiente la búsqueda se rechaza antes de empezar. Si la búsqueda no encuentra coincidencias, no se te cobra nada.
+
+Si guardas la laptop o cambias de personaje mientras se procesa una consulta, el resultado no se muestra ni se cobra. Entre una consulta y la siguiente debe pasar medio segundo, y solo cuenta la última que lances.
 
 | Consulta | Precio | Qué devuelve |
 |---|---|---|
-| Información por **nombre** | **$50,000** | Ficha del personaje: edad, licencias vigentes y multas registradas. |
-| Información por **matrícula** | **$25,000** | Datos del vehículo e indica si está denunciado como robado. |
-| Información por **propiedad** | **$10,000** | Tipo de propiedad, dirección y dueño o arrendatario. |
-| Información por **teléfono** | **$10,000** | A quién pertenece ese número. |
-| Información por **serial de arma** | **$50,000** | Historial y titular registrado del arma. |
-| **Armas por propietario** | **$100,000** | Listado de armas a nombre de una persona. |
+| Información por **nombre** | **$50.000** | Ficha del personaje: edad, si su cuenta bancaria está bloqueada, situación de libertad condicional o de prófugo, licencias vigentes (con sus puntos de infracción, o la fecha hasta la que está suspendida la de conducir), teléfonos (hasta 5), propiedades, vehículos (con aviso de registro vencido) y multas pendientes (las 6 de mayor importe). |
+| Información por **matrícula** | **$25.000** | Modelo, propietario (persona, facción o empresa), estado del registro del vehículo e indicación de si está denunciado como robado. |
+| Información por **propiedad** | **$10.000** | Tipo de propiedad, dirección y dueño o arrendatario. Las propiedades de facciones no aparecen. |
+| Información por **teléfono** | **$10.000** | Tipo de línea (prepago anónima, comercial o personal), titular, fecha de contrato y cantidad de SMS registrados. |
+| Información por **serial de arma** | **$50.000** | Modelo, titular y propiedad donde se registró el arma. En las armas de facción el titular es la facción. |
+| **Armas por propietario** | **$100.000** | Listado de armas registradas a nombre de una persona, hasta **64**. Si tiene más, la lista lo avisa. No incluye las armas de facción. |
 
-A esto se suma `/informacionbanco`, que fuera del PDC te da el saldo bancario de cualquier persona conectada por **$10,000** por consulta (el mismo precio que pagan los abogados; policías, investigadores fiscales y agentes federales la tienen gratis).
+El registro de un vehículo particular vence a los **3 meses**, salvo los modelos exentos por su valor, que lo tienen permanente. La ficha te dice si sigue vigente y cuántos días le quedan, o desde cuándo está vencido.
+
+A esto se suma `/informacionbanco`, que fuera del PDC te da el saldo bancario de cualquier persona conectada por **$10.000** por consulta (el mismo precio que pagan los abogados; policías, investigadores fiscales y agentes federales la tienen gratis).
 
 ## Micrófonos espía
 
@@ -276,7 +280,7 @@ El resto del funcionamiento de los explosivos está en el **[sistema de bombas](
 
 ## Consejos
 
-- **Llega al PDC con deberes hechos.** Una consulta por nombre cuesta $50,000; una matrícula, la mitad. Si puedes anotar la placa de un coche antes de identificar al conductor, ahorras dinero.
+- **Llega al PDC con deberes hechos.** Una consulta por nombre cuesta $50.000; una matrícula, la mitad. Si puedes anotar la placa de un coche antes de identificar al conductor, ahorras dinero.
 - **Trabaja en equipo.** El drone necesita alguien al volante de la van, y el autoradar necesita un conductor que lo mueva. Un detective solo rinde la mitad.
 - **Cuida la discreción.** La StingRay reparte lo que intercepta a 10 metros a la redonda y el autoradar es lo más escandaloso que existe para un detector. Escuchar desde dentro de un vehículo cerrado es casi siempre la opción correcta.
 - **El micrófono es tu mejor inversión por hora.** Sesenta minutos de batería y la posibilidad de oír el interior de una propiedad desde la calle rinden más que cualquier consulta de base de datos.

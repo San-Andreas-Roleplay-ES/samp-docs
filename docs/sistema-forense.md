@@ -28,7 +28,8 @@ Los sistemas relacionados están en [Facciones legales](facciones-legales.md), [
 - `/pruebapolvora [jugador]` — solicita una prueba de residuos de pólvora para saber si disparó.
 - `/pruebadrogas [jugador]` — solicita una prueba de sustancias en sangre.
 - `/donacionsangre [jugador]` — pide a alguien donar sangre; también deja su ADN registrado.
-- `/aceptar` y `/rechazar` — los usa el sospechoso para consentir o negarse a cualquiera de estas pruebas.
+- `/alcoholimetro [jugador]` (alias `/alcotest`) — mide la tasa de alcohol de una persona; ver [Alcoholímetro](#alcoholímetro).
+- `/aceptar` y `/rechazar` — los usa el sospechoso para consentir o negarse a las pruebas de ADN, pólvora, drogas y donación de sangre.
 
 **Almacén y laboratorio**
 
@@ -46,6 +47,8 @@ Los sistemas relacionados están en [Facciones legales](facciones-legales.md), [
 ## Casquillos de bala
 
 Cada vez que alguien dispara un arma de fuego cae un casquillo al suelo, a unos metros de donde estaba el tirador. Hay tres tipos visuales distintos según el arma: casquillos de **pistola**, de **rifle** y cartuchos de **escopeta**. Sobre cada montón aparece una etiqueta con el calibre y la cantidad acumulada, visible a **2 metros**.
+
+Los casquillos quedan apoyados en el suelo, también dentro de interiores y edificios del servidor.
 
 Los disparos hechos dentro de una **sala de paintball** y durante los eventos especiales del servidor no generan casquillos. Los policías en servicio tampoco los dejan.
 
@@ -97,7 +100,7 @@ Las manchas de sangre aparecen automáticamente en tres situaciones:
 - Cuando alguien es herido con un **arma blanca**: cuchillo, katana o puño americano.
 - Cada vez que un herido **se desangra** mientras espera atención médica.
 
-No siempre queda rastro: hay un **60% de probabilidad** de que la herida deje mancha. Tampoco se crean si la víctima está dentro de un vehículo, en una sala de paintball o durante eventos especiales. Como cada sangrado puede generar una nueva, un herido que camina dejando un reguero marca literalmente su recorrido por el mapa.
+No siempre queda rastro: hay un **60% de probabilidad** de que la herida deje mancha. Tampoco se crean si la víctima está dentro de un vehículo, en una sala de paintball o durante eventos especiales. Las manchas quedan apoyadas en el suelo, también en interiores. Como cada sangrado puede generar una nueva, un herido que camina dejando un reguero marca literalmente su recorrido por el mapa.
 
 ### Quién puede recoger muestras
 
@@ -145,6 +148,27 @@ Vale la pena entender bien el alcance de la prueba: demuestra que disparaste, **
 
 ---
 
+## Alcoholímetro
+
+El alcoholímetro mide cuánto alcohol tiene en el cuerpo una persona. Lo usa un **policía en servicio** con el aparato en la mano derecha y vivo, con `/alcoholimetro [jugador]`.
+
+- El sospechoso debe estar a menos de **2,5 metros** y vivo.
+- Se le muestra un aviso para **soplar** o **negarse**. Tiene **30 segundos** para responder; si no lo hace, la prueba caduca. Si se niega, el agente recibe el aviso, y el aviso recuerda que negarse está penado por el código penal.
+- Tras cada prueba, el agente debe esperar **30 segundos** para volver a usar el aparato, y a una misma persona no se le puede repetir la prueba hasta que pasen **2 minutos**.
+- Un agente no puede hacerse la prueba a sí mismo.
+
+El resultado, que ven el agente y el sospechoso, indica la tasa de alcohol y el límite legal de **0,08**:
+
+| Tasa | Resultado | Infracción |
+| --- | --- | --- |
+| Menos de 0,08 | **Negativo** | Ninguna |
+| De 0,08 a 0,15 | **Positivo** | Conducir con tasa de alcohol de 0,08 a 0,15 |
+| Más de 0,15 | **Positivo agravado** | Conducir con tasa de alcohol superior a 0,15 |
+
+Las dos infracciones se sancionan con multa e incautación del vehículo, sin arresto. El procedimiento completo está en [Sistema policial](sistema-policial.md).
+
+---
+
 ## Huellas dactilares
 
 Cada objeto del inventario guarda las huellas de **todos los que lo han tenido en las manos**. Se registran automáticamente cada vez que tomas un objeto: al sacarlo del inventario, de un paquete o de tu equipo de facción, al recibirlo de otra persona o al robárselo a alguien.
@@ -172,6 +196,10 @@ Si ya tocaste algo sin guantes, la única salida es `/limpiarhuellas` con **alco
 La limpieza dura **30 segundos** de animación continua. Si sales de la propiedad, te guardas el alcohol o guardas el objeto antes de terminar, el proceso se cancela y no limpias nada.
 
 Al completarse se borran entre **1 y 3 huellas**, siempre las más recientes, y la cantidad es aleatoria. Si el objeto pasó por muchas manos tendrás que repetir la operación varias veces, gastando 3 unidades de alcohol cada vez.
+
+### La mancha de tinta
+
+Hay un rastro que no se limpia con alcohol: quien sostiene en la mano un **casete de dinero entintado** o está a pie, a menos de **3 metros** de un cajero automático cuando este revienta soltando un casete entintado, queda con una **mancha de tinta morada** durante **8 horas reales**. Se nota al mirar a la persona con `/mirar` y no se quita con perfume. Los policías en servicio no se manchan. Más detalle en [Sistema de robo de cajeros](sistema-de-robo-de-cajeros.md).
 
 > **Las huellas caducan solas.** El laboratorio solo considera las registradas en los **últimos 15 días** y muestra como máximo **10 nombres** por objeto. Un arma guardada mucho tiempo pierde valor probatorio por sí sola.
 
@@ -270,7 +298,7 @@ Un reporte forense solo tiene valor si llega a la persona correcta. Los **fiscal
 
 Al enviar una evidencia al laboratorio, el sistema recuerda expresamente que debe existir **causa probable** para usarla en una persecución criminal. Una prueba obtenida sin fundamento puede caerse en el juicio; el procedimiento completo está en [Sistema de justicia](sistema-de-justicia.md).
 
-Cuando la investigación arranca con un fallecido, la recuperación del cuerpo y lo que se puede extraer de él se explica en [Sistema de cadáveres](sistema-de-cadaveres.md).
+Cuando la investigación arranca con un fallecido, la recuperación del cuerpo y lo que se puede extraer de él se explica en [Sistema de cadáveres](sistema-de-cadaveres.md). Ten en cuenta que un cadáver entra en descomposición a las **72 horas** (su etiqueta deja de mostrar el nombre) y a las **2 semanas** el forense lo retira solo, así que la ventana para investigarlo es limitada.
 
 ---
 

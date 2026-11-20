@@ -18,7 +18,9 @@ Para ver tu nivel actual y tu saldo de monedas dentro del juego, usa `/stats`. A
 - `/usuariobleeter` — cambia tu nombre de usuario en la red social. Cuesta **3 monedas** y pide 48 horas de juego.
 - `/verificarbleeter` — verifica tu usuario de la red social de forma permanente. Cuesta **30 monedas** y pide 50 horas de juego.
 - `/menucaza` — tienda de caza de Angel Pine, donde se compran cuchillos, rifles y la trampa para osos con monedas.
-- `/mascotas` — inventario de mascotas; las mascotas se compran con monedas en la tienda de animales.
+- `/mascotas` — inventario de mascotas. Las mascotas se compran con monedas en la tienda de mascotas del panel de control.
+- `/control` — órdenes de tus mascotas; desde ahí también puedes cambiarles el nombre por **50 monedas**.
+- `/emisora` — radio de tu vehículo o de tu propiedad; la opción YouTube reproduce cualquier canción por **1 moneda**.
 
 ## Comprar monedas
 
@@ -35,7 +37,7 @@ Las monedas se adquieren en paquetes desde el panel de control. Cuanto mayor es 
 | Nivel 7 | 40 USD | 460 |
 | Nivel 8 | 50 USD | 600 |
 | Nivel 9 | 70 USD | 900 |
-| Nivel 10 | 90 USD | 1,200 |
+| Nivel 10 | 90 USD | 1.200 |
 
 ## Conseguir monedas jugando
 
@@ -78,13 +80,15 @@ Existen dos niveles históricos más antiguos, **Bronze** (bronce) y **Silver** 
 | Habilidad de delincuente al máximo | 100 monedas |
 | Influencer (miles de seguidores en la red social) | 135 monedas |
 | Limpieza de arrestos cumplidos del historial | 150 monedas |
-| 100,000 dólares para un personaje | 65 monedas |
-| 500,000 dólares para un personaje | 245 monedas |
-| 1,000,000 de dólares para un personaje | 450 monedas |
+| 100.000 dólares para un personaje | 65 monedas |
+| 500.000 dólares para un personaje | 245 monedas |
+| 1.000.000 de dólares para un personaje | 450 monedas |
 
 La limpieza de arrestos borra los arrestos cumplidos del historial, pero **no** afecta a los antecedentes penales ni a las investigaciones criminales en curso.
 
-También puedes comprar un paquete de **+1,000 Burger Points** por **50 monedas**, la moneda que se usa para subir skins personalizados. Los Burger Points se ganan sobre todo jugando: tienes el detalle completo en [Sistema de Burger Points](sistema-de-burger-points.md). No los confundas con los Cluckin Coins, que son otra cosa distinta y no tienen relación con las monedas de cuenta: los explica [Sistema de Cluckin Coins](sistema-de-cluckin-coins.md).
+Al cambiar el nombre de un personaje, sus skins personalizados se pierden si no tienes ningún nivel premium. Con premium se conservan.
+
+También puedes comprar un paquete de **+1.000 Burger Points** por **50 monedas**, la moneda que se usa para subir skins personalizados. Los Burger Points se ganan sobre todo jugando: tienes el detalle completo en [Sistema de Burger Points](sistema-de-burger-points.md). No los confundas con los Cluckin Coins, que son otra cosa distinta y no tienen relación con las monedas de cuenta: los explica [Sistema de Cluckin Coins](sistema-de-cluckin-coins.md).
 
 ### Compras con monedas dentro del juego
 
@@ -94,7 +98,9 @@ También puedes comprar un paquete de **+1,000 Burger Points** por **50 monedas*
 | Verificar tu usuario de la red social (permanente) | `/verificarbleeter` | 30 monedas |
 | Crear un habitante para tu propiedad | Menú de la propiedad | 5 monedas |
 | Activar el chat inteligente de ese habitante | Menú de la propiedad | 100 monedas |
-| Mascotas | Tienda de animales | 75 a 600 monedas |
+| Mascotas | Tienda de mascotas del panel de control | 100 a 1.000 monedas según la raza |
+| Cambiar el nombre de una mascota (una vez por hora) | `/control` | 50 monedas |
+| Reproducir una canción de YouTube en la radio de tu vehículo, tu propiedad o una radio portátil | `/emisora` | 1 moneda por canción |
 | Trampa para osos | Tienda de caza (Angel Pine) | 1 moneda |
 | Cuchillos de caza | Tienda de caza (Angel Pine) | 30 a 50 monedas |
 | Rifles de caza | Tienda de caza (Angel Pine) | 50 a 125 monedas |
@@ -110,7 +116,7 @@ Cuanto más alto es el nivel, más se acumulan las ventajas. Platino y Rubí com
 
 | Beneficio | Sin premium | Bronce | Plata | Oro | Platino | Rubí |
 |---|---|---|---|---|---|---|
-| Dinero inicial al crear personaje | $5,000 | $10,000 | $15,000 | $20,000 | $25,000 | $50,000 |
+| Dinero inicial al crear personaje | $5.000 | $10.000 | $15.000 | $20.000 | $25.000 | $50.000 |
 | Extra en cada paga | — | +$100 | +$150 | +$200 | +$250 | +$250 |
 | Puntos de experiencia por nivel | 3 | 5 | 7 | 9 | 11 | 11 |
 | Puntos de habilidad por paga | 1 | 1 | 1 | 1 | 2 | 2 |
@@ -123,25 +129,25 @@ La licencia de conducir inicial requiere que tu personaje tenga **18 años o má
 
 | Beneficio | Sin premium | Bronce | Plata | Oro | Platino | Rubí |
 |---|---|---|---|---|---|---|
-| Propiedades en total | 2 | 2 | 2 | 4 | 6 | 8 |
-| Negocios | 1 | 2 | 3 | 4 | 5 | 8 |
+| Propiedades en total | 2 | 2 | 2 | 3 | 4 | 5 |
+| Negocios | 1 | 1 | 1 | 2 | 3 | 4 |
 | Negocios del mismo rubro | 1 | 1 | 1 | 2 | 3 | 4 |
 | Descuento al comprar una propiedad | — | 10% | 20% | 30% | 40% | 40% |
 | Lo que paga el estado al comprarte una propiedad | 30% del valor | 35% | 40% | 45% | 50% | 50% |
 | Contratos de trabajo simultáneos | 2 | 3 | 4 | 5 | 6 | 6 |
 
-Además, cualquier nivel premium permite **colocar un punto de contratación** en tu negocio, activar los **pedidos automáticos** de stock y **mezclar categorías** distintas en el stock del local. Los negocios y las casas marcados como premium sólo pueden ser comprados (o recibidos en una venta entre jugadores) por usuarios premium. Todo el funcionamiento está en [Sistema de propiedades](sistema-de-propiedades.md).
+Además, cualquier nivel premium permite **colocar un punto de contratación** en tu negocio, activar los **pedidos automáticos** de stock y **mezclar categorías** distintas en el stock del local. Los negocios y las casas marcados como premium sólo pueden ser comprados (o recibidos en una venta entre jugadores) por usuarios premium. Los espacios extra que consigas se suman a estos límites. Si ya superas el límite de tu nivel, conservas lo que tienes, pero no puedes comprar más propiedades ni ofertar en subastas por encima del límite; las subastas que vas ganando también cuentan. Todo el funcionamiento está en [Sistema de propiedades](sistema-de-propiedades.md) y [Sistema de subastas](sistema-de-subastas.md).
 
 ### Vehículos
 
 | Beneficio | Sin premium | Bronce | Plata | Oro | Platino | Rubí |
 |---|---|---|---|---|---|---|
-| Vehículos en propiedad | 3 | 6 | 8 | 10 | 32 | 64 |
+| Vehículos en propiedad | 3 | 3 | 3 | 5 | 8 | 16 |
 | Vehículos activos a la vez | 3 | 5 | 8 | 10 | 32 | 32 |
 | Descuento en el concesionario | — | 4% | 6% | 8% | 10% | 10% |
 | Lo que paga el concesionario al venderle tu vehículo | 30% del valor | 35% | 40% | 45% | 50% | 50% |
 
-Igual que con las propiedades, ciertos modelos del concesionario están reservados a usuarios premium.
+Igual que con las propiedades, ciertos modelos del concesionario están reservados a usuarios premium. Más datos en [Sistema de vehículos](sistema-de-vehiculos.md).
 
 ### Tiempos de espera
 
@@ -194,19 +200,25 @@ Aparte de eso, si mueres y reapareces sin licencia de armas, la policía te conf
 |---|---|---|---|---|---|---|
 | Números de teléfono | 1 | 2 | 3 | 4 | 10 | 10 |
 | Carteles colocados a la vez | 1 | 2 | 3 | 4 | 5 | 5 |
+| Mascotas fuera a la vez | 1 | 1 | 1 | 1 | 2 | 3 |
 | Descuento en mascotas | — | — | — | — | — | 30% |
 
 Exclusivo de cualquier nivel premium:
 
 - **Cambiar de personaje sin desconectarte**, con `/logout`.
 - **Bloquear tus mensajes privados**, con `/togmps` o desde `/preferencias`.
-- **Conservar tus skins personalizados** aunque tu personaje se reinicie.
+- **Conservar tus skins personalizados** aunque tu personaje se reinicie o cambie de nombre.
+- **Fuentes de graffiti de estilo callejero**: 12 fuentes de letras para pintar graffitis, con vista previa de cada estilo al elegirlas. Las cuatro fuentes de siempre están disponibles para todos. Ver [Sistema de graffitis](sistema-de-graffitis.md).
 
 Exclusivo de **Oro** en adelante:
 
-- **Muebles personalizados**: acceso a las categorías de modelos exclusivos (misceláneos, mascotas, Halloween, universidad, moda, joyas, negocios, cocina y tecnología) tanto para el interior de tus propiedades como para los exteriores de los negocios.
+- **Muebles personalizados**: acceso a las categorías de modelos exclusivos (misceláneos, mascotas, gimnasio, universidad, moda, joyas, negocios, cocina, tecnología, Halloween, Navidad, rings, puestos, casino, concesionario, talleres, escaleras, murallas, pinturas, toldos, letras y banderas) tanto para el interior de tus propiedades como para los exteriores de los negocios. Las escaleras y las murallas solo se pueden usar en interiores.
 - **Dron**: puedes usar `/drone` sin ser detective, policía o bombero y sin necesitar 70 de habilidad de electrónica. Ver [Sistema de detectives privados](sistema-de-detectives-privados.md).
 - **Graffitis en interiores**: puedes pintar dentro de propiedades y no sólo en la calle.
+
+Exclusivo de **Rubí**:
+
+- **Terraza en casas**: solo los usuarios Rubí pueden crear la terraza (exterior) de una casa.
 
 Exclusivo de **Platino** y **Rubí**:
 

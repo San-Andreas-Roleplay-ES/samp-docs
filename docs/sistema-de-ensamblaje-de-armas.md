@@ -25,11 +25,11 @@ Esta guía compara los tres caminos y luego explica cada uno en detalle, con én
 | | **Armería (legal)** | **Mercado negro (`/conseguirarma`)** | **Ensamblaje (`/ensamblararmas`)** |
 |---|---|---|---|
 | **Quién puede** | Cualquier ciudadano | Delincuentes | Solo contrabandistas |
-| **Requisitos** | 50 horas jugadas, casa propia, licencia de armas y cero antecedentes penales | 50 horas jugadas, ser delincuente, **50 de habilidad de delincuente** y 2 puntos de rol positivos | Ser contrabandista y tener un punto de armas propio |
+| **Requisitos** | 50 horas jugadas, casa propia, licencia de armas y cero antecedentes penales | 50 horas jugadas, ser delincuente, **50 de habilidad de delincuente** y 2 puntos de rol positivos | Ser contrabandista, tener un punto de armas propio y, si perteneces a una facción, que esta tenga **1.000 puntos de influencia** por pedido |
 | **Dónde** | Dentro de una armería con stock | En un Ammu-Nation de Las Venturas o en Idlewood, donde te cite el contacto | En tu propia casa o almacén, junto a tu taller |
-| **Precio** | El que fije el dueño del negocio, entre el valor base del arma y **10 veces** ese valor | **8 veces** el valor base del arma | **5 veces** el valor base del arma |
+| **Precio** | El que fije el dueño del negocio, entre el valor base del arma y **10 veces** ese valor | **8 veces** el valor base del arma | **5 veces** el valor base del arma (hasta un 30% menos con la red de contactos de una mafia) |
 | **Espera entre compras** | **2 semanas** (1 semana con Premium Gold o superior) | **1 semana** (3 días y medio en pistolas para Platinum y Ruby) | Se calcula por unidad ensamblada: de **12 a 168 horas** por arma |
-| **Cantidad por operación** | 1 arma | 1 arma | Hasta **20 unidades** según el tipo |
+| **Cantidad por operación** | 1 arma | 1 arma | Hasta **15 unidades** según el tipo (18 con la mejor red de contactos de una mafia) |
 | **¿Tiene serial?** | **Sí**, registrado a tu nombre y a la armería | **Sí**, registrado a tu nombre | **No**, sale completamente limpia |
 | **¿Viene cargada?** | **No**, sale vacía | **No**, sale vacía | **No**, sale vacía |
 | **Ante la policía** | Legal mientras conserves la licencia | El serial te delata: aparece en las bases policiales a tu nombre | Sin rastro documental: no hay nada que buscar |
@@ -41,7 +41,7 @@ Esta guía compara los tres caminos y luego explica cada uno en detalle, con én
 
 ## Origen 1: compra legal en la armería
 
-Las armerías (los Ammu-Nation y alguna tienda independiente) son **negocios de jugadores**: alguien las compra, las abastece y fija sus propios precios. Por eso el mismo modelo puede costar $3,000 en una tienda y $12,000 en otra: conviene comparar antes de gastar. El precio nunca baja del valor base del arma ni supera **10 veces** ese valor.
+Las armerías (los Ammu-Nation y alguna tienda independiente) son **negocios de jugadores**: alguien las compra, las abastece y fija sus propios precios. Por eso el mismo modelo puede costar $3.000 en una tienda y $12.000 en otra: conviene comparar antes de gastar. El precio nunca baja del valor base del arma ni supera **10 veces** ese valor.
 
 ### Requisitos para comprar
 
@@ -68,11 +68,11 @@ Encontrarás sobre todo **pistolas** (desde una Hi-Point C9 económica hasta una
 
 | Tipo | Rango de precio habitual |
 |---|---|
-| Pistola común | **$3,000 – $12,000** |
-| Pistola de gran calibre (Desert Eagle) | hasta **$28,000** |
-| Escopeta | **$5,000 – $15,000** |
-| Rifle de caza | **$4,200 – $15,000** |
-| Cargador | **$250 – $1,400** |
+| Pistola común | **$3.000 – $12.000** |
+| Pistola de gran calibre (Desert Eagle) | hasta **$28.000** |
+| Escopeta | **$5.000 – $15.000** |
+| Rifle de caza | **$4.200 – $15.000** |
+| Cargador | **$250 – $1.400** |
 
 Si te atiende un empleado del local en lugar de comprar tú solo, el precio sube según la propina que hayas aceptado, entre un **10% y un 60%**. Y si compras desde la ventanilla de un autoservicio, el recargo es de un **20%**.
 
@@ -100,16 +100,16 @@ Allí se abre el catálogo. Las armas por encima de tu habilidad aparecen atenua
 
 | Arma | Habilidad requerida | Precio |
 |---|---|---|
-| Hi-Point C9 | 0 | **$4,960** |
-| Bersa Firestorm | 0 | **$5,440** |
-| Taurus G2C / SCCY CPX-2 | 0 | **$5,760** |
-| Sig Sauer P320, Walther PDP, Stoeger STR-9, Ruger American Pistol | 0 | **$8,400** |
-| Beretta APX A1 / Glock 19 Gen5 | 70 | **$9,440** |
-| Citadel CDP12 (escopeta) | 80 | **$6,480** |
-| MAC-10 | 80 | **$7,360** |
-| Savage Axis XP (rifle) | 90 | **$7,776** |
-| SLR-107 (rifle de asalto) | 90 | **$13,800** |
-| Colt AR15 | 100 | **$23,000** |
+| Hi-Point C9 | 0 | **$4.960** |
+| Bersa Firestorm | 0 | **$5.440** |
+| Taurus G2C / SCCY CPX-2 | 0 | **$5.760** |
+| Sig Sauer P320, Walther PDP, Stoeger STR-9, Ruger American Pistol | 0 | **$8.400** |
+| Beretta APX A1 / Glock 19 Gen5 | 70 | **$9.440** |
+| Citadel CDP12 (escopeta) | 80 | **$6.480** |
+| MAC-10 | 80 | **$7.360** |
+| Savage Axis XP (rifle) | 90 | **$7.776** |
+| SLR-107 (rifle de asalto) | 90 | **$13.800** |
+| Colt AR15 | 100 | **$23.000** |
 
 ### Lo que debes saber antes de usarla
 
@@ -120,7 +120,7 @@ Allí se abre el catálogo. Las armas por encima de tu habilidad aparecen atenua
 
 ## Origen 3: ensamblaje de armas (`/ensamblararmas`)
 
-El ensamblaje es la vía reservada a los **contrabandistas**, personajes autorizados para montar un taller y abastecer a su entorno. Es la única forma de conseguir **armas sin ningún registro**, y también la única de producir **en cantidad**.
+El ensamblaje es la vía reservada a los **contrabandistas**, personajes autorizados para montar un taller y abastecer a su entorno. Es la única forma de conseguir **armas sin ningún registro**, y también la única de producir **en cantidad**. Si perteneces a una facción, cada pedido además consume parte de su influencia en las calles.
 
 ### Quién puede ser contrabandista
 
@@ -147,20 +147,32 @@ Antes de ensamblar nada necesitas un **punto de armas**: el banco de trabajo don
 
 ### Ensamblar armas
 
-Con el taller montado, acércate a él y usa `/ensamblararmas`. Se abre un catálogo dividido por categorías donde eliges el modelo, y después indicas **cuántas unidades** quieres producir.
+Con el taller montado, acércate a él y usa `/ensamblararmas`. Se abre un catálogo dividido por categorías donde eliges el modelo, y después indicas **cuántas unidades** quieres producir. La pantalla del pedido muestra el coste por unidad, la cantidad máxima y las horas de espera que se aplicarán por cada arma.
 
-El coste de cada unidad es **5 veces el valor base del arma**: la tarifa más barata de las tres vías. A cambio, cada unidad suma **horas de espera** antes de poder volver a ensamblar.
+El coste de cada unidad es **5 veces el valor base del arma**: la tarifa más barata de las tres vías. A cambio, cada unidad suma **horas de espera** antes de poder volver a ensamblar. Solo puedes hacer un pedido mientras no tengas una espera en curso.
+
+#### Costo de influencia
+
+Si perteneces a una facción, fabricar armas cuesta **1.000 puntos de influencia** por pedido, sea cual sea la cantidad de armas que encargues. Las reglas son estas:
+
+- Para abrir el catálogo, tu facción debe tener al menos esos **1.000 puntos** sumando todas sus zonas. Si no llega, el catálogo no se abre y el mensaje te indica cuánta influencia tiene.
+- El costo se descuenta **en partes iguales** entre todas las zonas donde tu facción tiene influencia, estén conquistadas o no. Si una zona no alcanza a cubrir su parte, las demás completan el resto.
+- Se cobra al confirmar el pedido. Si el ensamblaje no llega a completarse, la influencia **vuelve** a tu facción.
+- Si no perteneces a ninguna facción, no se cobra influencia.
+
+Cuida el reparto de tus zonas: una facción sin presencia en las calles no puede fabricar. La influencia y cómo se gana se explican en [Sistema de zonas de pandilla](sistema-de-zonas-de-pandilla.md).
 
 #### Cantidad máxima por pedido
 
-| Categoría | Máximo por pedido |
-|---|---|
-| Pistolas y pistolas automáticas | **20 unidades** |
-| Subfusiles | **10 unidades** |
-| Escopetas | **5 unidades** |
-| Rifles de asalto y de precisión | **2 unidades** |
+| Categoría | Contrabandista común | Contrabandista avanzado |
+|---|---|---|
+| Pistolas | **8 unidades** | **15 unidades** |
+| Pistolas automáticas y subfusiles | **8 unidades** | **8 unidades** |
+| Escopetas | **4 unidades** | **4 unidades** |
+| Rifles de asalto y de precisión | **1 unidad** | **1 unidad** |
+| Explosivos | No disponible | **4 unidades** |
 
-Estos topes están además limitados por tu nivel: un **contrabandista común** no puede superar las **10 unidades** en un mismo pedido, mientras que el **avanzado** llega hasta **20**. En la práctica la diferencia solo se nota en las pistolas, porque el resto de categorías ya está por debajo de diez.
+En la práctica la diferencia entre los dos niveles solo se nota en las pistolas. Los miembros de una mafia con red de contactos pueden sumar unidades extra a estos topes, salvo en los rifles (ver más abajo).
 
 #### Tiempo de espera
 
@@ -174,36 +186,56 @@ El tiempo de espera se calcula multiplicando la cantidad encargada por las horas
 
 Los rifles cuestan 168 horas por unidad **para todos**, incluidos los contrabandistas avanzados: es el armamento más caro de producir en tiempo.
 
-Ejemplo: un contrabandista avanzado que encarga 10 pistolas queda **120 horas** (5 días) sin poder volver a ensamblar. Si en cambio encarga 2 rifles de asalto, la espera sube a **336 horas** (dos semanas). Un contrabandista común con ese mismo pedido de 10 pistolas esperaría **240 horas**.
+Ejemplos: un contrabandista avanzado que encarga 10 pistolas queda **120 horas** (5 días) sin poder volver a ensamblar. Si encarga 1 rifle de asalto, la espera es de **168 horas** (una semana). Un contrabandista común con un pedido de 8 pistolas esperaría **192 horas** (8 días).
 
 Los usuarios **Premium** reducen esa espera: **15% menos** con Bronze, **25%** con Silver, **35%** con Gold y **45%** con Platinum o Ruby.
 
+#### Red de contactos de las mafias
+
+Las facciones de tipo mafia cuentan con una **red de contactos** que mejora el ensamblaje de sus contrabandistas. El nivel depende de la **influencia total** que la mafia suma en todas sus zonas y se recalcula **cada hora**:
+
+| Nivel | Influencia total necesaria |
+|---|---|
+| Nivel 1 | **500 puntos** |
+| Nivel 2 | **1.500 puntos** |
+| Nivel 3 | **3.000 puntos** |
+
+Por cada nivel, el contrabandista de la mafia obtiene:
+
+- **10% menos** en el coste de ensamblaje de todas las armas.
+- **10% menos** de espera por unidad, en todas las armas (incluidos los rifles).
+- **+1 arma** por pedido sobre el tope de su categoría, excepto en los rifles.
+
+En el nivel 3 eso significa **30% de descuento**, **30% menos de espera** y **3 armas más** por pedido (por ejemplo, 18 pistolas para un contrabandista avanzado). `/ensamblararmas` muestra el nivel que tiene tu mafia al preparar el pedido. Las pandillas y el resto de facciones no tienen esta red. El descuento de espera se suma al de Premium.
+
 #### Precios de referencia
+
+Precios base, antes de cualquier descuento de la red de contactos.
 
 | Arma | Coste de ensamblaje | Nivel necesario |
 |---|---|---|
-| Hi-Point C9 | **$3,100** | Común |
-| Taurus G2C | **$3,600** | Común |
-| Glock 17 / Sig Sauer P226 | **$5,250** | Común |
-| Desert Eagle | **$16,500** | Común |
-| MAC-10 | **$4,600** | Común |
-| Glock 18 Auto | **$7,280** | Común |
-| Suppressed Glock 19 (silenciada) | **$8,750** | Avanzado |
-| Citadel CDP12 (escopeta) | **$4,050** | Avanzado |
-| Serbu Super Shorty | **$8,090** | Avanzado |
-| UZI | **$12,940** | Avanzado |
-| HK MP5 | **$16,985** | Avanzado |
-| SLR-107 (rifle de asalto) | **$8,625** | Avanzado |
-| Colt AR15 | **$14,375** | Avanzado |
-| Savage Axis XP (rifle) | **$4,860** | Avanzado |
-| Ruger American | **$28,750** | Avanzado |
-| Bomba TNT | **$150,000** | Avanzado |
+| Hi-Point C9 | **$3.100** | Común |
+| Taurus G2C | **$3.600** | Común |
+| Glock 17 / Sig Sauer P226 | **$5.250** | Común |
+| Desert Eagle | **$16.500** | Común |
+| MAC-10 | **$4.600** | Común |
+| Glock 18 Auto | **$7.280** | Común |
+| Suppressed Glock 19 (silenciada) | **$8.750** | Avanzado |
+| Citadel CDP12 (escopeta) | **$4.050** | Avanzado |
+| Serbu Super Shorty | **$8.090** | Avanzado |
+| UZI | **$12.940** | Avanzado |
+| HK MP5 | **$16.985** | Avanzado |
+| SLR-107 (rifle de asalto) | **$8.625** | Avanzado |
+| Colt AR15 | **$14.375** | Avanzado |
+| Savage Axis XP (rifle) | **$4.860** | Avanzado |
+| Ruger American | **$28.750** | Avanzado |
+| Bomba TNT | **$150.000** | Avanzado |
 
 Los explosivos tienen su propio funcionamiento, explicado en [Sistema de bombas](sistema-de-bombas.md).
 
 ### Qué obtienes al ensamblar
 
-Las armas ensambladas aparecen **en el suelo, junto a tu taller**, no directamente en tus manos: si encargaste veinte pistolas, tendrás veinte pistolas tiradas en el piso de la propiedad, que habrá que recoger y guardar una por una.
+Las armas ensambladas aparecen **en el suelo, junto a tu taller**, no directamente en tus manos: si encargaste quince pistolas, tendrás quince pistolas tiradas en el piso de la propiedad, que habrá que recoger y guardar una por una.
 
 Dos diferencias fundamentales frente a las otras dos vías:
 
@@ -212,15 +244,15 @@ Dos diferencias fundamentales frente a las otras dos vías:
 
 ### Cargadores y munición del taller
 
-El mismo taller permite fabricar munición con `/comprarcargadores`, y aquí está la mayor ventaja económica del contrabandista: el precio es **1.5 veces el valor base**, muy por debajo del **3.5 veces** que cobra el mercado negro. Son la fuente de munición más barata del servidor.
+El mismo taller permite fabricar munición con `/comprarcargadores`, y aquí está la mayor ventaja económica del contrabandista: el precio es **1,5 veces el valor base**, muy por debajo del **3,5 veces** que cobra el mercado negro. Son la fuente de munición más barata del servidor.
 
 | Producto | Coste en el taller | Coste en el mercado negro |
 |---|---|---|
 | Cargador 9x19, .40, .45, .357 o .22 LR | **$243** | $567 |
-| Cargador 7.62x39, 5.56x45, 7.62x51 o perdigones 12ga | **$486** | $1,134 |
-| Cargador .44 | **$1,215** | $2,835 |
-| Caja de munición 9x19 (1,000 balas) | **$1,458** | $3,402 |
-| Caja de munición 5.56x45 (1,000 balas) | **$1,941** | $4,529 |
+| Cargador 7.62x39, 5.56x45, 7.62x51 o perdigones 12ga | **$486** | $1.134 |
+| Cargador .44 | **$1.215** | $2.835 |
+| Caja de munición 9x19 (1.000 balas) | **$1.458** | $3.402 |
+| Caja de munición 5.56x45 (1.000 balas) | **$1.941** | $4.529 |
 
 Los cargadores fabricados en el taller aparecen **directamente en tu mano derecha**, así que debes tenerla libre antes de pedirlos.
 
@@ -240,7 +272,7 @@ Aquí está la diferencia que de verdad importa cuando las cosas salen mal.
 
 Esto no te vuelve invisible: el laboratorio sigue pudiendo demostrar que **todos los casquillos de una escena salieron del mismo arma**, y si esa arma acaba en tus manos durante un registro, la conexión se hace igual. El detalle de cómo se recogen y analizan los casquillos está en [Sistema forense](sistema-forense.md).
 
-Los **detectives privados** también pueden consultar estas bases pagando por cada búsqueda: **$50,000** por rastrear un serial y **$100,000** por listar las armas registradas a una persona. Más información en [Sistema de detectives privados](sistema-de-detectives-privados.md).
+Los **detectives privados** también pueden consultar estas bases pagando por cada búsqueda: **$50.000** por rastrear un serial y **$100.000** por listar las armas registradas a una persona. Más información en [Sistema de detectives privados](sistema-de-detectives-privados.md).
 
 ### Borrar el serial
 
@@ -256,8 +288,9 @@ El arma pasa entonces a mostrar su serial como "borrada", que no es lo mismo que
 - **Elige el origen según el uso.** Para autodefensa y portar sin problemas, la armería. Para un golpe puntual, el mercado negro. Para armar a toda una banda sin dejar rastro, el ensamblaje.
 - **Nunca uses un arma registrada a tu nombre en un crimen serio.** Si vas a disparar, que sea con un arma ensamblada o con el serial ya limado.
 - **Cuida tu historial si quieres la vía legal.** Un solo arresto te cierra las armerías de forma permanente para ese personaje y te deja sin licencia.
-- **Planifica los pedidos grandes.** Encargar el máximo de rifles deja tu taller parado dos semanas enteras; alternar pedidos medianos de pistolas mantiene la producción fluyendo.
+- **Planifica los pedidos grandes.** Cada rifle deja tu taller parado una semana entera; alternar pedidos medianos de pistolas mantiene la producción fluyendo.
+- **Vigila la influencia de tu facción.** Cada pedido cuesta 1.000 puntos repartidos entre tus zonas: perder territorio e influencia te deja sin poder ensamblar.
 - **Esconde bien el taller** y **recoge la producción de inmediato**: las armas quedan tiradas en el suelo, a la vista de cualquiera que entre a la propiedad.
 - **Aprovecha la munición barata del taller.** Aunque no vendas armas, fabricar cargadores para tu facción sale a menos de la mitad que comprarlos en el mercado negro.
 - **Sube la habilidad de delincuente antes de depender del mercado negro.** Sin 50 puntos no accedes ni al catálogo, y las armas interesantes empiezan a partir de 80. Cómo se gana y se pierde está en [Sistema de delincuente](sistema-de-delincuente.md).
-- **Entrar en una facción ilegal oficial es el salto de calidad**: convierte a un contrabandista común en avanzado, abre todo el catálogo pesado y divide por dos el tiempo de espera. Consulta [Facciones ilegales](facciones-ilegales.md).
+- **Entrar en una facción ilegal oficial es el salto de calidad**: convierte a un contrabandista común en avanzado, abre todo el catálogo pesado y divide por dos el tiempo de espera. Si además es una mafia con buena influencia, la red de contactos abarata y acelera cada pedido. Consulta [Facciones ilegales](facciones-ilegales.md).

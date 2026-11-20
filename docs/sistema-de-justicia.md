@@ -48,6 +48,7 @@ El juez es el rango más alto del Departamento de Justicia. Solo él puede firma
 - /borrararresto — elimina un arresto del historial.
 - /recuperararresto — restaura un arresto borrado.
 - /borrarmulta — anula una multa.
+- /quitarfugitivo — retira la condición de prófugo a una persona (ver [Prófugos](#prófugos)).
 - /iniciotraslado — inicia el traslado de un preso desde la cárcel hasta la corte.
 - /fintraslado — concluye el traslado y devuelve al preso a la cárcel.
 
@@ -63,7 +64,9 @@ Con `/condenar` el juez puede reemplazar la condena de cualquier persona, aunque
 
 Condenar a alguien lo lleva de inmediato a la cárcel y **anula cualquier prisión preventiva** que tuviera encima. Tanto el condenado como los agentes de la ley reciben el aviso.
 
-Ojo con la diferencia: las condenas que dicta la **policía al cerrar un arresto** se cuentan en **minutos** (mínimo 5, máximo 180 salvo perpetua), mientras que el comando del juez trabaja en **horas**, pensado para sentencias largas y correcciones de sentencia. El detalle de cómo se cumple el tiempo está en el [sistema de cárcel](sistema-de-carcel.md).
+Ojo con la diferencia: las condenas que dicta la **policía al cerrar un arresto** se cuentan en **minutos** (mínimo 5, máximo 180 salvo perpetua), mientras que el comando del juez trabaja en **horas**, pensado para sentencias largas y correcciones de sentencia.
+
+Tanto un arresto como una condena del juez suman **15 minutos extra** al tiempo indicado. La condena solo corre mientras estás **conectado y sin pausar el juego**. El detalle de cómo se cumple el tiempo está en el [sistema de cárcel](sistema-de-carcel.md).
 
 ### Prisión preventiva
 
@@ -119,11 +122,18 @@ Cuando un policía necesita un fiscal en el lugar:
 - /mostrarevidencias — presenta las evidencias reunidas en un caso.
 - /identidad — identifica formalmente a una persona.
 
-### Most Wanted
+### Prófugos
 
-El sistema **Most Wanted** identifica a sospechosos potencialmente peligrosos y los designa como **prioritarios en la búsqueda**, destacándolos en rojo y alertando a la comunidad sobre su inminente arresto. Simula la práctica de agencias gubernamentales estadounidenses que alertan al público sobre individuos buscados.
+Quien está en libertad condicional y **rompe su tobillera electrónica** se convierte en **prófugo de la justicia**. Su libertad condicional queda en pausa, su nombre se ve en rojo y su nivel de búsqueda sube al máximo (6 estrellas). Ser prófugo no se acaba con el tiempo ni desconectándose: termina cuando la persona es **arrestada** o cuando un juez lo decide.
 
-Los policías deben **solicitar al fiscal** que eleve la prioridad de búsqueda. La designación se pierde en cuanto la persona es arrestada, y quien esté marcado como Most Wanted tampoco puede entregarse voluntariamente en la cárcel.
+- Un prófugo no puede entregarse voluntariamente en la cárcel con `/encarcelarme`.
+- Al ser arrestado, la libertad condicional pendiente se reanuda **después de la nueva condena**.
+- Cada prófugo puede tener una **recompensa**: los líderes de Gobierno y de SADCR la ofrecen con `/recompensa` (de $1.000 a $100.000 por vez y hasta $500.000 en total por prófugo, con dinero de la facción) y se anuncia a toda la ciudad. Al arrestarlo, el oficial indica qué civil participó en la captura y ese cazarrecompensas cobra en su banco; si nadie cobra, el dinero vuelve a la facción.
+- Los policías en servicio consultan a los prófugos conectados con `/fugitivos` y en el ordenador policial, y cualquier ciudadano en la aplicación **Prófugos** del teléfono.
+
+El juez en servicio puede **retirar la condición de prófugo** con `/quitarfugitivo [nombre_apellido]`, esté la persona conectada o no. La libertad condicional vuelve a correr desde ese momento con el tiempo que le quedaba, la recompensa pendiente vuelve a los fondos de la facción que la ofreció y la policía recibe un aviso. Un juez no puede retirarse la condición a sí mismo.
+
+Cómo se rompe la tobillera, qué herramientas sirven, cómo te delata la ciudad y cómo se cobra una recompensa está en el [sistema de prófugos](sistema-de-profugos.md).
 
 ## Órdenes de arresto y de allanamiento
 
@@ -137,7 +147,7 @@ Las órdenes son documentos que redacta la policía (o la fiscalía) y que firma
 4. **Firma**: la firma la aplica un **juez de servicio** o el **líder de la facción policial** que la solicitó, con `/firmarorden`.
 5. **Cierre**: cuando la orden ya cumplió su función, se cierra con `/cerrarorden`. Además del juez, pueden cerrarla los detectives y sargentos de la policía o del sheriff, los líderes federales y los supervisores de guardaparques.
 
-Las órdenes pendientes se consultan desde el ordenador de a bordo de los vehículos policiales, ordenadas por riesgo y antigüedad. Los lectores de matrículas de las patrullas también avisan cuando cruzan un vehículo relacionado con una orden de allanamiento.
+Las órdenes pendientes se consultan desde el ordenador de a bordo de los vehículos policiales, ordenadas por riesgo y antigüedad. Cuando un agente abre el reporte de arresto de una persona, y de nuevo al finalizarlo, recibe un aviso con las órdenes de arresto activas del detenido (las confidenciales solo las ve quien tiene acceso a ellas), para que las cierre con `/cerrarorden` si corresponde. Los lectores de matrículas de las patrullas también avisan cuando cruzan un vehículo relacionado con una orden de allanamiento.
 
 ### Qué habilita una orden de allanamiento
 
@@ -151,7 +161,7 @@ Una orden firmada no basta por sí sola: el mando de la facción debe **autoriza
 
 La **Oficina del Defensor Público del Condado de Los Santos** fue la **primera agencia de defensa pública en Estados Unidos** y actualmente es la más grande del país. Entre el Defensor Público Alternativo y la oficina principal trabajan más de mil abogados acompañados de paralegales, investigadores, trabajadores sociales y otros perfiles de apoyo.
 
-En el servidor, la Defensoría Pública funciona como un bufete más, pero con **tarifa fija**: el defensor no negocia su precio, cobra siempre **$5,000** por caso atendido, íntegros para él.
+En el servidor, la Defensoría Pública funciona como un bufete más, pero con **tarifa fija**: el defensor no negocia su precio, cobra siempre **$5.000** por caso atendido, íntegros para él.
 
 **Ubicación**: Los Santos Hall of Justice, oficina **#912**.
 
@@ -163,11 +173,11 @@ Un abogado de firma fija libremente el precio de su servicio dentro de un rango,
 
 | Concepto | Valor |
 |---|---|
-| Precio mínimo del servicio | **$2,500** |
-| Precio máximo del servicio | **$100,000** |
+| Precio mínimo del servicio | **$2.500** |
+| Precio máximo del servicio | **$100.000** |
 | Parte para el abogado | **60%** |
 | Parte para la firma legal | **40%** |
-| Defensor público (tarifa fija) | **$5,000** íntegros |
+| Defensor público (tarifa fija) | **$5.000** íntegros |
 
 ### Cómo se cobra un servicio
 
@@ -180,7 +190,7 @@ Cada servicio cobrado otorga además **3 [Burger Points](sistema-de-burger-point
 
 ### Consultar la situación financiera del cliente
 
-`/informacionbanco` muestra el saldo bancario de una persona, para ajustar honorarios con criterio. Para abogados y [detectives privados](sistema-de-detectives-privados.md) la consulta cuesta **$10,000**, que se descuentan del banco. Policías, investigadores de la fiscalía y agentes federales la consultan **gratis**.
+`/informacionbanco` muestra el saldo bancario de una persona, para ajustar honorarios con criterio. Para abogados y [detectives privados](sistema-de-detectives-privados.md) la consulta cuesta **$10.000**, que se descuentan del banco. Policías, investigadores de la fiscalía y agentes federales la consultan **gratis**.
 
 ### Cómo pedir un abogado
 
@@ -191,8 +201,8 @@ Cuando un detenido necesita representación legal, un policía o un miembro del 
 - /mostrariden — muestra tu licencia del **State Bar of San Andreas**, con tu nombre y la firma para la que trabajas.
 - /listaoficios — muestra las solicitudes de abogado pendientes.
 - /atenderoficio — toma una solicitud y obtiene el contacto telefónico del agente.
-- /aceptaroficio — ofrece el servicio a un cliente por el precio que fijes (los defensores públicos, por $5,000 fijos).
-- /informacionbanco — consulta el saldo bancario del cliente ($10,000 por consulta).
+- /aceptaroficio — ofrece el servicio a un cliente por el precio que fijes (los defensores públicos, por $5.000 fijos).
+- /informacionbanco — consulta el saldo bancario del cliente ($10.000 por consulta).
 
 ## Multas
 
@@ -202,7 +212,26 @@ Las multas las emiten los agentes de la ley y las cámaras de velocidad. Se acum
 |---|---|
 | Lugar de consulta y pago | **La corte** |
 | Multas pendientes visibles a la vez | **16** |
-| Deuda máxima tolerada para operaciones | **$10,000** |
+| Deuda máxima tolerada para operaciones | **$10.000** |
+
+### Cómo se emite una multa
+
+Los agentes en servicio (policías, sheriffs, jueces y fiscales, militares de rango alto, inspectores de bomberos y agentes de tránsito) multan con `/multar [jugador]` a una persona o con `/multarveh [matrícula]` a un vehículo. `/multarveh` está reservado a policías, personal de justicia y agentes de tránsito. Hace falta llevar un **portapapeles en la mano derecha**. A la persona hay que tenerla a menos de **5 metros** y con una mano libre; al vehículo, a menos de **10 metros**. No se pueden multar vehículos de facción.
+
+1. Se abre la lista de infracciones del **Código Penal de San Andreas**. Cada cargo que eliges suma su descripción y su monto al total; no se puede añadir el mismo cargo dos veces.
+2. **Escribir manualmente** permite añadir un cargo propio, con un importe de **$1 a $100.000** y una descripción de al menos 3 caracteres.
+3. **Emitir multa** aparece en cuanto hay al menos un cargo.
+
+El total de la multa debe estar entre **$1 y $100.000**. Los agentes de tránsito tienen un tope de **$5.000** por multa.
+
+### Citación y ticket
+
+Al multar a una persona, esta recibe una **citación** en pantalla con la fecha, el oficial, los cargos y la cantidad, y debe elegir **Firmar** o **No firmar**. Negarse a firmar está penado por el Código Penal de San Andreas: si no firma, la citación se cancela y el oficial recibe el aviso. Mientras la citación está pendiente, el oficial no puede emitir otra.
+
+- Al firmar, la multa queda registrada y la persona recibe un **ticket** de LSPD o LSSD en una mano, siempre que tenga una libre. Con `/mirarmulta` ves el detalle y el estado (pagada o pendiente) del ticket que lleves en las manos.
+- **Pagar la multa con su ticket en la mano derecha da un 40% de descuento**. El ticket se consume al pagar.
+- La multa a un vehículo no lleva citación ni ticket: se registra a nombre del dueño del vehículo (o del dueño de la empresa, si es de una empresa).
+- Una multa de tránsito suma además **1 punto de infracción** a la licencia de conducir de quien la recibe, como se explica en el [sistema de vehículos](sistema-de-vehiculos.md).
 
 ### Cómo pagar
 
@@ -213,7 +242,7 @@ El pago siempre sale de tu **cuenta bancaria**.
 
 ### Por qué conviene pagarlas
 
-- Si acumulas más de **$10,000** en multas impagas no puedes comprar, vender ni transferir propiedades ni vehículos.
+- Si acumulas más de **$10.000** en multas impagas no puedes comprar, vender ni transferir propiedades ni vehículos.
 - Las personas con multas pendientes aparecen listadas en el ordenador de a bordo policial, con el monto exacto que deben.
 - Un juez puede anular una multa concreta si el procedimiento fue incorrecto.
 
@@ -234,12 +263,19 @@ Los **puntos de criminalidad** miden tu historial criminal acumulado. Al llegar 
 
 ### Cómo se ganan
 
-- Por cada arresto, el sistema suma a tu cuenta los **puntos asociados a los delitos** que te imputaron.
+- Por cada arresto, el sistema suma los puntos de **cada cargo** que te imputaron, según su gravedad:
+
+| Tipo de cargo | Puntos |
+|---|---|
+| Infracción | **0** |
+| Cargo menor | **1** |
+| Cargo grave | **2** |
+
 - Cuando te acercas a los 30 puntos recibes avisos en pantalla para que evites seguir delinquiendo.
 
 ### Cómo se pierden
 
-- **Cumpliendo condena activo en la cárcel**: en cada pago periódico que pases conectado estando preso se te descuenta **1 punto**.
+- **Cumpliendo condena activo en la cárcel**: en cada pago periódico que pases conectado, sin pausar el juego, estando preso se te descuenta **1 punto**.
 - **Leyendo libros en la biblioteca de la cárcel**: ciertas lecturas reducen tus puntos criminales de forma aleatoria.
 - Cuando alcanzas los 30 puntos y recibes el castigo automático, el sistema resta **15 puntos** de golpe para reiniciar el ciclo.
 
@@ -251,4 +287,4 @@ Los **puntos de criminalidad** miden tu historial criminal acumulado. Al llegar 
 - Como abogado de firma, consulta el saldo del cliente **antes** de fijar el precio: si no tiene el dinero en el banco, la oferta ni siquiera se puede plantear.
 - Como juez, recuerda que la prisión preventiva solo funciona sobre gente **ya encarcelada**: para retener a alguien que está en la calle, primero hace falta una orden de arresto firmada.
 - Como policía, una orden de allanamiento firmada no sirve de nada sin el **operativo autorizado**, y ese permiso solo dura media hora.
-- Paga tus multas apenas puedas: superar los **$10,000** de deuda te deja fuera del mercado de propiedades y vehículos.
+- Paga tus multas apenas puedas: superar los **$10.000** de deuda te deja fuera del mercado de propiedades y vehículos.

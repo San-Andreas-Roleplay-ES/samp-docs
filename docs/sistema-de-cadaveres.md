@@ -8,9 +8,11 @@ Cuando un personaje sufre una **muerte definitiva** (Character Kill), su cuerpo 
 
 A partir de ahí el cuerpo se convierte en el centro de un pequeño juego del gato y el ratón. Para la policía y los paramédicos es una escena del crimen que hay que documentar y trasladar a la morgue. Para el criminal que lo dejó ahí es un problema: un cuerpo abandonado en la vía pública acaba llamando la atención, y cada persona que lo toca deja huellas que un laboratorio puede leer más tarde.
 
-El servidor mantiene **hasta 32 cadáveres activos** en el mundo al mismo tiempo. Cuando ese cupo se llena, los cuerpos más antiguos dejan de estar presentes en la calle.
+El servidor mantiene **hasta 128 cadáveres activos** en el mundo al mismo tiempo. Una Character Kill siempre deja cuerpo: si el cupo está lleno, el cadáver más antiguo pasa a la morgue para hacerle sitio al nuevo. Además, ningún cuerpo dura para siempre: se descompone y, pasado un tiempo, el forense lo retira (ver [Descomposición y retiro del cuerpo](#descomposición-y-retiro-del-cuerpo)).
 
-Cualquier jugador que pase cerca ve una etiqueta flotante sobre el cuerpo indicando de quién es el cadáver, o bien que se trata de una bolsa de cadáver o de un cuerpo calcinado. Alrededor del cuerpo aparecen insectos, y cada hora existe la posibilidad de que un **testigo anónimo reporte el avistamiento por la radio de policía y de emergencias**, indicando la zona de la ciudad y en qué estado se ve el cuerpo (un olor putrefacto si está embolsado, un cuerpo completamente calcinado, un cuerpo brutalmente desmembrado o un posible avistamiento). Dejar un cuerpo a la vista en plena calle es, por tanto, una mala idea.
+Cualquier jugador que pase cerca ve una etiqueta flotante sobre el cuerpo indicando de quién es el cadáver, o bien que se trata de una bolsa de cadáver, de un cuerpo calcinado o de un cadáver en descomposición. Alrededor del cuerpo aparecen insectos, y cada hora existe la posibilidad de que un **testigo anónimo reporte el avistamiento por la radio de policía y de emergencias**, indicando la zona de la ciudad y en qué estado se ve el cuerpo (un olor putrefacto si está embolsado, un cuerpo completamente calcinado, un cuerpo brutalmente desmembrado o un posible avistamiento). Dejar un cuerpo a la vista en plena calle es, por tanto, una mala idea.
+
+Los cuerpos que están dentro de una propiedad también se pueden reportar, pero solo cuando llevan **más de 24 horas** allí; en ese caso el aviso indica la **dirección** de la propiedad en lugar de la zona.
 
 ### Comandos
 
@@ -35,6 +37,22 @@ El cuerpo que queda en el suelo hereda del personaje:
 - La **apariencia** con la que murió (si estaba de servicio en una facción, aparece con ese uniforme).
 - Todo su **inventario**, tal cual lo llevaba encima.
 - Las **heridas** recibidas en las **últimas 6 horas**, con el arma que las causó, la parte del cuerpo afectada y cuánto tiempo hace de cada una.
+
+## Descomposición y retiro del cuerpo
+
+El tiempo corre contra el cadáver desde el momento de la muerte:
+
+| Tiempo desde la muerte | Qué ocurre |
+|---|---|
+| **72 horas** (3 días) | El cuerpo entra en **descomposición**: su etiqueta pasa a decir "Cadáver en descomposición" y deja de mostrar el nombre del fallecido |
+| **2 semanas** | El **forense lo retira solo**: el cuerpo desaparece de la escena y pasa a la morgue |
+
+Cosas que conviene saber:
+
+- Un cuerpo en descomposición sigue pudiendo examinarse, registrarse y manipularse como cualquier otro. Si está embolsado o calcinado, la etiqueta muestra ese estado en lugar del de descomposición.
+- Cuando el forense retira un cuerpo, **avisa por la radio de policía y de emergencias** indicando dónde estaba (la zona, o la dirección si estaba dentro de una propiedad), y el **inventario que quedaba en sus bolsillos se pierde**. Si el cuerpo estaba en un lugar que no se puede identificar, el retiro se hace sin aviso.
+- El retiro se comprueba **una vez por hora**, así que un cuerpo puede permanecer unos minutos más de las dos semanas exactas.
+- Un cuerpo retirado por antigüedad o para liberar espacio ya no se puede examinar ni saquear en la calle.
 
 ## Examinar el cuerpo
 
@@ -199,18 +217,19 @@ Las bolsas con órganos son objetos **pesados** que ocupan las dos manos y se ve
 
 | Órgano | Precio |
 |---|---|
-| Corazón | **$30.000** |
-| Riñones | **$27.000** |
-| Pulmones | **$17.000** |
-| Hígado | **$10.000** |
-| Intestino | **$8.500** |
-| Páncreas | **$7.000** |
+| Corazón | **$100.000** |
+| Riñones | **$89.998** |
+| Pulmones | **$56.600** |
+| Hígado | **$34.000** |
+| Intestino | **$28.200** |
+| Páncreas | **$23.200** |
 
 Durante los eventos de experiencia multiplicada, las cuentas verificadas cobran un **10% extra** (evento doble) o un **20% extra** (evento triple). El detalle de cómo funciona el mercado negro está en [Sistema de mercado negro](sistema-de-mercado-negro.md).
 
 ## Consejos
 
-- **Antes de matar, roba.** El inventario del cadáver queda bloqueado tres horas para los delincuentes y se pierde entero si el cuerpo acaba en la morgue.
+- **Antes de matar, roba.** El inventario del cadáver queda bloqueado tres horas para los delincuentes y se pierde entero si el cuerpo acaba en la morgue, ya sea entregado o retirado por el forense.
+- **El tiempo juega en tu contra.** A los tres días el cuerpo se descompone y a las dos semanas desaparece; si lo que buscas es que nadie lo encuentre, no confíes en que el forense llegue tarde.
 - **Trabaja con guantes.** Son la única forma de manipular un cuerpo sin dejar huellas, y valen mucho menos que lo que cuesta ser identificado. Recuerda que se desgastan con cada contacto.
 - **No dejes cuerpos a la vista.** Cada hora hay posibilidad de que un testigo lo reporte por la radio policial indicando la zona; un cuerpo embolsado o calcinado se reporta igual.
 - **Decide pronto qué quieres del cuerpo.** Quemarlo borra las huellas pero anula la extracción de órganos; desmembrarlo da dinero pero deja marcas permanentes que agravan el informe forense.

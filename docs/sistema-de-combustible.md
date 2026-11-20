@@ -47,8 +47,8 @@ Del total que pagas, una cuarta parte se va en impuestos al Gobierno de San Andr
 1. **Detén el vehículo junto al surtidor y apaga el motor** con `/motor`. Con el motor encendido no se puede iniciar la carga.
 2. **Bájate y colócate al lado de la tapa del tanque** (a menos de **1.5 metros** de la tapa). En los modelos que no tienen tapa visible basta con estar a **4 metros** del vehículo. Los aviones y botes se saltan este paso: se cargan desde el asiento del piloto.
 3. **Deja libre tu mano izquierda**: es la mano con la que sostendrás la manguera. Si llevas algo ahí, el comando no se ejecuta.
-4. **Escribe `/llenar [litros]`**. Si no indicas cantidad, el juego te responde con los precios de esa marca. Puedes pedir entre **1 y 100 litros**, y nunca más de lo que cabe en tu tanque.
-5. **Espera 30 segundos.** Tu personaje toma el surtidor, mira hacia la tapa del tanque y se queda cargando. Un aviso en pantalla te indica que el tanque se está llenando.
+4. **Escribe `/llenar [litros]`**. Si no indicas cantidad, el juego te responde con los precios de esa marca. Puedes pedir entre **1 y 250 litros**, y nunca más de lo que cabe en tu tanque.
+5. **Espera a que termine la carga.** El tiempo depende de los litros: el surtidor entrega **2 litros por segundo**, con un mínimo de **3 segundos** y un máximo de **30 segundos**. Tu personaje toma el surtidor, mira hacia la tapa del tanque y se queda cargando. Un aviso en pantalla te indica que el tanque se está llenando.
 6. **Al terminar se paga solo.** Verás el desglose con la marca, el precio por litro, los litros cargados y el total. El dinero sale de tu **cuenta bancaria**, no del efectivo que lleves encima.
 
 La primera vez que llenes el tanque de un vehículo desbloqueas el logro **¡Oro negro!**.
@@ -61,16 +61,17 @@ La primera vez que llenes el tanque de un vehículo desbloqueas el logro **¡Oro
 
 ### Qué cancela la carga
 
-Durante esos 30 segundos debes quedarte quieto y atento. La carga se cancela si:
+Mientras dura la carga debes quedarte quieto y atento. La carga se cancela si:
 
 - **Sueltas el surtidor** o cambias lo que llevas en la mano izquierda.
 - **Te alejas del vehículo** o de la tapa del tanque.
 - **Te alejas del surtidor**.
 - **Alguien enciende el motor** del vehículo mientras cargas.
-- **Resultas herido** o mueres.
+- **Caes herido** o mueres. Una herida que ya tenías sin curar no cancela la carga.
+- **Te electrocutan, te taclean o te esposan.**
 - **El surtidor se queda sin combustible** (otros conductores están comprando del mismo depósito).
 
-Si la carga se cancela no pagas nada, pero tampoco recibes combustible: hay que empezar de nuevo.
+Mientras cargas tampoco puedes abrir el inventario. Si la carga se cancela no pagas nada, pero tampoco recibes combustible: hay que empezar de nuevo.
 
 ## Peligro: explosión al encender el motor
 
@@ -119,22 +120,26 @@ Las latas son la solución para los que se quedan tirados o para quien quiere gu
 - Existen dos: **lata de gasolina** y **lata de diésel**. Cada una guarda hasta **30 litros**.
 - Se compran en **ferreterías, tiendas 24/7 y gasolineras** que las tengan en stock. El precio lo fija cada negocio y suele rondar los **$300 a $370**.
 - Para llenarla: estando **a pie en una gasolinera**, con la lata en la **mano derecha**, usa `/llenarlata`. Se llena hasta el tope y pagas el precio por litro de esa marca desde tu cuenta bancaria.
-- Para usarla: acércate a la **tapa del tanque** del vehículo (a menos de 1.5 metros), con la lata en la mano derecha, y usa `/usarlata`. El contenido se vuelca en el tanque de inmediato, sin espera de 30 segundos.
+- Para usarla: acércate a la **tapa del tanque** del vehículo (a menos de 1.5 metros), con la lata en la mano derecha, y usa `/usarlata`. El contenido se vuelca en el tanque de inmediato, sin tiempo de espera.
 - **El tipo debe coincidir**: una lata de gasolina no sirve para un motor diésel ni al revés. Si el tanque se llena antes de vaciar la lata, lo que sobra queda dentro.
 
 Ten presente que una lata llena de combustible también sirve para prender fuego a cosas, así que llevarla encima en según qué situaciones puede levantar sospechas.
 
 ## Abastecimiento de las gasolineras
 
-Los surtidores no tienen combustible infinito. Cada uno guarda hasta **2,500 litros** y se va vaciando con cada venta; cuando se acaba, avisa que no puede servir y hay que ir a otro. La barra de colores del cartel flotante indica de un vistazo cuánto le queda: verde intenso lleno, rojo casi vacío.
+Los surtidores no tienen combustible infinito, salvo los de la isla de Santa Catalina (ver más abajo). Cada uno guarda hasta **2,500 litros** y se va vaciando con cada venta; cuando se acaba, avisa que no puede servir y hay que ir a otro. La barra de colores del cartel flotante indica de un vistazo cuánto le queda: verde intenso lleno, rojo casi vacío.
 
 La reposición depende de los **transportistas pesados**: cuando alguien entrega un tráiler de combustible, todos los surtidores de la zona reciben **625 litros** cada uno. El transportista cobra un bono de **$350 por cada surtidor** que haya conseguido abastecer, pagado por el Gobierno de San Andreas, y el negocio dueño de cada surtidor paga de su caja el combustible que recibió. Si todos los surtidores de la zona ya están llenos, no hay bono. Puedes leer más sobre esas rutas en [Sistema de camionero](sistema-de-camionero.md).
+
+### Surtidores de Santa Catalina
+
+Los surtidores de la isla de Santa Catalina **nunca se quedan sin combustible**: su barra siempre aparece llena, cada venta no les descuenta nada y los camioneros no reciben bono por abastecerlos. Las marcas y los precios por litro son los mismos de siempre, y funcionan igual para `/llenar` y `/llenarlata`. Más información sobre la isla en [Santa Catalina](santa-catalina.md).
 
 ## Consejos
 
 - **Mira el cartel antes de parar.** La diferencia entre un Ron y un Globeoil son $300 en un depósito de 100 litros.
 - **Apaga el motor siempre**, no solo para cargar: es la forma más simple de que el tanque dure el doble en una jornada de rol estático.
-- **Vigila la barra del surtidor.** Si está casi vacía, mejor busca otra estación antes de perder 30 segundos y que te cancele la carga a mitad de camino.
+- **Vigila la barra del surtidor.** Si está casi vacía, mejor busca otra estación antes de empezar una carga larga y que te la cancelen a mitad de camino.
 - **Lleva una lata en el maletero** si haces rutas largas o trabajas en el campo, donde las gasolineras escasean.
 - **Los vehículos blindados beben muchísimo**: un blindaje nivel 5 gasta cuatro veces más que un auto normal, y eso se nota en la factura semanal.
 - **Nunca dejes que alguien se suba al asiento del conductor** mientras cargas. Un arranque en el momento equivocado puede costarte el vehículo y la vida.

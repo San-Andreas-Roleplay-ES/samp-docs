@@ -4,7 +4,7 @@
 
 Las **bombas TNT** son el artefacto explosivo más destructivo del servidor. Se trata de un paquete de explosivo con un detonador telefónico incorporado: cada bomba nace ligada a un **número de teléfono de 8 dígitos** y estalla cuando alguien marca ese número desde cualquier teléfono del juego.
 
-Es un recurso de alto impacto reservado al roleplay criminal serio (atentados, sabotajes, ajustes de cuentas, trampas contra facciones rivales) y, al mismo tiempo, una herramienta de trabajo para quienes se dedican a neutralizarlas: detectives privados y personal con conocimientos de electrónica pueden localizar el artefacto y desactivarlo cortando cables antes de que alguien haga la llamada.
+Es un recurso de alto impacto reservado al roleplay criminal serio (atentados, sabotajes, ajustes de cuentas, trampas contra facciones rivales) y también el método más rentable para reventar cajeros automáticos, la bóveda del Fleeca Bank y la caja fuerte o la cortina de la joyería. Al mismo tiempo, es una herramienta de trabajo para quienes se dedican a neutralizarlas: detectives privados y personal con conocimientos de electrónica pueden localizar el artefacto y desactivarlo cortando cables antes de que alguien haga la llamada.
 
 Toda explosión avisa por radio al **LSPD** y a los **paramédicos** de forma inmediata, y deja un foco de incendio activo en el lugar para el **LSFD**. No existe la detonación silenciosa: desde el momento en que la bomba estalla, el suceso se convierte en una emergencia con los servicios de rescate en camino.
 
@@ -12,6 +12,8 @@ Toda explosión avisa por radio al **LSPD** y a los **paramédicos** de forma in
 
 - `/desactivarbomba` — intenta desactivar una bomba cercana cortando uno de sus tres cables.
 - `/llamar [número]` — marca un número de teléfono; si corresponde al de una bomba, la detona.
+- `/robarcajero` — con la bomba en la mano derecha, la planta junto a un cajero automático.
+- `/robobanco` y `/robojoyeria` — con la bomba en la mano derecha, la plantan en una cerradura del banco o de la joyería (ver [Bombas en los robos](#bombas-en-los-robos)).
 - `/molotov` — fabrica un cóctel molotov con una botella de vidrio y una lata de gasolina.
 - `/provocarincendio` — lanza el cóctel molotov y provoca un incendio.
 
@@ -21,10 +23,10 @@ La Bomba TNT no se vende en ninguna tienda legal. Solo aparece por dos vías:
 
 | Vía | Quién puede | Precio | Espera entre pedidos |
 |---|---|---|---|
-| Ensamblaje ilegal | Contrabandistas avanzados o miembros de una facción ilegal oficial | **$150,000** por unidad | **12 horas** por cada unidad del pedido |
+| Ensamblaje ilegal | Contrabandistas avanzados o miembros de una facción ilegal oficial | **$150.000** por unidad | **12 horas** por cada unidad del pedido |
 | Equipo de facción militar | Miembros de la facción militar, desde su armería | Según el equipo de la facción | — |
 
-El ensamblaje se hace en un punto de creación de armas dentro de una propiedad, igual que el resto del material ilegal. El tope por pedido es de **5 bombas**, y el tiempo de espera se acumula por unidad: pedir 3 bombas bloquea el ensamblaje durante **36 horas**. Las cuentas premium reducen esa espera entre un **15 %** y un **45 %** según el nivel. Consulta el [sistema de ensamblaje de armas](sistema-de-ensamblaje-de-armas.md) para los requisitos de contrabandista y el funcionamiento de los puntos de creación.
+El ensamblaje se hace en un punto de creación de armas dentro de una propiedad, igual que el resto del material ilegal. El tope por pedido es de **4 bombas** (hasta **7** si perteneces a una mafia con la mejor red de contactos), y el tiempo de espera se acumula por unidad: pedir 3 bombas bloquea el ensamblaje durante **36 horas**. Las cuentas premium reducen esa espera entre un **15 %** y un **45 %** según el nivel, y la red de contactos de una mafia rebaja un **10 %** por nivel tanto el precio como la espera. Si perteneces a una facción, cada pedido además cuesta **1.000 puntos de influencia** de tu facción, que se devuelven si el ensamblaje no se completa. Consulta el [sistema de ensamblaje de armas](sistema-de-ensamblaje-de-armas.md) para los requisitos de contrabandista y el funcionamiento de los puntos de creación.
 
 La bomba **pesa 0,5 kg** y ocupa **1 espacio** de inventario, así que cabe sin problema en una mochila, un paquete, un maletero o un armario.
 
@@ -74,6 +76,30 @@ El foco de fuego no es decorativo. Cualquiera que entre en él **pierde 5 puntos
 
 El fuego solo se apaga cuando un miembro de una facción de emergencias lo retira desde el lugar. Consulta [facciones legales](facciones-legales.md) para saber cómo trabajan el LSFD y el LSPD en este tipo de escena.
 
+## Bombas en los robos
+
+La Bomba TNT es el explosivo que abre los golpes más grandes. En los tres robos se usa igual: colocas la bomba con el robo correspondiente, te alejas y **llamas a su número** desde un teléfono. Nada de esto reemplaza la explosión normal: la detonación sigue avisando a la policía y a los paramédicos y dejando el foco de incendio descrito arriba.
+
+Condiciones comunes a los tres robos:
+
+- Habilidad de delincuente de **90** como mínimo, la más alta de todos los métodos.
+- Tener la bomba en la **mano derecha** al colocarla. Queda en el suelo, pegada al objetivo, y debe estar a menos de **3 metros** del punto que quieres abrir.
+- La bomba tiene **10 minutos** de vida. Si el plazo se cumple, ya no abre nada: si llamas después, la bomba explota igual, pero sin romper ni abrir el objetivo.
+- Al llamar tiene que haber **policías de servicio suficientes** (4 para cajeros, 10 para el banco y la joyería). En los cajeros, si faltan, el detonador no responde y la bomba sigue en su sitio hasta que venza. En el banco y la joyería, si faltan, la bomba explota igual pero no abre nada.
+- Es una bomba común: cualquiera con el kit puede desactivarla mientras esté colocada, y quien lea su número puede detonarla antes que tú.
+
+### Cajeros automáticos
+
+Se hace con `/robarcajero` y la bomba en la mano derecha, junto al cajero. Al colocarla recibes puntos de habilidad y empieza la espera entre robos (**72 horas**, o **48 horas** con habilidad de delincuente de 90 o más). La explosión destruye el cajero y deja **cuatro cargas** de billetes en casetes de hasta **$100.000**, el doble que una embestida y más que cualquier otro método. La mayoría de los billetes sale sano; el resto puede venir entintado y dejar una mancha morada. Detalles del robo y de la reparación en el [sistema de robo de cajeros](sistema-de-robo-de-cajeros.md).
+
+### Fleeca Bank
+
+Con `/robobanco` y la bomba en la mano derecha puedes volar la **puerta de seguridad** o la **puerta de la bóveda**, siempre que la puerta siga cerrada y el robo no haya terminado. El banco la detecta a los 10 minutos. Si estalla la puerta de la bóveda, se abre y los casetes quedan disponibles: entre **$750.000 y $1.000.000**, o entre **$650.000 y $900.000** si la policía ya fue avisada. La explosión además hace sonar la alarma. Una parte de los casetes puede venir entintada, y un casete entintado no vale nada. Más en el [sistema de robo al banco](sistema-de-robo-al-banco.md).
+
+### Joyería
+
+Con `/robojoyeria` y la bomba en la mano derecha puedes volar la **cortina metálica** (cuando está baja) o la **caja fuerte** de la oficina. La cortina volada deja un hueco para salir. La caja fuerte rinde entre **$350.000 y $500.000** en casetes, o entre **$300.000 y $450.000** si la policía ya fue avisada. La explosión hace sonar la alarma y una parte de los casetes puede venir entintada. Más en el [sistema de robo a la joyería](sistema-de-robo-a-la-joyeria.md).
+
 ## Desactivar una bomba
 
 Cualquier personaje que cumpla los requisitos puede intentar desactivar un artefacto: no es una capacidad exclusiva de los detectives, sino una recompensa a la formación técnica.
@@ -86,7 +112,7 @@ Cualquier personaje que cumpla los requisitos puede intentar desactivar un artef
 | Herramienta | **Kit de desactivación de bombas** en la **mano derecha** |
 | Distancia | Estar a **5 metros o menos** de la bomba, en el mismo lugar (interior o exterior) |
 
-El kit cuesta **$200,000** y lo compran los detectives privados desde su menú de equipo en el Ammu-Nation de Market, pagando con el dinero del banco. Pesa **3 kg** y ocupa **3 espacios**, así que lleva la mochila preparada. Detalles del oficio en el [sistema de detectives privados](sistema-de-detectives-privados.md).
+El kit cuesta **$200.000** y lo compran los detectives privados desde su menú de equipo en el Ammu-Nation de Market, pagando con el dinero del banco. Pesa **3 kg** y ocupa **3 espacios**, así que lleva la mochila preparada. Detalles del oficio en el [sistema de detectives privados](sistema-de-detectives-privados.md).
 
 La habilidad de electrónica se gana leyendo libros técnicos en la biblioteca y practicando con el [sistema de skimming](sistema-de-skimming.md); con **5 puntos** basta para intentar la desactivación.
 

@@ -47,12 +47,16 @@ Cada personaje tiene su propio límite. Se parte de un **límite base de 10 ases
 
 | Factor | Efecto sobre el límite |
 |---|---|
-| **Límite base** | 10 asesinatos |
+| **Límite base** | 10 asesinatos (**5** mientras cumples condena en la cárcel) |
 | **Puntos de rol positivos** | +1 por cada punto |
 | **Puntos de rol negativos** | −1 por cada punto |
 | **Felicidad por encima de 50** | hasta **+4** (ver más abajo) |
 
 El límite nunca puede quedar por debajo de **1**, por muchos puntos negativos que se acumulen. Interpretar bien y ganarte puntos de rol positivos, por tanto, te da margen real para llevar un personaje violento.
+
+#### Asesinatos en la cárcel
+
+Mientras estás preso, el límite base baja de 10 a **5**. Como la barra de salud mental se calcula frente a ese límite, cada asesinato que cometes dentro de la cárcel la baja **el doble** que fuera de ella. El contador sigue siendo el de los últimos 7 días: si llegas a prisión con muchas muertes recientes, puedes empezar la condena ya por encima del límite. Al salir, tu límite vuelve a ser el normal. Los detalles de la prisión están en [Sistema de cárcel](sistema-de-carcel.md).
 
 ### Qué pasa al superarlo
 
@@ -66,7 +70,7 @@ El servidor te avisa de esta situación de tres formas:
 
 Para volver a estar a salvo tienes que **bajar del límite otra vez**: dejando que pasen los 7 días de las muertes antiguas, ganando puntos de rol positivos o subiendo tu felicidad por encima de 50 para recuperar el margen extra.
 
-> También existe una segunda causa de muerte permanente que no tiene nada que ver con la violencia: acumular una **deuda bancaria de −$100,000 o peor**. Quien esté en esa situación recibe el mismo aviso y sufre CK al morir. Regularizar el saldo con el banco elimina el riesgo.
+> También existe una segunda causa de muerte permanente que no tiene nada que ver con la violencia: acumular una **deuda bancaria de −$100.000 o peor**. Quien esté en esa situación recibe el mismo aviso y sufre CK al morir. Regularizar el saldo con el banco elimina el riesgo.
 
 ## La salud mental
 
@@ -129,7 +133,7 @@ Basta con **una** de las condiciones positivas para sumar el punto: no se acumul
 
 La **gracia por decoración** es la excepción amable: si estabas ocupado amueblando tu casa —una actividad que obliga a estar en interiores— la felicidad no baja durante los 30 minutos siguientes, aunque tampoco sube.
 
-Los minutos al aire libre se cuentan mientras estés **vivo, fuera de cualquier propiedad y en el mundo exterior**. Estar herido en el suelo o encerrado en un interior no suma.
+Los minutos al aire libre se cuentan mientras estés **vivo, fuera de cualquier propiedad y en el mundo exterior**. Estar herido en el suelo o encerrado en un interior no suma. La única excepción es la cárcel: el tiempo que pasas dentro de ella también cuenta como tiempo al aire libre.
 
 ### Beneficios concretos
 

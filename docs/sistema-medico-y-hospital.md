@@ -4,7 +4,7 @@
 
 El sistema médico de San Andreas Roleplay reúne la **atención de urgencias** que te devuelve a la calle tras caer herido, la **reaparición** cuando mueres, las **enfermedades y dolencias** que puedes interpretar, las **cirugías** que dejan una marca permanente, los **medicamentos** y el trabajo del personal médico. Cómo se registran las heridas, las hemorragias y los vendajes tienen su propia guía: el [sistema de heridas](sistema-de-heridas.md).
 
-El centro de todo es el **All Saints General Hospital**, en Market (Los Santos). Allí está el mostrador de urgencias, allí trabajan los paramédicos y médicos residentes, y allí terminan casi todos los personajes heridos. También hay clínicas privadas repartidas por la ciudad y farmacias donde comprar medicamentos.
+El centro de todo es el **All Saints Medical Center**, en Market (Los Santos). Allí está el mostrador de urgencias, allí trabajan los paramédicos y médicos residentes, y allí terminan casi todos los personajes heridos. También hay clínicas privadas repartidas por la ciudad y farmacias donde comprar medicamentos.
 
 Este documento te sirve tanto si eres un civil que quiere entender qué pasa cuando lo hieren, como si formas parte del cuerpo médico y necesitas saber qué puedes hacer y cuánto cobrar por ello. Si estás del otro lado de la ley y buscas atención sin registros, existe una alternativa clandestina: consulta el [sistema de mercado negro](sistema-de-mercado-negro.md).
 
@@ -17,14 +17,14 @@ Este documento te sirve tanto si eres un civil que quiere entender qué pasa cua
 - /mirar [id] — inspecciona a alguien: verás sus síntomas activos y sus cirugías.
 - /paramedicos — muestra cuántos paramédicos y médicos residentes hay de servicio. Alias: `/mds`.
 
-Comandos del personal médico (paramédicos, residentes y empleados de clínica):
+Comandos del personal médico (paramédicos, residentes y empleados de clínica; el historial también lo consultan policía y justicia):
 
 - /reanimar [id] — devuelve a la vida a un personaje muerto, con botiquín en mano.
-- /curar [id] [precio] — trata las heridas de un paciente por un precio acordado.
+- /curar [id] [precio] — trata las heridas de un paciente por un precio acordado. Los bomberos y los guardias de la cárcel tienen una versión gratuita.
 - /consultamedica [id] [precio] — atiende una dolencia y elimina sus síntomas.
 - /cirugia [id] [precio] — practica una operación que deja una descripción permanente.
 - /certificadomedico [id] — entrega el certificado médico necesario para ciertas licencias.
-- /historialmedico [Nombre_Apellido] — consulta el historial clínico de un personaje.
+- /historialmedico [Nombre_Apellido] — consulta el historial clínico de un personaje (empleados de clínica, policía y poder judicial).
 - /llevarhospital [id] — traslada un cuerpo al hospital (policía, cuando no hay paramédicos).
 
 ## Heridas y hemorragias
@@ -33,7 +33,7 @@ Cuando tu vida llega a cero caes **herido** con **5 minutos** para que alguien t
 
 ## Atención de urgencias en el hospital
 
-El mostrador de urgencias del **All Saints General Hospital** está señalizado en el mapa de Market. Acércate a él a pie (no sirve desde un vehículo) y escribe `/curarme`.
+El mostrador de urgencias del **All Saints Medical Center** está señalizado en el mapa de Market. Acércate a él a pie (no sirve desde un vehículo) y escribe `/curarme`.
 
 Lo que ocurre después depende de cuántos **médicos residentes en servicio** haya dentro del perímetro del hospital:
 
@@ -44,7 +44,7 @@ Lo que ocurre después depende de cuántos **médicos residentes en servicio** h
 
 Cuando hay dos o más residentes y la atención pasa a ser interpretada, solo puedes generar una alerta cada **60 segundos**.
 
-Si te asignan camilla, el tratamiento dura **5 minutos** durante los cuales quedas inmovilizado en la cama. Si te alejas más de **50 metros** del hospital antes de terminar, pierdes tu lugar en la lista de espera y la atención se cancela. Hay **10 camillas**; si están todas ocupadas tendrás que esperar a que se libere una.
+Si te asignan camilla, el tratamiento dura **5 minutos** durante los cuales quedas inmovilizado en la cama. Debes quedarte en la camilla hasta que termine: si te levantas y te alejas más de **5 metros** de ella, pierdes tu lugar en la lista de espera y la atención se cancela sin cobro ni curación. Hay **10 camillas**; si están todas ocupadas no puedes ingresar hasta que se libere una.
 
 Al terminar, tus heridas se limpian por completo y recuperas toda tu vida. El ingreso queda anotado en tu **historial clínico** (con heridas de bala, apuñaladas o heridas leves, según el caso).
 
@@ -52,19 +52,19 @@ Ten presente que el hospital no guarda silencio sobre todo: si llegas armado sin
 
 ### Costos de urgencias
 
-La tarifa de urgencias se cobra de tu **cuenta bancaria** y depende de si tienes casa propia en Los Santos y de cuántos residentes hay atendiendo:
+La tarifa de urgencias se cobra de tu **cuenta bancaria** al terminar el tratamiento y depende de si tienes residencia (una casa propia, una casa o habitación alquilada, o llaves de una casa) y de cuántos residentes hay atendiendo:
 
 | Situación del paciente | Precio | Quién lo paga |
 | --- | --- | --- |
-| Con residencia en Los Santos, **0 o 1** residente en servicio | **$2.500** | El paciente |
-| Con residencia en Los Santos, **2 o más** residentes en servicio | **$5.000** | El paciente |
-| **Sin residencia** en Los Santos | **$5.000** | El paciente (el gasto se contabiliza al gobierno) |
-| **Funcionario público** en servicio | La tarifa vigente | Los fondos de su facción |
+| Con residencia, **0 o 1** residente en servicio | **$2.500** | El paciente |
+| Con residencia, **2 o más** residentes en servicio | **$5.000** | El paciente |
+| **Sin residencia** | **$5.000** | El paciente (el gasto se contabiliza al gobierno) |
+| **Funcionario público** en servicio | La tarifa vigente | Los fondos del gobierno |
 | **Empleado en servicio** de un negocio | La tarifa vigente | La empresa, como seguro médico |
 
 Si hay **al menos un médico residente conectado y en servicio**, el importe de la tarifa ingresa a las arcas del hospital. Si no hay ninguno, el hospital no recauda nada por esa atención.
 
-Tener casa propia en Los Santos abarata la urgencia a la mitad cuando el hospital está tranquilo: consulta el [sistema de propiedades](sistema-de-propiedades.md) para saber cómo comprar una.
+Tener residencia abarata la urgencia a la mitad cuando el hospital está tranquilo: consulta el [sistema de propiedades](sistema-de-propiedades.md) para saber cómo conseguir una.
 
 ## Reaparición tras morir
 
@@ -72,16 +72,20 @@ Si mueres, debes esperar **5 minutos** desde el momento de la muerte antes de po
 
 Al reaparecer eliges tu punto de regreso entre cuatro ubicaciones:
 
-- **Hospital de Los Santos** (All Saints General Hospital, Market)
+- **Hospital de Los Santos** (All Saints Medical Center, Market)
 - **Pizzería de Idlewood**
 - **Unity Station**
 - **Pershing Square**
 
-Reaparecer también cuesta dinero: se aplica la **misma tarifa de urgencias** de la tabla anterior, con las mismas excepciones (funcionarios públicos y empleados con seguro médico lo tienen cubierto por su facción o su negocio).
+Si eres delincuente, el menú suma dos opciones más: las **bases criminales de Idlewood y de El Corona**.
 
-Ten en cuenta que al volver a la vida se te **confiscan los objetos ilegales** que llevabas encima: armas, cargadores, munición y drogas. Los usuarios con nivel premium suficiente solo pierden las armas pesadas y conservan el resto. Más detalles en la [tienda premium](tienda-premium.md).
+Reaparecer también cuesta dinero: se aplica la **misma tarifa de urgencias** de la tabla anterior, que sale de tu cuenta bancaria. Una diferencia importante: si no tienes residencia pagas siempre los **$5.000** de la tarifa sin residencia, incluso siendo funcionario o empleado. Con residencia, los funcionarios públicos en servicio lo tienen cubierto por su facción y los empleados en servicio, por su negocio.
 
-Si estás detenido o cumpliendo una sanción, reapareces directamente en el lugar que corresponda en lugar de ver el menú. Consulta el [sistema de cárcel](sistema-de-carcel.md).
+Si mueres en la isla de Santa Catalina no ves el menú: reapareces directamente en la isla y se te cobra lo mismo que en el hospital. Más detalles en la guía de [Santa Catalina](santa-catalina.md).
+
+Ten en cuenta que al volver a la vida se te **confiscan los objetos ilegales** que llevabas encima: armas, cargadores, munición y drogas. Los usuarios con nivel premium suficiente solo pierden las armas pesadas y conservan el resto. Más detalles en la [tienda premium](tienda-premium.md). Quien tiene licencia de armas, los policías y los guardias de seguridad conservan lo que llevan.
+
+Si estás preso, reapareces directamente en la cárcel en lugar de ver el menú. Consulta el [sistema de cárcel](sistema-de-carcel.md).
 
 ### Curación clandestina
 
@@ -145,9 +149,9 @@ El comando `/paramedicos` (o `/mds`) te dice en cualquier momento cuántos hay d
 
 ### Reanimación
 
-`/reanimar [id]` devuelve a la vida a un personaje clínicamente muerto. Lo pueden usar policías, paramédicos, militares, guardabosques y guardias de seguridad, siempre en servicio y con un **botiquín de primeros auxilios** en la mano derecha, a menos de **2,5 metros** del cuerpo. El reanimado vuelve con **20 de vida**: sigue siendo urgente llevarlo al hospital.
+`/reanimar [id]` devuelve a la vida a un personaje clínicamente muerto. Lo pueden usar policías, paramédicos, militares, guardabosques y guardias de seguridad, en servicio (los guardias de seguridad no lo necesitan) y con un **botiquín de primeros auxilios** en la mano derecha, a menos de **2,5 metros** del cuerpo. El reanimado vuelve con **20 de vida**: sigue siendo urgente llevarlo al hospital.
 
-Si no hay ningún paramédico conectado, un policía en servicio puede usar `/llevarhospital [id]` para que una ambulancia se lleve el cuerpo al All Saints General Hospital.
+Si no hay ningún paramédico conectado, un policía en servicio puede usar `/llevarhospital [id]` para que una ambulancia se lleve el cuerpo al All Saints Medical Center.
 
 ### Atención de heridas en la calle
 
@@ -167,7 +171,13 @@ El precio se acuerda entre **$500 y $50.000**. El paciente recibe la oferta y re
 
 Hay dos límites de habilidad importantes: con **menos de 30 puntos** de habilidad de paramédico no puedes tratar las heridas de verdad (solo frenas el sangrado durante 30 minutos), y necesitas **80 puntos** para revivir a un paciente clínicamente muerto si no eres policía.
 
-Cada curación tiene un **5 %** de probabilidad de subirte un punto de habilidad de paramédico. Los bomberos en servicio tienen su propia versión gratuita de `/curar`, con un **2 %** de probabilidad de subir habilidad.
+Cada curación tiene un **5 %** de probabilidad de subirte un punto de habilidad de paramédico.
+
+#### Curación gratuita de bomberos y guardias
+
+Los bomberos en servicio tienen su propia versión gratuita de `/curar [id]`: sin precio ni oferta, a menos de **3 metros** del paciente, que queda curado al instante. Cada uso tiene un **2 %** de probabilidad de subirte un punto de habilidad de paramédico.
+
+Los guardias de la cárcel (SADCR) en servicio también tienen `/curar [id]` gratuito, con tres diferencias: solo funciona **dentro de la cárcel**, puede tratar a cualquier persona que esté allí y exige llevar un **botiquín de primeros auxilios** en la mano derecha. Aplica el mismo 2 % de probabilidad de subir habilidad.
 
 ### Consulta médica
 
@@ -230,7 +240,7 @@ La **loratadina** anula por completo los estornudos mientras esté activa. El **
 
 Cada atención deja rastro. El **historial clínico** de un personaje guarda las urgencias en el hospital (indicando si llegó con heridas de bala, apuñaladas o heridas leves) y las curaciones hechas por paramédicos y clínicas, con la fecha y el importe cobrado.
 
-`/historialmedico [Nombre_Apellido]` muestra los últimos registros de un personaje. Lo pueden consultar el personal médico, la policía y el poder judicial, siempre que estén dentro de una clínica o del hospital. Es una herramienta habitual en investigaciones: ver dónde y cuándo se atendió alguien puede ser la prueba que faltaba. Consulta el [sistema de justicia](sistema-de-justicia.md).
+`/historialmedico [Nombre_Apellido]` muestra los últimos **32** registros de un personaje. Lo pueden consultar los empleados de clínica trabajando, y la policía y el poder judicial en servicio, siempre que estén dentro de una clínica o del hospital (o en el mostrador de urgencias). Es una herramienta habitual en investigaciones: ver dónde y cuándo se atendió alguien puede ser la prueba que faltaba. Consulta el [sistema de justicia](sistema-de-justicia.md).
 
 Una excepción: quien trabaje en una clínica privada, tenga antecedentes delictivos y al menos **50 puntos** de habilidad de paramédico puede atender **sin dejar registro médico**.
 
@@ -239,7 +249,7 @@ Una excepción: quien trabaje en una clínica privada, tenga antecedentes delict
 - Lleva siempre **un torniquete o un par de vendas** encima. Una hemorragia sin tratar mata mucho antes de que llegue una ambulancia.
 - Si te hirieron con pocos disparos, pide que te levanten con `/levantar` en lugar de esperar: son 60 segundos y no cuesta nada.
 - Usa `/entorno` para llamar al 911 de forma anónima. El aviso llega a la policía, a los paramédicos y a la prensa con tu ubicación, pero sin tu nombre.
-- Comprar casa en Los Santos abarata las urgencias a la mitad cuando el hospital está tranquilo, y a la larga sale rentable si eres de meterte en líos.
+- Tener residencia (casa propia, alquilada o con llaves) abarata las urgencias a la mitad cuando el hospital está tranquilo, y a la larga sale rentable si eres de meterte en líos.
 - Aceptar una dolencia en el evento médico no solo te da **50 Burger Points**: es material de rol gratis, porque tus síntomas quedan visibles en `/mirar` para todo el que te mire.
 - Si vas a tratarte con un médico, no tomes codeína ni salbutamol antes: bloquean la consulta médica y tendrás que esperar.
 - Vendar a otros es la forma más rápida de subir habilidad de paramédico, y con habilidad alta te desangras mucho menos tú mismo.

@@ -6,7 +6,7 @@ En San Andreas Roleplay recibir un disparo, una puñalada o un golpe no es perde
 
 Cuando tu vida cae al mínimo no mueres al instante: **caes herido**, tirado en el suelo, con cinco minutos de margen para que alguien te socorra. Lo que pase en esos cinco minutos depende de la gravedad de las lesiones, de si alguien te venda a tiempo y de lo lejos que estés del hospital.
 
-Esta guía cubre cómo se registran las heridas, qué significa quedar herido, noqueado o brutalmente herido, cómo funcionan las hemorragias y los vendajes, cómo socorrer a alguien sin ser médico, de qué depende tu vida máxima y qué reduce el daño que recibes. Las armas y su daño por calibre están en el [sistema de armas](sistema-de-armas.md); la atención hospitalaria, en el [sistema médico y hospital](sistema-medico-y-hospital.md).
+Esta guía cubre cómo se registran las heridas, qué significa quedar herido, noqueado o brutalmente herido, cómo funcionan las hemorragias y los vendajes, cómo socorrer a alguien sin ser médico, cómo funciona el tacleo, de qué depende tu vida máxima y qué reduce el daño que recibes. Las armas y su daño por calibre están en el [sistema de armas](sistema-de-armas.md); la atención hospitalaria, en el [sistema médico y hospital](sistema-medico-y-hospital.md).
 
 ### Comandos
 
@@ -15,6 +15,7 @@ Esta guía cubre cómo se registran las heridas, qué significa quedar herido, n
 - `/aceptarmuerte` — aceptas tu muerte en lugar de esperar el socorro.
 - `/vendar [id]` — detienes la hemorragia de otra persona con un vendaje o un torniquete.
 - `/vendarme` — te aplicas tú mismo un vendaje o un torniquete.
+- `/taclear` (alias `/tacl`) — activas o desactivas el modo tacleo para derribar a alguien de un puñetazo.
 - `/levantar [id]` — reanimas a alguien noqueado (agachado, 60 segundos).
 - `/metercoche [id]` — subes a un herido a un vehículo cercano (agachado, 60 segundos).
 - `/curarme` — pides atención de urgencias en el mostrador del hospital.
@@ -24,11 +25,17 @@ Esta guía cubre cómo se registran las heridas, qué significa quedar herido, n
 
 Cada herida guarda el arma, la parte del cuerpo, la vida que te quitó y hace cuánto ocurrió. Cualquier persona a menos de **10 metros** puede leer ese historial con `/heridas`, y un cartel flotante sobre tu personaje avisa a los demás de tu estado.
 
-Las zonas que el sistema distingue son **cabeza**, **torso**, **entrepierna**, **brazo izquierdo o derecho** y **pierna izquierda o derecha**. Un disparo a las piernas te las **rompe** y te impide correr; una herida de bala en la cabeza es mortal.
+Las zonas que el sistema distingue son **cabeza**, **torso**, **entrepierna**, **brazo izquierdo o derecho** y **pierna izquierda o derecha**. Un disparo a las piernas te las **rompe** y te cuesta correr y saltar; una herida de bala en la cabeza es mortal. Si vas en una **moto o bicicleta**, un disparo que te alcanza te tira al suelo y también te rompe las piernas.
+
+`/heridas` muestra el historial en una tabla con una fila por zona del cuerpo: cuántas heridas tienes en ella y, en el detalle, cada arma con la vida total que te quitó. Al final de la tabla hay un resumen de **fracturas** (piernas), **cortes** (apuñaladas) y **quemaduras**.
 
 <img width="394" height="429" alt="image" src="https://github.com/user-attachments/assets/dd443fac-d3b0-4ec7-9f06-adbad93c19d2" />
 
 Las heridas registradas **no desaparecen solas**: siguen contando en tu historial y sumando hacia los umbrales de muerte hasta que un médico te trate.
+
+### Mordidas y arañazos de mascotas
+
+Cuando una [mascota](sistema-de-mascotas.md) ataca a una persona le quita **4 de vida** por mordida y deja una herida propia en su historial: **mordida de animal** si es un perro y **arañazo de animal** si es un gato, siempre en una pierna. Estas heridas aparecen en `/heridas`, pero no cuentan hacia los umbrales de gravedad de la tabla de abajo ni provocan hemorragia. Aun así, si te dejan sin vida caes herido como con cualquier otro daño, y como no tienes heridas de bala, de arma blanca ni de otro tipo, quedas **noqueado**.
 
 ## Caer herido
 
@@ -66,7 +73,7 @@ Los **disparos** y las **armas cortantes** abren hemorragias. La primera empieza
 - **Conduciendo**, te quita **15 de vida**, te nubla la visión y pierdes el control del volante.
 - Cada sangrado deja una **mancha de sangre** en el suelo, rastreable por los forenses. Ver [sistema forense](sistema-forense.md).
 
-Hay dos escudos automáticos: dentro de un radio de **25 metros** del All Saints General Hospital nunca te desangras, y la **habilidad de paramédico** reduce la probabilidad de que el sangrado se dispare (a mayor habilidad, menos episodios).
+Hay dos escudos automáticos: dentro de un radio de **25 metros** del All Saints Medical Center nunca te desangras, y la **habilidad de paramédico** reduce la probabilidad de que el sangrado se dispare (a mayor habilidad, menos episodios).
 
 ### Vendas y torniquetes
 
@@ -77,17 +84,38 @@ Para detener una hemorragia necesitas un **vendaje** o un **torniquete** en la m
 | **Torniquete** | Detiene la hemorragia drásticamente | **10 minutos** | Siempre funciona |
 | **Vendaje** (o rollo de gasa) | Vendaje compresivo que frena el sangrado | **5 minutos** | Puede fallar |
 
-El vendaje compresivo **puede fallar**: cuanto mayor sea la habilidad de paramédico de quien lo aplica, más difícil es que se suelte. Si falla, el objeto se gasta igual y tendrás que intentarlo con otro. Cada vendaje o torniquete se consume en su uso, y mientras uno esté activo no puedes reemplazarlo: hay que esperar a que caduque.
+El vendaje compresivo **puede fallar**: sin habilidad de paramédico falla la mitad de las veces, y cuanto mayor sea la habilidad de quien lo aplica, menos probable es el fallo. Si falla, el objeto se gasta igual y tendrás que intentarlo con otro. Cada vendaje o torniquete se consume en su uso, y mientras uno esté activo no puedes reemplazarlo: hay que esperar a que caduque.
 
-Vendar bien también entrena: aplicar un torniquete sube la habilidad de paramédico con un **20 %** de probabilidad (entre 1 y 3 puntos), y un vendaje compresivo exitoso lo hace con un **10 %** de probabilidad (entre 2 y 4 puntos).
+Vendar a otra persona también entrena: colocar un torniquete sube tu habilidad de paramédico con un **20 %** de probabilidad (entre 1 y 3 puntos), y un vendaje compresivo exitoso lo hace con un **10 %** de probabilidad (entre 2 y 4 puntos). Vendarte a ti mismo no sube la habilidad.
 
 ## Socorrer a un herido
 
 No hace falta ser médico para salvar a alguien:
 
 - **`/levantar [id]`** reanima a una persona **noqueada**. Debes estar **agachado**, a menos de **3 metros**, y mantenerte así durante **60 segundos** seguidos. Si te pones de pie, te alejas o subes a un vehículo, la acción se cancela.
-- **`/metercoche [id]`** carga a un herido en un asiento libre de un vehículo cercano (hasta 4 metros), también agachado y sin subirte tú al coche. Es la forma habitual de trasladar a alguien hasta el hospital o una ambulancia.
+- **`/metercoche [id]`** carga a un herido en un asiento libre de un vehículo cercano (hasta 4 metros), también agachado, a menos de 2,5 metros del herido y junto a uno de los asientos, sin subirte tú al coche. Es la forma habitual de trasladar a alguien hasta el hospital o una ambulancia.
 - **Vendar** (ver arriba) gana tiempo: no cura, pero detiene la cuenta atrás del desangrado.
+
+## Tacleo
+
+Con `/taclear` (alias `/tacl`) activas el modo tacleo: tu siguiente golpe con los puños, con la mano derecha vacía, cuenta como un intento de derribar a esa persona. Puedes taclear a alguien que va a pie o en una moto o bicicleta; si va en un coche no se puede. Al hacer el intento, el modo se desactiva solo. Para usarlo necesitas:
+
+- Tener al menos **30 horas de juego**. Los policías no tienen este requisito.
+- No estar herido: ni heridas de bala, apuñaladas, golpes, quemaduras ni piernas rotas.
+- No estar en una partida de paintball.
+- Haber esperado la pausa entre tacleos: **10 minutos**, o **5 minutos** con premium. Cuenta desde cada intento, salga bien o mal. Los policías de servicio no tienen espera.
+
+Si el tacleo sale bien, los dos caen al suelo y quedan derribados unos **5 segundos**; la víctima recibe un aviso de que la tacleaste. Si falla, solo cae quien taclea. Quien está **herido** (con heridas de bala, apuñaladas, golpes, quemaduras o las piernas rotas) no puede resistirse y siempre cae.
+
+La probabilidad de fallar depende de la **diferencia de musculatura** con tu objetivo:
+
+| Situación | Probabilidad de fallar |
+|---|---|
+| Misma musculatura | **20 %** |
+| Tu objetivo tiene más musculatura | Sube **2 puntos porcentuales** por cada punto de diferencia, hasta un máximo de **70 %** |
+| Tú tienes más musculatura | Baja **2 puntos porcentuales** por cada punto de diferencia; con **10 puntos o más** de ventaja no fallas |
+
+Un tacleo es una acción de rol: la persona derribada debe responder a la escena. La musculatura se entrena como se explica en el [sistema de gimnasio](sistema-de-gimnasio.md).
 
 Quien no tenga a nadie cerca puede llegar por su cuenta a la recepción de urgencias del hospital y usar `/curarme` para que lo atiendan. Los delincuentes con contactos tienen su propia clínica clandestina, que no admite heridos brutales; se explica en el [sistema de mercado negro](sistema-de-mercado-negro.md).
 
@@ -101,12 +129,16 @@ Precios de urgencias, requisitos de habilidad del personal médico, reanimación
 
 La vida máxima de tu personaje **no es fija**: depende de la musculatura que hayas desarrollado en el gimnasio y de tu nivel de felicidad.
 
+La vida base sube de forma lineal con la musculatura (de 0 a 25): **100** sin entrenar y **4 puntos más por cada nivel de musculatura**.
+
 | Musculatura | Vida base |
 |---|---|
-| Sin entrenar | **100** |
-| Nivel medio bajo | **125** |
-| Nivel medio alto | **150** |
-| Musculatura máxima | **175** |
+| Sin entrenar (0) | **100** |
+| Nivel 5 | **120** |
+| Nivel 10 | **140** |
+| Nivel 15 | **160** |
+| Nivel 20 | **180** |
+| Musculatura máxima (25) | **200** |
 
 Sobre esa base se aplica tu felicidad: con 50 puntos o menos la vida es la normal, y a partir de ahí crece de forma progresiva hasta un **15 % extra** con 100 de felicidad. Una felicidad baja nunca te penaliza. Los detalles están en el [sistema de gimnasio](sistema-de-gimnasio.md) y en el [sistema de asesinatos](sistema-de-asesinatos.md).
 
@@ -122,4 +154,5 @@ Sobre esa base se aplica tu felicidad: con 50 puntos o menos la vida es la norma
 - **Lleva siempre un torniquete.** Es barato, nunca falla y te compra diez minutos para llegar al hospital.
 - **Si vas a socorrer, agáchate y quédate quieto.** Levantarte o moverte cancela el rescate y hay que empezar de nuevo.
 - **No conduzcas sangrando.** Pierdes más vida, se te nubla la vista y sueltas el volante.
-- **Entrena y come bien.** Musculatura y felicidad suben tu vida máxima hasta un 175 más un 15 %; es la diferencia entre caer al tercer disparo o al quinto.
+- **Entrena y come bien.** Musculatura y felicidad suben tu vida máxima hasta 200 más un 15 %; es la diferencia entre caer al tercer disparo o al quinto.
+- **Ojo con el tacleo.** Si tu objetivo es más fuerte que tú, es muy probable que falles y acabes en el suelo.

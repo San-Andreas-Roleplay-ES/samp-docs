@@ -194,7 +194,7 @@ Sin ser narcotraficante solo tienes acceso a **óxido nitroso** y **crack**. Con
 
 ### Recetas e ingredientes
 
-Cada droga admite varias combinaciones de ingredientes. **Las recetas más exigentes dan más fuerza**, pero piden más habilidad de drogas. Cada gramo fabricado consume **1 unidad de cada ingrediente** de la receta, y los ingredientes deben estar guardados en el **stock de la propiedad**.
+Cada droga admite varias combinaciones de ingredientes. **Las recetas más exigentes dan más fuerza**, pero piden más habilidad de drogas. Cada gramo fabricado consume **1 unidad de cada ingrediente** de la receta. Los ingredientes deben estar **en el suelo, a menos de 5 metros del laboratorio**: tíralos junto a él antes de empezar y la fabricación los toma de ahí, repartiendo el consumo entre los envases que haga falta. Si no alcanzan, el juego te avisa cuántas unidades faltan.
 
 | Droga | Receta | Habilidad | Fuerza |
 |---|---|---|---|
@@ -221,7 +221,13 @@ Cada droga admite varias combinaciones de ingredientes. **Las recetas más exige
 | | La receta con xileno más fentanilo | — | 50 – 65 |
 | | La receta con tolueno más fentanilo | — | 40 – 60 |
 
+Al guardar o tirar un ingrediente, este se une con los del mismo tipo hasta llenar cada envase, en lugar de ocupar un espacio nuevo. Los envases vacíos no desaparecen: puedes volver a rellenarlos.
+
 Los ingredientes se consiguen mediante robos, compras a otros jugadores, saqueos o importación ilegal. Ver [sistema de mercado negro](sistema-de-mercado-negro.md).
+
+### Costo de influencia
+
+Si perteneces a una facción, cada vez que fabricas drogas se descuentan **250 puntos de influencia** de tu facción. El costo se reparte en partes iguales entre **todas las zonas donde tu facción tenga influencia**, estén conquistadas o no; si una zona no alcanza a cubrir su parte, las demás completan el resto. Tu facción necesita tener al menos esos 250 puntos en total, o no puedes fabricar. Si la fabricación no llega a completarse, la influencia se devuelve. Si no perteneces a ninguna facción, no se cobra nada. Ver [sistema de zonas de pandilla](sistema-de-zonas-de-pandilla.md).
 
 ### Cuánto puedes cocinar de una vez
 
@@ -233,25 +239,38 @@ El tope de ingredientes por tanda depende del tipo de propiedad y de tu habilida
 | **10 – 20** | 75 unidades | 100 unidades |
 | **21 o más** | 125 unidades | 150 unidades |
 
+A ese tope base se le suman estos bonos:
+
+- **Base ilegal de tu facción** (pandilla o mafia): **+25 unidades** si cocinas en la propiedad que tu facción tiene asignada como base. Ver [sistema de bases ilegales](sistema-de-bases-ilegales.md).
+- **Territorio propio** (solo pandillas): **+25 unidades** si el laboratorio está en territorio controlado por tu pandilla. El territorio se determina por la entrada exterior de la propiedad.
+- **Territorios controlados** (solo pandillas): **+2%** por cada territorio que controle tu pandilla, hasta **+20%**. Cuentan todos sus territorios y el porcentaje se aplica sobre el límite ya sumado con los bonos anteriores.
+
+Ejemplo: un almacén con habilidad 21 o más (150) en la base ilegal (+25) y en territorio propio (+25) da 200 unidades; si tu pandilla controla 10 territorios o más (+20%), el tope es de **240 unidades**.
+
 ### Explosiones al cocinar metanfetamina
 
-Cocinar **metanfetamina** tiene un **20% de probabilidad de provocar una explosión** en el laboratorio: incendio interior y exterior, humo, alarma de la propiedad, aviso a policía y bomberos, y la radio de la propiedad se apaga.
+Cocinar **metanfetamina** tiene un **20% de probabilidad de provocar una explosión** en el laboratorio. Si el laboratorio está en **territorio controlado por otra facción**, la probabilidad sube al **35%**, y esto vale para cualquier jugador, tenga o no facción. Una explosión provoca incendio interior y exterior, humo, alarma de la propiedad, aviso a policía y bomberos, y la radio de la propiedad se apaga.
 
 Para evitarla, alguien dentro de la propiedad debe tener un **extintor en la mano derecha** en el momento de la cocción. Con un extintor presente la explosión nunca ocurre.
 
 ### Habilidad y tiempo de espera
 
-Cada tanda te da hasta **+3 de habilidad de drogas** (menos si fabricas menos de 3 gramos) y deja un tiempo de espera proporcional a la cantidad producida:
+Cada tanda te da hasta **+3 de habilidad de drogas** (menos si fabricas menos de 3 gramos) y deja un tiempo de espera proporcional a la cantidad producida. El tiempo depende de tu habilidad de drogas:
 
-| Habilidad | Espera por gramo fabricado |
-|---|---|
-| **0 – 9** | 4 horas |
-| **10 – 20** | 2 horas |
-| **21 – 50** | 1 hora 45 min |
-| **51 – 75** | 1 hora 30 min |
-| **76 o más** | 1 hora 15 min |
+| Habilidad | Espera por gramo | Espera por 100 gramos |
+|---|---|---|
+| **0 – 9** | 28 min 48 s | 48 horas |
+| **10 – 20** | 14 min 24 s | 24 horas |
+| **21 – 50** | 12 min 36 s | 21 horas |
+| **51 – 75** | 10 min 48 s | 18 horas |
+| **76 o más** | 9 min | 15 horas |
 
-Las cuentas premium recortan esa espera: **−15%**, **−25%**, **−35%** o **−50%** según el rango. Ver [tienda premium](tienda-premium.md).
+Esa espera se reduce todavía más con estos descuentos, que se aplican uno sobre otro:
+
+- **Cuentas premium**: **−15%**, **−25%**, **−35%** o **−50%** según el rango. Ver [tienda premium](tienda-premium.md).
+- **Territorio propio** (solo pandillas): **−25%** si cocinas en un laboratorio ubicado en territorio controlado por tu pandilla.
+
+En el mejor caso (habilidad 76 o más, premium de rango máximo y territorio propio), 100 gramos dejan una espera de unas **5 horas y media**.
 
 ---
 
@@ -259,20 +278,39 @@ Las cuentas premium recortan esa espera: **−15%**, **−25%**, **−35%** o **
 
 | Droga | Cómo se obtiene |
 |---|---|
-| **Marihuana** | Se cultiva con semillas, abono, agua y fertilizante. Ver [sistema de plantaciones de marihuana](sistema-de-plantaciones-de-marihuana.md) |
+| **Marihuana** | Se cultiva con semillas, abono, agua y fertilizante, y las plantas al aire libre rinden **+25% de gramos** al cosecharlas. Ver [sistema de plantaciones de marihuana](sistema-de-plantaciones-de-marihuana.md) |
 | **Hongos** | Se recogen a mano en el campo del suroeste del estado, en zonas boscosas y montañosas. Cada mata da **1 a 10 gramos** con **50 a 74 de fuerza**. Los puntos reaparecen al reiniciar el servidor, cada uno con un **30% de probabilidad** |
 
-La marihuana no se consume directamente: con `/usardroga` armas un **porro** que pasa a tu mano izquierda, y lo fumas después. Cada calada suma una fracción de dosis y algo de adicción.
+La marihuana no se consume directamente: con `/usardroga` armas un **porro** que pasa a tu mano izquierda, y lo fumas después. Cada **0.1 gramo** que usas para armarlo rinde **3 caladas** (30 por gramo), y cada calada suma una fracción de dosis y algo de adicción.
 
 ---
 
 ## Venta de drogas
 
-La forma más directa de vender es a los **junkies**, los compradores callejeros repartidos por la ciudad. Se documentan en detalle en [sistema de mercado negro](sistema-de-mercado-negro.md).
+La forma más directa de vender es a los **junkies**, los compradores callejeros repartidos por la ciudad, con `/traficar` y la droga en la **mano derecha**. Para venderles debe haber al menos **2 policías en servicio**. Se documentan en detalle en [sistema de mercado negro](sistema-de-mercado-negro.md).
 
 Lo que pagan depende de tres cosas: **cuántos gramos** le vendes, el **precio base** de esa sustancia y su **fuerza**. La fuerza multiplica el precio entre **x0.5** (mercancía casi inútil) y **x2** (pureza máxima), así que vender droga degradada cuesta la mitad. Los junkies especiales pagan un **25% extra**, y durante una **misión de venta** el precio se **duplica**.
 
-Cada junkie lleva encima entre **$10,000 y $20,000** y se marcha cuando se queda sin efectivo, así que una tanda grande necesita varios compradores. El precio base por gramo va desde los **$52** de la marihuana hasta los **$444** de la heroína, pasando por los **$371** del crack, **$361** de la cocaína, **$355** de la metanfetamina, **$314** del MDMA, **$173** del fentanilo, **$108** del LSD y **$79** del óxido nitroso.
+Los **camellos** son compradores que esperan en esquinas fijas de la ciudad y pagan un **20% más** que un junkie normal. Ese extra no se aplica durante una misión de venta, y las sustancias que también se compran en negocios se pagan siempre a su precio base, sin multiplicadores por fuerza ni extras.
+
+Cada junkie lleva encima entre **$10.000 y $20.000** y se marcha cuando se queda sin efectivo, así que una tanda grande necesita varios compradores. Los campamentos de los callejones van cambiando de lugar por la ciudad y solo existen mientras hay gente en ellos.
+
+El precio base por gramo, de mayor a menor:
+
+| Sustancia | Precio base por gramo |
+|---|---|
+| **Heroína** | $444 |
+| **Metanfetamina** | $425 |
+| **Crack** | $371 |
+| **Cocaína** | $361 |
+| **MDMA** | $230 |
+| **LSD** | $210 |
+| **Fentanilo** | $173 |
+| **Óxido nitroso** | $79 |
+| **Hongos** | $72 |
+| **Marihuana** | $52 |
+
+> ⚠️ Cuidado con lo que llevas encima en los callejones. Si ofreces a un camello o a un vagabundo algo que no es droga, o lo atacas, puede ponerse agresivo y atacarte. Un vagabundo que te deje herido te roba el **10% de tu efectivo**, hasta un máximo de **$2.500**.
 
 ---
 
@@ -291,6 +329,7 @@ Con `/falsificarreceta` puedes crear una **receta médica falsa de opioides** pa
 - **Una droga a la vez.** El salto de 2 a 3 sustancias activas es la diferencia entre ir colocado y acabar en el suelo con una herida.
 - **Guarda la mercancía en el refrigerador.** Tres puntos de fuerza al día en la cocaína o la metanfetamina se comen el margen de venta en menos de una semana.
 - **Vende pronto y vende puro.** El precio se multiplica por la fuerza: mercancía fresca vale el doble que la que lleva semanas guardada en un bolsillo.
-- **Invierte en habilidad antes que en recetas caras.** Pasando de 20 de habilidad puedes cocinar tandas de 125 a 150 unidades y con la mitad de espera.
+- **Cocina donde te conviene.** En la base ilegal y en territorio de tu pandilla fabricas más por tanda y esperas menos; en territorio rival la metanfetamina explota con más facilidad. No olvides que cada fabricación te cuesta influencia de tu facción.
+- **Invierte en habilidad antes que en recetas caras.** Pasando de 20 de habilidad puedes cocinar tandas de 125 a 150 unidades y la espera por gramo baja a menos de la mitad que con habilidad 0.
 - **Ten un extintor a mano si cocinas metanfetamina.** Una explosión cancela la operación y trae a la policía y a los bomberos a tu casa.
 - **Ojo con la abstinencia de las duras.** Perder 30 de vida cada hora sin poder consumir convierte cualquier tiroteo en una sentencia; guarda medicamentos de detoxicación.

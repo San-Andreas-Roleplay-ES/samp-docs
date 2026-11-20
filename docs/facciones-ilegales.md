@@ -12,12 +12,15 @@ Toda la actividad pública del rol ilegal —presentaciones, reclutamientos, com
 - `/miembros` — lista de miembros de tu facción.
 - `/baseilegal` — consulta la base de tu facción; el líder la asigna sobre una propiedad propia.
 - `/influencias` — puntos de influencia de cada pandilla en la zona donde estás parado.
+- `/misinfluencias` — resumen de la influencia de tu facción: territorios conquistados, zonas con influencia, puntos totales y dinero por payday (pandillas, mafias y penitenciarías).
 - `/mejorardelincuente` — sube tus habilidades criminales a un mínimo por **$25.000** (solo oficiales).
 - `/narcotraficante` — te conviertes en narcotraficante y desbloqueas el catálogo completo de drogas.
 - `/compraringredientes` — compra de precursores químicos en un punto asignado.
 - `/robartrailer` — vende el tráiler de un camión robado.
 - `/skimmer` — fabrica un lector de tarjetas para cajeros.
-- `/falsificardinero`, `/falsificarreceta`, `/falsificarlicencia` — falsificaciones.
+- `/falsificar` — tanda de billetes falsos en una imprenta clandestina (ver [Sistema de falsificación de billetes](sistema-de-falsificacion-de-billetes.md)).
+- `/falsificarreceta`, `/falsificarlicencia` — falsificación de recetas y licencias (solo oficiales).
+- `/pedidoarmas`, `/pedidodrogas` — pedidos por teléfono al proveedor ilegal (solo el líder de una penitenciaría oficial).
 - `/ayuda` — muestra los comandos disponibles según tu facción.
 
 ## Los tres niveles de estatus
@@ -36,10 +39,40 @@ Muchos grupos con buen desempeño aspiran, con el tiempo, a convertirse en desta
 
 ## Mafias y pandillas
 
-Dentro del rol ilegal hay dos tipos de organización, y el tipo no depende del estatus:
+Dentro del rol ilegal hay tres tipos de organización, y el tipo no depende del estatus:
 
-- **Mafias**: estructuras jerárquicas de crimen organizado — familias, carteles, sindicatos. Su fuerte es el negocio: tráfico, contrabando, corrupción y economía sumergida.
+- **Mafias**: estructuras jerárquicas de crimen organizado — familias, carteles, sindicatos. Su fuerte es el negocio: tráfico, contrabando, corrupción y economía sumergida. **No conquistan territorios**, pero sí acumulan influencia, que alimenta su red de contactos (ver más abajo).
 - **Pandillas**: organizaciones de calle ligadas a un territorio. Además de todo lo anterior, son las únicas que **ganan influencia territorial más rápido**: cuando un miembro de una pandilla permanece a pie dentro de una zona de banda, acumula influencia para su facción a mayor ritmo que una mafia. Los detalles están en [Sistema de zonas de pandilla](sistema-de-zonas-de-pandilla.md).
+- **Penitenciarías**: organizaciones de presos y de la vida carcelaria. Solo suman influencia en la zona de la prisión, incluso desde dentro de la cárcel. Las oficiales pueden hacer pedidos ilegales (ver [Pedidos ilegales de las penitenciarías](#pedidos-ilegales-de-las-penitenciarías)).
+
+### Influencia, payday y territorio
+
+La influencia de una facción es la suma de los puntos que tiene en todas las zonas. Dependiendo del tipo, sirve para cosas distintas:
+
+- **Payday por influencia.** Las pandillas y las mafias cobran en cada payday **$1 por cada 20 puntos de influencia** que suman entre todas sus zonas, estén conquistadas o no. El pago tiene un tope según el estatus de la facción: **$1.000** (grupo), **$2.000** (destacada) y **$3.000** (oficial), para cada miembro. El total de puntos se actualiza una vez por hora, así que el pago puede ir algo atrasado respecto de tu influencia real. Los presos y los miembros de facciones cerradas no cobran este pago. Las penitenciarías no lo reciben.
+- **Fabricar cuesta influencia.** Cada vez que ensamblas armas con `/ensamblararmas` se descuentan **1.000 puntos** de influencia de tu facción, y cada vez que fabricas droga con `/creardroga`, **250 puntos**. El costo se reparte en partes iguales entre todas las zonas donde tu facción tiene influencia; si una zona no alcanza a cubrir su parte, las demás completan el resto. Si tu facción no tiene influencia suficiente, no puedes fabricar. Si la fabricación no se completa, la influencia se devuelve.
+- **Territorios.** Solo las pandillas conquistan zonas. Las zonas que una mafia ya controlaba se mantienen hasta que una pandilla supere los 100 puntos de influencia en ellas.
+- **Ventas en tu territorio.** Cuando un miembro de una pandilla completa una venta a un cliente de misión dentro de un territorio de su facción, la influencia de esa zona sube para su pandilla: **+5** (grupo), **+6** (destacada) o **+8** (oficial). La venta con `/traficar` no cuenta. Las demás pandillas pierden 1 punto allí.
+
+Con `/misinfluencias` ves el resumen de tu facción: territorios conquistados, zonas con influencia (de mayor a menor), puntos totales y cuánto genera por payday.
+
+### Red de contactos de las mafias
+
+Como no conquistan territorios, las mafias se apoyan en su **red de contactos**, que depende de la influencia total de la familia en toda la ciudad. El nivel se recalcula cada hora:
+
+| Nivel | Influencia total necesaria |
+|---|---|
+| 1 | 500 puntos |
+| 2 | 1.500 puntos |
+| 3 | 3.000 puntos |
+
+Por cada nivel, los contrabandistas de la mafia obtienen en el ensamblaje de armas:
+
+- **10% de descuento** en el precio de todas las armas.
+- **10% menos de espera** entre pedidos, en todas las armas.
+- **+1 arma por pedido**, excepto en los rifles.
+
+En el nivel 3 son **30% de descuento, 30% menos de espera y +3 armas por pedido**. `/ensamblararmas` muestra el nivel actual de tu familia.
 
 ## Tabla de beneficios por estatus
 
@@ -51,13 +84,16 @@ Dentro del rol ilegal hay dos tipos de organización, y el tipo no depende del e
 | Chat interno de facción (`/f`) | No | No | Sí |
 | Impulso de habilidades criminales (`/mejorardelincuente`) | No | No | Sí |
 | Armamento pesado en el ensamblaje de armas | No | No | Sí |
-| Límite de armas fabricadas por facción | **10** | **10** | **20** |
-| Espera entre tandas de fabricación de armas | 24 h | 24 h | **12 h** |
+| Máximo de pistolas por pedido de ensamblaje | 8 | 8 | **15** |
+| Espera entre tandas de fabricación de armas (por unidad) | 24 h | 24 h | **12 h** |
 | Comprador especial del puerto (paga **+25%**) | No | No | Sí |
-| Falsificación de dinero, recetas y licencias | No | No | Sí |
+| Falsificación de recetas y licencias | No | No | Sí |
 | Lector de tarjetas para cajeros (`/skimmer`) | No | No | Sí |
 | Venta de tráileres robados (`/robartrailer`) | No | No | Sí |
 | Exención de la pérdida de habilidad criminal | No | Sí | Sí |
+| Habilidad criminal y de drogas que pierdes al ser arrestado | 100% | **75%** | **50%** |
+| Tope del payday por influencia | $1.000 | $2.000 | $3.000 |
+| Pedidos ilegales por teléfono | No | No | Solo penitenciarías |
 
 ## Qué desbloquea ser destacada
 
@@ -70,6 +106,13 @@ Es el lugar natural donde montar el laboratorio de drogas, el taller de armas y 
 ### Producción de drogas completa
 
 Con `/narcotraficante` te conviertes en traficante de drogas de forma permanente. Sin ese estatus, un laboratorio solo produce **óxido nitroso y crack**; como narcotraficante se abre el catálogo completo — cocaína, MDMA, heroína y el resto. A cambio pierdes acceso a los delitos menores: el personaje queda demasiado expuesto para andar hurtando por la calle.
+
+Cocinar tiene ventajas según dónde lo hagas:
+
+- En la **base ilegal** de tu facción (pandillas y mafias), el límite de ingredientes por cocinada sube **+25 unidades**.
+- Si eres de una **pandilla** y el laboratorio está en un territorio de tu propia pandilla, el límite sube otras **+25 unidades** y la espera entre cocinadas baja un **25%**.
+- Además, una pandilla suma **+2%** al límite de ingredientes por cada territorio que controla, hasta **+20%**.
+- Si cocinas en territorio de otra facción, la probabilidad de explosión del laboratorio sube de **20%** a **35%**. El extintor sigue evitándola.
 
 Todo el proceso de cultivo, cocina, pureza y venta está en [Sistema de drogas](sistema-de-drogas.md) y [Sistema de plantaciones de marihuana](sistema-de-plantaciones-de-marihuana.md).
 
@@ -86,6 +129,10 @@ Para usarlo:
 ### Sin pérdida de habilidad criminal
 
 Fuera de las facciones ilegales, la habilidad de delincuente **se oxida**: en cada payday, si no cometiste ningún ilícito en las últimas **24 horas**, pierdes **5 puntos**. Los miembros de facciones ilegales **destacadas u oficiales** están exentos de esa pérdida, igual que los usuarios Ruby. Los detalles del sistema completo están en [Sistema de delincuente](sistema-de-delincuente.md).
+
+### Menos pérdida al ser arrestado
+
+Cuando te arrestan pierdes puntos de habilidad de delincuente y de drogas según la duración de la condena. Las facciones ilegales protegen a sus miembros: en una facción **oficial** pierdes solo el **50%** de lo normal, y en una **destacada**, el **75%**. En un grupo no oficial o fuera de una facción la pérdida es completa.
 
 ## Qué desbloquea ser oficial
 
@@ -114,9 +161,39 @@ Todos los contrabandistas pueden fabricar **pistolas y pistolas automáticas**. 
 - Rifles de asalto
 - Material de terrorismo
 
-Además, la espera entre tandas de fabricación baja de **24 horas** a **12 horas** por unidad (los rifles mantienen su espera larga de **168 horas** por unidad para todos), y el tope de armas que la facción puede tener fabricadas sube de **10** a **20**.
+Además, la espera entre tandas de fabricación baja de **24 horas** a **12 horas** por unidad (los rifles mantienen su espera larga de **168 horas** por unidad para todos).
 
-Los topes por categoría se aplican igual a todos: **20** pistolas, **10** subfusiles, **5** escopetas y **2** rifles — recortados siempre al límite de la facción. El proceso completo está en [Sistema de ensamblaje de armas](sistema-de-ensamblaje-de-armas.md).
+Cantidad máxima por pedido de ensamblaje:
+
+| Arma | Contrabandista normal | Avanzado u oficial |
+|---|---|---|
+| Pistolas | 8 | **15** |
+| Subfusiles | 8 | 8 |
+| Escopetas | 4 | 4 |
+| Rifles | 1 | 1 |
+| Otras armas | 4 | 4 |
+
+Las mafias suman a esos máximos el bono de su red de contactos (ver [Red de contactos de las mafias](#red-de-contactos-de-las-mafias)). Cada pedido de ensamblaje cuesta además influencia de la facción. El proceso completo está en [Sistema de ensamblaje de armas](sistema-de-ensamblaje-de-armas.md).
+
+### Pedidos ilegales de las penitenciarías
+
+Las penitenciarías oficiales pueden encargar armas y drogas por teléfono a un proveedor, sin ensamblar ni cocinar nada. Solo **el líder** de la facción puede pedirlo, con el comando `/pedidoarmas` o `/pedidodrogas`.
+
+1. Al usar el comando recibes un SMS con el número del proveedor. Tienes **1 hora** para llamarlo; el número es solo para ti.
+2. Al contestar, el proveedor te ofrece un catálogo. Eliges un artículo y confirmas el pedido.
+3. El proveedor te dicta las coordenadas de la entrega. La mercancía llega **entre 25 y 35 minutos** después, a uno de **11 puntos de entrega** repartidos por el norte del mapa: una caja metálica en el caso de las armas y un bolso deportivo en el caso de las drogas. **15 minutos antes** de la entrega la policía recibe un aviso por radio con la zona.
+
+| | Armas | Drogas |
+|---|---|---|
+| Qué recibes | **20 unidades** de pistola, escopeta o subfusil, o **10** de fusil de asalto o rifle, cada una con un cargador lleno | **500 gramos** de una droga, de muy alta pureza |
+| Espera para volver a pedir | **14 días** | **7 días** |
+
+Requisitos y costos:
+
+- Cada pedido cuesta **1.000 puntos de influencia** de tu facción en la zona de la prisión. Si el pedido no se completa, la influencia vuelve a tu facción.
+- La facción debe ser **oficial** y no puede tener otro pedido del mismo tipo en camino. La espera de 14 o 7 días corre desde que confirmas el pedido.
+- Debes estar vivo. Debe haber al menos **100 jugadores conectados** y **5 policías en servicio**.
+- No se puede pedir en la hora y media previa al reinicio diario del servidor.
 
 ### El comprador del puerto
 
@@ -126,15 +203,16 @@ No hace negocios con cualquiera: **solo compra a miembros de facciones ilegales 
 
 ### Falsificaciones
 
-Tres comandos exclusivos, todos ejecutables solo desde una facción oficial:
+Dos comandos exclusivos, ejecutables solo desde una facción oficial:
 
 | Comando | Qué produce | Requisitos | Coste |
 |---|---|---|---|
-| `/falsificardinero` | Fajo de billetes falsos de **$10.000** | Habilidad de delincuente **80** | **$1.000** |
 | `/falsificarreceta` | Receta médica de opioides | Habilidad de drogas **50** | **$150** |
 | `/falsificarlicencia [Nombre Apellido]` | Licencia de conducir falsa | Habilidad de electrónica **10**, laptop en la mano izquierda | **$1.000** |
 
-En los tres casos necesitas la mano derecha libre para recibir el producto.
+En los dos casos necesitas la mano derecha libre para recibir el producto.
+
+Los billetes falsos ya no dependen de una facción: se fabrican con `/falsificar` en una imprenta clandestina montada con muebles dentro de una propiedad, y los puede usar cualquier personaje con **habilidad de delincuente 50** y el nivel de falsificación que pida cada máquina. Todo el proceso está en [Sistema de falsificación de billetes](sistema-de-falsificacion-de-billetes.md).
 
 ### Lector de tarjetas y tráileres robados
 
@@ -156,7 +234,7 @@ Tanto el autor como los compañeros reciben un aviso indicando cuántos puntos s
 
 ## Sueldo
 
-Todo miembro de una facción cobra en cada payday el **sueldo de su rango**, que paga la caja de la organización, más un **subsidio del gobierno de $1.000** que se suma automáticamente. Estando arrestado no se cobra nada.
+Todo miembro de una facción cobra en cada payday el **sueldo de su rango**, que paga la caja de la organización, más un **subsidio del gobierno de $1.000** que se suma automáticamente. Los miembros de pandillas y mafias cobran además el **pago por influencia** de su facción (hasta $1.000, $2.000 o $3.000 según el estatus; ver [Influencia, payday y territorio](#influencia-payday-y-territorio)). Estando arrestado no se cobra nada, y una facción cerrada no paga ni el sueldo de rango ni el pago por influencia.
 
 ## Consejos
 

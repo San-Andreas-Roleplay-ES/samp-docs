@@ -2,7 +2,7 @@
 
 ## Introducción
 
-En San Andreas Roleplay las armas no son un simple botón: son **objetos físicos** que ocupan espacio en tu inventario, pesan, se ensucian, se rompen, llevan un número de serial grabado y necesitan munición real para funcionar. Comprar una pistola legalmente exige licencia, casa propia, antecedentes limpios y horas de juego; conseguirla por la vía ilegal exige contactos. Y una vez que disparas, cada impacto queda registrado en el cuerpo de la víctima con el arma, la zona alcanzada y el daño causado.
+En San Andreas Roleplay las armas no son un simple botón: son **objetos físicos** que ocupan espacio en tu inventario, pesan, se ensucian, se rompen, llevan un número de serial grabado y necesitan munición real para funcionar. Comprar una pistola legalmente exige licencia, cuenta certificada, casa propia, antecedentes limpios y horas de juego; conseguirla por la vía ilegal exige contactos. Y una vez que disparas, cada impacto queda registrado en el cuerpo de la víctima con el arma, la zona alcanzada y el daño causado.
 
 Lo que ocurre en el cuerpo de la víctima (caer herido, hemorragias, vendajes, vida máxima) tiene su propia guía: el [sistema de heridas](sistema-de-heridas.md).
 
@@ -24,14 +24,15 @@ Esta guía cubre los requisitos para comprar y portar, los precios reales, la mu
 
 ### Usar cualquier arma
 
-Antes de disparar nada, tu personaje necesita cumplir dos condiciones básicas:
+Antes de disparar nada, tu personaje necesita cumplir tres condiciones básicas:
 
 | Requisito | Valor |
 |---|---|
 | Horas de juego mínimas | **24 horas** |
 | Autenticación de doble factor (2FA) | **Activada en tu cuenta** |
+| Certificación | **Cuenta certificada** |
 
-Sin esas dos cosas no puedes cargar ni disparar un arma. La verificación de doble factor se activa desde el [panel de control](panel-de-control.md). Los policías en servicio están exentos de estos requisitos.
+Sin esas tres cosas no puedes cargar ni disparar un arma. La verificación de doble factor y la certificación se gestionan desde el [panel de control](panel-de-control.md); la [certificación](sistema-de-certificacion.md) es un examen de normas que se aprueba una sola vez por cuenta, y después de aprobarlo debes volver a conectarte para que tu personaje la reconozca. Los policías en servicio están exentos de estos requisitos.
 
 ### Comprar un arma en Ammu-Nation
 
@@ -41,12 +42,15 @@ Las armerías Ammu-Nation son negocios normales, con dueño, empleados y stock, 
 |---|---|
 | **Licencia de portación (CCW)** | Obligatoria para llevarte cualquier arma. |
 | **50 horas de juego** | Se aplica también a cargadores y cajas de munición. |
+| **Cuenta certificada** | Se aplica también a cargadores y cajas de munición. |
 | **Una casa a tu nombre** | Sin propiedad residencial no te venden armas ni munición. |
 | **Sin antecedentes penales** | Un solo arresto en tu historial te cierra la venta. |
-| **Mano derecha libre** | El arma se te entrega en la mano. |
-| **Espera entre compras** | **Dos semanas** entre arma y arma (una semana con premium alto). |
+| **Espacio para recibirla** | El arma solo puede ir a tu mano derecha o a un bolso o mochila donde quepa. Si no hay sitio, la compra se cancela antes de cobrarte. |
+| **Espera entre compras** | **Dos semanas** entre arma y arma (una semana con premium Oro o superior). |
 
 Además, si tu personaje tiene asesinatos registrados, la tienda tampoco te venderá cargadores ni munición salvo que tengas licencia vigente o pertenezcas a las fuerzas del orden o a seguridad privada.
+
+La espera entre compras es una sola para todas las vías: si acabas de comprar un arma en una tienda, tampoco podrás conseguir otra por el [mercado negro](sistema-de-mercado-negro.md) hasta que termine.
 
 ### La licencia de portación (CCW)
 
@@ -142,13 +146,13 @@ El cargador **.44** de la Desert Eagle es el más caro del catálogo con **$810*
 
 ## Estado del arma
 
-Cada arma tiene una **calidad de 0 a 100** que baja con cada disparo y también **un punto por día** por simple envejecimiento, aunque la guardes sin tocarla. Cuanto peor esté el arma, menos daño hace y más fácil es que se atasque.
+Cada arma tiene una **calidad de 0 a 100** que baja **0,1 puntos** con cada disparo que impacta a una persona y también **un punto por día** por simple envejecimiento, aunque la guardes sin tocarla. Cuanto peor esté el arma, menos daño hace y más fácil es que se atasque.
 
 | Estado | Calidad | Efecto |
 |---|---|---|
 | **En buen estado** | Más de 50 | Daño íntegro, sin atascos. |
-| **Desgastada** | Entre 26 y 50 | Pierde **entre un 30% y un 60%** de daño; falla al recargar el 10% de las veces. |
-| **Dañada** | Entre 2 y 25 | Pierde hasta un **60%** de daño; falla al recargar un tercio de las veces. |
+| **Desgastada** | Entre 26 y 50 | Pierde **entre un 30% y un 45%** de daño; falla al recargar el 10% de las veces. |
+| **Dañada** | Entre 2 y 25 | Pierde **entre un 45% y un 60%** de daño; falla al recargar un tercio de las veces. |
 | **Rota** | 1 o menos | El daño cae un **70%** y el cargador queda atascado: no se puede recargar. |
 
 ### Reparar el arma
@@ -181,7 +185,7 @@ Un delincuente experimentado puede limar el serial con un **destornillador en la
 
 <img width="212" height="18" alt="image" src=../assets/sistema-de-armas/serial-borrado2.png>
 
-Cada disparo deja además casquillos en el suelo y restos de pólvora en las manos, que los investigadores pueden recoger y analizar. Ese trabajo se detalla en el [sistema forense](sistema-forense.md).
+Cada disparo deja además casquillos en el suelo y restos de pólvora en las manos, que los investigadores pueden recoger y analizar. Ese trabajo se detalla en el [sistema forense](sistema-forense.md). Las [cámaras de seguridad](sistema-de-camaras-de-seguridad.md) instaladas en negocios y propiedades también anotan los disparos que ocurren a la vista de su lente.
 
 ## Heridas
 
@@ -202,13 +206,14 @@ El **chaleco kevlar** es un accesorio que se coloca sobre el torso y absorbe imp
 Cómo funciona:
 
 - Solo protege **impactos al torso**. Un tiro a la cabeza, los brazos o las piernas lo atraviesa.
-- Solo absorbe el impacto si el disparo viene **de al menos 10 metros** o si el arma es de las que el chaleco puede parar. **A quemarropa muchas armas lo perforan.**
-- **Las escopetas y los rifles de gran calibre lo ignoran siempre**: Citadel CDP12, Mossberg 590A1 y Mav88, Remington 870, Benelli M4, Serbu Super Shorty, Mossberg 500 Compact Cruiser, Tikka T3x, Sako 85 y M40A6 atraviesan el kevlar sin importar la distancia.
+- Las pistolas, los subfusiles, los fusiles de asalto y la mayoría de los rifles son frenados por el chaleco **a cualquier distancia**.
+- **Las escopetas y tres rifles de gran calibre lo atraviesan a menos de 10 metros**: Citadel CDP12, Mossberg 590A1 y Mav88, Remington 870, Benelli M4, Serbu Super Shorty, Mossberg 500 Compact Cruiser, Tikka T3x, Sako 85 y M40A6. Si el disparo viene **de 10 metros o más**, el chaleco también los frena.
 - El chaleco se **gasta**: cada impacto absorbido le quita 20 puntos, y cuando baja del mínimo queda inservible. No se repara con el kit de limpieza.
 - Los impactos que el chaleco frena **no generan herida registrada ni hemorragia**: por eso es la diferencia entre un susto y una ambulancia.
 - No puede usarse en eventos especiales.
+- Si te lo quitas, conserva los puntos de protección que le quedaban.
 
-Para colocártelo, ten el chaleco en la mano y usa `/usar`. El chaleco kevlar estándar se lleva bajo la ropa y no es visible; otros modelos (policiales, reflectantes) sí se ven y pueden ajustarse con `/editar chaleco`.
+Para colocártelo, ten el chaleco en la mano y usa `/usar`. El chaleco kevlar estándar se lleva bajo la ropa y no es visible; los chalecos de las fuerzas del orden (por ejemplo los modelos modernos de LSPD y LSSD, que sus facciones entregan con `/equipar`) sí se ven, pueden ajustarse con `/editar chaleco` y también traen 100 puntos de protección. Los chalecos reflectantes y demás prendas de ese espacio que no son antibalas son solo ropa: no dan protección.
 
 Existen también reducciones de daño que no dependen del chaleco: los **escudos** antidisturbios reducen a la mitad el daño recibido, igual que el equipo táctico pesado de las unidades especiales; disparar desde dentro de un vehículo a más de 7 metros **falla la mitad de las veces**, y los vehículos blindados anulan por completo el daño a sus ocupantes. Tu vida máxima (musculatura y felicidad) se explica en el [sistema de heridas](sistema-de-heridas.md).
 
@@ -264,6 +269,8 @@ El daño indicado es el de un arma **en buen estado**. Recuerda que la calidad r
 
 ### Pistolas con silenciador (de bolsillo)
 
+Un disparo sin silenciador dentro de un banco o una joyería enciende la alarma sonora; con silenciador no (consulta el [robo al banco](sistema-de-robo-al-banco.md) y el [robo a la joyería](sistema-de-robo-a-la-joyeria.md)).
+
 | Arma | Calibre | Cargador | Peso | Daño | Coste base |
 |---|---|---|---|---|---|
 | Suppressed Ruger MkIV | .22 LR | 10 | 1,0 kg | 18 | $1.450 |
@@ -285,7 +292,7 @@ El daño indicado es el de un arma **en buen estado**. Recuerda que la calidad r
 
 ### Escopetas compactas (de bolsillo)
 
-Ignoran el chaleco antibalas.
+Atraviesan el chaleco antibalas a menos de 10 metros.
 
 | Arma | Calibre | Cargador | Peso | Daño | Coste base |
 |---|---|---|---|---|---|
@@ -294,7 +301,7 @@ Ignoran el chaleco antibalas.
 
 ### Escopetas (pesadas)
 
-Ignoran el chaleco antibalas.
+Atraviesan el chaleco antibalas a menos de 10 metros.
 
 | Arma | Calibre | Cargador | Peso | Daño | Coste base |
 |---|---|---|---|---|---|
@@ -332,7 +339,7 @@ Además de su poder de parada, una escopeta disparada contra la puerta de un int
 
 ### Rifles y francotiradores (pesadas)
 
-| Arma | Calibre | Cargador | Peso | Daño | Coste base | Perfora chaleco |
+| Arma | Calibre | Cargador | Peso | Daño | Coste base | Perfora chaleco a menos de 10 m |
 |---|---|---|---|---|---|---|
 | Savage Axis XP | .308 Winchester | 4 | 3,3 kg | 40 | $972 | No |
 | Winchester Modelo 70 | .30-06 Springfield | 4 | 3,3 kg | **55** | $972 | No |
@@ -374,19 +381,21 @@ Las bombas y artefactos explosivos tienen su propio sistema; consulta el [sistem
 
 Al reaparecer tras la muerte, el sistema revisa tu inventario. Si **no tienes licencia de armas** y no perteneces a la policía ni a seguridad privada, **pierdes todo el material ilegal que llevabas encima**: armas, cargadores, munición y drogas. Es la pérdida más cara de todo el sistema y la razón principal para tramitar la licencia si juegas un personaje legal.
 
-Los jugadores con premium de nivel alto conservan el material pequeño y solo pierden las **armas pesadas**.
+Los jugadores con premium Rubí conservan el material pequeño y solo pierden las **armas pesadas**.
 
 Si mueres y tu cuerpo queda en el suelo, tus pertenencias pueden ser registradas por quien llegue primero: el [sistema de cadáveres](sistema-de-cadaveres.md) explica el saqueo y el levantamiento de restos.
 
 Durante una detención, la policía puede cachear a un sospechoso, incautarle el armamento y usarlo como evidencia, además de retirarle la licencia en el acto. También necesita **esposas físicas en la mano** para poder esposarte y recupera las esposas al liberarte. Todo el procedimiento policial se detalla en [facciones legales](facciones-legales.md) y las consecuencias judiciales en el [sistema de justicia](sistema-de-justicia.md).
 
-Agredir a otro recluso estando encarcelado añade **3 horas** a tu condena.
+Al ingresar a la cárcel se te **confiscan** las armas, los cargadores, la munición, las drogas y cualquier otro objeto ilegal, también los que lleves dentro de mochilas y contenedores; el resto de tus pertenencias queda en custodia y se te devuelve al salir. El chaleco conserva los puntos de protección que le quedaban. Más detalles en el [sistema de cárcel](sistema-de-carcel.md).
+
+Dejar herido a otro recluso estando encarcelado añade **60 minutos** a tu condena.
 
 ## Consejos
 
 - **Tramita la licencia antes de comprar nada.** Sin ella pierdes todo el arsenal cada vez que mueres, y no te venden ni un cargador.
 - **Un arma sucia es un arma inútil.** Lleva siempre un kit de limpieza: un arma rota no solo hace un 70% menos de daño, es que ni siquiera puedes recargarla en mitad de un tiroteo.
 - **Lleva cargadores llenos, no cajas.** La caja de munición no recarga el arma: si entras a un tiroteo con la caja y sin cargadores, no vas a poder disparar.
-- **El chaleco no es invulnerabilidad.** A quemarropa lo perforan, las escopetas lo ignoran siempre y solo cubre el torso.
+- **El chaleco no es invulnerabilidad.** Las escopetas y los rifles de gran calibre lo atraviesan a menos de 10 metros y solo cubre el torso.
 - **Un herido es salvable.** Antes de rematar o de dar por perdido a un compañero, recuerda que `/levantar` y `/metercoche` funcionan sin ser médico, y que hay cinco minutos de margen.
 - **Si sangras, véndate.** El sangrado por sí solo puede matarte aunque nadie te vuelva a disparar.

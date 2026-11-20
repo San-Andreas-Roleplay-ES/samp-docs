@@ -2,7 +2,7 @@
 
 ## Introducción
 
-Los **basureros** son los contenedores metálicos repartidos por las calles de San Andreas. Hay más de **260 contenedores** colocados a mano por el equipo de mapeo, siempre en el exterior: callejones traseros de negocios, patios de bloques de apartamentos, aparcamientos, zonas industriales y esquinas de los barrios. Todos son accesibles para cualquier personaje, sin permisos ni requisitos.
+Los **basureros** son los contenedores metálicos repartidos por las calles de San Andreas. Hay más de **260 contenedores** colocados a mano por el equipo de mapeo, siempre en el exterior: callejones traseros de negocios, patios de bloques de apartamentos, aparcamientos, zonas industriales y esquinas de los barrios. Todos son accesibles para cualquier personaje, sin permisos ni requisitos. Los contenedores de la isla de Santa Catalina se pueden revisar igual, pero no cuentan para el trabajo de recolector (ver [Santa Catalina](santa-catalina.md)).
 
 Un basurero cumple tres funciones a la vez. Primero, es un **punto de saqueo**: la ciudad va tirando cosas dentro y tú puedes rebuscar a ver qué encuentras, desde comida a medio comer hasta un fajo de billetes o un arma. Segundo, es un **escondite público**: puedes meter objetos de tu inventario y dejarlos ahí, con el riesgo de que otro los saque o de que un recolector los tire. Y tercero, es el destino natural de la basura de los negocios, que los recolectores vacían para cobrar (ver [Sistema de basura](sistema-de-basura.md)).
 
@@ -35,14 +35,16 @@ Cuando un basurero se repone, genera **5 objetos** sorteados por categorías. Ca
 
 | Categoría | Probabilidad | Qué sale | Cantidad |
 | --- | --- | --- | --- |
-| Comida | **30,5 %** | Cualquier alimento del juego: hamburguesas, tacos, pizza, donas, fruta, pan, pescado… | 1 a 3 unidades |
-| Bebida | **30,5 %** | Cerveza, vino, ron, whisky, vodka, agua, café, jugos, leche, Sprunk, bebidas energéticas… | 1 a 3 unidades |
-| Droga | **15 %** | Desde marihuana, cocaína, crack, MDMA o heroína hasta medicamentos de farmacia (ibuprofeno, amoxicilina, paracetamol, alprazolam…) | 1 a 3 gramos |
+| Comida | **35,6 %** | Hamburguesa, sándwich, hotdog, nuggets de pollo, rebanada de pizza, taco, wrap de pollo, paquete de snacks, ramen, pan, manzana, manzana verde, banana y naranja | 1 a 3 unidades |
+| Bebida | **35,6 %** | Botella de agua, café, lata de Sprunk, lata de ECola, lata de ECola Light, bebida energética, cerveza (Pissh, Pisswasser, Stronzo y Benedict) y cajas de jugo de naranja, de jugo de manzana y de leche | 1 a 3 unidades |
+| Droga | **5 %** | Marihuana, paracetamol, ibuprofeno, alprazolam, codeína, LSD y hongos | 1 a 3 gramos |
 | Dinero | **12 %** | Un fajo de billetes | **$100 a $5.000** |
-| Arma blanca | **11,5 %** | Nudillos, palo de golf, porra, cuchillo, bate, pala, bastón, spray, extintor, cámara y algún juguete adulto | 1 unidad |
-| Pistola 9mm | **0,5 %** | Una pistola de 9 milímetros de cualquier modelo (Taurus, Beretta, CZ75B, Hi-Point, Ruger…) | **1 a 7 balas** dentro |
+| Arma blanca | **11,5 %** | Cuchillo, bate, pala, palo de golf y bastón | 1 unidad |
+| Pistola | **0,3 %** | Una pistola barata: Hi-Point C9, Bersa Firestorm o Taurus G2C | **1 a 7 balas** dentro |
 
-La pistola es el premio raro del sistema: solo aparece en **5 de cada 1.000** objetos generados, y llega prácticamente vacía de munición.
+Dentro de cada categoría no todo es igual de común. Entre las comidas son más habituales la hamburguesa, el sándwich y la manzana; entre las bebidas, la botella de agua y la cerveza Pissh; y entre las drogas, la marihuana es con diferencia la más frecuente, seguida de los medicamentos de farmacia. Los hongos y el LSD casi nunca salen.
+
+La pistola es el premio raro del sistema: solo aparece en **3 de cada 1.000** objetos generados, y llega prácticamente vacía de munición.
 
 ### Estado de lo que encuentras
 
@@ -59,22 +61,24 @@ Los fajos de billetes no se estropean: el dinero vale lo que dice.
 
 ### Qué nunca aparece
 
-El saqueo no sirve como atajo para conseguir equipo especializado. Quedan **excluidos por completo**:
+El saqueo no sirve como atajo para conseguir equipo especializado. Solo pueden salir los objetos de la tabla anterior, así que **nunca** encontrarás:
 
-- **Todo el equipo de caza**: rifles de caza, cuchillos de despiece, trampas para osos, pieles y carne de venado o de oso, conejos, crías y cabezas de venado, carne podrida. Eso se consigue únicamente cazando (ver [Sistema de caza](sistema-de-caza.md)).
-- **Todo el armamento de la purga**: las armas marcadas con la **(P)** que solo existen durante ese evento.
-- **Armas de fuego que no sean pistolas 9mm**: escopetas, subfusiles, rifles y fusiles de asalto nunca salen de un contenedor. Para eso está el mercado negro (ver [Sistema de mercado negro](sistema-de-mercado-negro.md)).
+- **Equipo de caza**: rifles, cuchillos de despiece, trampas, pieles ni carne. Eso se consigue únicamente cazando (ver [Sistema de caza](sistema-de-caza.md)).
+- **Drogas fuertes**: cocaína, crack, metanfetamina, heroína ni MDMA.
+- **Armas de fuego que no sean esas tres pistolas**: escopetas, subfusiles, rifles y fusiles de asalto nunca salen de un contenedor. Para eso está el mercado negro (ver [Sistema de mercado negro](sistema-de-mercado-negro.md)).
+- **Objetos nuevos o exclusivos**: máscaras, ropa, accesorios, herramientas ni objetos de eventos.
 
-Tampoco entra nada que sea **objeto de facción**. Y aunque no aparece por generación, conviene saberlo: **no puedes meter un cadáver embolsado** dentro de un contenedor (ver [Sistema de cadáveres](sistema-de-cadaveres.md)).
+Tampoco puedes **meter** en un contenedor un objeto de facción ni un cadáver embolsado (ver [Sistema de cadáveres](sistema-de-cadaveres.md)).
 
 ## Cuándo se rellenan
 
-Un contenedor se repone cuando cumple dos condiciones a la vez: que su contenido **se haya cargado** (lo que ocurre al arrancar el servidor) y que tenga **menos de 5 objetos** dentro. Si se cumple, se generan de golpe **5 objetos nuevos**.
+Un contenedor se repone cuando tiene **menos de 5 objetos** dentro y se da una de estas dos situaciones: el servidor acaba de arrancar o un recolector lo acaba de limpiar. Si se cumple, se generan de golpe **5 objetos nuevos**.
 
 Esto significa, en la práctica:
 
 - Al **reiniciar el servidor**, todos los basureros que quedaron casi vacíos se rellenan.
-- Si vacías un contenedor entre varios jugadores, **no vuelve a llenarse solo** durante esa sesión.
+- Cuando un recolector limpia un contenedor, este vuelve a llenarse **15 minutos después**, siempre que en ese tiempo nadie haya dejado dentro 5 objetos o más.
+- Si vacías un contenedor entre varios jugadores, **no vuelve a llenarse solo** hasta el siguiente reinicio.
 - Un contenedor lleno de objetos que dejaron otros jugadores **no se repone**, porque ya supera el mínimo de 5.
 
 La **basura acumulada** funciona aparte de los objetos. Cada **15 minutos**, los contenedores con menos de **25 unidades** reciben entre **1 y 5 unidades** más, simulando a los vecinos que van tirando bolsas. Además, al arrancar el servidor cada contenedor suma también entre **1 y 5 unidades** de partida. El tope de basura que admite un contenedor es de **100 unidades**; pasado ese punto se considera colapsado y no acepta más bolsas.
@@ -87,7 +91,7 @@ Un **recolector de basura en servicio** puede escribir `/basurero limpiar` junto
 - **Todos los objetos que hubiera dentro se destruyen**, incluidos los que otros jugadores hubieran escondido ahí.
 - La marca de "ya revisado" se borra, así que el siguiente jugador que lo abra vuelve a cobrar su Burger Point.
 
-Ese vaciado deja el contenedor por debajo del mínimo de 5 objetos, de modo que quedará listo para reponerse en el siguiente arranque del servidor.
+Quince minutos después de la limpieza, el contenedor genera 5 objetos nuevos si sigue con menos de 5 dentro.
 
 ## Usar el basurero como escondite
 
@@ -123,5 +127,5 @@ Para quitártelo de encima tienes dos opciones:
 - Si vas a rebuscar, hazlo **antes de una sesión de rol tranquila**, no antes de una cita o una reunión formal: apestar a basura durante 8 horas se nota y otros jugadores lo van a usar en tu contra.
 - Lleva siempre un **perfume encima** si haces rutas largas de basureros. Es la única forma de cortar el olor al instante.
 - Ve con las **manos vacías**. Con un objeto pesado en la mano no podrás sacar nada.
-- La comida y bebida que salen vienen a media calidad, pero son gratis: para un personaje sin dinero, los contenedores son una fuente de sustento perfectamente válida.
+- La comida y bebida que salen vienen a media calidad, pero son gratis: para un personaje sin dinero, los contenedores son una fuente de sustento perfectamente válida. Casi siete de cada diez objetos son comida o bebida, y un fajo de billetes aparece más o menos una de cada ocho veces.
 - Si guardas algo en un contenedor, **recuérdalo**: un recolector puede pasar en cualquier momento y borrarlo todo de un solo comando.

@@ -27,6 +27,7 @@ Aparte de las bases privadas de cada facción, el sur de Los Santos tiene un **p
 | Propiedad | Debe estar **comprada a tu nombre**, o al de tu cónyuge si estás casado |
 | Exclusividad | Tu facción **no puede tener** ya otra base asignada |
 | Confirmación | Doble paso: primero el comando, después `confirmar` |
+| Control de inactividad | Un negocio que está en el control de negocios inactivos sin justificar **no puede asignarse como base**: mientras dure, solo puede venderse al Estado |
 
 Si eres miembro pero no líder, `/baseilegal` te indica la llave de la propiedad que la facción tiene asignada, o te avisa de que todavía no hay ninguna.
 
@@ -39,6 +40,8 @@ Si eres miembro pero no líder, `/baseilegal` te indica la llave de la propiedad
 - El número de teléfono asociado a la propiedad se actualiza al nuevo titular.
 
 Al retirarla, una vez cumplidos los 14 días, la propiedad vuelve a nombre del líder que ejecuta el comando y recupera su condición de propiedad normal. La facción pierde toda referencia a esa base y puede asignar otra de inmediato.
+
+Como al retirarla la propiedad vuelve a tu nombre, rige la misma restricción que para cualquier compra: si tu cuenta o la de tu cónyuge no justificó la inactividad de un negocio cuando se le pidió, no puede volver a ser dueña de una propiedad durante **3 meses** y el retiro se rechaza con un aviso. Más detalle en [Sistema de subastas](sistema-de-subastas.md).
 
 ## Permisos dentro de la base
 
@@ -65,6 +68,24 @@ Este es el beneficio principal de tener una base y la razón por la que conviene
 La zona protegida cubre tanto el interior de la propiedad como el exterior en un radio de **15 metros** alrededor de la entrada. En la práctica, un tiroteo en el portal de la base no genera alerta, pero uno a media calle sí.
 
 Esto no hace a la base intocable: la policía que consiga una **orden de allanamiento** puede forzar la entrada y revisar el almacén igual que en cualquier otra propiedad. Solo desaparecen los avisos automáticos y el rastro documental.
+
+## Laboratorios de drogas en la base
+
+Si la base es una **casa o un almacén**, puede alojar un laboratorio de drogas (en un negocio no se puede montar). Los requisitos para instalarlo están en [Sistema de drogas](sistema-de-drogas.md).
+
+Cualquier miembro de una **pandilla o una mafia** que cocine en un laboratorio instalado en la base de su propia facción recibe **+25 unidades** al tope de ingredientes por cocinada. Es un bono fijo que se suma al que da tu habilidad de drogas y al tipo de propiedad:
+
+| Habilidad de drogas | Casa | Almacén |
+|---|---|---|
+| 0 a 9 | 25 | 50 |
+| 10 a 20 | 75 | 100 |
+| 21 o más | 125 | 150 |
+
+A esos valores se suman **+25** por cocinar en la base de tu facción. Los miembros de pandillas se benefician además de los bonos de territorio: **+25** si la base está en territorio de su propia pandilla (se mide por la entrada exterior de la propiedad) y **+2 %** por cada territorio que controle la pandilla, hasta **+20 %**, aplicado sobre el total. Las mafias no reciben los bonos de territorio.
+
+Ejemplo: en un almacén con habilidad 21 o más (150), más la base (25) y más territorio propio (25), el tope es de **200** unidades; con 10 o más territorios controlados (+20 %) sube a **240**.
+
+Estar en territorio de otra facción no anula el bono de la base, pero sí sube del 20 % al **35 %** la probabilidad de explosión al cocinar metanfetamina. El extintor sigue evitándola. El resto de reglas de la cocina están en [Sistema de drogas](sistema-de-drogas.md) y [Sistema de zonas de pandilla](sistema-de-zonas-de-pandilla.md).
 
 ## Bonificaciones por consumo de drogas pesadas
 
@@ -102,6 +123,8 @@ Allí se concentra todo lo que antes estaba repartido por la ciudad:
 - El **mercado negro**, que dejó de estar disperso en once puntos distintos y ahora opera únicamente aquí. Es el sitio donde se vende el botín (teléfonos, joyas, autopartes, muebles, mercancía de camiones) y donde los delincuentes con habilidad suficiente compran munición. El detalle de precios, requisitos y catálogo está en [Sistema de mercado negro](sistema-de-mercado-negro.md).
 - Una **clínica clandestina** donde curar heridas pagando, sin pasar por el hospital ni dejar registro médico.
 - La **pizzería de Idlewood**, incorporada a los puntos de reaparición del mapa.
+
+Además, los **delincuentes** ven en el menú de `/reaparecer` dos puntos extra: la **base criminal de Idlewood** y la **base criminal de El Corona**. El resto de jugadores no los ve.
 
 El Idlestack es terreno abierto y sin protección: no anula los avisos de emergencia, no oculta nada al ordenador policial y la policía puede patrullarlo con total libertad. Lo que ofrece es acceso, no seguridad. Para eso está la base propia de tu facción.
 

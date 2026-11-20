@@ -32,6 +32,9 @@ Cada vez que cobras por un trabajo recibes Burger Points. La cantidad depende de
 | Basurero (ruta cobrada) | **+3** |
 | Abogado (oficio atendido) | **+3** |
 | Técnico de seguridad (servicio completado) | **+3** |
+| Técnico de seguridad (instalación de una cámara de seguridad) | **+3** |
+| Técnico de seguridad (reparación de un cajero automático pagada por la ciudad) | **+3** |
+| Técnico de seguridad en servicio (retirada del skimmer de otra persona en un cajero) | **+3** |
 | Guardacostas (recorrido completado) | **+3** |
 | Jardinero (césped terminado) | **+3** |
 | Barrendero (calle barrida) | **+3** |
@@ -46,7 +49,9 @@ Cada vez que cobras por un trabajo recibes Burger Points. La cantidad depende de
 
 En el caso del vendedor de negocio, los puntos solo llegan si el cliente deja **propina**: una venta seca no paga Burger Points.
 
-Encontrarás el detalle de cada oficio en [Sistema de camionero](sistema-de-camionero.md), [Sistema de pesca](sistema-de-pesca.md) y [Facciones legales](facciones-legales.md).
+La reparación de un cajero solo da puntos cuando la ciudad te paga por ella: si tu cuenta participó en el daño o el cajero tuvo demasiados responsables, la reparación no se paga y tampoco suma. De las cámaras de seguridad solo cuenta la instalación; repararlas no da puntos.
+
+Encontrarás el detalle de cada oficio en [Sistema de camionero](sistema-de-camionero.md), [Sistema de pesca](sistema-de-pesca.md), [Sistema de cámaras de seguridad](sistema-de-camaras-de-seguridad.md), [Sistema de robo de cajeros](sistema-de-robo-de-cajeros.md) y [Facciones legales](facciones-legales.md).
 
 ## Transporte público
 
@@ -67,8 +72,9 @@ La vida criminal reparte Burger Points según el riesgo de cada golpe:
 | Robo y venta de un tráiler | **+50** |
 | Robo de carterista a otro jugador | **+25** |
 | Hurto de un producto de un negocio | **+1** |
+| Retirar tu propio skimmer de un cajero y cobrar lo recopilado | **+3** |
 
-Los dos golpes grandes (atraco y tráiler robado) llevan además largos tiempos de espera propios del sistema criminal, así que no se pueden repetir seguidos. Consulta [Sistema de delincuente](sistema-de-delincuente.md) para los requisitos de habilidad, los enfriamientos y las consecuencias de cada actividad.
+Los dos golpes grandes (atraco y tráiler robado) llevan además largos tiempos de espera propios del sistema criminal, así que no se pueden repetir seguidos. El skimmer se explica en [Sistema de skimming](sistema-de-skimming.md). Consulta [Sistema de delincuente](sistema-de-delincuente.md) para los requisitos de habilidad, los enfriamientos y las consecuencias de cada actividad.
 
 ### Zonas de pandilla
 
@@ -93,7 +99,7 @@ Este bloque es el corazón del sistema: **solo cuenta si estás al aire libre**,
 
 Los cuatro primeros llevan su propio contador independiente: comer, beber, tomar alcohol y fumar suman por separado, así que en media hora puedes llegar a juntar **+20 BP** combinándolos. El consumo de drogas se cuenta aparte y con un descanso más largo, de una hora.
 
-La bonificación del sueldo se entrega en cada pago horario si durante esa hora pasaste **30 minutos o más** al aire libre. Los minutos se reinician después de cada pago, así que hay que ganárselos cada hora.
+La bonificación del sueldo se entrega en cada pago horario si durante esa hora pasaste **30 minutos o más** al aire libre. Los minutos se reinician después de cada pago, así que hay que ganárselos cada hora. El tiempo dentro de Twin Towers cuenta como tiempo al aire libre para este punto.
 
 Los ejercicios del gimnasio solo pagan al **subir de nivel**, no en cada repetición, y únicamente si entrenas en un gimnasio al aire libre. Más información en [Sistema de gimnasio](sistema-de-gimnasio.md) y [Sistema de drogas](sistema-de-drogas.md).
 
@@ -116,19 +122,19 @@ El paintball solo paga en **salas públicas**: las partidas privadas no otorgan 
 
 ## Caza
 
-Cobrar una pieza en el coto de caza paga según el animal:
+Abatir a un animal salvaje paga según lo raro que sea: cuanto menos frecuente aparece la especie, más puntos da.
 
 | Presa | Burger Points |
 |---|---|
-| Conejo | **+10** |
-| Venado | **+25** |
-| Oso | **+50** |
+| Presas comunes: conejos, liebre, zorros, mapache, coatí, lince rojo y pavo salvaje | **+10** |
+| Presas medianas: coyote, ciervos, antílope, puma, cerdo salvaje y borrego cimarrón | **+25** |
+| Presas raras: osos negros y uapití | **+50** |
 
 Todo lo relativo a licencias, armas y zonas está en [Sistema de caza](sistema-de-caza.md).
 
 ## Graffitis
 
-Pintar un graffiti otorga **+10 BP**. Si eres miembro de una pandilla y lo pintas dentro de tu territorio, puedes sumar además la bonificación de zona.
+Pintar un graffiti otorga **+10 BP**, con cualquier tipo de letra. Si eres miembro de una pandilla y lo pintas dentro de tu territorio, puedes sumar además la bonificación de zona.
 
 Ten en cuenta que **borrar tu propio graffiti resta 5 BP**. Tienes cinco minutos tras pintarlo para editarlo o borrarlo, pero si lo eliminas pagarás ese coste, así que piensa bien dónde y qué escribes antes de terminarlo.
 
@@ -149,7 +155,7 @@ Más detalles en [Sistema de basureros](sistema-de-basureros.md) y [Sistema de b
 
 El **examen de conducir** solo paga una vez, al aprobarlo y recibir la licencia.
 
-En los **eventos de negocios**, cuando el local sube de nivel por alcanzar su meta de clientes y ventas, todos los jugadores que estén dentro del área del negocio en ese momento reciben **+10 BP**. Durante los períodos de experiencia aumentada la recompensa sube a **+20 BP** (doble) o **+30 BP** (triple).
+En los **eventos de negocios**, cuando el local sube de nivel por alcanzar su meta de participantes simultáneos y de ventas a clientes (cada nivel pide 10 participantes y 5 ventas más que el anterior), todos los jugadores que estén dentro del área del negocio en ese momento reciben **+10 BP**. Durante los períodos de experiencia aumentada la recompensa sube a **+20 BP** (doble) o **+30 BP** (triple).
 
 Los eventos médicos entregan **+50 BP** a quien acepta interpretar la dolencia que le toca; consulta [Sistema médico y hospital](sistema-medico-y-hospital.md).
 
@@ -167,7 +173,7 @@ Ocasionalmente el equipo del servidor organiza **sorteos y regalos** de Burger P
 - **Combina los cuatro consumos.** Cada uno tiene su propio descanso de 30 minutos, así que no compiten entre sí: llevar encima comida, una bebida, un cigarro y algo de alcohol te permite aprovechar los cuatro contadores.
 - **Cuida los 30 minutos de calle por hora.** Un solo minuto de menos y pierdes el punto del sueldo, que además es el mismo requisito que mantiene tu felicidad en alza.
 - **Prioriza los golpes grandes.** Entre los delincuentes, un atraco o un tráiler robado valen **50 BP** cada uno, tanto como diez consumos en la calle. Los hurtos repetidos apenas aportan **1 BP**.
-- **La caza mayor rinde muchísimo.** Un solo oso vale **50 BP**; un conejo, **10**. Si sales al monte, apunta alto.
+- **La caza mayor rinde muchísimo.** Un solo oso o un uapití vale **50 BP**; un conejo, **10**. Si sales al monte, apunta alto.
 - **No borres graffitis a la ligera.** Es la única acción del juego que te resta puntos.
 - **No repitas basureros.** Solo el primero en abrirlos cobra, así que no tiene sentido dar vueltas por los mismos contenedores.
 - **Los logros son puntos gratis.** Cada logro que desbloqueas suma **50 BP** de propina, además de su propia recompensa.

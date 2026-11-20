@@ -8,15 +8,16 @@ Como en San Andreas Roleplay no existe un sistema de tarjetas de crédito, el ro
 
 El sistema está pensado para personajes con perfil de **ciberdelincuente**. Requiere dos habilidades distintas: **electrónica** para fabricar el aparato y detectarlo, y **delincuente** para instalarlo y retirarlo. Encontrarás cajeros automáticos repartidos por todo San Andreas, en bancos, tiendas, gasolineras y esquinas concurridas: hay cerca de **un centenar** en el mapa, y cualquiera de ellos puede ser manipulado.
 
-Del otro lado del mostrador están los **técnicos de seguridad**, empleados de las empresas de seguridad privada, que cobran del Gobierno por localizar y desmontar estos dispositivos. La policía también puede retirarlos si los encuentra.
+Del otro lado del mostrador están los **técnicos de seguridad**, empleados de las empresas de seguridad privada, que cobran del Gobierno por localizar y desmontar estos dispositivos y por reparar los cajeros dañados. La policía también puede retirarlos si los encuentra.
 
 ### Comandos
 
-- /revisarcajero — inspecciona el cajero automático frente a ti para ver si tiene un skimmer oculto.
+- /revisarcajero — inspecciona el cajero automático frente a ti para ver si tiene un skimmer oculto. En un cajero fuera de servicio muestra además el diagnóstico de la avería.
 - /skimmer — fabrica un skimmer (miembros de facciones ilegales oficiales).
 - /instalarskimmer — instala el skimmer que llevas en la mano derecha en el cajero que tienes delante.
 - /retirarskimmer — desmonta el skimmer del cajero y cobra lo acumulado.
-- /marcarcajero — localiza el cajero manipulado más cercano (solo técnicos de seguridad en servicio).
+- /marcarcajero — lista los cajeros que necesitan un técnico y marca en el GPS el que elijas (solo técnicos de seguridad en servicio).
+- /repararcajero — repara un cajero fuera de servicio (solo técnicos de seguridad en servicio).
 
 ## Cómo conseguir un skimmer
 
@@ -51,7 +52,9 @@ El proceso tiene dos pasos obligatorios:
 
 La instalación dura **90 segundos**. Durante todo ese tiempo el personaje ejecuta una animación junto al cajero y debe cumplir tres condiciones: **no alejarse** del cajero, **conservar el skimmer** en la mano derecha y **seguir con vida**. Si falla cualquiera de ellas, el proceso se cancela. Un aviso en pantalla te recuerda que la instalación sigue en curso.
 
-Los personajes que pasen cerca verán una acción visible que indica que estás manipulando el cajero, así que conviene elegir un cajero poco transitado o tener a alguien vigilando.
+Los personajes que pasen cerca verán una acción visible que indica que estás manipulando el cajero, así que conviene elegir un cajero poco transitado o tener a alguien vigilando. Además, las [cámaras de seguridad](sistema-de-camaras-de-seguridad.md) cercanas dejan constancia de que instalas algo en el cajero.
+
+Un cajero **fuera de servicio** no admite skimmers: no puedes instalar uno ni retirarlo hasta que el cajero se repare (consulta [Cajeros fuera de servicio](#cajeros-fuera-de-servicio)).
 
 Requisitos para instalar:
 
@@ -59,7 +62,7 @@ Requisitos para instalar:
 |---|---|
 | Habilidad de delincuente | **50** como mínimo |
 | Objeto | Skimmer en la **mano derecha** |
-| Cajero | **Sin skimmer** previo |
+| Cajero | **En servicio** y **sin skimmer** previo |
 | Paso previo | Haber usado `/revisarcajero` en ese mismo cajero |
 
 ### Calidad del skimmer
@@ -92,6 +95,8 @@ El porcentaje robado depende de la **calidad del skimmer** y escala de forma lin
 En la práctica, casi todo lo que roba un skimmer proviene de los **retiros en cajero**, que es la operación que los jugadores hacen a diario en la calle. Los depósitos solo pueden realizarse dentro de una sucursal bancaria.
 
 El dinero acumulado se otorga **únicamente al dueño del dispositivo**, es decir, al personaje que lo instaló. **No es posible robar las ganancias de otro ciberdelincuente**: si otro delincuente, un policía o un técnico de seguridad desmonta el skimmer, el dinero acumulado se pierde y no lo cobra nadie.
+
+Mientras el cajero está fuera de servicio nadie puede usarlo, así que el skimmer tampoco roba nada. Si el cajero llega a ser **destruido** en un [robo de cajero](sistema-de-robo-de-cajeros.md), el skimmer se pierde junto con todo el dinero que había acumulado.
 
 Un skimmer muy productivo también es un skimmer arriesgado: cuanto más tiempo lo dejes puesto, más dinero junta, pero más oportunidades tiene alguien de encontrarlo.
 
@@ -146,17 +151,36 @@ Detectan el skimmer **siempre**, sin depender del azar:
 
 Si el cajero no tiene ningún skimmer, la revisión te lo confirma directamente.
 
+También puedes revisar un cajero que esté **fuera de servicio**. En ese caso, además del resultado sobre el skimmer, la revisión muestra el diagnóstico: forzado, con la carcasa dañada o destruido.
+
 ## Técnicos de seguridad
 
 Los técnicos de seguridad son empleados de las **empresas de seguridad privada** y forman la contraparte legal del sistema. Trabajan por encargo del Gobierno para mantener limpia la red de cajeros.
 
-Estando en servicio, el comando `/marcarcajero` localiza el cajero manipulado más cercano y lo marca en el mapa para que puedas llegar hasta él. El comando tiene una limitación importante: **solo encuentra skimmers de calidad 50 o inferior**. Los dispositivos de alta calidad, fabricados por ciberdelincuentes con mucha habilidad de electrónica, son invisibles para esta herramienta y solo aparecen revisando cajeros a mano.
+Estando en servicio, el comando `/marcarcajero` abre una lista de los cajeros que necesitan un técnico, ordenados por cercanía (hasta 16 filas). Cada fila muestra la ubicación, el estado y el pago. Al elegir una, el cajero queda marcado en el GPS para que puedas llegar hasta él.
 
-Una vez en el cajero, el procedimiento es `/revisarcajero` seguido de `/retirarskimmer`.
+La lista incluye dos tipos de trabajo:
+
+- **Cajeros con skimmer**, pagados como se explica más abajo. El comando tiene una limitación importante: **solo muestra skimmers de calidad 50 o inferior**. Los dispositivos de alta calidad, fabricados por ciberdelincuentes con mucha habilidad de electrónica, son invisibles para esta herramienta y solo aparecen revisando cajeros a mano.
+- **Cajeros fuera de servicio** (forzados, dañados o destruidos), que se arreglan con `/repararcajero`. Los detalles están en el [sistema de robo de cajeros](sistema-de-robo-de-cajeros.md).
+
+Los cajeros que otro técnico ya está reparando no aparecen en la lista.
+
+Una vez en el cajero con skimmer, el procedimiento es `/revisarcajero` seguido de `/retirarskimmer`.
 
 Al desmontar un skimmer ajeno estando en servicio, el técnico cobra **$25.000** en efectivo y **+3 Burger Points**. El Gobierno asume un coste total de **$100.000** por cada intervención: los $25.000 del trabajo del técnico más **$75.000** de multa municipal por haber permitido el fraude. Es decir, cada skimmer que llega a instalarse le sale caro a las arcas públicas aunque se retire a tiempo.
 
 El dinero acumulado dentro del dispositivo **no se recupera**: al retirarlo, desaparece.
+
+## Cajeros fuera de servicio
+
+Cuando un cajero sufre cualquier daño (por ejemplo, tras un [robo de cajero](sistema-de-robo-de-cajeros.md)) queda **fuera de servicio**: ningún jugador puede usarlo y no se repara solo. Esto afecta al skimming de tres formas:
+
+- No se pueden instalar ni retirar skimmers en un cajero fuera de servicio.
+- Un skimmer instalado deja de robar mientras el cajero no funcione.
+- Si el cajero es destruido por completo, el skimmer y su dinero se pierden.
+
+Para devolverlo al servicio hace falta un técnico de seguridad en servicio: revisa el cajero con `/revisarcajero` y usa `/repararcajero`. La reparación dura **1 minuto** si el cajero solo fue forzado, **2 minutos** si está dañado y **3 minutos** si está destruido, y la ciudad paga **$250 por cada 1 %** de daño, hasta $25.000. Consulta el [sistema de robo de cajeros](sistema-de-robo-de-cajeros.md) para ver cuándo no se paga.
 
 ## Costes y cifras de referencia
 
@@ -173,7 +197,8 @@ El dinero acumulado dentro del dispositivo **no se recupera**: al retirarlo, des
 | Calidad del skimmer | habilidad de electrónica + **0 a 29** (máximo 100) |
 | Robo por transacción | del **3 %** (calidad 0) al **12 %** (calidad 100) |
 | Burger Points al cobrar | **+3** |
-| Pago al técnico de seguridad | **$25.000** |
+| Pago al técnico de seguridad por retirar un skimmer | **$25.000** |
+| Reparar un cajero fuera de servicio | **1 a 3 minutos**, **$250** por cada 1 % de daño |
 | Coste para el Gobierno por skimmer retirado | **$100.000** |
 | Comisión del cajero por operación | **$12** |
 
@@ -184,7 +209,7 @@ El dinero acumulado dentro del dispositivo **no se recupera**: al retirarlo, des
 - **No lo dejes puesto para siempre.** Cada día que pasa aumenta la probabilidad de que un técnico de seguridad o un jugador curioso lo encuentre, y entonces pierdes todo lo acumulado, no solo el aparato.
 - **Instala acompañado.** La instalación de 90 segundos deja una acción visible para cualquiera que pase por ahí. Tener a alguien vigilando la zona reduce el riesgo de que te sorprendan a mitad del proceso.
 - **Reparte el riesgo.** Varios skimmers en cajeros distintos rinden mejor que concentrar el esfuerzo en uno solo, porque si pierdes uno no pierdes toda la operación.
-- **Si eres técnico de seguridad**, no te fíes solo de `/marcarcajero`: los skimmers más rentables tienen calidad superior a 50 y no aparecen en la búsqueda. Revisar a mano los cajeros de zonas concurridas es la única forma de encontrarlos.
+- **Si eres técnico de seguridad**, no te fíes solo de `/marcarcajero`: los skimmers más rentables tienen calidad superior a 50 y no aparecen en la lista. Revisar a mano los cajeros de zonas concurridas es la única forma de encontrarlos.
 - **Si eres un cliente cualquiera**, revisar el cajero antes de retirar dinero es gratis y solo toma 5 segundos. Con poca habilidad de electrónica rara vez encontrarás algo, pero es la única defensa disponible.
 
-Puedes consultar también el [sistema de delincuente](sistema-de-delincuente.md) para conocer el resto de actividades ilegales y cómo progresa la habilidad de delincuente, y las [facciones ilegales](facciones-ilegales.md) si quieres acceder a la fabricación de skimmers.
+Puedes consultar también el [sistema de delincuente](sistema-de-delincuente.md) para conocer el resto de actividades ilegales y cómo progresa la habilidad de delincuente, y las [facciones ilegales](facciones-ilegales.md) si quieres acceder a la fabricación de skimmers. Si prefieres romper el cajero en lugar de manipularlo, mira el [sistema de robo de cajeros](sistema-de-robo-de-cajeros.md).

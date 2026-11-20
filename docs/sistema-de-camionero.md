@@ -6,6 +6,8 @@ El camionero es el eslabón que mantiene abastecido al estado. Cuando un negocio
 
 El trabajo tiene dos niveles. El **reparto de mercancía** es la puerta de entrada: se hace con furgonetas y camiones medianos, y lo puede realizar cualquier empleado de una empresa de repartos. El **transporte pesado** (tráileres) se desbloquea cuando acumulas experiencia suficiente en el rubro: ahí manejas camiones de gran tonelaje con remolques de combustible, químicos, contenedores o carga refrigerada, cobrando bastante más por viaje.
 
+Aparte de esos dos niveles existe un trabajo secundario de **camión de cemento**, que no requiere empresa: te subes a un camión de obra, recibes un destino y cobras según la distancia y el estado en que llegue el camión (ver [Camión de cemento](#camión-de-cemento)).
+
 Las industrias del estado están repartidas por los tres condados, aunque las tres más concurridas se concentran en el sector portuario de **Ocean Docks**, en Los Santos, para agrupar el rol de carga y transporte pesado en una sola zona. Las industrias se distinguen en el mapa con su propio ícono.
 
 Este trabajo conecta directamente con el [sistema de propiedades](sistema-de-propiedades.md): los pedidos que repartes los generan los dueños de negocio con `/pedidos`. Y tiene su contracara ilegal, porque los tráileres sin dueño se pueden robar y revender, algo reservado a las [facciones ilegales](sistema-de-delincuente.md).
@@ -51,6 +53,8 @@ Este trabajo conecta directamente con el [sistema de propiedades](sistema-de-pro
 4. Conduce hasta el negocio de destino, baja con la caja en la mano, párate sobre el punto de entrega y escribe `/entregarcarga`.
 
 Si te desconectas a mitad de ruta, el pedido queda reservado a tu nombre: vuelve a escribir `/camionero` al reconectar y el sistema te devuelve el punto donde ibas.
+
+**Negocios de Santa Catalina**: la mercancía de los negocios y las industrias de la isla de [Santa Catalina](santa-catalina.md) no se recoge ni se entrega en la isla, sino en el **muelle del ferry de Los Santos**. Debes estar a **menos de 5 metros** de ese punto, y la paga se calcula hasta él.
 
 ### Pagos
 
@@ -99,7 +103,7 @@ Puedes hacer viajes de tráiler **por tu cuenta**, con un camión propio, sin es
 
 ### Cómo funciona
 
-1. Súbete a un camión habilitado y escribe `/trailero`. Elige **ruta estándar** o **ruta de combustible**; el sistema te asigna un viaje al azar entre más de 100 rutas repartidas por Los Santos, San Fierro, Las Venturas y el campo.
+1. Súbete a un camión habilitado y escribe `/trailero`. Elige **ruta estándar** o **ruta de combustible**; el sistema te asigna un viaje al azar entre más de 100 rutas repartidas por Los Santos, San Fierro, Las Venturas y el campo, que incluyen los destinos del trucking original del juego.
 2. Se te indica qué tipo de tráiler debes recoger y el barrio donde está el punto de carga, marcado en el mapa.
 3. Al llegar (debes estar a **menos de 25 metros** del punto), escribe `/recogertrailer`. El tráiler aparece detrás de tu camión y se engancha solo **al cabo de un segundo**.
 
@@ -126,6 +130,29 @@ Cada entrega de tráiler otorga **+5 Burger Points**.
 ### Cancelar un viaje
 
 `/cancelartrailer` solo funciona **antes** de haber recogido el tráiler, y cuesta **2 puntos de habilidad de camionero**. Una vez enganchado el remolque, la única salida es entregarlo.
+
+## Camión de cemento
+
+Es un trabajo secundario independiente de las empresas de repartos: no necesitas empleo ni habilidad de camionero. Los camiones de obra (mezcladoras de cemento, Packer, Flatbed y DFT-30) están estacionados en zonas industriales repartidas por el estado, y en el juego el trabajo aparece como "camionero pesado".
+
+### Requisitos
+
+- Tener la **licencia de conducir** vigente (con la licencia suspendida no puedes trabajar; ver [sistema de vehículos](sistema-de-vehiculos.md)).
+- Ir al volante de uno de esos camiones de obra.
+
+### Cómo funciona
+
+1. Súbete como conductor a un camión de obra. Aparece un aviso para pulsar la tecla **2** y empezar el trabajo.
+2. Al empezar, el camión se repara y se deja con el tanque y el aceite llenos y el motor encendido. Se te asigna al azar uno de **121 destinos** de todo el estado, siempre a **500 metros o más** de donde estás, y se marca en el mapa.
+3. Conduce hasta el destino y entra en el punto marcado. Cobras en el acto y el camión vuelve solo a su base, con quien vaya dentro bajado a su lado.
+
+Un contador en el lado derecho de la pantalla muestra el **dinero** que cobrarías en ese momento y una barra de **daño** que indica el estado del camión. Si te bajas del camión o sales del juego, el trabajo se cancela.
+
+### Pago
+
+La paga es de **$0,90 por metro** de distancia en línea recta entre el lugar donde empezaste y el destino, multiplicada por el estado del camión. El estado baja con cada golpe que recibe el camión, desde el 100% con el que parte hasta el 0% cuando el camión queda con la vida mínima. Si llegas con el camión dañado, cobras solo la parte proporcional y se te avisa cuánto te pagaron del total del viaje. El dinero se te entrega en efectivo.
+
+Por cada viaje recibes además **3 Burger Points** si el camión llega prácticamente intacto, o **1** si llega con daños (ver [sistema de Burger Points](sistema-de-burger-points.md)). Llegar con el camión casi intacto también desbloquea el logro del trabajo.
 
 ## Habilidad de camionero
 

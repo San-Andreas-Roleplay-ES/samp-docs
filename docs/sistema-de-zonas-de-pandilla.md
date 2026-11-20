@@ -4,13 +4,16 @@
 
 Las **zonas de pandilla** son los territorios que las facciones criminales se disputan en Los Santos. Aparecen pintadas en el radar y en el mapa con el color de la facción que las controla, y una zona marcada oficialmente como **en disputa** parpadea en rojo para todos.
 
-Controlar un territorio no es decorativo: da dinero extra en cada paycheck a todos los miembros de la facción, retrasa la llegada de la policía a los incidentes que ocurren dentro y habilita bonificaciones para quienes delinquen sobre su propio terreno. Por eso el mapa cambia de manos constantemente: cualquier pandilla o mafia puede disputar cualquier zona con solo mantener gente activa dentro de ella.
+Todo Los Santos está cubierto por zonas, sin huecos entre ellas, y también hay zonas en Blueberry, Dillimore, Montgomery, Palomino Creek y Angel Pine. Las zonas que nadie ha reclamado empiezan **sin dueño**.
 
-Si prefieres jugar con el mapa limpio, puedes ocultar las zonas del radar desde tus preferencias. Este documento cubre el sistema de territorios y los **graffitis**, la forma más visible de marcar el barrio. Para saber cómo entrar a una facción criminal consulta [Facciones ilegales](facciones-ilegales.md), y para las actividades delictivas en sí, [Sistema de delincuente](sistema-de-delincuente.md).
+Controlar un territorio no es decorativo: retrasa la llegada de la policía a los incidentes que ocurren dentro, habilita bonificaciones para quienes delinquen sobre su propio terreno y mejora la producción de drogas de la pandilla. Además, la **influencia** que tu facción acumula en las calles es lo que determina cuánto cobra cada miembro en el paycheck. Por eso el mapa cambia de manos constantemente: cualquier **pandilla** puede disputar cualquier zona con solo mantener gente activa dentro de ella.
+
+Si prefieres jugar con el mapa limpio, puedes ocultar las zonas del radar desde tus preferencias. Este documento cubre el sistema de territorios y un resumen de los **graffitis**, la forma más visible de marcar el barrio. Para saber cómo entrar a una facción criminal consulta [Facciones ilegales](facciones-ilegales.md), y para las actividades delictivas en sí, [Sistema de delincuente](sistema-de-delincuente.md).
 
 ### Comandos
 
 - /influencias — muestra cuánta influencia tiene acumulada cada facción en la zona donde estás parado.
+- /misinfluencias — resumen de la influencia de tu facción en todas las zonas y del dinero que genera. Disponible para miembros de pandillas, mafias y facciones penitenciarias.
 - /graffiti crear — inicia la creación de un graffiti en la pared que tengas delante.
 - /graffiti editar — reposiciona un graffiti tuyo pintado hace menos de 5 minutos.
 - /graffiti borrar — elimina un graffiti tuyo pintado hace menos de 5 minutos.
@@ -18,17 +21,19 @@ Si prefieres jugar con el mapa limpio, puedes ocultar las zonas del radar desde 
 
 ## Cómo se conquista una zona
 
-El control de cada territorio lo decide un contador de **influencia**. Cada facción acumula su propia influencia en cada zona, y la que más tenga se queda con ella.
+El control de cada territorio lo decide un contador de **influencia**. Cada facción acumula su propia influencia en cada zona, y la pandilla que más tenga se queda con ella.
 
 ### Quién genera influencia
 
 El servidor revisa **una vez por minuto** a cada jugador. Sumas influencia para tu facción solo si cumples todo esto:
 
 - Perteneces a una **pandilla o una mafia**.
-- Estás **dentro** de la zona.
+- Estás **dentro** de la zona, en la calle. Dentro de un interior no sumas.
 - Estás **a pie** (dentro de un vehículo no cuenta).
 - No llevas **máscara** puesta.
 - No estás **pausado**.
+
+Las facciones penitenciarias solo suman influencia en la zona de la prisión, y lo hacen también desde dentro de la cárcel.
 
 ### Cuánta influencia sumas
 
@@ -41,15 +46,19 @@ Cada jugador que cumple los requisitos aporta un punto base por minuto, más los
 | Facción con estatus **destacada** | +1 |
 | Facción con estatus **oficial** | +3 |
 
-Así, un miembro de una pandilla común aporta **3 puntos por minuto**, y uno de una pandilla oficial y destacada aporta **7**.
+Así, un miembro de una pandilla común aporta **3 puntos por minuto**, y uno de una pandilla oficial y destacada aporta **7**. Un miembro de una mafia aporta 1 punto, más los extras de estatus que tenga su familia.
 
-Además, cada vez que alguien suma influencia en una zona, **todas las demás facciones presentes en el contador de esa zona pierden 1 punto** (nunca por debajo de cero). Diez miembros tuyos dentro del territorio no solo suben tu marcador: también erosionan el de tus rivales diez veces por minuto.
+Además, cada vez que alguien suma influencia en una zona, **todas las demás pandillas presentes en el contador de esa zona pierden 1 punto** (nunca por debajo de cero). Diez miembros tuyos dentro del territorio no solo suben tu marcador: también erosionan el de tus rivales diez veces por minuto. Las mafias no pierden influencia por este efecto.
 
 La influencia de cada facción en una zona está limitada a un máximo de **10.000 puntos**.
 
+Vender droga a un cliente de misión (el mensaje de texto de un desconocido que se describe más abajo) dentro de un territorio de tu propia pandilla suma además **+5 de influencia** a tu pandilla, o **+6** si es destacada y **+8** si es oficial, y resta 1 punto a las demás pandillas de esa zona. Las ventas con `/traficar` no cuentan.
+
 ### El cambio de dueño
 
-**15 segundos** después de cada suma de influencia, el servidor revisa el marcador completo de la zona. La facción con **más influencia** se queda con el territorio, siempre que supere el umbral mínimo de **100 puntos**. Si nadie llega a ese número, la zona conserva a su dueño actual.
+**15 segundos** después de cada suma de influencia, el servidor revisa el marcador completo de la zona. La **pandilla** con **más influencia** se queda con el territorio, siempre que supere el umbral mínimo de **100 puntos**. Si nadie llega a ese número, la zona conserva a su dueño actual.
+
+Las **mafias no conquistan territorios**: siguen sumando influencia, y las zonas que ya controlaban se mantienen hasta que una pandilla supere los 100 puntos en ellas.
 
 Que el umbral sea bajo hace que una zona descuidada caiga rápido: una pandilla común con diez miembros dentro genera 30 puntos por minuto y puede capturarla en unos **tres o cuatro minutos** si no encuentra oposición. Con presencia enemiga la cosa se alarga, porque cada punto que suma el rival te resta uno a ti.
 
@@ -59,28 +68,78 @@ Cada **hora** el servidor recorta la influencia de **todas** las facciones en **
 
 Si una facción es disuelta o pierde su condición de pandilla o mafia, pierde de inmediato todos sus territorios y toda la influencia acumulada.
 
+## La influencia como recurso
+
+La influencia no solo decide quién manda en cada calle: también se gasta. Fabricar armas y drogas cuesta influencia de tu facción:
+
+| Acción | Costo |
+|---|---|
+| `/ensamblararmas` | **1.000** puntos de influencia |
+| `/creardroga` | **250** puntos de influencia |
+
+El costo se descuenta de la influencia de tu facción, **repartido en partes iguales entre todas las zonas donde tenga influencia**, estén conquistadas o no. Si una zona no alcanza a cubrir su parte, las demás completan el resto. Para poder fabricar, la suma de la influencia de tu facción en todas las zonas debe alcanzar el costo; si no llega, el juego te lo avisa. Si la fabricación no se completa, la influencia se devuelve. Si no perteneces a ninguna facción, no se cobra influencia.
+
+Los pedidos ilegales por teléfono de las facciones penitenciarias también cuestan **1.000** puntos de influencia, descontados de la zona de la prisión.
+
+En la práctica, fabricar sin presencia en las calles es mucho más difícil: una facción que solo cocina y ensambla, sin pisar el barrio, se queda sin influencia por el desgaste horario y por los costos. Para más detalle de cada actividad consulta [Sistema de drogas](sistema-de-drogas.md) y [Sistema de ensamblaje de armas](sistema-de-ensamblaje-de-armas.md).
+
+### Red de contactos de las mafias
+
+Como las mafias no conquistan zonas, su influencia total en toda la ciudad define el nivel de su **red de contactos**:
+
+| Nivel | Influencia total necesaria |
+|---|---|
+| 1 | **500** puntos |
+| 2 | **1.500** puntos |
+| 3 | **3.000** puntos |
+
+El nivel se recalcula cada hora. Por **cada nivel**, los contrabandistas de la mafia reciben **10 %** de descuento en el ensamblado de todas las armas, **10 %** menos de enfriamiento por pedido y **+1 arma** por pedido (excepto en los rifles). En el nivel 3 son **30 %** de descuento, **30 %** menos de enfriamiento y **+3 armas** por pedido. `/ensamblararmas` muestra el nivel actual.
+
 ## Beneficios de controlar territorio
 
 ### Pago en el paycheck
 
-Todos los miembros de una pandilla o mafia reciben un extra en cada paycheck por los territorios que controle su facción. El pago aparece en el recibo bajo el concepto **Pandilla**:
+Todos los miembros de una **pandilla o una mafia** reciben un extra en cada paycheck según la influencia de su facción. El pago aparece en el recibo bajo el concepto **Pandilla**:
 
-- **Entre $0 y $49** por cada zona controlada, sorteado por separado en cada zona.
-- El total está topado en **$1.000** por paycheck.
+- **$1** por cada **20 puntos de influencia** que tu facción suma **en todas sus zonas**, estén conquistadas o no. Por eso las mafias, que no conquistan, también cobran.
+- El pago tiene un tope por paycheck que depende del estatus de la facción: **$1.000** si no es oficial, **$2.000** si es destacada y **$3.000** si es oficial.
 
-Como el sorteo es independiente en cada territorio, controlar muchas zonas paga en promedio unos **$25 por zona**: a partir de unas cuarenta zonas el tope se alcanza casi siempre.
+Por ejemplo, una pandilla no oficial con 4.000 puntos de influencia repartidos en varias zonas paga $200 a cada miembro en cada paycheck, y el tope de $1.000 se alcanza con 20.000 puntos. La cifra de influencia que se usa para el pago se actualiza cada hora.
+
+No cobran este pago las **personas presas** ni los miembros de **facciones cerradas**. Con `/misinfluencias` puedes ver cuánto genera tu facción por paycheck.
+
+### /misinfluencias
+
+Abre un resumen de tu facción con:
+
+- Los **territorios conquistados** y las **zonas con influencia**.
+- El total de **puntos de influencia** y el **dinero por paycheck** que genera para cada miembro, junto con el tope que le corresponde a tu facción.
+- La lista de zonas donde tienes influencia, de mayor a menor.
+
+Tiene una espera de unos segundos entre consultas.
 
 ### Retraso de las alertas policiales
 
 Cuando alguien resulta herido de bala o se genera un incidente **dentro de una zona reclamada por cualquier facción**, el aviso a la policía llega con un retraso adicional de **30 a 60 segundos** sobre el tiempo normal. Es el margen de ventaja que da jugar en terreno marcado.
 
+### Producción de drogas en territorio
+
+Las pandillas tienen ventajas al cocinar drogas con `/creardroga`. El territorio de un laboratorio se determina por la entrada exterior de la propiedad.
+
+- Si el laboratorio está en territorio de **tu propia pandilla**, el límite de ingredientes por cocinada sube **+25 unidades** y el enfriamiento de `/creardroga` baja **25 %**, además de la reducción premium.
+- Por cada territorio que controle tu pandilla, el límite de ingredientes sube **+2 %**, hasta un máximo de **+20 %** (diez territorios). Cuentan todos sus territorios, estén donde estén, y el porcentaje se aplica sobre el límite total.
+- Si el laboratorio está en territorio de **otra facción**, la probabilidad de explosión sube de **20 %** a **35 %**. Esto aplica a cualquier jugador, no solo a pandilleros, y el extintor sigue evitándola.
+
+Un ejemplo: un almacén con habilidad de drogas 21 o más (150 unidades), más la base ilegal (25), más territorio propio (25) da 200 unidades; con diez territorios controlados (+20 %) llegan a 240. Los laboratorios de la base ilegal de tu facción tienen además su propio bono, que se explica en [Sistema de bases ilegales](sistema-de-bases-ilegales.md).
+
 ### Bonificaciones por delinquir en tu propio barrio
 
 Delinquir **dentro de un territorio de tu propia facción** te da puntos de habilidad extra y [Burger Points](sistema-de-burger-points.md). Para optar a estas bonificaciones necesitas:
 
-- Ser miembro de una facción de **tipo pandilla** (las mafias no entran aquí).
+- Ser miembro de una facción de **tipo pandilla** (las mafias no entran aquí) y que la facción esté activa.
 - Que la zona donde estás esté **controlada por tu propia facción**.
 - Tener al menos **5 puntos de habilidad de drogas**.
+- **No estar preso.**
 - No estar dentro del **tiempo de espera** de la última bonificación.
 
 Cuando se cumple todo, cada actividad tiene su propia probabilidad de activar la bonificación:
@@ -107,38 +166,18 @@ Mientras estás dentro de un territorio de tu facción y cumples los mismos requ
 
 ## Graffitis
 
-Los graffitis son carteles de texto que pintas sobre cualquier pared y quedan guardados permanentemente. Sirven para marcar el barrio, dejar recados o firmar el territorio de la pandilla.
+Los graffitis son carteles de texto que pintas sobre cualquier pared con una lata de spray y quedan guardados permanentemente. Sirven para marcar el barrio, dejar recados o firmar el territorio de la pandilla. La guía completa, con todas las fuentes, etiquetas de color y límites, está en [Sistema de graffitis](sistema-de-graffitis.md); aquí van los puntos principales.
 
-### Requisitos
+### Lo esencial
 
-- **8 horas de juego** como mínimo.
-- Una **lata de spray** en la **mano derecha**, con carga suficiente.
+- Necesitas **8 horas de juego** como mínimo y una **lata de spray** con carga en la **mano derecha**.
 - Puedes tener hasta **2 graffitis** activos a la vez. Para superar ese número necesitas **puntos de rol positivos**.
 - Pintar dentro de un interior o mundo privado requiere **premium platino**.
-
-La lata de spray tiene una carga de **3.000** unidades y cada graffiti terminado gasta **250**, así que una lata llena da para **doce graffitis**. El servidor admite un máximo de **1.024** graffitis en el mapa: si se llena, no podrás crear más hasta que se liberen huecos.
-
-### Cómo se pinta
-
-1. Colócate frente a la pared con la lata de spray en la mano derecha y escribe `/graffiti crear`.
-2. Escribe el **texto**, de hasta **24 caracteres**. Debe estar en inglés, salvo jergas hispanas. Puedes usar etiquetas de color dentro del texto: `(n)` para salto de línea y `(b)` negro, `(w)` blanco, `(y)` amarillo, `(g)` verde, `(bl)` azul, `(r)` rojo, `(or)` naranja, `(lb)` celeste, `(gr)` gris, `(br)` marrón, `(p)` rosado, `(pu)` morado, `(dgr)` verde oscuro y `(nbl)` azul marino.
-3. Elige la **fuente** entre Arial, Arial Black, Comic Sans MS y Diploma.
-4. Elige el **tamaño**: pequeño, mediano, grande o gigante. El tamaño gigante solo admite textos de hasta **14 caracteres**.
-5. Confirma y **mantén presionado el botón de disparo** con la lata en la mano para empezar a pintar.
-
-El pintado es progresivo y el tamaño elegido decide cuánto tarda: **15 golpes de spray** para el pequeño, **20** para el mediano, **25** para el grande y **30** para el gigante, a razón de uno por segundo. Verás el progreso en pantalla.
-
-Mientras pintas debes quedarte quieto junto al muro: si te alejas más de un par de pasos, el graffiti se cancela y pierdes el trabajo. Si sueltas el botón tienes **10 segundos** para retomarlo; pasado ese tiempo, todo el progreso se pierde y hay que empezar de cero. Desconectarte durante el proceso también lo cancela.
-
-Cuando la barra se completa entras en modo de colocación para ajustar el cartel sobre la pared. Al guardar, el graffiti queda pintado y visible para todo el mundo.
-
-### Repintar sobre otros
-
-Al terminar un graffiti, cualquier graffiti **ajeno** que estuviera pegado al mismo punto se borra automáticamente: has repintado encima. El juego te avisa con el mensaje "Has repintado un graffiti" en lugar de "Has pintado". Es la forma normal de tapar la firma de una pandilla rival sin pedirle permiso a nadie.
-
-### Editar y borrar
-
-Durante los **primeros 5 minutos** después de pintarlo puedes acercarte a un graffiti tuyo (a menos de cinco pasos) y usar `/graffiti editar` para recolocarlo, o `/graffiti borrar` para eliminarlo. Pasado ese margen el graffiti es definitivo.
+- La lata tiene una carga de **10.000** unidades y cada graffiti terminado gasta **250**, así que una lata llena da para **40 graffitis**.
+- Hay cuatro fuentes clásicas para todos (Arial, Arial Black, Comic Sans MS y Diploma, con tamaño a elección) y **doce fuentes de letras** de estilo callejero, exclusivas de usuarios **premium** de cualquier nivel. Con estas últimas puedes usar hasta **16 letras** en un máximo de **3 líneas**, con un color distinto por letra.
+- El tiempo de pintado depende del largo del texto: **2 segundos por letra**, con un tope según el tamaño en las fuentes clásicas. Mientras pintas debes quedarte quieto junto al muro; si te alejas, el graffiti se cancela.
+- Al terminar un graffiti, cualquier graffiti **ajeno** pegado al mismo punto se borra: has repintado encima. Es la forma normal de tapar la firma de una pandilla rival.
+- Durante los **primeros 5 minutos** puedes recolocar tu graffiti con `/graffiti editar` o eliminarlo con `/graffiti borrar`. Pasado ese margen es definitivo.
 
 ### Lo que gana pintar
 
@@ -152,6 +191,8 @@ Durante los **primeros 5 minutos** después de pintarlo puedes acercarte a un gr
 - **La presencia manda.** No hay comando para capturar un territorio: se gana teniendo gente a pie, sin máscara y sin pausar, dentro de la zona. Coordinar una quedada de quince minutos vale más que cualquier tiroteo.
 - **Vigila el desgaste horario.** Una zona ganada y abandonada se pierde sola. Pasa por el barrio de vez en cuando aunque no haya nadie a quien disputársela.
 - **Consulta `/influencias` antes de atacar.** Te dice exactamente cuántos puntos tiene cada facción en la zona y cuánto te falta para superar al dueño actual.
+- **Consulta `/misinfluencias` antes de fabricar.** Fabricar armas y drogas cuesta influencia, y si tu facción no tiene suficiente en las calles no podrás hacerlo.
 - **Aprovecha el tiempo de espera de 30 minutos.** Como es compartido entre todas las actividades, gastarlo fumando (que solo da +1) desperdicia media hora que podría haber dado +3 con un robo o un graffiti.
 - **Delinque dentro de casa.** El retraso de 30 a 60 segundos en la alerta policial y los puntos de habilidad extra hacen que el mismo delito rinda mucho más en territorio propio.
+- **Cocina en tu propio barrio.** Un laboratorio en territorio de tu pandilla rinde más, enfría más rápido y explota menos que uno en terreno rival.
 - **Si no quieres ver el mapa pintado**, apaga las zonas en `/preferencias` ➡️ Radar.

@@ -4,7 +4,7 @@
 
 La **basura** se acumula sola en los negocios de San Andreas: cada compra de un cliente, cada reparación de un mecánico y cada entrega de un repartidor deja residuos en el local. Un negocio sucio vende menos, ahuyenta clientes y puede terminar perdiéndose. Por eso existe un oficio dedicado a limpiarlo: el **recolector de basura**.
 
-Los recolectores trabajan para las **empresas recolectoras de residuos** repartidas por Los Santos y el condado (Willowfield, Idlewood, East Beach, Glen Park, Ocean Docks, Verdant Bluffs, East Los Santos y Angel Pine, entre otras). Su trabajo consiste en vaciar los contenedores de la vía pública, limpiar los negocios que los contraten y cargar las bolsas en el camión de basura de la empresa, que es donde se cobra cada entrega.
+Los recolectores trabajan para las **empresas recolectoras de residuos** repartidas por Los Santos y el condado (Willowfield, Idlewood, East Beach, Glen Park, Ocean Docks, Verdant Bluffs, East Los Santos y Angel Pine, entre otras). Su trabajo consiste en vaciar los contenedores de la vía pública, limpiar los negocios que los contraten y cargar las bolsas en el camión de basura de la empresa, que es donde se cobra cada entrega. La isla de Santa Catalina queda fuera de este trabajo (ver [Santa Catalina](santa-catalina.md)).
 
 Es un trabajo legal, sin requisitos de antecedentes ni licencias: basta con conseguir un contrato en una empresa recolectora y ponerte en servicio. Se cobra por kilo recolectado, la paga sube con la habilidad y el gobierno subsidia una parte del reciclaje.
 
@@ -63,13 +63,13 @@ Hay un **25% de probabilidad** de subir habilidad al terminar una limpieza: **+1
 
 ## Cobro de la limpieza a los negocios
 
-Cuando un recolector limpia un negocio **del que no es empleado ni tiene llaves**, ese negocio paga el servicio: **$20 por cada kilo** retirado, descontados de la caja del local en el mismo momento en que la basura se apila. Si la caja no alcanza, se cobra lo que haya disponible.
+Cuando un recolector limpia un negocio **del que no es empleado ni tiene llaves**, ese negocio paga el servicio: **$25 por cada kilo** retirado, descontados de la caja del local en el mismo momento en que la basura se apila. Si la caja no alcanza, se cobra lo que haya disponible.
 
 Los **empleados y los dueños** limpian su propio negocio **sin costo**. Esto abre la puerta a contratos de limpieza entre empresas recolectoras y negocios: el dueño decide si contrata un servicio externo o pone a sus propios empleados a barrer.
 
 ## Cómo afecta la basura a un negocio
 
-La suciedad de un local suma la **basura acumulada** del negocio **más los kilos de todas las bolsas de basura que haya tiradas en su interior**. Dejar las bolsas dentro no soluciona nada: hay que sacarlas.
+La suciedad de un local suma la **basura acumulada** del negocio **más los kilos de todas las bolsas de basura que haya tiradas en su interior o en su entrada** (hasta unos 25 metros de la puerta). Dejar las bolsas ahí no soluciona nada: hay que llevárselas.
 
 El límite de acumulación es de **100 kg**. Los efectos, por tramos:
 
@@ -81,7 +81,7 @@ El límite de acumulación es de **100 kg**. Los efectos, por tramos:
 | **56 kg o más** | Las ventas **dejan de ingresar dinero** a la caja y los mecánicos **no pueden trabajar** por riesgo de incendio |
 | 61 kg o más | El ambiente es tan tóxico que nadie querría entrar |
 | **70 kg o más** | **Plagas de ratas**: solo un recolector puede limpiar el local |
-| 85 kg o más | El negocio puede ser **liberado** si el dueño lleva 14 días inactivo |
+| 85 kg o más | El negocio puede ser **liberado** si el dueño lleva 7 días inactivo (14 días si el local está limpio) |
 
 Además, la cantidad de productos que compran los clientes automáticos cada hora baja a medida que el local se ensucia:
 
@@ -117,22 +117,24 @@ Los contenedores acumulan kilos por su cuenta: al arrancar el servidor cada uno 
 
 Un recolector en servicio y a pie puede usar `/basurero limpiar` para vaciar el contenedor entero: toda la basura acumulada se convierte en **una sola bolsa** a sus pies y el contenedor queda limpio, listo para volver a llenarse con el tiempo.
 
+Los contenedores de **Santa Catalina** no cuentan para `/recolectar`, y las bolsas de basura que queden tiradas en la isla, incluso dentro de sus propiedades, se limpian en cada reinicio del servidor.
+
 Lo que puedes encontrar dentro de un contenedor (comida, dinero, objetos, armas) se explica en detalle en [Sistema de basureros](sistema-de-basureros.md).
 
 ## Entregar la basura y cobrar
 
 La basura se entrega **en el camión de basura** de tu empresa: acércate con la bolsa en la mano y usa `/maletero`. Las bolsas de basura **solo** pueden guardarse en camiones de basura; cualquier otro maletero las rechaza.
 
-El pago base es de **$20 por kilo** de la bolsa, y se multiplica por tu habilidad de recolector:
+El pago base es de **$25 por kilo** de la bolsa, y se multiplica por tu habilidad de recolector:
 
 | Habilidad de recolector | Multiplicador | Pago por kilo |
 | --- | --- | --- |
-| 0 – 25 | x0.8 | $16 |
-| 26 – 50 | x1.0 | $20 |
-| 51 – 75 | x1.2 | $24 |
-| 76 o más | x1.4 | $28 |
+| 0 – 25 | x0.8 | $20 |
+| 26 – 50 | x1.0 | $25 |
+| 51 – 75 | x1.2 | $30 |
+| 76 o más | x1.4 | $35 |
 
-Una bolsa llena de 50 kg paga entre **$800** y **$1,400** según tu habilidad.
+Una bolsa llena de 50 kg paga entre **$1.000** y **$1.750** según tu habilidad.
 
 Al entregar:
 
@@ -163,7 +165,7 @@ Trabajar con residuos deja tu personaje **apestando a basura** durante **8 horas
 
 - **Empieza por los contenedores**: `/recolectar` te lleva siempre al punto con basura más cercano, sea contenedor, bolsa suelta o negocio sucio, así que hace de ruta automática.
 - **Lleva escoba y jabón**: la escoba rinde más kilos por tanda y no se gasta; el jabón es para cuando quieras encadenar limpiezas rápidas.
-- **No dejes bolsas dentro del local**: cuentan igual que la basura acumulada. Sácalas al camión o a un contenedor.
-- **Ofrece contratos a los negocios**: un local que pasa de 56 kg deja de ganar dinero con sus ventas y, si es un taller, sus mecánicos no pueden trabajar. Un dueño en esa situación paga encantado $20 por kilo.
+- **No dejes bolsas dentro ni a la entrada del local**: cuentan igual que la basura acumulada. Sácalas al camión o a un contenedor.
+- **Ofrece contratos a los negocios**: un local que pasa de 56 kg deja de ganar dinero con sus ventas y, si es un taller, sus mecánicos no pueden trabajar. Un dueño en esa situación paga encantado $25 por kilo.
 - **Vacía el contenedor en una sola bolsa**: un contenedor con muchos kilos se convierte en una bolsa muy rentable de un solo uso del comando.
 - **Perfúmate antes de rolear fuera del trabajo**, o el olor te seguirá durante 8 horas.
