@@ -25,6 +25,8 @@ Esta guía cubre cómo se registran las heridas, qué significa quedar herido, n
 
 Cada herida guarda el arma, la parte del cuerpo, la vida que te quitó y hace cuánto ocurrió. Cualquier persona a menos de **10 metros** puede leer ese historial con `/heridas`, y un cartel flotante sobre tu personaje avisa a los demás de tu estado.
 
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/heridas-del-personaje.png" alt="Tabla de heridas de un personaje por zona del cuerpo" width="606" height="316">
+
 Las zonas que el sistema distingue son **cabeza**, **torso**, **entrepierna**, **brazo izquierdo o derecho** y **pierna izquierda o derecha**. Un disparo a las piernas te las **rompe** y te cuesta correr y saltar; una herida de bala en la cabeza es mortal. Si vas en una **moto o bicicleta**, un disparo que te alcanza te tira al suelo y también te rompe las piernas.
 
 `/heridas` muestra el historial en una tabla con una fila por zona del cuerpo: cuántas heridas tienes en ella y, en el detalle, cada arma con la vida total que te quitó. Al final de la tabla hay un resumen de **fracturas** (piernas), **cortes** (apuñaladas) y **quemaduras**.

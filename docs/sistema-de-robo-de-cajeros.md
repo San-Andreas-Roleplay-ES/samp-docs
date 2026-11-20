@@ -159,6 +159,8 @@ La mancha dura **8 horas reales** contadas desde el último contacto con la tint
 
 El cajero se va rompiendo a la vista:
 
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/cajeros-automaticos-destruidos.jpg" alt="Cajeros automáticos destruidos con golpes, con explosivos y embestidos por una camioneta" width="1600" height="533">
+
 | Daño | Aspecto |
 |---|---|
 | Menos de 50 % | Entero, pero **fuera de servicio** |

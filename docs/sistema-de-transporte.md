@@ -190,6 +190,8 @@ Los helicópteros Sparrow, Sea Sparrow y Maverick (incluidos el de noticias y el
 
 Los pilotos y copilotos de aviones y helicópteros ven en el **minimapa** a las demás aeronaves que estén a **menos de 3.000 metros**, incluido el tráfico aéreo ambiental. El color indica la distancia:
 
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/radar-aereo.png" alt="Radar aéreo mostrando otra aeronave cerca del aeropuerto de Los Santos" width="478" height="426">
+
 | Distancia | Color |
 |-----------|-------|
 | Hasta 750 m | Rojo |
@@ -202,6 +204,8 @@ El radar se actualiza cada **2 segundos**. Solo aparecen las aeronaves cuyo pilo
 ### Alerta de colisión
 
 Si hay otra aeronave cerca, la alerta salta **solo en el aire** (a 30 metros o más sobre el suelo, tanto tú como la otra aeronave) y con el radar encendido. Funciona por niveles:
+
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/alerta-de-colision-aerea.jpg" alt="Alerta de colisión DESCEND NOW con un avión y un helicóptero sobre Los Santos" width="1384" height="1255">
 
 | Aviso | Cuándo salta |
 |-------|--------------|

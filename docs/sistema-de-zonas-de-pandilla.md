@@ -10,6 +10,8 @@ Controlar un territorio no es decorativo: retrasa la llegada de la policía a lo
 
 Si prefieres jugar con el mapa limpio, puedes ocultar las zonas del radar desde tus preferencias. Este documento cubre el sistema de territorios y un resumen de los **graffitis**, la forma más visible de marcar el barrio. Para saber cómo entrar a una facción criminal consulta [Facciones ilegales](facciones-ilegales.md), y para las actividades delictivas en sí, [Sistema de delincuente](sistema-de-delincuente.md).
 
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/territorios-de-pandilla-mapa.png" alt="Mapa de los territorios de pandilla de Los Santos" width="745" height="660">
+
 ### Comandos
 
 - /influencias — muestra cuánta influencia tiene acumulada cada facción en la zona donde estás parado.

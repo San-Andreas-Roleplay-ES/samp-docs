@@ -74,6 +74,8 @@ El pintado es progresivo: la barra avanza **un punto por segundo** y cada letra 
 
 Son doce fuentes de estilo callejero. Cada una tiene su propio tamaño de letra y su propia forma, y se eligen en el selector con vista previa:
 
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/graffiti-selector-de-fuentes.jpg" alt="Selector de fuentes del graffiti con las 16 opciones" width="1600" height="1133">
+
 | Fuente | Fuente |
 |---|---|
 | Alivegraff | Block Buster |

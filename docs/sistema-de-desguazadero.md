@@ -8,6 +8,8 @@ Si eres delincuente, llegas conduciendo un vehículo ajeno hasta el punto de ent
 
 El desguazadero tiene además un uso para cualquier jugador, delincuente o no: **destruir para siempre tus propios vehículos que nunca registraste**.
 
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/desguazadero-punto-de-entrega.png" alt="Punto de entrega del desguazadero con el comando /desguazar" width="474" height="271">
+
 ### Comandos
 
 - `/desguazar` — entrega el vehículo que conduces en el punto de entrega. Si es un vehículo tuyo sin registrar, te ofrece destruirlo.
@@ -39,6 +41,8 @@ Un vehículo que ya fue entregado y sigue destruido (ver más abajo) no se puede
 ### Pizarra WANTED
 
 Junto a cada desguazadero hay una pizarra con **10 modelos buscados**, en dos columnas de 5. Cada desguazadero tiene su propia lista y no repite modelos con el otro. La lista se renueva **todos los días a las 21:00**.
+
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/desguazadero-pizarra-wanted.jpg" alt="Pizarra WANTED del desguazadero con los diez modelos buscados del día" width="988" height="874">
 
 Los modelos son autos civiles de hasta **$1.000.000**: sedanes, deportivos, convertibles, station wagons, lowriders, todoterrenos, industriales y vehículos únicos.
 

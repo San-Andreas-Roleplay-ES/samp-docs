@@ -224,6 +224,8 @@ Si dos delincuentes fuerzan la misma puerta a la vez, gana quien la abre primero
 
 Forzar con ganzúas es un minijuego de pines: debes fijar cada pin en el momento justo, cuando sube hasta la línea marcada.
 
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/minijuego-de-ganzuas.jpg" alt="Minijuego de ganzúas con los pines de la cerradura y las barras de ganzúa y tiempo" width="973" height="784">
+
 - **A** y **D** (o las flechas) cambian de pin, **Espacio** intenta fijar el pin elegido y la tecla de entrar o salir de vehículos desiste.
 - Si fijas el pin fuera de la línea, fallas: el pin cae, la ganzúa pierde vida y puede gastarse un uso.
 - Debes quedarte quieto junto a la puerta con las ganzúas en la mano derecha; si te mueves, las sueltas o te metes en un vehículo, el intento se cancela.
@@ -313,6 +315,8 @@ Cada intento fallido acumula un aviso, y al superar cierto número salta la alar
 ### Pinchar ruedas
 
 `/pincharrueda` pincha una rueda del vehículo y lo deja inutilizable hasta que lo reparen. Requisitos:
+
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/pinchar-ruedas.png" alt="Personaje pinchando la rueda de un vehículo con un cuchillo" width="732" height="816">
 
 - Ser delincuente con **25 de habilidad de delincuente**.
 - Tener un **cuchillo en la mano derecha** y estar **a pie**, vivo y sin esposas, taser ni placaje.

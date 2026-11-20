@@ -8,6 +8,8 @@ Cada cultivo tiene su propio ritmo y sus propias exigencias. Los rápidos se cos
 
 El oficio se apoya en una habilidad propia, **Granjero**, que sube mientras cultivas y vendes. Para plantar marihuana y otras plantas ilegales, consulta el [sistema de plantaciones de marihuana](sistema-de-plantaciones-de-marihuana.md): usa los mismos comandos, pero tiene reglas distintas.
 
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/cultivos-granja.jpg" alt="Granja con hileras de cultivos legales: calabazas, lechugas y tomates" width="1600" height="900">
+
 ### Comandos
 
 - /plantacion crear — siembra el sobre de semillas que llevas en la mano derecha. Alias: `/planta`, `/plantación`.

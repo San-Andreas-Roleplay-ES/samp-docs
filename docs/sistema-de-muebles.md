@@ -60,6 +60,8 @@ Comprar, eliminar y empaquetar muebles sueltos no tiene este límite.
 
 Al usar `/comprarmueble` sin parámetros se despliega un menú con categorías ordenadas. Cada modelo tiene su propio precio, que se descuenta directamente de tu cuenta bancaria.
 
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/muebles-coleccion-navidad.jpg" alt="Colección de muebles de Navidad en el catálogo: árboles, duendes y trineos" width="1600" height="927">
+
 Además de los objetos clásicos del juego base, el servidor cuenta con colecciones exclusivas de modelos 0.3DL repartidas en diferentes categorías. Solo los usuarios con **Premium Oro o superior** pueden comprar estos modelos.
 
 | Colección 0.3DL | Contenido destacado |

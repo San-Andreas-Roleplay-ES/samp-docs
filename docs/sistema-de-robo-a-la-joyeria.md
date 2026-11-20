@@ -80,6 +80,8 @@ Si la alarma saltó por error y no hubo robo, la central levanta la cortina a lo
 
 La joyería tiene **41 vitrinas** de cuatro tipos. Cada una guarda joyas de valor distinto:
 
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/joyeria-vitrinas.jpg" alt="Vitrinas de la joyería de Los Santos durante un robo" width="1600" height="1600">
+
 | Vitrina | Cantidad | Valor de las joyas |
 | ------- | -------- | ------------------ |
 | De piso (en las islas del centro) | 22 | $15.000 a $25.000 |

@@ -367,6 +367,8 @@ El dueño del negocio donde apuestas puede fijar una **comisión de entre 0% y 1
 
 La **lotería estatal** es la apuesta más barata del servidor y no requiere estar en ningún local de juego.
 
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/loteria-selector-de-numero.gif" alt="Selector de número de la lotería con los 300 números y los últimos ganadores" width="1400" height="788">
+
 ### Cómo participar
 
 - Compra tu boleto en **cualquier negocio que lo venda**, como los supermercados. En esos negocios, **Lotería** es la primera opción del menú de `/comprar`.

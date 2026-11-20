@@ -135,6 +135,8 @@ Cada entrega de tráiler otorga **+5 Burger Points**.
 
 Es un trabajo secundario independiente de las empresas de repartos: no necesitas empleo ni habilidad de camionero. Los camiones de obra (mezcladoras de cemento, Packer, Flatbed y DFT-30) están estacionados en zonas industriales repartidas por el estado, y en el juego el trabajo aparece como "camionero pesado".
 
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/contadores-camion-de-cemento.jpg" alt="Contadores de dinero y daño del camión de cemento en pantalla" width="672" height="775">
+
 ### Requisitos
 
 - Tener la **licencia de conducir** vigente (con la licencia suspendida no puedes trabajar; ver [sistema de vehículos](sistema-de-vehiculos.md)).

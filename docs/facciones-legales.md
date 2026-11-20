@@ -166,6 +166,8 @@ Los rangos de **inspector de bomberos** tienen competencias administrativas sobr
 
 Los bomberos trabajan con **aire limitado**. El equipo de respiración (el cilindro) y su máscara se retiran con `/equipar` y se manejan con `/scba`:
 
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/scba-manometro.png" alt="Estados del manómetro del equipo de respiración autónoma" width="1600" height="441">
+
 - `/scba equipar` — te pones el equipo; tiene que estar en tu mano derecha y estar a pie
 - `/scba mascara` — te pones o te quitas la máscara
 - `/scba aire` — conectas o desconectas el regulador; el aire solo se consume mientras está conectado

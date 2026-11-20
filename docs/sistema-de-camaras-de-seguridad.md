@@ -8,6 +8,8 @@ Una cámara no es un mueble: no se compra en una tienda ni se coloca por cuenta 
 
 Esta guía también cubre dos formas de mirar una puerta desde fuera de la acción: la **mirilla**, para ver quién llama a tu puerta, y la **snakecam**, con la que la policía mira hacia el interior de una propiedad antes de entrar. Para las propiedades en general, consulta [propiedades](sistema-de-propiedades.md).
 
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/camara-de-seguridad-instalada.jpg" alt="Cámara de seguridad instalada en el techo de un negocio" width="1571" height="604">
+
 ### Comandos
 
 - `/camaras` — abre la lista de tus cámaras. Estando en vivo, vuelve a escribirlo para dejar de mirar.
@@ -21,6 +23,8 @@ Esta guía también cubre dos formas de mirar una puerta desde fuera de la acci�
 ## Instalación
 
 Solo puede instalar cámaras un empleado de una **empresa de seguridad** que esté **trabajando** (`/trabajar`), a pie y sin estar herido, esposado ni reducido. El proceso es este:
+
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/camaras-de-seguridad-catalogo.jpg" alt="Catálogo de modelos al instalar una cámara de seguridad" width="1600" height="1379">
 
 1. El técnico se ubica en la propiedad del cliente: dentro de ella, junto a una de sus puertas por el lado de afuera o en su zona exterior. El cliente debe estar a menos de **5 metros**.
 2. El técnico escribe `/instalarcamara` con el nombre o el ID del cliente. El cliente ve el precio y acepta con `/aceptar` (o rechaza con `/rechazar`).
@@ -117,6 +121,8 @@ Cuando una cámara registra un **delito**, el dueño recibe un aviso en el chat 
 
 Una cámara que deja de funcionar no graba nada hasta que un técnico la repare.
 
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/camara-de-seguridad-offline.jpg" alt="Pantalla de una cámara de seguridad saboteada con el aviso CAMERA OFFLINE" width="1600" height="900">
+
 ### Sabotaje con herramientas
 
 `/sabotearcamara` desconecta una cámara a **3,5 metros** o menos. Necesitas tener en la **mano derecha** un **destornillador** o una herramienta de palanca (palanca, corta cadenas, ariete, motosierra, motoamoladora, halligan o hacha), estar a pie y no estar herido, esposado ni reducido.
@@ -144,6 +150,8 @@ El técnico no puede reparar cámaras de sus propias propiedades. Si el dueño n
 ## Mirilla
 
 `/mirilla` te deja mirar hacia afuera con un efecto de ojo de pez, sin abrir la puerta.
+
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/mirilla-de-la-puerta.png" alt="Vista por la mirilla de la puerta de una propiedad" width="1600" height="900">
 
 - Debes estar **dentro** de la propiedad, a menos de **2,5 metros** de su puerta de entrada, vivo y a pie.
 - No está disponible en **Twin Towers** ni durante las **visitas** a la cárcel.

@@ -95,6 +95,8 @@ Una puerta forzada queda abierta hasta que el banco se repone. Un código mal es
 
 ### La alarma
 
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/fleeca-bank-persianas.jpg" alt="Ventanillas del Fleeca Bank con las persianas abiertas y bajadas" width="1600" height="549">
+
 | Estado | Qué ocurre |
 |--------|-----------|
 | Armada | Estado normal: sensores, cámaras y botones de pánico funcionan |

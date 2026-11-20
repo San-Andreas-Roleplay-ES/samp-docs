@@ -82,6 +82,8 @@ Desde un mensaje de la bandeja puedes llamar al remitente, responderle, y borrar
 
 Puedes eliminar:
 
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/telefono-borrar-historial.png" alt="Opción Borrar historial en el teléfono" width="679" height="349">
+
 - un SMS o una llamada concretos, desde sus opciones;
 - toda la conversación o todas las llamadas con un contacto, desde las opciones de cualquiera de ellos;
 - la bandeja completa de SMS o el registro completo de llamadas, desde **Ajustes > Borrar historial**.

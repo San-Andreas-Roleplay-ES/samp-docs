@@ -192,6 +192,8 @@ Los pilotos de helicópteros policiales de servicio tampoco reciben las alertas 
 
 Estos objetos se obtienen con `/equipar`, estando de servicio y dentro de un vehículo o una propiedad de tu facción:
 
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/equipo-policial.jpg" alt="Equipo policial: chalecos, radio, Optiwand, alcoholímetro, pistola radar, megáfono, conos y puestos de mando" width="1600" height="900">
+
 | Equipo | Facciones | Uso |
 |---|---|---|
 | **Alcoholímetro** | LSPD, LSSD | Mide la tasa de alcohol con `/alcoholimetro` |

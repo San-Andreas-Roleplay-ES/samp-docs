@@ -192,6 +192,8 @@ Al entrar al juego, si tienes chats sin leer, se te avisa cuántos son y que pue
 
 La granja de bots es la forma de fabricarse una audiencia: una instalación de teléfonos que, desde cuentas de Bleeter de personajes inactivos, **suma seguidores, me gusta o vistas** a quien tú indiques. Es una actividad del mercado negro: el equipo se compra allí y funciona instalado en una propiedad.
 
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/granja-de-bots-bleeter.jpg" alt="Gabinete lleno de teléfonos de una granja de bots de Bleeter" width="1600" height="1451">
+
 ### Conseguir y montar el equipo
 
 El soporte se compra en el [mercado negro](sistema-de-mercado-negro.md), en la opción *Comprar granja de teléfonos*. Para acceder necesitas ser delincuente, tener **50 horas jugadas**, no ser policía, estar en el punto de mercado negro que te corresponde y tener la **mano derecha libre**. El equipo se paga en efectivo y exige habilidad de **electrónica** (consulta [habilidades](sistema-de-habilidades.md)):

@@ -122,6 +122,8 @@ Las transferencias son **gratuitas e instantáneas**, y son la única forma de m
 ## Minería de CluckinCoin
 Además de comprarlas, puedes **minar** CluckinCoins con equipo propio. Lo minado va a la misma billetera de tu cuenta y se vende desde el teléfono como cualquier otra moneda. Es una inversión a medio plazo, no dinero rápido: una pieza se paga sola tras unas **dos o tres semanas** de minado continuo, y eso si el precio de la moneda no cae.
 
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/mineria-cluckincoin-pantalla.gif" alt="Pantalla de minería de CluckinCoin con los datos del equipo y los bloques" width="1680" height="1050">
+
 ### Equipos y piezas
 Los equipos se compran en el [mercado negro](sistema-de-mercado-negro.md) (hay que ser delincuente, tener 50 horas de juego y la mano derecha libre) y se pagan con el efectivo que llevas. Llegan **vacíos** y en una caja: llévala a una propiedad y arma el equipo con `/desempaquetarmueble`, como cualquier otro mueble (consulta el [sistema de muebles](sistema-de-muebles.md)). Cada propiedad admite hasta **4 equipos de minería**.
 

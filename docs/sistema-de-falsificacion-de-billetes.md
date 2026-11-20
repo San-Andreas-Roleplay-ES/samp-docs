@@ -77,6 +77,8 @@ Necesitas una resma con al menos **5 hojas** en la mano derecha. La tanda consis
 
 Una cuchilla se desliza de lado a lado sobre la hoja. Pulsa la **tecla de sprint** cuando esté justo sobre la línea que separa los billetes. Cada hoja lleva **4 cortes**. Con **la tecla de entrar a vehículo** abandonas la tanda.
 
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/falsificacion-minijuego-de-corte.gif" alt="Minijuego de corte de una hoja de billetes falsos" width="1680" height="1050">
+
 | Resultado del corte | Efecto |
 | ------------------- | ------ |
 | Corte limpio | Sin consecuencias |

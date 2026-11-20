@@ -27,6 +27,8 @@ Debajo de los pasos aparece la **certificación**, marcada como opcional.
 
 Al conectarte, el servidor te pide el nombre o el correo de tu cuenta y después la contraseña. Si en los últimos **30 días** ya entraste con el mismo nombre de SA-MP y desde la misma conexión, el servidor te reconoce y te salta el primer paso: pasas directo a la contraseña.
 
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/selector-de-personajes.jpg" alt="Selector de personajes al iniciar sesión, con el logo de la facción de cada uno" width="1030" height="433">
+
 Después aparece el **selector de personajes**: cada personaje es una tarjeta con la vista previa de su skin, el logo de su facción (si pertenece a una), su nombre y su nivel. Haz clic en la tarjeta del personaje con el que quieres jugar.
 
 - Se muestran hasta **6 personajes** a la vez, en filas de 3. Con más de 6 el servidor usa una lista de texto con el nombre, el estado y las horas jugadas de cada uno.
@@ -68,6 +70,8 @@ El chat **fuera de personaje** tiene sus propios comandos: `/b` (alcance mediano
 ### Frases de voz
 
 `/vl` (también `/frasesvoz`) reproduce **998 frases habladas** del propio GTA San Andreas, repartidas en cinco grupos: Families, Ballas, Aztecas, Vagos y Policía. Las oyen los jugadores que estén a **20 metros** de ti, en el mismo interior, y el texto de la frase aparece en el chat como lo que tu personaje dice (en inglés, igual que la voz).
+
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/frases-de-voz.png" alt="Menú de frases de voz con la lista de frases de los Vagos" width="523" height="430">
 
 - `/vl` abre un menú: eliges el grupo y navegas por páginas de 20 frases; al elegir una, se reproduce.
 - `/vl [número]` dice directamente la frase con ese número (del 1 al 998), útil para asignarla a una tecla.

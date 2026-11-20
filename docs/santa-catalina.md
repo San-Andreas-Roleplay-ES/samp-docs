@@ -6,6 +6,8 @@ Santa Catalina Island es una isla al sur de Los Santos inspirada en la Santa Cat
 
 La isla funciona como una extensión del estado con sus propias reglas. La forma más sencilla de llegar es el **ferry**, que sale desde un muelle de Los Santos y tiene un segundo muelle en la isla. Las propiedades de la isla no pagan impuestos ni cuentas de servicios, los surtidores nunca se quedan sin combustible y hay dos logros de exploración esperándote.
 
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/santa-catalina-plaza.jpg" alt="Plaza de Santa Catalina Island al atardecer" width="1600" height="900">
+
 ### Comandos
 
 - `/ferry` — viaja en el ferry entre Los Santos y la isla. Solo funciona junto al muelle.
@@ -17,6 +19,8 @@ La isla funciona como una extensión del estado con sus propias reglas. La forma
 ## El ferry
 
 El ferry une dos muelles: el de **Santa María, en Los Santos**, y el de **Santa Catalina Island**. En cada muelle hay un icono que indica el destino y el precio del pasaje. Para viajar colócate junto al icono del muelle (a 3 metros o menos) y escribe `/ferry`: el viaje es instantáneo y llegas al muelle contrario.
+
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/santa-catalina-desde-el-mar.jpg" alt="Santa Catalina Island vista desde el mar de noche" width="1600" height="900">
 
 | Concepto | Valor |
 |---|---|
@@ -50,6 +54,8 @@ Si trabajas para una facción o estás en servicio en un negocio, el seguro méd
 ## Propiedades de la isla
 
 Las casas y negocios de la isla tienen ventajas pensadas para que mantenerlos sea mucho más sencillo:
+
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/santa-catalina-mapa.png" alt="Mapa de Santa Catalina Island" width="980" height="680">
 
 - **Sin impuesto de propiedad.** Las casas de la isla no cuentan en el impuesto de propiedad del payday.
 - **Sin impuesto de negocios.** Los negocios de la isla no pagan el cargo que se descuenta a los negocios cuyo dueño no está conectado.

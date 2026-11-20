@@ -46,6 +46,8 @@ Con `/sacarunidades` puedes separar unidades de un paquete de ingredientes y con
 
 Al abrir `/cocinar` o `/bartender` ves el recetario con estas herramientas:
 
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/cocina-recetario.jpg" alt="Recetario de /cocinar con las recetas y sus ingredientes" width="1600" height="959">
+
 - **Categorías** a un lado, cada una con su cantidad de recetas.
 - **Puedo preparar**, un filtro que muestra solo lo que ya puedes hacer con tu habilidad y con lo que hay en el refrigerador. Si tienes algo listo, el menú abre directamente en ese filtro.
 - Cada tarjeta muestra el nivel de la receta y, si te falta algo, cuántos ingredientes faltan.

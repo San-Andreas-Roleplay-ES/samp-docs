@@ -140,6 +140,8 @@ Un objeto grande o pesado tampoco puede guardarse desde dentro del vehículo.
 
 Con `/asiento` te cambias de asiento dentro del vehículo sin bajarte. Se abre un menú con los asientos del vehículo: el tuyo aparece en gris y los **ocupados en rojo**.
 
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/cambiar-de-asiento.png" alt="Menú para cambiar de asiento dentro del vehículo" width="750" height="463">
+
 Requisitos:
 
 - El vehículo debe estar **casi detenido**: a una velocidad de 5 km/h o menos.
@@ -152,6 +154,8 @@ Pasar al **volante** tiene las mismas reglas que entrar como conductor: no puede
 ## Pegatinas
 
 Los vehículos pueden llevar **pegatinas**: llamas y letras góticas en varios colores y tamaños, y logos de marcas de la ciudad. Se instalan en un **taller** desde el menú de tuning:
+
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/pegatinas-para-vehiculos.jpg" alt="Pegatinas para vehículos con logos de marcas de la ciudad" width="1600" height="729">
 
 1. El mecánico de servicio, dentro de su taller, escribe `/tuning [id] piezas` con el cliente al volante a menos de 5 metros.
 2. El cliente acepta con `/aceptar` y elige **Pegatinas** en el menú.

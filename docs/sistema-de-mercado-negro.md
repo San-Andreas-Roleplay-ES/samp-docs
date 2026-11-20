@@ -170,6 +170,8 @@ En **esquinas fijas** de Los Santos pueden aparecer hasta **2 camellos** a la ve
 
 Una parte de los vagabundos (cerca del 40%, con un máximo de **8** a la vez) es agresiva. Pueden atacarte si:
 
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/vagabundo-agresivo.jpg" alt="Vagabundo agresivo atacando con un cuchillo en un campamento" width="886" height="1072">
+
 - Aceptas venderles droga: **15%** de probabilidad de que intenten robarte.
 - Les ofreces algo que no es droga: **25%** de probabilidad de que se enfurezcan.
 - Los atacas o los hieres.

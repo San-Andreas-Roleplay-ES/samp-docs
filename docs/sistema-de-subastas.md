@@ -17,6 +17,8 @@ Mientras participas, tu oferta queda **retenida en tu cuenta bancaria**. Si no g
 
 Salen a subasta las propiedades que se liberan por inactividad de su dueño:
 
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/subasta-cartel-en-la-puerta.png" alt="Cartel de subasta en la puerta de una propiedad con la mejor oferta y la fecha de cierre" width="636" height="295">
+
 | Tipo de propiedad | Se libera tras |
 |-------------------|----------------|
 | Casa | 30 días de inactividad |

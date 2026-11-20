@@ -56,6 +56,8 @@ La motosierra y las hachas vibran más, así que la hoja se desvía con más fue
 
 Tu personaje se agacha junto a su tobillo y aparecen dos barras arriba a la derecha:
 
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/romper-tobillera-minijuego.jpg" alt="Minijuego para cortar la tobillera con los contadores de corte y hoja" width="1600" height="900">
+
 - **Corte**: el progreso. Al llegar a lleno, la tobillera se rompe.
 - **Hoja**: la posición de la hoja. La franja **verde** del centro es la zona donde sí se corta.
 

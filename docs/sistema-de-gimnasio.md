@@ -173,6 +173,8 @@ Comer y beber fuera de interiores otorga **+5 Burger Points** cada uno, como má
 
 El comando `/necesidades` ya no escribe en el chat: abre un panel con el aspecto de las estadísticas del juego original, abajo a la izquierda y con el título **Estado**.
 
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/panel-de-necesidades.png" alt="Panel de /necesidades con las barras de músculo, peso, hambre, sed y energía" width="760" height="483">
+
 - Muestra cinco barras, de 0 a 25: **músculo**, **peso**, **hambre**, **sed** y **energía**, junto con el día de la semana. No incluye números: solo el largo de cada barra.
 - Una barra vacía significa 0. En hambre, sed y peso una barra larga es mala señal (más hambre, más sed, peor estado físico); en músculo y energía, una barra larga es buena.
 - El panel se cierra solo a los **10 segundos**. Si vuelves a escribir `/necesidades` mientras está abierto, se cierra de inmediato.

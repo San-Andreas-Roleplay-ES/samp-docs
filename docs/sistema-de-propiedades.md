@@ -268,6 +268,8 @@ El diálogo de precio te muestra el coste, el mínimo, el máximo y tu **benefic
 
 Los productos se agrupan en estas categorías: **Armas, Comidas, Bebidas, Tabaco, Deportes, Farmacia, Ferretería, Muebles, Ropa, Electrónica, Cultivo, Repuestos, Seguridad, Joyas y Regalos**.
 
+<img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/tienda-por-categorias.png" alt="Menú de /comprar de un supermercado ordenado por categorías" width="651" height="465">
+
 Sin premium, un negocio solo puede vender productos de **una única categoría**, con dos excepciones: Bebidas y Tabaco cuentan como Comidas, y Regalos cuenta como Cultivo. Con premium puedes mezclar categorías distintas en el mismo catálogo.
 
 ### Regalos, vapers y habanos
