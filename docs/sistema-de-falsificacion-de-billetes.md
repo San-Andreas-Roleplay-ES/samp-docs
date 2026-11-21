@@ -20,7 +20,7 @@ Los billetes falsos **no se pueden vender a ningún comprador**. Sirven para el 
 
 | Requisito | Detalle |
 | --------- | ------- |
-| Ser delincuente | Obligatorio. Los policías no pueden comprar equipo |
+| Ser delincuente | Obligatorio para comprar equipo en el mercado negro. Los policías no pueden comprar |
 | Horas jugadas | **50** para acceder al mercado negro |
 | Habilidad de delincuente | **50** para comprar el equipo y para usar `/falsificar` |
 | Habilidad de falsificación | La que pida cada máquina (ver tabla) |
@@ -31,7 +31,7 @@ Cualquier persona puede usar la imprenta de una propiedad si tiene las habilidad
 
 ## Las máquinas
 
-Cada imprenta necesita una pieza de cada tipo. Las máquinas se compran **en efectivo** en el mercado negro, con la **mano derecha libre**, y se entregan **empaquetadas**: llévalas a una propiedad y usa `/desempaquetarmueble` para armarlas. Las máquinas que aún no puedes usar aparecen en gris en la lista, con la habilidad que te falta.
+Cada imprenta necesita una pieza de cada tipo. Las máquinas se compran **en efectivo** en el mercado negro, con la **mano derecha libre**, y se entregan **empaquetadas**: llévalas a una propiedad y usa `/desempaquetarmueble` para armarlas. Las máquinas que aún no puedes usar aparecen en gris en la lista, con la habilidad que te falta, y no puedes comprarlas.
 
 | Nivel | Tipo | Máquina | Habilidad de falsificación | Precio |
 | ----- | ---- | ------- | -------------------------- | ------ |
@@ -129,9 +129,9 @@ La calidad de un fajo es una de seis categorías, y es lo que decide si la cajer
 | 3 | Hasta 84 | Excelente |
 | 3 | 85 o más | Perfecta |
 
-Un **corte chueco** baja la calidad un escalón, pero nunca por debajo del mínimo de ese nivel: **mala** en el casero, **buena** en el de taller y **excelente** en el industrial.
+Un **corte chueco** baja la calidad un escalón, pero nunca por debajo del mínimo de ese nivel: **mala** en el casero y **buena** en el de taller. Solo baja un escalón por tanda, sin importar cuántos cortes salgan chuecos.
 
-Al terminar la tanda, el mensaje en pantalla te indica la calidad del fajo. En el inventario el fajo se ve como un **fajo de billetes** común, con un tono apenas distinto al del dinero real. Un fajo de **$100.000** es el máximo por objeto; los fajos de la **misma calidad** se juntan en tu mano derecha automáticamente.
+Al terminar la tanda, el mensaje en pantalla te indica la calidad del fajo. En el inventario el fajo se ve como un **fajo de billetes** común, con un tono apenas distinto al del dinero real. Un fajo de **$100.000** es el máximo por objeto; si ya llevas en la mano derecha un fajo de la **misma calidad**, el nuevo se suma a ese mientras el total no pase de $100.000.
 
 ## Habilidad de falsificación
 

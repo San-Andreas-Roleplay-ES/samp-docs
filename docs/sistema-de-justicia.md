@@ -32,7 +32,7 @@ Las **Cortes de Apelaciones de San Andreas** son los tribunales de apelación in
 
 ## El juez
 
-El juez es el rango más alto del Departamento de Justicia. Solo él puede firmar órdenes, modificar condenas, decretar prisión preventiva, conceder libertad condicional y corregir el historial penal de un ciudadano. Todos sus comandos exigen estar **de servicio**.
+El juez es el rango más alto del Departamento de Justicia. Solo él puede modificar condenas, decretar prisión preventiva, conceder libertad condicional y corregir el historial penal de un ciudadano; las órdenes las firma él o el líder de una facción policial. Todos sus comandos exigen estar **de servicio**.
 
 ### Comandos del juez
 
@@ -54,7 +54,7 @@ El juez es el rango más alto del Departamento de Justicia. Solo él puede firma
 
 ### Condenas
 
-Con `/condenar` el juez puede reemplazar la condena de cualquier persona, aunque no la haya dictado él. Los límites son:
+Con `/condenar` el juez puede reemplazar la condena de cualquier persona conectada, aunque no la haya dictado él. Los límites son:
 
 | Parámetro | Valor |
 |---|---|
@@ -75,13 +75,13 @@ La prisión preventiva mantiene a un detenido encerrado mientras avanza una inve
 - Solo puede aplicarse a alguien que **ya esté encarcelado**.
 - Duración: entre **1 y 7 días**.
 - No se puede acumular: si la persona ya está en preventiva, hay que retirarla primero con `/removerpreventiva`.
-- Cuando la preventiva expira, el preso queda **libre automáticamente** y puede abandonar la cárcel.
+- Cuando la preventiva expira, deja de retener al preso: puede salir con `/salircarcel` en cuanto haya cumplido su condena. El vencimiento se comprueba cuando el preso se conecta.
 
 Mientras dura la preventiva no se muestra el tiempo restante de condena, porque lo que retiene a la persona es la investigación en curso.
 
 ### Libertad condicional
 
-El juez puede conceder libertad condicional por **1 a 30 días**. Si el beneficiario está preso, sale de la cárcel en el acto; si está libre, debe estar **cerca del juez** para recibirla.
+El juez puede conceder libertad condicional por **1 a 30 días**. Si el beneficiario está preso, sale de la cárcel en el acto; si está libre, debe estar **cerca del juez** (a unos 15 metros como máximo) para recibirla. No puede concederse a un prófugo ni a un personaje carcelario, y un juez no puede asignársela a sí mismo.
 
 Quien queda en condicional arrastra una serie de condiciones (registros, permisos de viaje, prohibición de portar armas, obligación de presentarse) y lleva una tobillera hasta que el plazo termina. Las reglas completas y los comandos del beneficiario se explican en el [sistema de cárcel](sistema-de-carcel.md).
 
@@ -96,7 +96,7 @@ Quien queda en condicional arrastra una serie de condiciones (registros, permiso
 
 ### Traslados a juicio
 
-Cuando hay que llevar a un preso a la corte, un juez o un guardia de la cárcel abre el traslado con `/iniciotraslado`. Durante el traslado el preso puede moverse fuera de la cárcel y se le distingue por el color de su nombre. Al terminar, `/fintraslado` lo devuelve automáticamente a la prisión. Si el preso se desconecta en mitad del traslado, reaparece dentro de la cárcel.
+Cuando hay que llevar a un preso a la corte, un miembro del Departamento de Justicia o un guardia de la cárcel, estando de servicio y dentro de la cárcel con el preso a menos de 5 metros, abre el traslado con `/iniciotraslado`. Durante el traslado el preso puede moverse fuera de la cárcel y se le distingue por el color de su nombre. Al terminar, `/fintraslado` (que se usa también dentro de la cárcel, con el preso cerca) lo devuelve automáticamente a la prisión. Si el preso se desconecta en mitad del traslado, reaparece dentro de la cárcel.
 
 ## Fiscalía del Condado de Los Santos
 
@@ -119,8 +119,8 @@ Cuando un policía necesita un fiscal en el lugar:
 - /cancelarfiscal — cancela la solicitud pendiente.
 - /listaoficios — muestra las solicitudes de fiscal pendientes.
 - /atenderoficio — toma una solicitud y obtiene el contacto telefónico del agente.
-- /mostrarevidencias — presenta las evidencias reunidas en un caso.
-- /identidad — identifica formalmente a una persona.
+- /mostrarevidencias — muestra a una persona cercana (hasta 30 metros) el resultado de una evidencia reunida en el caso. Solo fiscales y jueces.
+- /identidad — alterna entre tu nombre y tu identidad secundaria, si tienes una asignada.
 
 ### Prófugos
 
@@ -144,17 +144,17 @@ Las órdenes son documentos que redacta la policía (o la fiscalía) y que firma
 1. **Redacción**: un agente de servicio usa `/ordenarresto` u `/ordenallanamiento` con el nombre del sospechoso. Debe estar **dentro de un vehículo o de una propiedad de su facción**.
 2. **Contenido**: en el formulario se añaden los cargos del código penal, una descripción obligatoria, si el sospechoso es de **riesgo alto o bajo** y si la orden es **confidencial**. Una orden confidencial solo la ven detectives, sargentos y rangos superiores.
 3. **Publicación**: la solicitud queda listada como pendiente de firma.
-4. **Firma**: la firma la aplica un **juez de servicio** o el **líder de la facción policial** que la solicitó, con `/firmarorden`.
-5. **Cierre**: cuando la orden ya cumplió su función, se cierra con `/cerrarorden`. Además del juez, pueden cerrarla los detectives y sargentos de la policía o del sheriff, los líderes federales y los supervisores de guardaparques.
+4. **Firma**: la firma la aplica un **juez de servicio** o el **líder de una facción policial** (LSPD, LSSD, FBI o SADCR), con `/firmarorden`.
+5. **Cierre**: cuando la orden ya cumplió su función, se cierra con `/cerrarorden`. Además del juez, pueden cerrarla los detectives y sargentos de la policía o del sheriff, los líderes del FBI y de SADCR y los supervisores de guardaparques.
 
 Las órdenes pendientes se consultan desde el ordenador de a bordo de los vehículos policiales, ordenadas por riesgo y antigüedad. Cuando un agente abre el reporte de arresto de una persona, y de nuevo al finalizarlo, recibe un aviso con las órdenes de arresto activas del detenido (las confidenciales solo las ve quien tiene acceso a ellas), para que las cierre con `/cerrarorden` si corresponde. Los lectores de matrículas de las patrullas también avisan cuando cruzan un vehículo relacionado con una orden de allanamiento.
 
 ### Qué habilita una orden de allanamiento
 
-Una orden firmada no basta por sí sola: el mando de la facción debe **autorizar el operativo de allanamiento**, y esa autorización dura **30 minutos** antes de caducar sola. Mientras está activa, los agentes de esa facción, estando de servicio, pueden:
+Lo que abre la puerta en la práctica es que un detective, sargento o mando equivalente de la facción (en SADCR, su líder) **autorice el operativo de allanamiento** con `/autorizarallanamiento`; el sistema no comprueba por su cuenta que exista una orden firmada. Esa autorización dura **30 minutos** antes de caducar sola, o hasta que se repita el comando para terminarla. Mientras está activa, los agentes de esa facción, estando de servicio, pueden:
 
 - Forzar el almacén de una [propiedad](sistema-de-propiedades.md) sin tener las llaves.
-- Forzar el **buzón** de una casa y sacar lo que hay dentro. Sin orden, únicamente quien tiene las llaves puede vaciarlo, aunque cualquier persona puede dejar cosas dentro.
+- Forzar el **buzón** de una casa y sacar lo que hay dentro. Sin autorización, únicamente quien tiene las llaves puede vaciarlo, aunque cualquier persona puede dejar cosas dentro.
 - Forzar el maletero de un vehículo ajeno.
 
 ## Defensoría Pública
@@ -216,7 +216,7 @@ Las multas las emiten los agentes de la ley y las cámaras de velocidad. Se acum
 
 ### Cómo se emite una multa
 
-Los agentes en servicio (policías, sheriffs, jueces y fiscales, militares de rango alto, inspectores de bomberos y agentes de tránsito) multan con `/multar [jugador]` a una persona o con `/multarveh [matrícula]` a un vehículo. `/multarveh` está reservado a policías, personal de justicia y agentes de tránsito. Hace falta llevar un **portapapeles en la mano derecha**. A la persona hay que tenerla a menos de **5 metros** y con una mano libre; al vehículo, a menos de **10 metros**. No se pueden multar vehículos de facción.
+Los agentes en servicio (policías, sheriffs, jueces y fiscales, militares de rango alto, inspectores de bomberos y agentes de tránsito) y los altos cargos del Gobierno (que no necesitan estar de servicio) multan con `/multar [jugador]` a una persona o con `/multarveh [matrícula]` a un vehículo. `/multarveh` está reservado a policías, personal de justicia y agentes de tránsito. Hace falta llevar un **portapapeles en la mano derecha**. A la persona hay que tenerla a menos de **5 metros** y con una mano libre; al vehículo, a menos de **10 metros**. No se pueden multar vehículos de facción.
 
 1. Se abre la lista de infracciones del **Código Penal de San Andreas**. Cada cargo que eliges suma su descripción y su monto al total; no se puede añadir el mismo cargo dos veces.
 2. **Escribir manualmente** permite añadir un cargo propio, con un importe de **$1 a $100.000** y una descripción de al menos 3 caracteres.
@@ -242,7 +242,7 @@ El pago siempre sale de tu **cuenta bancaria**.
 
 ### Por qué conviene pagarlas
 
-- Si acumulas más de **$10.000** en multas impagas no puedes comprar, vender ni transferir propiedades ni vehículos.
+- Si acumulas más de **$10.000** en multas impagas no puedes comprar, vender ni transferir propiedades ni vehículos, ni ofertar en subastas de propiedades.
 - Las personas con multas pendientes aparecen listadas en el ordenador de a bordo policial, con el monto exacto que deben.
 - Un juez puede anular una multa concreta si el procedimiento fue incorrecto.
 

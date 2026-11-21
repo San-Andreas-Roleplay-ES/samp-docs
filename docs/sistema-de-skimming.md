@@ -94,7 +94,7 @@ El porcentaje robado depende de la **calidad del skimmer** y escala de forma lin
 
 En la práctica, casi todo lo que roba un skimmer proviene de los **retiros en cajero**, que es la operación que los jugadores hacen a diario en la calle. Los depósitos solo pueden realizarse dentro de una sucursal bancaria.
 
-El dinero acumulado se otorga **únicamente al dueño del dispositivo**, es decir, al personaje que lo instaló. **No es posible robar las ganancias de otro ciberdelincuente**: si otro delincuente, un policía o un técnico de seguridad desmonta el skimmer, el dinero acumulado se pierde y no lo cobra nadie.
+El dinero acumulado se otorga **únicamente al dueño del dispositivo**, es decir, al personaje que lo instaló. **No es posible robar las ganancias de otro ciberdelincuente**: si un policía o un técnico de seguridad desmonta el skimmer, el dinero acumulado se pierde y no lo cobra nadie.
 
 Mientras el cajero está fuera de servicio nadie puede usarlo, así que el skimmer tampoco roba nada. Si el cajero llega a ser **destruido** en un [robo de cajero](sistema-de-robo-de-cajeros.md), el skimmer se pierde junto con todo el dinero que había acumulado.
 
@@ -204,7 +204,7 @@ Para devolverlo al servicio hace falta un técnico de seguridad en servicio: rev
 
 ## Consejos
 
-- **Sube electrónica antes de invertir.** Un skimmer cuesta $25.000 fijos: si lo fabricas con 50 de electrónica justos, la calidad rondará entre 50 y 79 y robarás entre un 7,5 % y un 10 %, además de quedar al alcance del rastreo de los técnicos de seguridad. Con 90 de electrónica prácticamente garantizas el 12 % y quedas fuera de ese radar.
+- **Sube electrónica antes de invertir.** Un skimmer cuesta $25.000 fijos y su calidad se fija al instalarlo: si lo instalas con 50 de electrónica justos, la calidad rondará entre 50 y 79 y robarás entre un 7,5 % y un 10 %. Con 90 de electrónica la calidad queda entre 90 y 100, así que robarás alrededor del 12 %, y con 51 o más ya quedas fuera del alcance del rastreo de los técnicos de seguridad.
 - **Elige cajeros con tráfico.** El skimmer solo gana dinero si alguien usa el cajero. Uno en zona céntrica y concurrida rinde muchísimo más que otro perdido en el campo.
 - **No lo dejes puesto para siempre.** Cada día que pasa aumenta la probabilidad de que un técnico de seguridad o un jugador curioso lo encuentre, y entonces pierdes todo lo acumulado, no solo el aparato.
 - **Instala acompañado.** La instalación de 90 segundos deja una acción visible para cualquiera que pase por ahí. Tener a alguien vigilando la zona reduce el riesgo de que te sorprendan a mitad del proceso.

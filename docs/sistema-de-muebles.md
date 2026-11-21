@@ -4,15 +4,15 @@
 
 El sistema de muebles te permite personalizar al máximo cualquier propiedad que poseas. Sirve tanto para decorar y darle vida a tu entorno como para crear divisiones, muros o habitaciones completamente nuevas.
 
-Cada propiedad admite un límite de **2.048 muebles**, y el mobiliario no es solo estético: el valor total de los muebles colocados suma un **50% extra** al precio de venta del inmueble (ver [Sistema de propiedades](sistema-de-propiedades.md)). El catálogo cuenta con más de **1.700 modelos** en diferentes categorías, pero se pueden usar muchos más ingresando la ID del objeto o modelo.
+Cada propiedad admite un límite de **2.048 muebles**, y el mobiliario no es solo estético: la **mitad del valor** de los muebles colocados se suma al precio de venta del inmueble (ver [Sistema de propiedades](sistema-de-propiedades.md)). El catálogo cuenta con más de **1.700 modelos** en diferentes categorías, pero se pueden usar muchos más ingresando la ID del objeto o modelo.
 
 > ⚠️ **Importante:** Solo los usuarios que tengan la llave de la propiedad pueden usar el sistema de muebles. El dueño también puede dar un [permiso temporal de muebles](#permisos-de-muebles) a otro jugador sin prestarle las llaves.
 
 ### Comandos
 
-- `/comprarmueble` (`/cobject`, `/comprarmuebles`) — si no ingresas la ID se abrirá el catálogo; si ingresas una ID, crearás ese objeto directamente.
+- `/comprarmueble` (`/cobject`, `/comprarmuebles`) — si no ingresas la ID se abrirá el catálogo; si ingresas una ID (entre 321 y 19999), crearás ese objeto directamente.
 - `/muebles` — muestra la lista de muebles de la propiedad, la inversión total y permite seleccionar un mueble directamente desde este menú.
-- `/buscarmueble [nombre/ID]` — busca un mueble específico en la propiedad por ID o nombre (si está en el catálogo siempre será por su nombre).
+- `/buscarmueble [nombre/ID]` — busca un mueble específico en la propiedad por ID o nombre, con un mínimo de 3 caracteres (si está en el catálogo siempre será por su nombre).
 - `/seleccionar [ID]` (`/sel`) — selecciona un mueble por su número de orden en la lista de `/muebles`.
 - `/cseleccionar` (`/csel`) — habilita el cursor para seleccionar un mueble que tienes en tu propiedad.
 - `/deseleccionar` (`/desel`) — suelta el mueble que tienes seleccionado.
@@ -26,8 +26,8 @@ Cada propiedad admite un límite de **2.048 muebles**, y el mobiliario no es sol
 
 Colocar un mueble requiere seguir unos pasos básicos para interactuar con el entorno 3D.
 
-1. Usa `/comprarmueble` (o directamente `/comprarmueble [ID]`). El objeto aparecerá flotando frente a tu personaje. Siempre debes guardar su posición inicial para comprarlo y comenzar a editarlo (esto no aplica al usar `/clonar`, ya que se compra automáticamente).
-2. Usa `/cseleccionar` y haz clic sobre el objeto para seleccionarlo (también puedes usar `/seleccionar [ID]` o seleccionarlo directamente desde el menú de `/muebles`).
+1. Usa `/comprarmueble` (o directamente `/comprarmueble [ID]`). El objeto aparecerá flotando frente a tu personaje y el editor del ratón se abre solo. Siempre debes guardar su posición inicial para comprarlo; si cancelas con **ESC**, el mueble no se compra (esto no aplica al usar `/clonar`, ya que se compra automáticamente).
+2. Para modificar más tarde un mueble ya colocado, usa `/cseleccionar` y haz clic sobre el objeto para seleccionarlo (también puedes usar `/seleccionar [ID]` o seleccionarlo directamente desde el menú de `/muebles`).
 3. Escribe `/editarmueble`. Esto activa el modo de edición y te permite mover y rotar el objeto libremente usando el ratón (mouse).
 4. Cuando el objeto esté en la posición deseada, haz clic en el ícono de guardar en la pantalla (esto solo aplica si lo mueves con el ratón; si lo haces mediante comandos como `/moverz`, se guarda automáticamente).
 5. Si deseas cancelar la edición y revertir los cambios de posición, simplemente presiona la tecla **Escape (ESC)**.
@@ -51,14 +51,14 @@ El uso del ratón es útil para movimientos rápidos, pero para construir de for
 
 Para cuidar el rendimiento del servidor, hay topes según cuánta gente haya dentro de la propiedad:
 
-- Con **más de 5 personas** dentro no puedes editar un mueble suelto: moverlo, rotarlo, clonarlo, restablecerlo, configurarlo como puerta ni cambiarle las texturas.
-- Con **más de 3 personas** dentro no puedes mover, rotar, texturizar ni eliminar un grupo de muebles, ni importar un prefab (ver más abajo).
+- Con **más de 5 personas** dentro no puedes editar un mueble suelto: editarlo con el ratón, moverlo, rotarlo, clonarlo, restablecerlo, configurar el movimiento de una puerta ni cambiarle las texturas.
+- Con **más de 3 personas** dentro no puedes editar un grupo de muebles (moverlo, rotarlo, texturizarlo, cambiar su prioridad o su distancia de dibujado) ni eliminarlo, ni importar un prefab (ver más abajo).
 
 Comprar, eliminar y empaquetar muebles sueltos no tiene este límite.
 
 ## Catálogo y colecciones especiales (0.3DL)
 
-Al usar `/comprarmueble` sin parámetros se despliega un menú con categorías ordenadas. Cada modelo tiene su propio precio, que se descuenta directamente de tu cuenta bancaria.
+Al usar `/comprarmueble` sin parámetros se despliega un menú con categorías ordenadas. Cada modelo tiene su propio precio, que se descuenta directamente de tu cuenta bancaria. Los modelos 0.3DL cuestan lo mismo que el mueble del juego base en el que se apoyan.
 
 <img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/muebles-coleccion-navidad.jpg" alt="Colección de muebles de Navidad en el catálogo: árboles, duendes y trineos" width="1600" height="927">
 
@@ -73,10 +73,10 @@ Además de los objetos clásicos del juego base, el servidor cuenta con coleccio
 | **Rings, Puestos, Casino, Concesionario y Talleres** | Refrigeradores, televisores, sofás, sillas de oficina, máquinas de casino, carpas, toldos, mesas de feria y carritos de comida para montar tu puesto. |
 | **Escaleras y Murallas** | Piezas de construcción. Solo se pueden usar en interiores. |
 | **Pinturas, Toldos, Letras y Banderas** | Cientos de cuadros, toldos, letras sueltas y banderas. |
-| **Cocina** | Vasos y copas decorativos. |
+| **Cocina** | Utensilios, microondas, cajas de alimentos, vasos y copas decorativos. |
 | **Navidad** | Árboles y decoración de temporada. |
 
-Las mesas de casino (ruleta, blackjack y tragamonedas) funcionan como juegos en cualquier propiedad que las tenga colocadas (ver [Sistema de casino](sistema-de-casino.md)).
+Las mesas de casino (ruleta, blackjack y tragamonedas) solo funcionan como juegos dentro de un club o en el Emerald Isle Casino; en cualquier otra propiedad quedan de adorno (ver [Sistema de casino](sistema-de-casino.md)).
 
 Si necesitas un objeto que no está en las categorías, usa `/comprarmueble [ID]`. Si el modelo no se encuentra en el catálogo oficial, costará **$100**. Puedes buscar los objetos por su ID en una web externa como [dev.prineside.com/gtasa_samp_model_id](https://dev.prineside.com/gtasa_samp_model_id/).
 
@@ -91,7 +91,7 @@ Cada objeto en el juego está dividido en "caras" o partes, conocidas como índi
 La forma más cómoda de texturizar es el menú 3D:
 
 1. Con el mueble seleccionado, escribe `/textura [slot 0-15]` para elegir qué parte vas a pintar. Si no eliges ninguno, se usa el slot 0.
-2. Escribe `/texturas`. Se despliega a tu lado un tablero con **16 texturas a la vez**, cada una con su nombre y su ID. Si te alejas más de 15 metros, el tablero se cierra.
+2. Escribe `/texturas`. Se despliega a tu lado un tablero con **16 texturas a la vez** y, en pantalla, el nombre y la ID de la textura marcada. Si te alejas más de 15 metros, el tablero se cierra.
 3. Muévete por el tablero con **Y** (anterior) y **H** (siguiente), y cambia de página con **NUM4** y **NUM6** (o con **C + Y** y **C + H**).
 4. Presiona **ALT** para aplicar la textura marcada al slot elegido. Presiona **N** para cerrar el menú (también puedes volver a escribir `/texturas`).
 
@@ -120,9 +120,9 @@ La cantidad máxima de objetos que puedes ver simultáneamente se ajusta yendo a
 
 Cuentas con herramientas adicionales para interactuar con tus creaciones y gestionarlas a largo plazo:
 
-- **Convertir en puerta:** puedes usar el comando `/convertirpuerta` sobre cualquier objeto (no tiene que ser necesariamente un modelo de puerta). Esto lo vuelve interactivo y permitirá que se abra y cierre usando los comandos `/abrir` y `/cerrar`. Puedes ajustar su comportamiento con `/configurarpuerta`.
+- **Convertir en puerta:** puedes usar el comando `/convertirpuerta` sobre cualquier objeto (no tiene que ser necesariamente un modelo de puerta). Esto lo vuelve interactivo. Después debes definir su movimiento con `/configurarpuerta` (mueves y giras el objeto hasta su posición de abierta y guardas); sin ese paso no se abre. Una vez configurada, quienes tienen llaves de la propiedad pueden abrirla y cerrarla con `/abrir` y `/cerrar` estando a menos de 2 metros. Si repites `/convertirpuerta`, el mueble deja de ser puerta.
 - **Mudanzas (empaquetar):** usa `/empaquetarmueble` para guardar el mueble en una caja. Debes estar a menos de 1,5 metros del mueble, con **ambas manos libres**, y quedarte junto a él unos 10 segundos mientras dura la mudanza. La caja queda en tu mano derecha y te permite trasladar el mueble a otras propiedades y usarlo ahí (`/desempaquetarmueble`) sin tener que comprarlo de nuevo. Al empaquetarlo, **se reinician las texturas** si las tuviera colocadas.
-- Los muebles empaquetados también se pueden vender en el **mercado negro** (`/mercadonegro`) (ver [Sistema de mercado negro](sistema-de-mercado-negro.md)) o en una **casa de empeños** (`/empeñar`).
+- Los muebles empaquetados también se pueden vender en el **mercado negro** (`/mercadonegro`), que solo compra los muebles robables (ver [Sistema de mercado negro](sistema-de-mercado-negro.md)), o en una **casa de empeños** (`/empeñar`), que no compra objetos cuyo pago supere los $100.000.
 
 ## Permisos de muebles
 
@@ -143,7 +143,7 @@ Reglas del permiso:
 
 Los grupos te dejan seleccionar varios muebles y editarlos como si fueran uno solo, ideal para mover una habitación entera, girar una fachada o aplicar la misma textura a toda una pared. Los comandos funcionan **dentro de la propiedad** y para quien tenga llaves o permiso de muebles.
 
-Un grupo admite hasta **64 muebles**. Cada mueble agregado muestra una etiqueta que **solo ves tú**. El grupo se vacía cuando sales de la propiedad o cierras sesión.
+Un grupo admite hasta **64 muebles**. Cada mueble agregado muestra una etiqueta que **solo ves tú**. El grupo se vacía cuando cierras sesión o cuando armas uno en otra propiedad.
 
 | Comando | Función |
 | --- | --- |
@@ -168,7 +168,7 @@ Si usas Texture Studio, los comandos de grupo tienen como alias los nombres que 
 
 Restricciones:
 
-- No puedes mover, rotar, texturizar ni eliminar el grupo con **más de 3 personas** dentro de la propiedad.
+- No puedes editar el grupo (moverlo, rotarlo, texturizarlo, cambiar su prioridad o su distancia de dibujado) ni eliminarlo con **más de 3 personas** dentro de la propiedad.
 - No se puede editar un grupo si otro jugador está editando alguno de esos muebles, si un mueble se está empaquetando o si una mesa de casino está en uso.
 - Cada comando de edición tiene una pequeña espera (menos de un segundo) y, si el servidor está muy ocupado, te pedirá que lo intentes de nuevo.
 
@@ -205,7 +205,7 @@ Resumen de lo que importa para los muebles:
 
 - **Terraza de una casa:** solo los usuarios **Premium Ruby** pueden crearla. Cuesta **$50.000** del dinero en mano (en un negocio, el exterior cuesta $100.000 de la caja). Ampliarla y comprar sus muebles también se paga del dinero en mano. Desde el punto de la terraza el dueño o el inquilino pueden usar `/refrigerador`, y la radio de la casa se escucha en ella.
 - **Niveles:** el exterior empieza en el nivel 1 (10 metros y 16 muebles) y se puede ampliar hasta el nivel 6 (30 metros y 512 muebles). Para bajar de nivel hay que quitar antes los muebles que sobren.
-- **Comprar y editar:** `/exterior crearmueble` abre el mismo catálogo del interior (sin las categorías de escaleras y murallas) y coloca la pieza frente a ti; el precio se cobra al confirmar la posición. `/exterior editarmueble [id]`, `/exterior clonarmueble [id]` y `/exterior eliminarmueble [id]` funcionan como sus equivalentes de interior, y tienes que estar a menos de 10 metros del mueble. Los muebles personalizados requieren Premium Oro y eliminarlos no reembolsa su precio.
+- **Comprar y editar:** `/exterior crearmueble` abre el mismo catálogo del interior (sin las categorías de construcción, escaleras y murallas) y coloca la pieza frente a ti; el precio se cobra al confirmar la posición. `/exterior editarmueble [id]`, `/exterior clonarmueble [id]` y `/exterior eliminarmueble [id]` funcionan como sus equivalentes de interior, y tienes que estar a menos de 10 metros del mueble. Los muebles personalizados requieren Premium Oro y eliminarlos no reembolsa su precio.
 - **Texturas:** `/exterior texturamueble [id] [material 0-15] [ID de la textura]` texturiza hasta 16 partes por mueble (con la ID `0` la quita) y `/exterior borrartexturas [id]` quita todas.
 - **Eliminar el exterior:** `/exterior eliminar` pide confirmación y borra también todos sus muebles, sin reembolso.
 - Quien tiene un permiso de muebles puede editar los muebles exteriores, pero los paga de su bolsillo y no puede situar, ampliar ni eliminar el exterior.

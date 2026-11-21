@@ -46,10 +46,10 @@ El costo es el mismo de los servicios de urgencias del hospital:
 
 | Situación | Costo |
 |---|---|
-| Sin casa | $5.000 |
+| Sin casa (ni propia, ni alquilada, ni con llaves, ni habitación) | $5.000, siempre de tu cuenta bancaria |
 | Con casa | $2.500, o $5.000 si hay dos o más médicos residentes en servicio |
 
-Si trabajas para una facción o estás en servicio en un negocio, el seguro médico lo cubre quien corresponda, igual que en el hospital. Consulta la guía del [sistema médico y hospital](sistema-medico-y-hospital.md) para más detalles.
+Si tienes casa y trabajas para una facción de servicio público, o estás en servicio en el negocio donde trabajas, el seguro médico lo cubre quien corresponda, igual que en el hospital. Sin casa, el costo sale siempre de tu cuenta bancaria. Consulta la guía del [sistema médico y hospital](sistema-medico-y-hospital.md) para más detalles.
 
 ## Propiedades de la isla
 
@@ -60,7 +60,7 @@ Las casas y negocios de la isla tienen ventajas pensadas para que mantenerlos se
 - **Sin impuesto de propiedad.** Las casas de la isla no cuentan en el impuesto de propiedad del payday.
 - **Sin impuesto de negocios.** Los negocios de la isla no pagan el cargo que se descuenta a los negocios cuyo dueño no está conectado.
 - **Sin cuentas de luz y agua.** No acumulan cuentas de servicios y no hay nada que pagar por ellas.
-- **Sin liberación por inactividad.** Si dejas de conectarte, tu propiedad de la isla no se libera ni sale a subasta por inactividad.
+- **Sin liberación automática por inactividad.** Si dejas de conectarte o acumulas basura, tu propiedad de la isla no se libera ni sale a subasta en la revisión que se hace cada vez que el servidor se reinicia.
 
 Hay una excepción: el **impuesto corporativo** que se cobra al retirar dinero de la caja de un negocio se sigue aplicando también en la isla.
 

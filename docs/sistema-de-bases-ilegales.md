@@ -12,7 +12,7 @@ Aparte de las bases privadas de cada facción, el sur de Los Santos tiene un **p
 
 ### Comandos
 
-- /baseilegal — muestra cuál es la base ilegal actual de tu facción, si tiene una asignada.
+- /baseilegal — (solo miembros que no son líder) muestra cuál es la base ilegal actual de tu facción, si tiene una asignada. Si eres líder, el comando siempre necesita la llave de la propiedad.
 - /baseilegal [llave] — (solo líder) propone asignar una propiedad tuya como base ilegal de la facción. Pide confirmación.
 - /baseilegal [llave] confirmar — confirma la asignación de esa propiedad como base.
 - /baseilegal [llave] retirar — (solo líder) devuelve la base a tu nombre personal. Solo funciona cuando venció la espera obligatoria.
@@ -22,7 +22,7 @@ Aparte de las bases privadas de cada facción, el sur de Los Santos tiene un **p
 
 | Requisito | Detalle |
 |---|---|
-| Facción | Mafia o banda, con estado **oficial** o **destacado** |
+| Facción | Mafia, banda o la facción de la penitenciaría, con estado **oficial** o **destacado** |
 | Rango | **Líder** de la facción (los miembros solo pueden consultar cuál es la base) |
 | Propiedad | Debe estar **comprada a tu nombre**, o al de tu cónyuge si estás casado |
 | Exclusividad | Tu facción **no puede tener** ya otra base asignada |
@@ -37,7 +37,7 @@ Si eres miembro pero no líder, `/baseilegal` te indica la llave de la propiedad
 - **Todos los miembros reciben las llaves automáticamente**, sin necesidad de entregárselas uno por uno: pueden entrar, salir y usar el interior como si fuera propio.
 - La facción queda bloqueada durante **14 días**: no puede cambiar ni retirar su base en ese periodo.
 - Como la propiedad ya no tiene titular personal, **deja de pagar el impuesto diario a la vivienda** (ver [Sistema de propiedades](sistema-de-propiedades.md)).
-- El número de teléfono asociado a la propiedad se actualiza al nuevo titular.
+- El número de teléfono asociado a la propiedad deja de estar a nombre de su antiguo dueño.
 
 Al retirarla, una vez cumplidos los 14 días, la propiedad vuelve a nombre del líder que ejecuta el comando y recupera su condición de propiedad normal. La facción pierde toda referencia a esa base y puede asignar otra de inmediato.
 
@@ -49,7 +49,7 @@ Como al retirarla la propiedad vuelve a tu nombre, rige la misma restricción qu
 |---|---|---|---|---|
 | Líder de la facción | Sí | Sí | Sí | Sí |
 | Miembro de la facción | Sí | Sí | Sí | No |
-| Policía con orden de allanamiento | Forzando la entrada | Sí | — | Sí |
+| Policía de servicio con orden de allanamiento | Forzando la entrada | Sí | Sí | Solo si es líder de su facción |
 | Resto de jugadores | Según las reglas normales de la propiedad | — | — | — |
 
 La restricción de retirada es deliberada: cualquier miembro puede **aportar** material al fondo común, pero solo el líder decide qué sale de ahí. Así se evita que un integrante recién ingresado vacíe el arsenal de la banda.
@@ -94,17 +94,18 @@ Consumir drogas dentro de la base (o en su perímetro de 15 metros) activa un so
 Condiciones para participar:
 
 - Tu personaje debe estar **vivo** (no herido ni inconsciente).
-- Debes llevar **0,5 gramos o más acumulados** de esa sustancia. Por debajo de esa cantidad las probabilidades bajan un **10 %**.
+- Debes tener en el cuerpo una dosis acumulada de **0,5 gramos o más** de esa sustancia (cuenta la dosis que acabas de consumir). Con menos de esa cantidad no hay premio posible.
+- Solo cuentan el crack, la heroína y el fentanilo.
 
 | Sustancia | Premio | Probabilidad |
 |---|---|---|
-| Crack o heroína | De **1 a 3 puntos de experiencia** | 7 % |
-| Fentanilo | **1 moneda premium** | 1,5 % |
+| Crack o heroína | De **1 a 3 puntos de experiencia** | 6,9 % |
+| Fentanilo | **1 moneda premium** | 1,4 % |
 | Fentanilo | **1 punto de rol positivo** | 0,1 % |
 
 El punto de rol queda registrado en el historial del personaje indicando que se obtuvo consumiendo fentanilo en el entorno de tu facción, así que también sirve como constancia de tu actividad dentro de la banda.
 
-> Fuera de una base ilegal, consumir drogas puede activar en su lugar la recompensa de **zona de pandilla**: un 50 % de probabilidad de ganar 1 o 2 puntos de habilidad de delincuente más 5 Burger Points, siempre que estés en una zona controlada por tu banda. Las dos recompensas son excluyentes: dentro de la base se juega la lotería de la base, fuera se juega la de la zona. Ver [Sistema de zonas de pandilla](sistema-de-zonas-de-pandilla.md).
+> Fuera de una base ilegal, consumir drogas puede activar en su lugar la recompensa de **zona de pandilla**: un 50 % de probabilidad de ganar 1 o 2 puntos de habilidad de delincuente más 5 Burger Points, siempre que estés en una zona controlada por tu banda, tu facción sea una pandilla (las mafias no la reciben), tengas al menos 5 de habilidad de drogas y hayan pasado 30 minutos desde la última recompensa de zona. Las dos recompensas son excluyentes: dentro de la base se juega la lotería de la base, fuera se juega la de la zona. Ver [Sistema de zonas de pandilla](sistema-de-zonas-de-pandilla.md).
 
 ## Consejos para el líder
 
@@ -121,8 +122,10 @@ Además de las bases privadas de cada facción, el sur de Los Santos cuenta con 
 Allí se concentra todo lo que antes estaba repartido por la ciudad:
 
 - El **mercado negro**, que dejó de estar disperso en once puntos distintos y ahora opera únicamente aquí. Es el sitio donde se vende el botín (teléfonos, joyas, autopartes, muebles, mercancía de camiones) y donde los delincuentes con habilidad suficiente compran munición. El detalle de precios, requisitos y catálogo está en [Sistema de mercado negro](sistema-de-mercado-negro.md).
-- Una **clínica clandestina** donde curar heridas pagando, sin pasar por el hospital ni dejar registro médico.
+- Una **clínica clandestina** donde curar heridas con `/curarme`, sin pasar por el hospital ni dejar registro médico. Cuesta **$15.000**, exige más de 25 de habilidad de delincuente, no atiende a quien está brutalmente herido y tiene una espera entre curaciones.
 - La **pizzería de Idlewood**, incorporada a los puntos de reaparición del mapa.
+
+El mismo tipo de enclave, con su propio mercado negro y su clínica clandestina, existe también en **El Corona**. Al comprar en el mercado negro se te asigna uno de los dos puntos al azar y debes ir a ese.
 
 Además, los **delincuentes** ven en el menú de `/reaparecer` dos puntos extra: la **base criminal de Idlewood** y la **base criminal de El Corona**. El resto de jugadores no los ve.
 

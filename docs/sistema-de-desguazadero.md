@@ -44,7 +44,7 @@ Junto a cada desguazadero hay una pizarra con **10 modelos buscados**, en dos co
 
 <img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/desguazadero-pizarra-wanted.jpg" alt="Pizarra WANTED del desguazadero con los diez modelos buscados del día" width="988" height="874">
 
-Los modelos son autos civiles de hasta **$1.000.000**: sedanes, deportivos, convertibles, station wagons, lowriders, todoterrenos, industriales y vehículos únicos.
+Los modelos son vehículos civiles de hasta **$1.000.000**: sedanes, deportivos, convertibles, station wagons, lowriders, todoterrenos, industriales (furgonetas y camiones) y vehículos únicos.
 
 ### Cuánto pagan
 
@@ -68,7 +68,7 @@ Al confirmarse la entrega, el vehículo se bloquea, **a la vista de todos** se l
 
 Para su dueño, el vehículo queda **destruido durante 12 horas**: aparece como **(destruido)** en `/llaves` y no se puede activar.
 
-Pasado ese plazo, el vehículo reaparece **sin costo** en la salida del **Los Santos Auto Impound**, pero sin autopartes, con el motor dañado y las ruedas pinchadas, así que su dueño tendrá que llevarlo a un mecánico. El maletero, la guantera y la patente se conservan.
+Pasado ese plazo, cuando su dueño lo active de nuevo desde `/llaves`, el vehículo aparece **sin costo** en la salida del **Los Santos Auto Impound**, pero sin autopartes, con el motor dañado y las ruedas pinchadas, así que su dueño tendrá que llevarlo a un mecánico. El maletero, la guantera y la patente se conservan.
 
 ## Destruir tus propios vehículos sin registrar
 

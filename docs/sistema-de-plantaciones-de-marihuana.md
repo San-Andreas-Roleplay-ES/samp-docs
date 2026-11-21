@@ -28,16 +28,16 @@ Todos los comandos de `/plantacion`, salvo `crear`, actúan sobre la planta más
 
 ## Qué necesitas y cuánto cuesta
 
-El cultivo se apoya en cuatro consumibles. Los tres primeros se venden en los negocios de tipo **growshop**; el agua se consigue en cualquier tienda 24/7, máquina expendedora o negocio que la tenga en catálogo.
+El cultivo se apoya en cuatro consumibles. Los tres primeros se venden en los negocios que tengan la categoría **Cultivo** en su catálogo (los growshops y algunas tiendas 24/7); el agua se consigue en cualquier tienda 24/7, máquina expendedora o negocio que la tenga en catálogo.
 
 | Objeto | Dónde se consigue | Unidades por envase | Costo base |
 |--------|-------------------|---------------------|------------|
-| Semillas de Marihuana | Growshop | hasta 1000 | **$51** |
-| Saco de Abono | Growshop | hasta 20 | **$144** |
-| Fertilizante | Growshop | hasta 5 | **$216** |
+| Semillas de Marihuana | Growshop o tienda con categoría Cultivo | hasta 1000 | **$51** |
+| Saco de Abono | Growshop o tienda con categoría Cultivo | hasta 20 | **$144** |
+| Fertilizante | Growshop o tienda con categoría Cultivo | hasta 5 | **$216** |
 | Botella de Agua | Tiendas, expendedoras, bares | hasta 10 | **$6** |
 
-El costo base es lo que el negocio paga por reponer stock. Cada growshop fija su propio precio de venta al público, que nunca puede ser **inferior al costo base** ni superior a **10 veces** ese costo. Si compras en un puesto con atención en ventanilla (drive-thru), el precio sube un **20%** adicional.
+El costo base es el valor de referencia del objeto (el negocio lo repone pagando el 80% de ese valor). Cada negocio fija su propio precio de venta al público, que nunca puede ser **inferior al costo base** ni superior a **10 veces** ese costo. Si compras en un puesto con atención en ventanilla (drive-thru), el precio sube un **20%** adicional.
 
 El saco de abono es pesado (**20 kg**) y ocupa **2 ranuras** del inventario: hay que cargarlo con las dos manos, así que planifica el traslado hasta el lugar donde vayas a cultivar.
 
@@ -50,12 +50,12 @@ Para regar puedes usar también una **regadera**, que guarda hasta **100 unidade
 Para crear una planta debes cumplir **estas condiciones a la vez**:
 
 - Llevar un paquete de **Semillas de Marihuana** en la mano derecha, con al menos 1 unidad.
-- Tener un **Saco de Abono** apoyado en el piso, a **5 metros o menos** de ti.
+- Tener un **Saco de Abono** apoyado en el piso, a **5 metros o menos** de ti. Tiene que ser el objeto del suelo más cercano a ti: si hay otro objeto más cerca, no lo detecta.
 - No haber otra planta a menos de **1,5 metros**.
 - No haber ya **10 plantas de marihuana** en un radio de 10 metros. Si la zona está saturada, busca otro lugar.
-- No tener ya el máximo de plantas permitidas: cada personaje puede tener **32 plantas** a la vez, entre legales e ilegales. Si llegas al tope, cosecha o descarta alguna antes de sembrar.
+- No tener ya el máximo de plantas permitidas: cada personaje puede tener **32 plantas** a la vez, entre legales e ilegales (16 más por cada ranura de granja adicional, hasta un máximo de 128). Si llegas al tope, descarta alguna antes de sembrar.
 
-El servidor también tiene un cupo total de **4.096 plantas** en todo el mapa. Si está lleno, no podrás crear nuevas hasta que se liberen espacios.
+El servidor también tiene un cupo total de **4.096 plantas** en todo el mapa. Si está lleno, se elimina la planta marchita más antigua para hacer espacio; si no hay ninguna marchita, no podrás crear nuevas hasta que se liberen espacios.
 
 Al ejecutar `/plantacion crear` colocas la maceta en tu posición y mirando hacia donde estás orientado. La planta nace con **5/10 de salud**, **0/5 de agua**, **0/5 de fertilizante** y madurez **Semilla**.
 

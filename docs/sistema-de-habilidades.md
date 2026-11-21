@@ -6,7 +6,7 @@ Tu personaje en San Andreas Roleplay no es igual el primer día que después de 
 
 Las habilidades no se compran ni se reparten: **se ganan haciendo**. Recoges basura y sube la de basurero. Curas heridas y sube la de paramédico. Cultivas y sube la de granjero. Preparas platos y sube la de cocina. Robas piezas de un coche y sube la de robo a vehículos. Algunas suben casi siempre, otras solo de vez en cuando, y varias se vuelven más lentas cuanto más alto llegas, de modo que llegar a 100 en cualquier rama es cosa de mucho tiempo jugado.
 
-También se pueden **perder**. La habilidad de delincuente y la de drogas caen si te arrestan, y la de delincuente se desgasta si dejas de delinquir durante días. Ninguna habilidad legal se pierde: lo que aprendiste como mecánico, camionero o pescador se queda contigo para siempre.
+También se pueden **perder**. La habilidad de delincuente y la de drogas caen si te arrestan, y la de delincuente se desgasta si dejas de delinquir durante días. Entre las habilidades legales, solo la de camionero puede bajar, y únicamente si cancelas o abandonas un encargo: lo que aprendiste como mecánico, pescador o cocinero se queda contigo para siempre.
 
 Este documento es el mapa general: qué habilidades existen, cómo consultarlas, cómo se ganan y se pierden, y qué desbloquea cada tramo. Para el detalle de cada oficio, sigue los enlaces a los documentos específicos.
 
@@ -22,25 +22,25 @@ Este documento es el mapa general: qué habilidades existen, cómo consultarlas,
 | Habilidad | Cómo se gana | Cómo se pierde | Qué desbloquea | Más detalle |
 |---|---|---|---|---|
 | **Armas** | Leyendo el libro de balística en la biblioteca, o gastando puntos de experiencia | No se pierde | Es una habilidad de trasfondo del personaje: hoy no condiciona el ensamblaje de armas | [Armas](sistema-de-armas.md) |
-| **Drogas** | Creando drogas (hasta **3** puntos por fabricación), y cuidando, fertilizando o cosechando plantaciones de marihuana. También con el libro de química | Baja al ser arrestado, igual que la de delincuente | Recetas y purezas superiores en el laboratorio, diagnóstico exacto de tus plantas, y a partir de **50** el trato de narcotraficante. Además, cuanta más habilidad, menos espera entre fabricaciones (ver más abajo) | [Drogas](sistema-de-drogas.md) |
-| **Electrónica** | Colocando y vaciando skimmers en cajeros. También con el libro de electrónica | No se pierde | Rastreadores y micrófonos desde **5**, escuchas avanzadas desde **15-20**, skimmers propios desde **50**, drones desde **70**, y el robo de coches enteros exige **80**. Los equipos de minería de CluckinCoin y los soportes de la granja de bots piden **15**, **35** o **60** según su nivel | [Skimming](sistema-de-skimming.md), [CluckinCoin](sistema-de-cluckin-coins.md) |
+| **Drogas** | Creando drogas (hasta **3** puntos por fabricación), y cuidando, fertilizando o cosechando plantaciones de marihuana. También con el libro de química | Baja al ser arrestado, igual que la de delincuente | Recetas y purezas superiores en el laboratorio, diagnóstico exacto de tus plantas, y desde **50** la falsificación de recetas médicas (solo para miembros de una facción ilegal oficial). Además, cuanta más habilidad, menos espera entre fabricaciones (ver más abajo) | [Drogas](sistema-de-drogas.md) |
+| **Electrónica** | Colocando y retirando skimmers en cajeros, y reparando cajeros dañados como técnico de seguridad. También con el libro de electrónica | No se pierde | Rastreadores y micrófonos desde **5**, escuchas avanzadas desde **15-20**, skimmers propios desde **50**, drones desde **70**, y el robo de cerraduras y alarmas de coche exige **30** y **40**, y el de coches enteros **80**. Los equipos de minería de CluckinCoin y los soportes de la granja de bots piden **15**, **35** o **60** según su nivel | [Skimming](sistema-de-skimming.md), [CluckinCoin](sistema-de-cluckin-coins.md) |
 | **Paramédico** | Vendando y tratando heridas ajenas. Solo se sube en la práctica; con puntos de experiencia únicamente hasta **10** | No se pierde | Vendajes más fiables, reanimar a heridos graves desde **80**, y desde **25** el trabajo con cadáveres y el mercado de órganos | [Médico y hospital](sistema-medico-y-hospital.md) |
-| **Mecánico** | Reparando, repintando, poniendo vinilos, polarizando y tuneando vehículos | No se pierde | Trabajar sin ser empleado de un taller: desde **50** reparaciones y nitro, desde **75** el taller clandestino y la grúa propia, y **100** para recargar nitro | — |
-| **Camionero** | Completando rutas de reparto de industrias | Se pierde cancelando el viaje como trailero. `/cancelartrailer` | Desde **50** la conducción de trenes, y desde **75** las rutas con tráiler, que pagan muchísimo más | [Camionero](sistema-de-camionero.md) |
+| **Mecánico** | Reparando, repintando, poniendo vinilos, tuneando vehículos, instalando nitro y mejorando tanques | No se pierde | Trabajar sin ser empleado de un taller: desde **50** nitro, mejora de tanque, neón, polarizado y la grúa, desde **75** reparaciones, repintado y vinilos, y **100** para recargar nitro | — |
+| **Camionero** | Completando rutas de reparto de industrias | Baja al cancelar una misión de trailero (`/cancelartrailer`) y al pasar más de 30 minutos con la mercancía de un reparto de industria sin entregarla | Desde **50** la conducción de trenes, y desde **75** las rutas con tráiler, que pagan muchísimo más | [Camionero](sistema-de-camionero.md) |
 | **Basurero** | Recogiendo basura en la ruta municipal | No se pierde | Mejores pagas por ruta a medida que sube | [Basurero](sistema-de-basura.md) |
 | **Taxista** | Completando viajes con pasajeros | No se pierde | Viajes progresivamente más largos y mejor pagados | — |
 | **Repartidor** | Completando entregas del reparto rápido | No se pierde | La paga por ruta escala con la habilidad: de un **30% menos** siendo novato a un **30% más** siendo experto | — |
 | **Granjero** | Cuidando y cosechando cultivos legales, y vendiendo la cosecha. También con puntos de experiencia | No se pierde | Desde **50** ves los datos exactos de una planta al examinarla | [Cultivos](sistema-de-cultivos.md) |
-| **Delincuente** | Hurtos, atracos, robos a personas, forzar cerraduras, robos a cajeros, bancos y joyerías, y bonificaciones de zona de banda | Baja al ser arrestado, por inactividad delictiva y si abandonas la partida justo después de disparar a alguien | Curación clandestina y pinchar ruedas desde **25**, mercado negro, molotovs y la imprenta de billetes falsos desde **50**, alarmas y cerraduras de coche desde **60**, recoger casquillos y los robos grandes desde **70**, borrar números de serie y el trato de contrabandista desde **80** | [Delincuente](sistema-de-delincuente.md) |
-| **Robo a propiedades** | Robando casas y forzando entradas | Igual que la de delincuente al ser arrestado | Más probabilidad de forzar la puerta, botines mayores y menos espera entre golpes | [Delincuente](sistema-de-delincuente.md) |
-| **Robo a vehículos** | Forzando puertas de coche, puenteando y desarmando piezas | Igual que la de delincuente al ser arrestado | Piezas cada vez más valiosas: batería desde **5**, parachoques desde **15**, faldones y alerones desde **25**, motor desde **35**, capó y maletero desde **50**, y el vehículo entero desde **95**. También sube el tope diario de piezas que puedes desarmar (ver más abajo) | [Delincuente](sistema-de-delincuente.md) |
+| **Delincuente** | Hurtos (solo mientras tienes menos de **15**), atracos, robo de muebles, desarmar piezas de vehículos, robos a cajeros, bancos y joyerías, y bonificaciones de zona de banda | Baja al ser arrestado, por inactividad delictiva y si abandonas la partida justo después de disparar a alguien | Pinchar ruedas desde **25**, curación clandestina con más de **25**, mercado negro, molotovs y la imprenta de billetes falsos desde **50**, alarmas y cerraduras de coche desde **60**, recoger casquillos y los robos grandes desde **70**, borrar números de serie desde **80** | [Delincuente](sistema-de-delincuente.md) |
+| **Robo a propiedades** | Robando muebles en casas (de vez en cuando) y forzando cerraduras con ganzúa | No se pierde | Más probabilidad de forzar la cerradura y de que el robo salga bien, menos tiempo para forzarla y más tiempo para robar dentro de la propiedad | [Delincuente](sistema-de-delincuente.md) |
+| **Robo a vehículos** | Forzando puertas de coche, puenteando, desarmando piezas y desguazando vehículos | No se pierde | Piezas cada vez más valiosas: batería desde **5**, parachoques desde **15**, faldones y alerones desde **25**, motor desde **35**, capó, maletero y puertas desde **50**, y el vehículo entero desde **95** (además de **90** de delincuente y **80** de electrónica). También sube el tope diario de piezas que puedes desarmar (ver más abajo) | [Delincuente](sistema-de-delincuente.md) |
 | **Falsificación** | Terminando tandas de billetes limpias en tu imprenta, hasta **5** puntos por día | No se pierde | Cada máquina de la imprenta exige su propio nivel: las caseras, ninguno; las de taller, entre **20** y **30**; las industriales, entre **50** y **70**. Además hace falta **50** de delincuente | [Falsificación de billetes](sistema-de-falsificacion-de-billetes.md) |
-| **Caza** | Matando animales de un disparo a la cabeza | No se pierde | Más probabilidad de abatir a la presa con un tiro al cuerpo y trofeos sobre presas grandes | [Caza](sistema-de-caza.md) |
+| **Caza** | Matando animales de un disparo a la cabeza | No se pierde | Más probabilidad de abatir a la presa con un tiro al cuerpo | [Caza](sistema-de-caza.md) |
 | **Pesca** | Pescando con caña (cuando la pesca es perfecta) y recogiendo la red en la pesca comercial | No se pierde | Más especies (ver más abajo), más tiempo para reaccionar con la caña y capturas más abundantes por red: de **3** pescados como máximo por recogida a **12** con la habilidad al máximo | [Pesca](sistema-de-pesca.md) |
 | **Cocina** | Preparando platos con `/cocinar` | No se pierde | Recetas más elaboradas: cada receta pide entre **0** y **75** puntos | [Cocina y bar](sistema-de-cocina-y-bar.md) |
 | **Bartender** | Preparando bebidas con `/bartender` | No se pierde | Bebidas más complejas: cada bebida pide entre **0** y **60** puntos | [Cocina y bar](sistema-de-cocina-y-bar.md) |
-| **Respeto** | Completando trabajos temporales honrados: hotdogs, cortacésped, barrendero, montacargas, guardacostas, hormigonera, piloto | Baja mucho al abusar del robo a personas | Licencias del gobierno (pesca deportiva **10**, pesca comercial **20**, transportista **30**, cargas pesadas **40** y seguridad privada **50**) y recompensas mayores en eventos especiales del servidor | — |
-| **Felicidad** | Pasando tiempo al aire libre y consumiendo comida, bebida, tabaco o alcohol | Baja si te encierras y no consumes nada | Hasta un **15% más de vida máxima** y mayor tolerancia mental | [Asesinatos, salud mental y felicidad](sistema-de-asesinatos.md) |
+| **Respeto** | Completando trabajos temporales honrados: hotdogs, hamburguesas, cortacésped, barrendero, montacargas, guardacostas, hormigonera, piloto | Baja mucho al abusar del robo a personas | Licencias del gobierno (pesca deportiva **10**, pesca comercial **20**, transportista **30**, cargas pesadas **40** y seguridad privada **50**) y recompensas mayores en eventos especiales del servidor | — |
+| **Felicidad** | Pasando tiempo al aire libre, estando en una propiedad con suficientes electrodomésticos, o consumiendo comida, bebida, tabaco, alcohol o drogas | Baja si te encierras y no consumes nada | Hasta un **15% más de vida máxima** y mayor tolerancia mental | [Asesinatos, salud mental y felicidad](sistema-de-asesinatos.md) |
 
 ### Cómo suben las nuevas ramas
 
@@ -111,7 +111,7 @@ Encima se aplican los descuentos de premium (**15%** con Premium I, **25%** con 
 
 ## Cómo consultar tu progreso
 
-Escribe **`/habilidades`** en cualquier momento. Se abre una tabla con las veinte ramas de arriba y su valor actual sobre 100, seguidas de tu respeto y tu felicidad. Si tienes puntos de experiencia pendientes, aparecen al final de la lista y el botón te deja repartirlos.
+Escribe **`/habilidades`** en cualquier momento. Se abre una tabla con las dieciocho habilidades de arriba y su valor actual sobre 100, seguidas de tu respeto y tu felicidad. Si tienes puntos de experiencia pendientes, aparecen al final de la lista y el botón te deja repartirlos.
 
 Con **`/stats`** ves el panorama de tu personaje: el nivel al que llegaste, cuántas horas llevas jugadas, tu respeto y la racha de horas seguidas. Si eres delincuente, la línea correspondiente añade tus puntos criminales y si el gobierno te reconoce como contrabandista o narcotraficante.
 
@@ -121,7 +121,7 @@ Cada vez que una habilidad sube o baja verás un aviso en pantalla con el nombre
 
 Cada vez que subes de nivel recibes **puntos de experiencia** que puedes gastar libremente en `/habilidades`. Es la manera de dar a tu personaje una base creíble sin tener que rolear desde cero todos los oficios.
 
-Subir de nivel requiere **12 horas de juego** por nivel, y a partir del nivel 3 se exige además tener la doble autenticación activada en tu cuenta y una casa comprada o alquilada.
+Cada hora de juego suma un punto de progreso (dos con Premium IV o Ruby, siempre que tengas la doble autenticación activada), y para subir de nivel necesitas **12 puntos por cada nivel que ya tienes**: 12 para pasar del nivel 1 al 2, 24 para pasar al 3, y así sucesivamente. Desde el nivel 3 se exige además tener la doble autenticación activada en tu cuenta y una casa comprada o alquilada.
 
 Los puntos que recibes por nivel dependen de tu suscripción:
 
@@ -143,7 +143,7 @@ Consulta la [tienda premium](tienda-premium.md) para saber qué incluye cada niv
 
 Tener premium no te regala habilidad, pero acelera notablemente el camino en varios oficios:
 
-- **Camionero, basurero, taxista y repartidor**: cada vez que la habilidad sube, sube **2 puntos en vez de 1**. En las rutas de camionero, además, el ascenso pasa de ser una probabilidad a ser seguro en cada entrega completada.
+- **Camionero, basurero, taxista y repartidor**: cada vez que la habilidad sube, sube **2 puntos en vez de 1**. En el reparto a negocios de camionero, además, el ascenso pasa de ser una probabilidad a ser seguro en cada entrega completada.
 - **Mecánico**: cada trabajo otorga **entre uno y dos puntos extra** frente a un mecánico sin suscripción.
 - **Pesca**: con caña, cada pesca perfecta sube habilidad **una de cada tres veces** en lugar de una de cada ocho; con la red comercial, **una de cada ocho** en lugar de una de cada veinte.
 - **Drogas**: la espera entre fabricaciones baja entre un **15%** y un **50%** según el nivel de suscripción.
@@ -197,28 +197,27 @@ Está pensado para que un miembro recién integrado en una organización consoli
 
 ## Cuando la habilidad se pierde
 
-Solo las ramas criminales retroceden, y siempre por motivos que tienen sentido en el rol.
+Las ramas criminales retroceden por motivos que tienen sentido en el rol.
 
-**Al ser arrestado** pierdes habilidad de delincuente y de drogas en proporción a la condena:
+**Al ser arrestado** pierdes habilidad de delincuente y de drogas en proporción a la condena (en minutos, sin contar el tiempo extra de cárcel). Las otras ramas criminales no se pierden:
 
 | Condena | Puntos perdidos |
 |---|---|
-| 1 a 4 horas | **10** |
-| 5 a 8 horas | **20** |
-| 9 a 12 horas | **30** |
-| 13 a 24 horas | **40** |
-| 25 a 48 horas | **50** |
-| Más de 48 horas | **60** |
+| 5 a 8 minutos | **20** |
+| 9 a 12 minutos | **30** |
+| 13 a 24 minutos | **40** |
+| 25 a 48 minutos | **50** |
+| Más de 48 minutos, incluida la cadena perpetua | **60** |
 
 Las facciones ilegales protegen a sus miembros: en una facción **oficial** pierdes solo el **50%** de lo que indica la tabla, y en una **destacada**, el **75%**. El resto de jugadores pierde la cifra completa.
 
-**Por inactividad delictiva** pierdes **5 puntos** de delincuente si pasan **24 horas** sin que cometas ningún ilícito. Quedan exentos los miembros de facciones ilegales destacadas u oficiales y los usuarios Ruby. Los detalles están en [delincuente](sistema-de-delincuente.md).
+**Por inactividad delictiva** pierdes **5 puntos** de delincuente en cada payday (una vez por hora de juego) mientras pasen más de **24 horas** desde que terminó la espera de tu último ilícito. Quedan exentos los miembros de facciones ilegales destacadas u oficiales y los usuarios Ruby. Los detalles están en [delincuente](sistema-de-delincuente.md).
 
 **Por abandonar tras un tiroteo**: si desconectas en los tres minutos siguientes a disparar a otro jugador, pierdes **15 puntos** de delincuente además de tus armas.
 
 **El respeto** también puede caer: el robo a personas resta **15 puntos** a quien lo comete.
 
-Ninguna habilidad legal se pierde jamás. Lo que sabe tu mecánico, tu pescador, tu granjero o tu cocinero es permanente.
+Entre las habilidades legales, solo la de camionero puede bajar: **2** puntos al cancelar una misión de trailero y **10** si no entregas a tiempo un reparto de industria cuya mercancía ya recogiste. Lo que sabe tu mecánico, tu pescador, tu granjero o tu cocinero es permanente.
 
 ## Consejos
 
@@ -228,7 +227,7 @@ Ninguna habilidad legal se pierde jamás. Lo que sabe tu mecánico, tu pescador,
 - **Cocina y bartender premian el reto.** Repetir recetas muy fáciles solo da 1 punto; prepara platos de tu nivel para progresar al doble de ritmo.
 - **Pasa por la biblioteca de camino.** La media hora de espera entre lecturas significa que en una sesión larga puedes sacar varios capítulos casi sin desviarte de lo que ibas a hacer.
 - **Si delinques, hazlo acompañado.** El cooperativo de facción multiplica el progreso de todo el grupo y es la vía más rápida de convertir a una banda nueva en una banda temida.
-- **Si eres delincuente, no dejes de serlo.** Un parón de días te va comiendo la habilidad, y una condena larga puede borrarte más de la mitad. Entrar en una facción ilegal oficial es la única forma de congelar el desgaste.
+- **Si eres delincuente, no dejes de serlo.** Un parón de días te va comiendo la habilidad, y una condena larga puede borrarte más de la mitad. Entrar en una facción ilegal oficial o destacada (o ser Ruby) congela el desgaste.
 - **La felicidad es gratis.** Salir a la calle y comer algo de vez en cuando te da hasta un 15% más de vida sin coste alguno. No hay motivo para tenerla baja.
 
 ## Documentos relacionados

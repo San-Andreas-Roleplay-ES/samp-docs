@@ -15,9 +15,9 @@ Este documento te sirve tanto si eres un civil que quiere entender qué pasa cua
 - /entorno — envía un aviso anónimo al 911 describiendo la situación.
 - /enfermarme — abre el menú de eventos médicos para elegir una dolencia.
 - /mirar [id] — inspecciona a alguien: verás sus síntomas activos y sus cirugías.
-- /paramedicos — muestra cuántos paramédicos y médicos residentes hay de servicio. Alias: `/mds`.
+- /paramedicos — muestra cuántos paramédicos hay de servicio y cuántos médicos residentes están de servicio en el hospital. Alias: `/mds`.
 
-Comandos del personal médico (paramédicos, residentes y empleados de clínica; el historial también lo consultan policía y justicia):
+Comandos del personal médico (paramédicos, residentes y empleados de clínica; el historial solo lo consultan los empleados de clínica, la policía y la justicia):
 
 - /reanimar [id] — devuelve a la vida a un personaje muerto, con botiquín en mano.
 - /curar [id] [precio] — trata las heridas de un paciente por un precio acordado. Los bomberos y los guardias de la cárcel tienen una versión gratuita.
@@ -25,7 +25,7 @@ Comandos del personal médico (paramédicos, residentes y empleados de clínica;
 - /cirugia [id] [precio] — practica una operación que deja una descripción permanente.
 - /certificadomedico [id] — entrega el certificado médico necesario para ciertas licencias.
 - /historialmedico [Nombre_Apellido] — consulta el historial clínico de un personaje (empleados de clínica, policía y poder judicial).
-- /llevarhospital [id] — traslada un cuerpo al hospital (policía, cuando no hay paramédicos).
+- /llevarhospital [id] — traslada un cuerpo al hospital (policía, cuando no hay paramédicos de servicio).
 
 ## Heridas y hemorragias
 
@@ -58,11 +58,11 @@ La tarifa de urgencias se cobra de tu **cuenta bancaria** al terminar el tratami
 | --- | --- | --- |
 | Con residencia, **0 o 1** residente en servicio | **$2.500** | El paciente |
 | Con residencia, **2 o más** residentes en servicio | **$5.000** | El paciente |
-| **Sin residencia** | **$5.000** | El paciente (el gasto se contabiliza al gobierno) |
-| **Funcionario público** en servicio | La tarifa vigente | Los fondos del gobierno |
-| **Empleado en servicio** de un negocio | La tarifa vigente | La empresa, como seguro médico |
+| **Sin residencia** (y sin ser funcionario ni empleado en servicio) | **$5.000** | El paciente (además, la misma cantidad se descuenta de los fondos del gobierno) |
+| **Funcionario público** (policía, tránsito, bomberos, justicia, gobierno, ejército o guardabosques) | La tarifa vigente | Los fondos del gobierno |
+| **Empleado en servicio** de un negocio | Nada | Nadie: lo cubre el seguro médico de la empresa |
 
-Si hay **al menos un médico residente conectado y en servicio**, el importe de la tarifa ingresa a las arcas del hospital. Si no hay ninguno, el hospital no recauda nada por esa atención.
+Si hay **al menos un médico residente en servicio dentro del hospital**, el importe de la tarifa ingresa a las arcas del hospital. Si no hay ninguno, el hospital no recauda nada por esa atención.
 
 Tener residencia abarata la urgencia a la mitad cuando el hospital está tranquilo: consulta el [sistema de propiedades](sistema-de-propiedades.md) para saber cómo conseguir una.
 
@@ -79,7 +79,7 @@ Al reaparecer eliges tu punto de regreso entre cuatro ubicaciones:
 
 Si eres delincuente, el menú suma dos opciones más: las **bases criminales de Idlewood y de El Corona**.
 
-Reaparecer también cuesta dinero: se aplica la **misma tarifa de urgencias** de la tabla anterior, que sale de tu cuenta bancaria. Una diferencia importante: si no tienes residencia pagas siempre los **$5.000** de la tarifa sin residencia, incluso siendo funcionario o empleado. Con residencia, los funcionarios públicos en servicio lo tienen cubierto por su facción y los empleados en servicio, por su negocio.
+Reaparecer también cuesta dinero: se aplica la **misma tarifa de urgencias** de la tabla anterior, que sale de tu cuenta bancaria. Una diferencia importante: si no tienes residencia pagas siempre los **$5.000** de la tarifa sin residencia, incluso siendo funcionario o empleado. Con residencia, los funcionarios públicos lo tienen cubierto por su facción y los empleados en servicio, por su negocio.
 
 Si mueres en la isla de Santa Catalina no ves el menú: reapareces directamente en la isla y se te cobra lo mismo que en el hospital. Más detalles en la guía de [Santa Catalina](santa-catalina.md).
 
@@ -89,7 +89,7 @@ Si estás preso, reapareces directamente en la cárcel en lugar de ver el menú.
 
 ### Curación clandestina
 
-En Idlewood existe un punto de curación del mercado negro que cura tus heridas por **$15.000** en efectivo, sin registro médico y con un descanso de **4 horas** entre usos. No funciona si estás brutalmente herido. Los requisitos completos están en el [sistema de mercado negro](sistema-de-mercado-negro.md).
+En Idlewood y en El Corona existen puntos de curación del mercado negro que curan tus heridas por **$15.000** en efectivo, sin registro médico y con un descanso de **4 horas** entre usos. No funciona si estás brutalmente herido. Los requisitos completos están en el [sistema de mercado negro](sistema-de-mercado-negro.md).
 
 ## Enfermedades y dolencias
 
@@ -149,27 +149,27 @@ El comando `/paramedicos` (o `/mds`) te dice en cualquier momento cuántos hay d
 
 ### Reanimación
 
-`/reanimar [id]` devuelve a la vida a un personaje clínicamente muerto. Lo pueden usar policías, paramédicos, militares, guardabosques y guardias de seguridad, en servicio (los guardias de seguridad no lo necesitan) y con un **botiquín de primeros auxilios** en la mano derecha, a menos de **2,5 metros** del cuerpo. El reanimado vuelve con **20 de vida**: sigue siendo urgente llevarlo al hospital.
+`/reanimar [id]` devuelve a la vida a un personaje clínicamente muerto. Lo pueden usar policías, paramédicos, militares, guardabosques y guardias de seguridad, en servicio (los guardias de seguridad no lo necesitan) y con un **botiquín de primeros auxilios** en la mano derecha (también sirven el botiquín de bombero, el IFAK y el desfibrilador), a menos de **2,5 metros** del cuerpo. El reanimado vuelve con **20 de vida**: sigue siendo urgente llevarlo al hospital.
 
 Si no hay ningún paramédico conectado, un policía en servicio puede usar `/llevarhospital [id]` para que una ambulancia se lleve el cuerpo al All Saints Medical Center.
 
 ### Atención de heridas en la calle
 
-`/curar [id] [precio]` es el comando con el que un paramédico o un empleado de clínica trata las heridas de un paciente fuera del hospital. Requisitos:
+`/curar [id] [precio]` es el comando con el que un médico residente o un empleado de clínica trata las heridas de un paciente fuera del hospital (los bomberos y paramédicos del LSFD en servicio usan en su lugar la versión gratuita que se describe más abajo). Requisitos:
 
 - Estar en servicio (o trabajando, si eres empleado de clínica).
-- Llevar un **botiquín de primeros auxilios** en la mano derecha (se gasta una unidad por curación).
+- Llevar un **botiquín de primeros auxilios** en la mano derecha (también sirven el botiquín de bombero y el IFAK; se gasta una unidad por curación).
 - Estar a menos de **3 metros** del paciente.
 - Los empleados de clínica necesitan además **10 puntos** de habilidad de paramédico.
 
 El precio se acuerda entre **$500 y $50.000**. El paciente recibe la oferta y responde con `/aceptar` o `/rechazar`. Al aceptar:
 
 - El paciente paga el total desde su cuenta bancaria.
-- El paramédico se queda con el **50 %** en su cuenta personal.
+- El médico o empleado se queda con el **50 %** en su cuenta bancaria.
 - El otro **50 %** va a las arcas de la facción (o del negocio, si es una clínica privada).
 - La atención queda registrada en el historial clínico del paciente.
 
-Hay dos límites de habilidad importantes: con **menos de 30 puntos** de habilidad de paramédico no puedes tratar las heridas de verdad (solo frenas el sangrado durante 30 minutos), y necesitas **80 puntos** para revivir a un paciente clínicamente muerto si no eres policía.
+Hay un límite de habilidad importante: necesitas **80 puntos** de habilidad de paramédico para revivir a un paciente clínicamente muerto si no eres policía. Además, un empleado de clínica con **menos de 30 puntos** recibe un aviso de que su habilidad de paramédico es baja.
 
 Cada curación tiene un **5 %** de probabilidad de subirte un punto de habilidad de paramédico.
 
@@ -183,7 +183,7 @@ Los guardias de la cárcel (SADCR) en servicio también tienen `/curar [id]` gra
 
 `/consultamedica [id] [precio]` es el tratamiento de las dolencias. Es exclusivo del personal médico **en servicio**, con el paciente a menos de **3 metros**, y el precio se fija entre **$1.000 y $100.000**.
 
-El paciente responde con `/aceptar` o `/rechazar`. Al aceptar, paga el total desde su cuenta bancaria, el médico se lleva el **50 %** y el otro **50 %** entra a las arcas de la facción. La dolencia se cura y los síntomas desaparecen progresivamente.
+El paciente responde con `/aceptar` o `/rechazar`. Al aceptar, paga el total desde su cuenta bancaria, el médico se lleva el **50 %** y el otro **50 %** entra a las arcas de la facción. La dolencia se cura y los síntomas desaparecen progresivamente. El cobro se hace igualmente aunque el paciente no pueda curarse en ese momento (ver la excepción siguiente).
 
 Hay una excepción: si el paciente tiene **salbutamol** o **codeína** activos en el cuerpo, la consulta no elimina la dolencia. Esos fármacos enmascaran el cuadro y hay que esperar a que pasen sus efectos antes de tratarlo de raíz.
 
@@ -219,7 +219,7 @@ Las farmacias de la ciudad venden medicamentos que actúan sobre los síntomas. 
 | Omeprazol | Antiácido | **$138** |
 | Losartán | Hipertensión | **$138** |
 | Metformina | Diabetes | **$138** |
-| Salbutamol | Broncodilatador: corta la tos | **$138** |
+| Salbutamol | Broncodilatador | **$138** |
 | Loratadina | Antialérgico: corta los estornudos | **$138** |
 | Diclofenaco | Analgésico y antiinflamatorio | **$138** |
 | Codeína | Analgésico opioide potente | **$144** |
@@ -234,7 +234,7 @@ Material sanitario que también encontrarás a la venta:
 | Bisturí | Necesario para operar | **$360** |
 | Botiquín de primeros auxilios | Necesario para reanimar y curar | **$1.438** |
 
-La **loratadina** anula por completo los estornudos mientras esté activa. El **salbutamol** y la **codeína** eliminan los síntomas, pero bloquean el tratamiento médico completo: mientras los tengas encima, un médico no podrá curarte la dolencia de raíz.
+La **loratadina** anula por completo los estornudos mientras esté activa. El **salbutamol** y la **codeína** enmascaran el cuadro y bloquean el tratamiento médico completo: mientras sus efectos estén activos, un médico no podrá curarte la dolencia de raíz.
 
 ## Historial clínico
 

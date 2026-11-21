@@ -28,7 +28,7 @@ Una cuenta sin certificar puede jugar con normalidad, pero tiene estas limitacio
 |---|---|
 | **Ser delincuente** | `/delincuente` exige la cuenta certificada (además de tener la doble autenticación activa). Quien cumple condena en prisión y es certificado pasa a ser delincuente automáticamente si no lo era ni pertenece a una facción legal |
 | **Robos** | No puedes robar cajeros automáticos, el banco ni la joyería, ni cortar la tobillera de la libertad condicional |
-| **Armas** | No puedes usar armas, ni comprar armas ni cargadores en los negocios. Tampoco puedes jugar [paintball](sistema-de-paintball.md), porque exige poder usar armas |
+| **Armas** | No puedes usar armas, ni comprar armas, cargadores ni munición en los negocios. Tampoco puedes jugar [paintball](sistema-de-paintball.md), porque exige poder usar armas |
 | **Facciones** | No puedes ser invitado a una facción: el líder que lo intente recibe el aviso de que tu cuenta no está certificada |
 | **Graffitis** | No puedes crear graffitis con `/graffiti crear` |
 | **Llaves y vehículos** | No puedes prestar las llaves de tu propiedad con `/prestarllave` ni tu vehículo con `/prestarveh` |

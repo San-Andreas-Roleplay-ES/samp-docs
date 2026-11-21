@@ -29,7 +29,7 @@ Cada vez que cobras por un trabajo recibes Burger Points. La cantidad depende de
 | Pesca comercial (venta de la captura) | **+5** |
 | Piloto comercial (recorrido completado) | **+5** |
 | Taxista (viaje cobrado o taxímetro cerrado) | **+3** |
-| Basurero (ruta cobrada) | **+3** |
+| Basurero (bolsa de basura entregada) | **+3** |
 | Abogado (oficio atendido) | **+3** |
 | Técnico de seguridad (servicio completado) | **+3** |
 | Técnico de seguridad (instalación de una cámara de seguridad) | **+3** |
@@ -40,14 +40,14 @@ Cada vez que cobras por un trabajo recibes Burger Points. La cantidad depende de
 | Barrendero (calle barrida) | **+3** |
 | Repartidor de comida (pedido entregado) | **+3** |
 | Camión cementero (camión entregado en buen estado) | **+3** |
-| Camión cementero (llega destrozado) | **+1** |
+| Camión cementero (llega dañado) | **+1** |
 | Vendedor de negocio (venta con propina) | **+3** |
 | Mecánico (reparación o tuning cobrado) | **+1** |
 | Operador de grúa horquilla (caja transportada) | **+1** |
 | Vendedor de perritos calientes (venta) | **+1** |
 | Heladero (venta) | **+1** |
 
-En el caso del vendedor de negocio, los puntos solo llegan si el cliente deja **propina**: una venta seca no paga Burger Points.
+En el caso del vendedor de negocio, los puntos solo llegan si el cliente deja **propina**: una venta seca no paga Burger Points. El camionero que entrega mercancía a su propio negocio (o al de su pareja) no cobra ni suma puntos.
 
 La reparación de un cajero solo da puntos cuando la ciudad te paga por ella: si tu cuenta participó en el daño o el cajero tuvo demasiados responsables, la reparación no se paga y tampoco suma. De las cámaras de seguridad solo cuenta la instalación; repararlas no da puntos.
 
@@ -55,12 +55,12 @@ Encontrarás el detalle de cada oficio en [Sistema de camionero](sistema-de-cami
 
 ## Transporte público
 
-Conducir las líneas de la ciudad paga puntos en cada punto de control del recorrido:
+Conducir las líneas de la ciudad paga puntos al terminar el recorrido completo, según las paradas en las que esperaste lo suficiente:
 
-- **+3 BP** por cada parada de autobús completada.
-- **+3 BP** por cada estación de tren alcanzada.
+- **+3 BP** por cada parada de autobús atendida.
+- **+3 BP** por cada estación de tren atendida.
 
-Ambas actividades también pagan un bono en dinero al llegar a cada parada.
+Una parada o estación en la que no esperas lo bastante no suma puntos ni paga. Ambas actividades pagan además su sueldo en dinero al terminar el recorrido, por cada parada atendida.
 
 ## Delincuencia
 
@@ -70,7 +70,7 @@ La vida criminal reparte Burger Points según el riesgo de cada golpe:
 |---|---|
 | Atraco a un negocio | **+50** |
 | Robo y venta de un tráiler | **+50** |
-| Robo de carterista a otro jugador | **+25** |
+| Robar a otro jugador (al quitarle su dinero) | **+25** |
 | Hurto de un producto de un negocio | **+1** |
 | Retirar tu propio skimmer de un cajero y cobrar lo recopilado | **+3** |
 
@@ -78,7 +78,7 @@ Los dos golpes grandes (atraco y tráiler robado) llevan además largos tiempos 
 
 ### Zonas de pandilla
 
-Si eres miembro de una pandilla, estás dentro de la zona controlada por tu banda y cumples los requisitos de habilidad de narcotráfico, ciertas acciones dentro del territorio otorgan **+5 BP** además de la habilidad criminal correspondiente. Aplica al fumar, beber, consumir drogas, hurtar, robar un vehículo o pintar un graffiti dentro de la zona, siempre que se dé la bonificación de zona (cada acción tiene su propia probabilidad) y con un descanso de **30 minutos** entre bonificaciones.
+Si eres miembro de una pandilla activa, no estás preso, estás dentro de la zona controlada por tu banda y cumples los requisitos de habilidad de narcotráfico, ciertas acciones dentro del territorio otorgan **+5 BP** además de la habilidad criminal correspondiente. Aplica al fumar, beber alcohol, consumir drogas, robar a otro jugador, robar un vehículo o pintar un graffiti dentro de la zona, siempre que se dé la bonificación de zona (cada acción tiene su propia probabilidad) y con un descanso de **30 minutos** entre bonificaciones.
 
 Los detalles de territorios y bonificaciones están en [Sistema de zonas de pandilla](sistema-de-zonas-de-pandilla.md).
 
@@ -114,9 +114,8 @@ Los ejercicios del gimnasio solo pagan al **subir de nivel**, no en cada repetic
 | Pesca recreativa: presa poco común | **+10** | — |
 | Pesca recreativa: presa rara | **+15** | — |
 | Pesca recreativa: presa muy rara | **+20** | — |
-| Pesca recreativa: presa excepcional | **+25** | — |
 
-En la pesca recreativa la recompensa depende de la **rareza de la presa**: cuanto menos probable sea que pique, más Burger Points vale. Las capturas más esquivas, como la langosta espinosa, llegan al máximo de +25. Consulta [Sistema de pesca](sistema-de-pesca.md).
+En la pesca recreativa la recompensa depende de la **rareza de la presa**: cuanto menos probable sea que pique, más Burger Points vale. Las capturas más esquivas, como la langosta americana o el lingcod, llegan al máximo de +20. La basura que sacas del agua no da puntos. Consulta [Sistema de pesca](sistema-de-pesca.md).
 
 El paintball solo paga en **salas públicas**: las partidas privadas no otorgan puntos.
 
@@ -140,7 +139,7 @@ Ten en cuenta que **borrar tu propio graffiti resta 5 BP**. Tienes cinco minutos
 
 ## Basureros
 
-Revisar un basurero por primera vez desde que se llenó otorga **+1 BP**. Solo cobra el **primero** que lo abre: los siguientes en revisar ese mismo basurero no reciben nada hasta que un recolector lo vacíe y vuelva a llenarse con el tiempo. Recuerda que hurgar en la basura te deja apestando.
+Revisar un basurero por primera vez desde que se llenó otorga **+1 BP**. Solo cobra el **primero** que lo abre: los siguientes en revisar ese mismo basurero no reciben nada hasta que un recolector lo limpie. Recuerda que hurgar en la basura te deja apestando.
 
 Más detalles en [Sistema de basureros](sistema-de-basureros.md) y [Sistema de basura](sistema-de-basura.md).
 
@@ -155,7 +154,7 @@ Más detalles en [Sistema de basureros](sistema-de-basureros.md) y [Sistema de b
 
 El **examen de conducir** solo paga una vez, al aprobarlo y recibir la licencia.
 
-En los **eventos de negocios**, cuando el local sube de nivel por alcanzar su meta de participantes simultáneos y de ventas a clientes (cada nivel pide 10 participantes y 5 ventas más que el anterior), todos los jugadores que estén dentro del área del negocio en ese momento reciben **+10 BP**. Durante los períodos de experiencia aumentada la recompensa sube a **+20 BP** (doble) o **+30 BP** (triple).
+En los **eventos de negocios**, cuando el local sube de nivel por alcanzar su meta de participantes simultáneos y de ventas a clientes (cada nivel pide 10 participantes y 5 ventas más que el anterior), todos los jugadores que estén a pie, activos y vivos dentro del área del negocio en ese momento reciben **+10 BP**. Durante los períodos de experiencia aumentada la recompensa sube a **+20 BP** (doble) o **+30 BP** (triple).
 
 Los eventos médicos entregan **+50 BP** a quien acepta interpretar la dolencia que le toca; consulta [Sistema médico y hospital](sistema-medico-y-hospital.md).
 
@@ -163,7 +162,7 @@ Los eventos médicos entregan **+50 BP** a quien acepta interpretar la dolencia 
 
 En **nada**. Los Burger Points no se canjean por objetos, dinero ni ventajas dentro del juego: no existe ninguna tienda que los acepte como pago. Son un saldo que **solo sube** (salvo por el descuento al borrar un graffiti propio) y que funciona como historial de actividad de tu cuenta.
 
-Puedes además **sumarlos** desde la tienda del panel de control: entre los productos disponibles hay un paquete de **1.000 Burger Points** que se compra con monedas. Es una forma de engordar el contador, no de gastarlo. Todo lo relativo a monedas, premium y compras está en [Tienda y Premium](tienda-premium.md) y [Panel de control](panel-de-control.md).
+Puedes además **sumarlos** desde la tienda del UCP: entre los productos disponibles hay un paquete de **1.000 Burger Points** que se compra con monedas. Es una forma de engordar el contador, no de gastarlo. Todo lo relativo a monedas, premium y compras está en [Tienda y Premium](tienda-premium.md) y [Panel de control](panel-de-control.md).
 
 Ocasionalmente el equipo del servidor organiza **sorteos y regalos** de Burger Points entre los jugadores conectados; se anuncian por el chat global cuando ocurren.
 
@@ -171,7 +170,7 @@ Ocasionalmente el equipo del servidor organiza **sorteos y regalos** de Burger P
 
 - **Sal a la calle.** El bloque de exteriores es, con diferencia, el más rentable a largo plazo: comer, beber, fumar y tomar algo al aire libre suman hasta **+20 BP cada media hora** sin ningún requisito más que estar fuera. Rolear dentro de casa no paga nada.
 - **Combina los cuatro consumos.** Cada uno tiene su propio descanso de 30 minutos, así que no compiten entre sí: llevar encima comida, una bebida, un cigarro y algo de alcohol te permite aprovechar los cuatro contadores.
-- **Cuida los 30 minutos de calle por hora.** Un solo minuto de menos y pierdes el punto del sueldo, que además es el mismo requisito que mantiene tu felicidad en alza.
+- **Cuida los 30 minutos de calle por hora.** Un solo minuto de menos y pierdes el punto del sueldo.
 - **Prioriza los golpes grandes.** Entre los delincuentes, un atraco o un tráiler robado valen **50 BP** cada uno, tanto como diez consumos en la calle. Los hurtos repetidos apenas aportan **1 BP**.
 - **La caza mayor rinde muchísimo.** Un solo oso o un uapití vale **50 BP**; un conejo, **10**. Si sales al monte, apunta alto.
 - **No borres graffitis a la ligera.** Es la única acción del juego que te resta puntos.

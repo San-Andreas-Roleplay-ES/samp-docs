@@ -11,10 +11,10 @@ Es un sistema de riesgo real. El precio ha llegado a valer menos de la mitad de 
 
 ### Comandos
 - `/billetera` (o `/wallet`) — muestra tu dirección de CluckinCoin y tu saldo actual. Si aún no tienes billetera, la crea en el momento.
-- `/telefono` (o `/tel`) — saca el teléfono del inventario para poder abrir la aplicación de Trading.
+- `/telefono` (o `/tel`) — saca el teléfono del inventario para poder abrir la aplicación de Trading (si ya lo tienes en la mano, lo guarda).
 - `/tc` (o `/pc`) — vuelve a activar el cursor del teléfono si lo desactivaste con ESC.
-- `/sim` — asigna un número a tu teléfono, requisito para usar la aplicación.
-- `/minar` (o `/mineria`) — frente a un equipo de minería de tu propiedad, abre su pantalla de control.
+- `/sim` — con el teléfono en la mano derecha, abre el menú de tus planes para elegir el número que usará ese teléfono (o contratar uno nuevo). Es requisito para usar la aplicación y no sirve con teléfonos prepago, que ya traen su número.
+- `/minar` (o `/mineria`) — frente a un equipo de minería, abre su pantalla de control; si ya la tienes abierta, la cierra.
 
 ## Requisitos
 Para cualquier operación con CluckinCoin necesitas, sin excepción:
@@ -27,14 +27,14 @@ Para cualquier operación con CluckinCoin necesitas, sin excepción:
 ## Crear tu billetera
 No hay trámite ni papeleo. La primera vez que escribes `/billetera` (o abres la aplicación de Trading), el sistema genera automáticamente tu dirección y te la muestra por chat junto a un saldo de **0.0 CluckinCoins**.
 
-La dirección es una cadena de **16 caracteres** que siempre empieza por `0x`, mezclando números y letras minúsculas, del estilo `0x1946u517rfw2z`. Es **única e irrepetible**, y puedes compartirla sin miedo: sirve para que otros jugadores te envíen monedas, igual que un número de cuenta. Nadie puede sacarte saldo por conocer tu dirección.
+La dirección es una cadena de **15 caracteres** que siempre empieza por `0x`, mezclando números y letras minúsculas, del estilo `0x1946u517rfw2z`. Es **única e irrepetible**, y puedes compartirla sin miedo: sirve para que otros jugadores te envíen monedas, igual que un número de cuenta. Nadie puede sacarte saldo por conocer tu dirección.
 
 Recuerda que esa dirección pertenece a tu **cuenta**: si creas un personaje nuevo y escribes `/billetera`, verás exactamente la misma dirección y el mismo saldo.
 
 ## Abrir la aplicación de Trading
 1. Saca el teléfono con `/telefono`.
 2. En la pantalla de bloqueo, haz clic para entrar al menú principal.
-3. Pulsa el icono de **CluckinCoin** entre las aplicaciones.
+3. Pulsa el icono de **Trading** entre las aplicaciones.
 
 Dentro verás el **gráfico de precio**, el **valor actual** en dólares y el **porcentaje de variación** de la última actualización (en verde si subió, en rojo si bajó). Debajo están los tres botones de operación.
 
@@ -62,7 +62,7 @@ Para que te hagas una idea de hasta dónde se mueve, estos son los precios reale
 | Mínimo histórico | **$1.520** por moneda |
 | Rango habitual | entre **$2.000** y **$3.000** |
 
-Dicho de otro modo: quien compró en el pico y vendió en el suelo perdió más del **65%** de su inversión. Quien hizo lo contrario, casi triplicó lo suyo. El mercado ha pasado temporadas enteras de varios meses cayendo sin recuperarse.
+Dicho de otro modo: quien compró en el pico y vendió en el suelo perdió más del **65%** de su inversión. Quien hizo lo contrario, más que triplicó lo suyo. El mercado ha pasado temporadas enteras de varios meses cayendo sin recuperarse.
 
 ## Comprar CluckinCoins
 Pulsa **Comprar** en la aplicación. El diálogo te muestra el precio actual, cuánto hace que se actualizó, tu **dinero disponible en el banco** y la comisión. Escribe la cantidad de monedas que quieres (se admiten hasta **dos decimales**, por ejemplo `1.5`) y confirma.
@@ -105,7 +105,7 @@ El límite de venta es **diez veces más estricto que el de compra**: puedes com
 ## Transferir a otro jugador
 Pulsa **Transferir** para enviar monedas a cualquier otra billetera del servidor. El proceso tiene dos pasos:
 
-1. Escribe la **dirección de destino** (entre 15 y 16 caracteres, la que te haya pasado el otro jugador). El sistema comprueba que exista; si no la encuentra, cancela la operación.
+1. Escribe la **dirección de destino** (15 caracteres, la que te haya pasado el otro jugador). El sistema comprueba que exista; si no la encuentra, cancela la operación. Tampoco puedes transferirte a tu propia billetera.
 2. Escribe la **cantidad** a enviar y confirma.
 
 | Parámetro | Valor |
@@ -125,7 +125,7 @@ Además de comprarlas, puedes **minar** CluckinCoins con equipo propio. Lo minad
 <img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/mineria-cluckincoin-pantalla.gif" alt="Pantalla de minería de CluckinCoin con los datos del equipo y los bloques" width="1680" height="1050">
 
 ### Equipos y piezas
-Los equipos se compran en el [mercado negro](sistema-de-mercado-negro.md) (hay que ser delincuente, tener 50 horas de juego y la mano derecha libre) y se pagan con el efectivo que llevas. Llegan **vacíos** y en una caja: llévala a una propiedad y arma el equipo con `/desempaquetarmueble`, como cualquier otro mueble (consulta el [sistema de muebles](sistema-de-muebles.md)). Cada propiedad admite hasta **4 equipos de minería**.
+Los equipos se compran en el [mercado negro](sistema-de-mercado-negro.md) (hay que ser delincuente y no policía, tener 50 horas de juego y la mano derecha libre) y se pagan con el efectivo que llevas. Llegan **vacíos** y en una caja: llévala a una propiedad y arma el equipo con `/desempaquetarmueble`, como cualquier otro mueble (consulta el [sistema de muebles](sistema-de-muebles.md)). Cada propiedad admite hasta **4 equipos de minería**.
 
 Las piezas se compran de una en una desde el propio equipo y cada una aparece físicamente en su ranura. Para comprar el equipo y las piezas necesitas una [habilidad](sistema-de-habilidades.md) de **electrónica** mínima que depende del nivel.
 
@@ -149,7 +149,7 @@ Ponte a pie y frente al equipo, a un metro o menos, y escribe `/minar`. Se abre 
 - La luz restante y el consumo.
 - La cuenta atrás hasta el próximo bloque.
 
-Mientras la pantalla está abierta tu personaje queda quieto. Pulsa **H** para abrir el menú del equipo (comprar una pieza, cargar luz y cobrar) y **N** para cerrar la pantalla. Se cierra sola si te hieren o cambias de personaje.
+Mientras la pantalla está abierta tu personaje queda quieto. Pulsa **H** para abrir el menú del equipo (comprar una pieza, cargar luz y cobrar) y **N** para cerrar la pantalla. Se cierra sola si te hieren, te alejas más de 3 metros del equipo o cambias de personaje.
 
 ### Luz prepagada
 El equipo solo mina mientras tenga **luz cargada**; sin luz, se apaga. La luz cuesta **$10 por kWh** y se paga con efectivo o con el banco. Desde el menú eliges cuántas horas de consumo cargar: **6, 12, 24 o 48 horas**. Un equipo no puede acumular más de **48 horas** de consumo, así que solo ves las opciones que caben.

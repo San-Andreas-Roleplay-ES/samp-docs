@@ -4,7 +4,7 @@
 
 ## Introducción
 
-Cuando un personaje sufre una **muerte definitiva** (Character Kill), su cuerpo queda tendido en el mismo punto donde cayó y se convierte en un cadáver persistente: no desaparece con el tiempo, no se borra al reiniciar el servidor y conserva la apariencia, las heridas y el inventario que el personaje tenía en ese momento.
+Cuando un personaje sufre una **muerte definitiva** (Character Kill), su cuerpo queda tendido en el mismo punto donde cayó y se convierte en un cadáver persistente: no se borra al reiniciar el servidor (solo desaparece cuando el forense lo retira) y conserva la apariencia, las heridas y el inventario que el personaje tenía en ese momento.
 
 A partir de ahí el cuerpo se convierte en el centro de un pequeño juego del gato y el ratón. Para la policía y los paramédicos es una escena del crimen que hay que documentar y trasladar a la morgue. Para el criminal que lo dejó ahí es un problema: un cuerpo abandonado en la vía pública acaba llamando la atención, y cada persona que lo toca deja huellas que un laboratorio puede leer más tarde.
 
@@ -28,7 +28,7 @@ Los cuerpos que están dentro de una propiedad también se pueden reportar, pero
 
 ## De dónde salen los cadáveres
 
-Un cadáver aparece únicamente cuando un personaje recibe un **Character Kill**: la muerte permanente del personaje, tras la cual el jugador debe cambiar de nombre en la tienda del panel de control. El sistema lo aplica automáticamente al morir si el personaje ha superado su límite de asesinatos recientes o si arrastra una deuda bancaria demasiado grande.
+Un cadáver aparece únicamente cuando un personaje recibe un **Character Kill**: la muerte permanente del personaje, tras la cual el jugador debe cambiar de nombre en la tienda del panel de control. El sistema lo aplica automáticamente cuando un personaje que ha superado su límite de asesinatos recientes queda gravemente herido o muere.
 
 El límite de asesinatos y el estado mental que lo acompaña se explican en detalle en [Sistema de asesinatos, salud mental y felicidad](sistema-de-asesinatos.md).
 
@@ -73,7 +73,7 @@ Hay dos formas de no dejar rastro:
 
 Ten en cuenta que algunas acciones son mucho más "sucias" que otras: recoger la bolsa deja **tres** contactos de golpe y tomar una muestra de ADN deja **cinco**, así que unos guantes desgastados pueden romperse en mitad de la maniobra.
 
-Del lado contrario, `/cadaver muestraadn` graba ese listado de huellas en el hisopo, que después se analiza en el laboratorio para obtener los nombres. Tomar la muestra requiere ser **policía o paramédico de servicio** y llevar un **hisopo de laboratorio** (**$72**) en la mano derecha; el cuerpo no puede estar calcinado, porque el fuego ya habrá borrado todo. Ese proceso se explica en [Sistema forense](sistema-forense.md).
+Del lado contrario, `/cadaver muestraadn` graba ese listado de huellas en el hisopo, que después se analiza en el laboratorio para obtener los nombres. Tomar la muestra requiere ser **policía o paramédico de servicio** y llevar un **hisopo de laboratorio** (**$72**) en la mano derecha; en un cuerpo calcinado la muestra sale vacía, porque el fuego ya habrá borrado todo. Ese proceso se explica en [Sistema forense](sistema-forense.md).
 
 ## Saquear el inventario
 
@@ -111,7 +111,7 @@ Un cuerpo embolsado se ve como un bulto y su etiqueta pasa a decir simplemente q
 - Estar **junto al cuerpo**.
 - Ser **paramédico**, **detective privado**, o un delincuente con **50 de habilidad de delincuente** o más.
 
-La bolsa cargada es un objeto **pesado**: ocupa las dos manos, no puedes conducir con ella encima y tienes que dejarla en el suelo o guardarla para moverte con normalidad. Eso sí, al ser un objeto normal del inventario puedes meterla en el **maletero de un vehículo** y llevártela a donde quieras.
+La bolsa cargada es un objeto **pesado**: ocupa las dos manos, no puedes conducir con ella encima y tienes que dejarla en el suelo o guardarla para moverte con normalidad. Eso sí, al ser un objeto normal del inventario puedes meterla en el **maletero de un vehículo** (desde fuera y no en motos) y llevártela a donde quieras.
 
 Cuando sueltas la bolsa, el cadáver vuelve a materializarse en ese mismo punto y sigue su vida normal: se puede volver a destapar, examinar, quemar o entregar. Lo que no vuelve es su inventario, que se pierde al recogerlo.
 
@@ -135,7 +135,7 @@ Los paramédicos no actúan como oficina forense: en el rol deben simular que tr
 
 | Requisito | Valor |
 |---|---|
-| Quién | **Policía** (departamento o sheriff) **de servicio** |
+| Quién | Miembro de un cuerpo policial o de justicia (departamento, sheriff y similares) **de servicio** |
 | Tiempo mínimo en escena | **15 minutos** desde que apareció el cuerpo |
 | Estado del cuerpo | **No puede estar ardiendo** |
 | Disponibilidad de emergencias | Solo si hay **menos de 2 paramédicos** de servicio |
@@ -203,7 +203,7 @@ El cuerpo no puede estar **ardiendo** ni **calcinado**.
 
 Cada incisión y cada extracción **queda registrada en el cuerpo para siempre** y aparece marcada en rojo cuando alguien usa `/cadaver examinar`. Un cuerpo abierto por el pecho o el estómago también cambia lo que reportan los testigos por la radio policial: pasan a avisar de un cuerpo brutalmente desmembrado.
 
-Si un órgano ya fue extraído, o está dañado por las heridas que mataron a la persona, no se puede sacar. Conviene examinar el cuerpo antes de ponerse a trabajar.
+Si un órgano ya fue extraído o está dañado, no se puede sacar. Conviene examinar el cuerpo antes de ponerse a trabajar.
 
 ### Efectos sobre quien lo hace
 

@@ -92,14 +92,14 @@ Al romper la tobillera:
 - La tobillera cortada cae al suelo donde cortaste y sigue emitiendo.
 - Mientras seas prófugo no puedes usar `/tiempop`, `/terminarp`, `/solicitaroficialparole` ni `/encarcelarme`, y nadie puede asignarte una nueva libertad condicional hasta que seas arrestado.
 
-La condición de prófugo se mantiene aunque cierres sesión o cambies de personaje. Termina de dos formas:
+La condición de prófugo pertenece a ese personaje y se mantiene aunque cierres sesión. Termina de dos formas:
 
 - **Arresto**: cuando te arrestan, la condicional se reanuda **después de la nueva condena**. Tu nueva libertad condicional dura los días del arresto más el tiempo que te quedaba cuando rompiste la tobillera.
 - **Orden judicial**: un juez en servicio puede retirar la condición con `/quitarfugitivo`. En ese caso la condicional vuelve a correr desde ese momento con el tiempo que te quedaba pendiente.
 
 ### Cómo te delata la ciudad
 
-La ciudad entera puede delatarte. Cada delación tiene su propia espera por personaje, que se mantiene aunque cierres sesión.
+La ciudad entera puede delatarte. Cada delación tiene su propia espera por personaje, que se mantiene aunque cierres sesión. El mostrador de un banco y las tiendas comparten la misma espera: si te reconocen en uno, no te reconocerán en el otro durante esos 300 segundos.
 
 | Dónde | Qué pasa | Espera |
 |-------|----------|--------|
@@ -132,7 +132,7 @@ Cada recompensa se **anuncia a toda la ciudad** como un comunicado oficial, con 
 
 ### Cazarrecompensas
 
-La recompensa se paga cuando el prófugo es **arrestado**. En el reporte de arresto, el oficial elige a quien **entregó al prófugo**, o a nadie si lo capturó la propia policía. Si no hay cazarrecompensas, el dinero vuelve a los fondos de la facción que lo ofreció.
+La recompensa se paga cuando el prófugo es **arrestado**. En el reporte de arresto, el oficial elige a quien **entregó al prófugo**, o a nadie si lo capturó la propia policía. Si no hay cazarrecompensas, el dinero vuelve a los fondos de la facción que lo ofreció. Lo mismo ocurre si un juez retira la condición de prófugo.
 
 Para poder ser elegido, el civil debe cumplir todo esto:
 

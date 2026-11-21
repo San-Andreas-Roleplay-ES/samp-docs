@@ -53,7 +53,7 @@ El pago se hace **por adelantado**, al empezar la vuelta, y va a la caja del clu
 Detalles de la sala:
 
 - Cabe un máximo de **4 jugadores** por vuelta.
-- La sala se cierra sola a los **3 minutos** si no empieza la vuelta. Si el anfitrión sale, la sala se disuelve.
+- La sala se cierra sola a los **3 minutos** si no empieza la vuelta; ese plazo se reinicia cada vez que alguien se suma. Si el anfitrión sale o deja el club, la sala se disuelve.
 - Solo el anfitrión puede invitar y empezar.
 - El campo admite hasta **4 vueltas a la vez**. Si están todas ocupadas, espera a que termine alguna.
 
@@ -77,7 +77,7 @@ Tienes **90 segundos** por turno. Si se acaba el tiempo, se te anota **1 golpe**
 | Subir o bajar la altura del golpe | Flechas adelante / atrás |
 | Cargar la fuerza | Mantén la tecla de correr |
 | Golpear | Suelta la tecla de correr |
-| Salir de la postura sin golpear | Tecla de entrar y salir de vehículos (F) |
+| Salir de la postura sin golpear (antes de empezar a cargar la fuerza) | Tecla de entrar y salir de vehículos (F) |
 
 - La **barra de fuerza** sube y baja sola mientras mantienes la tecla. Suelta en el momento justo para elegir cuánta fuerza das. Si la mantienes más de 8 segundos, el golpe sale solo.
 - Cuanta más fuerza uses, **menos preciso** es el golpe: un golpe a tope es el que más se desvía.
@@ -195,7 +195,7 @@ Si tienes varias membresías con el mismo beneficio, no se acumulan: basta con u
 
 1. Ve al punto de membresías del club y escribe `/membresia`. Verás los beneficios y el precio; elige **Pagar**.
 2. La cuota se cobra de tu **banco**. Necesitas el dinero ahí y tu cuenta bancaria no puede estar bloqueada.
-3. Tu membresía queda activa por 7 días y se **renueva sola**: el cobro automático se hace junto con los impuestos diarios, cuando falta menos de un día para que venza.
+3. Tu membresía queda activa por 7 días y se **renueva sola**: el cobro automático se hace junto con los impuestos diarios, cuando falta menos de un día para que venza. Solo se cobra si estás conectado cuando se calculan tus impuestos del día.
 4. Si en ese momento no tienes fondos en el banco, el cobro no se hace y recibes un aviso. Si ya había vencido y sigue sin fondos, el cobro automático se cancela.
 5. Para **renovar a mano**, vuelve al punto de membresías y usa `/membresia`: cada pago suma 7 días a partir del vencimiento. Puedes dejarla pagada hasta 4 semanas por adelantado.
 6. Para **cancelar**, usa `/membresia` y elige Cancelar. Se deja de cobrar, pero sigues siendo socio hasta que venza.
@@ -203,7 +203,7 @@ Si tienes varias membresías con el mismo beneficio, no se acumulan: basta con u
 ### Credencial y afiliados
 
 - `/mostrarcredencial` muestra tu credencial de socio con tus membresías vigentes y su fecha de vencimiento. Con `/mostrarcredencial [id]` se la muestras a un jugador que esté a menos de 5 metros.
-- `/afiliados` muestra los socios conectados y cuántos socios hay en total. Pueden usarlo los socios vigentes, dentro del club o en su punto de membresías, y el personal del negocio con permisos de administración.
+- `/afiliados` muestra los socios conectados y cuántos socios hay en total. Pueden usarlo los socios vigentes, dentro del negocio del club (en su interior) o en su punto de membresías, y el personal del negocio con permisos de administración, dentro del negocio.
 - `/ayuda membresía` resume estos comandos.
 
 ## Consejos

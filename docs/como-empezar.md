@@ -33,11 +33,11 @@ Después aparece el **selector de personajes**: cada personaje es una tarjeta co
 
 - Se muestran hasta **6 personajes** a la vez, en filas de 3. Con más de 6 el servidor usa una lista de texto con el nombre, el estado y las horas jugadas de cada uno.
 - Los personajes **bloqueados** o **muertos** aparecen en rojo y no se pueden elegir.
-- Si solo tienes un personaje disponible, entras directamente, sin pasar por el selector.
+- Si solo tienes un personaje y no está bloqueado ni muerto, entras directamente, sin pasar por el selector.
 
 ## Tu primera conexión
 
-La primera vez que entras, tu personaje aparece sentado en un banco de **Pershing Square**, en pleno centro de Los Santos, con un par de segundos de espera antes de poder moverte.
+La primera vez que entras, tu personaje aparece sentado en **Pershing Square**, en pleno centro de Los Santos, y tienes que esperar unos **3 segundos** antes de poder moverte.
 
 Recibes automáticamente un **paquete de bienvenida de $5.000** ingresado en tu **cuenta bancaria** (no en el bolsillo): para usar ese dinero tendrás que pasar por un cajero automático y usar `/retirar`. Con una membresía premium activa el paquete es mayor, desde **$10.000** en adelante según el nivel. Los personajes premium mayores de 18 años también empiezan con la **licencia de conducir** ya aprobada; el resto tiene que sacársela.
 
@@ -61,7 +61,7 @@ Todo lo que escribes por el chat normal lo dice tu personaje en voz alta. Para d
 - `/me [acción]` — describe algo que tu personaje hace.
 - `/do [descripción]` — describe un detalle del entorno o de tu personaje que los demás pueden percibir.
 - `/mirar [jugador]` — observa a otro personaje que esté a menos de **40 metros**. Muestra su descripción física, sexo, edad, color de cabello y de ojos, altura, contextura, estado físico, salud y el perfume que lleva. Si tiene algún estado visible (enfermedad, olores o efectos de drogas, por ejemplo), también aparece.
-- `/susurrar`, `/gritar`, `/vozalta` — ajustan el alcance de tu voz.
+- `/cerca`, `/vozalta` y `/gritar` — ajustan el alcance de tu voz; `/susurro [jugador] [mensaje]` le habla en voz baja a una sola persona que esté a menos de **5 metros**.
 - `/vl` — frases de voz grabadas del propio GTA San Andreas (detalle más abajo).
 - `/mp [jugador] [mensaje]` — mensaje privado fuera de personaje, con **3 segundos** de espera entre mensajes.
 
@@ -85,7 +85,7 @@ El chat **fuera de personaje** tiene sus propios comandos: `/b` (alcance mediano
 Al hacer clic sobre un jugador en la lista de jugadores (la que se abre con **TAB**) aparece un menú con acciones rápidas:
 
 - **Seguir en Bleeter** o **Dejar de seguir**, si ese jugador tiene cuenta de [Bleeter](bleeter.md). Si su cuenta es privada, se envía una solicitud de seguimiento que él debe aprobar.
-- **Compartir ubicación**: le envías tu posición aproximada. Necesitas un smartphone en la mano derecha, que esa persona esté en tu agenda y esperar **5 minutos** entre una ubicación y la siguiente.
+- **Compartir ubicación**: le envías tu posición aproximada. Necesitas un smartphone en la mano derecha, que esa persona esté en tu agenda y tenga un smartphone, y esperar **5 minutos** entre una ubicación y la siguiente.
 - **Compartir número de teléfono**: una opción por cada smartphone que lleves. El otro jugador acepta con `/aceptar` y tu número queda guardado en su agenda.
 
 Los detalles de estas funciones están en el [Sistema de teléfono y GPS](sistema-de-telefono-y-gps.md).
@@ -96,9 +96,9 @@ Los detalles de estas funciones están en el [Sistema de teléfono y GPS](sistem
 
 | Categoría | Qué puedes ajustar |
 |---|---|
-| **Chat** | Autocorrector, máximo de caracteres por mensaje, mensajes privados, anuncios, anuncios de servicio, bleets, transmisiones de noticias y gobierno, avisos de radares de velocidad, estilo de voz automático y estilo del `/do` |
+| **Chat** | Autocorrector, máximo de caracteres por mensaje, mensajes privados, anuncios, anuncios de servicio, bleets, mensajes administrativos, transmisiones de noticias y gobierno, avisos de radares de velocidad, estilo de voz automático y estilo del `/do` |
 | **Inventario** | Colores del inventario y elección entre la **barra de acceso rápido** o el inventario clásico de SA-MP; también el menú de compra en tiendas (catálogo visual o clásico) |
-| **Acceso rápido** | Activar o desactivar las teclas de atajo: **H** (inventario), **2** (abrir, cerrar y pagar peajes), **N** (recoger y tirar), **NUM8** (luces), **NUM4** (usar), **NUM6** (guardar en espalda o pecho), **NUM2** (bloqueo), además de la tecla para entrar y salir de interiores y la de encender el motor |
+| **Acceso rápido** | Activar o desactivar las teclas de atajo: **H** (inventario), **2** (abrir, cerrar y pagar peajes), **N** (recoger y tirar), **NUM8** (luces), **NUM4** (usar), **NUM6** (guardar en espalda o pecho), **NUM2** (bloqueo), además de la tecla para entrar y salir de interiores, la de encender el motor y el juego automático de basketball |
 | **Textdraws** | Velocímetro (moderno, clásico o apagado), nombre de calles, unidad de velocidad (km/h o mp/h), notificaciones en pantalla, alerta de tráfico aéreo y aviso de progreso de estadísticas |
 | **Radar** | Mostrar u ocultar las zonas de pandilla en el radar |
 | **Rendimiento** | Cantidad de objetos visibles y distancia de renderizado — bájalos si te va lento |
@@ -114,7 +114,7 @@ Al pulsar **H** se abre la barra de acceso rápido: tus **12 primeros espacios**
 - Seleccionar un **espacio vacío** guarda ahí lo que lleves en las manos.
 - **Sprint** cierra la barra.
 
-No se puede abrir mientras estás cayendo, jugando en un casino o entrenando. Si prefieres los menús clásicos, cambia la opción **Interfaz de acceso rápido** en `/preferencias`. El inventario completo sigue disponible en cualquier momento con `/inventario`.
+Solo se abre a pie y no se puede abrir mientras estás cayendo, jugando en un casino, entrenando, esposado, herido o cargando un objeto pesado. Si prefieres los menús clásicos, cambia la opción **Interfaz de acceso rápido** en `/preferencias`. El inventario completo sigue disponible en cualquier momento con `/inventario`.
 
 ### Dónde acaban los objetos que compras
 
@@ -146,27 +146,27 @@ El panel se cierra solo a los **10 segundos**, o antes si vuelves a escribir el 
 
 ## Dinero, sueldo y nivel
 
-Cada **60 minutos** de juego recibes un pago automático. Si no tienes empleo, el **sueldo de desempleado** que paga el gobierno es de:
+Cada **60 minutos** de juego recibes un pago automático, que se ingresa en tu cuenta bancaria. Si no perteneces a una facción, el **sueldo de desempleado** que paga el gobierno es de:
 
 | Horas de juego | Sueldo por hora |
 |---|---|
 | Menos de 30 horas | **$250** |
 | 30 horas o más | **$150** |
 
-Ese sueldo es un colchón mínimo para que nadie se quede sin nada, no una forma de ganarse la vida: en cuanto puedas, busca trabajo. Si entras a una facción o a una empresa, cobras el sueldo de tu rango en lugar del de desempleado.
+Ese sueldo es un colchón mínimo para que nadie se quede sin nada, no una forma de ganarse la vida: en cuanto puedas, busca trabajo. Si entras a una facción, cobras el sueldo de tu rango en lugar del de desempleado. Los empleados de una empresa cobran su salario aparte, por jornada de servicio, no en este pago.
 
-Del mismo pago se descuentan tus gastos: renta, facturas de agua y luz, y los créditos que tengas. Los impuestos de propiedades y vehículos se cobran **una sola vez al día**, en el primer pago de la jornada — lo explica el [Sistema de impuestos](sistema-de-impuestos.md).
+Del mismo pago se descuentan tus gastos: renta, facturas de agua y luz, y los intereses si tu saldo del banco está en negativo. Los impuestos de propiedades y vehículos se cobran **una sola vez al día**, en el primer pago de la jornada — lo explica el [Sistema de impuestos](sistema-de-impuestos.md).
 
-Cada hora jugada suma para subir de nivel: hacen falta **12 horas por nivel**. A partir del **nivel 3** se exigen dos cosas más: tener la **doble autenticación (2FA)** activada en tu cuenta del UCP y tener un **hogar** comprado o alquilado. Si te falta alguna de las dos, el servidor te avisa y el nivel queda en espera hasta que lo resuelvas.
+Cada hora jugada suma para subir de nivel: para pasar al siguiente nivel hacen falta **12 horas multiplicadas por tu nivel actual** (12 para llegar al nivel 2, 24 para el 3, y así sucesivamente). Para pasar del **nivel 3** en adelante se exigen dos cosas más: tener la **doble autenticación (2FA)** activada en tu cuenta del UCP y tener un **hogar** (casa propia, alquilada o con llave). Si te falta alguna de las dos, el servidor te avisa y el nivel queda en espera hasta que lo resuelvas.
 
 ## Buscar trabajo
 
-- `/trabajos` (también `/misiones` y `/empleos`) — trabajos secundarios que puedes hacer por tu cuenta, sin contrato ni jefe: barrendero, conductor de autobús, conductor de vehículos pesados, cortacésped, guardacostas, maquinista de trenes, operador de forklift, piloto comercial, vendedor de helados y vendedor de hotdogs. El menú te marca el vehículo libre más cercano.
+- `/trabajos` (también `/misiones` y `/empleos`) — trabajos secundarios que puedes hacer por tu cuenta, sin contrato ni jefe: barrendero, conductor de autobús, conductor de vehículos pesados, cortacésped, guardacostas, maquinista de trenes, operador de forklift, piloto comercial, vendedor de helados y vendedor de hotdogs. El menú te marca en el minimapa un vehículo libre de ese trabajo.
 - `/anuncios` — anuncios publicados por otros jugadores, muchas veces con ofertas de empleo.
 
 ## Moverte por la ciudad
 
-- `/pedirtaxi` — solicita un taxi a los conductores conectados. Hay un punto informativo en Pershing Square que lo recuerda.
+- `/pedirtaxi` — solicita un taxi a los conductores de servicio. Debes estar en el exterior y llevar en la mano derecha un teléfono con número (salvo junto a los puntos de taxi, como el punto informativo cercano a Pershing Square). Después de pedir uno debes esperar **3 minutos** para pedir otro.
 - `/samaps` (también `/mapa` o `/gps`) — buscador de calles, propiedades y gasolineras cercanas.
 - `/calle` — te dice en qué calle estás.
 - `/entrar` y `/salir` — entrar y salir de interiores (o la tecla que hayas configurado).
@@ -174,13 +174,13 @@ Cada hora jugada suma para subir de nivel: hacen falta **12 horas por nivel**. A
 
 El **peaje** cuesta **$25**, que se descuentan del dinero en mano y, si no alcanza, del banco. Para pasar, el vehículo debe tener sus papeles en regla. Policías y bomberos pasan sin pagar.
 
-Para conducir legalmente necesitas la **licencia de conducir**: ve a la autoescuela, súbete a uno de los Sentinel blancos aparcados junto al marcador y usa `/examen`. Cuesta **$3.000 en efectivo** y consiste en seguir una ruta de marcadores respetando cuatro reglas: no circular en sentido contrario, no ir demasiado rápido, llevar el cinturón puesto y no chocar. Puedes consultar tus licencias con `/licencia`.
+Para conducir legalmente necesitas la **licencia de conducir**: ve a la autoescuela, súbete a uno de los Sentinel blancos aparcados junto al marcador y usa `/examen`. Necesitas tener **$3.000 en efectivo**, que se cobran al aprobar, y consiste en seguir una ruta de marcadores respetando cuatro reglas: no circular en sentido contrario, no ir demasiado rápido, llevar el cinturón puesto y no chocar. Debes completar la ruta en un tiempo de entre **2 y 5 minutos**: ni más rápido ni más lento, o repruebas. Puedes consultar tus licencias con `/licencia`.
 
 No olvides el **combustible**: los vehículos gastan gasolina o diésel y hay que repostar. Todo lo relacionado está en el [Sistema de combustible](sistema-de-combustible.md).
 
 ## Conseguir un hogar
 
-Vivir en la calle no es plan, y además el nivel 3 lo exige. Busca una casa en venta o en alquiler, ponte en su entrada y usa `/comprar` o `/alquilar`. Tener casa te da armario para cambiarte de ropa con `/ropa`, almacén, refrigerador, buzón y la posibilidad de decorarla con muebles. Lo tienes todo detallado en el [Sistema de propiedades](sistema-de-propiedades.md).
+Vivir en la calle no es plan, y además el nivel 3 lo exige. Busca una casa en venta, ponte en su entrada y usa `/comprar`; confirma la oferta con `/aceptar`. Necesitas la doble autenticación (2FA) activada y el dinero en tu cuenta bancaria. La otra vía es alquilarle una casa a otro jugador: su dueño te hace la oferta con `/alquilar` y tú la aceptas con `/aceptar`. Tener casa te da armario para cambiarte de ropa con `/ropa`, almacén, refrigerador, buzón y la posibilidad de decorarla con muebles. Lo tienes todo detallado en el [Sistema de propiedades](sistema-de-propiedades.md).
 
 ## Únete a una facción
 

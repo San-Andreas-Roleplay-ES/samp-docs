@@ -21,16 +21,16 @@ Una vez dentro, tu rango determina el sueldo, el equipamiento al que accedes, lo
 Comandos comunes a todas las facciones legales con uniforme y radio:
 
 - `/servicio` (o `/deservicio`) — entras o sales de servicio; hay que estar en la base de tu facción o dentro de un vehículo del departamento
-- `/uniforme` y `/equipar` — uniforme de tu rango y arsenal del departamento
+- `/uniforme` y `/equipar` — eliges tu uniforme en la taquilla de tu facción y retiras equipo del arsenal del departamento. Para `/equipar` tienes que estar de servicio, en la base o en un vehículo de tu facción, con la mano derecha libre y rango 2 o superior. Lo que sacas se paga con los fondos de la facción, las armas y otros objetos delicados solo los retiran los líderes, y en el LSFD, la justicia, la Guardia Nacional y el centro médico solo los líderes pueden usar el comando
 - `/placa` — muestras tu placa e identificación a alguien cercano
 - `/r` y `/rb` — hablas por la radio, en voz normal o baja
 - `/slot` y `/frecuencias` — cambias de canal (del 1 al 16) y listas los disponibles para tu facción y división
-- `/dep` — comunicado departamental, visible para todo el servidor
-- `/hq` — anuncio interno de la facción (solo mandos)
+- `/dep` — comunicado departamental, visible para las agencias de servicio (policía, bomberos, paramédicos, justicia, guardabosques y tránsito)
+- `/hq` — anuncio interno de la facción (solo líderes)
 - `/ref` — pides refuerzos a tus compañeros; tu posición queda marcada en el mapa
-- `/bpanico` (o `/bp`) — botón de pánico: todas las agencias policiales te rastrean **30 segundos**
+- `/bpanico` (o `/bp`) — botón de pánico: todas las agencias policiales te rastrean **30 segundos**. Necesitas un teléfono o un radio comunicador, no funciona en interiores y se recarga **15 minutos** antes de poder volver a usarlo
 - `/f` y `/miembros` — chat interno y listado de la facción
-- `/fondos` — consultas y mueves el dinero de la caja de la facción (solo mandos)
+- `/fondos` — consultas, retiras y depositas dinero de la caja de la facción, hasta $10.000.000 por operación (solo líderes)
 - `/cono`, `/qcono`, `/editarcono`, `/borrarconos` — colocas y retiras conos y balizas de tráfico
 
 ## Sueldos y subsidios
@@ -59,7 +59,7 @@ Los sueldos de rango son los que fija cada departamento. Estos son los tramos de
 | Gobierno | Employee | $300 | Mayor | $5.000 |
 | Guardabosques | Trainee Ranger | $350 | Director | $4.200 |
 
-Los mandos más altos de algunas facciones no cobran sueldo automático: se entiende que su retribución se administra por rol desde la caja del departamento.
+Los mandos más altos de algunas facciones no cobran sueldo automático: se entiende que su retribución se administra por rol desde la caja del departamento. El subsidio del gobierno solo se paga a quien tiene un sueldo de rango mayor que cero.
 
 ## Los Santos Police Department (LSPD)
 
@@ -72,27 +72,28 @@ Para los jugadores que disfrutan del rol policial —paradas de tráfico, persec
 - `/ordenador` (o `/odp`, `/mdc`) — abre el ordenador policial, la base de datos de la policía y la justicia, con interfaz gráfica. Solo funciona dentro de un vehículo o una propiedad de tu facción. `/mdc2` abre la versión anterior, por menús de diálogo
 - `/esposar` y `/desesposar` — inmovilizas a un sospechoso
 - `/cachear` — registras a alguien y ves lo que lleva encima
-- `/taclear` — derribas a alguien que huye a pie
+- `/taclear` — activas el modo tacleo para derribar a alguien que huye a pie al golpearlo
 - `/detener`, `/arrestar` y `/liberar` — gestionas la detención (ver [Sistema de cárcel](sistema-de-carcel.md))
-- `/multar` y `/multarveh` — impones multas a personas y vehículos
+- `/multar` y `/multarveh` — impones multas a personas y vehículos; necesitas un portapapeles en la mano derecha
 - `/embargar` — mandas un vehículo al depósito municipal
-- `/darlicencia` y `/quitarlicencia` — entregas o retiras licencias
+- `/darlicencia` y `/quitarlicencia` — entregas licencias de armas o de caza (solo los líderes, y la persona debe tener licencia de conducir y no tener antecedentes penales) o retiras las de conducir, armas y caza
 - `/ram` y `/forzarcerradura` — entras por la fuerza a una propiedad con orden judicial
-- `/ordenarresto` y `/ordenallanamiento` — tramitas órdenes ante la fiscalía
+- `/ordenarresto` y `/ordenallanamiento` — tramitas órdenes ante la fiscalía; hay que escribirlas desde un vehículo o una propiedad de tu facción
 - `/prueba(adn)(polvora)(drogas)`, `/recogercasquillo`, `/recogersangre`, `/evidencias` — trabajo de escena (ver [Sistema forense](sistema-forense.md))
 - `/alpr`, `/infoalpr`, `/autoradar`, `/togradar`, `/interceptarnumero`, `/rastreargps` — vigilancia técnica; `/infoalpr` muestra la ficha de la última matrícula capturada y `/togradar` silencia o reactiva los avisos de los radares de velocidad
 - `/alcoholimetro` (o `/alcotest`) — mides la tasa de alcohol de un conductor; necesitas el alcoholímetro en la mano derecha
 - `/callsign` y `/est` — tu identificador de unidad y su estado; el callsign se recuerda entre conexiones y al volver a entrar de servicio se recupera solo
 - `/fugitivos` — lista los prófugos conectados
-- `/dpl` y `/qpl` — sumas o quitas puntos de infracción de tránsito a la licencia de conducir de una persona, con un motivo; `/levantarsuspension` la reactiva (solo jueces de servicio). Con **8 puntos** vigentes la licencia queda suspendida **7 días**, y cada punto caduca a los **30 días** (ver [Sistema policial](sistema-policial.md))
+- `/historialmedico` — consultas el historial médico de un paciente; solo funciona dentro de un hospital o una clínica
+- `/dpl` y `/qpl` — sumas o quitas de 1 a 3 puntos de infracción de tránsito a la licencia de conducir de una persona (al sumar debes escribir un motivo, y la suspensión solo la puede aplicar un líder); `/levantarsuspension` la reactiva (solo jueces de servicio). Con **8 puntos** vigentes la licencia queda suspendida **7 días**, y cada punto caduca a los **30 días** (ver [Sistema policial](sistema-policial.md))
 - `/snakecam` (o `/optiwand`) — metes una cámara por debajo de una puerta para ver el interior; exige un **Optiwand** en la mano derecha (ver [Sistema de cámaras de seguridad](sistema-de-camaras-de-seguridad.md))
 - `/encubierto`, `/m` (megáfono) y `/marcar`, que pide refuerzos a **otras agencias**, no solo a la tuya
 
-Todo este equipo, junto con los chalecos modernos de cada departamento, la radio APX 8000, la pistola radar, el megáfono de mano, las señales de alto y de despacio y el bastón luminoso, se retira con `/equipar` estando de servicio. El detalle de cada herramienta está en [Sistema policial](sistema-policial.md).
+Todo este equipo, junto con los chalecos modernos de cada departamento, la radio APX 8000, la pistola radar, el megáfono de mano, las señales de alto y de despacio y el bastón luminoso, se retira con `/equipar` estando de servicio (las armas, solo los líderes). El detalle de cada herramienta está en [Sistema policial](sistema-policial.md).
 
 ### Radio conjunta LSPD-LSSD
 
-Más allá de la radio interna de cada departamento, existen **dos canales conjuntos compartidos entre LSPD y LSSD** para coordinar operativos entre agencias:
+Más allá de la radio interna de cada departamento, existen **dos canales conjuntos compartidos entre las agencias policiales** (LSPD, LSSD, FBI, SADCR, justicia y los mandos altos de guardabosques) para coordinar operativos:
 
 - `/j` — canal conjunto principal
 - `/j2` — segundo canal conjunto
@@ -128,9 +129,7 @@ El **LSSD** es el departamento del sheriff del condado de Los Santos: el cuerpo 
 
 A diferencia del LSPD, el LSSD ofrece un rol con más diversidad de escenarios: lo mismo puedes acabar atendiendo un incidente en una carretera comarcal que custodiando una prisión. Si te atrae un cuerpo policial con sabor más rural y operativamente versátil, este es tu sitio. Web oficial: [sheriff.sarp.es](https://sheriff.sarp.es/).
 
-Comparte con el LSPD todas las herramientas policiales, el MDC y los canales de radio conjuntos. Tiene además dos competencias propias:
-
-- La **emisión de la licencia de caza**, que comparte con los guardabosques
+Comparte con el LSPD todas las herramientas policiales, el MDC y los canales de radio conjuntos. Sus líderes pueden además emitir la **licencia de caza** (`/darlicencia caza`), igual que los del LSPD y los guardabosques.
 
 La custodia de la prisión y el traslado de presos pasaron al [SADCR](#sadcr-custodia-penitenciaria).
 
@@ -152,24 +151,24 @@ Esto convierte al bombero en el único perfil capaz de trabajar dentro de un inc
 
 Los negocios pueden arder, y el LSFD es quien responde. Cada local guarda un inventario de hasta **10 extintores**, que funcionan como sistema antiincendios: si alguien intenta provocar un incendio en una propiedad que tiene extintores cargados, el sistema lo sofoca y **salta la alarma del local**. Sin extintores, el fuego prende.
 
-Con `/extintores` se consulta el inventario del local y se puede **sacar** un extintor para usarlo o **rellenar** el inventario metiendo uno nuevo. Pueden usarlo los empleados del negocio, el propietario y cualquier **bombero de servicio**. La suciedad acumulada dentro del local aumenta el riesgo de incendio; más detalles en [Sistema de propiedades](sistema-de-propiedades.md) y en [Sistema de basura](sistema-de-basura.md).
+Con `/extintores`, junto al almacén o el mostrador del local, se consulta el inventario y se puede **sacar** un extintor para usarlo (con la mano derecha libre) o **rellenar** el inventario metiendo uno nuevo y lleno. Pueden usarlo los empleados del negocio, el propietario y cualquier **bombero de servicio**. La suciedad acumulada dentro del local aumenta el riesgo de incendio; más detalles en [Sistema de propiedades](sistema-de-propiedades.md) y en [Sistema de basura](sistema-de-basura.md).
 
 Cuando arde algo en la vía pública, el aviso llega automáticamente por radio a la policía y a los paramédicos indicando la zona, y se levanta un perímetro de balizas del LSFD alrededor del foco.
 
 ### Inspección de incendios
 
-Los rangos de **inspector de bomberos** tienen competencias administrativas sobre los negocios: pueden **multar** locales por incumplimientos y **clausurarlos** con `/clausurar`, imponiendo una multa de entre **$100.000 y $1.000.000**. El propietario levanta la clausura pagando esa multa desde dentro del local con `/pagarclausura confirmar`, y el dinero va a la caja del Gobierno.
+Los rangos de **inspector de bomberos** tienen competencias administrativas sobre los negocios: pueden **multar** locales por incumplimientos y **clausurarlos** con `/clausurar`, imponiendo una multa de entre **$100.000 y $1.000.000**. El propietario levanta la clausura pagando esa multa desde su cuenta bancaria, estando dentro del local, con `/pagarclausura confirmar`, y el dinero va a la caja del Gobierno.
 
-**Otras herramientas del bombero**: `/manguera` (para desplegar la manguera desde el camión, un bombero por cada lado del vehículo), `/incidentes`, `/forzarcerradura`, `/sir` y `/est` para sirenas y estacionamiento de emergencia.
+**Otras herramientas del bombero**: `/manguera` (para desplegar la manguera desde el camión, un bombero por cada lado del vehículo), `/incidentes`, `/forzarcerradura`, `/sir` para las sirenas y `/est` para el estado de tu unidad.
 
 ### Equipo de respiración autónoma (SCBA)
 
-Los bomberos trabajan con **aire limitado**. El equipo de respiración (el cilindro) y su máscara se retiran con `/equipar` y se manejan con `/scba`:
+Los bomberos trabajan con **aire limitado**. El equipo de respiración (el cilindro) y su máscara se retiran con `/equipar` (en el LSFD, solo los líderes pueden usar ese comando) y se manejan con `/scba`:
 
 <img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/scba-manometro.png" alt="Estados del manómetro del equipo de respiración autónoma" width="1600" height="441">
 
 - `/scba equipar` — te pones el equipo; tiene que estar en tu mano derecha y estar a pie
-- `/scba mascara` — te pones o te quitas la máscara
+- `/scba mascara` — te pones o te quitas la máscara; para ponértela tiene que estar en tu mano derecha
 - `/scba aire` — conectas o desconectas el regulador; el aire solo se consume mientras está conectado
 - `/scba recargar` y `/scba cancelar` — inicias o interrumpes la recarga del cilindro
 - `/scba guardar` — te quitas el equipo
@@ -180,19 +179,18 @@ Un cilindro lleno dura **20 minutos** de respiración. Un manómetro en pantalla
 
 Si llevas el equipo, el cilindro está **vacío** y estás a menos de **20 metros** de un incendio activo, empiezas a perder **5 de salud cada 2 segundos**, con jadeos y mareos cada vez peores. Salir de la zona del fuego detiene el daño.
 
-La recarga solo la hace un **bombero de servicio**, a pie y con el regulador desconectado, en cualquier punto de una propiedad de su facción o a menos de **5 metros de un camión de bomberos de su facción** que esté detenido. Tarda entre **2 y 8 segundos**, según lo vacío que esté el cilindro, y se interrumpe si te mueves o dejas de estar junto a la fuente.
+La recarga solo la hace un **bombero de servicio**, a pie, con el equipo puesto y el regulador desconectado, en cualquier punto de una propiedad de su facción o a menos de **5 metros de un camión de bomberos de su facción** que esté detenido. Tarda entre **2 y 8 segundos**, según lo vacío que esté el cilindro, y se interrumpe si te mueves o dejas de estar junto a la fuente.
 
 ### Paramédicos
 
 La rama médica del LSFD atiende heridos en la calle y en el hospital. Sus herramientas:
 
 - `/reanimar` — levantas a alguien caído; necesitas un **botiquín de primeros auxilios en la mano derecha**
-- `/vendar` y `/curar` — estabilizas heridas
+- `/vendar` y `/curar` — estabilizas heridas; `/vendar` pide una venda o un torniquete en la mano derecha. Los bomberos de servicio curan directamente, mientras que los médicos residentes ofrecen la cura al paciente por un precio de $500 a $50.000 (reciben la mitad) y necesitan un botiquín en la mano derecha
 - `/cirugia` — operas a un paciente; requiere tener un **bisturí en la mano derecha**
-- `/consultamedica` — cobras una consulta al paciente, entre **$1.000 y $100.000**
+- `/consultamedica` — cobras una consulta al paciente, entre **$1.000 y $100.000**; el paciente paga desde su banco y tú recibes la mitad, mientras la otra mitad va a la caja de tu facción
 - `/certificadomedico` — emites el certificado médico oficial, que queda registrado en las licencias del ciudadano
 - `/donacionsangre`, `/pruebaadn`, `/pruebadrogas` — analíticas
-- `/historialmedico` — consultas los antecedentes clínicos
 - `/paramedicos` (o `/mds`) — cuentas cuántos paramédicos y médicos residentes hay de servicio
 
 El detalle completo del tratamiento de heridas, traslados, ingresos y facturación está en [Sistema médico y hospital](sistema-medico-y-hospital.md).
@@ -209,19 +207,19 @@ Y a ella entran los **impuestos** (propiedad, vehículos, combustibles, cajeros,
 
 **Herramientas del gobierno**
 
-- `/gob` — comunicado oficial a todo el servidor. Cada uso le cuesta **$5.000** a la caja del gobierno; quien no quiera leerlos puede desactivarlos
+- `/gob` — comunicado oficial a todo el servidor (solo líderes). Cada uso del gobierno le cuesta **$5.000** a su caja; quien no quiera leerlos puede desactivarlos
 - `/mostrariden` — muestras tu identificación oficial
-- `/multar` — los rangos altos pueden multar sin necesidad de estar de servicio
+- `/multar` — los rangos altos pueden multar sin necesidad de estar de servicio, siempre con un portapapeles en la mano derecha
 - `/clausurar` — los rangos altos clausuran negocios, igual que los inspectores de bomberos
 - `/uniforme` y `/equipar` — uniforme institucional y equipamiento de obras públicas (casco, chaleco reflectante, taladro demoledor, cámara, pines e identificación de la ciudad)
 
-Los mandos de gobierno también tienen llave de las **barreras municipales**: los portones y peajes marcados como públicos se abren para cualquier funcionario en servicio.
+Las **barreras municipales** marcadas como públicas (portones y peajes) se abren con la llave de cualquier funcionario público: policía, bomberos, tránsito, justicia, gobierno, ejército y guardabosques. Además, policías y bomberos pasan los peajes sin pagar.
 
 ## San Andreas State Parks (guardabosques)
 
 Los **guardabosques** son el cuerpo que vigila los parques estatales, los bosques y las zonas naturales del condado. Es un rol más tranquilo y de campo abierto que el policial urbano, centrado en la protección del entorno, la seguridad de excursionistas y el control de la caza.
 
-**Competencia propia: la licencia de caza.** Los guardabosques y el sheriff son las **únicas figuras autorizadas a emitir la licencia de caza**, y lo hacen **en persona** con `/darlicencia caza`. Para recibirla, el solicitante debe **tener licencia de conducir** y **no tener antecedentes penales**. La misma licencia se puede retirar con `/quitarlicencia caza`. Todo lo relativo a piezas, armas y vedas está en [Sistema de caza](sistema-de-caza.md).
+**Competencia propia: la licencia de caza.** Los líderes de los guardabosques, del sheriff y del LSPD son las **únicas figuras autorizadas a emitir la licencia de caza**, con `/darlicencia caza`. Para recibirla, el solicitante debe **tener licencia de conducir** y **no tener antecedentes penales**. La misma licencia se puede retirar con `/quitarlicencia caza`. Todo lo relativo a piezas, armas y vedas está en [Sistema de caza](sistema-de-caza.md).
 
 Los rangos superiores de guardabosques adquieren además competencias policiales plenas: a partir de cierto nivel de mando pueden usar las mismas herramientas que un oficial de policía.
 
@@ -234,7 +232,7 @@ El **SADCR** es la facción que custodia la prisión. Sus guardias de servicio s
 **Herramientas del guardia**
 
 - `/internos` — lista los presos conectados; `/presos` y `/guardias` cuentan cuántos presos y cuántos guardias de servicio hay
-- `/mcarcel`, `/controlceldas` y `/aislamiento` — gestionas la cárcel, las celdas y el aislamiento
+- `/mcarcel` — megáfono de la cárcel, que oyen todos los que están dentro del recinto; `/controlceldas` y `/aislamiento` — gestionas las celdas y el aislamiento (solo dentro de la cárcel)
 - `/iniciotraslado` y `/fintraslado` — traslados de presos
 - `/destruirstash` — destruyes un escondite de un preso
 - `/curar` — atiendes a un preso herido
@@ -245,7 +243,7 @@ El **SADCR** es la facción que custodia la prisión. Sus guardias de servicio s
 
 Además de las anteriores, la ciudad cuenta con varias facciones legales con rol propio:
 
-- **Judiciary of San Andreas (JSA)** — jueces y fiscales: autorizan órdenes de arresto y allanamiento, juzgan causas y pueden clausurar negocios. Ver [Sistema de justicia](sistema-de-justicia.md)
+- **Judiciary of San Andreas (JSA)** — jueces y fiscales: autorizan órdenes de arresto y allanamiento, juzgan causas y los jueces pueden clausurar negocios. Ver [Sistema de justicia](sistema-de-justicia.md)
 - **All Saints Medical Center** — los médicos residentes que atienden en planta lo que los paramédicos traen de la calle
 - **Los Santos Department of Transportation (LSDOT)** — tránsito: control de tráfico, embargos y multas de circulación
 - **San Andreas National Guard** y **Federal Bureau of Investigation (FBI)** — la Guardia Nacional y la agencia federal, con equipamiento y jurisdicción de alcance mayor
@@ -260,5 +258,5 @@ Consulta el estado de cada una (oficial, destacada o no oficial) y sus vacantes 
 - **La radio es tu herramienta principal.** Acostúmbrate a `/frecuencias` y `/slot` desde el primer día: cada división suele tener su propio canal, y hablar en el equivocado hace ruido a todo el turno.
 - **Ojo con el inhibidor de señal.** Si tu radio o tu botón de pánico dejan de funcionar de repente, probablemente haya un inhibidor cerca.
 - **Lleva siempre las esposas encima.** Se gastan de la mano al usarlas y solo las recuperas al desesposar: sal de la base con un par de repuesto.
-- **El sueldo de rango sube mucho con la jerarquía**: entre el rango de entrada y un mando alto puede haber más de diez veces de diferencia.
+- **El sueldo de rango sube mucho con la jerarquía**: entre el rango de entrada y un mando alto la diferencia va de unas cuatro veces a más de diez, según la facción.
 - **Los bomberos no se queman, pero los demás sí.** Si no eres LSFD y ves fuego, mantén la distancia.

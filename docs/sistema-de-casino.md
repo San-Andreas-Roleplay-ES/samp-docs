@@ -28,7 +28,7 @@ Fuera del casino existen otras formas de jugar dinero: el **trile** callejero de
 - No puedes jugar a dos juegos de azar a la vez: si ya estás en una máquina, una mesa o una partida, tienes que terminar antes de empezar otra.
 - Debes estar **de pie y consciente** junto a la máquina o mesa correspondiente.
 
-Este requisito de 2FA se aplica únicamente a los juegos que se abren con `/casino`. El póker, el trile, las apuestas hípicas y la lotería no lo piden.
+Este requisito de 2FA se aplica únicamente a lo que se abre con `/casino` (los juegos y las estadísticas). El póker, el trile, las apuestas hípicas y la lotería no lo piden.
 
 ---
 
@@ -70,12 +70,12 @@ El **blackjack** es un juego de cartas cuyo objetivo es sumar **21 puntos** o ac
 
 ### Desarrollo de la mano
 
-Al sentarte eliges tu apuesta y ocupas un asiento. Cuando la mesa arranca se reparten **dos cartas** a cada jugador y dos al crupier, una de ellas boca abajo. En tu turno puedes:
+Al sentarte eliges tu apuesta (de $1.000 a $1.000.000) y ocupas un asiento. La ronda arranca cuando alguien pulsa **PEDIR** en el panel y, en ese momento, se cobra la apuesta de cada jugador sentado. Se reparten **dos cartas** a cada jugador y una al crupier. En tu turno puedes:
 
 - **Pedir** otra carta para acercarte a 21.
 - **Plantarte** y conservar la mano que tienes.
 
-Si te pasas de 21 pierdes la apuesta de inmediato. Cuando todos han terminado, el crupier revela su carta oculta y **pide cartas hasta alcanzar al menos 17 puntos**, momento en el que se planta obligatoriamente.
+Si te pasas de 21 pierdes la apuesta de inmediato, y si llegas a 21 ganas en el acto. Cuando todos han terminado, el crupier **pide cartas hasta alcanzar al menos 17 puntos**, momento en el que se planta obligatoriamente.
 
 ### Resultados y pagos
 
@@ -83,14 +83,13 @@ El pago se calcula sobre tu apuesta e **incluye la devolución de lo apostado**.
 
 | Resultado | Cómo se consigue | Pago |
 |---|---|---|
-| **Blackjack natural** | As + carta de valor 10 en tus dos primeras cartas | **x2** |
+| **Blackjack natural** | Llegas a 21 con un As entre tus dos primeras cartas | **x2** |
 | **Victoria normal** | Superas al crupier sin pasarte, o el crupier se pasa | **x1.5** |
-| **21 puntos** | Llegas justo a 21 con cualquier número de cartas | **x1.5** |
-| **Six Card Charlie** | Llegas a 21 o menos usando **seis cartas** sin pasarte | **x1.5** |
+| **21 puntos** | Llegas justo a 21 sin un As entre tus dos primeras cartas, con cualquier número de cartas | **x1.5** |
 | **Empate (push)** | Empatas con el crupier | Recuperas tu apuesta |
 | **Derrota** | El crupier te supera o te pasas de 21 | Pierdes la apuesta |
 
-El **Six Card Charlie** gana aunque el crupier no se pase: si consigues sostener seis cartas sin superar 21, la mano es tuya.
+Con seis cartas en la mano ya no puedes pedir más: si no has llegado a 21, esperas a que el crupier termine y se compara tu puntuación con la suya.
 
 ### Límites y tiempos
 
@@ -104,7 +103,7 @@ El **Six Card Charlie** gana aunque el crupier no se pase: si consigues sostener
 | Espera entre rondas | **10 segundos** |
 | Mesas en el Emerald Isle | **3** |
 
-No puedes abandonar la mesa mientras estés jugando una mano: primero termínala.
+No puedes abandonar la mesa mientras estés jugando una mano: primero termínala. Entre rondas te levantas pulsando ESC.
 
 ---
 
@@ -128,9 +127,9 @@ Al sentarte se te asigna un **color de fichas** propio, para que distingas tus a
 
 - Cada ficha vale **$1.000**.
 - Puedes colocar todas las fichas que quieras, en tantas casillas como quieras, siempre que el total no supere el límite de la mesa.
-- Puedes **retirar fichas** de una casilla o **cancelar todas tus apuestas** de golpe mientras la ruleta esté parada.
-- Una vez que la rueda empieza a girar tus apuestas quedan bloqueadas: no puedes añadir, quitar ni cancelar nada.
-- Cualquier jugador sentado puede lanzar la tirada cuando la mesa está lista.
+- Puedes **retirar fichas** de una casilla o **cancelar todas tus apuestas** de golpe mientras no hayas confirmado tu apuesta.
+- Cuando tus fichas estén listas, **confirma tu apuesta con la tecla de sprint**: en ese momento se cobra el total de tus fichas y la apuesta queda bloqueada hasta que termine la tirada (no puedes añadir, quitar ni cancelar nada ni abandonar la mesa).
+- La primera confirmación de la mesa pone la rueda a girar. Los demás jugadores sentados pueden unirse confirmando su apuesta durante los primeros segundos del giro, y la tirada se resuelve para todos a la vez.
 
 ### Tipos de apuesta y pagos
 
@@ -142,7 +141,8 @@ Los pagos se expresan en la forma habitual de la ruleta: **35:1** significa que 
 | **Columna** (1ª, 2ª o 3ª) | 12 | **2:1** | 32,43% |
 | **Docena** (1-12, 13-24, 25-36) | 12 | **2:1** | 32,43% |
 | **Rojo** o **Negro** | 18 | **1:1** | 48,65% |
-| **Par** o **Impar** | 18 | **1:1** | 48,65% |
+| **Impar** | 18 | **1:1** | 48,65% |
+| **Par** (el 0 cuenta como par) | 19 | **1:1** | 51,35% |
 | **1 a 18** (bajos) o **19 a 36** (altos) | 18 | **1:1** | 48,65% |
 
 Las tres columnas del tapete son:
@@ -153,7 +153,7 @@ Las tres columnas del tapete son:
 | **Columna 2** | 2, 5, 8, 11, 14, 17, 20, 23, 26, 29, 32, 35 |
 | **Columna 3** | 3, 6, 9, 12, 15, 18, 21, 24, 27, 30, 33, 36 |
 
-> **El 0 es especial.** Si la bola cae en el 0 ganan únicamente quienes lo hayan apostado en pleno. Las apuestas a rojo, negro, impar, docenas, columnas, bajos y altos **pierden**.
+> **El 0 es especial.** Si la bola cae en el 0 ganan quienes lo hayan apostado en pleno y quienes hayan apostado a **par**. Las apuestas a rojo, negro, impar, docenas, columnas, bajos y altos **pierden**.
 
 ### Límites de la mesa
 
@@ -206,7 +206,7 @@ Las máquinas ofrecen **17 tramos fijos** de apuesta:
 
 ![opcionesSlots](../assets/sistema-de-casino/opciones-de-slots.png)
 
-Los premios de **$5.000 o más** hacen sonar la máquina para todo el salón, y desbloquean un logro la primera vez.
+Los premios de **$5.000 o más** hacen sonar la máquina a su alrededor, y desbloquean un logro la primera vez.
 
 ### Sala de tragamonedas
 
@@ -230,7 +230,7 @@ Entre rondas dispones de **15 segundos** para decidir: pulsa **ENTER** para segu
 
 ### Apuestas, niveles y pagos
 
-Al entrar eliges una **apuesta base** entre **$25, $50, $100, $250, $500 y $1.000**. A partir de ahí, cada nivel superado multiplica esa base:
+Al entrar eliges una **apuesta base** entre **$1, $5, $10, $25, $50, $100, $250, $500 y $1.000**. A partir de ahí, cada nivel superado multiplica esa base:
 
 - **Nivel 1**: apuestas la base × 1.
 - **Nivel 2**: apuestas la base × 2.
@@ -259,7 +259,7 @@ La mesa se complica a medida que avanzas:
 | Fintas (amagos que no intercambian nada) | **20%** de los movimientos |
 | Tiempo para elegir | **10 segundos** |
 
-El ritmo inicial es deliberadamente pausado y las fintas son escasas, de modo que los primeros niveles se pueden seguir con la vista sin demasiada dificultad. Solo hay **una mesa** y admite **un jugador a la vez**.
+El ritmo inicial es deliberadamente pausado y las fintas son escasas, de modo que los primeros niveles se pueden seguir con la vista sin demasiada dificultad. Solo hay **una mesa** y admite hasta **tres jugadores a la vez**.
 
 ---
 
@@ -288,10 +288,10 @@ Esto habilita salas de póker y torneos dentro de los clubes. Consulta el [siste
 
 ### Flujo de una partida
 
-1. Acércate a la mesa y únete con `/pkr unirse`.
-2. Compra fichas con `/pkr fichas`: el importe sale de tu efectivo y pasa a tu pila en la mesa.
+1. Acércate a la mesa y únete con `/pkr unirse`. Solo puedes unirte mientras la mesa está en el lobby.
+2. Indica con cuántas fichas te sientas y confirma: el importe sale de tu efectivo y pasa a tu pila en la mesa. Como mínimo debes llevar el doble de la apuesta mínima de la mesa. Más adelante, mientras estés en el lobby, puedes añadir fichas con `/pkr fichas`.
 3. Marca tu estado como **listo** desde la interfaz.
-4. Cuando todos están listos, cualquiera inicia la partida con `/pkr comenzar`.
+4. Cuando todos están listos, cualquiera inicia la partida con `/pkr comenzar`. No se puede jugar solo: hace falta al menos otro jugador.
 5. Durante las manos apuestas desde los botones centrales (subir, pasar, igualar, retirarse, all-in).
 6. Al terminar, `/pkr siguiente` devuelve la mesa al lobby para una nueva ronda.
 
@@ -301,8 +301,8 @@ Los ajustes de la mesa (apuesta mínima, comisión, temporizador) **solo se pued
 
 - `/pkr ayuda` — lista todos los comandos.
 - `/pkr unirse` — te unes a la mesa que tengas cerca.
-- `/pkr sentarse` / `/pkr levantarse` — tomas o sueltas un asiento.
-- `/pkr abandonar` — abandonas la partida.
+- `/pkr sentarse` / `/pkr levantarse` — te pones frente a la mesa (con su cámara y su cursor) o te levantas de ella sin dejar la partida.
+- `/pkr abandonar` — abandonas la partida y recuperas en efectivo las fichas que te queden.
 - `/pkr fichas` — añades fichas a tu pila (solo en el lobby).
 - `/pkr comenzar` — inicias la partida cuando todos están listos.
 - `/pkr siguiente` — reinicias la mesa una vez terminada la partida.
@@ -330,7 +330,7 @@ La apuesta mínima y el temporizador los puede fijar cualquiera de los jugadores
 
 ## 6. Inside Track (apuestas de caballos)
 
-El **Inside Track** son carreras de caballos retransmitidas por televisión sobre las que puedes apostar. Las encuentras en el propio Emerald Isle y en las **casas de apuestas** repartidas por el estado. Si usas el comando fuera de una, el juego te marca en el mapa la casa de apuestas más cercana.
+El **Inside Track** son carreras de caballos retransmitidas por televisión sobre las que puedes apostar. Las encuentras en el propio Emerald Isle y en las **casas de apuestas** repartidas por el estado. Si usas el comando fuera de una, el juego te marca en el mapa una casa de apuestas. Todos los subcomandos, incluido `/insidetrack salir`, solo funcionan dentro de una casa de apuestas o junto a las máquinas del casino.
 
 ### Cómo funciona
 
@@ -344,7 +344,7 @@ El **Inside Track** son carreras de caballos retransmitidas por televisión sobr
 
 - La apuesta sale de tu **cuenta bancaria**, no de tu efectivo, y el premio se ingresa también al banco.
 - El importe debe estar entre **$1 y $1.000.000**.
-- Cada caballo tiene una **cuota** visible en el panel, entre **x2 y x5**. Si tu caballo gana, cobras tu apuesta multiplicada por esa cuota; los caballos con cuota alta son los menos favoritos.
+- Cada caballo tiene una **cuota** visible en el panel, entre **x2 y x5**. Si tu caballo gana, cobras tu apuesta (ya descontada la comisión de la casa, si la hay) multiplicada por esa cuota; los caballos con cuota alta son los menos favoritos.
 - Solo puedes tener **una apuesta confirmada** a la vez.
 
 ### Comisión de la casa
@@ -371,7 +371,7 @@ La **lotería estatal** es la apuesta más barata del servidor y no requiere est
 
 ### Cómo participar
 
-- Compra tu boleto en **cualquier negocio que lo venda**, como los supermercados. En esos negocios, **Lotería** es la primera opción del menú de `/comprar`.
+- Compra tu boleto en **cualquier negocio que lo venda**, como los supermercados. Cuando el negocio muestra el menú de `/comprar` por categorías, **Lotería** es su primera opción.
 - Al elegir el boleto se abre un **tablero con los 300 números** (en tres pestañas de 100) y **tú eliges el tuyo**. Tienes **1 probabilidad entre 300** de ganar, sea cual sea el número.
 - Un **mapa de calor** colorea cada número según cuántas veces se compró en la última semana: del celeste (casi nadie lo eligió) al naranja (muy elegido, desde 5 compras). El color no cambia tus probabilidades, pero sí con cuánta gente compartirías el pozo si ganas.
 - No puedes volver a elegir el número que ya tienes. El tablero se cierra si te alejas del mostrador, quedas herido o esposado, subes a un vehículo o abres el teléfono u otro menú.
@@ -383,7 +383,7 @@ La **lotería estatal** es la apuesta más barata del servidor y no requiere est
 - Hay **tres sorteos al día**, a las **02:00, 04:00 y 15:00** (hora del servidor, consultable con `/hora ooc`).
 - Se avisa por los medios **15 minutos antes** de cada sorteo.
 - El número ganador se anuncia públicamente. Si es el tuyo y estás conectado, el pozo completo se ingresa en tu **cuenta bancaria**. Si hay varios ganadores, cada uno cobra el pozo completo.
-- Todos los boletos se anulan tras cada sorteo, ganes o no: hay que comprar uno nuevo para el siguiente.
+- Los boletos de los jugadores conectados se anulan tras cada sorteo, ganen o no: hay que comprar uno nuevo para el siguiente. Si no estás conectado durante el sorteo, tu boleto no se anula y sigue guardado para el siguiente sorteo en el que estés conectado.
 - Si **nadie acierta**, el pozo crece y se acumula para el siguiente sorteo. Si alguien gana, el pozo se reinicia entre **$300.000 y $500.000**.
 - El pozo también sube ligeramente con cada boleto vendido.
 
@@ -419,8 +419,8 @@ Para un club, esto significa que debe mantener fondos en la caja para poder acep
 
 - **Fija un presupuesto antes de sentarte.** Todos los juegos de la casa están diseñados para que, a la larga, la casa gane: son una fuente de roleplay y de emoción, no una fuente de ingresos.
 - **En las tragamonedas**, recuerda que la combinación del 69 paga menos de lo que apuestas. Las máquinas son el juego más rápido y también el que más fácilmente vacía un bolsillo con los giros automáticos activados.
-- **En la ruleta**, las apuestas a color, par/impar y altos/bajos son las que más veces ganan; los plenos son los que mejor pagan. El 0 solo beneficia a quien lo apueste directamente.
+- **En la ruleta**, las apuestas a color, par/impar y altos/bajos son las que más veces ganan; los plenos son los que mejor pagan. El 0 solo beneficia a quien lo apueste directamente o juegue a par.
 - **En el blackjack**, la clave está en calcular cuándo el crupier se pasará: recuerda que está obligado a pedir hasta 17.
-- **En el trile**, retirarte a tiempo es parte del juego. Cada nivel sube tu apuesta, así que una racha larga arriesga cada vez más dinero por la misma probabilidad de acierto.
+- **En el trile**, retirarte a tiempo es parte del juego. Cada nivel sube tu apuesta, así que una racha larga arriesga cada vez más dinero en cada ronda.
 - **En el Inside Track**, revisa la comisión de la casa antes de confirmar: no se devuelve aunque canceles la apuesta.
 - **En el póker**, juegas contra otros jugadores y no contra la casa, así que tu habilidad y tu lectura de la mesa sí influyen en el resultado.

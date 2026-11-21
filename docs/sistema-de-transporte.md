@@ -32,13 +32,13 @@ El taxista trabaja para una **empresa de taxis**: un negocio del tipo taxi donde
 
 Tu vehículo de trabajo debe ser un modelo compatible con la aplicación de taxis: el Taxi, el Cabbie y varios sedanes y camionetas de pasajeros. Con otro modelo, `/atendertaxi` no te deja atender solicitudes.
 
-Con `/anunciarservicio` avisas a todo el servidor de que estás trabajando y de la tarifa del taxímetro, y además **activas los clientes anónimos** de la aplicación. Puedes anunciarte una vez cada **30 minutos**.
+Con `/anunciarservicio` avisas a todo el servidor de que estás trabajando y de la tarifa del taxímetro, y además **activas los clientes anónimos** de la aplicación. Puedes anunciarte una vez cada **30 minutos**, y la empresa solo puede anunciar su servicio una vez cada **15 minutos** (cuenta el anuncio de cualquiera de sus empleados).
 
 ### Viajes con clientes reales
 
 1. El cliente escribe `/pedirtaxi`. Debe estar **en el exterior**, con un **teléfono con número asignado en la mano derecha**, y debe haber al menos un taxista en servicio. En los puntos informativos de taxi, como el de Pershing Square, no necesita teléfono.
 2. La solicitud entra en una cola de la aplicación y llega por mensaje a todos los taxistas en servicio. El cliente solo puede tener **una solicitud pendiente**, tiene que esperar **3 minutos** entre solicitudes, y la cola admite un máximo de **32** a la vez.
-3. Un taxista escribe `/atendertaxi` y se queda con la solicitud más antigua. Debe estar en servicio y **al volante de su vehículo de trabajo**. Se le marca un punto en el mapa donde recoger al cliente y se le informa del teléfono del cliente; al cliente se le informa del nombre del conductor, el modelo del vehículo y su matrícula. Tras atender una solicitud, el taxista debe esperar **1 minuto** para atender otra.
+3. Un taxista escribe `/atendertaxi` y se queda con la solicitud más antigua. Debe estar en servicio y **dentro de su vehículo de trabajo**. Se le marca un punto en el mapa donde recoger al cliente y se le informa del teléfono del cliente; al cliente se le informa del nombre del conductor, el modelo del vehículo y su matrícula. Tras atender una solicitud, el taxista debe esperar **1 minuto** para atender otra.
 4. El cliente espera donde pidió el taxi. Si no sube en **10 minutos**, la solicitud caduca sola y el taxista queda libre.
 5. Cuando el cliente se sube como pasajero a un taxi de la empresa, el **taxímetro** empieza a correr. Subirse a un taxi sin conductor, o cuyo conductor no está en servicio, te saca del vehículo.
 6. El viaje termina cuando el cliente se baja.
@@ -61,7 +61,7 @@ Durante el viaje el cliente ve en pantalla el importe acumulado. Completar viaje
 
 Mientras estés en servicio y dentro de un vehículo, la aplicación te asigna cada cierto tiempo (alrededor de **90 segundos**) una solicitud de un cliente anónimo (NPC), siempre que no tengas un cliente real asignado. Al aceptar un cliente real, el viaje anónimo en curso se cancela.
 
-- Se te marca el punto de recogida con un checkpoint (también con `/micp`). Hay **28 puntos de recogida** nombrados por calle y barrio, y el destino es uno de los lugares conocidos de la ciudad.
+- Se te marca el punto de recogida con un checkpoint (también con `/micp`). Tanto la recogida como el destino suelen ser lugares conocidos de la ciudad; además, la recogida puede ser uno de **28 puntos** nombrados por calle y barrio.
 - El punto de recogida suele quedar a **150 metros o más** de ti.
 - Tienes **5 minutos** para llegar a cada punto (recogida y destino). Si te pasas del tiempo, o te bajas del vehículo, el viaje se cancela sin penalización.
 - Al llegar a los **3 metros** del punto de recogida se recoge al pasajero y se te marca el destino.
@@ -133,7 +133,7 @@ Si ya eres el maquinista, `/metro` te recuerda cuál es la siguiente estación y
 ### El recorrido y la paga
 
 1. Conduce hasta la estación marcada.
-2. Al llegar, el tren se detiene **20 segundos** para que suban los pasajeros. Después se te marca la estación siguiente.
+2. Al llegar, debes esperar **20 segundos** en la estación para que suban los pasajeros. Después se te marca la estación siguiente.
 3. Una estación solo suma a la paga si cuando termina la espera estás a **15 metros o menos** de ella.
 4. El recorrido tiene **siete estaciones**. Al completarlo se te paga el total y se reinicia la cuenta.
 
@@ -155,7 +155,7 @@ El piloto comercial es un trabajo secundario de vuelo por una ruta fija de punto
 
 1. Pide un avión libre en `/trabajos` (opción Piloto comercial): se te marca en el minimapa.
 2. Súbete como piloto y pulsa la tecla que aparece en pantalla. El avión se repara, se llena de combustible y de aceite, y el motor se enciende solo.
-3. Sigue la ruta volando de punto de control en punto de control. La ruta tiene **58 puntos** y recorre Las Venturas y San Fierro antes de volver a Los Santos.
+3. Sigue la ruta volando de punto de control en punto de control. La ruta tiene **57 puntos** y recorre Las Venturas y San Fierro antes de volver a Los Santos.
 4. Al cruzar el último punto cobras, el avión vuelve a su sitio y apareces en el aeropuerto de Los Santos.
 
 Si te bajas del avión, el trabajo se cancela.

@@ -66,6 +66,8 @@ El **dueño** de la propiedad (y su cónyuge, o el líder si es de una facción)
 - En el **mostrador de su negocio**: abre la lista de las cámaras de ese negocio.
 - Con un **notebook en la mano**: abre la lista de todas sus cámaras, desde cualquier lugar.
 
+Un técnico de seguridad en servicio también puede abrir la lista, ver en vivo y leer el registro de las cámaras que instaló su empresa, pero no puede renombrarlas ni desinstalarlas.
+
 La lista muestra el código de cada cámara, su nombre, la propiedad y su estado (activa, sin señal o destruida). Al elegir una cámara se abre un menú con estas opciones:
 
 | Opción | Qué hace |
@@ -83,7 +85,7 @@ La pantalla imita un monitor de seguridad, con la marca REC, la fecha, la hora y
 - **W** y **S** acercan y alejan la imagen, hasta **3 veces** el tamaño normal.
 - **Espacio**, **Enter**, **F** o `/camaras` te sacan de la vista.
 
-Tu personaje se queda quieto en el lugar, con tu nombre sobre él, y no puedes hablar ni usar comandos. Si alguien lo golpea o queda herido, la vista se corta. Si pierdes el acceso a la cámara (por ejemplo, porque vendiste la propiedad), también se corta. Una cámara saboteada o destruida muestra el aviso **CAMERA OFFLINE**.
+Solo puedes mirar en vivo estando vivo y a pie, y no durante la Purga, los Hunger Games ni el paintball. Tu personaje se queda quieto en el lugar, con tu nombre sobre él, y no puedes hablar ni usar comandos. Si alguien lo golpea o queda herido, la vista se corta. Si pierdes el acceso a la cámara (por ejemplo, porque vendiste la propiedad), también se corta. Una cámara saboteada o destruida muestra el aviso **CAMERA OFFLINE**.
 
 ## La grabación
 
@@ -94,8 +96,8 @@ Cada cámara conserva un registro de **14 días**. Cada entrada se muestra con e
 | Tipo | Eventos |
 |------|---------|
 | Movimiento | Entradas a pie y compras en el negocio |
-| Delitos contra la propiedad | Hurtos, atracos, robos a la propiedad, robos de muebles e incendios |
-| Delitos con vehículos | Cerraduras forzadas, ventanillas rotas, puertas de vehículos forzadas, puentes, desarmes de vehículos y patentes adulteradas |
+| Delitos contra la propiedad | Hurtos, atracos, cerraduras de propiedades forzadas, robos a la propiedad, robos de muebles e incendios |
+| Delitos con vehículos | Ventanillas rotas, puertas de vehículos forzadas, puentes, desarmes de vehículos y patentes adulteradas |
 | Delitos contra personas | Agresiones, heridas graves, asesinatos, disparos y carteristas |
 | Otros | Skimmers en cajeros, sabotajes y ataques a la cámara |
 | Rol | Los `/me` y `/ame` de quienes estén en cuadro |
@@ -154,7 +156,7 @@ El técnico no puede reparar cámaras de sus propias propiedades. Si el dueño n
 <img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/mirilla-de-la-puerta.png" alt="Vista por la mirilla de la puerta de una propiedad" width="1600" height="900">
 
 - Debes estar **dentro** de la propiedad, a menos de **2,5 metros** de su puerta de entrada, vivo y a pie.
-- No está disponible en **Twin Towers** ni durante las **visitas** a la cárcel.
+- No está disponible en **Twin Towers** ni durante las **visitas** a la cárcel, ni durante la Purga, los Hunger Games o el paintball.
 - Giras la cámara con el **mouse**, pero no puedes moverte.
 - Sales con **Enter** o **F**, o repitiendo `/mirilla`.
 - Tu personaje hace un `/ame` al empezar y otro al terminar.

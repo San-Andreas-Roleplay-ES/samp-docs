@@ -4,7 +4,7 @@
 
 El sistema de caza está pensado para los personajes a los que les gusta el aire libre, la paciencia y el disparo bien medido. La caza deportiva está permitida en dos zonas: el **bosque de Whetstone** y **Flint County**, un territorio enorme de bosque, cerros y caminos rurales al suroeste del estado donde los animales aparecen repartidos de forma aleatoria. Hay **20 especies** de animales salvajes, desde conejos hasta osos negros y uapitíes, y las más raras son más difíciles de encontrar, de abatir y mucho más valiosas.
 
-Con cualquier **escopeta**, **rifle de caza** o **fusil de francotirador** puedes salir a cazar, incluso si no tienes licencia de caza ni licencia de porte de armas. Solo tienes que ir al bosque, tener paciencia y acercarte con sigilo: los animales oyen y ven, y no esperan quietos a que les dispares.
+Con cualquier **escopeta** (las recortadas no sirven), **rifle de caza** o **fusil de francotirador** puedes salir a cazar, incluso si no tienes licencia de caza ni licencia de porte de armas. Solo tienes que ir al bosque, tener paciencia y acercarte con sigilo: los animales oyen y ven, y no esperan quietos a que les dispares.
 
 Todo lo demás —vender las pieles y la carne, comprar cuchillos, rifles o trofeos— pasa por el **punto de caza de Angel Pine**, marcado en el mapa y señalizado en el lugar. Allí se centraliza la compra y venta de todo lo relacionado con la actividad.
 
@@ -86,7 +86,7 @@ Cuanto más rara es la especie, más lejos te detecta:
 
 Para que el disparo cuente como caza válida debe cumplir con todo esto:
 
-- **Arma correcta**: solo **escopeta**, **rifle de caza** o **fusil de francotirador**, y en la **mano derecha**. Cualquier otra arma, o apuntar con la mano derecha vacía, **espanta al animal** y lo hace huir para siempre.
+- **Arma correcta**: solo **escopeta** (no valen las recortadas), **rifle de caza** o **fusil de francotirador**, y en la **mano derecha**. Cualquier otra arma, o apuntar con la mano derecha vacía, **espanta al animal** y lo hace huir para siempre.
 - **Distancia**: los impactos solo valen hasta **150 metros**, y el alcance real depende del arma (la escopeta llega a 40 metros; los rifles, a 100).
 - **Animales heridos**: solo se rematan con ese mismo grupo de armas.
 
@@ -109,7 +109,7 @@ Si no hay lugar donde huir, el animal cae herido en el mismo sitio. Un animal qu
 
 ### Disparos que espantan
 
-El estruendo de un disparo dentro de la zona de caza **espanta a todos los animales vivos que estén a 150 metros de ti**. Solo se salva el animal al que le aciertas. Por eso, un tiro fallado a lo lejos puede arruinar la jornada: antes de disparar, asegúrate de que puedes acertar.
+El estruendo de cualquier disparo, con cualquier arma, dentro de la zona de caza **espanta a todos los animales vivos que estén a 150 metros de ti**. Solo se salva el animal al que le aciertas. Por eso, un tiro fallado a lo lejos puede arruinar la jornada: antes de disparar, asegúrate de que puedes acertar.
 
 ## Habilidad de cazador
 
@@ -152,7 +152,7 @@ Acércate al cuerpo del animal muerto con un **cuchillo** en la mano derecha y p
 - Si pasan **8 segundos** sin cortar, dejas la faena.
 - Se cancela también si te alejas del cuerpo, subes a un vehículo, guardas el cuchillo o tu personaje deja de estar en pie.
 
-Al terminar, la piel y la carne caen al suelo junto al animal y el cuerpo desaparece. Cada objeto agrupa hasta **25 unidades** (la carne se mide en kilos), así que una buena presa puede dejar varias bolsas. Las pieles y la carne se guardan y se apilan solas en tu inventario. Si dos personas quieren despellejar la misma presa, solo puede hacerlo una a la vez.
+Al terminar, la piel y la carne caen al suelo junto al animal y el cuerpo desaparece. Cada objeto agrupa hasta **25 unidades** (la carne se mide en kilos), así que una buena presa puede dejar varias bolsas. Tienes que recogerlas del suelo con `/recoger` (mano derecha) o `/recogeri` (mano izquierda). Las de los animales grandes (ciervos, antílope, borrego, cerdo, puma, osos y uapití) son pesadas: exigen la mano derecha con la izquierda libre, así que solo puedes cargar una a la vez; las de los animales pequeños caben en los bolsillos. Si dos personas quieren despellejar la misma presa, solo puede hacerlo una a la vez.
 
 ### Cuchillos de caza
 
@@ -171,16 +171,16 @@ El rendimiento se aplica tanto a la piel como a la carne. Los cortes torpes y el
 
 Los cazadores más constantes tienen acceso a la compra de **fusiles de francotirador** en el menú de caza. Lo más importante: estos rifles **no te los pueden robar** otros jugadores con un hurto.
 
-| Rifle | Calibre | Precio | Requisito | Daño base | Cargador | Atraviesa chalecos |
+| Rifle | Calibre | Precio | Requisito | Daño base | Cargador | Atraviesa chalecos a menos de 10 m |
 |-------|---------|--------|-----------|-----------|----------|--------------------|
-| **Ruger American** | .308 Winchester | 50 monedas | 100 cazas | **25 HP** | 4 balas | Sí |
-| **Remington 700P** | .30-06 Springfield | 75 monedas | 200 cazas | **40 HP** | 4 balas | Sí |
-| **Tikka T3x** | 6.5 Creedmoor | 100 monedas | 300 cazas | **50 HP** | 3 balas | No |
-| **Sako 85** | .300 Winchester Magnum | 125 monedas | 500 cazas | **70 HP** | 3 balas | No |
+| **Ruger American** | .308 Winchester | 50 monedas | 100 cazas | **25 HP** | 4 balas | No |
+| **Remington 700P** | .30-06 Springfield | 75 monedas | 200 cazas | **40 HP** | 4 balas | No |
+| **Tikka T3x** | 6.5 Creedmoor | 100 monedas | 300 cazas | **50 HP** | 3 balas | Sí |
+| **Sako 85** | .300 Winchester Magnum | 125 monedas | 500 cazas | **70 HP** | 3 balas | Sí |
 
 Las cazas que se piden son el total de animales abatidos, de cualquier especie.
 
-Comprar un rifle aquí consume el **tiempo de espera de compra de armas**, que es común al menú de caza, a las armerías y al [mercado negro](sistema-de-mercado-negro.md): **1 semana**, o **3,5 días** si tienes Premium Gold o superior. Los cuchillos y la trampa no activan esa espera. Consulta el [sistema de armas](sistema-de-armas.md) para ver cómo funcionan el daño, los chalecos y la munición.
+Comprar un rifle aquí consume el **tiempo de espera de compra de armas**, que es común al menú de caza, a las armerías y al [mercado negro](sistema-de-mercado-negro.md): **1 semana**, o **3,5 días** si tienes Premium Gold o superior. Mientras esa espera siga activa no puedes comprar otro rifle. Los cuchillos y la trampa ni la activan ni la respetan. Consulta el [sistema de armas](sistema-de-armas.md) para ver cómo funcionan el daño, los chalecos y la munición.
 
 > ¿Los utilizarás para cazar al oso negro más grande de San Andreas o para defender tu barrio de los peores criminales?
 
@@ -263,7 +263,7 @@ Se desbloquean cazando **esa misma especie**: desde **1 caza** en las especies m
 
 ## Mascotas cazadoras
 
-Tus [mascotas](sistema-de-mascotas.md) pueden ayudarte a encontrar presas con su habilidad de **Caza**: la mascota apunta hacia el animal salvaje vivo más cercano. Con más nivel apunta con más precisión, y los perros suman fuerza al cazar en jauría. Las especies intermedias exigen cierto nivel de Caza de la mascota, y las raras (osos y uapití, entre otras) un nivel todavía mayor. La habilidad de la mascota solo sube si **tú** abates la presa marcada dentro de los 5 minutos siguientes. La mascota solo señala: el disparo y la faena siguen siendo tuyos.
+Tus [mascotas](sistema-de-mascotas.md) pueden ayudarte a encontrar presas con su habilidad de **Caza**: la mascota apunta hacia el animal salvaje vivo más cercano. Con más nivel apunta con más precisión, y los perros suman fuerza al cazar en jauría. Las especies de aparición media (ciervos, antílope, puma, cerdo salvaje y borrego) exigen nivel 40 de Caza de la mascota, y las más escasas (los osos y el uapití), nivel 70; el resto se detecta con cualquier nivel. La habilidad de la mascota solo sube si **tú** abates la presa marcada dentro de los 5 minutos siguientes. La mascota solo señala: el disparo y la faena siguen siendo tuyos.
 
 ## Consejos
 

@@ -4,7 +4,7 @@
 
 Además de las plantaciones de droga, en San Andreas puedes dedicarte a la agricultura legal. Hay **25 hortalizas y frutas** que se siembran al aire libre, se cuidan hasta que maduran y se venden en los puntos agrícolas. No exige facción, licencia ni habilidad mínima: basta con semillas, un saco de abono y paciencia.
 
-Cada cultivo tiene su propio ritmo y sus propias exigencias. Los rápidos se cosechan en poco más de un día y pagan poco; los lentos tardan hasta seis días, pero una cosecha completa puede valer más de $6.000. Todo lo que cultivas crece por tiempo real, aunque no estés conectado, así que lo importante es dejar la planta bien cuidada antes de irte.
+Cada cultivo tiene su propio ritmo y sus propias exigencias. Los rápidos se cosechan en poco más de un día y pagan poco; los lentos tardan más de seis días, pero una cosecha completa puede valer más de $6.000. Todo lo que cultivas crece por tiempo real, aunque no estés conectado, así que lo importante es dejar la planta bien cuidada antes de irte.
 
 El oficio se apoya en una habilidad propia, **Granjero**, que sube mientras cultivas y vendes. Para plantar marihuana y otras plantas ilegales, consulta el [sistema de plantaciones de marihuana](sistema-de-plantaciones-de-marihuana.md): usa los mismos comandos, pero tiene reglas distintas.
 
@@ -53,9 +53,9 @@ Los negocios no pueden agregar las cosechas a su catálogo: el punto agrícola e
 | Objeto | Para qué sirve | Dónde se consigue |
 |--------|----------------|-------------------|
 | Sobre de semillas | Sembrar un cultivo | Puntos agrícolas |
-| Saco de abono | Debe estar en el suelo, a 5 m o menos, para sembrar. También sube la salud de una planta | Negocios de tipo growshop |
+| Saco de abono | Debe estar en el suelo, a 5 m o menos, para sembrar. También sube la salud de una planta | Negocios que vendan productos de cultivo (growshops) |
 | Botella de agua o regadera | Regar | Tiendas, o la regadera que tengas |
-| Fertilizante | Mejora la salud y la calidad de la cosecha. Algunos cultivos lo exigen para crecer | Negocios de tipo growshop |
+| Fertilizante | Mejora la salud y la calidad de la cosecha. Algunos cultivos lo exigen para crecer | Negocios que vendan productos de cultivo (growshops) |
 
 - La **botella de agua** guarda hasta **10 unidades** y la **regadera**, hasta **100**. Se rellenan con `/llenaragua` dentro de una propiedad, y el agua que sacas se suma a la factura de agua de esa propiedad: una unidad de factura por cada 10 de agua.
 - El saco de abono pesa 20 kg y ocupa dos manos.
@@ -66,7 +66,7 @@ Los negocios no pueden agregar las cosechas a su catálogo: el punto agrícola e
 Para sembrar con `/plantacion crear` necesitas:
 
 - Un **sobre de semillas** en la mano derecha.
-- Un **saco de abono** apoyado en el suelo, a 5 metros o menos.
+- Un **saco de abono** apoyado en el suelo, a 5 metros o menos. Tiene que ser el objeto del suelo más cercano a ti: si hay otro más cerca, no cuenta.
 - Estar **al aire libre**: las plantas legales no crecen dentro de propiedades ni en otros mundos.
 - Respetar la **separación mínima** del cultivo con cualquier otra planta (entre 0,75 y 1,80 metros según el cultivo, ver tablas).
 - No tener ya el máximo de plantas permitidas.
@@ -78,7 +78,7 @@ La planta nace en etapa Semilla, con **5 de 10 de salud** y sin agua ni fertiliz
 
 ### Límites
 
-- Cada personaje puede tener **32 plantas** sembradas a la vez, entre legales e ilegales.
+- Cada personaje puede tener **32 plantas** sembradas a la vez, entre legales e ilegales. Cada espacio extra de granja que tenga el personaje suma 16 más, hasta un máximo de 128.
 - No pueden estar **más de 10 plantas del mismo cultivo** en un radio de 10 metros.
 - Si ya tienes el máximo, cosecha o descarta alguna antes de sembrar.
 
@@ -123,7 +123,7 @@ Los mínimos para crecer dependen del grupo al que pertenece el cultivo:
 | **Intermedios** | 5 | 3 | no lo exigen |
 | **Sencillos** | 5 | 2 | no lo exigen |
 
-Una planta sin cuidados pierde salud hasta llegar a **cero**. Con salud cero queda marchita: todavía puedes recuperarla regándola, abonándola o fertilizándola, pero **desaparece en el siguiente reinicio del servidor** si no lo haces antes.
+Una planta sin cuidados pierde salud hasta llegar a **cero**. Con salud cero queda marchita: todavía puedes recuperarla regándola, abonándola o fertilizándola, pero **desaparece en el siguiente reinicio del servidor** si no lo haces antes. Si el servidor se queda sin espacio para plantas nuevas, también se elimina primero la planta marchita más antigua.
 
 ## Calidad y cantidad de la cosecha
 
@@ -137,7 +137,7 @@ En los cultivos legales, la **calidad** de la planta determina cuánta cosecha o
 
 Los porotos son la excepción entre los sencillos: pesan 50 el agua, 10 el fertilizante y 40 la salud.
 
-Con calidad 0 obtienes la cantidad mínima del rango del cultivo y con calidad 100, la máxima. Por eso conviene regar, abonar y fertilizar **justo antes de cosechar**: las tres cosas suben la calidad al instante.
+Con calidad 0 obtienes la cantidad mínima del rango del cultivo (a veces una unidad más) y con calidad 100, la máxima. Por eso conviene regar, abonar y fertilizar **justo antes de cosechar**: las tres cosas suben la calidad al instante.
 
 ## Cosechar
 
@@ -150,7 +150,7 @@ La planta se puede cosechar desde la etapa **Floración** (cuarta etapa) y rinde
 | Floración | Rango temprano del cultivo, menor |
 | Cosecha | Rango completo del cultivo, mayor |
 
-Una planta que se cosecha **no desaparece**: vuelve a la etapa Semilla, conserva su salud, agua y fertilizante, y empieza un nuevo ciclo. Una planta bien mantenida produce una y otra vez.
+Una planta que se cosecha **no desaparece**: vuelve a la etapa Semilla, conserva su salud, agua y fertilizante, y sigue con el ciclo que ya llevaba en curso (el contador de tiempo no se reinicia al cosechar). Una planta bien mantenida produce una y otra vez.
 
 Solo pueden cosechar el **dueño** de la planta y los personajes invitados a su granja (ver más abajo).
 

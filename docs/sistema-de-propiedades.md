@@ -14,19 +14,18 @@ Todas las propiedades pagan **facturas de agua y luz** mientras haya gente dentr
 
 - /entrar — entra por el marcador de entrada en el que estás parado.
 - /salir — sale por el marcador de salida.
-- /abrir, /cerrar — abre o cierra la propiedad (dueño o quien tenga llaves).
-- /puerta — abre o cierra una puerta interior cercana.
-- /info — información general de la propiedad en la que estás.
-- /timbre — toca el timbre para avisar a los ocupantes.
-- /visitar — solicita visitar una propiedad cerrada.
-- /metermoto — mete una motocicleta a la propiedad (si la entrada lo permite).
-- /phora [0-23] — fija una hora personalizada en el interior (dueño).
-- /pclima [0-20] — fija un clima personalizado en el interior (dueño).
+- /abrir, /cerrar — abre o cierra la puerta de la propiedad (dueño o quien tenga llaves). También abren y cierran las puertas interiores que se hayan creado con muebles.
+- /info — muestra en pantalla, junto a la entrada, el estado de la propiedad (abierta o cerrada, en venta, alquilada o en subasta) y su precio.
+- /timbre — toca el timbre de una casa desde la puerta de la calle para avisar a quienes están dentro.
+- /visitar — te deja recorrer durante 30 segundos una propiedad en venta cuya puerta está cerrada; pasado ese tiempo te devuelve a la puerta.
+- /metermoto — mete una moto o una bicicleta a la propiedad (necesitas las llaves).
+- /phora [0-23] — fija una hora personalizada en el interior (dueño; con 0 se desactiva).
+- /pclima [0-20] — fija un clima personalizado en el interior (dueño; con 0 se desactiva).
 - /ayuda casa, /ayuda negocio, /ayuda almacen, /ayuda complejo, /ayuda muebles — listados de comandos dentro del juego.
 
 ## Compra y venta de inmuebles
 
-Las propiedades en venta muestran un cartel en la entrada. Párate en el marcador y usa `/comprar`: el juego te muestra el precio y la compra se cierra con `/aceptar`. El dinero sale de tu cuenta bancaria.
+Las propiedades en venta muestran un cartel en la entrada. Párate en el marcador y usa `/comprar`: el juego te muestra el precio y la compra se cierra con `/aceptar`. El dinero sale de tu cuenta bancaria. Para comprar, ya sea al Estado o a otro jugador, tu cuenta debe tener activada la doble autenticación (2FA).
 
 Una propiedad **premium** solo la puede comprar un jugador premium, y las **habitaciones de hotel** no se compran (se rentan, ver [Complejos y hoteles](#complejos-y-hoteles)). Mientras una propiedad está en subasta no se puede comprar con `/comprar` (ver [Sistema de subastas](sistema-de-subastas.md)).
 
@@ -58,7 +57,7 @@ Los componentes de flota, muebles, stock y surtidores se pagan completos en todo
 
 ### Vender
 
-Puedes vender a **otro jugador** dentro de la propiedad con `/venderprop`, pactando un precio entre el **50% (x0,5)** y el **1000% (x10)** del precio calculado. Fuera de ese rango la diferencia tiene que ir por transferencia bancaria aparte. El comprador debe estar a menos de 5 metros y acepta con `/aceptar`.
+Puedes vender a **otro jugador** estando dentro de la propiedad con `/venderprop`, pactando un precio entre el **50% (x0,5)** y el **1000% (x10)** del precio calculado. Fuera de ese rango la diferencia tiene que ir por transferencia bancaria aparte. El comprador debe estar a menos de 5 metros y acepta con `/aceptar`.
 
 Al vender **al Estado** la oferta es un porcentaje del valor base:
 
@@ -72,7 +71,7 @@ Al vender **al Estado** la oferta es un porcentaje del valor base:
 
 Los socios con la membresía adecuada reciben **5 puntos porcentuales más** al venderle una casa al Estado (ver [Membresías de negocios](#membresías-de-negocios)).
 
-No puedes vender una propiedad con **caja negativa**, con **pedidos en ruta**, con **paquetes u objetos ilegales adentro** ni con un **laboratorio de drogas** activo. Tampoco puedes venderle una propiedad premium a alguien que no tenga premium.
+No puedes vender una propiedad con **caja negativa**. Para vender **al Estado**, además, no puede haber **pedidos en ruta**, **paquetes u objetos ilegales adentro** ni un **laboratorio de drogas** activo, y tienes que estar junto a la entrada. Tampoco puedes venderle una propiedad premium a alguien que no tenga premium.
 
 ### Cuántas propiedades puedes tener
 
@@ -91,22 +90,22 @@ Los espacios extra de propiedades que hayas comprado se suman a estos límites. 
 
 - /comprar — compra la propiedad en la que estás (si está en venta).
 - /venderprop [id] [$precio] — vende tu propiedad a un jugador cercano.
-- /vender — vende la propiedad al Estado.
+- /vender — vende la propiedad al Estado (junto al marcador de entrada).
 - /aceptar, /rechazar — acepta o rechaza una oferta.
 
 ## Entradas, salidas y puertas
 
 Una propiedad puede tener **hasta 6 entradas**, cada una con su posición, su puerta y su interior. Algunas permiten meter vehículos. Al acercarte a una entrada aparece un marcador: úsalo con `/entrar`; desde dentro, `/salir` te devuelve a la calle.
 
-Las puertas pueden estar **abiertas**, **cerradas** o **rotas**. Si está cerrada, solo el dueño o quien tenga llaves pueden pasar. `/puerta` abre y cierra las puertas interiores que hayas creado con muebles.
+Las puertas pueden estar **abiertas**, **cerradas** o **rotas**. Si una puerta está cerrada no pasa nadie, ni siquiera el dueño, hasta que alguien con llaves la abra con `/abrir`; una puerta rota (con la cerradura destrozada) deja pasar a cualquiera. Las puertas interiores que hayas creado con muebles también se abren y cierran con `/abrir` y `/cerrar`.
 
-Los negocios y propiedades destacadas aparecen con su **ícono propio en el mapa**; el dueño puede cambiarlo con `/negmapicon` por **$5.000**.
+Los negocios que tienen empleados en servicio aparecen con su **ícono propio en el mapa**; el dueño puede cambiarlo con `/negmapicon` por **$5.000**.
 
 ## Casas
 
 Las casas son viviendas personales. Sirven para vivir, guardar dinero y objetos, almacenar ropa, conservar drogas en el refrigerador, cocinar y decorar el interior con muebles.
 
-Toda casa tiene un **buzón** en su entrada principal (ver más abajo) y admite **2 llaves compartidas**. Con premium **Rubí** también puedes crear una **terraza** (ver [Exteriores y terrazas](#exteriores-y-terrazas)).
+Toda casa tiene un **buzón** en su entrada principal (ver más abajo) y puedes prestar llaves a otros jugadores (ver [Llaves y permisos](#llaves-y-permisos)). Con premium **Rubí** también puedes crear una **terraza** (ver [Exteriores y terrazas](#exteriores-y-terrazas)).
 
 ### Alquilar tu casa a otro jugador
 
@@ -114,8 +113,8 @@ El dueño puede convertir a otro personaje en **inquilino** con `/alquilar [id] 
 
 ### Comandos
 
-- /ropa — abre el ropero para cambiar tu vestuario.
-- /almacen — abre la caja de la casa.
+- /ropa — abre el ropero para cambiar tu vestuario (junto al punto de almacenamiento de la propiedad).
+- /almacen — abre el almacén de la casa, que guarda hasta 64 objetos.
 - /refrigerador — abre el refrigerador (conserva la pureza de las drogas, ver [Sistema de drogas](sistema-de-drogas.md)). Los ingredientes que guardas ahí sirven para `/cocinar` si estás a 10 metros o menos del refrigerador (ver [Sistema de cocina y bar](sistema-de-cocina-y-bar.md)).
 - /buzon — abre el buzón de correo.
 - /alquilar [id] [$precio] — ofrece el alquiler a un jugador.
@@ -136,26 +135,26 @@ Es la vía ideal para citaciones, cartas anónimas, entregas discretas o dejarle
 
 ## Almacenes
 
-Los almacenes están pensados para **guardar grandes cantidades de objetos**. Tienen un área de almacenamiento ampliada donde puedes depositar items del inventario, y admiten **2 llaves compartidas**.
+Los almacenes están pensados para **guardar grandes cantidades de objetos**. Tienen un área de almacenamiento ampliada, con espacio para hasta 128 objetos (el doble que una casa), donde puedes depositar items del inventario, y puedes compartirlos prestando llaves.
 
 No tienen empleados, ni stock de venta, ni clientes. El dueño puede mover el punto de almacenamiento con `/almacen situar`.
 
 ## Complejos y hoteles
 
-Los complejos agrupan muchas **habitaciones** bajo un mismo dueño. El propietario del complejo fija un precio único por día con `/fijaralquiler` (entre **$100 y $50.000 por día**; el cambio no afecta a los inquilinos actuales) y consulta el estado de las habitaciones con `/habitaciones`.
+Los complejos agrupan muchas **habitaciones** bajo un mismo dueño. El propietario del complejo fija un precio único por día con `/fijaralquiler` (entre **$100 y $50.000 por día**; el cambio no afecta a los inquilinos actuales). Los empleados del complejo que estén en servicio consultan el estado de las habitaciones con `/habitaciones`.
 
 Cualquier jugador puede reservar una habitación libre parándose junto a su puerta y usando `/rentar`: elige de **1 a 30 días** y paga todo por adelantado, con el efectivo que lleves o, si no te alcanza, desde el banco. El dinero va a la caja del hotel. Solo se puede tener **una habitación reservada a la vez**, y el hotel guarda el registro de la reserva, que la policía puede consultar presencialmente.
 
 - Si ya rentas esa habitación, `/rentar` **suma los días** a tu reserva actual.
 - `/cancelarrenta` te permite dejar la habitación cuando quieras. **No hay reembolso** de lo pagado.
-- Al terminar los días reservados, la habitación queda libre y pierdes las llaves.
+- Al terminar los días reservados, la habitación queda libre y pierdes las llaves; eso ocurre cuando el servidor se reinicia.
 - Si te desalojan mientras estás desconectado, recibes el aviso al conectarte.
 
 Las normas del hotel prohíben tener mascotas, fumar, hacer fiestas y mover objetos o muebles de la habitación.
 
 ## Llaves y permisos
 
-Puedes **compartir tu propiedad** prestando llaves. Los límites por persona son:
+Puedes **compartir tu propiedad** prestando llaves; para prestarlas tu cuenta debe estar certificada en el UCP. Los límites por persona son:
 
 | Tipo | Llaves que puede recibir un jugador |
 | --- | --- |
@@ -163,7 +162,7 @@ Puedes **compartir tu propiedad** prestando llaves. Los límites por persona son
 | Almacenes | 2 |
 | Negocios | 1 |
 
-Las llaves se prestan cara a cara, a menos de 5 metros. Solo el propietario, su cónyuge, los miembros de la facción dueña (si aplica) y quienes tengan llave con permiso de muebles pueden mover o editar el mobiliario; el resto solo entra y sale. Además, el dueño puede dar un **permiso temporal de muebles** a otro jugador sin prestarle llaves (ver [Sistema de muebles](sistema-de-muebles.md#permisos-de-muebles)).
+Las llaves se prestan cara a cara, a menos de 5 metros. Solo el propietario, su cónyuge, los miembros de la facción dueña (si aplica) y quienes tengan una llave prestada pueden mover o editar el mobiliario; el resto solo entra y sale. Además, el dueño puede dar un **permiso temporal de muebles** a otro jugador sin prestarle llaves (ver [Sistema de muebles](sistema-de-muebles.md#permisos-de-muebles)).
 
 No se pueden prestar llaves de industrias, complejos ni propiedades de facción.
 
@@ -171,7 +170,7 @@ No se pueden prestar llaves de industrias, complejos ni propiedades de facción.
 
 - /prestarllave [id] — entrega una copia de la llave a un jugador cercano.
 - /quitarllave [nombre_apellido] — revoca el acceso.
-- /tirarllave — deja caer la llave al suelo para que otro la recoja.
+- /tirarllave [id propiedad] — descarta una llave prestada que tú tengas de esa propiedad.
 
 ## Muebles
 
@@ -217,23 +216,23 @@ Los negocios son propiedades comerciales que se operan con **empleados**, **stoc
 - **Empresa de transporte, taxi, pesca, limpieza, mecánica y seguridad** — basadas en el trabajo activo de sus empleados.
 - **Despacho legal, banco, hospital y periódico** — negocios institucionales con funciones específicas.
 
-**Diferencia clave**: los negocios con producto (tienda, club, concesionario, apuestas, casino) gestionan **stock, pedidos y ventas**; los de servicios (taxi, mecánica, banco, legal, periodismo…) viven del trabajo activo del empleado. Los talleres mecánicos y las empresas de seguridad también manejan stock de repuestos y material.
+**Diferencia clave**: los negocios con producto (tienda, club, casa de apuestas, casino) gestionan **stock, pedidos y ventas**; los de servicios (taxi, mecánica, banco, legal, periodismo…) viven del trabajo activo del empleado. Los talleres mecánicos y las empresas de seguridad también manejan stock de repuestos y material.
 
 ### Comandos de gestión
 
 - /caja [retirar | depositar] [$dinero] — mueve dinero de la caja del negocio.
-- /transferircaja [llave destino] [$dinero] — transfiere dinero a otro negocio tuyo.
+- /transferircaja [llave destino] [$dinero] — transfiere dinero de la caja a la de otro negocio.
 - /mirarnegocio — muestra el estado de los requisitos para las ventas automáticas.
 - /mirarbasura — muestra la suciedad acumulada y su efecto.
 - /negnombre [nombre] — cambia el nombre del negocio (dueño, $5.000).
 - /negmapicon [ícono] — cambia el ícono del mapa (dueño, $5.000).
-- /negmotd [texto] — mensaje que ven los clientes al entrar.
+- /negmotd [texto] — mensaje que ven los clientes al entrar (dueño).
 - /negvehiculos — gestiona la flota de la empresa.
 - /activaralarma — dispara la alarma manualmente desde el mostrador.
-- /entrada [$precio] — establece el precio de entrada, de $0 a $1.000 (clubes).
-- /mostrador, /mostrador2 — fija la posición de los mostradores de venta.
-- /derechodeadmision [id] — expulsa a un cliente del local (temporal, puede volver).
-- /vetar [id] [razón], /vetos, /desvetar [nombre_apellido] — veto permanente de un cliente.
+- /entrada [$precio] — establece el precio de entrada, de $0 a $1.000 (dueño).
+- /mostrador, /mostrador2 — fija la posición de los mostradores de venta (dueño).
+- /derechodeadmision [id] — expulsa a un cliente del local (dueño; temporal, puede volver).
+- /vetar [id] [razón], /vetos, /desvetar [nombre_apellido] — veto permanente de un cliente (dueño).
 
 ## Caja del negocio
 
@@ -243,7 +242,7 @@ Para usarla hay que estar dentro del negocio y tener el permiso de caja en tu ca
 
 - **Depositar** saca el dinero de tu cuenta bancaria y no paga impuestos.
 - **Retirar** deposita el dinero en tu cuenta bancaria y paga un **impuesto corporativo del 28%** (21% federal más 7% estatal). El límite por operación es de **$1.000.000**.
-- **Transferir** entre dos negocios tuyos no paga impuestos, con un límite de **$10.000.000** por operación.
+- **Transferir** de la caja de un negocio a la de otro no paga impuestos, con un límite de **$10.000.000** por operación.
 
 Si el dueño **no está conectado**, el negocio paga además **$81 por hora** de impuesto comercial al gobierno (salvo en la isla de Santa Catalina).
 
@@ -270,7 +269,7 @@ Los productos se agrupan en estas categorías: **Armas, Comidas, Bebidas, Tabaco
 
 <img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/tienda-por-categorias.png" alt="Menú de /comprar de un supermercado ordenado por categorías" width="651" height="465">
 
-Sin premium, un negocio solo puede vender productos de **una única categoría**, con dos excepciones: Bebidas y Tabaco cuentan como Comidas, y Regalos cuenta como Cultivo. Con premium puedes mezclar categorías distintas en el mismo catálogo.
+Sin premium, un negocio solo puede vender productos de **una única categoría**, con dos excepciones: Bebidas y Tabaco cuentan como Comidas, y Regalos cuenta como Cultivo. Con premium puedes mezclar categorías distintas en el mismo catálogo. Un negocio común no puede añadir productos de **Armas, Farmacia, Ferretería, Electrónica ni Joyas**; **Repuestos** solo se añade en talleres mecánicos y **Seguridad** solo en empresas de seguridad.
 
 ### Regalos, vapers y habanos
 
@@ -284,15 +283,15 @@ Los productos se muestran en un **catálogo con vista previa en 3D**, su nombre 
 
 El dinero sale primero del efectivo del cliente y, si no le alcanza, de su cuenta bancaria. Entra íntegro a la **caja del negocio**.
 
-Un empleado en servicio puede además ofrecer el catálogo en persona con `/venderstock [id] [propina 10-60]`: el cliente paga el precio más la propina pactada, y **la propina va al bolsillo del empleado** (más 3 Burger Points por venta con propina, ver [Sistema de Burger Points](sistema-de-burger-points.md)).
+Un empleado en servicio puede además ofrecer el catálogo en persona con `/venderstock [id] [propina 10-60]`: el cliente paga el precio más la propina pactada (del 10% al 60% del precio), y **la propina va al bolsillo del empleado** (más 3 Burger Points por venta con propina, ver [Sistema de Burger Points](sistema-de-burger-points.md)).
 
-Las armas, cargadores y munición tienen requisitos extra para el comprador: **50 horas de juego**, tener una casa, no tener antecedentes y la licencia correspondiente. Tras comprar un arma queda un tiempo de espera de **2 semanas**, o **1 semana** con premium Oro o superior.
+Las armas, cargadores y munición tienen requisitos extra para el comprador: **50 horas de juego**, **cuenta certificada** en el UCP, tener una casa y no tener antecedentes; para comprar un arma además hace falta la licencia de portación. Tras comprar un arma queda un tiempo de espera de **2 semanas**, o **1 semana** con premium Oro o superior.
 
 Para encontrar el negocio que vende lo que necesitas, `/gps` permite buscar por categoría o por producto y marca la ruta a los negocios abiertos con stock más cercanos (ver [Sistema de teléfono y GPS](sistema-de-telefono-y-gps.md)).
 
 ### Autoservicio (drive-thru)
 
-Algunos locales tienen un punto de **autoservicio** en el exterior, marcado en el suelo. Estando dentro de un vehículo se usa `/autoservicio` para abrir el mismo catálogo. El precio en el autoservicio tiene un **recargo del 20%**, que se queda el negocio.
+Algunos locales tienen un punto de **autoservicio** en el exterior, marcado en el suelo. Estando dentro de un vehículo se usa `/autoservicio` para abrir el catálogo, que en el autoservicio solo incluye comidas y bebidas. El precio en el autoservicio tiene un **recargo del 20%**, que se queda el negocio.
 
 ### Comandos
 
@@ -389,7 +388,7 @@ Al entrar a un local sucio aparecen mensajes de ambiente ("el local está desord
 
 ### Limpiar
 
-`/limpiarnegocio` limpia una tanda de basura. Hace falta una **escoba** o **jabón** en la mano derecha, estar en servicio si eres empleado, y quedarse quieto entre **30 y 60 segundos** según la habilidad de quien limpia: la escoba recoge un 33% más de basura y el jabón tarda un 33% menos. Al terminar aparece una bolsa de basura en el suelo que hay que retirar.
+`/limpiarnegocio` limpia una tanda de basura. Pueden hacerlo los empleados del negocio (en servicio), quienes tengan llaves y los recolectores de basura. Hace falta una **escoba** o **jabón** en la mano derecha y permanecer dentro del negocio entre **30 y 60 segundos** según la habilidad de quien limpia: la escoba recoge un 33% más de basura y el jabón tarda un 33% menos (y se va gastando). Al terminar aparece una bolsa de basura en el suelo que hay que retirar.
 
 **Cuánto cuesta:** si limpia un **empleado del negocio o alguien con llaves**, es gratis. Si limpia un **recolector externo**, el negocio paga **$25 por cada kilo retirado**, descontados de la caja en el momento. Si no hay saldo suficiente, se cobra lo que haya (ver [Sistema de basura](sistema-de-basura.md)).
 
@@ -540,7 +539,7 @@ Quien no quiera recibir estos avisos puede desactivarlos en **/preferencias ➡�
 - /despedir [nombre_apellido] — despide a un empleado.
 - /cargos — crea y edita cargos, sueldos y permisos (dueño).
 - /darcargo [id] [cargo] — asigna un cargo a un empleado.
-- /empleados — consulta la plantilla desde el panel de control (ver [Panel de control](panel-de-control.md)).
+- /empleados — este comando está desactivado: la plantilla se consulta desde la sección «Mi empresa» del UCP (ver [Panel de control](panel-de-control.md)).
 
 ## Exteriores y terrazas
 

@@ -4,7 +4,7 @@
 
 Los **basureros** son los contenedores metálicos repartidos por las calles de San Andreas. Hay más de **260 contenedores** colocados a mano por el equipo de mapeo, siempre en el exterior: callejones traseros de negocios, patios de bloques de apartamentos, aparcamientos, zonas industriales y esquinas de los barrios. Todos son accesibles para cualquier personaje, sin permisos ni requisitos. Los contenedores de la isla de Santa Catalina se pueden revisar igual, pero no cuentan para el trabajo de recolector (ver [Santa Catalina](santa-catalina.md)).
 
-Un basurero cumple tres funciones a la vez. Primero, es un **punto de saqueo**: la ciudad va tirando cosas dentro y tú puedes rebuscar a ver qué encuentras, desde comida a medio comer hasta un fajo de billetes o un arma. Segundo, es un **escondite público**: puedes meter objetos de tu inventario y dejarlos ahí, con el riesgo de que otro los saque o de que un recolector los tire. Y tercero, es el destino natural de la basura de los negocios, que los recolectores vacían para cobrar (ver [Sistema de basura](sistema-de-basura.md)).
+Un basurero cumple tres funciones a la vez. Primero, es un **punto de saqueo**: la ciudad va tirando cosas dentro y tú puedes rebuscar a ver qué encuentras, desde comida a medio comer hasta un fajo de billetes o un arma. Segundo, es un **escondite público**: puedes meter objetos de tu inventario y dejarlos ahí, con el riesgo de que otro los saque, de que un recolector los tire o de que el reinicio diario del servidor los borre. Y tercero, es el destino natural de la basura de los negocios, que los recolectores vacían para cobrar (ver [Sistema de basura](sistema-de-basura.md)).
 
 Rebuscar en un contenedor tiene consecuencias: sales **apestando a basura** durante horas y todo el mundo a tu alrededor se entera. Es el precio de conseguir cosas gratis.
 
@@ -27,7 +27,7 @@ Los personajes muertos o heridos de gravedad no pueden meter ni sacar nada.
 
 ### Burger Points
 
-La **primera vez** que alguien revisa un basurero concreto desde que se llenó, esa persona gana **1 Burger Point**. Solo lo cobra el primero: a partir de ahí el contenedor queda marcado como ya revisado y no vuelve a pagar hasta que un recolector lo vacíe. Más detalles en [Sistema de Burger Points](sistema-de-burger-points.md).
+La **primera vez** que alguien revisa un basurero concreto desde que se llenó, esa persona gana **1 Burger Point**. Solo lo cobra el primero: a partir de ahí el contenedor queda marcado como ya revisado y no vuelve a pagar hasta que un recolector lo vacíe o el servidor se reinicie. Más detalles en [Sistema de Burger Points](sistema-de-burger-points.md).
 
 ## Qué puedes encontrar
 
@@ -76,12 +76,12 @@ Un contenedor se repone cuando tiene **menos de 5 objetos** dentro y se da una d
 
 Esto significa, en la práctica:
 
-- Al **reiniciar el servidor**, todos los basureros que quedaron casi vacíos se rellenan.
+- En el **reinicio diario del servidor**, todos los basureros se vacían de lo que hubiera dentro, incluido lo que dejaron los jugadores, y al arrancar se rellenan con 5 objetos nuevos.
 - Cuando un recolector limpia un contenedor, este vuelve a llenarse **15 minutos después**, siempre que en ese tiempo nadie haya dejado dentro 5 objetos o más.
 - Si vacías un contenedor entre varios jugadores, **no vuelve a llenarse solo** hasta el siguiente reinicio.
-- Un contenedor lleno de objetos que dejaron otros jugadores **no se repone**, porque ya supera el mínimo de 5.
+- Tras una limpieza, un contenedor al que otros jugadores le hayan dejado 5 objetos o más **no se repone**, porque ya supera el mínimo de 5.
 
-La **basura acumulada** funciona aparte de los objetos. Cada **15 minutos**, los contenedores con menos de **25 unidades** reciben entre **1 y 5 unidades** más, simulando a los vecinos que van tirando bolsas. Además, al arrancar el servidor cada contenedor suma también entre **1 y 5 unidades** de partida. El tope de basura que admite un contenedor es de **100 unidades**; pasado ese punto se considera colapsado y no acepta más bolsas.
+La **basura acumulada** funciona aparte de los objetos. Cada **15 minutos**, los contenedores con menos de **25 unidades** reciben entre **1 y 5 unidades** más, simulando a los vecinos que van tirando bolsas. Además, al arrancar el servidor cada contenedor suma también entre **1 y 5 unidades** de partida. El tope de basura que admite un contenedor es de **100 unidades**; con 100 unidades o más se considera colapsado y no admite que metas ningún objeto ni bolsa.
 
 ### Qué pasa cuando lo limpia un recolector
 
@@ -95,15 +95,16 @@ Quince minutos después de la limpieza, el contenedor genera 5 objetos nuevos si
 
 ## Usar el basurero como escondite
 
-Con `/basurero meter` dejas dentro del contenedor el objeto que lleves en la **mano derecha**. Cada contenedor admite hasta **128 objetos distintos**, y el objeto queda ahí de forma permanente: sigue estando cuando cierres sesión e incluso tras un reinicio.
+Con `/basurero meter` dejas dentro del contenedor el objeto que lleves en la **mano derecha**. Cada contenedor admite hasta **128 objetos distintos**, y el objeto queda ahí aunque cierres sesión, pero **solo hasta el siguiente reinicio diario del servidor**, que vacía todos los basureros.
 
-Es la forma más rápida de deshacerte de algo comprometedor sin dejarlo tirado en la calle, pero tiene tres riesgos claros:
+Es la forma más rápida de deshacerte de algo comprometedor sin dejarlo tirado en la calle, pero tiene cuatro riesgos claros:
 
 1. **Cualquiera puede abrirlo.** No hay llave ni propiedad; el primero que pase y escriba `/basurero` ve todo lo que guardaste.
 2. **Un recolector puede destruirlo todo.** Si limpia el contenedor, tu objeto desaparece sin aviso.
-3. **No puedes meter objetos de facción** ni cadáveres.
+3. **El reinicio diario del servidor lo borra.** No sirve para guardar nada a largo plazo.
+4. **No puedes meter objetos de facción** ni cadáveres.
 
-Si lo que metes es una **bolsa de basura**, no ocupa ranura: sus kilos se suman directamente a la basura acumulada del contenedor, hasta el tope de 100.
+Si lo que metes es una **bolsa de basura**, no ocupa ranura: sus kilos se suman directamente a la basura acumulada del contenedor. Mientras el contenedor tenga 100 unidades o más, no admite nada.
 
 ## Oler a basura
 
@@ -128,4 +129,4 @@ Para quitártelo de encima tienes dos opciones:
 - Lleva siempre un **perfume encima** si haces rutas largas de basureros. Es la única forma de cortar el olor al instante.
 - Ve con las **manos vacías**. Con un objeto pesado en la mano no podrás sacar nada.
 - La comida y bebida que salen vienen a media calidad, pero son gratis: para un personaje sin dinero, los contenedores son una fuente de sustento perfectamente válida. Casi siete de cada diez objetos son comida o bebida, y un fajo de billetes aparece más o menos una de cada ocho veces.
-- Si guardas algo en un contenedor, **recuérdalo**: un recolector puede pasar en cualquier momento y borrarlo todo de un solo comando.
+- Si guardas algo en un contenedor, **recuérdalo**: un recolector puede pasar en cualquier momento y borrarlo todo de un solo comando, y el reinicio diario lo borra igualmente.

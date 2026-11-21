@@ -13,7 +13,7 @@ Para ver tu nivel actual y tu saldo de monedas dentro del juego, usa `/stats`. A
 ### Comandos
 
 - `/stats` — muestra tu nivel premium, tus monedas y tus Burger Points.
-- `/logout` (o `/cambiarpersonaje`) — cambia de personaje sin salir del servidor. Exclusivo de usuarios premium.
+- `/logout` (o `/cambiarpersonaje`) — cambia de personaje sin salir del servidor. Exclusivo de usuarios premium; debes estar vivo, sano y a pie, y esperar 5 minutos entre cada cambio.
 - `/togmps` — bloquea tus mensajes privados. Exclusivo de usuarios premium (también disponible desde `/preferencias`).
 - `/usuariobleeter` — cambia tu nombre de usuario en la red social. Cuesta **3 monedas** y pide 48 horas de juego.
 - `/verificarbleeter` — verifica tu usuario de la red social de forma permanente. Cuesta **30 monedas** y pide 50 horas de juego.
@@ -43,11 +43,11 @@ Las monedas se adquieren en paquetes desde el panel de control. Cuanto mayor es 
 
 No hace falta pagar para tener alguna moneda suelta. El servidor las reparte en estas situaciones:
 
-- **Logros**: la mayoría de los logros dan **1 moneda**. Los de caza (primer conejo, primer venado, primer oso), comprar tu primera mascota, vender en la casa de empeños y otros logros especiales dan **5 monedas**; los más difíciles llegan a **10**. Al completar tu primera tanda de logros recibes un extra de **30 monedas**. Consulta tu progreso con `/logros`.
+- **Logros**: la mayoría de los logros dan **1 moneda** (los 12 primeros, los de bienvenida, no dan monedas). Los de caza (primer conejo, primer venado, primer oso), comprar tu primera mascota, vender en la casa de empeños y otros logros especiales dan **5 monedas**; los más difíciles llegan a **15**. Al completar tus primeros 12 logros recibes un extra de **30 monedas**. Consulta tu progreso con `/logros`.
 - **Racha de conexión**: al alcanzar **22 horas** de racha recibes **1 moneda**.
 - **Navidad**: el regalo del árbol de Navidad entrega entre **15 y 50 monedas** según tu nivel premium y tu antigüedad, además de dinero y un objeto.
 - **Pascua**: los huevos de chocolate pueden esconder **2 o 3 monedas** al comerlos, aunque lo normal es que traigan dinero.
-- **Fentanilo**: consumirlo tiene un **1.5%** de probabilidad de darte **1 moneda**. No es un plan de negocios.
+- **Fentanilo**: consumirlo dentro de una base ilegal tiene un **1.5%** de probabilidad de darte **1 moneda**. No es un plan de negocios.
 
 ## Qué se compra con monedas
 
@@ -104,9 +104,9 @@ También puedes comprar un paquete de **+1.000 Burger Points** por **50 monedas*
 | Trampa para osos | Tienda de caza (Angel Pine) | 1 moneda |
 | Cuchillos de caza | Tienda de caza (Angel Pine) | 30 a 50 monedas |
 | Rifles de caza | Tienda de caza (Angel Pine) | 50 a 125 monedas |
-| Puntos para el buhonero de La Purga | Durante el evento | 10, 25 o 50 monedas |
+| Puntos para el buhonero de La Purga | Durante el evento | 25, 50 o 100 monedas |
 
-La tienda de caza está en el punto de caza de **Angel Pine** y cada artículo exige un mínimo de piezas cobradas: la trampa para osos pide 15 conejos y sólo cuesta **1 moneda**, mientras que el rifle más caro pide 250 venados. Lo tienes desglosado en [Sistema de caza](sistema-de-caza.md). Verificar tu usuario de la red social destaca tu nombre y libra tus publicaciones de la censura de contenido; lo detalla [Bleeter](bleeter.md).
+La tienda de caza está en el punto de caza de **Angel Pine** y cada artículo exige un mínimo de animales cazados en total: la trampa para osos pide 30 y sólo cuesta **1 moneda**, mientras que el rifle más caro pide 500. Lo tienes desglosado en [Sistema de caza](sistema-de-caza.md). Verificar tu usuario de la red social destaca tu nombre y libra tus publicaciones de la censura de contenido; lo detalla [Bleeter](bleeter.md).
 
 ## Beneficios por nivel premium
 
@@ -118,8 +118,8 @@ Cuanto más alto es el nivel, más se acumulan las ventajas. Platino y Rubí com
 |---|---|---|---|---|---|---|
 | Dinero inicial al crear personaje | $5.000 | $10.000 | $15.000 | $20.000 | $25.000 | $50.000 |
 | Extra en cada paga | — | +$100 | +$150 | +$200 | +$250 | +$250 |
-| Puntos de experiencia por nivel | 3 | 5 | 7 | 9 | 11 | 11 |
-| Puntos de habilidad por paga | 1 | 1 | 1 | 1 | 2 | 2 |
+| Puntos de experiencia (para repartir en `/habilidades`) por cada nivel que subes | 3 | 5 | 7 | 9 | 11 | 11 |
+| Experiencia ganada por paga (hacia el siguiente nivel) | 1 | 1 | 1 | 1 | 2 | 2 |
 | Paga extra por jornada laboral | — | — | — | — | +25% | +25% |
 | Licencia de conducir al crear personaje | No | Sí | Sí | Sí | Sí | Sí |
 
@@ -155,10 +155,10 @@ Casi todas las actividades con descanso obligatorio se acortan según tu nivel. 
 
 | Actividad | Bronce | Plata | Oro | Platino | Rubí |
 |---|---|---|---|---|---|
-| Delitos (hurtos, atracos, forzar cerraduras, puentear, desarmar piezas, robos a propiedades…) | — | −25% | −35% | −50% | −50% |
+| Delitos (hurtos, atracos, forzar cerraduras, puentear, robos a propiedades, a cajeros, al banco y a la joyería…) | — | −25% | −35% | −50% | −50% |
 | Producción en zonas de droga | −15% | −25% | −35% | −50% | −50% |
 | Fabricación de armas como contrabandista | −15% | −25% | −35% | −45% | −45% |
-| Robo de vehículos | — | −25% | −35% | −45% | −45% |
+| Desarmar vehículos (piezas y patente) | — | −25% | −35% | −45% | −45% |
 
 Otros tiempos que mejoran con cualquier nivel premium:
 
@@ -173,13 +173,13 @@ Y en la compra de armas:
 
 ### Habilidades de trabajo
 
-**Cualquier** nivel premium duplica la subida de habilidad en los oficios: cuando el juego te concede un punto, tú recibes **dos**. Aplica a camionero, transporte pesado, taxista, basurero, repartidor y mecánico (y en el mecánico también a las subidas mayores: 3 puntos pasan a 6 y 4 pasan a 8).
+**Cualquier** nivel premium duplica la subida de habilidad en los oficios: cuando el juego te concede un punto, tú recibes **dos**. Aplica a camionero, transporte pesado, taxista, basurero, repartidor y mecánico (en el mecánico algunos trabajos dan una subida mayor: de 2 puntos pasan a 3 o a 4).
 
 Además:
 
 - **Camionero**: la probabilidad de que una ruta te dé habilidad crece con tu nivel premium, así que además de subir el doble, subes más a menudo. Ver [Sistema de camionero](sistema-de-camionero.md).
-- **Pesca comercial**: la habilidad sube aproximadamente **1 de cada 3** redes en lugar de 1 de cada 8. Ver [Sistema de pesca](sistema-de-pesca.md).
-- **Delincuente** (sólo **Rubí**): estás exento de la pérdida de habilidad criminal por inactividad. El resto pierde **5 puntos** cada 24 horas sin cometer delitos, salvo los miembros de facciones ilegales destacadas u oficiales. Lo explica [Sistema de delincuente](sistema-de-delincuente.md).
+- **Pesca**: en la pesca comercial la habilidad sube aproximadamente **1 de cada 8** redes en lugar de 1 de cada 20, y en la pesca deportiva sube en **1 de cada 3** pescas perfectas en lugar de 1 de cada 8. Ver [Sistema de pesca](sistema-de-pesca.md).
+- **Delincuente** (sólo **Rubí**): estás exento de la pérdida de habilidad criminal por inactividad. El resto pierde **5 puntos** en cada paga si lleva 24 horas sin cometer delitos, salvo los miembros de facciones ilegales destacadas u oficiales. Lo explica [Sistema de delincuente](sistema-de-delincuente.md).
 
 ### Muerte del personaje y reinicio
 
@@ -212,7 +212,7 @@ Exclusivo de cualquier nivel premium:
 
 Exclusivo de **Oro** en adelante:
 
-- **Muebles personalizados**: acceso a las categorías de modelos exclusivos (misceláneos, mascotas, gimnasio, universidad, moda, joyas, negocios, cocina, tecnología, Halloween, Navidad, rings, puestos, casino, concesionario, talleres, escaleras, murallas, pinturas, toldos, letras y banderas) tanto para el interior de tus propiedades como para los exteriores de los negocios. Las escaleras y las murallas solo se pueden usar en interiores.
+- **Muebles personalizados**: acceso a las categorías de modelos exclusivos (misceláneos, mascotas, gimnasio, universidad, moda, joyas, negocios, cocina, tecnología, Halloween, Navidad, rings, puestos, casino, concesionario, talleres, escaleras, murallas, pinturas, toldos, letras, banderas y LS City) tanto para el interior de tus propiedades como para los exteriores de los negocios. Las escaleras y las murallas solo se pueden usar en interiores.
 - **Dron**: puedes usar `/drone` sin ser detective, policía o bombero y sin necesitar 70 de habilidad de electrónica. Ver [Sistema de detectives privados](sistema-de-detectives-privados.md).
 - **Graffitis en interiores**: puedes pintar dentro de propiedades y no sólo en la calle.
 
@@ -222,7 +222,7 @@ Exclusivo de **Rubí**:
 
 Exclusivo de **Platino** y **Rubí**:
 
-- Mejores regalos en el árbol de Navidad, con más monedas y más dinero.
+- Los mejores regalos en el árbol de Navidad: **50 monedas** y más dinero (Oro recibe 25 monedas y el resto, 15).
 - Acceso a las armas reservadas en los eventos de supervivencia: el **spray** y el **extintor** desde Platino, y la **katana** sólo para Rubí.
 
 ## Consejos

@@ -95,8 +95,8 @@ La sala admite hasta **16 jugadores**. Los demás la encuentran en **Salas priva
 - Apareces en un punto de la arena y quedas inmovilizado **1 segundo**. Tienes **100 de vida** y **sin chaleco**.
 - Recibes el arma de la sala en la mano derecha, con munición ilimitada. En TDM apareces en la zona de tu equipo.
 - Al ser eliminado, pulsa la **tecla N** para reaparecer. No hace falta que te curen: la herida se borra al reaparecer.
-- Un marcador en pantalla muestra el estado de la partida. En DM, el líder y sus eliminaciones. En TDM, el puntaje rojo contra el azul. En las salas con tiempo, también la cuenta atrás.
-- En TDM no hay **fuego amigo**. Los colores de equipo, rojo y azul, solo los ves tú y tus compañeros **dentro de la sala**.
+- Un marcador en pantalla muestra el estado de la partida. En TDM, el puntaje rojo contra el azul. En una sala privada DM, el líder y sus eliminaciones. En las salas públicas DM no aparece marcador. En las salas con tiempo, también la cuenta atrás.
+- En TDM no hay **fuego amigo**. Los colores de equipo, rojo y azul, solo los ven los jugadores **dentro de la sala**, tanto tus compañeros como los rivales.
 - El daño del paintball no sale de la sala, y tampoco entra: nadie de fuera puede dispararte.
 - Lo que escribes en el chat normal va a un chat propio de la sala, con el prefijo `[Paintball]`, que solo ven los jugadores de la partida. Avisos como los ingresos, las salidas y cada eliminación también llegan a toda la sala.
 - Dentro de la sala no puedes usar el inventario con normalidad, ni taclear. Tampoco te desangras ni dejas rastros forenses.

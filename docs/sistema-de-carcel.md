@@ -36,8 +36,8 @@ El oficial arma entonces un **reporte de arresto**: escribe una descripción del
 
 Existen límites para evitar sobrecargar un arresto:
 
-- Un oficial común no puede procesar un arresto con **6 o más cargos**; esos casos deben pasar por la fiscalía o el FBI.
-- Tampoco puede procesar **3 o más cargos de la misma categoría** del código penal.
+- Un oficial común no puede procesar un arresto con **más de 6 cargos**; esos casos deben pasar por la fiscalía, el FBI o un juez.
+- Tampoco puede procesar **más de 3 cargos de la misma categoría** del código penal.
 
 ### Cómo se calcula tu condena
 
@@ -63,11 +63,11 @@ Los cargos se agrupan en ocho categorías: delitos contra el estado, contra la j
 
 | Tipo | Tiempo de cárcel | Multa habitual | Puntos criminales |
 |---|---|---|---|
-| **Infracción** | Sin cárcel | $240 – $6.000 | **1** |
-| **Menor** | 15 a 45 minutos | $570 – $25.000 | **3** |
-| **Grave** | 15 a 60 minutos | $1.000 – $150.000 | **5** |
+| **Infracción** | Sin cárcel | $240 – $9.600 | **0** |
+| **Menor** | 15 a 45 minutos | $570 – $25.000 | **1** |
+| **Grave** | 15 a 60 minutos | $1.000 – $150.000 | **2** |
 
-Los tiempos de cárcel del código penal son escalones fijos de **15, 30, 45 y 60 minutos**. Solo un cargo excepcional (homicidio intencional de un agente federal) llega a **360 minutos**, y dos cargos implican directamente cadena perpetua: homicidio en primer grado con perpetua y la agravante de reincidencia grave.
+Los tiempos de cárcel del código penal son escalones fijos de **15, 30, 45 y 60 minutos**. Un cargo excepcional (homicidio intencional de un agente federal) figura con 360 minutos, pero el tope de **180 minutos** también lo recorta. Dos cargos implican directamente cadena perpetua: homicidio en primer grado con perpetua y la agravante de reincidencia grave.
 
 Los cargos más pesados combinan 60 minutos de cárcel con multas muy altas: lavado de dinero **$150.000**, posesión de rifles de asalto o .50 BMG **$120.000**, homicidio intencional de un oficial de la paz **$50.000** más 15 días de condicional.
 
@@ -111,7 +111,7 @@ Ser arrestado te cuesta puntos de **habilidad de delincuente** y de **habilidad 
 | 25 a 48 minutos | **50 puntos** |
 | 49 minutos o más | **60 puntos** |
 
-Como la condena mínima es de 5 minutos, cualquier arresto cuesta al menos 20 puntos de cada habilidad, y una condena típica de 30 minutos cuesta 50. La pérdida se aplica a las dos habilidades por separado si tienes ambas. Más detalles sobre cómo se gana y se pierde esa experiencia en el [sistema de delincuente](sistema-de-delincuente.md).
+Como la condena mínima es de 5 minutos, cualquier arresto cuesta al menos 20 puntos de cada habilidad, y una condena típica de 30 minutos cuesta 50. La pérdida se aplica a las dos habilidades por separado si tienes ambas. Si perteneces a una facción ilegal oficial pierdes solo la mitad de esos puntos, y si es una facción destacada, tres cuartos. Más detalles sobre cómo se gana y se pierde esa experiencia en el [sistema de delincuente](sistema-de-delincuente.md).
 
 ## Twin Towers Correctional Facility
 
@@ -131,7 +131,7 @@ Mientras una celda está desbloqueada, cualquiera puede abrir o cerrar su reja c
 
 ### Uniforme de interno
 
-Al ingresar, los hombres eligen su uniforme de preso desde un catálogo visual, y pueden cambiarlo las veces que quieran con `/uniformecarcel`. Las mujeres no tienen uniforme de preso.
+La primera vez que ingresan, los hombres eligen su uniforme de preso desde un catálogo visual; en los ingresos siguientes conservan el último que elegiste. Puedes cambiarlo las veces que quieras con `/uniformecarcel`. Las mujeres no tienen uniforme de preso.
 
 ## Pasillo de servicios
 
@@ -277,7 +277,7 @@ Ambos avisos están disponibles solo para **internos hombres**, porque las mujer
 
 ## Cumplir y salir
 
-El tiempo de cárcel **solo corre mientras estás conectado y sin pausar el juego**: desconectarte no acorta la condena. La ventaja de estar dentro es poder rolear, trabajar para acortarla, leer, comer y bajar puntos criminales. Los 15 minutos obligatorios se cumplen igual, después de la condena.
+El tiempo de cárcel **solo corre mientras estás conectado y sin pausar el juego**: desconectarte no acorta la condena. La ventaja de estar dentro es poder rolear, trabajar para acortarla, leer, comer y bajar puntos criminales. Los 15 minutos obligatorios ya forman parte del total que te falta.
 
 Cuando tu tiempo llega a cero, usa `/salircarcel` para quedar libre. Al salir se destruye lo que hayas acumulado dentro de la prisión, recuperas tu apariencia normal y tus pertenencias en custodia, y apareces en la puerta del recinto como exconvicto.
 
@@ -295,7 +295,7 @@ Los guardias de la cárcel y el personal judicial pueden iniciar un **traslado a
 
 ### Prisión preventiva
 
-Un juez puede decretar **prisión preventiva** por hasta **7 días** mientras se investiga tu caso. Estando en preventiva no tienes un contador de condena que consultar ni puedes liberarte por tu cuenta: cuando el plazo expira, el sistema te libera automáticamente. Si después llega una condena firme, esta reemplaza la preventiva. El detalle del proceso está en el [sistema de justicia](sistema-de-justicia.md).
+Un juez puede decretar **prisión preventiva** por hasta **7 días** a un interno mientras se investiga su caso. Estando en preventiva no tienes un contador de condena que consultar ni puedes liberarte por tu cuenta con `/salircarcel`: cuando el plazo expira, o cuando el juez te saca de la preventiva, el sistema te avisa y ya puedes usar `/salircarcel` (siempre que no te quede condena por cumplir). Si después llega una condena firme, esta reemplaza la preventiva. El detalle del proceso está en el [sistema de justicia](sistema-de-justicia.md).
 
 ## Libertad condicional
 
@@ -305,7 +305,7 @@ Durante ese periodo llevas una **tobillera** y debes cumplir 15 reglas estrictas
 
 Los **guardias del SADCR en servicio** supervisan a los parolees: pueden **rastrear tu tobillera**, y al hacerlo apareces marcado en su radar durante **5 minutos**; no pueden repetir el rastreo del mismo parolee hasta pasados **15 minutos**. También tienen una lista de los parolees conectados, y los ordenadores policiales muestran en la ficha de cada persona si su condicional está vigente, vencida o sin fecha.
 
-Puedes pedir la presencia de un oficial de libertad condicional cada **15 minutos** para cuestiones relacionadas con tu situación: los guardias de servicio reciben el aviso y tu posición queda marcada en su mapa durante **5 minutos**. Cuando vence el plazo, debes terminar voluntariamente la condicional con `/terminarparole` para quitarte la tobillera: no se cae sola.
+Puedes pedir la presencia de un oficial de libertad condicional cada **15 minutos** para cuestiones relacionadas con tu situación: los guardias de servicio reciben el aviso y tu posición queda marcada en su mapa durante **5 minutos**. Solo puedes hacerlo si hay al menos un guardia de servicio. Cuando vence el plazo, debes terminar voluntariamente la condicional con `/terminarparole` para quitarte la tobillera: no se cae sola.
 
 Con un arma o una herramienta cortante puedes **cortar la tobillera** y convertirte en **prófugo**: tu condicional queda en pausa hasta que te arresten, y la ciudad entera te busca. Todo el detalle está en el [sistema de prófugos](sistema-de-profugos.md).
 
@@ -319,13 +319,13 @@ Con un arma o una herramienta cortante puedes **cortar la tobillera** y converti
 
 ## Pedidos ilegales de las penitenciarías
 
-Las facciones penitenciarias oficiales pueden encargar armas y drogas por teléfono, sin ensamblar ni cocinar nada. Cada pedido cuesta influencia en la zona de la prisión y llega a un punto de entrega a los pocos minutos. Los requisitos y los enfriamientos están en [facciones ilegales](facciones-ilegales.md).
+Las facciones penitenciarias oficiales pueden encargar armas y drogas por teléfono, sin ensamblar ni cocinar nada. Cada pedido cuesta influencia en la zona de la prisión y llega a un punto de entrega entre 25 y 35 minutos después. Los requisitos y los enfriamientos están en [facciones ilegales](facciones-ilegales.md).
 
 ## Personajes en perpetua
 
 Los personajes que deseen ingresar **permanentemente** a la cárcel (para roles de Mafia Mexicana, PEN1 u otras facciones carcelarias) pueden hacerlo acercándose al acceso principal del recinto y usando `/encarcelarme`.
 
-La perpetua implica una condena de **3 meses** y **no es reversible**. Las únicas formas de salir son cumplir los tres meses completos o solicitar un **Character Kill** del personaje. No habrá arrepentimientos ni devoluciones por el tiempo cumplido, y al entrar se te confisca el contrabando y el resto de tu inventario queda en custodia igual que en un arresto normal.
+La perpetua implica una condena de **3 meses** en tiempo real, estés conectado o no, y **no es reversible**. Las únicas formas de salir son cumplir los tres meses completos o solicitar un **Character Kill** del personaje. No habrá arrepentimientos ni devoluciones por el tiempo cumplido, y al entrar se te confisca el contrabando y el resto de tu inventario queda en custodia igual que en un arresto normal.
 
 No puedes encarcelarte voluntariamente si eres prófugo.
 

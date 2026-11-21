@@ -26,7 +26,7 @@ Los sistemas relacionados están en [Facciones legales](facciones-legales.md), [
 
 - `/pruebaadn [jugador]` — solicita registrar el ADN de un sospechoso en la base de datos.
 - `/pruebapolvora [jugador]` — solicita una prueba de residuos de pólvora para saber si disparó.
-- `/pruebadrogas [jugador]` — solicita una prueba de sustancias en sangre.
+- `/pruebadrogas [jugador]` — solicita una prueba de sustancias en sangre; la hace un policía, paramédico, bombero o personal de justicia en servicio con un hisopo de laboratorio en la mano derecha, que se consume.
 - `/donacionsangre [jugador]` — pide a alguien donar sangre; también deja su ADN registrado.
 - `/alcoholimetro [jugador]` (alias `/alcotest`) — mide la tasa de alcohol de una persona; ver [Alcoholímetro](#alcoholímetro).
 - `/aceptar` y `/rechazar` — los usa el sospechoso para consentir o negarse a las pruebas de ADN, pólvora, drogas y donación de sangre.
@@ -52,7 +52,7 @@ Los casquillos quedan apoyados en el suelo, también dentro de interiores y edif
 
 Los disparos hechos dentro de una **sala de paintball** y durante los eventos especiales del servidor no generan casquillos. Los policías en servicio tampoco los dejan.
 
-Si sigues disparando la misma arma en el mismo sitio, los casquillos se agrupan en un único montón mientras no te alejes más de **10 metros** del anterior.
+Si sigues disparando la misma arma en el mismo sitio, los casquillos del mismo estado se agrupan en un único montón mientras no te alejes más de **10 metros** del anterior.
 
 ### Qué revela un casquillo
 
@@ -82,7 +82,7 @@ Necesitas además la **mano derecha libre**, y hay dos condiciones que pueden ar
 
 > **Casquillo caliente:** por encima de **50 °C** te quemarías. Si no llevas **guantes** puestos no podrás levantarlo y tendrás que esperar a que se enfríe, algo más de ocho minutos desde el disparo.
 
-> **Casquillo en pésimo estado:** algunos se rompen en el intento y se pierden para siempre. No hay forma de recuperarlos.
+> **Casquillo destruido:** puedes recogerlo igual, pero el laboratorio lo descarta, así que no sirve como prueba.
 
 Los casquillos recogidos se convierten en un objeto de inventario que conserva su calibre, número identificador, estado y la hora del disparo original.
 
@@ -96,11 +96,11 @@ Los casquillos que nadie recoge permanecen en el lugar hasta el **reinicio diari
 
 Las manchas de sangre aparecen automáticamente en tres situaciones:
 
-- Cuando alguien recibe un **balazo** que atraviesa la ropa (los impactos detenidos por el chaleco no sangran).
+- Cuando alguien recibe un **balazo** que atraviesa la ropa (los impactos detenidos por el chaleco no sangran, ni tampoco los de armas no letales como el táser o la escopeta de goma).
 - Cuando alguien es herido con un **arma blanca**: cuchillo, katana o puño americano.
 - Cada vez que un herido **se desangra** mientras espera atención médica.
 
-No siempre queda rastro: hay un **60% de probabilidad** de que la herida deje mancha. Tampoco se crean si la víctima está dentro de un vehículo, en una sala de paintball o durante eventos especiales. Las manchas quedan apoyadas en el suelo, también en interiores. Como cada sangrado puede generar una nueva, un herido que camina dejando un reguero marca literalmente su recorrido por el mapa.
+No siempre queda rastro: hay un **60% de probabilidad** de que la herida deje mancha. Tampoco se crean si la víctima está dentro de un vehículo, en una sala de paintball o durante eventos especiales, ni cuando la víctima es un policía en servicio. Las manchas quedan apoyadas en el suelo, también en interiores. Como cada sangrado puede generar una nueva, un herido que camina dejando un reguero marca literalmente su recorrido por el mapa.
 
 ### Quién puede recoger muestras
 
@@ -120,7 +120,7 @@ Hay tres formas de que el ADN de un personaje quede registrado:
 
 | Situación | Quién la realiza | Qué se necesita |
 | --- | --- | --- |
-| **Ingreso a prisión** | Automático al entrar a la Twin Towers | Nada, es parte del procedimiento carcelario |
+| **Arresto** | Automático al finalizar el reporte de arresto del detenido | Nada, es parte del procedimiento de arresto |
 | **Prueba voluntaria** (`/pruebaadn`) | Policías, paramédicos, bomberos y justicia en servicio | Un **hisopo de laboratorio** en la mano derecha y el consentimiento del sospechoso |
 | **Donación de sangre** (`/donacionsangre`) | Paramédicos y bomberos en servicio | El consentimiento del donante |
 
@@ -171,7 +171,7 @@ Las dos infracciones se sancionan con multa e incautación del vehículo, sin ar
 
 ## Huellas dactilares
 
-Cada objeto del inventario guarda las huellas de **todos los que lo han tenido en las manos**. Se registran automáticamente cada vez que tomas un objeto: al sacarlo del inventario, de un paquete o de tu equipo de facción, al recibirlo de otra persona o al robárselo a alguien.
+Cada objeto del inventario guarda las huellas de **todos los que lo han tenido en las manos**. Se registran automáticamente cada vez que tomas un objeto: al sacarlo del inventario, de un paquete o de tu equipo de facción, al recogerlo del suelo, al recibirlo de otra persona o al robárselo a alguien.
 
 ### Cómo evitar dejarlas
 
@@ -227,11 +227,11 @@ Es más que burocracia: la etiqueta es lo que luego permite encontrar la evidenc
 
 `/evidencias buscar` acepta tres formas de búsqueda y devuelve hasta **10 coincidencias**:
 
-- Por **etiqueta**, con texto parcial.
-- Por **fecha** de guardado.
-- Por **número identificador**.
+- Por **etiqueta**, con el comienzo del texto.
+- Por **fecha** de guardado, con el comienzo de la fecha.
+- Por **número identificador**, con el comienzo del número.
 
-Retirar una evidencia con `/evidencias sacar` está más restringido que guardarla. Se exige mando dentro de la agencia: **detective o sargento** en la policía de Los Santos y en el departamento del alguacil, **supervisor** en la agencia forestal y **liderazgo** en las agencias federales. Hace falta además la mano derecha libre.
+Retirar una evidencia con `/evidencias sacar` está más restringido que guardarla. Se exige mando dentro de la agencia: **detective o sargento** en la policía de Los Santos y en el departamento del alguacil, **supervisor** en la agencia forestal y **liderazgo** en las agencias federales; en la justicia no se pide rango. Hace falta además la mano derecha libre.
 
 ### Bitácora de custodia
 
@@ -249,12 +249,12 @@ El reporte sale como un documento clasificado con fecha, agencia investigadora y
 
 ### Análisis de casquillos
 
-El laboratorio compara las marcas microscópicas del casquillo contra el registro de armas. Solo cuentan los casquillos en buen estado:
+El laboratorio compara las marcas microscópicas del casquillo contra el registro de armas. Solo se descartan los casquillos destruidos:
 
 | Estado del casquillo | Resultado |
 | --- | --- |
 | **Destruido** | Se descarta por completo, ni siquiera aparece en el reporte |
-| **Severamente dañado** | Solo **una cuarta parte** de los casquillos de ese lote da coincidencia |
+| **Severamente dañado** | Coinciden todos |
 | **Bueno** | Coinciden todos |
 | **Excelente** | Coinciden todos |
 
@@ -288,7 +288,7 @@ A diferencia del ADN, **no hace falta ningún registro previo** para identificar
 
 ### Análisis de hisopos
 
-Los hisopos usados en las pruebas de drogas también pueden guardarse como evidencia; el laboratorio devuelve las sustancias que detectaron. Más detalle sobre consumo y detección en [Sistema de drogas](sistema-de-drogas.md).
+Los hisopos con una muestra de fluidos tomada de un cadáver (`/cadaver muestraadn`) también pueden guardarse como evidencia; el laboratorio devuelve las huellas que quedaron registradas en ese cuerpo. Los hisopos de las pruebas de ADN y de drogas se consumen al hacer la prueba, así que no se pueden guardar. Más detalle sobre consumo y detección de sustancias en [Sistema de drogas](sistema-de-drogas.md).
 
 ---
 

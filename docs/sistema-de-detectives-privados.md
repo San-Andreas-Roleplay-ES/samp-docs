@@ -47,7 +47,7 @@ Estos son los aparatos que definen el oficio, con el precio ya duplicado que pag
 |---|---|---|
 | Micrófono espía | **$70.000** | Se planta en el lugar y capta lo que se habla alrededor. |
 | Receptor de micrófonos ocultos | **$130.000** | Escucha todos los micrófonos activos en 300 metros. |
-| Detector de micrófonos ocultos | **$10.000** | Localiza micrófonos en 10 metros (**10 usos**). |
+| Detector de micrófonos ocultos | **$10.000** | Localiza micrófonos encendidos en 20 metros (**10 usos**). |
 | Rastreador GPS | **$50.000** | Se coloca en el objetivo para seguirlo en el mapa. |
 | Receptor de rastreadores GPS | **$130.000** | Muestra los rastreadores dentro de 300 metros. |
 | Dispositivo StingRay | **$180.000** | Intercepta las comunicaciones de un número de teléfono. |
@@ -75,9 +75,9 @@ Si guardas la laptop o cambias de personaje mientras se procesa una consulta, el
 | Consulta | Precio | Qué devuelve |
 |---|---|---|
 | Información por **nombre** | **$50.000** | Ficha del personaje: edad, si su cuenta bancaria está bloqueada, situación de libertad condicional o de prófugo, licencias vigentes (con sus puntos de infracción, o la fecha hasta la que está suspendida la de conducir), teléfonos (hasta 5), propiedades, vehículos (con aviso de registro vencido) y multas pendientes (las 6 de mayor importe). |
-| Información por **matrícula** | **$25.000** | Modelo, propietario (persona, facción o empresa), estado del registro del vehículo e indicación de si está denunciado como robado. |
+| Información por **matrícula** | **$25.000** | Modelo, propietario (persona, facción o empresa), estado del registro del vehículo e indicación de si fue denunciado como robado en las últimas 12 horas. |
 | Información por **propiedad** | **$10.000** | Tipo de propiedad, dirección y dueño o arrendatario. Las propiedades de facciones no aparecen. |
-| Información por **teléfono** | **$10.000** | Tipo de línea (prepago anónima, comercial o personal), titular, fecha de contrato y cantidad de SMS registrados. |
+| Información por **teléfono** | **$10.000** | Tipo de línea (prepago anónima, comercial o personal), titular, fecha de contrato y cantidad de SMS registrados (en las líneas prepago el titular es anónimo y no se muestran los SMS). |
 | Información por **serial de arma** | **$50.000** | Modelo, titular y propiedad donde se registró el arma. En las armas de facción el titular es la facción. |
 | **Armas por propietario** | **$100.000** | Listado de armas registradas a nombre de una persona, hasta **64**. Si tiene más, la lista lo avisa. No incluye las armas de facción. |
 
@@ -97,16 +97,16 @@ Los micrófonos funcionan en tres piezas que se compran por separado y se comple
 | Captación dentro de una propiedad | **8 metros** |
 | Captación de conversaciones en voz baja o susurros | **5 metros** |
 | Alcance del receptor | **300 metros** |
-| Alcance del detector | **10 metros** |
+| Alcance del detector | **20 metros** |
 | Batería del micrófono encendido | **60 minutos** |
 
 ### Cómo funciona
 
-Enciendes el micrófono con `/encendermicrofono` teniéndolo en la mano derecha y luego lo dejas donde quieras vigilar. A partir de ahí, cualquier frase hablada en su radio —conversación normal, susurro, acción de `/me`, descripción de `/do` o grito— se reenvía a **todos los receptores encendidos** que estén dentro de 300 metros del micrófono.
+Enciendes el micrófono con `/encendermicrofono` teniéndolo en la mano derecha y luego lo dejas donde quieras vigilar. A partir de ahí, cualquier frase dicha en su radio —conversación normal, susurro, grito o lo que se hable por teléfono— se reenvía a **todos los receptores encendidos** que estén dentro de 300 metros del micrófono.
 
-Cada frase interceptada llega al receptor indicando la distancia a la que se dijo y un número anónimo que identifica al hablante, pero **no su nombre**. Reconocer quién es quién forma parte del trabajo: tendrás que cruzarlo con lo que veas en el terreno.
+Cada frase interceptada llega al receptor indicando la distancia a la que tú te encuentras del micrófono y un número anónimo que identifica al hablante, pero **no su nombre**. Reconocer quién es quién forma parte del trabajo: tendrás que cruzarlo con lo que veas en el terreno.
 
-El detalle más aprovechable es que un micrófono **dentro de una propiedad** también alcanza a los receptores que estén **en la calle, cerca de la entrada** de esa propiedad. No hace falta entrar para oír lo que pasa dentro: basta con dejar el micrófono y quedarse aparcado enfrente.
+El detalle más aprovechable es que un micrófono **dentro de una propiedad** también alcanza a los receptores que estén **en la calle, a menos de 300 metros de la entrada** de esa propiedad. No hace falta entrar para oír lo que pasa dentro: basta con dejar el micrófono y quedarse aparcado enfrente.
 
 La batería se agota sola a los 60 minutos y el micrófono se apaga. Puedes apagarlo antes con `/apagarmicrofono`, que exige más pericia que encenderlo: desmontarlo sin romperlo es lo difícil.
 
@@ -143,7 +143,7 @@ El drone es un aparato de radiocontrol que pilotas desde el **asiento trasero** 
 - Estar en el **asiento trasero** de una Topfun Van, al aire libre (nada de interiores).
 - Cumplir **al menos una** de estas condiciones: ser **detective privado**, ser **policía**, ser **bombero**, tener **70 o más de habilidad de electrónica**, o tener **premium oro** o superior.
 
-La policía puede además pilotar desde un Enforcer, y los bomberos desde su unidad de incendios, donde disponen de un modelo propio equipado con chorro de agua.
+La policía puede además pilotar desde una Burrito, y los bomberos desde su unidad de incendios, donde disponen de un modelo propio equipado con chorro de agua.
 
 ### Modelos y alcance
 
@@ -169,13 +169,13 @@ Si superas el alcance, el drone **pierde señal y se apaga en el sitio**; en cua
 
 ## Escuchas telefónicas (StingRay)
 
-La StingRay es un maletín que, llevado en la mano derecha, se sintoniza con un **número de teléfono concreto** y a partir de ahí intercepta las comunicaciones asociadas a ese número.
+La StingRay es un maletín que, llevado en la mano derecha, se sintoniza con un **número de teléfono concreto** y a partir de ahí intercepta lo que se habla por teléfono en las llamadas de ese número.
 
 ### Quién puede usarla
 
 - **Detectives privados**, sin necesidad de estar en servicio.
 - **Policías con rango de supervisor**, en servicio.
-- **Agentes de la JSA con rango de supervisor**, en servicio.
+- **Agentes de la JSA**, en servicio.
 
 ### Alcances
 
@@ -185,19 +185,19 @@ La StingRay es un maletín que, llevado en la mano derecha, se sintoniza con un 
 | Radio en el que se oye el mensaje interceptado | **10 metros** alrededor del operador |
 | Rango de números válidos | de **0** a **999999999** |
 
-`/interceptarnumero [número]` sintoniza el aparato. A partir de ese momento, los mensajes enviados desde o hacia ese teléfono, cuando el emisor esté dentro de los 300 metros de la StingRay, aparecen en tu chat identificando el número del emisor y el contenido del mensaje.
+`/interceptarnumero [número]` sintoniza el aparato. A partir de ese momento, lo que se diga en una llamada en la que participe ese número, mientras su titular esté dentro de los 300 metros de la StingRay, aparece en tu chat identificando el número de quien habla y lo que dice. Solo capta lo dicho en voz normal: lo que se susurra por teléfono no se intercepta.
 
-Ojo con el radio de emisión: el mensaje interceptado lo lee **cualquiera que esté a menos de 10 metros de ti**. Escuchar en una plaza llena significa compartir la escucha con todos los presentes; hazlo dentro de un vehículo o en un sitio apartado.
+Ojo con el radio de emisión: lo interceptado lo lee **cualquiera que esté a menos de 10 metros de ti**. Escuchar en una plaza llena significa compartir la escucha con todos los presentes; hazlo dentro de un vehículo o en un sitio apartado.
 
-Igual que los micrófonos, la StingRay atraviesa la barrera interior/exterior: si el operador está dentro de una propiedad, la captación se calcula desde la puerta de esa propiedad hacia fuera.
+Igual que los micrófonos, la StingRay atraviesa la barrera interior/exterior: si quien habla por teléfono está dentro de una propiedad, la captación se calcula desde la puerta de esa propiedad hacia fuera, de modo que el operador puede estar en la calle.
 
 ## Autoradares de vehículo
 
-El autoradar convierte una furgoneta en una unidad móvil de escucha de comunicaciones. En lugar de seguir un número concreto como la StingRay, barre **todo lo que se habla** en su radio y lo vuelca dentro del vehículo.
+El autoradar convierte una furgoneta en una unidad móvil de escucha de comunicaciones. En lugar de seguir un número concreto como la StingRay, barre **todas las llamadas telefónicas** en su radio y vuelca lo que se dice dentro del vehículo.
 
 ### Requisitos
 
-- Ser **detective privado** (sin necesidad de servicio), **supervisor de policía** en servicio o **supervisor de la JSA** en servicio.
+- Ser **detective privado** (sin necesidad de servicio), **supervisor de policía** en servicio o **agente de la JSA** en servicio.
 - Ser el **conductor** del vehículo.
 - Llevar una **laptop en la mano derecha**.
 
@@ -207,11 +207,11 @@ El autoradar convierte una furgoneta en una unidad móvil de escucha de comunica
 |---|---|
 | Boxville | Cualquier autorizado |
 | Newsvan | Cualquier autorizado |
-| Enforcer | Solo policías |
+| Burrito | Solo policías |
 
 ### Funcionamiento
 
-`/autoradar` instala el equipo si el vehículo no lo tiene y lo desinstala si ya estaba puesto. Una vez instalado, todo lo que se hable dentro de **300 metros** del vehículo llega al chat de **quienes van dentro** —solo ellos—, indicando la distancia a la que se dijo y un número anónimo por hablante.
+`/autoradar` instala el equipo si el vehículo no lo tiene y lo desinstala si ya estaba puesto. Una vez instalado, lo que se diga por teléfono (en voz normal o susurrando) dentro de **300 metros** del vehículo, en el mismo mundo exterior o interior que él, llega al chat de **quienes van dentro** —solo ellos—, indicando la distancia a la que se dijo y un número anónimo por hablante. Capta a cualquiera de los dos extremos de la llamada que esté en ese radio.
 
 Es la herramienta más potente del arsenal y también la más fácil de detectar: deja la huella de señal más fuerte de todas.
 
@@ -245,7 +245,7 @@ La licencia de detective también da acceso a tareas de recogida de pruebas que 
 
 - `/recogercasquillo` — recoges un casquillo del suelo. Necesitas la mano derecha libre y el casquillo tiene que estar **frío**: si acaba de ser disparado, quema, salvo que lleves guantes puestos. Los casquillos muy deteriorados se rompen al levantarlos.
 - `/recogersangre` — tomas una muestra de sangre del suelo, también con la mano derecha libre. A diferencia de la policía, tú **no necesitas estar en servicio** para hacerlo.
-- Los detectives pueden manipular **bolsas de cadáveres**, algo que en general requiere estómago (habilidad de delincuente alta) o ser paramédico.
+- Los detectives pueden manipular **bolsas de cadáveres**, algo que en general requiere estómago (habilidad de delincuente de 50 o más) o ser paramédico.
 
 Qué hacer después con esas muestras —análisis, comparación de huellas y valor probatorio— se explica en el **[sistema forense](sistema-forense.md)**.
 
@@ -271,12 +271,12 @@ El resto del funcionamiento de los explosivos está en el **[sistema de bombas](
 | `/detectarmicrofono` | Detective o electrónica 15+ | Detector de micrófonos |
 | `/rastreargps` | Detective o electrónica 5+ | Receptor de rastreadores GPS |
 | `/drone` | Detective, policía, bombero, electrónica 70+ o premium oro | Topfun Van |
-| `/interceptarnumero` | Detective, o supervisor de policía/JSA en servicio | StingRay |
-| `/autoradar` | Detective, o supervisor de policía/JSA en servicio | Laptop + Boxville, Newsvan o Enforcer |
+| `/interceptarnumero` | Detective, o supervisor de policía / JSA en servicio | StingRay |
+| `/autoradar` | Detective, o supervisor de policía / JSA en servicio | Laptop + Boxville, Newsvan o Burrito |
 | `/detectarsenal` | Detective o electrónica 15+ | Detector de receptores de señal |
 | `/desactivarbomba` | Detective o electrónica 5+ | Kit de desactivación de bombas |
-| `/recogercasquillo` | Detective, policía científica o delincuente 70+ | Mano derecha libre |
-| `/recogersangre` | Detective o policía científica en servicio | Mano derecha libre |
+| `/recogercasquillo` | Detective, policía, JSA o delincuente 70+ | Mano derecha libre |
+| `/recogersangre` | Detective, o policía / JSA en servicio | Mano derecha libre |
 
 ## Consejos
 

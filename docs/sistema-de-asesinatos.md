@@ -4,7 +4,7 @@
 
 ## Introducción
 
-Matar en San Andreas Roleplay tiene consecuencias que van más allá del momento del disparo. Cada muerte que provocas queda registrada en el historial de tu personaje y alimenta un **contador de asesinatos**. Mientras ese contador se mantenga por debajo de tu límite personal, tu personaje sigue siendo un criminal como cualquier otro; cuando lo supera, deja de tener segundas oportunidades: la siguiente vez que muera, morirá de forma **definitiva y permanente**.
+Matar en San Andreas Roleplay tiene consecuencias que van más allá del momento del disparo. Cada muerte que provocas queda registrada en el historial de tu personaje y alimenta un **contador de asesinatos**. Mientras ese contador se mantenga por debajo de tu límite personal, tu personaje sigue siendo un criminal como cualquier otro; cuando lo alcanza, deja de tener segundas oportunidades: la siguiente vez que muera, morirá de forma **definitiva y permanente**.
 
 Ese desgaste se refleja en pantalla como **salud mental**: una barra que aparece brevemente cuando matas a alguien, cuando revisas un cadáver o cuando tu situación cambia. Cuanto más llena está, más lejos estás del límite; cuanto más vacía, más cerca del punto de no retorno.
 
@@ -23,7 +23,7 @@ Este documento explica cómo se cuentan los asesinatos, cómo se recuperan, y c�
 
 ### Qué cuenta y qué no
 
-Tu contador suma **una muerte por cada personaje que matas con un arma**, sea de fuego, blanca o contundente. La muerte queda asociada a ti, a la víctima y al arma empleada.
+Tu contador suma **una muerte por cada personaje que matas con un arma** que lleves en la mano derecha, sea de fuego, blanca o contundente. Se registra en el momento en que la víctima cae herida de muerte, y queda asociada a ti, a la víctima y al arma empleada.
 
 | Situación | ¿Suma al contador? |
 |---|---|
@@ -31,7 +31,7 @@ Tu contador suma **una muerte por cada personaje que matas con un arma**, sea de
 | Muertes dentro de una partida de **paintball** | No |
 | Muertes durante la **Purga** | No |
 | Muertes durante los **Hunger Games** | No |
-| Muertes en las que no se puede identificar un arma en tus manos | No |
+| Muertes en las que no llevas ningún arma en la mano derecha | No |
 
 Además, hay personajes que **no acumulan índice de peligrosidad** por su rol institucional: los miembros de la **policía**, de las agencias de **investigación y justicia**, de las fuerzas **militares** y del **cuerpo de seguridad privada**. Para ellos el contador se mantiene siempre en cero mientras pertenezcan a esas facciones, porque se entiende que el uso de la fuerza forma parte de su trabajo. Puedes ver el detalle de cada organización en [Facciones legales](facciones-legales.md).
 
@@ -60,11 +60,11 @@ Mientras estás preso, el límite base baja de 10 a **5**. Como la barra de salu
 
 ### Qué pasa al superarlo
 
-Superar el límite **no te mata de inmediato**. Lo que cambia es lo que ocurre la próxima vez que tu personaje muera: en lugar de poder reaparecer, sufrirá un **CK (Character Kill)**, es decir, una **muerte permanente**. Pierdes el personaje con todas sus propiedades, estadísticas e inventarios, sin forma de recuperarlos, y su **cadáver queda en el lugar** con todo lo que llevaba encima, como se explica en [Sistema de cadáveres](sistema-de-cadaveres.md).
+Llegar al límite (o pasarlo) **no te mata de inmediato**. Lo que cambia es lo que ocurre la próxima vez que tu personaje muera, o que caiga con heridas gravísimas, como un disparo en la cabeza: en lugar de poder reaparecer, sufrirá un **CK (Character Kill)**, es decir, una **muerte permanente**. Pierdes el personaje con todas sus propiedades, estadísticas e inventarios, sin forma de recuperarlos, y su **cadáver queda en el lugar** con todo lo que llevaba encima, como se explica en [Sistema de cadáveres](sistema-de-cadaveres.md).
 
 El servidor te avisa de esta situación de tres formas:
 
-- **Al conectarte**, si ya estás por encima del límite, se te muestra la barra de salud mental junto con el aviso.
+- **Al conectarte**, si ya estás en el límite o por encima, se te muestra la barra de salud mental.
 - **Cuando matas a alguien**, la barra aparece con un **60% de probabilidad**, mostrando cuánto margen te queda.
 - **Cuando tu felicidad baja** y, al perder su bonus, cruzas el límite sin haber matado a nadie más, recibes una alerta en rojo.
 
@@ -94,7 +94,7 @@ Si tu personaje **no tiene ningún asesinato reciente, la barra nunca aparece**:
 | Perder el bonus de felicidad (bajar de 50) | Baja tu límite: la barra baja aunque no hayas matado |
 | Acumular puntos de rol negativos | Baja tu límite de forma duradera |
 | **Examinar un cadáver con heridas** (`/cadaver examinar`) | Se te muestra el estado mental: ver un cuerpo destrozado impacta a tu personaje |
-| **Revisar las pertenencias de un cadáver** (`/cadaver inventario`) | Se te muestra el estado mental |
+| **Revisar las pertenencias de un cadáver** (`/cadaver inventario`) o **sacarle un objeto** | Se te muestra el estado mental |
 
 Los dos últimos casos son de **exposición**: no suman asesinatos a tu contador, pero el juego te recuerda tu estado mental en ese momento, porque manipular cuerpos forma parte del desgaste psicológico del personaje. Si vas a trabajar habitualmente con cadáveres —forense, médico o criminal— conviene reflejarlo en tu interpretación.
 
@@ -120,7 +120,8 @@ Tu felicidad se revisa **cada 30 minutos**. En cada revisión sube **1 punto** o
 
 | Condición cumplida | Resultado |
 |---|---|
-| Pasar al menos **15 minutos al aire libre** en la última media hora | **+1** |
+| Llevar al menos **15 minutos al aire libre** en tu hora de juego actual (el contador se reinicia con cada payday) | **+1** |
+| Estar dentro de una propiedad con al menos **10 electrodomésticos** | **+1** |
 | Haber **comido** algo hace menos de 30 minutos | **+1** |
 | Haber **bebido** algo hace menos de 30 minutos | **+1** |
 | Haber tomado **alcohol** hace menos de 30 minutos | **+1** |
@@ -129,11 +130,11 @@ Tu felicidad se revisa **cada 30 minutos**. En cada revisión sube **1 punto** o
 | Haber **editado o decorado muebles** de una propiedad hace menos de 30 minutos | Se mantiene igual (ni sube ni baja) |
 | Ninguna de las anteriores | **−1** |
 
-Basta con **una** de las condiciones positivas para sumar el punto: no se acumulan varios puntos por hacerlo todo a la vez. El consumo de comida, bebida, tabaco, alcohol y drogas solo cuenta si se hizo **al aire libre**, en el mundo exterior; encerrarte en una casa a comer no alimenta la felicidad.
+Basta con **una** de las condiciones positivas para sumar el punto: no se acumulan varios puntos por hacerlo todo a la vez. El consumo de comida, bebida, tabaco, alcohol y drogas solo cuenta si se hizo **al aire libre**, en el mundo exterior; encerrarte en una casa a comer no alimenta la felicidad (lo que sí suma dentro de una propiedad es tenerla bien equipada con electrodomésticos).
 
 La **gracia por decoración** es la excepción amable: si estabas ocupado amueblando tu casa —una actividad que obliga a estar en interiores— la felicidad no baja durante los 30 minutos siguientes, aunque tampoco sube.
 
-Los minutos al aire libre se cuentan mientras estés **vivo, fuera de cualquier propiedad y en el mundo exterior**. Estar herido en el suelo o encerrado en un interior no suma. La única excepción es la cárcel: el tiempo que pasas dentro de ella también cuenta como tiempo al aire libre.
+Los minutos al aire libre se cuentan de a uno por minuto mientras estés **vivo, fuera de cualquier propiedad y en el mundo exterior**. Estar herido en el suelo o encerrado en un interior no suma. La única excepción es la cárcel: el tiempo que pasas dentro de ella también cuenta como tiempo al aire libre. Ese contador se reinicia a cero cada vez que cobras el payday.
 
 ### Beneficios concretos
 
@@ -158,17 +159,17 @@ Cuidado con el efecto inverso: si tu felicidad **baja** y con ella tu vida máxi
 
 #### Límite de asesinatos
 
-La felicidad suma hasta **4 asesinatos extra** a tu límite personal, avanzando **1 asesinato por cada 12,5 puntos** de felicidad por encima de 50.
+La felicidad suma hasta **4 asesinatos extra** a tu límite personal, avanzando aproximadamente **1 asesinato por cada 12,5 puntos** de felicidad por encima de 50 (el resultado se redondea al entero más cercano).
 
 | Felicidad | Asesinatos extra |
 |---|---|
-| 0 – 50 | 0 |
-| 63 | +1 |
-| 75 | +2 |
-| 88 | +3 |
-| 100 | **+4** |
+| 0 – 56 | 0 |
+| 57 – 68 | +1 |
+| 69 – 81 | +2 |
+| 82 – 93 | +3 |
+| 94 – 100 | **+4** |
 
-Combinado con el límite base de 10, un personaje sin puntos de rol negativos y con la felicidad al máximo puede cometer hasta **14 asesinatos** en 7 días antes de quedar en riesgo de muerte permanente.
+Combinado con el límite base de 10, un personaje sin puntos de rol negativos y con la felicidad al máximo tiene un límite de 14: puede cometer hasta **13 asesinatos** en 7 días, porque al llegar al 14.º ya queda en riesgo de muerte permanente.
 
 Este bonus es el motivo del aviso en rojo que puedes recibir sin haber matado a nadie: si estabas justo en el borde gracias a la felicidad y esta baja lo suficiente como para perder un punto de margen, cruzas el límite de golpe.
 

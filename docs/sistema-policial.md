@@ -51,7 +51,7 @@ La pantalla de inicio muestra contadores en vivo: órdenes de arresto, órdenes 
 
 La ficha de una persona reúne sus datos básicos, sus licencias (con los puntos de infracción de la de conducir) y una sección de libertad condicional, que indica si está vigente, vencida, sin fecha o si la persona sigue en prisión. También funciona con personas desconectadas. Las armas que entrega una facción no aparecen a nombre de un ciudadano.
 
-Las órdenes **confidenciales** solo las ven los detectives, sargentos y rangos superiores. `/mdc2` abre la versión por diálogos del mismo ordenador, con los mismos requisitos.
+Las órdenes **confidenciales** solo las ven los detectives, sargentos y rangos superiores de la policía (la justicia las ve todas). `/mdc2` abre la versión por diálogos del mismo ordenador, con los mismos requisitos.
 
 Los detectives privados, aunque tienen su propio ordenador de pago, no usan este: ver el [sistema de detectives privados](sistema-de-detectives-privados.md).
 
@@ -59,7 +59,7 @@ Los detectives privados, aunque tienen su propio ordenador de pago, no usan este
 
 ### Multar a una persona
 
-`/multar` abre la lista de infracciones del **Código Penal de San Andreas**. Pueden multar a una persona los policías y la justicia en servicio, agentes de tránsito, inspectores de bomberos, el ejército desde un rango alto y los rangos altos del gobierno (estos últimos sin necesidad de estar de servicio).
+`/multar` abre la lista de infracciones del **Código Penal de San Andreas**. Pueden multar a una persona los policías y la justicia en servicio, agentes de tránsito, guardabosques de rango alto, inspectores de bomberos, el ejército desde un rango alto y los rangos altos del gobierno (estos últimos sin necesidad de estar de servicio).
 
 | Requisito | Detalle |
 |---|---|
@@ -80,6 +80,7 @@ Cada vez que eliges una infracción se suma su descripción y su monto al total.
 La persona multada ve una **citación** en pantalla con la fecha, el oficial, los cargos y la cantidad, y debe elegir **Firmar** o **No firmar**. Negarse a firmar está penado por el Código Penal de San Andreas: si no firma, la citación se cancela y el oficial recibe el aviso.
 
 - Al firmar, la multa queda registrada como deuda y la persona recibe un **ticket** de LSPD o de LSSD, según la facción del oficial. Necesita una mano libre para recibirlo.
+- Para que la firma surta efecto, la persona debe seguir a menos de **5 metros** del oficial, y el oficial debe conservar el portapapeles en la mano derecha; si no, la multa no se registra.
 - `/mirarmulta` muestra el detalle y el estado (pagada o pendiente) del ticket que lleves en la mano.
 - Las multas se consultan y se pagan en la corte (ver [sistema de justicia](sistema-de-justicia.md)). Si pagas con el **ticket en la mano derecha**, tienes un **40 % de descuento** y el ticket se consume.
 - Si la infracción elegida pertenece a los delitos contra la seguridad vial, la multa suma **1 punto** a tu licencia de conducir (ver [Puntos de licencia](#puntos-de-licencia)).
@@ -108,10 +109,10 @@ Algunas unidades policiales llevan instalado un **lector automático de matrícu
 
 Los radares de la ciudad vigilan a los vehículos terrestres. No actúan sobre embarcaciones ni aeronaves, ni sobre policías, bomberos o paramédicos de servicio.
 
-- Cuando un vehículo supera el límite, la central avisa por radio a los policías de servicio con el número del radar, el **modelo real** del vehículo, su placa (o que la lleva oculta), la velocidad en mph y el lugar. Entre un reporte y otro del mismo vehículo hay una espera.
+- Cuando un vehículo supera el límite, la central avisa por radio a los policías de servicio (no a los agentes del FBI ni a la justicia) con el número del radar, el **modelo real** del vehículo, su placa (o que la lleva oculta), la velocidad en mph y el lugar. Entre un reporte y otro del mismo vehículo hay una espera.
 - Si la placa es visible, la central añade un segundo aviso cuando la matrícula figura **como robada** y otro cuando el **titular tiene una orden de arresto activa** (las órdenes confidenciales no se anuncian).
 - Un vehículo con la **patente quitada** no puede ser multado por el radar, pero el exceso se reporta igual como placa oculta.
-- Las multas llegan al propietario del vehículo: las dos primeras veces que superas el límite por **5 mph o más** solo suena un aviso, y a la **tercera** recibes la multa, de **$150 más $100 por cada mph** de exceso. Después, ese vehículo no vuelve a ser multado por radar hasta pasados 15 minutos.
+- Las multas llegan al propietario del vehículo (en un vehículo de empresa, al conductor si trabaja en ella o, si no, al dueño del negocio): las dos primeras veces que superas el límite por **5 mph o más** solo suena un aviso (el radar espera unos 30 segundos entre una detección y otra), y a la **tercera** se emite la multa, de **$150 más $100 por cada mph** de exceso. Después, ese vehículo no vuelve a ser multado por radar hasta pasados 15 minutos.
 
 `/radar [id]` coloca un punto en el mapa con la ubicación de un radar. `/togradar` silencia (o reactiva) los reportes de los radares para tu personaje, incluidos los avisos de robo y de órdenes. La preferencia se guarda y también se cambia desde `/panel`.
 
@@ -168,7 +169,7 @@ Solo un **líder** puede provocar con `/dpl` la suspensión: si quien suma no lo
 
 ## Aviso de órdenes al arrestar
 
-Al abrir `/arrestar` sobre una persona, y de nuevo al finalizar el reporte, el sistema avisa si el detenido tiene **órdenes de arresto activas**, con los números de orden (hasta 8; si hay más indica "más de 8"). El aviso al finalizar te recuerda cerrarlas con `/cerrarorden` si corresponde: el arresto **no cierra las órdenes por sí solo**. Las órdenes confidenciales solo se muestran a quien tiene permiso para verlas. El arresto en sí está explicado en el [sistema de cárcel](sistema-de-carcel.md).
+Al abrir `/arrestar` sobre una persona, y de nuevo al finalizar el reporte, el sistema avisa si el detenido tiene **órdenes de arresto activas**, con los números de orden (hasta 8; si hay más indica "más de 8"). El aviso al finalizar te recuerda cerrarlas con `/cerrarorden` si corresponde: el arresto **no cierra las órdenes por sí solo**, y ese comando solo lo usan los jueces y, en la policía, los detectives, sargentos o rangos superiores. Las órdenes confidenciales solo se muestran a quien tiene permiso para verlas. El arresto en sí está explicado en el [sistema de cárcel](sistema-de-carcel.md).
 
 ## Megáfono
 
@@ -179,7 +180,7 @@ Al abrir `/arrestar` sobre una persona, y de nuevo al finalizar el reporte, el s
 
 ## Helicópteros policiales
 
-Los helicópteros tienen un techo de vuelo: por encima de él la estructura se tensa y el helicóptero no puede seguir subiendo.
+Los helicópteros ligeros (Sparrow, Sea Sparrow, Maverick, News Maverick y Police Maverick) tienen un techo de vuelo: por encima de él la estructura se tensa y el helicóptero no puede seguir subiendo.
 
 | Quién | Techo (sobre el suelo) |
 |---|---|
@@ -190,7 +191,7 @@ Los pilotos de helicópteros policiales de servicio tampoco reciben las alertas 
 
 ## Equipo policial
 
-Estos objetos se obtienen con `/equipar`, estando de servicio y dentro de un vehículo o una propiedad de tu facción:
+Estos objetos se obtienen con `/equipar`, estando de servicio y dentro de un vehículo o una propiedad de tu facción, con rango 2 o superior y la mano derecha libre:
 
 <img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/equipo-policial.jpg" alt="Equipo policial: chalecos, radio, Optiwand, alcoholímetro, pistola radar, megáfono, conos y puestos de mando" width="1600" height="900">
 

@@ -23,7 +23,7 @@ La Bomba TNT no se vende en ninguna tienda legal. Solo aparece por dos vías:
 
 | Vía | Quién puede | Precio | Espera entre pedidos |
 |---|---|---|---|
-| Ensamblaje ilegal | Contrabandistas avanzados o miembros de una facción ilegal oficial | **$150.000** por unidad | **12 horas** por cada unidad del pedido |
+| Ensamblaje ilegal | Contrabandistas avanzados (por ejemplo, miembros de una facción ilegal oficial) | **$150.000** por unidad | **12 horas** por cada unidad del pedido |
 | Equipo de facción militar | Miembros de la facción militar, desde su armería | Según el equipo de la facción | — |
 
 El ensamblaje se hace en un punto de creación de armas dentro de una propiedad, igual que el resto del material ilegal. El tope por pedido es de **4 bombas** (hasta **7** si perteneces a una mafia con la mejor red de contactos), y el tiempo de espera se acumula por unidad: pedir 3 bombas bloquea el ensamblaje durante **36 horas**. Las cuentas premium reducen esa espera entre un **15 %** y un **45 %** según el nivel, y la red de contactos de una mafia rebaja un **10 %** por nivel tanto el precio como la espera. Si perteneces a una facción, cada pedido además cuesta **1.000 puntos de influencia** de tu facción, que se devuelven si el ensamblaje no se completa. Consulta el [sistema de ensamblaje de armas](sistema-de-ensamblaje-de-armas.md) para los requisitos de contrabandista y el funcionamiento de los puntos de creación.
@@ -36,7 +36,7 @@ La Bomba TNT cuenta como **objeto ilegal** a todos los efectos: si la policía t
 
 ## El número de la bomba
 
-Cada bomba recibe al fabricarse un **número aleatorio de 8 dígitos** que queda impreso en la propia etiqueta del objeto: al mirarla en tu inventario verás algo como *Bomba TNT (48213907)*. Ese número es la llave de la detonación.
+Cada bomba recibe al fabricarse un **número aleatorio de 8 dígitos** que queda grabado en el propio objeto: al mirarla en tu inventario verás una cifra como *48213907* sobre su icono. Ese número es la llave de la detonación.
 
 Consecuencias prácticas:
 
@@ -55,26 +55,28 @@ Lo importante es que **la bomba estalla en el sitio donde esté en ese momento**
 - Si está en un paquete o una mochila, se localiza el contenedor y explota ahí.
 - Si está guardada en una propiedad, explota **dentro del interior** de esa propiedad, alcanzando solo a quienes estén dentro.
 
-Para detonarla basta con marcar el número con un teléfono que tenga chip asignado, desde cualquier punto del mapa. Solo se aceptan números de 8 dígitos: marcar cualquier otra cosa nunca activa un explosivo.
+Ten en cuenta que la bomba solo responde mientras su contenedor esté "activo" en el servidor: la que dejas en el armario, el refrigerador o el buzón de una propiedad deja de responder si pasan unos **5 minutos** sin que nadie use ese almacenamiento, y la que lleva encima una persona desconectada no llega a explotar.
+
+Para detonarla basta con marcar el número con un teléfono que tenga chip asignado (o con un teléfono público, que cobra **$5** por llamada), desde cualquier punto del mapa. Solo se aceptan números de 8 dígitos: marcar cualquier otra cosa nunca activa un explosivo.
 
 ### Qué ocurre al detonar
 
 1. Suena una señal de aviso en la zona de la bomba.
 2. Tras **3 segundos** de cuenta atrás, el artefacto desaparece y se produce una cadena de **siete explosiones**: tres en vertical sobre el punto (a nivel de suelo, a 5 y a 10 metros de altura) y cuatro alrededor, cubriendo un radio amplio.
 3. Queda una marca de escena en el lugar: *(Fragmentos de artefacto explosivo)*.
-4. Se levanta un **foco de incendio rodeado de conos y humo del LSFD**, que sigue ardiendo hasta que los bomberos lo retiren.
+4. Se levantan **cuatro focos de incendio con una columna de humo**, que siguen ardiendo hasta que alguien de los servicios de emergencia los retire.
 5. Se lanza un aviso automático por radio al LSPD y a los paramédicos: *"Se ha reportado una explosión en [zona]"*. Si fue dentro de una propiedad, el aviso incluye la dirección exacta del inmueble.
 
 Cuando la explosión ocurre dentro de una propiedad, el estallido además **consume un extintor del negocio**; si no quedan extintores, desata un incendio estructural completo en el local.
 
 ### El incendio que queda
 
-El foco de fuego no es decorativo. Cualquiera que entre en él **pierde 5 puntos de salud por segundo** mientras siga dentro, con efecto de aturdimiento. Están a salvo únicamente:
+El foco de fuego no es decorativo. Cualquiera que entre en él **pierde 5 puntos de salud** al entrar y otros **5 un segundo después** si sigue dentro, con efecto de aturdimiento y quemaduras que aparecen en `/heridas`; volver a entrar repite el daño. Están a salvo únicamente:
 
 - Los **bomberos del LSFD en servicio**, inmunes al fuego sin importar la ropa que lleven.
-- Quien vista un **traje de bombero** completo.
+- Quien vista **ropa de bombero**.
 
-El fuego solo se apaga cuando un miembro de una facción de emergencias lo retira desde el lugar. Consulta [facciones legales](facciones-legales.md) para saber cómo trabajan el LSFD y el LSPD en este tipo de escena.
+El fuego solo se apaga cuando un miembro en servicio de una facción de emergencias o de gobierno lo retira estando junto a él. Consulta [facciones legales](facciones-legales.md) para saber cómo trabajan el LSFD y el LSPD en este tipo de escena.
 
 ## Bombas en los robos
 
@@ -149,13 +151,13 @@ Con el cóctel en la mano derecha, `/provocarincendio` lo lanza y enciende un fo
 - Al aire libre funciona siempre: se crean el foco de fuego y el humo, queda la marca *(Fragmentos de vidrio)* y se avisa por radio al LSPD y a los paramédicos de un incendio en la zona.
 - **Dentro de una propiedad** hace falta una autorización previa para la trama, que se solicita con `/reportar` explicando el contexto. Aun con permiso, si el negocio tiene extintores en su inventario, el sistema antiincendios apaga el intento, suena la alarma del local y tendrás que repetirlo hasta agotarlos.
 
-El incendio resultante quema igual que el de una bomba: **5 puntos de salud por segundo** a quien se meta dentro, salvo bomberos en servicio o con traje ignífugo.
+El incendio resultante quema igual que el de una bomba: **5 puntos de salud** al entrar y otros 5 un segundo después a quien se meta dentro, salvo bomberos en servicio o con ropa de bombero.
 
 ### Otros usos del combustible
 
 Las latas de gasolina, diésel y aceite sirven además para **avivar hogueras** —a costa de volverlas inestables— y, junto con un encendedor, para **quemar un cadáver** y destruir las pruebas biológicas que contiene. Ese procedimiento, sus requisitos y sus consecuencias forenses se explican en el [sistema de cadáveres](sistema-de-cadaveres.md).
 
-Ten presente también que el combustible es peligroso por sí solo: repostar un vehículo con el **motor encendido** puede provocar una explosión con la misma potencia que una bomba TNT.
+Ten presente también que el combustible es peligroso por sí solo: repostar un vehículo con el **motor encendido** provoca una explosión con la misma potencia que una bomba TNT cuando hay al menos dos bomberos de servicio conectados; si no los hay, solo se cancela la carga.
 
 ## Consejos
 

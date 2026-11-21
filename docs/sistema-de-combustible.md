@@ -33,21 +33,21 @@ El precio depende exclusivamente de la marca del surtidor:
 
 Llenar 100 litros de gasolina cuesta **$500** en un Ron y **$800** en un Globeoil, así que vale la pena fijarse en el cartel antes de parar. Los surtidores Ron son los más baratos y también los menos comunes; los Globeoil son los más caros y los que más abundan.
 
-Del total que pagas, una cuarta parte se va en impuestos al Gobierno de San Andreas. El resto entra en la caja del negocio dueño de ese surtidor, si tiene uno.
+Todo lo que pagas entra en la caja del negocio dueño de ese surtidor, si tiene uno. Además, el Gobierno de San Andreas recibe por impuestos una cuarta parte del monto de cada carga, sin costo extra para ti.
 
 ## Dónde repostar
 
 - **Autos, camionetas, camiones y motocicletas**: cualquier gasolinera con surtidores. Debes estar **a pie**, junto a la tapa del tanque del vehículo, y el surtidor a menos de **6 metros**.
 - **Aviones y helicópteros**: sentado a los mandos, con un surtidor a menos de **20 metros**. Los aeropuertos tienen sus propios surtidores.
-- **Botes y lanchas**: sentado al mando, en el muelle de abastecimiento del puerto de Los Santos. Si intentas repostar un bote lejos del muelle, el juego te marca el punto exacto en el mapa.
+- **Botes y lanchas**: sentado al mando, con un surtidor a menos de **6 metros**, como los del muelle de abastecimiento del puerto de Los Santos. Si intentas repostar un bote lejos del muelle, el juego te marca el punto exacto en el mapa.
 - **Bicicletas**: no tienen tanque y no consumen nada. Las motocicletas sí consumen y sí se repostan, siempre desde afuera.
 
 ## Paso a paso del repostaje
 
 1. **Detén el vehículo junto al surtidor y apaga el motor** con `/motor`. Con el motor encendido no se puede iniciar la carga.
 2. **Bájate y colócate al lado de la tapa del tanque** (a menos de **1.5 metros** de la tapa). En los modelos que no tienen tapa visible basta con estar a **4 metros** del vehículo. Los aviones y botes se saltan este paso: se cargan desde el asiento del piloto.
-3. **Deja libre tu mano izquierda**: es la mano con la que sostendrás la manguera. Si llevas algo ahí, el comando no se ejecuta.
-4. **Escribe `/llenar [litros]`**. Si no indicas cantidad, el juego te responde con los precios de esa marca. Puedes pedir entre **1 y 250 litros**, y nunca más de lo que cabe en tu tanque.
+3. **Deja libre tu mano izquierda** (si repostas a pie): es la mano con la que sostendrás la manguera. Si llevas algo ahí, el comando no se ejecuta.
+4. **Escribe `/llenar [litros]`**. Si no indicas cantidad, el juego te responde con los precios de esa marca. Puedes pedir entre **1 y 250 litros**, y nunca más de lo que cabe en tu tanque. Si el surtidor tiene menos litros de los que pides, el comando no se ejecuta y te indica cuántos puede darte.
 5. **Espera a que termine la carga.** El tiempo depende de los litros: el surtidor entrega **2 litros por segundo**, con un mínimo de **3 segundos** y un máximo de **30 segundos**. Tu personaje toma el surtidor, mira hacia la tapa del tanque y se queda cargando. Un aviso en pantalla te indica que el tanque se está llenando.
 6. **Al terminar se paga solo.** Verás el desglose con la marca, el precio por litro, los litros cargados y el total. El dinero sale de tu **cuenta bancaria**, no del efectivo que lleves encima.
 
@@ -70,6 +70,7 @@ Mientras dura la carga debes quedarte quieto y atento. La carga se cancela si:
 - **Caes herido** o mueres. Una herida que ya tenías sin curar no cancela la carga.
 - **Te electrocutan, te taclean o te esposan.**
 - **El surtidor se queda sin combustible** (otros conductores están comprando del mismo depósito).
+- **No te alcanza el dinero** en tu cuenta bancaria, cuando pagas tú.
 
 Mientras cargas tampoco puedes abrir el inventario. Si la carga se cancela no pagas nada, pero tampoco recibes combustible: hay que empezar de nuevo.
 
@@ -85,7 +86,7 @@ El tanque se vacía **cada 30 segundos** mientras el motor está encendido, y lo
 
 | Blindaje del vehículo | Consumo cada 30 segundos |
 |---|---|
-| Sin blindaje | **1 litro** |
+| Sin blindaje o blindaje nivel 1 | **1 litro** |
 | Blindaje nivel 2 | **2 litros** |
 | Blindaje nivel 3 y 4 | **3 litros** |
 | Blindaje nivel 5 | **4 litros** |
@@ -101,7 +102,7 @@ La capacidad de fábrica varía según el modelo y se puede consultar en la fich
 | **50 litros** | deportivos y coupés medianos (Buffalo, Banshee, Sultan, Alpha, Jester, Euros, Comet) |
 | **100 litros** | la gran mayoría de autos, camionetas, camiones y maquinaria |
 
-Un mecánico con el taller adecuado puede instalarte un **tanque ampliado**: +25, +50 o +100 litros sobre la capacidad de fábrica, a precio acordado con él. Ese tanque mejorado es una pieza que un delincuente experimentado puede desmontar del vehículo, así que no lo dejes aparcado en cualquier calle.
+Un mecánico con **50 o más de habilidad de mecánica**, en un taller o propiedad, puede instalarte un **tanque ampliado** de precio fijo: +25 litros por **$50.000**, +50 litros por **$120.000** o +100 litros por **$250.000** sobre la capacidad de fábrica. Ese tanque mejorado es una pieza que un delincuente experimentado puede desmontar del vehículo, así que no lo dejes aparcado en cualquier calle.
 
 ### Cuando el tanque se vacía
 
@@ -111,7 +112,7 @@ Si te quedas seco lejos de una gasolinera, tus opciones son pedir que alguien te
 
 ### Aceite de motor
 
-Aparte del combustible, el motor consume **aceite**, que baja mucho más lento: un punto cada 15 minutos de motor encendido. Cuando el nivel se acerca a cero recibes avisos en pantalla: primero "nivel de aceite bajo" y luego "nivel crítico". Un mecánico con habilidad suficiente puede rellenarlo con una **lata de aceite** usando `/cambiaraceite`, con el capó abierto y de pie frente al motor. Cada lata trae hasta **40 medidas** de aceite.
+Aparte del combustible, el motor consume **aceite**, que baja mucho más lento: un punto cada 15 minutos de motor encendido. Cuando el nivel se acerca a cero, el conductor recibe avisos en pantalla: primero "nivel de aceite bajo" y luego "nivel crítico". Si el aceite llega a cero, el motor se apaga, queda dañado y no vuelve a arrancar hasta que se rellene. Con **al menos 10 de habilidad de mecánica** puedes rellenarlo con una **lata de aceite** usando `/cambiaraceite`, con la lata en la mano derecha, el capó abierto (en las motos no hace falta) y de pie frente al motor. Solo se usa el aceite que le falta al motor y el resto queda en la lata. Cada lata trae hasta **40 medidas** de aceite.
 
 ## Latas portátiles de combustible
 
@@ -119,7 +120,7 @@ Las latas son la solución para los que se quedan tirados o para quien quiere gu
 
 - Existen dos: **lata de gasolina** y **lata de diésel**. Cada una guarda hasta **30 litros**.
 - Se compran en **ferreterías, tiendas 24/7 y gasolineras** que las tengan en stock. El precio lo fija cada negocio y suele rondar los **$300 a $370**.
-- Para llenarla: estando **a pie en una gasolinera**, con la lata en la **mano derecha**, usa `/llenarlata`. Se llena hasta el tope y pagas el precio por litro de esa marca desde tu cuenta bancaria.
+- Para llenarla: estando **a pie en una gasolinera**, con la lata en la **mano derecha**, usa `/llenarlata`. Se llena hasta el tope y pagas el precio por litro de esa marca desde tu cuenta bancaria. El surtidor debe tener combustible suficiente para llenarla entera.
 - Para usarla: acércate a la **tapa del tanque** del vehículo (a menos de 1.5 metros), con la lata en la mano derecha, y usa `/usarlata`. El contenido se vuelca en el tanque de inmediato, sin tiempo de espera.
 - **El tipo debe coincidir**: una lata de gasolina no sirve para un motor diésel ni al revés. Si el tanque se llena antes de vaciar la lata, lo que sobra queda dentro.
 
@@ -127,9 +128,9 @@ Ten presente que una lata llena de combustible también sirve para prender fuego
 
 ## Abastecimiento de las gasolineras
 
-Los surtidores no tienen combustible infinito, salvo los de la isla de Santa Catalina (ver más abajo). Cada uno guarda hasta **2,500 litros** y se va vaciando con cada venta; cuando se acaba, avisa que no puede servir y hay que ir a otro. La barra de colores del cartel flotante indica de un vistazo cuánto le queda: verde intenso lleno, rojo casi vacío.
+Los surtidores no tienen combustible infinito, salvo los de la isla de Santa Catalina (ver más abajo). Cada uno guarda hasta **2.500 litros** y se va vaciando con cada venta; cuando se acaba, avisa que no puede servir y hay que ir a otro. La barra de colores del cartel flotante indica de un vistazo cuánto le queda: verde intenso lleno, rojo casi vacío.
 
-La reposición depende de los **transportistas pesados**: cuando alguien entrega un tráiler de combustible, todos los surtidores de la zona reciben **625 litros** cada uno. El transportista cobra un bono de **$350 por cada surtidor** que haya conseguido abastecer, pagado por el Gobierno de San Andreas, y el negocio dueño de cada surtidor paga de su caja el combustible que recibió. Si todos los surtidores de la zona ya están llenos, no hay bono. Puedes leer más sobre esas rutas en [Sistema de camionero](sistema-de-camionero.md).
+La reposición depende de los **transportistas pesados**: cuando alguien entrega un tráiler de combustible, todos los surtidores a menos de **100 metros** de donde descargas reciben **625 litros** cada uno (menos si les falta poco para llenarse). El transportista cobra un bono de **$350 por cada surtidor** que haya conseguido abastecer, pagado por el Gobierno de San Andreas, y el negocio dueño de cada surtidor paga de su caja el combustible que recibió. Si todos esos surtidores ya están llenos, no hay bono. Puedes leer más sobre esas rutas en [Sistema de camionero](sistema-de-camionero.md).
 
 ### Surtidores de Santa Catalina
 
@@ -138,8 +139,8 @@ Los surtidores de la isla de Santa Catalina **nunca se quedan sin combustible**:
 ## Consejos
 
 - **Mira el cartel antes de parar.** La diferencia entre un Ron y un Globeoil son $300 en un depósito de 100 litros.
-- **Apaga el motor siempre**, no solo para cargar: es la forma más simple de que el tanque dure el doble en una jornada de rol estático.
+- **Apaga el motor siempre**, no solo para cargar: es la forma más simple de que el tanque dure más en una jornada de rol estático.
 - **Vigila la barra del surtidor.** Si está casi vacía, mejor busca otra estación antes de empezar una carga larga y que te la cancelen a mitad de camino.
 - **Lleva una lata en el maletero** si haces rutas largas o trabajas en el campo, donde las gasolineras escasean.
-- **Los vehículos blindados beben muchísimo**: un blindaje nivel 5 gasta cuatro veces más que un auto normal, y eso se nota en la factura semanal.
+- **Los vehículos blindados beben muchísimo**: un blindaje nivel 5 gasta cuatro veces más que un auto normal, y eso se nota en cada recarga.
 - **Nunca dejes que alguien se suba al asiento del conductor** mientras cargas. Un arranque en el momento equivocado puede costarte el vehículo y la vida.

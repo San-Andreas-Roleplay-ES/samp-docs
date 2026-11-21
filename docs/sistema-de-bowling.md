@@ -96,7 +96,7 @@ Abajo en el centro de la pantalla ves el **marcador** con los diez frames, las m
 
 - Gana quien tenga **más puntos** al terminar los diez frames. Si empatan, no gana ninguno.
 - Si tu compañero **abandona**, sigues jugando solo hasta terminar tus frames, y **ganas por abandono** si completas la partida.
-- Abandonar una partida en pareja cuenta como una derrota para quien se va.
+- Quien abandona una partida en pareja pierde su entrada y no se le registra puntuación ni victoria.
 
 ## Récord y estadísticas
 

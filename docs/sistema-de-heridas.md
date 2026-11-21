@@ -19,11 +19,11 @@ Esta guía cubre cómo se registran las heridas, qué significa quedar herido, n
 - `/levantar [id]` — reanimas a alguien noqueado (agachado, 60 segundos).
 - `/metercoche [id]` — subes a un herido a un vehículo cercano (agachado, 60 segundos).
 - `/curarme` — pides atención de urgencias en el mostrador del hospital.
-- `/reaparecer` — una vez muerto, eliges dónde volver a aparecer.
+- `/reaparecer` — una vez muerto y pasados cinco minutos, eliges dónde volver a aparecer.
 
 ## Cómo se registran las heridas
 
-Cada herida guarda el arma, la parte del cuerpo, la vida que te quitó y hace cuánto ocurrió. Cualquier persona a menos de **10 metros** puede leer ese historial con `/heridas`, y un cartel flotante sobre tu personaje avisa a los demás de tu estado.
+Cada herida guarda el arma, la parte del cuerpo y la vida que te quitó. Cualquier persona a menos de **10 metros** puede leer ese historial con `/heridas`, y un cartel flotante sobre tu personaje avisa a los demás de tu estado.
 
 <img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/heridas-del-personaje.png" alt="Tabla de heridas de un personaje por zona del cuerpo" width="606" height="316">
 
@@ -43,23 +43,23 @@ Cuando una [mascota](sistema-de-mascotas.md) ataca a una persona le quita **4 de
 
 Cuando tu vida baja del mínimo, no mueres: **caes herido**. Sueltas el arma, quedas tirado en el suelo y arranca una cuenta atrás de **cinco minutos**. Si nadie te socorre en ese plazo, mueres. Puedes adelantar el desenlace con `/aceptarmuerte`.
 
-Mientras estás herido, un aviso automático llega a los servicios de emergencia. Si hay muchos policías de servicio, ese aviso tarda más en salir, dando margen al agresor para escapar; y si te recuperas antes de que se envíe, no llega a emitirse.
+Mientras estás herido, un aviso automático llega a los servicios de emergencia (no se genera si estás dentro de una propiedad). Si hay muchos policías de servicio, ese aviso tarda más en salir, dando margen al agresor para escapar; y si te recuperas antes de que se envíe, no llega a emitirse.
 
-Tu vida también afecta a tu puntería: **por debajo de 30 puntos de vida** tus habilidades de disparo caen al mínimo y disparas mucho peor.
+Tu vida también afecta a tu puntería: **con 30 puntos de vida o menos** tus habilidades de disparo caen al mínimo y disparas mucho peor.
 
 ### Gravemente o brutalmente herido
 
-El servidor distingue entre caer **gravemente herido** y caer **brutalmente herido**. Estás brutalmente herido cuando tus lesiones superan cualquiera de estos umbrales, y eso condiciona quién puede salvarte y dónde puedes recibir atención:
+El servidor distingue entre caer **gravemente herido** y caer **brutalmente herido**. Estás brutalmente herido cuando tus lesiones alcanzan cualquiera de estos umbrales, y eso condiciona quién puede salvarte y dónde puedes recibir atención:
 
 | Tipo de lesión | Umbral |
 |---|---|
 | Disparo en la cabeza | **1 impacto** |
 | Disparos en el cuerpo (cualquier arma de fuego) | **5 impactos** |
 | Apuñaladas | **5 heridas** |
-| Golpes con arma blanca o contundente | **10 golpes** |
+| Golpes con arma contundente | **10 golpes** |
 | Quemaduras | **3 quemaduras** |
 
-Alcanzar cualquiera de esos umbrales es también lo que te mata **al instante**, sin cuenta atrás. Recibir una herida nueva mientras ya estás en el suelo vuelve a comprobar los umbrales, así que rematar a un herido es perfectamente posible. Un personaje brutalmente herido solo puede ser salvado en el hospital: la clínica clandestina del mercado negro no lo atiende.
+Si estás herido (en el suelo) y tus lesiones alcanzan cualquiera de esos umbrales, mueres **al instante**, sin cuenta atrás. Cada herida nueva que recibes mientras ya estás en el suelo vuelve a comprobar los umbrales, así que rematar a un herido es perfectamente posible. Un personaje brutalmente herido solo puede ser salvado en el hospital: la clínica clandestina del mercado negro no lo atiende.
 
 Si tu personaje acumula demasiados asesinatos, morir puede significar la **pérdida definitiva del personaje**. Los detalles están en el [sistema de asesinatos](sistema-de-asesinatos.md).
 
@@ -69,7 +69,7 @@ Si te hirieron con **cinco disparos o menos** y no tienes apuñaladas, golpes ni
 
 ## Hemorragias
 
-Los **disparos** y las **armas cortantes** abren hemorragias. La primera empieza a sangrar **90 segundos** después de la herida y, a partir de ahí, te va restando vida de forma periódica hasta que alguien la detenga.
+Los **disparos** y las **armas cortantes** abren hemorragias. La primera empieza a sangrar **90 segundos** después de la herida y, a partir de ahí, cada minuto puede restarte vida hasta que alguien la detenga.
 
 - A pie, cada episodio de sangrado te quita **10 de vida**.
 - **Conduciendo**, te quita **15 de vida**, te nubla la visión y pierdes el control del volante.
@@ -79,14 +79,14 @@ Hay dos escudos automáticos: dentro de un radio de **25 metros** del All Saints
 
 ### Vendas y torniquetes
 
-Para detener una hemorragia necesitas un **vendaje** o un **torniquete** en la mano derecha y usar `/vendar [id]` sobre otra persona (a menos de 3 metros) o `/vendarme` sobre ti. No funciona conduciendo ni sobre una motocicleta.
+Para detener una hemorragia necesitas un **vendaje** o un **torniquete** en la mano derecha y usar `/vendar [id]` sobre otra persona (a menos de 3 metros) o `/vendarme` sobre ti. Solo funciona sobre alguien que sigue en pie y está sangrando, y no puedes usarlo conduciendo ni sobre una motocicleta.
 
 | Objeto | Efecto | Duración del alivio | Fiabilidad |
 |---|---|---|---|
 | **Torniquete** | Detiene la hemorragia drásticamente | **10 minutos** | Siempre funciona |
 | **Vendaje** (o rollo de gasa) | Vendaje compresivo que frena el sangrado | **5 minutos** | Puede fallar |
 
-El vendaje compresivo **puede fallar**: sin habilidad de paramédico falla la mitad de las veces, y cuanto mayor sea la habilidad de quien lo aplica, menos probable es el fallo. Si falla, el objeto se gasta igual y tendrás que intentarlo con otro. Cada vendaje o torniquete se consume en su uso, y mientras uno esté activo no puedes reemplazarlo: hay que esperar a que caduque.
+El vendaje compresivo **puede fallar**: sin habilidad de paramédico falla la mitad de las veces, y cuanto mayor sea la habilidad de quien lo aplica, menos probable es el fallo. Si falla, el objeto se gasta igual y tendrás que intentarlo con otro. Cada vendaje o torniquete se consume en su uso, y mientras uno esté activo no puedes reemplazarlo: hay que esperar a que caduque. Si recibes una herida nueva que sangra (un disparo o un corte), el vendaje o el torniquete que tenías deja de hacer efecto.
 
 Vendar a otra persona también entrena: colocar un torniquete sube tu habilidad de paramédico con un **20 %** de probabilidad (entre 1 y 3 puntos), y un vendaje compresivo exitoso lo hace con un **10 %** de probabilidad (entre 2 y 4 puntos). Vendarte a ti mismo no sube la habilidad.
 
@@ -95,8 +95,8 @@ Vendar a otra persona también entrena: colocar un torniquete sube tu habilidad 
 No hace falta ser médico para salvar a alguien:
 
 - **`/levantar [id]`** reanima a una persona **noqueada**. Debes estar **agachado**, a menos de **3 metros**, y mantenerte así durante **60 segundos** seguidos. Si te pones de pie, te alejas o subes a un vehículo, la acción se cancela.
-- **`/metercoche [id]`** carga a un herido en un asiento libre de un vehículo cercano (hasta 4 metros), también agachado, a menos de 2,5 metros del herido y junto a uno de los asientos, sin subirte tú al coche. Es la forma habitual de trasladar a alguien hasta el hospital o una ambulancia.
-- **Vendar** (ver arriba) gana tiempo: no cura, pero detiene la cuenta atrás del desangrado.
+- **`/metercoche [id]`** carga a un herido en un asiento de pasajero libre de un vehículo cercano (hasta 4 metros), también agachado, a menos de 2,5 metros del herido y junto a uno de los asientos, sin subirte tú al coche. Es la forma habitual de trasladar a alguien hasta el hospital o una ambulancia.
+- **Vendar** (ver arriba) no cura: solo detiene la pérdida de vida por hemorragia de quien sigue en pie. No frena la cuenta atrás de quien ya cayó herido.
 
 ## Tacleo
 
@@ -105,7 +105,7 @@ Con `/taclear` (alias `/tacl`) activas el modo tacleo: tu siguiente golpe con lo
 - Tener al menos **30 horas de juego**. Los policías no tienen este requisito.
 - No estar herido: ni heridas de bala, apuñaladas, golpes, quemaduras ni piernas rotas.
 - No estar en una partida de paintball.
-- Haber esperado la pausa entre tacleos: **10 minutos**, o **5 minutos** con premium. Cuenta desde cada intento, salga bien o mal. Los policías de servicio no tienen espera.
+- Haber esperado la pausa entre tacleos: **10 minutos**, o **5 minutos** con premium. Cuenta desde cada intento, salga bien o mal. Los policías no tienen espera.
 
 Si el tacleo sale bien, los dos caen al suelo y quedan derribados unos **5 segundos**; la víctima recibe un aviso de que la tacleaste. Si falla, solo cae quien taclea. Quien está **herido** (con heridas de bala, apuñaladas, golpes, quemaduras o las piernas rotas) no puede resistirse y siempre cae.
 
@@ -152,7 +152,7 @@ Sobre esa base se aplica tu felicidad: con 50 puntos o menos la vida es la norma
 
 ## Consejos
 
-- **Cuenta las heridas, no la vida.** Cinco impactos en el cuerpo o cinco puñaladas te matan aunque te quede vida; un chaleco evita que cuenten.
+- **Cuenta las heridas, no la vida.** Si ya estás herido en el suelo, cinco impactos en el cuerpo o cinco puñaladas te matan; un chaleco evita que cuenten.
 - **Lleva siempre un torniquete.** Es barato, nunca falla y te compra diez minutos para llegar al hospital.
 - **Si vas a socorrer, agáchate y quédate quieto.** Levantarte o moverte cancela el rescate y hay que empezar de nuevo.
 - **No conduzcas sangrando.** Pierdes más vida, se te nubla la vista y sueltas el volante.

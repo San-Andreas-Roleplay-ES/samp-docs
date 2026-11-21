@@ -35,6 +35,7 @@ Cada paso del robo exige todo lo siguiente:
 | --------- | ------- |
 | Ser delincuente | Los policías de servicio no pueden participar. |
 | Cuenta certificada | Consulta el [sistema de certificación](sistema-de-certificacion.md). |
+| Sin ser traficante | Los traficantes de drogas y de armas no pueden participar: este delito los expone demasiado. |
 | Policías de servicio | Al menos **10** conectados y de servicio. |
 | Habilidad de delincuente | **70** como mínimo para entrar en el robo. Algunas acciones piden más (ver la tabla siguiente). |
 | Enfriamiento personal | No tener un enfriamiento delictivo activo (ver más abajo). |
@@ -61,9 +62,9 @@ Mientras dura no puedes empezar otro robo, pero sí puedes seguir participando e
 
 ## Cómo funciona el robo
 
-El robo empieza con el primer acto delictivo dentro de la joyería. Termina cuando pasan **30 minutos** desde que empezó o cuando durante **2 minutos** no hay nadie haciendo nada dentro (salvo que alguien esté cortando o girando el dial). Al terminar, cada participante que se haya llevado botín gana **al menos 2 puntos** de habilidad de delincuente, solo una vez.
+El robo empieza con el primer acto delictivo dentro de la joyería. Termina cuando pasan **30 minutos** desde que empezó o cuando durante **2 minutos** no queda ningún participante dentro de la joyería (salvo que alguien esté cortando o girando el dial). Al terminar, cada participante que se haya llevado botín gana **al menos 2 puntos** de habilidad de delincuente, solo una vez.
 
-La joyería queda cerrada **1 hora** después de un robo. Si nadie tocó la caja fuerte ni se llevó botín, queda cerrada solo **10 minutos**. Mientras está cerrada (o con la cortina baja) no se puede comprar en ella.
+La joyería queda cerrada **1 hora** después de un robo. Si nadie tocó la caja fuerte ni se llevó botín, queda cerrada solo **10 minutos**. No se puede comprar en la joyería mientras hay un robo en curso, mientras está cerrada tras un robo ni mientras la cortina esté baja.
 
 ### Cortina metálica
 
@@ -167,7 +168,7 @@ La joyería tiene un panel de alarma en la oficina. Mientras está armado, la ce
 
 - Las **cámaras** te registran con arma a la vista, enmascarado o en zonas restringidas, o se rompe una vitrina: la central verifica unos segundos y después avisa, salvo que desarmes la alarma antes.
 - **Aviso silencioso**, inmediato: el vendedor herido, el código del panel fallado tres veces, el panel destruido o el taladro recalentado.
-- **Sirena y balizas**, con aviso a la policía: disparar sin silenciador dentro de la joyería, una explosión o la radio de un guardia. Se oye hasta **120 metros** a la redonda.
+- **Sirena y balizas**, con aviso a la policía: disparar sin silenciador dentro de la joyería, una explosión o la radio de un guardia. Se oye hasta **120 metros** a la redonda. Si la alarma ya está desarmada o el panel destruido, el aviso a la policía se da igual, pero sin sirena.
 
 El mensaje que reciben los policías es un aviso de radio con el nombre de la joyería de Market y, si las cámaras registraron a alguien sin máscara, también su nombre.
 

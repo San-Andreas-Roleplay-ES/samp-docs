@@ -33,7 +33,7 @@ Este trabajo conecta directamente con el [sistema de propiedades](sistema-de-pro
 **Apoyo**
 
 - `/micp` — recarga el punto marcado en el mapa si lo perdiste.
-- `/bpanico` — botón de pánico para emergencias durante un viaje.
+- `/bpanico` — botón de pánico para emergencias durante un viaje de tráiler. Necesitas un teléfono o una radio, no funciona dentro de interiores y se recarga entre usos.
 - `/frecuencia 303` — frecuencia de radio UHF compartida por los camioneros.
 
 ## Reparto de mercancía
@@ -42,7 +42,7 @@ Este trabajo conecta directamente con el [sistema de propiedades](sistema-de-pro
 
 - Estar **contratado por una empresa de repartos** y estar de servicio (`/trabajar`).
 - Conducir un **vehículo de trabajo de la empresa** (`/negvehiculos`). No sirve tu coche particular ni el vehículo de un compañero.
-- El vehículo debe ser uno de los modelos habilitados para reparto: **Mule**, **Benson**, **Yankee**, **Boxville**, **Pony**, **Rumpo**, **Bobcat**, **Yosemite** o **Sadler**.
+- El vehículo debe ser uno de los modelos habilitados para reparto: **Mule**, **Benson**, **Yankee**, **Boxville**, **Pony**, **Rumpo**, **Bobcat**, **Yosemite** o la versión de misión del **Boxville**.
 - No tener una misión de transporte pesado a medias.
 
 ### Cómo funciona
@@ -52,7 +52,7 @@ Este trabajo conecta directamente con el [sistema de propiedades](sistema-de-pro
 3. Baja del vehículo, párate sobre el punto de recogida y escribe `/recogercarga`. Necesitas **las dos manos libres**: tomarás la caja de mercancía en la mano derecha. Guárdala en el maletero para el viaje.
 4. Conduce hasta el negocio de destino, baja con la caja en la mano, párate sobre el punto de entrega y escribe `/entregarcarga`.
 
-Si te desconectas a mitad de ruta, el pedido queda reservado a tu nombre: vuelve a escribir `/camionero` al reconectar y el sistema te devuelve el punto donde ibas.
+Si te desconectas a mitad de ruta, el pedido queda reservado a tu nombre: vuelve a escribir `/camionero` al reconectar y el sistema te devuelve el punto donde ibas. El tiempo límite de la ruta sigue corriendo mientras estás desconectado.
 
 **Negocios de Santa Catalina**: la mercancía de los negocios y las industrias de la isla de [Santa Catalina](santa-catalina.md) no se recoge ni se entrega en la isla, sino en el **muelle del ferry de Los Santos**. Debes estar a **menos de 5 metros** de ese punto, y la paga se calcula hasta él.
 
@@ -65,7 +65,7 @@ La paga base es de **$1 por metro** de distancia entre la industria de origen y 
 | Vehículo | Bonificación |
 |----------|--------------|
 | Mule, Benson | **+20%** |
-| Yankee, Boxville | **+30%** |
+| Yankee, Boxville (también la versión de misión) | **+30%** |
 | Resto de modelos habilitados | sin bonificación |
 
 **Multiplicador por habilidad de camionero**
@@ -86,8 +86,8 @@ Cada entrega otorga **+5 Burger Points** (ver [sistema de Burger Points](sistema
 ### Descuentos y penalizaciones
 
 - **Daños al vehículo**: si el camión termina el viaje con menos salud que al empezar, se te descuentan **$5 por cada punto de salud perdido**. Ese dinero va a la caja de la empresa como multa por daños.
-- **Demora en recoger**: si tardas más de **30 minutos** en llegar a la industria, el pedido se cancela y se te descuentan **$5.000**.
-- **Demora en entregar**: si tardas más de **30 minutos** con la mercancía encima, la ruta se cancela, pierdes **10 puntos de habilidad de camionero** y se te cobra el valor de la mercancía abandonada (un **80% del costo del producto por cada unidad**, con un mínimo de **$1.000**). Si el importe supera los $10.000 el sistema te avisa antes.
+- **Demora en recoger**: si pasan más de **30 minutos** desde que tomaste la ruta y todavía no recogiste la carga, el pedido se cancela y se te descuentan **$5.000**.
+- **Demora en entregar**: los **30 minutos** se cuentan en total desde que tomaste la ruta, no desde que recogiste la carga. Si pasan y aún no entregaste, la ruta se cancela, pierdes **10 puntos de habilidad de camionero** y se te cobra el valor de la mercancía abandonada (un **80% del costo del producto por cada unidad**, con un mínimo de **$1.000**). Si al reconectar y retomar la ruta el importe llega a $10.000 o más, el sistema te lo advierte.
 
 ## Transporte pesado (tráileres)
 
@@ -133,7 +133,7 @@ Cada entrega de tráiler otorga **+5 Burger Points**.
 
 ## Camión de cemento
 
-Es un trabajo secundario independiente de las empresas de repartos: no necesitas empleo ni habilidad de camionero. Los camiones de obra (mezcladoras de cemento, Packer, Flatbed y DFT-30) están estacionados en zonas industriales repartidas por el estado, y en el juego el trabajo aparece como "camionero pesado".
+Es un trabajo secundario independiente de las empresas de repartos: no necesitas empleo ni habilidad de camionero. Los camiones de obra (mezcladoras de cemento, Packer, Flatbed, DFT-30 y Dozer) están estacionados en zonas industriales repartidas por el estado, y en el juego el trabajo aparece como "camionero pesado".
 
 <img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/contadores-camion-de-cemento.jpg" alt="Contadores de dinero y daño del camión de cemento en pantalla" width="672" height="775">
 
@@ -145,7 +145,7 @@ Es un trabajo secundario independiente de las empresas de repartos: no necesitas
 ### Cómo funciona
 
 1. Súbete como conductor a un camión de obra. Aparece un aviso para pulsar la tecla **2** y empezar el trabajo.
-2. Al empezar, el camión se repara y se deja con el tanque y el aceite llenos y el motor encendido. Se te asigna al azar uno de **121 destinos** de todo el estado, siempre a **500 metros o más** de donde estás, y se marca en el mapa.
+2. Al empezar, el camión se repara y se deja con el tanque y el aceite llenos y el motor encendido. Se te asigna al azar uno de **139 destinos** de todo el estado, siempre a **500 metros o más** de donde estás, y se marca en el mapa.
 3. Conduce hasta el destino y entra en el punto marcado. Cobras en el acto y el camión vuelve solo a su base, con quien vaya dentro bajado a su lado.
 
 Un contador en el lado derecho de la pantalla muestra el **dinero** que cobrarías en ese momento y una barra de **daño** que indica el estado del camión. Si te bajas del camión o sales del juego, el trabajo se cancela.
@@ -162,11 +162,11 @@ La habilidad de camionero es tu reputación en el rubro y determina cuánto cobr
 
 | Acción | Efecto sobre la habilidad |
 |--------|---------------------------|
-| Entregar un reparto de mercancía | **50% de probabilidad** de subir |
+| Entregar un reparto de mercancía | **50% de probabilidad** de subir (con cuenta premium, siempre sube) |
 | Entregar un tráiler | **33% de probabilidad** de subir |
 | Cancelar una misión de tráiler | **−2** |
 | Abandonar un reparto con la mercancía encima | **−10** |
-| Que te roben el tráiler | **−25** |
+| Robar un tráiler que otro camionero llevaba en una misión (lo pierde el ladrón) | **−25** |
 
 Cuando la habilidad sube, el incremento es de **+1** para un jugador estándar y de **+2** si tienes cuenta premium (ver [tienda premium](tienda-premium.md)).
 
@@ -174,11 +174,11 @@ Los hitos importantes son **26** (dejas de cobrar reducido), **51** (empiezas a 
 
 ## Licencia de transporte de cargas pesadas
 
-Se tramita en el **ayuntamiento de Los Santos** con `/adquirirlicencia`, y cuesta **$3.000** en efectivo. Requiere tener antes la **licencia de conducir**, que se obtiene aprobando el examen de la autoescuela de Los Santos.
+Se tramita en el **ayuntamiento de Los Santos** con `/adquirirlicencia`, y cuesta **$3.000** en efectivo. Requiere tener antes la **licencia de conducir**, que se obtiene aprobando el examen de la autoescuela de Los Santos, y **40 puntos de respeto**.
 
 La licencia no te impide trabajar, pero sin ella un control policial puede multarte por conducir un camión pesado sin habilitación. También es requisito para conducir trenes.
 
-El mismo trámite ofrece la **licencia de transportista** por **$1.500**, pensada para el reparto ligero.
+El mismo trámite ofrece la **licencia de transportista** por **$1.500** y **30 puntos de respeto**, pensada para el reparto ligero.
 
 ## Tipos de tráiler
 
@@ -220,7 +220,7 @@ Lleva el camión con el remolque hasta el **desguace clandestino de Blueberry**,
 - Cobras el **valor completo del tráiler en efectivo**, entre **$25.000 y $100.000** según el tipo (ver tabla anterior).
 - Ganas **+50 Burger Points**.
 - Quedas con un tiempo de espera de **48 horas** antes de poder cometer otro delito mayor.
-- El camionero al que le robaste pierde el rastro del remolque, su misión se cancela y su habilidad de camionero cae **25 puntos**.
+- El camionero al que le robaste pierde el rastro del remolque y su misión se cancela. Además, tú pierdes **25 puntos** de habilidad de camionero (solo si el tráiler era de una misión en curso de otro camionero).
 - El tráiler desaparece del mundo.
 
 La venta no pasa desapercibida: el bajo mundo se entera de que hay carga pesada moviéndose, así que espera atención policial en la zona.
@@ -230,7 +230,7 @@ La venta no pasa desapercibida: el bajo mundo se entera de que hay carga pesada 
 - **Sube habilidad antes que dinero.** Pasar de habilidad 25 a 76 casi duplica tu paga por reparto (de ×0,8 a ×1,4), así que al principio conviene encadenar rutas cortas y frecuentes.
 - **Elige el camión correcto.** Un Yankee o un Boxville pagan un 30% más que un Bobcat en la misma ruta.
 - **Conduce con cuidado.** Los daños al camión se descuentan de tu paga a razón de $5 por punto de salud, y un choque fuerte puede dejarte sin ganancias.
-- **Vigila el reloj.** Tienes 30 minutos por tramo; abandonar una carga cara es la penalización más dura del trabajo.
+- **Vigila el reloj.** Tienes 30 minutos en total desde que tomas la ruta; abandonar una carga cara es la penalización más dura del trabajo.
 - **Como trailero, párate en campo abierto** antes de escribir `/recogertrailer`. Un muro o un techo bajo detrás del camión bloquean la aparición del remolque.
 - **Trabaja para una empresa siempre que puedas.** Como independiente cobras solo un tercio del viaje pesado.
 - **Si eres dueño de negocio**, recuerda que los pedidos que lanzas con `/pedidos` son las rutas que ven los camioneros: cada pedido que haces es trabajo para un transportista.

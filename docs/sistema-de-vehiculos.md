@@ -11,7 +11,7 @@ Esta guía reúne las reglas generales del vehículo: el registro y los papeles,
 - `/examen` — inicia el examen de conducir en la autoescuela.
 - `/adquirirlicencia` — tramita otras licencias del gobierno en el ayuntamiento.
 - `/registrarveh` — registra o renueva el registro de tus vehículos en el ayuntamiento.
-- `/mostrarpapeles [id]` — enseña los papeles del vehículo a otra persona. Sin ID, los lees tú.
+- `/mostrarpapeles [id]` — enseña los papeles del vehículo a otra persona. Sin ID, los lees tú. Debes ir de conductor, con las llaves del vehículo.
 - `/rentarveh` — renta el vehículo de renta en el que vas de conductor, o la bicicleta que tienes al lado.
 - `/desrentarveh` — devuelve tu vehículo rentado.
 - `/asiento` — cambia de asiento sin bajarte del vehículo.
@@ -50,7 +50,7 @@ Las infracciones de tránsito suman puntos a tu licencia.
 
 - Cada **multa de tráfico** suma **1 punto**.
 - Cada **arresto con un cargo de tránsito** suma **1 punto**.
-- Un agente en servicio también puede sumar de **1 a 3 puntos** por una infracción con `/dpl`, indicando el motivo, y quitar de 1 a 3 con `/qpl`, por ejemplo como premio a la buena conducta. Debe estar a 20 metros del conductor y solo puede sumar puntos una vez por minuto.
+- Un agente en servicio también puede sumar de **1 a 3 puntos** por una infracción con `/dpl`, indicando el motivo, y quitar de 1 a 3 con `/qpl`, por ejemplo como premio a la buena conducta. La persona debe estar a menos de 20 metros y tener licencia de conducir, y el agente solo puede sumar puntos una vez por minuto.
 - Cada punto **caduca a los 30 días**.
 - Al llegar a **8 puntos vigentes**, la licencia queda **suspendida 7 días** y esos puntos se descuentan. Si un agente que no es líder intenta sumar los puntos que te llevarían a la suspensión, no se aplican: la suspensión solo la puede provocar un líder.
 - Un **juez** en servicio puede levantar una suspensión con `/levantarsuspension`.
@@ -153,7 +153,7 @@ Pasar al **volante** tiene las mismas reglas que entrar como conductor: no puede
 
 ## Pegatinas
 
-Los vehículos pueden llevar **pegatinas**: llamas y letras góticas en varios colores y tamaños, y logos de marcas de la ciudad. Se instalan en un **taller** desde el menú de tuning:
+Los vehículos pueden llevar **pegatinas**: llamas y letras góticas en varios colores y tamaños, logos de marcas y emisoras de la ciudad, y otros símbolos y estampados. Se instalan en un **taller** desde el menú de tuning:
 
 <img src="https://f005.backblazeb2.com/file/sarp-public/images/docs/pegatinas-para-vehiculos.jpg" alt="Pegatinas para vehículos con logos de marcas de la ciudad" width="1600" height="729">
 
@@ -195,7 +195,7 @@ Un delincuente puede pinchar una rueda con `/pincharrueda` (o `/pincharllanta`).
 | Posición | A pie, junto a una rueda: se pincha la **más cercana** (a menos de 1,5 metros) |
 | Enfriamiento | **15 minutos**, compartido con los demás delitos |
 
-La rueda queda pinchada hasta que un mecánico la repare, aunque el vehículo reaparezca o se reinicie el servidor. Pincharla hace **sonar la alarma** del vehículo y la policía recibe el aviso al instante.
+La rueda queda pinchada hasta que un mecánico la repare, aunque el vehículo reaparezca o se reinicie el servidor. Pincharla hace **sonar la alarma** del vehículo (si tiene batería) y la policía recibe el aviso al instante, salvo que ese mismo vehículo ya haya avisado en la última hora.
 
 No funciona en bicicletas, aeronaves, botes, trenes, tranvías, vehículos de radiocontrol ni vehículos blindados. Las motos tienen dos ruedas y los demás vehículos, cuatro. Más delitos con vehículos en el [sistema de delincuente](sistema-de-delincuente.md).
 

@@ -87,12 +87,12 @@ Estas son las palabras que entiende cada orden:
 
 | Orden | Palabras |
 |-------|----------|
-| Seguir | sigue, sígueme, ven, vente, vamos, aquí, acá |
-| Detener | quieto, quieta, quédate, espera, alto, detente, para, stop |
+| Seguir | sigue, sígueme, seguime, ven, vení, vente, vamos, aquí, acá |
+| Detener | quieto, quieta, quédate, quedo, espera, alto, detente, para, stop |
 | Acostarse | échate, acuéstate, túmbate, siéntate, abajo |
 | Saltar | salta, brinca, arriba |
 | Ladrar o maullar | habla, ladra, guau (perros); habla, maulla, miau (gatos) |
-| Atacar | ataca, atácalo, atácala, muerde, muérdelo, muérdela, agárralo, agárrala |
+| Atacar | ataca, atácalo, atácala, muerde, muérdelo, muérdela, agárralo, agárrala, chúmbale |
 | Subir al vehículo | sube, súbete, adentro |
 | Sanar | sana, sáname, sánate, cura, cúrame, cúrate |
 | Cazar | caza |
@@ -176,7 +176,7 @@ Desde `/control`, la opción **Atacar** abre la lista de objetivos cercanos (has
 - **Hasta 4 mascotas** pueden rodear al mismo objetivo.
 - Tu mascota persigue a su objetivo y lo muerde. A una persona le quita **4 de vida** cada 1,5 segundos; a otra mascota le quita **8** (multiplicado por su nivel de Pelea) en el mismo intervalo. Una mascota tiene 100 de vida.
 - La mascota deja de pelear si el objetivo queda herido, se aleja más de **50 metros**, tú te alejas más de **60 metros**, o no logra alcanzarlo en unos 30 segundos.
-- Cuando termina, si fue por orden tuya contra una sola persona o mascota se queda quieta hasta que le des otra orden; si peleaba contra todas las mascotas o se estaba defendiendo, vuelve a seguirte.
+- Cuando termina, si fue por orden tuya contra una sola persona o mascota se queda quieta hasta que le des otra orden; si peleaba contra todas las mascotas, vuelve a seguirte; si se estaba defendiendo, retoma lo que hacía antes (te sigue si te seguía, o se queda quieta si estaba quieta).
 - Sus ataques dejan heridas propias en `/heridas` (consulta el [sistema de heridas](sistema-de-heridas.md)): una **mordida** si es un perro y un **arañazo** si es un gato.
 - Tus mascotas no pelean si estás en una sala de paintball ni durante los Juegos del Hambre. Durante la Purga tampoco atacan a quien esté protegido o cerca de un buhonero.
 
@@ -198,8 +198,8 @@ Si tu mascota cae en una pelea o recibe daño hasta quedar fuera de combate:
 
 Las mascotas suben a tu vehículo y bajan con tu vehículo sin que tengas que hacer nada:
 
-- Al subir tú como conductor o pasajero, cada mascota cercana (hasta 20 metros) ocupa un **asiento de pasajero** libre.
-- Las que no alcanzan lugar, o que están demasiado lejos, esperan donde están y vuelven a seguirte cuando bajas.
+- Al subir tú como conductor o pasajero, cada mascota que te esté siguiendo y esté cerca (hasta 20 metros) ocupa un **asiento de pasajero** libre. Las que estén quietas, peleando o haciendo otra cosa no suben solas.
+- Las que no alcanzan lugar, o que están demasiado lejos, esperan donde están y vuelven a seguirte cuando bajas, siempre que estés a menos de 150 metros de ellas.
 - **No suben a aviones ni helicópteros.**
 - En **bicicleta** no suben: corren a tu lado.
 - Si una mascota se quedó afuera, puedes pedirle que suba con la orden por voz *"sube"* o *"súbete"* estando tú dentro del vehículo.

@@ -39,7 +39,7 @@ Las facciones penitenciarias solo suman influencia en la zona de la prisión, y 
 
 ### Cuánta influencia sumas
 
-Cada jugador que cumple los requisitos aporta un punto base por minuto, más los extras que le correspondan a su facción. Los extras son **acumulables**:
+Cada jugador que cumple los requisitos aporta un punto base por minuto, más los extras que le correspondan a su facción. El extra por tipo de facción se suma al de estatus, pero una facción solo puede ser **destacada** u **oficial**, no ambas:
 
 | Fuente | Influencia por minuto |
 |---|---|
@@ -48,13 +48,13 @@ Cada jugador que cumple los requisitos aporta un punto base por minuto, más los
 | Facción con estatus **destacada** | +1 |
 | Facción con estatus **oficial** | +3 |
 
-Así, un miembro de una pandilla común aporta **3 puntos por minuto**, y uno de una pandilla oficial y destacada aporta **7**. Un miembro de una mafia aporta 1 punto, más los extras de estatus que tenga su familia.
+Así, un miembro de una pandilla común aporta **3 puntos por minuto**, uno de una pandilla destacada aporta **4** y uno de una pandilla oficial aporta **6**. Un miembro de una mafia aporta 1 punto, **2** si su familia es destacada y **4** si es oficial.
 
 Además, cada vez que alguien suma influencia en una zona, **todas las demás pandillas presentes en el contador de esa zona pierden 1 punto** (nunca por debajo de cero). Diez miembros tuyos dentro del territorio no solo suben tu marcador: también erosionan el de tus rivales diez veces por minuto. Las mafias no pierden influencia por este efecto.
 
 La influencia de cada facción en una zona está limitada a un máximo de **10.000 puntos**.
 
-Vender droga a un cliente de misión (el mensaje de texto de un desconocido que se describe más abajo) dentro de un territorio de tu propia pandilla suma además **+5 de influencia** a tu pandilla, o **+6** si es destacada y **+8** si es oficial, y resta 1 punto a las demás pandillas de esa zona. Las ventas con `/traficar` no cuentan.
+Vender droga a un cliente de misión (el mensaje de texto de un desconocido que se describe más abajo) dentro de un territorio de tu propia pandilla suma además **+5 de influencia** de una sola vez a tu pandilla, o **+6** si es destacada y **+8** si es oficial, y resta 1 punto a las demás pandillas de esa zona. Las ventas con `/traficar` no cuentan.
 
 ### El cambio de dueño
 
@@ -62,13 +62,11 @@ Vender droga a un cliente de misión (el mensaje de texto de un desconocido que 
 
 Las **mafias no conquistan territorios**: siguen sumando influencia, y las zonas que ya controlaban se mantienen hasta que una pandilla supere los 100 puntos en ellas.
 
-Que el umbral sea bajo hace que una zona descuidada caiga rápido: una pandilla común con diez miembros dentro genera 30 puntos por minuto y puede capturarla en unos **tres o cuatro minutos** si no encuentra oposición. Con presencia enemiga la cosa se alarga, porque cada punto que suma el rival te resta uno a ti.
+Que el umbral sea bajo hace que una zona descuidada caiga rápido: una pandilla común con diez miembros dentro genera 30 puntos por minuto y puede capturarla en unos **cuatro minutos** si no encuentra oposición. Con presencia enemiga la cosa se alarga, porque cada punto que suma el rival te resta uno a ti.
 
 ### El desgaste
 
 Cada **hora** el servidor recorta la influencia de **todas** las facciones en **todas** las zonas en una cantidad aleatoria de **0 a 10 puntos**. Es imposible dejar una zona asegurada para siempre: si tu gente deja de pisar el barrio, el marcador se desinfla solo y tarde o temprano otro grupo lo supera.
-
-Si una facción es disuelta o pierde su condición de pandilla o mafia, pierde de inmediato todos sus territorios y toda la influencia acumulada.
 
 ## La influencia como recurso
 
@@ -157,14 +155,14 @@ Cuando se cumple todo, cada actividad tiene su propia probabilidad de activar la
 
 Cada bonificación que se activa paga además **+5 Burger Points** y abre un **tiempo de espera de 30 minutos**. Ese tiempo es **único y compartido**: mientras corre, ninguna de las otras actividades de la lista te dará nada, aunque puedas seguir haciéndolas con normalidad. Conviene reservarlo para lo que más paga.
 
-El robo de vehículo cuenta tanto si lo consigues puenteando el cableado como al desarmar piezas del coche.
+El robo de vehículo cuenta tanto si lo consigues puenteando el cableado como al desarmar piezas del coche o al entregarlo en el desguazadero.
 
 ### Sorteos automáticos dentro de tu zona
 
 Mientras estás dentro de un territorio de tu facción y cumples los mismos requisitos de arriba, participas en dos sorteos automáticos. Los jugadores pausados quedan fuera de ambos.
 
 - **Cada hora**: **30 %** de probabilidad de encontrarte **entre $100 y $499** en efectivo.
-- **Cada 15 minutos**: **50 %** de probabilidad de recibir un **mensaje de texto de un desconocido** pidiéndote droga y citándote en una propiedad al azar dentro de la zona. Solo llega si no tienes ya otro encargo pendiente, y únicamente cuando hay al menos **dos policías** conectados. Para este sorteo no hace falta esperar el tiempo de espera de las bonificaciones.
+- **Cada 15 minutos**: **50 %** de probabilidad de recibir un **mensaje de texto de un desconocido** pidiéndote droga y citándote en una propiedad al azar dentro de la zona. Solo llega si no tienes ya otro encargo pendiente, y únicamente cuando hay al menos **dos policías** conectados. En cada sorteo se envía como máximo **un** mensaje en todo el servidor. Para este sorteo no hace falta esperar el tiempo de espera de las bonificaciones.
 
 ## Graffitis
 
@@ -172,9 +170,9 @@ Los graffitis son carteles de texto que pintas sobre cualquier pared con una lat
 
 ### Lo esencial
 
-- Necesitas **8 horas de juego** como mínimo y una **lata de spray** con carga en la **mano derecha**.
+- Necesitas **8 horas de juego** como mínimo, una **cuenta certificada** y una **lata de spray** con carga en la **mano derecha**.
 - Puedes tener hasta **2 graffitis** activos a la vez. Para superar ese número necesitas **puntos de rol positivos**.
-- Pintar dentro de un interior o mundo privado requiere **premium platino**.
+- Pintar dentro de un interior o mundo privado requiere **premium oro** o superior.
 - La lata tiene una carga de **10.000** unidades y cada graffiti terminado gasta **250**, así que una lata llena da para **40 graffitis**.
 - Hay cuatro fuentes clásicas para todos (Arial, Arial Black, Comic Sans MS y Diploma, con tamaño a elección) y **doce fuentes de letras** de estilo callejero, exclusivas de usuarios **premium** de cualquier nivel. Con estas últimas puedes usar hasta **16 letras** en un máximo de **3 líneas**, con un color distinto por letra.
 - El tiempo de pintado depende del largo del texto: **2 segundos por letra**, con un tope según el tamaño en las fuentes clásicas. Mientras pintas debes quedarte quieto junto al muro; si te alejas, el graffiti se cancela.

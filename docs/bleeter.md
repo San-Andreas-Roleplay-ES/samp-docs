@@ -131,7 +131,7 @@ La foto de perfil y la portada no admiten GIF ni AVIF: son imágenes fijas.
 
 ### Nombre de usuario (@)
 
-Al crear el personaje se te asigna un nombre de usuario automático a partir de tu nombre y apellido. Cambiarlo se hace **dentro del juego** con `/usuariobleeter`:
+Al crear el personaje se te asigna un nombre de usuario automático formado por la inicial de tu nombre, tu apellido y un número. Cambiarlo se hace **dentro del juego** con `/usuariobleeter`:
 
 | Requisito | Detalle |
 |---|---|
@@ -140,7 +140,7 @@ Al crear el personaje se te asigna un nombre de usuario automático a partir de 
 | Teléfono | En la mano derecha |
 | Longitud | Entre **5 y 24 caracteres** |
 
-El nombre no puede contener espacios, puntos, el símbolo `@`, acentos graves ni extensiones de archivo, y no puede estar ya en uso por otro personaje.
+El nombre no puede contener espacios, puntos, el símbolo `@`, los acentos sueltos (`´` y `` ` ``) ni extensiones de archivo, y no puede estar ya en uso por otro personaje.
 
 Ten en cuenta que si cambias el **nombre de tu personaje**, tu nombre de usuario de Bleeter se reinicia al valor automático.
 
@@ -244,7 +244,7 @@ Las tendencias se construyen con las **etiquetas** (`#palabra`) que la gente usa
 
 En la web, la sección **Explorar** analiza las publicaciones de los últimos **7 días**. No cuenta simplemente cuántas veces aparece cada etiqueta: lo que más pesa es **cuánta gente distinta la ha usado**, para que una sola persona repitiendo una palabra no pueda inventarse una tendencia. Las menciones de las últimas **6 horas** cuentan doble, de modo que lo que está pasando ahora sube antes que lo de hace unos días.
 
-Dentro del juego, `/tendencias` te muestra las **cinco** etiquetas más repetidas en las últimas **72 horas**. Necesitas el teléfono en la mano derecha para consultarlas.
+Dentro del juego, `/tendencias` te muestra las **cinco** etiquetas más repetidas en las últimas **72 horas**. Solo cuentan las publicaciones cuyo texto **empieza por una etiqueta** (si traen varias, se toma la última). Necesitas estar vivo y tener el teléfono en la mano derecha para consultarlas.
 
 ## Notificaciones
 

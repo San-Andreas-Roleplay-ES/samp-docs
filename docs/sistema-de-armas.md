@@ -2,7 +2,7 @@
 
 ## Introducción
 
-En San Andreas Roleplay las armas no son un simple botón: son **objetos físicos** que ocupan espacio en tu inventario, pesan, se ensucian, se rompen, llevan un número de serial grabado y necesitan munición real para funcionar. Comprar una pistola legalmente exige licencia, cuenta certificada, casa propia, antecedentes limpios y horas de juego; conseguirla por la vía ilegal exige contactos. Y una vez que disparas, cada impacto queda registrado en el cuerpo de la víctima con el arma, la zona alcanzada y el daño causado.
+En San Andreas Roleplay las armas no son un simple botón: son **objetos físicos** que ocupan espacio en tu inventario, pesan, se ensucian, se rompen, llevan un número de serial grabado y necesitan munición real para funcionar. Comprar una pistola legalmente exige licencia, cuenta certificada, una vivienda, antecedentes limpios y horas de juego; conseguirla por la vía ilegal exige contactos. Y una vez que disparas, cada impacto queda registrado en el cuerpo de la víctima con el arma, la zona alcanzada y el daño causado.
 
 Lo que ocurre en el cuerpo de la víctima (caer herido, hemorragias, vendajes, vida máxima) tiene su propia guía: el [sistema de heridas](sistema-de-heridas.md).
 
@@ -32,7 +32,7 @@ Antes de disparar nada, tu personaje necesita cumplir tres condiciones básicas:
 | Autenticación de doble factor (2FA) | **Activada en tu cuenta** |
 | Certificación | **Cuenta certificada** |
 
-Sin esas tres cosas no puedes cargar ni disparar un arma. La verificación de doble factor y la certificación se gestionan desde el [panel de control](panel-de-control.md); la [certificación](sistema-de-certificacion.md) es un examen de normas que se aprueba una sola vez por cuenta, y después de aprobarlo debes volver a conectarte para que tu personaje la reconozca. Los policías en servicio están exentos de estos requisitos.
+Sin esas tres cosas no puedes cargar ni disparar un arma. La verificación de doble factor y la certificación se gestionan desde el [panel de control](panel-de-control.md); la [certificación](sistema-de-certificacion.md) es un examen de normas que se aprueba una sola vez por cuenta, y después de aprobarlo debes volver a conectarte para que tu personaje la reconozca. Los miembros de la policía y de la justicia están exentos de estos requisitos.
 
 ### Comprar un arma en Ammu-Nation
 
@@ -43,7 +43,7 @@ Las armerías Ammu-Nation son negocios normales, con dueño, empleados y stock, 
 | **Licencia de portación (CCW)** | Obligatoria para llevarte cualquier arma. |
 | **50 horas de juego** | Se aplica también a cargadores y cajas de munición. |
 | **Cuenta certificada** | Se aplica también a cargadores y cajas de munición. |
-| **Una casa a tu nombre** | Sin propiedad residencial no te venden armas ni munición. |
+| **Una vivienda** | Una casa propia, alquilada, con llaves o una habitación. Sin vivienda no te venden armas ni munición. |
 | **Sin antecedentes penales** | Un solo arresto en tu historial te cierra la venta. |
 | **Espacio para recibirla** | El arma solo puede ir a tu mano derecha o a un bolso o mochila donde quepa. Si no hay sitio, la compra se cancela antes de cobrarte. |
 | **Espera entre compras** | **Dos semanas** entre arma y arma (una semana con premium Oro o superior). |
@@ -61,9 +61,9 @@ Requisitos para que te la otorguen:
 - Tener **licencia de conducir** vigente (se saca en la autoescuela).
 - **No tener ningún antecedente penal**.
 
-Existe además el **permiso 4473**, un permiso puntual de compra que entregan la fiscalía o los detectives fiscales y que exige licencia de conducir más **certificado médico** tramitado con los servicios de emergencia. El permiso 4473 se consume al comprar un arma.
+Existe además el **permiso 4473**, un permiso puntual de compra que entregan los líderes de la fiscalía o de los detectives fiscales y que exige licencia de conducir más **certificado médico** tramitado con los servicios de emergencia. Las tiendas no lo piden para vender un arma (basta la licencia de portación), pero si lo tienes se consume al comprar una.
 
-La licencia puede ser **revocada** por un oficial en servicio en cualquier momento, y se pierde automáticamente si tu personaje es condenado. Cambiar el nombre de tu personaje también borra tus licencias.
+La licencia puede ser **revocada** por un oficial en servicio en cualquier momento, y se pierde automáticamente si tu personaje es arrestado y condenado. Cambiar el nombre de tu personaje también borra tus licencias.
 
 Con `/licencia [id] armas` puedes enseñar el documento a otra persona, igual que harías con la de conducir.
 
@@ -72,7 +72,7 @@ Con `/licencia [id] armas` puedes enseñar el documento a otra persona, igual qu
 Las armas se dividen en dos categorías según su tamaño:
 
 - **De bolsillo** — pistolas, revólveres, subfusiles compactos y escopetas recortadas. Ocupan un hueco de inventario y puedes llevarlas encima sin que se vean.
-- **Pesadas** — escopetas largas, fusiles de asalto, ametralladoras y rifles de francotirador. Ocupan dos huecos y deben ir en la espalda, en el pecho, en las manos o dentro de un **estuche porta rifles** (coste base **$431**). Un bolso deportivo también sirve para transportar material pequeño.
+- **Pesadas** — escopetas largas, fusiles de asalto, ametralladoras y rifles de francotirador. Ocupan dos huecos y deben ir en la espalda, en el pecho, en las manos o dentro de un **estuche porta rifles** (coste base **$431**). Un bolso deportivo o una mochila también sirven para llevarlas, siempre que el peso total no supere su capacidad.
 
 Ir armado sin licencia tiene consecuencias: si ingresas herido al hospital, el personal médico alerta por radio a la policía de que hay un paciente armado sin permiso.
 
@@ -89,7 +89,7 @@ Consumibles y accesorios habituales de armería:
 | Kit de limpieza de armas | **$518** | Trae 20 usos; cada reparación gasta 5. |
 | Chaleco kevlar | **$431** | 100 puntos de protección. |
 | Estuche porta rifles | **$431** | Para transportar armas pesadas. |
-| Bolso deportivo | **$144** | 20 huecos de inventario. |
+| Bolso deportivo | **$144** | Aguanta hasta 20 kg. |
 | Destornillador | **$15** | Herramienta para borrar seriales. |
 | Vendaje | **$144** | Detiene hemorragias. |
 | Torniquete | **$360** | Detiene hemorragias por más tiempo. |
@@ -143,6 +143,8 @@ Sostén el cargador en la **mano derecha**, acércate a una **caja de munición*
 | .300 Winchester Magnum | $575 | $1.725 |
 
 El cargador **.44** de la Desert Eagle es el más caro del catálogo con **$810** de coste base y solo **7 balas** de capacidad.
+
+Dos excepciones a la regla del calibre exacto: los cargadores y cajas **.44** y **.308 Winchester** son intercambiables entre sí, y el **VSS Vintorez**, aunque figura como 9x39, usa los cargadores y cajas de **9x19**.
 
 ## Estado del arma
 
@@ -215,7 +217,7 @@ Cómo funciona:
 
 Para colocártelo, ten el chaleco en la mano y usa `/usar`. El chaleco kevlar estándar se lleva bajo la ropa y no es visible; los chalecos de las fuerzas del orden (por ejemplo los modelos modernos de LSPD y LSSD, que sus facciones entregan con `/equipar`) sí se ven, pueden ajustarse con `/editar chaleco` y también traen 100 puntos de protección. Los chalecos reflectantes y demás prendas de ese espacio que no son antibalas son solo ropa: no dan protección.
 
-Existen también reducciones de daño que no dependen del chaleco: los **escudos** antidisturbios reducen a la mitad el daño recibido, igual que el equipo táctico pesado de las unidades especiales; disparar desde dentro de un vehículo a más de 7 metros **falla la mitad de las veces**, y los vehículos blindados anulan por completo el daño a sus ocupantes. Tu vida máxima (musculatura y felicidad) se explica en el [sistema de heridas](sistema-de-heridas.md).
+Existen también reducciones de daño que no dependen del chaleco: los **escudos** antidisturbios reducen a la mitad el daño recibido, igual que el equipo táctico pesado de las unidades especiales; disparar desde dentro de un vehículo a más de 7 metros **falla la mitad de las veces** y, con las pistolas y revólveres de 22 o más de daño (salvo la S&W SD9 VE y las silenciadas), el disparo hecho desde un vehículo solo causa el **30%** del daño; y los vehículos blindados anulan por completo el daño a sus ocupantes. Tu vida máxima (musculatura y felicidad) se explica en el [sistema de heridas](sistema-de-heridas.md).
 
 ## Tabla de calibres y daño
 
@@ -311,7 +313,7 @@ Atraviesan el chaleco antibalas a menos de 10 metros.
 | Remington 870 | 12GA | 8 | 3,6 kg | 30 | $1.456 |
 | Benelli M4 | 12GA | 6 | 4,0 kg | **33** | $1.779 |
 
-Además de su poder de parada, una escopeta disparada contra la puerta de un interior la **revienta de un tiro**, abriendo paso sin ganzúas ni ariete.
+Además de su poder de parada, una escopeta disparada contra una puerta colocada dentro de una propiedad (de las que se instalan como mueble) la **revienta de un tiro**, abriendo paso sin ganzúas ni ariete.
 
 ### Subfusiles (pesadas)
 

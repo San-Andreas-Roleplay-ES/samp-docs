@@ -11,9 +11,9 @@ La preparación no necesita utensilios, mesa ni recipientes: solo ingredientes e
 ### Comandos
 
 - `/cocinar` — abre o cierra el recetario de cocina.
-- `/bartender` — abre o cierra la carta del bar. `/bar` sin más es solo la animación de barra.
-- `/refrigerador` (alias `/refri`) — abre el refrigerador. Con `/refrigerador guardar` metes lo que llevas en la mano derecha y con `/refrigerador sacar [ranura]` sacas un objeto.
-- `/sacarunidades [cantidad]` — separa unidades de lo que llevas en la mano derecha y las deja en la izquierda. Alias: `/sacarunidad`, `/sacaru`, `/cogerunidad`, `/extraerunidad`.
+- `/bartender` — abre o cierra la carta del bar. `/bar [1 - 12]` es solo una animación de barra y no abre la carta.
+- `/refrigerador` (alias `/refri`) — abre el refrigerador. Con `/refrigerador guardar` metes lo que llevas en la mano derecha y con `/refrigerador sacar [ranura]` sacas un objeto. Para usarlo debes estar a **2 metros o menos** del refrigerador, y solo admite alimentos, bebidas, ingredientes y paquetes de comida.
+- `/sacarunidades [cantidad]` — separa unidades de lo que llevas en la mano derecha y las deja en la izquierda (la izquierda debe estar libre). En las ollas, pizzas y botellas no pide cantidad: saca una unidad por vez. Alias: `/sacarunidad`, `/sacaru`, `/cogerunidad`, `/extraerunidad`.
 - `/meterunidades [cantidad]` — pasa unidades de la mano derecha a un objeto igual en la mano izquierda. Alias: `/meterunidad`, `/meteru`.
 - `/habilidades` — muestra tus puntos de cocina y de bartender.
 
@@ -50,7 +50,7 @@ Al abrir `/cocinar` o `/bartender` ves el recetario con estas herramientas:
 
 - **Categorías** a un lado, cada una con su cantidad de recetas.
 - **Puedo preparar**, un filtro que muestra solo lo que ya puedes hacer con tu habilidad y con lo que hay en el refrigerador. Si tienes algo listo, el menú abre directamente en ese filtro.
-- Cada tarjeta muestra el nivel de la receta y, si te falta algo, cuántos ingredientes faltan.
+- Cada tarjeta muestra el nivel que pide la receta si todavía no lo alcanzas, el aviso de que está lista si puedes prepararla o cuántos ingredientes te faltan.
 - La **ficha de la receta** enseña la vista previa del plato, cuántas porciones rinde, si se lleva en una mano o con las dos, el nivel que exige y la lista de ingredientes: en verde los que tienes y en rojo los que faltan.
 - Las pestañas **COCINA** y **BAR** cambian entre los dos libros.
 
@@ -130,8 +130,9 @@ Entre los tragos hay jarra de cerveza negra, copa de vino blanco, cuba libre, mo
 
 ### Botellas y medidas
 
-- Cada **botella rinde 12 medidas**: un vaso servido gasta **1** medida y un cóctel gasta **2** medidas del licor principal. Las botellas se guardan en el refrigerador como cualquier ingrediente.
-- También puedes servir a mano: con una botella en la mano derecha y la izquierda libre, `/sacarunidades` saca un vaso o una copa lista para beber y gasta una medida.
+- Cada **botella de cerveza, vino, licor o champagne rinde 12 medidas**: un vaso servido gasta **1** medida y la mayoría de los cócteles gastan **2** medidas del licor principal (unos pocos, como el mimosa, el negroni o el spritz, solo 1). Las botellas se guardan en el refrigerador como cualquier ingrediente.
+- También puedes servir a mano: con una botella de cerveza, vino, licor o champagne (o de leche) en la mano derecha y la izquierda libre, `/sacarunidades` saca un vaso o una copa lista para beber y gasta una medida.
+- Los vasos simples (cerveza, vino, ron, whiskey, vodka, champagne, soda, jugos, leche, capuchino y café con leche) también los venden algunos negocios; los cócteles y los shots solo existen si alguien los prepara.
 - Existe una **botella de agua con gas**: el agua normal lleva la tapa roja y la gasificada la tapa azul.
 - Para decorar tu bar existen **13 vasos y copas decorativos** en la categoría Cocina del catálogo de muebles premium (consulta el [sistema de muebles](sistema-de-muebles.md)).
 
@@ -161,7 +162,7 @@ Rangos de nivel de cada libro:
 - **Usa el filtro Puedo preparar** para ver qué puedes hacer con lo que hay en el refrigerador, sin ir receta por receta.
 - **Guarda cosechas, carne de caza y pescado en el refrigerador.** Un solo viaje de caza o pesca alimenta varias recetas.
 - **Compra ingredientes por paquetes y apílalos.** Ahorran espacio en un refrigerador de 128 ranuras.
-- **En el bar, rinde las botellas.** Una botella da 12 vasos o 6 cócteles, así que conviene ir por los vasos simples mientras subes habilidad.
+- **En el bar, rinde las botellas.** Una botella da 12 vasos o unos 6 cócteles, así que conviene ir por los vasos simples mientras subes habilidad.
 - **Cocina con las manos libres.** Un plato grande exige las dos manos y no puedes empezar con un objeto pesado en ellas.
 - **Revisa el refrigerador de una propiedad de facción antes de contar con él.** Allí solo el líder puede sacar objetos y, por lo tanto, cocinar.
 

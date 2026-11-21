@@ -2,7 +2,7 @@
 
 ## Introducción
 
-Los graffitis son carteles de texto que pintas con una lata de spray sobre cualquier pared de la ciudad y que quedan guardados de forma permanente. Sirven para firmar un barrio, dejar un recado o marcar el territorio de una pandilla, y cualquier jugador puede taparlos pintando encima.
+Los graffitis son carteles de texto que pintas con una lata de spray sobre cualquier pared de la ciudad y que quedan guardados. Los de la calle desaparecen pasada aproximadamente una semana desde que se pintaron; los de interiores no caducan. Sirven para firmar un barrio, dejar un recado o marcar el territorio de una pandilla, y cualquier jugador puede taparlos pintando encima.
 
 Hay dos familias de estilos. Las **fuentes clásicas** (Arial, Arial Black, Comic Sans MS y Diploma) están disponibles para todos y puedes elegir su tamaño. Las **fuentes de letras** son doce estilos callejeros exclusivos de usuarios premium de cualquier nivel: cada letra se pinta como una pieza independiente, con su propio color, y cada fuente trae un tamaño fijo pensado para leerse bien desde lejos.
 
@@ -22,7 +22,7 @@ Pintar un graffiti da Burger Points y, dentro del territorio de tu propia pandil
 | Cuenta | Cuenta **certificada** (ver [Sistema de certificación](sistema-de-certificacion.md)) |
 | Material | Una **lata de spray** con carga en la **mano derecha** |
 | Cantidad | Hasta **2 graffitis** activos a la vez. Para tener más necesitas **puntos de rol positivos** |
-| Interiores | Pintar dentro de una propiedad o en cualquier mundo privado requiere **premium platino** o superior |
+| Interiores | Pintar dentro de una propiedad o en cualquier mundo privado requiere **premium oro** o superior |
 | Fuentes de letras | Cualquier nivel de **premium** |
 | Espacio en el mapa | El servidor admite como máximo **1.024** graffitis. Si se llena, no se pueden crear más hasta que se libere algún hueco |
 
@@ -35,7 +35,7 @@ La lata tiene una carga de **10.000** unidades y cada graffiti terminado gasta *
 1. Colócate frente a la pared con la lata en la mano derecha y escribe `/graffiti crear`.
 2. Escribe el **texto**, de hasta **24 caracteres** sin contar las etiquetas de color. Debe estar en inglés, salvo jergas hispanas.
 3. Elige la **fuente** en el selector, que muestra una vista previa de cada estilo. Las cuatro clásicas aparecen primero y las doce de letras a continuación.
-4. Con una fuente clásica, elige el **tamaño**: pequeño, mediano, grande o gigante. El gigante solo admite textos de hasta **14 caracteres**. Las fuentes de letras no piden tamaño.
+4. Con una fuente clásica, elige el **tamaño**: pequeño, mediano, grande o gigante. El gigante solo admite textos de hasta **14 caracteres**, contando las etiquetas de color. Las fuentes de letras no piden tamaño.
 5. Revisa el resumen, confirma con **Ir a pintar** y **mantén presionado el botón de disparo** con la lata en la mano para empezar.
 6. Cuando la barra de progreso termina, acomoda el graffiti sobre la pared con el editor de objetos y guárdalo.
 

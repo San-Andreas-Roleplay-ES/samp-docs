@@ -4,13 +4,13 @@
 
 El teléfono es la herramienta de comunicación y orientación de tu personaje. Con él llamas y escribes mensajes, guardas contactos, compartes tu ubicación, conversas por el chat de [Bleeter](bleeter.md) y consultas el mapa del servidor para marcar rutas hacia calles, propiedades, negocios y trabajos. Si no tienes teléfono a mano, puedes llamar desde una cabina pública, y para viajar con música tienes la radio del vehículo, la de tu propiedad y las radios portátiles.
 
-Hay dos clases de teléfono. El **smartphone** funciona con una tarjeta SIM que eliges tú y se puede cambiar cuando quieras; solo con un smartphone puedes usar el chat de Bleeter, compartir tu ubicación y ofrecer tu número desde el menú de jugadores. El **teléfono prepago** trae un número fijo ligado al aparato: sirve para llamar y mandar SMS, pero no admite cambiar de tarjeta SIM ni tiene las funciones de smartphone, y cualquiera que lo tenga en la mano puede desbloquearlo. En un smartphone, solo el dueño del número desbloquea la pantalla.
+Hay dos clases de teléfono. El **smartphone** funciona con una tarjeta SIM que eliges tú y se puede cambiar cuando quieras; solo con un smartphone puedes usar el chat de Bleeter, compartir tu ubicación y ofrecer tu número desde el menú de jugadores. El **teléfono prepago** trae un número fijo ligado al aparato: sirve para llamar y mandar SMS, pero no admite cambiar de tarjeta SIM ni tiene las funciones de smartphone, y cualquiera que lo tenga en la mano puede desbloquearlo. En un smartphone, solo el dueño del número desbloquea la pantalla, salvo los miembros de las facciones de policía y justicia, que pueden desbloquear cualquiera.
 
 El GPS (`/gps`) es el mapa de San Andreas: busca por calle, propiedad, categoría de negocio o producto y marca el destino en tu minimapa. Es gratuito y no necesita teléfono.
 
 ### Comandos
 
-- `/telefono` (también `/tel`) — saca el teléfono de tu inventario a la mano derecha y abre su pantalla. Usa `/tc` para recuperar el cursor si lo cerraste con ESC.
+- `/telefono` (también `/tel`) — saca el teléfono de tu inventario a la mano derecha y abre su pantalla; si ya lo llevas en la mano, el mismo comando lo guarda. Usa `/tc` para recuperar el cursor si lo cerraste con ESC.
 - `/llamar [número o contacto]` — marca un número o un contacto. `/llamar 911` conecta con emergencias.
 - `/contestar` — contesta una llamada entrante.
 - `/colgar` — termina la llamada.
@@ -29,7 +29,7 @@ El GPS (`/gps`) es el mapa de San Andreas: busca por calle, propiedad, categorí
 
 ## El teléfono
 
-Para usar la pantalla del teléfono debes tenerlo en el inventario; `/telefono` lo pasa a tu mano derecha y abre la interfaz con la pantalla de bloqueo. Desde ahí accedes a **Mensajes**, **Llamadas**, **Contactos**, la aplicación **Trading** (CluckinCoin, explicada en [Cluckin' Coins](sistema-de-cluckin-coins.md)), la aplicación **Prófugos** (explicada en [prófugos](sistema-de-profugos.md)) y los **Ajustes**. Los comandos de llamadas, SMS, contactos y SIM exigen el teléfono en la **mano derecha** y que tenga un número asignado; con el teléfono guardado en el inventario no funcionan.
+Para usar la pantalla del teléfono debes tenerlo en el inventario; `/telefono` lo pasa a tu mano derecha y abre la interfaz con la pantalla de bloqueo. Desde ahí accedes a **Mensajes**, **Llamadas**, **Contactos**, la aplicación **Trading** (CluckinCoin, explicada en [Cluckin' Coins](sistema-de-cluckin-coins.md)), la aplicación **Prófugos** (explicada en [prófugos](sistema-de-profugos.md)), el **Mapa** (abre el mismo menú del GPS), **Dynasty 8** (el catálogo de propiedades) y los **Ajustes**. Los comandos de llamadas, SMS, contactos y SIM exigen el teléfono en la **mano derecha** y que tenga un número asignado; con el teléfono guardado en el inventario no funcionan.
 
 En **Ajustes** puedes cambiar la tarjeta SIM, el fondo de pantalla, el tono de llamada, el tono de mensajes y borrar el historial. La pantalla de bloqueo te avisa de las llamadas perdidas y los mensajes sin leer.
 
@@ -114,7 +114,7 @@ Las cabinas también reciben llamadas: si alguien marca su número, la cabina su
 
 ## Chat de Bleeter con /w
 
-El comando `/w` es el chat privado de [Bleeter](bleeter.md): los mismos mensajes se leen en el juego y en el panel de usuario de la web, así que puedes conversar con alguien aunque esté desconectado. Necesitas un **smartphone** (basta con llevarlo en el inventario, no hace falta tenerlo en la mano) y estar vivo.
+El comando `/w` es el chat privado de [Bleeter](bleeter.md): los mismos mensajes se leen en el juego y en el panel de usuario de la web, así que puedes conversar con alguien aunque esté desconectado. Necesitas un **smartphone** con una tarjeta SIM puesta (basta con llevarlo en el inventario, no hace falta tenerlo en la mano) y estar vivo.
 
 | Forma | Qué hace |
 |-------|----------|
@@ -131,7 +131,7 @@ Los mensajes que te escriben desde la web llegan al juego en pocos segundos si l
 `/ubicacion [jugador]` envía un punto del mapa a otro jugador. El receptor lo ve como un punto en su minimapa y como un mensaje de chat, también guardado en el chat de Bleeter.
 
 - Debes tener un **smartphone en la mano derecha**, y el destinatario debe estar en tus contactos y llevar un smartphone.
-- La ubicación es **aproximada**: se desvía hasta **100 metros** de tu posición real. Si estás dentro de una propiedad, se comparte la de su entrada.
+- La ubicación es **aproximada**: se desvía hasta **100 metros** hacia cada lado (norte, sur, este u oeste) de tu posición real. Si estás dentro de una propiedad, se comparte la de su entrada; si estás en un interior que no es una propiedad, no hay señal suficiente para compartirla.
 - Debes esperar **5 minutos** entre una ubicación compartida y la siguiente.
 
 ## GPS
@@ -140,19 +140,21 @@ Los mensajes que te escriben desde la web llegan al juego en pocos segundos si l
 
 | Opción | Qué hace |
 |--------|----------|
-| Buscar calle | Escribe al menos **5 letras** del nombre de la calle |
+| Buscar calle | Escribe al menos **5 letras** del comienzo del nombre de la calle |
 | Buscar propiedad | Escribe el número de llave de la propiedad (igual que `/prop`) |
 | Buscar gasolinera cercana | Marca la gasolinera más próxima |
-| Buscar negocio cercano | Marca la tienda más próxima |
-| Buscar bar/club cercano | Marca el bar o club más próximo |
+| Buscar negocio cercano | Marca la tienda abierta más próxima |
+| Buscar bar/club cercano | Marca el bar o club abierto más próximo |
 | Buscar comida rápida cercana | Marca el negocio de comida rápida más próximo |
 | Buscar hotel cercano | Marca el hotel más próximo |
 | Buscar por categoría | Muestra negocios abiertos con existencias de la categoría elegida |
 | Buscar por producto | Muestra negocios abiertos que vendan el producto que escribas |
-| Negocios activos | Lista de negocios con actividad, con su llave |
-| Puntos de interés | Lista de edificios públicos y lugares de referencia, con su zona |
+| Negocios activos | Lista de tiendas, talleres y clubes que tienen al menos un empleado en servicio en ese momento, con su llave |
+| Puntos de interés | Lista de edificios públicos y lugares de referencia (como bancos, hospitales y depósitos de grúas) que están en el exterior, con su zona |
 | Trabajos | Marca un vehículo de trabajo disponible |
 | Entretenimiento | Marca el casino, el paintball, las carreras de caballos, la pista de motocross, el 8-Ball Pool, los bolos o el golf |
+
+Las búsquedas de lo "cercano" (negocio, bar/club, comida rápida y hotel) solo encuentran resultados si te encuentras en el exterior: desde dentro de una propiedad no marcan nada.
 
 ### Buscar por categoría y por producto
 
@@ -183,7 +185,7 @@ El menú ofrece dos fuentes:
 
 ### Música de YouTube
 
-Elige **YouTube**, escribe el nombre de la canción o del artista (hasta **100 caracteres**) y selecciona uno de los hasta **10 resultados** que se muestran. Después viene la descarga del archivo, que puede tardar unos minutos mientras ves el mensaje en pantalla.
+Elige **YouTube**, escribe el nombre de la canción o del artista (hasta **100 caracteres**) y selecciona uno de los hasta **10 resultados** que se muestran. Después viene la descarga del archivo, que puede tardar mientras ves el mensaje en pantalla. Si pasan **90 segundos** sin que termine, la espera se cancela y no se te cobra.
 
 - Necesitas al menos **1 moneda** en tu cuenta. Se descuenta cuando la canción empieza a sonar; las monedas se explican en la [tienda premium](tienda-premium.md).
 - Debes esperar **5 segundos** entre una búsqueda y la siguiente.
@@ -207,4 +209,4 @@ Una radio portátil es un objeto que se deja en el suelo para que suene al aire 
 - Si no tienes teléfono a mano, busca una cabina pública y lleva siempre algo de efectivo para pagar los $5.
 - Usa la búsqueda por producto del GPS antes de recorrer la ciudad: te muestra el precio de cada negocio y el más cercano.
 - Antes de pagar por una canción de YouTube, comprueba que seguirás en el mismo vehículo o propiedad hasta que empiece a sonar.
-- Si compartes tu ubicación, recuerda que el receptor ve un punto aproximado: llega a unos 100 metros de ti, no a tu puerta.
+- Si compartes tu ubicación, recuerda que el receptor ve un punto aproximado: puede quedar a más de 100 metros de ti, no en tu puerta.

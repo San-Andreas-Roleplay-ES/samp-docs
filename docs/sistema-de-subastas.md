@@ -24,6 +24,8 @@ Salen a subasta las propiedades que se liberan por inactividad de su dueño:
 | Casa | 30 días de inactividad |
 | Negocio | 14 días de inactividad (7 días si acumula mucha basura) |
 
+La inactividad se revisa cuando el servidor se reinicia. Las propiedades de la isla de Santa Catalina no se liberan por inactividad.
+
 Condiciones para que una propiedad liberada salga a subasta:
 
 - Su **valor** debe superar los **$100.000**. Las propiedades de ese valor o menos quedan libres para comprarlas con `/comprar`, como siempre.

@@ -10,7 +10,7 @@ Para consumir necesitas tener la droga en la **mano derecha** y usar `/usardroga
 
 ### Comandos
 
-- `/usardroga [cantidad]` — consume entre **0.1 y 1 gramo** de lo que tengas en la mano derecha. También se usa con los medicamentos de detoxicación y con el narcán.
+- `/usardroga [cantidad]` — consume entre **0.1 y 1 gramo** de lo que tengas en la mano derecha; debes tener más gramos de los que vas a consumir. También se usa con los medicamentos de detoxicación y con el narcán.
 - `/mirar [id]` — revisa los estados físicos visibles de un personaje.
 - `/crearlaboratorio [confirmar]` — instala un laboratorio de drogas en tu propiedad.
 - `/destruirlaboratorio [confirmar]` — destruye el laboratorio más cercano.
@@ -18,15 +18,15 @@ Para consumir necesitas tener la droga en la **mano derecha** y usar `/usardroga
 - `/narcotraficante` — te marca como narcotraficante si perteneces a una facción ilegal destacada u oficial.
 - `/falsificarreceta` — crea una receta médica falsa de opioides.
 
-Si consumes cualquier droga **en exteriores** ganas **+10 Burger Points**, como máximo una vez cada hora. Ver [sistema de Burger Points](sistema-de-burger-points.md).
+Si consumes una droga con `/usardroga` **en exteriores** ganas **+10 Burger Points**, como máximo una vez cada hora (armar el porro de marihuana no cuenta). Ver [sistema de Burger Points](sistema-de-burger-points.md).
 
 ---
 
 ## Efectos de las drogas
 
-Cada droga tarda un tiempo en hacer efecto (**retraso**) y luego dura un rato (**duración**). Mientras está activa te da vida, resistencia a los golpes, a los disparos y al arresto (taser, escopeta de goma, 40mm), y en algunos casos bonificaciones delictivas.
+Cada droga tarda un tiempo en hacer efecto (**retraso**) y dura un rato (**duración**, que se cuenta desde que la consumes, retraso incluido). Cuando pasa el retraso te da resistencia a los golpes, a los disparos y al arresto (taser, escopeta de goma, 40mm), y en algunos casos bonificaciones delictivas. La vida, en cambio, se recupera al instante de consumir.
 
-Las resistencias de las tablas son el **máximo alcanzable** con una droga de 100 de fuerza y una dosis completa; con menos fuerza o menos dosis los porcentajes bajan proporcionalmente. La resistencia total nunca supera el **90%**, por muchas sustancias que combines.
+Los porcentajes de las tablas son los **valores base** de cada sustancia. El efecto real depende de la fuerza de la droga y de la dosis con la que empezaste a consumirla: con mucha fuerza y una dosis completa puede superar con holgura el valor de la tabla (más del doble), y con poca fuerza o una dosis pequeña queda por debajo. Lo mismo vale para la vida que recuperas y para las probabilidades de bonificación delictiva. La resistencia total nunca supera el **90%**, por muchas sustancias que combines.
 
 ### Drogas recreativas e ilegales
 
@@ -39,12 +39,12 @@ Las resistencias de las tablas son el **máximo alcanzable** con una droga de 10
 | **Heroína** | 10 s | 30 min | +45 | 30% | 10% | 20% | 70% → +2 de habilidad; 90% → +$70 por delito; −40% al tiempo de desarmar piezas |
 | **LSD** | 5 min | 30 min | +30 | 10% | — | — | 75% → +2 de habilidad |
 | **Metanfetamina** | 2 min | 10 min | +50 | 20% | 10% | — | 80% → +2 de habilidad; 80% → +$50 por delito; −30% al tiempo de forzar puertas y de desarmar piezas |
-| **Fentanilo** | 1 min | 1 hora | **−15** | 50% | 25% | 25% | 80% → +3 de habilidad de robo de vehículos |
-| **Hongos** | 3 min | 30 min | +15 | 15% | — | — | +1 de habilidad |
+| **Fentanilo** | 1 min | 1 hora | — | 50% | 25% | 25% | 80% → +3 de habilidad de robo de vehículos |
+| **Hongos** | 3 min | 30 min | +15 | 15% | — | — | — |
 | **Óxido nitroso** | 1 min | 5 min | +15 | 10% | — | — | 70% → +1 de habilidad |
-| **Esteroides** | 5 min | 15 min | +15 | 30% | — | 30% | +1 de habilidad; mejora el entrenamiento (ver abajo) |
+| **Esteroides** | 5 min | 15 min | +15 | 30% | — | 30% | Mejora el entrenamiento (ver abajo) |
 
-> ⚠️ El **fentanilo** es la única sustancia que **resta vida** en vez de curar. A cambio es la que más resistencia da y la única que aporta habilidad de robo de vehículos.
+> ⚠️ El **fentanilo** no te cura nada, a diferencia del resto. A cambio es la que más resistencia da y la única que aporta habilidad de robo de vehículos.
 
 Además de la bonificación fija por delito, la **cocaína, el crack, la heroína y la metanfetamina** aumentan un porcentaje de la paga de los trabajos mientras están activas. El aumento base va del **30% al 55%** según la sustancia, y se ajusta por consumo: desde el **80%** de ese valor con una dosis mínima hasta el **150%** con dosis acumuladas altas.
 
@@ -54,8 +54,8 @@ Los **esteroides** suman puntos extra de musculatura cada vez que entrenas en el
 
 | Sustancia | Retraso | Duración | Vida | Golpes | Disparos | Arresto | Notas |
 |---|---|---|---|---|---|---|---|
-| **Tabaco** | 30 s | 5 min | +5 | — | — | — | Solo genera tabaquismo |
-| **Alcohol** | 2 min | 1 hora | +10 | 10% | 10% | 30% | Provoca embriaguez, náuseas y vómitos |
+| **Tabaco** | 30 s | 5 min | — | — | — | — | Solo genera tabaquismo |
+| **Alcohol** | 2 min | 1 hora | — | 10% | 10% | 30% | Provoca embriaguez, náuseas y vómitos |
 
 Con el alcohol, el efecto depende de cuánto lleves encima: a partir de media dosis empiezan las náuseas, a partir de una dosis completa puedes vomitar, y con dosis y media o más el personaje se tambalea completamente borracho.
 
@@ -67,16 +67,16 @@ Con el alcohol, el efecto depende de cuánto lleves encima: a partir de media do
 | **Alprazolam** | 5 min | 30 min | +20 | 10% | Ansiolítico |
 | **Paracetamol** | 5 min | 30 min | +15 | 5% | Analgésico / antifebril |
 | **Píldoras** | 5 min | 30 min | +15 | 5% | Genérico |
-| **Ibuprofeno** | 5 min | 30 min | +15 | 5% | Antiinflamatorio |
-| **Amoxicilina** | 5 min | 30 min | +15 | 5% | Antibiótico |
-| **Omeprazol** | 5 min | 30 min | +15 | 5% | Antiácido |
-| **Losartán** | 5 min | 30 min | +15 | 5% | Hipertensión |
-| **Metformina** | 5 min | 30 min | +15 | 5% | Diabetes |
-| **Salbutamol** | 5 min | 30 min | +15 | 5% | Trata la tos; oculta los síntomas en la consulta médica |
-| **Loratadina** | 5 min | 30 min | +15 | 5% | Antialérgico (anula estornudos) |
-| **Diclofenaco** | 5 min | 30 min | +15 | 5% | Antiinflamatorio |
+| **Ibuprofeno** | 5 min | 30 min | — | 5% | Antiinflamatorio |
+| **Amoxicilina** | 5 min | 30 min | — | 5% | Antibiótico |
+| **Omeprazol** | 5 min | 30 min | — | 5% | Antiácido |
+| **Losartán** | 5 min | 30 min | — | 5% | Hipertensión |
+| **Metformina** | 5 min | 30 min | — | 5% | Diabetes |
+| **Salbutamol** | 5 min | 30 min | — | 5% | Trata la tos; oculta los síntomas en la consulta médica |
+| **Loratadina** | 5 min | 30 min | — | 5% | Antialérgico (anula estornudos) |
+| **Diclofenaco** | 5 min | 30 min | — | 5% | Antiinflamatorio |
 
-> La vida que recuperas nunca pasa de **100**, y solo la ganas si no tienes **heridas de bala ni puñaladas** abiertas: con heridas, la droga no cura nada. Ver [sistema médico y hospital](sistema-medico-y-hospital.md).
+> La vida que recuperas nunca pasa de **100**. Solo la ganas si no tienes **heridas de bala ni puñaladas** abiertas y si no hay otra sustancia activa en tu cuerpo al consumir (el tabaco, el alcohol y los medicamentos desde el ibuprofeno hasta el diclofenaco no cuentan para esto): con heridas o mezclando, la droga no cura nada. Esos medicamentos, el tabaco y el alcohol tampoco te curan por sí solos. Ver [sistema médico y hospital](sistema-medico-y-hospital.md).
 
 ---
 
@@ -84,7 +84,7 @@ Con el alcohol, el efecto depende de cuánto lleves encima: a partir de media do
 
 Consumir sustancias sueltas es relativamente seguro; acumularlas no.
 
-- **Más de 2 drogas activas a la vez**: pierdes **50 de vida** y recibes una herida. Si ese golpe te dejaría por debajo del umbral crítico, quedas herido de gravedad en el suelo.
+- **Más de 2 drogas activas a la vez** (sin contar el tabaco, el alcohol ni el ibuprofeno, la amoxicilina, el omeprazol, el losartán, la metformina, el salbutamol, la loratadina y el diclofenaco): pierdes **50 de vida** y recibes una herida. Si ese golpe te dejaría por debajo del umbral crítico, quedas herido de gravedad en el suelo.
 - **Sobredosis**: si la dosis acumulada de las sustancias más duras supera **2.5 gramos**, pierdes **70 de vida** y recibes una herida más seria. El riesgo lo calculan solo las sustancias fuertes, no los medicamentos suaves.
 
 En ambos casos el personaje vomita y arrastra la herida hasta que reciba atención médica.
@@ -128,7 +128,7 @@ Toda la droga guardada en el mundo **pierde fuerza cada día**, entre **1 y 3 pu
 | **−2 por día** | MDMA, heroína, fentanilo |
 | **−1 por día** | Marihuana, LSD, óxido nitroso, hongos, esteroides, medicamentos |
 
-Cuando una droga baja de **1 de fuerza se destruye** y desaparece del inventario.
+Cuando la marihuana, el óxido nitroso, la cocaína, el crack, el MDMA, el fentanilo, la heroína, el LSD, la metanfetamina, la codeína, el alprazolam o el paracetamol llegan a **1 de fuerza o menos, se destruyen** y desaparecen del inventario. Los hongos, los esteroides, las píldoras y el resto de medicamentos siguen perdiendo fuerza pero no se destruyen.
 
 **Refrigerar la mercancía la conserva.** Las drogas guardadas en el **refrigerador de una propiedad** —o dentro de un paquete que esté en el refrigerador— tienen un **70% de probabilidad cada día de no perder nada de fuerza**. Lo que dejes en bolsillos, vehículos o almacenes se degrada siempre. Ver [sistema de propiedades](sistema-de-propiedades.md).
 
@@ -148,8 +148,9 @@ Cada consumo suma puntos de adicción a esa sustancia concreta. Cuánto suma dep
 
 A partir de **7 puntos** de adicción, si pasas **48 horas sin consumir** esa sustancia empieza el **síndrome de abstinencia**, con un episodio cada hora:
 
-- **Sustancias suaves** (marihuana, LSD, alprazolam, medicamentos, óxido nitroso, hongos, esteroides): solo te pones nervioso, con ganas de consumir. **No provocan vómitos ni mareos.**
-- **Sustancias duras** (cocaína, crack, MDMA, heroína, metanfetamina, fentanilo): te sientes fatal y **pierdes vida** en cada episodio: **15 de vida**, o **30** si superas los 14 puntos de adicción. Nunca te deja por debajo de 35 de vida. Además puedes vomitar (como mucho una vez cada 4 horas) y sufrir mareos (como mucho una vez cada 2 horas).
+- **Sustancias suaves** (marihuana, codeína, paracetamol, óxido nitroso, hongos, esteroides, píldoras y el resto de medicamentos): solo te pones nervioso, con ganas de consumir. **No provocan vómitos ni mareos.**
+- **LSD y alprazolam**: te pones nervioso y no pierdes vida, pero durante la hora siguiente a cada episodio puedes vomitar (como mucho una vez cada 4 horas) y sufrir mareos (como mucho una vez cada 2 horas).
+- **Sustancias duras** (cocaína, crack, MDMA, heroína, metanfetamina, fentanilo): te sientes fatal y **pierdes vida** en cada episodio: **15 de vida**, o **30** si llegas a los 14 puntos de adicción. Si tienes 45 de vida o menos no te la quita, pero te deja en 35. Además puedes vomitar (como mucho una vez cada 4 horas) y sufrir mareos (como mucho una vez cada 2 horas).
 - **Tabaco y alcohol** tienen su propio aviso —tabaquismo y alcoholismo— y nunca te quitan vida.
 
 <img width="673" height="45" alt="image" src="https://github.com/user-attachments/assets/b07ff909-75b6-48e5-b4d7-ffb8ac2e1577" />
@@ -281,7 +282,7 @@ En el mejor caso (habilidad 76 o más, premium de rango máximo y territorio pro
 | **Marihuana** | Se cultiva con semillas, abono, agua y fertilizante, y las plantas al aire libre rinden **+25% de gramos** al cosecharlas. Ver [sistema de plantaciones de marihuana](sistema-de-plantaciones-de-marihuana.md) |
 | **Hongos** | Se recogen a mano en el campo del suroeste del estado, en zonas boscosas y montañosas. Cada mata da **1 a 10 gramos** con **50 a 74 de fuerza**. Los puntos reaparecen al reiniciar el servidor, cada uno con un **30% de probabilidad** |
 
-La marihuana no se consume directamente: con `/usardroga` armas un **porro** que pasa a tu mano izquierda, y lo fumas después. Cada **0.1 gramo** que usas para armarlo rinde **3 caladas** (30 por gramo), y cada calada suma una fracción de dosis y algo de adicción.
+La marihuana no se consume directamente: con `/usardroga` armas un **porro** que pasa a tu mano izquierda (que debe estar libre), y lo fumas después. Cada **0.1 gramo** que usas para armarlo rinde **3 caladas** (30 por gramo), y cada calada suma una fracción de dosis y algo de adicción.
 
 ---
 
@@ -289,7 +290,7 @@ La marihuana no se consume directamente: con `/usardroga` armas un **porro** que
 
 La forma más directa de vender es a los **junkies**, los compradores callejeros repartidos por la ciudad, con `/traficar` y la droga en la **mano derecha**. Para venderles debe haber al menos **2 policías en servicio**. Se documentan en detalle en [sistema de mercado negro](sistema-de-mercado-negro.md).
 
-Lo que pagan depende de tres cosas: **cuántos gramos** le vendes, el **precio base** de esa sustancia y su **fuerza**. La fuerza multiplica el precio entre **x0.5** (mercancía casi inútil) y **x2** (pureza máxima), así que vender droga degradada cuesta la mitad. Los junkies especiales pagan un **25% extra**, y durante una **misión de venta** el precio se **duplica**.
+Lo que pagan depende de tres cosas: **cuántos gramos** le vendes, el **precio base** de esa sustancia y su **fuerza**. La fuerza multiplica el precio entre **x0.5** (mercancía casi inútil) y **x2** (pureza máxima), así que vender droga degradada cuesta la mitad. Los junkies especiales (piratas), que solo hacen negocios con miembros de una facción ilegal oficial, pagan un **25% extra**, y durante una **misión de venta** el precio se **duplica**. Se vende de una sola vez todo lo que tengas en la mano: el comprador te ofrece un precio y debes confirmarlo con `/traficar aceptar`. Si no le alcanza el dinero para pagarlo, no compra.
 
 Los **camellos** son compradores que esperan en esquinas fijas de la ciudad y pagan un **20% más** que un junkie normal. Ese extra no se aplica durante una misión de venta, y las sustancias que también se compran en negocios se pagan siempre a su precio base, sin multiplicadores por fuerza ni extras.
 
@@ -331,5 +332,5 @@ Con `/falsificarreceta` puedes crear una **receta médica falsa de opioides** pa
 - **Vende pronto y vende puro.** El precio se multiplica por la fuerza: mercancía fresca vale el doble que la que lleva semanas guardada en un bolsillo.
 - **Cocina donde te conviene.** En la base ilegal y en territorio de tu pandilla fabricas más por tanda y esperas menos; en territorio rival la metanfetamina explota con más facilidad. No olvides que cada fabricación te cuesta influencia de tu facción.
 - **Invierte en habilidad antes que en recetas caras.** Pasando de 20 de habilidad puedes cocinar tandas de 125 a 150 unidades y la espera por gramo baja a menos de la mitad que con habilidad 0.
-- **Ten un extintor a mano si cocinas metanfetamina.** Una explosión cancela la operación y trae a la policía y a los bomberos a tu casa.
+- **Ten un extintor a mano si cocinas metanfetamina.** Una explosión incendia tu casa y trae a la policía y a los bomberos.
 - **Ojo con la abstinencia de las duras.** Perder 30 de vida cada hora sin poder consumir convierte cualquier tiroteo en una sentencia; guarda medicamentos de detoxicación.

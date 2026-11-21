@@ -12,8 +12,8 @@ Esta guía compara los tres caminos y luego explica cada uno en detalle, con én
 
 - `/ensamblararmas` — abre el catálogo de ensamblaje estando junto a tu punto de armas (solo contrabandistas).
 - `/comprarcargadores` — fabrica cargadores y cajas de munición en tu punto de armas (solo contrabandistas).
-- `/crearpuntoarmas [confirmar]` — establece tu taller de ensamblaje dentro de una casa o almacén de tu propiedad.
-- `/destruirpuntoarmas [confirmar]` — destruye el taller de armas más cercano.
+- `/crearpuntoarmas [confirmar]` — establece tu taller de ensamblaje dentro de una casa o almacén de tu propiedad (solo contrabandistas).
+- `/destruirpuntoarmas [confirmar]` — destruye el taller de armas más cercano (puede hacerlo su dueño o la policía en servicio).
 - `/conseguirarma` — contacta con el vendedor del mercado negro para comprar un arma.
 - `/mercadonegro` — abre el menú del mercado negro, donde también se compra munición.
 - `/comprar` — catálogo de la armería legal cuando estás dentro de ella.
@@ -25,7 +25,7 @@ Esta guía compara los tres caminos y luego explica cada uno en detalle, con én
 | | **Armería (legal)** | **Mercado negro (`/conseguirarma`)** | **Ensamblaje (`/ensamblararmas`)** |
 |---|---|---|---|
 | **Quién puede** | Cualquier ciudadano | Delincuentes | Solo contrabandistas |
-| **Requisitos** | 50 horas jugadas, casa propia, licencia de armas y cero antecedentes penales | 50 horas jugadas, ser delincuente, **50 de habilidad de delincuente** y 2 puntos de rol positivos | Ser contrabandista, tener un punto de armas propio y, si perteneces a una facción, que esta tenga **1.000 puntos de influencia** por pedido |
+| **Requisitos** | 50 horas jugadas, cuenta certificada en el UCP, casa propia, licencia de armas y cero antecedentes penales | 50 horas jugadas, ser delincuente, **50 de habilidad de delincuente** y 2 puntos de rol positivos | Ser contrabandista, estar junto a un punto de armas y, si perteneces a una facción, que esta tenga **1.000 puntos de influencia** por pedido |
 | **Dónde** | Dentro de una armería con stock | En un Ammu-Nation de Las Venturas o en Idlewood, donde te cite el contacto | En tu propia casa o almacén, junto a tu taller |
 | **Precio** | El que fije el dueño del negocio, entre el valor base del arma y **10 veces** ese valor | **8 veces** el valor base del arma | **5 veces** el valor base del arma (hasta un 30% menos con la red de contactos de una mafia) |
 | **Espera entre compras** | **2 semanas** (1 semana con Premium Gold o superior) | **1 semana** (3 días y medio en pistolas para Platinum y Ruby) | Se calcula por unidad ensamblada: de **12 a 168 horas** por arma |
@@ -48,6 +48,7 @@ Las armerías (los Ammu-Nation y alguna tienda independiente) son **negocios de 
 Para que te vendan un arma o munición debes cumplir **todos** estos puntos:
 
 - **50 horas de juego** en el personaje.
+- **Cuenta certificada** en el UCP.
 - **Tener una casa** a tu nombre. El estado no vende armas a quien no tiene domicilio.
 - **No tener antecedentes penales**. Un solo arresto en tu historial te cierra esta puerta de forma permanente para ese personaje.
 - **Licencia de portación de armas (CCW)**. Los guardias de seguridad privada están exentos de presentarla.
@@ -64,7 +65,7 @@ Puedes mostrar tu licencia a otro personaje con `/licencia [id] armas`.
 
 ### Qué se vende y a qué precio
 
-Encontrarás sobre todo **pistolas** (desde una Hi-Point C9 económica hasta una Desert Eagle), algunas **escopetas** y, en tiendas bien surtidas, algún **rifle de caza**. Lo que no se vende legalmente jamás son subfusiles, rifles de asalto ni pistolas silenciadas. Precios habituales del mercado:
+Encontrarás sobre todo **pistolas** (desde una Hi-Point C9 económica hasta una Desert Eagle), algunas **escopetas** y, en tiendas bien surtidas, algún **rifle de caza**. Por lo general no se ofrecen subfusiles, rifles de asalto ni pistolas silenciadas. Precios habituales del mercado:
 
 | Tipo | Rango de precio habitual |
 |---|---|
@@ -78,7 +79,7 @@ Si te atiende un empleado del local en lugar de comprar tú solo, el precio sube
 
 ### Después de comprar
 
-- El arma sale **cargada** y con un **número de serie de ocho cifras** ligado a tu personaje y a la armería donde la compraste.
+- El arma sale **vacía** (sin munición) y con un **número de serie de ocho cifras** ligado a tu personaje y a la armería donde la compraste.
 - Quedas con un **tiempo de espera de dos semanas** antes de poder comprar otra arma. Con **Premium Gold, Platinum o Ruby** ese plazo baja a una semana.
 - Ese tiempo de espera es **compartido** con el mercado negro: comprar legalmente también te bloquea `/conseguirarma`, y al revés.
 
@@ -94,7 +95,7 @@ Si no puedes o no quieres pasar por los trámites legales, el mercado negro tien
 
 ### Cómo funciona
 
-Al usar `/conseguirarma` recibes un mensaje de un número desconocido con un punto de encuentro marcado en tu mapa. El contacto opera dentro de **los Ammu-Nation de Las Venturas** y en la base criminal de **Idlewood**; el lugar concreto se te asigna y no cambia, así que memorízalo.
+Al usar `/conseguirarma` recibes un mensaje de un número desconocido con un punto de encuentro marcado en tu mapa. El contacto opera dentro de **los Ammu-Nation de Las Venturas** y en la base criminal de **Idlewood**; el lugar concreto se te asigna al azar y se mantiene hasta que te desconectes, así que memorízalo.
 
 Allí se abre el catálogo. Las armas por encima de tu habilidad aparecen atenuadas con el requisito indicado al lado. El precio equivale a **8 veces el valor base del arma**.
 
@@ -114,7 +115,7 @@ Allí se abre el catálogo. Las armas por encima de tu habilidad aparecen atenua
 ### Lo que debes saber antes de usarla
 
 - El arma **sí lleva serial**, y queda registrada a tu nombre. Aunque el vendedor sea clandestino, la papelería aparece como si la hubieras comprado en una armería. Si disparas con ella y la policía analiza los casquillos, el rastro conduce directamente a tu personaje.
-- Sale **cargada** y lista para usar.
+- Sale **vacía**, sin munición: tendrás que cargarla aparte.
 - Después de la compra quedas con un tiempo de espera de **una semana**. Los usuarios **Platinum y Ruby** tienen la mitad de espera (**3 días y medio**) para volver a comprar pistolas.
 - Si vas a usarla para algo serio, plantéate **borrar el serial** primero. El procedimiento se explica más abajo.
 
@@ -137,17 +138,17 @@ El rol de contrabandista se pierde al cambiar el nombre del personaje.
 
 Antes de ensamblar nada necesitas un **punto de armas**: el banco de trabajo donde montas el armamento.
 
-- Se crea con `/crearpuntoarmas confirmar` estando **dentro de una casa o un almacén de tu propiedad**. No sirven negocios ni propiedades ajenas.
+- Se crea con `/crearpuntoarmas confirmar` estando **dentro de una casa o un almacén de tu propiedad** (o de tu pareja, si estás casado). No sirven negocios ni propiedades ajenas.
 - Cada personaje puede tener **un único punto de armas**.
 - Solo puedes establecer un punto **cada 2 semanas (336 horas)**. Ese mismo plazo se te aplica si tu punto es destruido.
-- Para trabajar en él tienes que estar **a menos de 2 metros** del banco.
-- El taller es visible para cualquiera que entre a la propiedad, identificado como *"Ensambladora de armas"*.
+- Para trabajar en él tienes que estar **a menos de 2 metros** del banco. El banco no comprueba quién es el dueño: cualquier contrabandista que esté junto a un punto de armas puede usarlo.
+- Quien se acerque a menos de 2 metros del banco ve la etiqueta *"Ensambladora de armas"*.
 
 **⚠️ Riesgo:** la policía en servicio puede **destruir tu punto de armas** si lo encuentra dentro de la propiedad, y tú quedas dos semanas sin poder montar otro. Piensa bien dónde lo instalas: un almacén discreto es mucho más seguro que el salón de una casa conocida, y una orden de allanamiento pone en riesgo toda tu producción.
 
 ### Ensamblar armas
 
-Con el taller montado, acércate a él y usa `/ensamblararmas`. Se abre un catálogo dividido por categorías donde eliges el modelo, y después indicas **cuántas unidades** quieres producir. La pantalla del pedido muestra el coste por unidad, la cantidad máxima y las horas de espera que se aplicarán por cada arma.
+Con el taller montado, acércate a él y usa `/ensamblararmas`. Se abre un catálogo dividido por categorías donde eliges el modelo, y después indicas **cuántas unidades** quieres producir. El pago sale del dinero que llevas en mano. La pantalla del pedido muestra el coste por unidad, la cantidad máxima y las horas de espera que se aplicarán por cada arma.
 
 El coste de cada unidad es **5 veces el valor base del arma**: la tarifa más barata de las tres vías. A cambio, cada unidad suma **horas de espera** antes de poder volver a ensamblar. Solo puedes hacer un pedido mientras no tengas una espera en curso.
 
@@ -244,17 +245,17 @@ Dos diferencias fundamentales frente a las otras dos vías:
 
 ### Cargadores y munición del taller
 
-El mismo taller permite fabricar munición con `/comprarcargadores`, y aquí está la mayor ventaja económica del contrabandista: el precio es **1,5 veces el valor base**, muy por debajo del **3,5 veces** que cobra el mercado negro. Son la fuente de munición más barata del servidor.
+El mismo taller permite fabricar munición con `/comprarcargadores`, y aquí está la mayor ventaja económica del contrabandista: el precio es **1,5 veces el valor base**, muy por debajo del **3,5 veces** que cobra el mercado negro. Es una de las fuentes de munición más baratas del servidor. Se paga con el dinero que llevas en mano.
 
 | Producto | Coste en el taller | Coste en el mercado negro |
 |---|---|---|
 | Cargador 9x19, .40, .45, .357 o .22 LR | **$243** | $567 |
-| Cargador 7.62x39, 5.56x45, 7.62x51 o perdigones 12ga | **$486** | $1.134 |
+| Cargador 7.62x39, 5.56x45, 7.62x51, .380 o perdigones 12ga | **$486** | $1.134 |
 | Cargador .44 | **$1.215** | $2.835 |
 | Caja de munición 9x19 (1.000 balas) | **$1.458** | $3.402 |
 | Caja de munición 5.56x45 (1.000 balas) | **$1.941** | $4.529 |
 
-Los cargadores fabricados en el taller aparecen **directamente en tu mano derecha**, así que debes tenerla libre antes de pedirlos.
+Los cargadores y cajas fabricados en el taller no caen al suelo: se guardan en el bolso que lleves en la mano si caben; si no, pasan a tu mano derecha libre, a la izquierda, a los bolsillos o a la mochila. Si no hay espacio en ninguno de esos sitios, no te los entregan y no se cobra.
 
 ## Lo que ve la policía y el forense
 

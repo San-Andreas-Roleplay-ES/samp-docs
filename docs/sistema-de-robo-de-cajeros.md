@@ -4,7 +4,7 @@
 
 Reventar un **cajero automático** es uno de los golpes más ruidosos que puede dar un delincuente. No se trata de engañar al aparato como en el [skimming](sistema-de-skimming.md): aquí se rompe la máquina a la fuerza para sacar los **casetes de billetes** que lleva dentro. El método depende de lo que tengas en la mano: golpes con un bate, una palanca o un mazo, corte con una motoamoladora o un soplete, embestida con una camioneta o un camión, o una **bomba TNT**.
 
-Cada golpe deja el cajero **fuera de servicio** hasta que lo repare un **técnico de seguridad**, y avisa a la policía. Los casetes suelen traer entre $75.000 y $175.000, pero los billetes pueden salir **sanos** o **manchados de tinta**: un casete entintado no vale nada, y la tinta además te mancha a ti. Cuanto más limpio es el método, más billetes se salvan.
+Cada golpe deja el cajero **fuera de servicio** hasta que lo repare un **técnico de seguridad**, y avisa a la policía. Cada carga de billetes ronda entre $75.000 y $175.000 y se reparte en casetes de hasta $100.000, pero los billetes pueden salir **sanos** o **manchados de tinta**: un casete entintado no vale nada, y la tinta además te mancha a ti. Cuanto más limpio es el método, más billetes se salvan.
 
 Es un delito de alto riesgo y poca frecuencia. Exige habilidad de delincuente alta, un mínimo de policías de servicio y deja una espera larga antes de poder dar otro golpe. Para el resto de actividades criminales consulta el [sistema de delincuente](sistema-de-delincuente.md).
 
@@ -88,7 +88,7 @@ La alarma salta en el **primer choque** y la policía recibe el **modelo y la ma
 Es el método con más botín. Con la bomba en la mano derecha y a menos de 1,5 metros del cajero, usa `/robarcajero`: la bomba queda en el suelo, a los pies del cajero. Después aléjate y **llama al número de la bomba** con `/llamar`. Consulta el [sistema de bombas](sistema-de-bombas.md) para saber cómo funcionan el número y el detonador.
 
 - Al llamar debe haber al menos **4 policías de servicio**; si no, el detonador no responde y la bomba sigue puesta.
-- La bomba **vence a los 10 minutos**. Pasado ese plazo, si la detonas igual explota, pero ya no abre el cajero.
+- La bomba **vence a los 10 minutos**. Pasado ese plazo, el detonador no responde la primera vez que llamas; si vuelves a llamar, la bomba explota igual, pero ya no abre el cajero.
 - La bomba debe quedar a menos de 3 metros del cajero. Una bomba desactivada no sirve.
 - Los cajeros con una bomba puesta cuentan para el tope de 5 cajeros rotos, y un técnico de seguridad no puede repararlos hasta que se resuelva.
 
@@ -183,7 +183,7 @@ El técnico de seguridad debe estar **en servicio** (`/trabajar`) y seguir estos
 | Dañado | **2 minutos** |
 | Destruido | **3 minutos** |
 
-La ciudad paga **$250 por cada 1 % de daño** del cajero (hasta $25.000), del banco del Gobierno, y se suma **+3 Burger Points**. Con un 50 % de probabilidad ganas **+1 punto** de habilidad de electrónica. La reparación se cancela si te alejas, dejas de trabajar, quedas herido o esposado, o pasas un rato sin jugar. Si el cajero tiene un robo o una bomba puesta, no se puede reparar.
+La ciudad paga **$250 por cada 1 % de daño** del cajero (hasta $25.000), del banco del Gobierno, y cuando te pagan se suman **+3 Burger Points**. Con un 50 % de probabilidad ganas **+1 punto** de habilidad de electrónica. La reparación se cancela si te alejas, dejas de trabajar, quedas herido o esposado, o pasas un rato sin jugar. Si el cajero tiene un robo o una bomba puesta, no se puede reparar.
 
 No se paga la reparación en estos casos:
 

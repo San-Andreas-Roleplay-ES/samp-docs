@@ -9,9 +9,9 @@ Toda la actividad pública del rol ilegal —presentaciones, reclutamientos, com
 ### Comandos
 
 - `/f [mensaje]` — chat interno de la facción (solo facciones **oficiales**).
-- `/miembros` — lista de miembros de tu facción.
+- `/miembros` — lista de los miembros de tu facción que están conectados.
 - `/baseilegal` — consulta la base de tu facción; el líder la asigna sobre una propiedad propia.
-- `/influencias` — puntos de influencia de cada pandilla en la zona donde estás parado.
+- `/influencias` — puntos de influencia de cada facción en la zona donde estás parado.
 - `/misinfluencias` — resumen de la influencia de tu facción: territorios conquistados, zonas con influencia, puntos totales y dinero por payday (pandillas, mafias y penitenciarías).
 - `/mejorardelincuente` — sube tus habilidades criminales a un mínimo por **$25.000** (solo oficiales).
 - `/narcotraficante` — te conviertes en narcotraficante y desbloqueas el catálogo completo de drogas.
@@ -51,7 +51,7 @@ La influencia de una facción es la suma de los puntos que tiene en todas las zo
 
 - **Payday por influencia.** Las pandillas y las mafias cobran en cada payday **$1 por cada 20 puntos de influencia** que suman entre todas sus zonas, estén conquistadas o no. El pago tiene un tope según el estatus de la facción: **$1.000** (grupo), **$2.000** (destacada) y **$3.000** (oficial), para cada miembro. El total de puntos se actualiza una vez por hora, así que el pago puede ir algo atrasado respecto de tu influencia real. Los presos y los miembros de facciones cerradas no cobran este pago. Las penitenciarías no lo reciben.
 - **Fabricar cuesta influencia.** Cada vez que ensamblas armas con `/ensamblararmas` se descuentan **1.000 puntos** de influencia de tu facción, y cada vez que fabricas droga con `/creardroga`, **250 puntos**. El costo se reparte en partes iguales entre todas las zonas donde tu facción tiene influencia; si una zona no alcanza a cubrir su parte, las demás completan el resto. Si tu facción no tiene influencia suficiente, no puedes fabricar. Si la fabricación no se completa, la influencia se devuelve.
-- **Territorios.** Solo las pandillas conquistan zonas. Las zonas que una mafia ya controlaba se mantienen hasta que una pandilla supere los 100 puntos de influencia en ellas.
+- **Territorios.** Las mafias no conquistan zonas: las conquistan las pandillas (y las penitenciarías, en la zona de la prisión). Las zonas que una mafia ya controlaba se mantienen hasta que otra facción supere los 100 puntos de influencia en ellas.
 - **Ventas en tu territorio.** Cuando un miembro de una pandilla completa una venta a un cliente de misión dentro de un territorio de su facción, la influencia de esa zona sube para su pandilla: **+5** (grupo), **+6** (destacada) o **+8** (oficial). La venta con `/traficar` no cuenta. Las demás pandillas pierden 1 punto allí.
 
 Con `/misinfluencias` ves el resumen de tu facción: territorios conquistados, zonas con influencia (de mayor a menor), puntos totales y cuánto genera por payday.
@@ -118,13 +118,13 @@ Todo el proceso de cultivo, cocina, pureza y venta está en [Sistema de drogas](
 
 ### Compra de precursores químicos
 
-`/compraringredientes` abre el catálogo mayorista de reactivos: hoja de coca, queroseno, ácido sulfúrico, amoniaco, acetona, éter, efedrina, fósforo rojo y una veintena más, siempre en lotes de **100 unidades** a **10 veces** el precio unitario del producto.
+`/compraringredientes` abre el catálogo mayorista de reactivos: hoja de coca, queroseno, ácido sulfúrico, amoniaco, acetona, éter, efedrina, fósforo rojo y otros dieciséis reactivos, siempre en lotes de **100 unidades** a **10 veces** el precio unitario del producto.
 
 Para usarlo:
 
 - Debe haber al menos **2 policías** en servicio.
 - La venta ocurre en un **punto de encuentro asignado** que recibes por mensaje; cambia de una sesión a otra y se marca en tu mapa.
-- Cada compra puede **filtrarse a la policía**. La probabilidad base es del **30%**, y baja según tu habilidad de drogas (hasta un **22,5%** con habilidad máxima). El aviso solo puede dispararse una vez cada **2 minutos**.
+- Cada compra puede **filtrarse a la policía**. La probabilidad base es del **30%**, y baja según tu habilidad de drogas (hasta un **5%** con habilidad máxima). El aviso solo puede dispararse una vez cada **2 minutos**.
 
 ### Sin pérdida de habilidad criminal
 
@@ -161,16 +161,16 @@ Todos los contrabandistas pueden fabricar **pistolas y pistolas automáticas**. 
 - Rifles de asalto
 - Material de terrorismo
 
-Además, la espera entre tandas de fabricación baja de **24 horas** a **12 horas** por unidad (los rifles mantienen su espera larga de **168 horas** por unidad para todos).
+Además, la espera entre tandas de fabricación baja de **24 horas** a **12 horas** por unidad (los rifles y los rifles de asalto mantienen su espera larga de **168 horas** por unidad para todos).
 
 Cantidad máxima por pedido de ensamblaje:
 
 | Arma | Contrabandista normal | Avanzado u oficial |
 |---|---|---|
 | Pistolas | 8 | **15** |
-| Subfusiles | 8 | 8 |
+| Subfusiles y pistolas automáticas | 8 | 8 |
 | Escopetas | 4 | 4 |
-| Rifles | 1 | 1 |
+| Rifles y rifles de asalto | 1 | 1 |
 | Otras armas | 4 | 4 |
 
 Las mafias suman a esos máximos el bono de su red de contactos (ver [Red de contactos de las mafias](#red-de-contactos-de-las-mafias)). Cada pedido de ensamblaje cuesta además influencia de la facción. El proceso completo está en [Sistema de ensamblaje de armas](sistema-de-ensamblaje-de-armas.md).
@@ -217,7 +217,7 @@ Los billetes falsos ya no dependen de una facción: se fabrican con `/falsificar
 ### Lector de tarjetas y tráileres robados
 
 - `/skimmer` fabrica un lector de tarjetas para instalar en cajeros automáticos. Requiere habilidad de electrónica **50**, una laptop en la mano izquierda, la derecha libre y **$25.000**. La operativa completa está en [Sistema de skimming](sistema-de-skimming.md).
-- `/robartrailer` vende el tráiler enganchado a un camión robado. Exige habilidad de delincuente **95** y que el tráiler no pertenezca a ningún jugador, facción o negocio; respeta la espera común de los delitos.
+- `/robartrailer` vende el tráiler enganchado a un camión robado. Exige habilidad de delincuente **95**, ir al volante de un camión con el tráiler enganchado, que ese tráiler sea de una misión de transporte y que no pertenezca a ningún jugador, facción o negocio. Debes llevarlo hasta un punto concreto (se marca en tu mapa), la policía recibe un aviso de la venta y no podrás volver a cometer delitos de este tipo durante **48 horas**.
 
 ## Cooperativo de facción
 

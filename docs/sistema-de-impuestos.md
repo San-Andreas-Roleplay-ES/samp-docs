@@ -108,7 +108,7 @@ El impuesto **se cobra igualmente**, aunque no tengas saldo suficiente. Tu cuent
 Lo que sí ocurre cuando tu balance es negativo:
 
 - En cada paycheck se te cobra un **interés de línea de crédito del 0.1%** sobre el saldo negativo. Cuanto más tiempo pases en rojo, más intereses acumulas.
-- Si tu deuda supera los **-$100.000**, recibes una advertencia al conectar: has excedido el límite de deuda permitido y **morir supondrá la pérdida permanente del personaje**, con todas sus propiedades, estadísticas e inventarios.
+- Si tu saldo llega a **-$100.000** o menos, recibes una advertencia al conectar y en cada paycheck: has excedido el límite de deuda permitido y **morir supondrá la pérdida permanente del personaje**, con todas sus propiedades, estadísticas e inventarios.
 
 Por eso, si tu patrimonio es grande y no generas ingresos suficientes, la salida sensata es **vender bienes** antes de acumular deuda: una casa cara o un par de vehículos de lujo pueden costarte más al día de lo que ganas.
 
@@ -165,17 +165,17 @@ El Gobierno no solo recauda: también subsidia los salarios base de todos los tr
 
 | Beneficiario | Subsidio |
 |---|---|
-| Empleados de tiendas, clubes y demás negocios de rol | **$1.000** por jornada |
-| Empleados del resto de empresas | **$100** por jornada |
-| Miembros de facciones | **$1.000** por payday |
+| Empleados de tiendas y clubes | **$1.000** por jornada |
+| Empleados del resto de negocios y empresas | **$100** por jornada |
+| Miembros de facciones con sueldo de rango | **$1.000** por payday |
 
-Además, en los negocios de rol el Gobierno abona **$1.000 extra a la caja del negocio** por cada jornada completada, para compensar el gasto de tener personal en servicio. La jornada laboral es de **30 minutos** en los negocios de rol y de **60 minutos** en el resto de empresas.
+Además, en los negocios de rol (tiendas, clubes, depósitos de vehículos, bufetes y empresas de periodismo) el Gobierno abona **$100 extra a la caja del negocio** por cada jornada completada, para compensar el gasto de tener personal en servicio. La jornada laboral es de **30 minutos** en los negocios de rol y de **60 minutos** en el resto de empresas.
 
-Si estás desempleado, el propio Gobierno te paga un sueldo de subsistencia en cada paycheck: **$250** mientras tengas menos de 30 horas de juego y **$150** a partir de ahí.
+Si no cobras un sueldo de facción, el propio Gobierno te paga un sueldo base en cada paycheck: **$250** mientras tengas menos de 30 horas de juego y **$150** a partir de ahí.
 
 ## A dónde va la recaudación
 
-Todo lo que pagas — impuesto a la propiedad, impuesto vehicular, impuesto corporativo, cargas laborales, rentas y pagos voluntarios con `/impuestos` — entra en la **caja del Gobierno de Los Santos**. De ahí salen los subsidios salariales, los sueldos de desempleados y el financiamiento de los departamentos públicos.
+Casi todo lo que pagas — impuesto a la propiedad, impuesto vehicular, la parte estatal del impuesto corporativo, impuesto comercial de inactividad, rentas y pagos voluntarios con `/impuestos` — entra en la **caja del Gobierno de Los Santos**. Las cargas laborales y la parte federal del impuesto corporativo se descuentan de la caja del negocio o de tu retiro sin pasar por esa caja. De ahí salen los subsidios salariales, los sueldos de desempleados y el financiamiento de los departamentos públicos.
 
 Es una economía cerrada: la recaudación de los ciudadanos con más patrimonio sostiene los sueldos base de todos los trabajadores del servidor. Puedes seguir la gestión administrativa de tu facción desde el [panel de control](panel-de-control.md).
 

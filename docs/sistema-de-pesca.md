@@ -6,7 +6,7 @@ Las aguas de San Andreas dan de comer a mucha gente. El estado tiene dos formas 
 
 La pesca deportiva no pide requisitos ni empleo: basta con comprar una caña y encontrar una de las muchas zonas repartidas por la costa, los ríos y los lagos del estado. Es una actividad tranquila, pero con un minijuego de tres etapas (lanzar, esperar y pelear con el pez) y recompensas muy variables: hay presas comunes que valen unas monedas y piezas raras que pagan más de mil dólares si salen grandes. Además, cada captura suma [Burger Points](sistema-de-burger-points.md) según lo difícil que sea el pez.
 
-La pesca comercial es un trabajo de empresa. Necesitas estar empleado en una compañía pesquera, salir con el barco de la empresa a una zona de mar abierto y volver al muelle a descargar. Paga más por viaje y reparte el ingreso entre tú y la caja del negocio, pero solo saca las especies más comunes del mar.
+La pesca comercial es un trabajo de empresa. Necesitas estar empleado en una compañía pesquera, salir con el barco de la empresa a una zona de mar abierto y volver al muelle a descargar. Paga más por viaje y la empresa se queda además con una suma equivalente en su caja, pero solo saca las especies más comunes del mar.
 
 Ojo con una cosa: después de descargar un cargamento comercial quedarás **apestando a pescado durante 4 horas**, y todos a tu alrededor lo notarán.
 
@@ -39,7 +39,7 @@ Las zonas deportivas y las comerciales no se solapan: con la caña solo pescas e
 
 No hace falta comprar cebo ni ningún otro consumible: la caña no se gasta y puedes usarla todas las veces que quieras.
 
-El juego no te pide una licencia para pescar. Aun así, en el ayuntamiento puedes tramitar con `/adquirirlicencia` la **licencia de pesca deportiva** ($2.000 y 10 de respeto) y, después, la de **pesca comercial** ($5.500 y 20 de respeto); para empezar a tramitar licencias necesitas tener ya la de conducir.
+El juego no te pide una licencia para pescar. Aun así, en el ayuntamiento puedes tramitar con `/adquirirlicencia` la **licencia de pesca deportiva** ($2.000 y 10 de respeto) y, después, la de **pesca comercial** ($5.500 y 20 de respeto, y exige tener antes la deportiva); para empezar a tramitar licencias necesitas tener ya la de conducir.
 
 ### Cómo funciona
 
@@ -53,7 +53,7 @@ La pesca tiene tres etapas.
 
 **2. Esperar.** Cada **10 segundos** se comprueba si algo pica: la probabilidad en cada intento es del **40%**, así que en promedio esperarás menos de medio minuto. Si no pica, el anzuelo sigue en el agua sin que tengas que hacer nada. Cuando algo muerde, suena la alarma de la caña (solo la oyes tú) y, un instante después, empieza la pelea.
 
-**3. Pelear.** En pantalla aparece una flecha: el pez **tira hacia una dirección** y tú debes tirar hacia la **dirección contraria** con las teclas de movimiento, antes de que se acabe el tiempo y antes de que el pez cambie.
+**3. Pelear.** En pantalla aparece una flecha: el pez **tira hacia una dirección** y tú debes tirar hacia la **dirección contraria** con las teclas de movimiento, antes de que se acabe el tiempo. El pez cambia de dirección cada vez que aciertas o fallas.
 
 - Cada acierto lo cansa y te acerca al pez. Necesitas **10 aciertos** para sacarlo del agua.
 - Una tecla equivocada, varias direcciones a la vez o quedarte sin tiempo cuentan como un **fallo**. Con **5 fallos**, el pez se escapa.
@@ -106,7 +106,7 @@ Mientras pescas no puedes usar animaciones.
 
 ### Consejos
 
-- Como la pieza cae al suelo y no a tu inventario, recógela enseguida: si te vas sin ella, la pierdes.
+- Como la pieza cae al suelo y no a tu inventario, recógela enseguida: queda tirada en el suelo y cualquiera puede llevársela.
 - No hay límite de capturas ni tiempo de espera entre lances. Lo único que limita tu ganancia es la paciencia y la puntería con las teclas.
 - Puedes pescar acompañado: varias personas en la misma zona no se estorban entre sí.
 
@@ -163,7 +163,7 @@ La habilidad va de **0 a 100** y se sube de dos formas:
 | Pesca deportiva: cada pesca **perfecta** (sin fallos) | **1 de cada 8** | **1 de cada 3** |
 | Pesca comercial: cada lance de red completado | **1 de cada 20** | **1 de cada 8** |
 
-Las redes suben la habilidad mucho más despacio que la caña, así que las especies raras se desbloquean sobre todo pescando de forma deportiva. Cuando subes a una habilidad que desbloquea una especie, el juego te avisa en el chat.
+Las redes suben la habilidad mucho más despacio que la caña, así que las especies raras se desbloquean sobre todo pescando de forma deportiva. Cuando subes pescando con la caña a una habilidad que desbloquea una especie, el juego te avisa en el chat.
 
 Subir la habilidad tiene varios efectos:
 
@@ -188,7 +188,7 @@ Todas las capturas se pagan por **kilo**: el precio final sale de multiplicar el
 
 La pesca deportiva paga **el doble por kilo** que la comercial, pero saca una pieza por vez. La columna de valor de esta tabla es el de la venta deportiva con `/venderpesca`; la venta comercial paga la mitad.
 
-La **frecuencia** es la probabilidad aproximada de que salga esa especie una vez elegida su categoría, sin contar las que aún no tengas desbloqueadas.
+La **frecuencia** es la probabilidad aproximada de que salga esa especie una vez elegida su categoría. Si te toca una que aún no tienes desbloqueada, se cambia por una presa de la categoría inferior.
 
 | Especie | Categoría | Frecuencia | Habilidad mínima | Peso | Valor deportivo | Burger Points |
 |---|---|---|---|---|---|---|
@@ -230,4 +230,4 @@ Para quitártelo de encima solo hay una vía: **usar un perfume** de tu inventar
 
 ## Frecuencia de radio
 
-Los pescadores comerciales comparten la frecuencia **304 MHz** de la radio UHF para coordinar salidas y avisar de zonas ocupadas. Sintonízala con `/frecuencia 304`.
+Los pescadores comerciales comparten la frecuencia **304 MHz** de la radio UHF para coordinar salidas y avisar de zonas ocupadas. Sintonízala con `/frecuencia 304`, con la radio UHF en la mano derecha.

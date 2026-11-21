@@ -30,9 +30,9 @@ Acciones de `/robobanco`:
 | `romperalarma` | Destroza el panel | Palanca o mazo |
 | `forzarcajon` | Fuerza un cajón cerrado | Palanca |
 | `sacarfajo` | Toma un fajo de un cajón abierto | Mano derecha libre |
-| `interrogar` | Exige los códigos a una cajera | Arma de fuego apuntándole |
-| `reducir` | Deja inconsciente al guardia | Manos vacías o arma blanca |
-| `atar` | Ata al guardia | Rollo de cuerda o esposas |
+| `interrogar` | Exige los códigos a una cajera | Arma de fuego apuntándole de cerca a una cajera que ya coopera |
+| `reducir` | Deja inconsciente al guardia | Manos vacías o arma blanca, por la espalda y con el guardia sin alertar |
+| `atar` | Ata al guardia | Rollo de cuerda o esposas (se gastan), con el guardia rendido o reducido |
 | `revisarcarpetas` | Busca información en el archivo | Estar frente al mueble de carpetas |
 | `taparcamara` | Tapa una cámara con pintura | Spray |
 
@@ -76,7 +76,7 @@ El banco tiene cuatro puertas interiores:
 - **Patadas**: hacen falta entre **3 y 6** patadas, una cada poco más de un segundo. El mazo cuenta doble.
 - **Tarjeta de seguridad**: abre la zona de cajas, el archivo y la puerta de seguridad sin ruido. No sirve en la bóveda y deja de servir cuando el banco se repone.
 - **Corte** (motoamoladora o soplete) y **taladro** (bóveda): se hacen con un minijuego con barra de avance y barra de calor. Mantén pulsado el sprint para cortar más rápido. La herramienta se calienta, y si se recalienta debes esperar a que se enfríe. Dejar la puerta más de unos 45 segundos sin trabajar cancela el corte. Solo una persona a la vez puede trabajar en una puerta. Sin pausas, el soplete tarda alrededor de **30 segundos**, la motoamoladora cerca de **40** y el taladro más de **un minuto**.
-- **Bomba TNT**: se pega a la cerradura con `/robobanco ponerbomba` y se detona llamando a su número. Tienes **10 minutos** para detonarla antes de que el banco la detecte. Al explotar hacen falta de nuevo los 10 policías de servicio. La puerta de la bóveda cae y la explosión hiere a quienes estén cerca. Detalles de estas bombas en el [sistema de bombas](sistema-de-bombas.md).
+- **Bomba TNT**: se pega a la cerradura con `/robobanco ponerbomba` y se detona llamando a su número. Tienes **10 minutos** para detonarla antes de que el banco la detecte. Al explotar hacen falta de nuevo los 10 policías de servicio. La puerta salta por los aires y la explosión hiere a quienes estén cerca. Detalles de estas bombas en el [sistema de bombas](sistema-de-bombas.md).
 
 Una puerta forzada queda abierta hasta que el banco se repone. Un código mal escrito tres veces bloquea el teclado un instante y activa el aviso al sistema de seguridad.
 
@@ -88,7 +88,7 @@ Una puerta forzada queda abierta hasta que el banco se repone. Un código mal es
 
 ### El personal y la seguridad
 
-- **Las cajeras** reaccionan cuando las encañonan: pueden cooperar o tocar el botón de pánico, según desde dónde y cómo las amenaces. Herir a una hace que la otra pida ayuda.
+- **Las cajeras** reaccionan cuando las encañonan: pueden cooperar o tocar el botón de pánico, según desde dónde y cómo las amenaces. Herir a una activa la alarma silenciosa.
 - **El guardia** patrulla las zonas públicas, con paradas en su puesto. Le alertan un rostro tapado, un arma a la vista o alguien en una zona restringida: si te descubre o lo atacas, desenfunda y llama por radio. Está armado y lleva chaleco. Se lo puede hacer rendirse, reducir, atar y registrar.
 - **Las cámaras** vigilan el vestíbulo y las zonas restringidas, y reaccionan a lo mismo que el guardia. Si una cámara ve un rostro sin máscara, el aviso a la policía incluye ese nombre. Se pueden inutilizar a tiros o tapándolas con spray.
 - Un golpe a una cajera, al guardia, a una cámara o al panel sin cumplir los requisitos del robo no hace daño y te avisa el motivo.
@@ -104,7 +104,7 @@ Una puerta forzada queda abierta hasta que el banco se repone. Un código mal es
 | Silenciosa | La policía ya fue avisada, sin sirena. Bajan las persianas de las ventanillas |
 | Sonora | Suena la sirena, bajan las persianas, la puerta de la zona de cajas se traba y la cerradura temporizada se bloquea |
 
-Las cámaras, la sospecha del guardia, el botón de pánico, abrir por la fuerza las puertas de acero o fallar tres veces un código ponen en marcha la alarma. Cualquier disparo sin silenciador o explosión dentro del banco enciende la alarma sonora, aunque quien dispare no cumpla los requisitos del robo.
+Las cámaras, la sospecha del guardia, el botón de pánico, abrir por la fuerza las puertas de acero o fallar tres veces un código ponen en marcha la alarma. Cualquier disparo sin silenciador o explosión dentro del banco enciende la alarma sonora mientras el sistema siga armado, aunque quien dispare no cumpla los requisitos del robo.
 
 El **panel de la alarma** está en la zona de cajas. Con el código correcto, `/robobanco desactivaralarma` desarma todo el sistema y apaga la sirena si sonaba. Romperlo también avisa a la policía, pero deja el sistema muerto hasta que el banco se repone.
 
@@ -162,7 +162,7 @@ Cada participante recibe un enfriamiento delictivo desde su primer acto. Es el m
 
 | Premium | Enfriamiento |
 |---------|--------------|
-| Sin premium | 12 horas |
+| Sin premium o Bronce | 12 horas |
 | Plata | 9 horas |
 | Oro | unas 7 horas y 48 minutos |
 | Platino y Ruby | 6 horas |
